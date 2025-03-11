@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+
+.cart-icon{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: 100000 !important;
+  display: block;
+}
