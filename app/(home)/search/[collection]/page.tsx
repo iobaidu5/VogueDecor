@@ -3,34 +3,34 @@ import ProductGridItems from 'components/layout/product-grid-items';
 import { defaultSort, sorting } from 'lib/constants';
 import { getCollectionProducts } from 'lib/shopify';
 
-export default async function CategoryPage(props: {
+interface CategoryPageProps {
   params: { collection: string };
   searchParams?: { [key: string]: string | string[] | undefined };
-}) {
-  // Await the dynamic parameters individually
-  const params = await props.params;
-  const searchParams = await props.searchParams;
+}
+
+export default async function CategoryPage(props: CategoryPageProps) {
+  // Await the entire props object before destructuring its properties.
+  const { params, searchParams } = await props;
 
   // Now it’s safe to access properties
-  const sort = (searchParams as { [key: string]: string })?.sort;
+  const sort = (searchParams || {}).sort as string | undefined;
   const { sortKey, reverse } =
-    sorting?.find((item) => item?.slug === sort) || defaultSort;
+    sorting.find((item) => item.slug === sort) || defaultSort;
 
   const products = await getCollectionProducts({
     collection: params.collection,
     sortKey,
-    reverse
+    reverse,
   });
 
   return (
     <>
       <section className="">
         {products.length === 0 ? (
-          <p className="py-3 text-center text-lg">{`No products found in this collection`}</p>
+          <p className="py-3 text-center text-lg">
+            {`No products found in this collection`}
+          </p>
         ) : (
-          // <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          //   <ProductGridItems products={products} />
-          // </Grid>
           <div>
             <ProductGridItems products={products} />
           </div>
