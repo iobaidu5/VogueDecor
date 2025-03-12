@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-// @ import dependencies
 import { Range } from 'react-range';
 
-const RangeSlider: React.FC = () => {
-  const [values, setValues] = useState<number[]>([200, 2000]);
+const RangeSlider = () => {
+  const [values, setValues] = useState([200, 2000]);
   const min = 0;
   const max = 3000;
 
@@ -14,13 +13,13 @@ const RangeSlider: React.FC = () => {
         min={min}
         max={max}
         values={values}
-        onChange={(newValues: number[]) => setValues(newValues)}
+        onChange={(newValues) => setValues(newValues)}
         renderTrack={({ props, children }) => (
           <div
             {...props}
             className="h-[3.5px] rounded-full !bg-[#CACACA]"
             style={{
-              ...props.style,
+              ...(props.style || {}),
               background: `linear-gradient(to right, #CACACA ${((values[0] - min) / (max - min)) * 100}%, #D9222A ${
                 ((values[0] - min) / (max - min)) * 100
               }%, #D9222A ${((values[1] - min) / (max - min)) * 100}%, #CACACA ${
@@ -31,7 +30,7 @@ const RangeSlider: React.FC = () => {
             {children}
           </div>
         )}
-        renderThumb={({ props, isDragged, key }: { props: any; isDragged: any; key: any }) => (
+        renderThumb={({ props, isDragged, key }) => (
           <div
             key={key}
             {...props}

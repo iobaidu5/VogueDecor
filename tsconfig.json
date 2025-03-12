@@ -23,6 +23,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Header/index.jsx", "app/(home)/product-detail/[id]/page.jsx", "app/(home)/product/[handle]/page.jsx", "app/(home)/search/[collection]/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Header/index.jsx", "app/(home)/product-detail/[id]/page.jsx", "app/(home)/product/[handle]/page.jsx", "app/(home)/search/[collection]/page.jsx", "components/rangeSlider/index.jsx"],
   "exclude": ["node_modules"]
 }
