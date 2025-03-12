@@ -15,7 +15,7 @@ export default function Product({ product }: { product: ProductType }) {
         <Image src={heartIcon} alt="heartIcon" className="absolute right-5 top-4" />
         {/* Image Section */}
         <div className="flex h-[404px] items-center justify-center bg-[#F5F5F5]">
-          {/* Uncomment to use a static image if desired:
+          {/* Uncomment the below to use a static image if desired:
           <Image
             src={chairImage}
             alt={product.title}
@@ -31,11 +31,12 @@ export default function Product({ product }: { product: ProductType }) {
             <Gallery
               images={product.images.slice(0, 5).map((image: Img) => ({
                 src: image.url,
-                altText: image.altText,
+                altText: image.altText || "", // Provide fallback if undefined
               }))}
             />
           </Suspense>
         </div>
+
         {/* Title Section */}
         <div className="mt-2 flex h-[55px] flex-col space-y-1 bg-white pl-4">
           <p className="text-[15px] font-medium">{product.title}</p>
