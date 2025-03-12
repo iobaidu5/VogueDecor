@@ -60,7 +60,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
               style={{
                 ...magnifierStyle,
                 backgroundImage: `url(${images[imageIndex]?.src})`,
-                backgroundSize: window.innerWidth < 768 ? '100%' : '70%' // Adjust zoom level for small screens
+                backgroundSize: typeof window !== 'undefined' && window.innerWidth < 768 ? '100%' : '70%' // Adjust zoom level for small screens
               }}
             ></div>
           </>

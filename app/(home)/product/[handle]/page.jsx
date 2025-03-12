@@ -1,6 +1,5 @@
 import ProductType from 'screens/productType';
 import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
-import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
@@ -22,13 +21,10 @@ import { GridTileImage } from 'components/grid/tile';
 import CartModal from 'components/cart/modal';
 import Slider from 'components/slider';
 
-export async function generateMetadata({
-  params
-}: {
-  params: { handle: string };
-}): Promise<Metadata> {
-  const product = await getProduct(params.handle);
-
+export async function generateMetadata(props) {
+  const params = await props.params;
+  const handle = params.handle;
+  const product = await getProduct(handle);
   if (!product) return notFound();
 
   const { url, width, height, altText: alt } = product.featuredImage || {};
@@ -42,8 +38,8 @@ export async function generateMetadata({
       follow: indexable,
       googleBot: {
         index: indexable,
-        follow: indexable
-      }
+        follow: indexable,
+      },
     },
     openGraph: url
       ? {
@@ -52,26 +48,28 @@ export async function generateMetadata({
               url,
               width,
               height,
-              alt
-            }
-          ]
+              alt,
+            },
+          ],
         }
-      : null
+      : null,
   };
 }
 
-export default async function ProductPage({ params }: { params: { handle: string } }) {
-  const product = await getProduct(params?.handle);
+export default async function ProductPage(props) {
+  const params = await props.params;
+  const handle = params.handle;
+  const product = await getProduct(handle);
   if (!product) return notFound();
 
-  const extractFeatures = (htmlString: any) => {
+  const extractFeatures = (htmlString) => {
     const parts = htmlString.split(
       '<span style="color: #333333;"><strong>Features:</strong></span>'
     );
     return parts?.length > 1 ? parts[1] : '';
   };
 
-  function extractBeforeFeatures(text: any) {
+  function extractBeforeFeatures(text) {
     const splitText = text?.split('Features:');
     return splitText[0]?.trim();
   }
@@ -88,9 +86,9 @@ export default async function ProductPage({ params }: { params: { handle: string
               }
             >
               <Gallery
-                images={product?.images?.slice(0, 5)?.map((image: any) => ({
+                images={product?.images?.slice(0, 5)?.map((image) => ({
                   src: image.url,
-                  altText: image.altText
+                  altText: image.altText,
                 }))}
               />
             </Suspense>
@@ -100,7 +98,9 @@ export default async function ProductPage({ params }: { params: { handle: string
           <div className="flex w-full flex-col items-start lg:w-1/3">
             <Suspense fallback={null}>
               <div className="mb-4 w-full pb-4">
-                <h1 className="text-2xl font-semibold sm:text-3xl md:text-4xl">{product?.title}</h1>
+                <h1 className="text-2xl font-semibold sm:text-3xl md:text-4xl">
+                  {product?.title}
+                </h1>
                 <div className="mt-2 inline-block rounded-full px-4 py-2 text-lg text-gray-400">
                   <Price
                     amount={product?.priceRange.maxVariantPrice?.amount}
@@ -167,7 +167,7 @@ export default async function ProductPage({ params }: { params: { handle: string
   );
 }
 
-async function RelatedProducts({ id }: { id: string }) {
+async function RelatedProducts({ id }) {
   const relatedProducts = await getProductRecommendations(id);
   if (!relatedProducts) return null;
   return <Slider data={relatedProducts} />;

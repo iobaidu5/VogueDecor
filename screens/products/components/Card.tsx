@@ -4,11 +4,17 @@ import addtocartIcon from 'media/svg/addToCardIcon.svg';
 import CartModal from 'components/cart/modal';
 import { AddToCartSimple } from 'components/cart/add-to-cart-simple';
 import { AddToCart } from 'components/cart/add-to-cart';
+import Link from 'next/link';
 
 const ProductCard = ({ data }: any) => {
   const [isHover, setIsHover] = useState(false);
 
   return (
+    <Link
+    href={`product/${data.handle}`}
+    key={data.handle}
+    className="relative flex flex-col bg-white shadow-md"
+  >
     <div
       className="relative flex w-full cursor-pointer flex-col overflow-hidden bg-white"
       onMouseEnter={() => setIsHover(true)}
@@ -50,6 +56,7 @@ const ProductCard = ({ data }: any) => {
         <AddToCartSimple product={data} icon={true} />
       </div>
     </div>
+    </Link>
   );
 };
 

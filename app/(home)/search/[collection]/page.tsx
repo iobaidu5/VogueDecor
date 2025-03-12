@@ -3,17 +3,21 @@ import ProductGridItems from 'components/layout/product-grid-items';
 import { defaultSort, sorting } from 'lib/constants';
 import { getCollectionProducts } from 'lib/shopify';
 
-export default async function CategoryPage({
-  params,
-  searchParams
-}: {
+export default async function CategoryPage(props: {
   params: { collection: string };
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
-  const { sort } = searchParams as { [key: string]: string };
-  const { sortKey, reverse } = sorting?.find((item) => item?.slug === sort) || defaultSort;
+  // Await the dynamic parameters individually
+  const params = await props.params;
+  const searchParams = await props.searchParams;
+
+  // Now it’s safe to access properties
+  const sort = (searchParams as { [key: string]: string })?.sort;
+  const { sortKey, reverse } =
+    sorting?.find((item) => item?.slug === sort) || defaultSort;
+
   const products = await getCollectionProducts({
-    collection: params?.collection,
+    collection: params.collection,
     sortKey,
     reverse
   });

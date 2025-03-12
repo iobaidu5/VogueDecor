@@ -25,9 +25,11 @@ import addtocartIcon from 'media/svg/addToCardIcon.svg';
 export async function generateMetadata({
   params
 }: {
-  params: { handle: string };
+  params: any;
 }): Promise<Metadata> {
-  const product = await getProduct(params.handle);
+  await Promise.resolve();
+  const handle = await params.handle
+  const product = await getProduct(handle);
 
   if (!product) return notFound();
 
@@ -60,8 +62,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductPage({ params }: { params: { handle: string } }) {
-  const product = await getProduct(params?.handle);
+export default async function ProductPage({ params }: { params: any; }) {
+  const handle = await params.handle
+  const product = await getProduct(handle);
   if (!product) return notFound();
 
   const extractFeatures = (htmlString: any) => {
