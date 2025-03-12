@@ -3,22 +3,22 @@ import ProductGridItems from 'components/layout/product-grid-items';
 import { defaultSort, sorting } from 'lib/constants';
 import { getCollectionProducts } from 'lib/shopify';
 
-interface CategoryPageProps {
-  params: { collection: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
-
-export default async function CategoryPage(props: CategoryPageProps) {
-  // Await the entire props object before destructuring its properties.
-  const { params, searchParams } = await props;
-
-  // Now it’s safe to access properties
-  const sort = (searchParams || {}).sort as string | undefined;
+export default async function CategoryPage(props) {
+  // Await the dynamic params promise to get the actual object.
+  const paramsData = await props.params;
+  // Await searchParams if it's a promise.
+  const searchParamsData =
+    props.searchParams instanceof Promise
+      ? await props.searchParams
+      : props.searchParams;
+      
+  // Now safely access the properties.
+  const sort = (searchParamsData || {}).sort;
   const { sortKey, reverse } =
     sorting.find((item) => item.slug === sort) || defaultSort;
 
   const products = await getCollectionProducts({
-    collection: params.collection,
+    collection: paramsData.collection,
     sortKey,
     reverse,
   });
@@ -28,7 +28,7 @@ export default async function CategoryPage(props: CategoryPageProps) {
       <section className="">
         {products.length === 0 ? (
           <p className="py-3 text-center text-lg">
-            {`No products found in this collection`}
+            No products found in this collection
           </p>
         ) : (
           <div>
