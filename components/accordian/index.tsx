@@ -20,12 +20,12 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
   };
 
   return (
-    <div className="mb-4 overflow-hidden rounded-lg last:mb-0">
+    <div className="overflow-hidden rounded-lg last:mb-0 xs:mb-2 md:mb-4">
       <button
         className="flex w-full cursor-pointer items-center justify-between border-none bg-white py-3"
         onClick={toggleAccordion}
       >
-        <h5 className="text-[15px] font-normal">{title}</h5>
+        <h5 className="font-normal xs:text-[13px] md:text-[15px]">{title}</h5>
         <Image src={isOpen ? Up : Down} alt="icons" width={20} height={20} />
       </button>
       <motion.div

@@ -8,10 +8,10 @@ const BestSeller = async () => {
   });
 
   return (
-    <div className="pt-12">
+    <div className="xs:pt-6 md:pt-12">
       <div className="flex flex-col items-center justify-center pt-10">
         <p className="text-[14px] text-[#878787]">Discover best of the best</p>
-        <p className="xs:text-[25px] font-medium md:text-[40px]">Best Sellers</p>
+        <p className="font-medium xs:text-[25px] md:text-[40px]">Best Sellers</p>
         <div className="h-[2px] w-[130px] bg-[#878787]" />
       </div>
       <ProductCard data={bestSellerItems} />

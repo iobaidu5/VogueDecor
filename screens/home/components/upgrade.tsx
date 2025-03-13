@@ -17,18 +17,18 @@ const Upgrade = () => {
 
       {/* Centered Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 text-center">
-        <h1 className="xs:text-[30px] mb-4 font-medium text-white md:text-[50px]">
+        <h1 className="mb-4 font-medium text-white xs:text-[20px] md:text-[50px]">
           Upgrade with Ease
         </h1>
-        <p className="xs:text-[15px] mb-6 text-white md:text-[20px]">
+        <p className="mb-6 text-white xs:text-[13px] md:text-[20px]">
           Redefine your space hassle free with
         </p>
         <div className="relative flex w-full items-center justify-center">
           <div className="flex">
-            <button className="flex items-center justify-center rounded-l-lg bg-white p-2">
-              <Image src={logobtn} alt="logo" />
+            <button className="flex items-center justify-center rounded-l-lg bg-white xs:p-1 md:p-2">
+              <Image src={logobtn} alt="logo" className="xs:w-[90px] md:w-auto" />
             </button>
-            <button className="rounded-r-lg bg-[#05E5C8] px-6 py-2">Apply Now</button>
+            <button className="rounded-r-lg bg-[#05E5C8] py-1 xs:px-4 md:px-6">Apply Now</button>
           </div>
         </div>
       </div>

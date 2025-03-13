@@ -60,7 +60,8 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
               style={{
                 ...magnifierStyle,
                 backgroundImage: `url(${images[imageIndex]?.src})`,
-                backgroundSize: typeof window !== 'undefined' && window.innerWidth < 768 ? '100%' : '70%' // Adjust zoom level for small screens
+                backgroundSize:
+                  typeof window !== 'undefined' && window.innerWidth < 768 ? '100%' : '70%' // Adjust zoom level for small screens
               }}
             ></div>
           </>
@@ -73,10 +74,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
             const isActive = index === imageIndex;
 
             return (
-              <li
-                key={image.src}
-                className="min-w-[60px] flex-shrink-0 sm:min-w-[70px] md:min-w-[80px]"
-              >
+              <li key={image.src} className="flex-shrink-0 xs:min-w-[40px] md:min-w-[80px]">
                 <button
                   formAction={() => {
                     const newState = updateImage(index.toString());

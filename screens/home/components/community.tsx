@@ -25,7 +25,7 @@ const frames: any = [
 
 const Community = () => {
   return (
-    <div className="pb-[100px] xs:px-[50px] lg:px-[70px]">
+    <div className="xs:px-[50px] xs:pb-[50px] md:pb-[100px] lg:px-[70px]">
       <p className="font-medium xs:text-[22px] md:text-[40px]">
         Join the Vogue <br /> Community
       </p>
@@ -36,7 +36,7 @@ const Community = () => {
       <div className="mt-8 grid items-center justify-between gap-3 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
         {frames?.map((frame: any) => (
           <div
-            className="col-span-1 flex h-96 w-full items-center justify-center overflow-hidden bg-gray-200"
+            className="col-span-1 flex w-full items-center justify-center overflow-hidden bg-gray-200 xs:h-60 md:h-96"
             key={frame.alt}
           >
             <Image className="h-full w-full object-cover" src={frame.image} alt={frame.alt} />

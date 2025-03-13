@@ -85,51 +85,51 @@ const ProductCard: React.FC<ProductCardProps> = ({ data, isDiscover = false }) =
 
         return (
           <div key={index}>
-          <ProductProvider>
-            <Link
-              href={`product/${item.handle}`}
-              key={item.handle}
-              className="relative flex flex-col bg-white shadow-md"
-            >
-              {/* Add to Cart Button */}
-              {isDiscover ? (
-                <button className="absolute right-8 top-3 z-50 h-8 w-28 rounded-full border border-black text-[12px] hover:bg-black hover:text-white">
-                  View
-                </button>
-              ) : (
-                <AddToCartSimple product={productForCart} />
-              )}
-              {/* Favorite Icon */}
-              {!isDiscover ? (
-                <Image
-                  src={heart}
-                  alt="heartIcon"
-                  width={20}
-                  height={20}
-                  className="absolute right-5 top-4"
-                />
-              ) : null}
-              {/* Image Section */}
-              <div className="flex h-[500px] items-center justify-center">
-                <Image
-                  src={item.featuredImage?.url || chairImage}
-                  alt={item.featuredImage?.altText || item.title}
-                  width={300}
-                  height={400}
-                  className="h-full w-full object-contain"
-                />
-              </div>
+            <ProductProvider>
+              <Link
+                href={`product/${item.handle}`}
+                key={item.handle}
+                className="relative flex flex-col bg-white shadow-md"
+              >
+                {/* Add to Cart Button */}
+                {isDiscover ? (
+                  <button className="absolute right-8 top-3 z-50 h-8 w-28 rounded-full border border-black text-[12px] hover:bg-black hover:text-white">
+                    View
+                  </button>
+                ) : (
+                  <AddToCartSimple product={productForCart} />
+                )}
+                {/* Favorite Icon */}
+                {!isDiscover ? (
+                  <Image
+                    src={heart}
+                    alt="heartIcon"
+                    width={20}
+                    height={20}
+                    className="absolute right-5 top-4"
+                  />
+                ) : null}
+                {/* Image Section */}
+                <div className="flex items-center justify-center xs:h-[300px] md:h-[500px]">
+                  <Image
+                    src={item.featuredImage?.url || chairImage}
+                    alt={item.featuredImage?.altText || item.title}
+                    width={300}
+                    height={400}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
 
-              {/* Title Section */}
-              <div className="flex flex-col justify-center space-y-1 bg-white px-4 py-3">
-                <p className="text-[15px] font-medium">{item.title}</p>
-                <p className="text-[15px] font-medium text-[#878787]">
-                  {item.priceRange.minVariantPrice.amount}{' '}
-                  {item.priceRange.minVariantPrice.currencyCode}
-                </p>
-              </div>
-            </Link>
-          </ProductProvider>
+                {/* Title Section */}
+                <div className="flex flex-col justify-center space-y-1 bg-white px-4 py-3">
+                  <p className="text-[15px] font-medium">{item.title}</p>
+                  <p className="text-[15px] font-medium text-[#878787]">
+                    {item.priceRange.minVariantPrice.amount}{' '}
+                    {item.priceRange.minVariantPrice.currencyCode}
+                  </p>
+                </div>
+              </Link>
+            </ProductProvider>
           </div>
         );
       })}

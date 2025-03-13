@@ -19,7 +19,7 @@ const locations: object = ['Locations', 'Montreal'];
 const Footer = () => {
   return (
     <>
-      <div className="bg-black px-[20px] py-3 xs:mx-0 sm:mx-0 md:mx-[50px] lg:hidden">
+      <div className="bg-black px-[20px] py-3 xs:mx-0 md:mx-[50px] lg:hidden">
         <StayUpdated />
       </div>
       <div className="mx-0 flex h-[385px] flex-col bg-black text-white xs:px-[20px] xs:pt-[30px] sm:mx-0 md:mx-[50px] md:px-[50px] md:pt-[98px] lg:mx-[70px] lg:px-[60px] xl:px-[70px]">
@@ -104,19 +104,21 @@ const Connects = () => {
 
 const StayUpdated = () => {
   return (
-    <div className="flex flex-col space-y-2 xs:mt-2">
-      <p className="text-[16px]">Stay Updated</p>
-      <div className="flex items-center">
+    <div className="mx-auto flex w-full max-w-sm flex-col gap-2 xs:mt-2 md:max-w-md">
+      <p className="text-center text-lg font-medium md:text-left">Stay Updated</p>
+      <div className="flex items-center overflow-hidden rounded-md border border-gray-400">
         <input
-          type="text"
-          placeholder="Email"
-          className="flex-1 border border-[#989898] bg-transparent px-4 py-2 outline-none"
+          type="email"
+          placeholder="Enter your email"
+          className="w-full min-w-0 flex-1 bg-transparent px-4 py-2 outline-none"
         />
-        <button className="bg-white px-4 py-[9px] text-black">Subscribe</button>
+        <button className="whitespace-nowrap bg-white px-4 py-2 font-medium text-black">
+          Subscribe
+        </button>
       </div>
-      <p className="mt-3 text-[12px] text-[#A7A7A7]">
-        Stay updated@ Subscribe to our newsletter for exclusive <br /> offers, latest trends and
-        design inspiration
+      <p className="mt-3 text-center text-sm text-gray-500 md:text-left">
+        Stay updated! Subscribe to our newsletter for exclusive offers,{' '}
+        <br className="hidden md:block" /> latest trends, and design inspiration.
       </p>
     </div>
   );

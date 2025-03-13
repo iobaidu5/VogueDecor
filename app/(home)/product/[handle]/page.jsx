@@ -38,8 +38,8 @@ export async function generateMetadata(props) {
       follow: indexable,
       googleBot: {
         index: indexable,
-        follow: indexable,
-      },
+        follow: indexable
+      }
     },
     openGraph: url
       ? {
@@ -48,11 +48,11 @@ export async function generateMetadata(props) {
               url,
               width,
               height,
-              alt,
-            },
-          ],
+              alt
+            }
+          ]
         }
-      : null,
+      : null
   };
 }
 
@@ -76,7 +76,7 @@ export default async function ProductPage(props) {
 
   return (
     <ProductProvider>
-      <div className="px-4 py-10 sm:py-14 md:px-10 lg:px-20">
+      <div className="px-2 py-10 xs:py-14 md:px-10 lg:px-20">
         <div className="flex flex-col gap-8 rounded-lg bg-white p-6 md:p-12 lg:flex-row lg:items-start">
           {/* Left Section - Images */}
           <div className="w-full lg:w-2/3">
@@ -88,7 +88,7 @@ export default async function ProductPage(props) {
               <Gallery
                 images={product?.images?.slice(0, 5)?.map((image) => ({
                   src: image.url,
-                  altText: image.altText,
+                  altText: image.altText
                 }))}
               />
             </Suspense>
@@ -98,9 +98,7 @@ export default async function ProductPage(props) {
           <div className="flex w-full flex-col items-start lg:w-1/3">
             <Suspense fallback={null}>
               <div className="mb-4 w-full pb-4">
-                <h1 className="text-2xl font-semibold sm:text-3xl md:text-4xl">
-                  {product?.title}
-                </h1>
+                <h1 className="font-medium xs:text-xl md:text-4xl">{product?.title}</h1>
                 <div className="mt-2 inline-block rounded-full px-4 py-2 text-lg text-gray-400">
                   <Price
                     amount={product?.priceRange.maxVariantPrice?.amount}
@@ -119,7 +117,7 @@ export default async function ProductPage(props) {
               </div>
 
               {/* Accordions */}
-              <div className="mt-6 space-y-4">
+              <div className="space-y-4 xs:mt-3 md:mt-6">
                 <div className="border-y">
                   <Accordion
                     title="DESCRIPTION"

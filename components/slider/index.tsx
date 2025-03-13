@@ -43,14 +43,14 @@ const Slider = ({ data }: { data: Array<Record<string, any>> }) => {
   };
 
   return (
-    <div className="relative py-8">
-      <h2 className="mb-4 text-2xl font-medium">We think you may also like</h2>
+    <div className="relative xs:py-4 md:py-8">
+      <h2 className="xs:text-md mb-4 font-medium md:text-2xl">We think you may also like</h2>
       <div className="relative">
         {/* Slider Container */}
-        <div className="relative flex items-center">
+        <div className="relative">
           {/* Left Button */}
           <button
-            className="absolute left-4 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white p-2 shadow-md sm:left-6"
+            className="absolute left-4 top-[40%] z-10 flex items-center justify-center rounded-full bg-white p-2 shadow-md xs:left-6 xs:size-10 md:size-12"
             onClick={() => scrollSlider('left')}
           >
             <FaChevronLeft size={24} />
@@ -73,7 +73,7 @@ const Slider = ({ data }: { data: Array<Record<string, any>> }) => {
                 >
                   <div className="relative flex w-full cursor-pointer flex-col overflow-hidden bg-white">
                     {/* Image Section */}
-                    <div className="xs:h-[300px] relative w-full bg-[#E8E8E8] md:h-[500px]">
+                    <div className="relative w-full bg-[#E8E8E8] xs:h-[300px] md:h-[500px]">
                       <Image
                         src={
                           item?.featuredImage?.url ? item.featuredImage.url : item?.images[0]?.url
@@ -88,8 +88,10 @@ const Slider = ({ data }: { data: Array<Record<string, any>> }) => {
                     {/* Content Section */}
                     <div className="flex items-center justify-between space-y-3 p-4">
                       <div className="flex flex-col space-y-1">
-                        <p className="text-md font-medium uppercase text-gray-900">{item?.title}</p>
-                        <p className="text-lg font-medium">
+                        <p className="md:text-md font-medium uppercase text-gray-900 xs:text-sm">
+                          {item?.title}
+                        </p>
+                        <p className="xs:text-md font-medium md:text-lg">
                           ${item?.priceRange?.maxVariantPrice?.amount}
                         </p>
                       </div>
@@ -103,7 +105,7 @@ const Slider = ({ data }: { data: Array<Record<string, any>> }) => {
 
           {/* Right Button */}
           <button
-            className="absolute right-4 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white p-2 shadow-md sm:right-6"
+            className="absolute right-4 top-[40%] z-10 flex items-center justify-center rounded-full bg-white p-2 shadow-md xs:right-6 xs:size-10 md:size-12"
             onClick={() => scrollSlider('right')}
           >
             <FaChevronRight size={24} />
