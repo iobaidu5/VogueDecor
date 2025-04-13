@@ -15,7 +15,7 @@ const DiscoverMore = async () => {
       </div>
       <ProductCard data={newItems} isDiscover />
       <Link href="/products">
-        <div className="border-1 mx-auto flex w-[200px] cursor-pointer justify-center rounded-full border border-solid bg-transparent px-4 py-2 font-medium xs:mt-4 md:mt-8">
+        <div className="border-1 mx-auto flex w-[200px] cursor-pointer justify-center rounded-full border border-solid bg-transparent px-4 py-2 font-medium transition duration-150 ease-in-out hover:scale-105 xs:mt-4 md:mt-8">
           <p>View All Categories</p>
         </div>
       </Link>

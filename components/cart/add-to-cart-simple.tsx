@@ -14,16 +14,16 @@ function SubmitButton({
   availableForSale,
   selectedVariantId,
   handleClick,
-  icon,
+  icon
 }: {
   availableForSale: boolean;
   selectedVariantId: string | undefined;
   handleClick: any;
-  icon?: boolean
+  icon?: boolean;
 }) {
   const buttonClasses =
     // "absolute right-14 top-3 z-50 h-8 w-28 rounded-full border border-black text-[12px] hover:bg-black hover:text-white";
-    "absolute right-12 top-3 h-8 w-32 rounded-full border border-red-400 bg-red-500 text-white text-xs font-semibold flex items-center justify-center hover:bg-black hover:text-white transition-all duration-200"
+    'absolute right-12  top-3 h-8 w-32 rounded-full border border-red-400 bg-red-500 text-white text-xs font-semibold flex items-center justify-center hover:bg-black hover:text-white transition-all duration-200';
   const disabledClasses = 'cursor-not-allowed opacity-60 hover:opacity-60';
 
   if (!availableForSale) {
@@ -34,7 +34,6 @@ function SubmitButton({
     );
   }
 
-  console.log(selectedVariantId);
   if (!selectedVariantId) {
     return (
       <button
@@ -51,22 +50,22 @@ function SubmitButton({
     );
   }
 
-  return (
-    icon ? <button aria-label="Add to cart" onClick={(e) => e.stopPropagation()}>
+  return icon ? (
+    <button aria-label="Add to cart" onClick={(e) => e.stopPropagation()}>
       <Image src={addtocartIcon} alt="addtocart" />
-    </button> :
-      <button
-        aria-label="Add to cart"
-        onClick={(e) => e.stopPropagation()} // stops the event from bubbling up
-        className="absolute right-14 top-3 z-50 h-8 w-28 rounded-full border border-black text-[12px] hover:bg-black hover:text-white"
-      >
-        Add To Cart
-      </button>
+    </button>
+  ) : (
+    <button
+      aria-label="Add to cart"
+      onClick={(e) => e.stopPropagation()} // stops the event from bubbling up
+      className="absolute right-14 top-3 h-8 w-28 rounded-full border border-black text-[12px] hover:bg-black hover:text-white"
+    >
+      Add To Cart
+    </button>
   );
-
 }
 
-export function AddToCartSimple({ product, icon }: { product: ProductForCart, icon?: boolean }) {
+export function AddToCartSimple({ product, icon }: { product: ProductForCart; icon?: boolean }) {
   const { variants, availableForSale, featuredImage } = product;
 
   // Guaranteed to be a string
@@ -85,7 +84,6 @@ export function AddToCartSimple({ product, icon }: { product: ProductForCart, ic
   const finalVariant = variants.find((variant) => variant.id === selectedVariantId)!;
 
   const handleClick = (e: any) => {
-    console.log("handle eeee ", e)
     e.stopPropagation();
   };
 
@@ -97,11 +95,15 @@ export function AddToCartSimple({ product, icon }: { product: ProductForCart, ic
         await actionWithVariant();
       }}
     >
-      <SubmitButton availableForSale={availableForSale} selectedVariantId={selectedVariantId} handleClick={handleClick} icon={icon} />
+      <SubmitButton
+        availableForSale={availableForSale}
+        selectedVariantId={selectedVariantId}
+        handleClick={handleClick}
+        icon={icon}
+      />
       <p aria-live="polite" className="sr-only" role="status">
         {message}
       </p>
     </form>
   );
 }
-

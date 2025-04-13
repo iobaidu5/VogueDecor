@@ -29,14 +29,15 @@ export default async function SearchPage(props: {
           <span className="font-bold">&quot;{searchValue}&quot;</span>
         </p>
       ) : null}
+
       {products.length > 0 ? (
         <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <ProductGridItems products={products} />
         </Grid>
       ) : null}
-          <div className="flex justify-end md:w-1/3">
-      <CartModal />
-    </div>
+      <div className="flex justify-end md:w-1/3">
+        <CartModal />
+      </div>
     </>
   );
 }

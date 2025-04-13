@@ -2,69 +2,58 @@ import Link from 'next/link';
 
 export default function PrivacyPage() {
   return (
-    <div className="bg-white pt-[120px] text-gray-900">
-      <div className="mx-40 flex w-full items-center space-x-2 text-[13px]">
+    <div className="overflow-hidden bg-white text-gray-900 xs:pt-24 md:pt-[120px]">
+      <div className="mx-4 flex w-full items-center space-x-2 text-[13px] md:mx-16">
         <Link href="/" className="hover:underline">
           Home
         </Link>
         <span>/</span>
         <span className="font-[500]">Terms</span>
       </div>
-      <main className="container mx-auto px-4 py-8">
-        <div className="mx-auto max-w-3xl">
-          <section className="mb-8">
-            <h2 className="mb-2 text-[20px] font-[400]">Terms</h2>
-            <p className="mb-4 text-[12px] text-gray-700">
-              At Vogue, we are committed to protecting your privacy. This Privacy Policy explains
-              how we collect, use, and safeguard your personal information when you visit our
-              website or make a purchase from us.
-            </p>
-          </section>
+      <div className="mx-auto max-w-4xl rounded-lg bg-white p-6">
+        <h1 className="mb-4 text-2xl font-bold text-red-700">Terms</h1>
 
-          <section className="mb-8">
-            <h2 className="mb-2 text-[20px] font-[400]">Information We Collect</h2>
-            <p className="mb-4 text-[12px] text-gray-700">
-              We may collect the following types of information:
-            </p>
-            <ul className="mb-4 list-inside list-disc text-[12px] text-gray-700">
-              <li>Personal information such as your name, email address, and phone number.</li>
-              <li>Payment information such as credit card details.</li>
-              <li>Browsing information such as IP address, browser type, and pages visited.</li>
-            </ul>
-          </section>
+        <section className="mb-6">
+          <h2 className="mb-2 text-xl font-semibold">ONLINE ACCOUNT REGISTRATION</h2>
+          <p>
+            To make online shopping faster and easier, you may register on the Vogue Decor website.
+            As a registered customer, you only have to enter your shipping addresses and billing
+            information once; they will be securely stored with us for your future use.
+          </p>
+          <p>
+            If you are using a public computer, we strongly encourage you to{' '}
+            <strong>LOG OUT</strong> at the conclusion of your session.
+          </p>
+        </section>
 
-          <section className="mb-8">
-            <h2 className="mb-2 text-[20px] font-[400]">How We Use Your Information</h2>
-            <p className="mb-4 text-[12px] text-gray-700">We use your information to:</p>
-            <ul className="mb-4 list-inside list-disc text-[12px] text-gray-700">
-              <li>Process your orders and payments.</li>
-              <li>Communicate with you about your orders and inquiries.</li>
-              <li>Improve our website and services.</li>
-              <li>Send you promotional offers and updates (if you opt-in).</li>
-            </ul>
-          </section>
+        <section className="mb-6">
+          <h2 className="mb-2 text-xl font-semibold">EMAILS</h2>
+          <p>
+            You will receive promotional emails from us only if you have asked to receive them. If
+            you do not want to receive email from Vogue Decor or its affiliates you can click on the
+            “Unsubscribe” link at the bottom of any email.
+          </p>
+          <p>Please allow 3 business days for the request to process.</p>
+        </section>
 
-          <section className="mb-8">
-            <h2 className="mb-2 text-[20px] font-[400]">Data Security</h2>
-            <p className="mb-4 text-[12px] text-gray-700">
-              We take data security seriously and implement industry-standard measures to protect
-              your information. However, no method of transmission over the internet or electronic
-              storage is 100% secure.
-            </p>
-          </section>
+        <section className="mb-6">
+          <h2 className="mb-2 text-xl font-semibold">ACCEPTANCE</h2>
+          <p>By using this website, you accept the policies set forth in this Privacy Policy.</p>
+        </section>
 
-          <section className="mb-8">
-            <h2 className="mb-2 text-[20px] font-[400]">Your Rights</h2>
-            <p className="mb-4 text-[12px] text-gray-700">You have the right to:</p>
-            <ul className="mb-4 list-inside list-disc text-[12px] text-gray-700">
-              <li>Access the personal information we hold about you.</li>
-              <li>Request corrections to your personal information.</li>
-              <li>Request deletion of your personal information.</li>
-              <li>Opt-out of receiving promotional communications.</li>
-            </ul>
-          </section>
-        </div>
-      </main>
+        <section>
+          <h2 className="mb-2 text-xl font-semibold">ANY QUESTIONS?</h2>
+          <p>
+            We’ll be happy to provide additional information or answer any questions. Please contact
+            us:
+          </p>
+          <p className="mt-2 font-medium">Call: (514) 823-5595</p>
+          <p className="mt-2 font-medium">Write:</p>
+          <p className="ml-4">Customer Care</p>
+          <p className="ml-4">7550 Chemin de la Côte-de-Liesse, Saint-Laurent, QC H4T 1E7</p>
+          <p className="ml-4">825 Denison St Unit 2, Markham, ON L3R 5E4</p>
+        </section>
+      </div>
 
       {/* Footer */}
     </div>

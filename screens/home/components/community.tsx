@@ -26,9 +26,7 @@ const frames: any = [
 const Community = () => {
   return (
     <div className="xs:px-[50px] xs:pb-[50px] md:pb-[100px] lg:px-[70px]">
-      <p className="font-medium xs:text-[22px] md:text-[40px]">
-        Join the Vogue <br /> Community
-      </p>
+      <p className="py-1 font-medium xs:text-[22px] md:text-[40px]">Join the Vogue Community</p>
       <p className="text-[#878787] xs:text-[15px] md:text-[18px]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque <br /> tortor
         vitae leo faucibus, non fermentum nulla facilisis. Lorem ipsum dolor sit ame.

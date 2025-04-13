@@ -4,7 +4,7 @@ import searchIcon from 'media/svg/searchIcon.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { RxHamburgerMenu } from 'react-icons/rx';
-import { IoIosCloseCircleOutline } from 'react-icons/io';
+import Drawer from 'components/drawer/index';
 
 function SignupButton() {
   return (
@@ -40,7 +40,6 @@ const Header = async () => {
         ))}
       </div>
 
-      {/* Right Section (Languages, Search, Signup) */}
       <div className="flex items-center space-x-4">
         <div className="flex items-center space-x-2">
           <p>EN</p>
@@ -51,39 +50,7 @@ const Header = async () => {
         <SignupButton />
       </div>
 
-      {/* Mobile Menu Button */}
-      <input type="checkbox" id="menu-toggle" className="peer hidden" />
-      <label htmlFor="menu-toggle" className="cursor-pointer xs:mr-8 sm:mr-5 md:mr-0 lg:hidden">
-        <RxHamburgerMenu size={24} />
-      </label>
-
-      {/* Mobile Drawer with Backdrop */}
-      <div className="fixed inset-0 z-[40] hidden bg-black/50 peer-checked:block">
-        <div className="fixed left-0 top-0 z-[9990] h-full w-[250px] bg-gray-100 p-6 shadow-lg">
-          <label htmlFor="menu-toggle" className="absolute right-4 top-4 cursor-pointer">
-            <IoIosCloseCircleOutline size={30} color="red" />
-          </label>
-
-          {/* Mobile Menu Links */}
-          <div className="mt-10 flex flex-col space-y-4">
-            {menu?.map((item) => (
-              <Link
-                key={item?.path}
-                href={item?.path}
-                className="text-[18px] font-medium text-black"
-              >
-                {item?.title}
-              </Link>
-            ))}
-            <Link href="/signup" className="text-[16px] font-medium text-red-500">
-              Sign Up
-            </Link>
-          </div>
-        </div>
-
-        {/* Clickable Background to Close */}
-        <label htmlFor="menu-toggle" className="absolute inset-0" />
-      </div>
+      <Drawer menu={menu} />
     </nav>
   );
 };

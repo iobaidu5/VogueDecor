@@ -8,6 +8,7 @@ import DiscoverMore from './components/Discover';
 import Upgrade from './components/upgrade';
 import WhyChooseUs from './components/whyChooseUs';
 import { ProductProvider } from 'components/product/product-context';
+import CartModal from 'components/cart/modal';
 
 export default function MainPage() {
   return (
@@ -54,12 +55,16 @@ export default function MainPage() {
           <WhyChooseUs />
         </div>
       </main>
-      <div className="xs:p-[50px] lg:p-[100px]">
+      <div className="pb-20 xs:pt-[50px] lg:pt-[100px]">
         <Upgrade />
       </div>
 
       <div>
         <Community />
+      </div>
+
+      <div className="flex justify-end md:w-1/3">
+        <CartModal />
       </div>
     </>
   );

@@ -76,14 +76,11 @@ export default async function ProductPage(props) {
 
   return (
     <ProductProvider>
-      <div className="px-2 py-10 xs:py-14 md:px-10 lg:px-20">
-        <div className="flex flex-col gap-8 rounded-lg bg-white p-6 md:p-12 lg:flex-row lg:items-start">
-          {/* Left Section - Images */}
-          <div className="w-full lg:w-2/3">
+      <div className="mt-6 px-4 py-10 xs:py-14 md:mt-24 md:px-10 lg:px-40">
+        <div className="flex flex-col gap-4 rounded-lg bg-white lg:flex-row lg:items-start lg:gap-12">
+          <div className="w-full lg:w-6/12">
             <Suspense
-              fallback={
-                <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden" />
-              }
+              fallback={<div className="relative aspect-square h-full w-full overflow-hidden" />}
             >
               <Gallery
                 images={product?.images?.slice(0, 5)?.map((image) => ({
@@ -94,21 +91,21 @@ export default async function ProductPage(props) {
             </Suspense>
           </div>
 
-          {/* Right Section - Product Details */}
-          <div className="flex w-full flex-col items-start lg:w-1/3">
+          <div className="flex w-full flex-col items-start lg:w-6/12">
             <Suspense fallback={null}>
               <div className="mb-4 w-full pb-4">
                 <h1 className="font-medium xs:text-xl md:text-4xl">{product?.title}</h1>
-                <div className="mt-2 inline-block rounded-full px-4 py-2 text-lg text-gray-400">
+                <div className="mt-2 inline-block rounded-full text-lg text-gray-400">
                   <Price
                     amount={product?.priceRange.maxVariantPrice?.amount}
                     currencyCode={product?.priceRange?.maxVariantPrice?.currencyCode}
+                    // sale={"10"}
                   />
                 </div>
               </div>
 
               {/* Add to Cart & Quantity */}
-              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <div className="flex flex-wrap items-start gap-4">
                 <Quantity />
                 <AddToCart product={product} />
                 <div className="rounded-md bg-gray-200 p-2">
@@ -117,7 +114,7 @@ export default async function ProductPage(props) {
               </div>
 
               {/* Accordions */}
-              <div className="space-y-4 xs:mt-3 md:mt-6">
+              <div className="w-full space-y-4 xs:mt-4 md:mt-6">
                 <div className="border-y">
                   <Accordion
                     title="DESCRIPTION"

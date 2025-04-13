@@ -22,7 +22,7 @@ const Footer = () => {
       <div className="bg-black px-[20px] py-3 xs:mx-0 md:mx-[50px] lg:hidden">
         <StayUpdated />
       </div>
-      <div className="mx-0 flex h-[385px] flex-col bg-black text-white xs:px-[20px] xs:pt-[30px] sm:mx-0 md:mx-[50px] md:px-[50px] md:pt-[98px] lg:mx-[70px] lg:px-[60px] xl:px-[70px]">
+      <div className="flex h-[385px] flex-col bg-black text-white xs:px-[20px] xs:pt-[30px] md:px-[50px] md:pt-[98px] lg:px-[60px] xl:px-[70px]">
         <div className="flex xs:justify-start xs:space-x-2 md:justify-around md:space-x-0">
           <Logo />
           <FooterLinks links={furniture} />
@@ -44,7 +44,9 @@ const Footer = () => {
             <Link href="/terms" className="hover:underline">
               Terms and Conditions
             </Link>
-            <p className="hover:underline">Shipping and Return Policy</p>
+            <Link href="/shipping-return-policy" className="hover:underline">
+              Shipping and Return Policy
+            </Link>
           </div>
 
           {/* Right Section */}

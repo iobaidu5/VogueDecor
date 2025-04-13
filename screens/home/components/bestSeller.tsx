@@ -16,7 +16,7 @@ const BestSeller = async () => {
       </div>
       <ProductCard data={bestSellerItems} />
       <Link href="/products">
-        <div className="border-1 mx-auto mt-8 flex w-[200px] cursor-pointer justify-center rounded-full border border-solid bg-transparent px-4 py-2 font-medium">
+        <div className="border-1 mx-auto mt-8 flex w-[200px] cursor-pointer justify-center rounded-full border border-solid bg-transparent px-4 py-2 font-medium transition duration-150 ease-in-out hover:scale-105">
           <p>View</p>
         </div>
       </Link>

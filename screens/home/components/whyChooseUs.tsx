@@ -1,6 +1,7 @@
 import DeliveryIcon from 'media/svg/deliveryIcon.svg';
-import { default as AffordableIcon, default as ServiceIcon } from 'media/svg/serviceIcon.svg';
+import { default as ServiceIcon } from 'media/svg/serviceIcon.svg';
 import SupportIcon from 'media/svg/supportIcon.svg';
+import likeIcon from 'media/svg/like.svg';
 import Image from 'next/image';
 
 const WhyChooseUs = () => {
@@ -32,7 +33,7 @@ const data = [
     desc: 'Free shipping to Canada and US for all orders over $1999.'
   },
   {
-    icon: AffordableIcon,
+    icon: likeIcon,
     firstText: 'Buy From',
     secondText: 'Manufacturer',
     desc: 'Shop directly from the manufacturer for  best price and quality.'
@@ -50,7 +51,13 @@ const ChooseUsSection = () => {
     <div className="grid gap-2 pt-[104px] xs:grid-cols-1 md:grid-cols-4">
       {data?.map((item: any) => (
         <div className="col-span-1 flex flex-col items-center" key={item?.firstText}>
-          <Image src={item.icon} alt={item.firstText} />
+          {item?.secondText === 'Manufacturer' ? (
+            <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full bg-[#D9D9D94F]">
+              <Image src={item.icon} alt={item.firstText} />
+            </div>
+          ) : (
+            <Image src={item.icon} alt={item.firstText} />
+          )}
           <p className="pt-2 font-medium xs:text-[18px] sm:text-[22px] lg:text-[29px]">
             {item?.firstText}
           </p>

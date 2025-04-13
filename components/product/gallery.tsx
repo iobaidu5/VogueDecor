@@ -3,67 +3,54 @@
 import { GridTileImage } from 'components/grid/tile';
 import { useProduct, useUpdateURL } from 'components/product/product-context';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 export function Gallery({ images }: { images: { src: string; altText: string }[] }) {
   const { state, updateImage } = useProduct();
   const updateURL = useUpdateURL();
   const imageIndex = state.image ? parseInt(state.image) : 0;
 
-  const [magnifierStyle, setMagnifierStyle] = useState({});
-  const [isHovered, setIsHovered] = useState(false);
-  const imgRef = useRef<HTMLDivElement>(null);
+  const containerRef: any = useRef(null);
+  const imageRef: any = useRef(null);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!imgRef.current) return;
+  const handleMouseMove = (e: any) => {
+    const container = containerRef.current;
+    const image = imageRef.current;
 
-    const { left, top, width, height } = imgRef.current.getBoundingClientRect();
-    const x = ((e.clientX - left) / width) * 100;
-    const y = ((e.clientY - top) / height) * 100;
+    const rect = container.getBoundingClientRect();
 
-    setMagnifierStyle({
-      backgroundPosition: `${x}% ${y}%`,
-      opacity: 1,
-      visibility: 'visible'
-    });
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+    const percentX = (offsetX / rect.width) * 100;
+    const percentY = (offsetY / rect.height) * 100;
+
+    image.style.transformOrigin = `${percentX}% ${percentY}%`;
   };
 
   const handleMouseLeave = () => {
-    setMagnifierStyle({
-      opacity: 0,
-      visibility: 'hidden'
-    });
+    const image = imageRef.current;
+    image.style.transformOrigin = 'center center';
   };
 
   return (
     <form className="xs:mt-10 md:mt-0">
       <div
         className="relative aspect-square h-full max-h-[300px] w-full overflow-hidden border border-neutral-200 sm:max-h-[400px] md:max-h-[500px]"
-        ref={imgRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
+        ref={containerRef}
       >
         {images[imageIndex] && (
           <>
             <Image
-              className={`h-full w-full object-contain transition-opacity duration-200`}
+              ref={imageRef}
+              className={`h-full w-full cursor-zoom-in object-contain transition-transform duration-300 ease-in-out hover:scale-[2.5]`}
               fill
               sizes="(min-width: 1024px) 66vw, 100vw"
               alt={images[imageIndex]?.altText as string}
               src={images[imageIndex]?.src as string}
               priority={true}
             />
-
-            {/* Magnifier Effect - Adjust for small screens */}
-            <div
-              className="absolute inset-0 cursor-zoom-in bg-cover bg-no-repeat transition-opacity duration-200 ease-in-out"
-              style={{
-                ...magnifierStyle,
-                backgroundImage: `url(${images[imageIndex]?.src})`,
-                backgroundSize:
-                  typeof window !== 'undefined' && window.innerWidth < 768 ? '100%' : '70%' // Adjust zoom level for small screens
-              }}
-            ></div>
           </>
         )}
       </div>
