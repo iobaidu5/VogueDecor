@@ -63,7 +63,7 @@ type ProductCardProps = {
 const ProductCard: React.FC<ProductCardProps> = ({ data, isDiscover = false }) => {
   return (
     <>
-      <div className="grid grid-cols-1 gap-6 pt-[40px] sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-12 pt-[40px] sm:grid-cols-2 lg:grid-cols-3">
         {data?.slice(0, 6)?.map((item: any, index: any) => {
           const productForCart: ProductForCart = {
             ...item,
@@ -89,11 +89,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ data, isDiscover = false }) =
                 <Link
                   href={`product/${item.handle}`}
                   key={item.handle}
-                  className="relative flex flex-col bg-white shadow-md"
+                  className="relative flex flex-col"
                 >
                   {/* Add to Cart Button */}
                   {isDiscover ? (
-                    <button className="absolute right-8 top-3 h-8 w-28 rounded-full border border-black text-[12px] hover:bg-black hover:text-white">
+                    <button className="absolute right-8 top-3 z-50 h-8 w-28 rounded-full border border-black text-[12px] hover:bg-black hover:text-white">
                       View
                     </button>
                   ) : (
@@ -106,17 +106,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ data, isDiscover = false }) =
                       alt="heartIcon"
                       width={20}
                       height={20}
-                      className="absolute right-5 top-4"
+                      className="absolute right-5 top-4 z-50"
                     />
                   ) : null}
                   {/* Image Section */}
-                  <div className="flex items-center justify-center xs:h-[300px] md:h-[500px]">
-                    <Image
+                  <div className="flex h-[300px] items-center justify-center md:h-[460px]">
+                    <img
                       src={item.featuredImage?.url || chairImage}
                       alt={item.featuredImage?.altText || item?.title}
-                      width={300}
-                      height={400}
-                      className="h-full w-full object-contain"
+                      className="max-h-full object-contain"
                     />
                   </div>
 
@@ -138,7 +136,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ data, isDiscover = false }) =
             </div>
           );
         })}
-      </div></>
+      </div>
+    </>
   );
 };
 

@@ -22,13 +22,9 @@ import { GridTileImage } from 'components/grid/tile';
 import CartModal from 'components/cart/modal';
 import addtocartIcon from 'media/svg/addToCardIcon.svg';
 
-export async function generateMetadata({
-  params
-}: {
-  params: any;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   await Promise.resolve();
-  const handle = await params.handle
+  const handle = await params.handle;
   const product = await getProduct(handle);
 
   if (!product) return notFound();
@@ -62,8 +58,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductPage({ params }: { params: any; }) {
-  const handle = await params.handle
+export default async function ProductPage({ params }: { params: any }) {
+  const handle = await params.handle;
   const product = await getProduct(handle);
   if (!product) return notFound();
 
@@ -195,7 +191,7 @@ async function RelatedPRoducts({ id }: { id: string }) {
             >
               <div className="relative flex w-full cursor-pointer flex-col overflow-hidden bg-white">
                 {/* Image Section */}
-                <div className="relative h-[450px] w-full bg-[#E8E8E8]">
+                <div className="relative h-[450px] w-full">
                   {/* Primary Image */}
                   <Image
                     src={data?.featuredImage?.url ? data?.featuredImage?.url : data?.images[0]?.url}

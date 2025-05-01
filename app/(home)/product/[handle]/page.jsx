@@ -20,6 +20,7 @@ import parse from 'html-react-parser';
 import { GridTileImage } from 'components/grid/tile';
 import CartModal from 'components/cart/modal';
 import Slider from 'components/slider';
+import { AddToWishlist } from 'components/add-to-wishlist';
 
 export async function generateMetadata(props) {
   const params = await props.params;
@@ -62,12 +63,18 @@ export default async function ProductPage(props) {
   const product = await getProduct(handle);
   if (!product) return notFound();
 
+  console.log("pp pp pp ", product)
+
   const extractFeatures = (htmlString) => {
-    const parts = htmlString.split(
-      '<span style="color: #333333;"><strong>Features:</strong></span>'
-    );
-    return parts?.length > 1 ? parts[1] : '';
+    const marker = '<strong>Features:</strong>';
+    const index = htmlString.indexOf(marker);
+    if (index === -1) return ''; // Features section not found
+  
+    return htmlString.slice(index);
   };
+  
+  
+  
 
   function extractBeforeFeatures(text) {
     const splitText = text?.split('Features:');
@@ -78,7 +85,7 @@ export default async function ProductPage(props) {
     <ProductProvider>
       <div className="mt-6 px-4 py-10 xs:py-14 md:mt-24 md:px-10 lg:px-40">
         <div className="flex flex-col gap-4 rounded-lg bg-white lg:flex-row lg:items-start lg:gap-12">
-          <div className="w-full lg:w-6/12">
+          <div className="w-full lg:w-8/12">
             <Suspense
               fallback={<div className="relative aspect-square h-full w-full overflow-hidden" />}
             >
@@ -91,43 +98,48 @@ export default async function ProductPage(props) {
             </Suspense>
           </div>
 
-          <div className="flex w-full flex-col items-start lg:w-6/12">
+          <div className="flex w-full flex-col items-start lg:w-4/12">
             <Suspense fallback={null}>
               <div className="mb-4 w-full pb-4">
                 <h1 className="font-medium xs:text-xl md:text-4xl">{product?.title}</h1>
+                <h5 className="font-normal xs:text-[15px] md:text-[15px] text-[#818181]">#{product?.variants[0]?.sku}</h5>
                 <div className="mt-2 inline-block rounded-full text-lg text-gray-400">
                   <Price
                     amount={product?.priceRange.maxVariantPrice?.amount}
                     currencyCode={product?.priceRange?.maxVariantPrice?.currencyCode}
-                    // sale={"10"}
+                    className='text-3xl font-small md:text-4xl mt-5 text-[#000]'
+                    sale={"100.00"}
                   />
                 </div>
               </div>
 
               {/* Add to Cart & Quantity */}
-              <div className="flex flex-wrap items-start gap-4">
+              <div className="flex flex-col flex-wrap items-start gap-4">
                 <Quantity />
+                <div className="flex flex-wrap items-start gap-4">
                 <AddToCart product={product} />
-                <div className="rounded-md bg-gray-200 p-2">
+                <AddToWishlist product={product} />
+                {/* <div className="rounded-md bg-gray-200 p-2">
                   <BsHeart size={24} />
+                </div> */}
                 </div>
               </div>
 
               {/* Accordions */}
-              <div className="w-full space-y-4 xs:mt-4 md:mt-6">
-                <div className="border-y">
+              <div className="w-full space-y-4 xs:mt-4 md:mt-8">
+                <div className="border-b border-black/80">
                   <Accordion
                     title="DESCRIPTION"
                     content={extractBeforeFeatures(product?.description)}
                   />
                 </div>
-                <div className="border-b">
+                <div className="border-b border-black/80">
                   <Accordion
                     title="DETAILS"
-                    content={parse(extractFeatures(product?.descriptionHtml || ''))}
+                    content={parse(extractFeatures(product?.descriptionHtml))}
                   />
                 </div>
-                <div className="border-b">
+                <div className="border-b border-black/80">
                   <Accordion
                     title="AVAILABILITY"
                     content={product?.availableForSale ? 'In-Stock' : 'Out of Stock'}

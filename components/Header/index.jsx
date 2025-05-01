@@ -33,12 +33,14 @@ const Header = async () => {
             key={item?.path}
             href={item?.path}
             prefetch={true}
-            className="cursor-pointer text-[14px] capitalize text-black hover:scale-110"
+            className={`cursor-pointer text-[14px] font-medium capitalize hover:scale-110 ${item?.title === "Sale" ? "text-red-500" : "text-black"
+              }`}
           >
             {item?.title}
           </Link>
         ))}
       </div>
+
 
       <div className="flex items-center space-x-4">
         <div className="flex items-center space-x-2">

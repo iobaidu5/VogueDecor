@@ -19,10 +19,13 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
     setIsOpen((prev) => !prev);
   };
 
+  const contentColorClass =
+  content === 'In-Stock' ? 'text-green-600' : content === 'Out of Stock' ? 'text-red-600' : 'text-[#818181]';
+
   return (
     <div className="overflow-hidden rounded-lg last:mb-0 xs:mb-2 md:mb-4">
       <button
-        className="flex w-full cursor-pointer items-center justify-between border-none bg-white py-3"
+        className="flex w-full cursor-pointer items-center justify-between border-none bg-white py-1.5"
         onClick={toggleAccordion}
       >
         <h5 className="font-normal xs:text-[13px] md:text-[15px]">{title}</h5>
@@ -34,7 +37,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         animate={{ height: isOpen ? 'auto' : 0 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="py-3 text-[#818181]">{content}</div>
+        <div className={`py-3 ${contentColorClass}`}>{content}</div>
       </motion.div>
     </div>
   );

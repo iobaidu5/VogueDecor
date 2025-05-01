@@ -20,3 +20,7 @@ body {
   z-index: 100000 !important;
   display: block;
 }
+
+.image-bg{
+  background-color: #F1F1F1 !important;
+}

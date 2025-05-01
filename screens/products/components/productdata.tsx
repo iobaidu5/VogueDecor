@@ -119,7 +119,7 @@ export default function ProductPage() {
               </div>
             ) : (
               <>
-                <div className="grid grid-cols-1 gap-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
                   {currentProducts.map((product) => (
                     <ProductCard key={product.id} data={product} />
                   ))}

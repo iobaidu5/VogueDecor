@@ -71,9 +71,9 @@ const Slider = ({ data }: { data: Array<Record<string, any>> }) => {
                   href={`/product/${item.handle}`}
                   prefetch={true}
                 >
-                  <div className="relative flex w-full cursor-pointer flex-col overflow-hidden bg-white">
+                  <div className="relative flex w-full cursor-pointer flex-col overflow-hidden">
                     {/* Image Section */}
-                    <div className="relative w-full bg-[#E8E8E8] xs:h-[300px] md:h-[500px]">
+                    <div className="relative w-full xs:h-[300px] md:h-[500px]">
                       <Image
                         src={
                           item?.featuredImage?.url ? item.featuredImage.url : item?.images[0]?.url

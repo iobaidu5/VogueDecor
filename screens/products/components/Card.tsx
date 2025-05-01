@@ -10,18 +10,14 @@ const ProductCard = ({ data }: any) => {
   const [isHover, setIsHover] = useState(false);
 
   return (
-    <Link
-      href={`product/${data.handle}`}
-      key={data.handle}
-      className="relative flex flex-col bg-white shadow-md"
-    >
+    <Link href={`product/${data.handle}`} key={data.handle} className="relative flex flex-col">
       <div
-        className="relative flex w-full cursor-pointer flex-col overflow-hidden bg-white"
+        className="relative flex w-full cursor-pointer flex-col overflow-hidden"
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >
         {/* Image Section */}
-        <div className="relative w-full bg-[#E8E8E8] xs:h-[400px] md:h-[600px]">
+        <div className="relative h-[400px] w-full md:h-[600px]">
           {/* Primary Image */}
           <Image
             src={data?.images[0]?.url}
