@@ -6,11 +6,12 @@ import { getCart } from 'lib/shopify'
 import { ReactNode } from 'react'
 import './globals.css'
 
-export const poppins = Poppins({
+// ✅ Just declare poppins – do NOT export it
+const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-poppins',    // ← add this
+  variable: '--font-poppins',
 })
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
@@ -18,7 +19,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const cart = getCart(cartId)
 
   return (
-    <html lang="en" className={poppins.variable}>  {/* ← use .variable */}
+    <html lang="en" className={poppins.variable}>
       <body>
         <CartProvider cartPromise={cart}>
           <main>{children}</main>
