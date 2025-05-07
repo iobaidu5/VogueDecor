@@ -1,5 +1,6 @@
 import ForwardLink from 'components/forwardlink/forwardLink';
 import mainImage from 'media/png/mainImage.png';
+import hero from 'media/png/hero.png';
 import mainText from 'media/png/mainText.png';
 import Image from 'next/image';
 import BestSeller from './components/bestSeller';
@@ -18,7 +19,7 @@ export default function MainPage() {
         <div className="relative h-full w-full">
           <div className="relative h-full w-full">
             <Image
-              src={mainImage}
+              src={hero}
               alt="Background Image"
               layout="fill"
               objectFit="cover"

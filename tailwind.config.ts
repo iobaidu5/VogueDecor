@@ -11,6 +11,10 @@ const config: Config = {
       screens: {
         xs: '100px',
       },
+      fontFamily: {
+        sans: ['var(--font-poppins)', 'sans-serif'],  // ← use your CSS var
+        poppins: ['Poppins', 'sans-serif'],
+      },
     }
   },
   plugins: []

@@ -26,6 +26,12 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
     }
   };
 
+  const handlePageChange = (page: any) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
   return (
     <div>
       <div className="my-[30px] grid grid-cols-1 justify-center gap-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -33,9 +39,9 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      
+
       {/* Pagination Controls */}
-      <div className="flex justify-center items-center space-x-4 mt-4">
+      {/* <div className="flex justify-center items-center space-x-4 mt-4">
         <button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
@@ -55,7 +61,27 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
         >
           Next
         </button>
+      </div> */}
+
+      <div className="flex justify-center items-center space-x-2 mt-4">
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+          <button
+            key={page}
+            onClick={() => handlePageChange(page)}
+            className={`
+        px-4 py-2 rounded-md font-semibold
+        ${currentPage === page
+                ? 'bg-blue-500 text-white cursor-default'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }
+      `}
+            disabled={currentPage === page}
+          >
+            {page}
+          </button>
+        ))}
       </div>
+
       <div className="flex justify-end md:w-1/3">
         <CartModal />
       </div>

@@ -44,9 +44,9 @@ function SubmitWishlistButton({
       aria-label="Add to wishlist"
       className="text-md flex items-center justify-center bg-white px-10 py-[8px] text-black border border-black"
     >
-      <div className="absolute left-0 ml-4">
+      {/* <div className="absolute left-0 ml-4">
         <HeartIcon className="h-5" />
-      </div>
+      </div> */}
       Add To Wishlist
     </button>
   );

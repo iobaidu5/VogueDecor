@@ -23,13 +23,13 @@ export default async function CategoryPage(props) {
 
   return (
     <>
-      <section className="">
+      <section className="container mx-auto w-100">
         {products.length === 0 ? (
           <p className="py-3 text-center text-lg">No products found in this collection</p>
         ) : (
           <>
             {paramsData?.collection ? <BreadCrumb currentPage={paramsData?.collection} /> : null}
-            <div className="flex items-start justify-between py-3">
+            <div className="flex items-start justify-between pt-5 mt-2">
               <div className="flex flex-col space-y-1">
                 <p className="text-[23px] font-medium uppercase text-gray-700">
                   {paramsData?.collection}
@@ -40,7 +40,7 @@ export default async function CategoryPage(props) {
               </div>
             </div>
 
-            <div>
+            <div className=''>
               <ProductGridItems products={products} />
             </div>
           </>

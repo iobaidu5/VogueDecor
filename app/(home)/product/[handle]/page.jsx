@@ -44,15 +44,15 @@ export async function generateMetadata(props) {
     },
     openGraph: url
       ? {
-          images: [
-            {
-              url,
-              width,
-              height,
-              alt
-            }
-          ]
-        }
+        images: [
+          {
+            url,
+            width,
+            height,
+            alt
+          }
+        ]
+      }
       : null
   };
 }
@@ -68,13 +68,20 @@ export default async function ProductPage(props) {
   const extractFeatures = (htmlString) => {
     const marker = '<strong>Features:</strong>';
     const index = htmlString.indexOf(marker);
-    if (index === -1) return ''; // Features section not found
-  
-    return htmlString.slice(index);
+    if (index === -1) return '';
+
+    let sliced = htmlString.slice(index);
+
+    // Add <br> after the first "Features:" only
+    sliced = sliced.replace(marker, `${marker}`);
+
+    // Add <br> before all subsequent <strong> tags (except the first one)
+    sliced = sliced.replace(/(<strong>(?!Features:))/g, '<br>$1');
+
+    return sliced;
   };
-  
-  
-  
+
+
 
   function extractBeforeFeatures(text) {
     const splitText = text?.split('Features:');
@@ -101,14 +108,15 @@ export default async function ProductPage(props) {
           <div className="flex w-full flex-col items-start lg:w-4/12">
             <Suspense fallback={null}>
               <div className="mb-4 w-full pb-4">
-                <h1 className="font-medium xs:text-xl md:text-4xl">{product?.title}</h1>
+                <h1 className="font-medium xs:text-xl md:text-4xl whitespace-nowrap overflow-hidden">{product?.title}</h1>
                 <h5 className="font-normal xs:text-[15px] md:text-[15px] text-[#818181]">#{product?.variants[0]?.sku}</h5>
                 <div className="mt-2 inline-block rounded-full text-lg text-gray-400">
                   <Price
                     amount={product?.priceRange.maxVariantPrice?.amount}
                     currencyCode={product?.priceRange?.maxVariantPrice?.currencyCode}
-                    className='text-3xl font-small md:text-4xl mt-5 text-[#000]'
-                    sale={"100.00"}
+                    className='text-2xl font-small md:text-3xl mt-5 text-[#000] whitespace-nowrap overflow-hidden flex items-center gap-2'
+                    sale={product?.variants[0]?.compareAtPrice?.amount}
+                    saleCurreny={product?.variants[0]?.compareAtPrice?.currencyCode}
                   />
                 </div>
               </div>
@@ -116,13 +124,11 @@ export default async function ProductPage(props) {
               {/* Add to Cart & Quantity */}
               <div className="flex flex-col flex-wrap items-start gap-4">
                 <Quantity />
-                <div className="flex flex-wrap items-start gap-4">
-                <AddToCart product={product} />
-                <AddToWishlist product={product} />
-                {/* <div className="rounded-md bg-gray-200 p-2">
-                  <BsHeart size={24} />
-                </div> */}
+                <div className="flex flex-nowrap xs:flex-wrap items-start gap-4">
+                  <AddToCart product={product} />
+                  <AddToWishlist product={product} />
                 </div>
+
               </div>
 
               {/* Accordions */}

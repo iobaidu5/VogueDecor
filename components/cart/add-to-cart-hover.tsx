@@ -17,7 +17,7 @@ function SubmitButton({
   selectedVariantId: string | undefined;
 }) {
   const buttonClasses =
-    'h-9 w-32 rounded-full text-[15px] font-medium capitalize text-black shadow-lg transition-all duration-700 ease-in-out';
+    'w-full rounded-full text-[15px] font-medium capitalize text-black shadow-lg transition-all duration-700 ease-in-out';
   const disabledClasses = 'bg-red cursor-not-allowed bg-red-400 text-white';
 
   if (!availableForSale) {
@@ -45,16 +45,14 @@ function SubmitButton({
   }
 
   return (
-    <button
-      aria-label="Add to cart"
-      className="h-9 w-32 rounded-full bg-white text-[15px] font-medium capitalize text-black shadow-lg transition-all duration-700 ease-in-out hover:bg-orange-400 hover:text-white"
-    >
-      Add To Cart
+
+    <button aria-label="Add to cart" className="w-full rounded-md bg-gray-200 py-3 text-sm font-semibold uppercase text-black transition-colors duration-300 hover:bg-orange-400 hover:text-white">
+      Add to Cart
     </button>
   );
 }
 
-export function AddToCartHover({ product}: { product: Product }) {
+export function AddToCartHover({ product }: { product: Product }) {
   const { variants, availableForSale } = product;
 
   const { addCartItem } = useCart();
@@ -73,10 +71,12 @@ export function AddToCartHover({ product}: { product: Product }) {
 
   return (
     <form
+    onClick={(e) => e.stopPropagation()}
       action={async () => {
         addCartItem(finalVariant, product);
         await actionWithVariant();
       }}
+      className='w-full'
     >
       <SubmitButton availableForSale={availableForSale} selectedVariantId={selectedVariantId} />
       <p aria-live="polite" className="sr-only" role="status">

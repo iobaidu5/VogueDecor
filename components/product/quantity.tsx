@@ -4,7 +4,7 @@ import { useState } from 'react';
 const Quantity = () => {
   const [quantity, setQuantity] = useState(1);
   return (
-    <div className="flex w-[44%] items-center justify-center border border-gray-300">
+    <div className="flex items-center justify-center border border-gray-300">
       <button
         className="flex h-10 w-10 items-center justify-center text-xl text-gray-500"
         onClick={() => {
