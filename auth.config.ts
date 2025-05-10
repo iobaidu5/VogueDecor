@@ -1,14 +1,15 @@
-// auth.config.ts
 import GoogleProvider from "next-auth/providers/google";
 import { NextResponse } from "next/server";
+import type { Provider } from "next-auth/providers";
 
-const authConfig = {
+
+export const authConfig = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
-  ],
+  ] as Provider[],
   callbacks: {
     authorized({ request, auth }: any) {
       const protectedPaths = [
@@ -42,5 +43,3 @@ const authConfig = {
     },
   },
 } as const;
-
-export default authConfig;
