@@ -26,7 +26,7 @@
     "html-react-parser": "^5.2.2",
     "lucide-react": "^0.509.0",
     "next": "15.0.4",
-    "next-auth": "^5.0.0-beta.27",
+    "next-auth": "5.0.0-beta.28",
     "node-html-parser": "^7.0.1",
     "prisma": "^6.7.0",
     "react": "19.0.0",
