@@ -49,7 +49,7 @@ export function ProductCard({ product }: { product: any }) {
             </div>
             {/* Add to Cart Snackbar Button */}
             <div
-              className={`absolute bottom-0 left-0 z-10 w-full transform transition-all duration-500 ease-in-out ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+              className={`absolute bottom-9 left-0 z-10 w-full transform transition-all duration-500 ease-in-out ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 } flex items-center justify-center px-0`}
             >
               <AddToCartHover product={product} />
@@ -58,13 +58,11 @@ export function ProductCard({ product }: { product: any }) {
 
 
           {/* Spacer to make room for snackbar */}
-          <div className="relative flex flex-col items-center bg-white pb-[60px] pt-2">
-            {/* leave pb-[60px] to avoid overlapping */}
-          </div>
+
         </div>
 
         {/* Product Info */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 -mt-4">
           <p className="w-full flex-1 break-words font-medium text-black xs:text-[14px] md:text-[17px]">
             {product.title}
           </p>

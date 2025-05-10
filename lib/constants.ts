@@ -29,3 +29,25 @@ export const TAGS = {
 export const HIDDEN_PRODUCT_TAG = 'nextjs-frontend-hidden';
 export const DEFAULT_OPTION = 'Default Title';
 export const SHOPIFY_GRAPHQL_API_ENDPOINT = '/api/2023-01/graphql.json';
+export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Vogue Decor';
+
+export const PAYMENT_METHODS = process.env.PAYMENT_METHODS
+  ? process.env.PAYMENT_METHODS.split(', ')
+  : ['PayPal', 'Stripe', 'CashOnDelivery'];
+export const DEFAULT_PAYMENT_METHOD =
+  process.env.DEFAULT_PAYMENT_METHOD || 'PayPal';
+
+  export const PAGE_SIZE = Number(process.env.PAGE_SIZE) || 12;
+
+  export const signInDefaultValues = {
+    email: 'obaid@voguedecor.com',
+    password: '123456',
+  };
+
+  export const signUpDefaultValues = {
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  };
+  

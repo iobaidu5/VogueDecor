@@ -14,7 +14,7 @@ const furniture: object = [
   'Booth'
 ];
 const quikLinks: object = ['Quick Links', 'Home', 'About', 'Products'];
-const locations: object = ['Locations', 'Montreal'];
+const locations: object = ['Locations', 'Montreal', 'Toronto'];
 
 const Footer = () => {
   return (

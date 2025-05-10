@@ -1,4 +1,15 @@
-export default {
+// next.config.ts
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  webpack: (config) => {
+    config.externals.push({
+      '@neondatabase/serverless': 'commonjs @neondatabase/serverless',
+      'ws': 'commonjs ws'
+    });
+    return config;
+  },
+  // Keep your existing image config
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -10,3 +21,5 @@ export default {
     ]
   }
 };
+
+export default nextConfig;
