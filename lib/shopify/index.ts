@@ -60,6 +60,8 @@ const endpoint = `${domain}${SHOPIFY_GRAPHQL_API_ENDPOINT}`;
 
 const key = process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN;
 
+export type SortSlug = 'az' | 'za' | 'availability' | 'price-asc' | 'price-desc'
+
 type ExtractVariables<T> = T extends { variables: object }
   ? T["variables"]
   : never;

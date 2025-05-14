@@ -18,9 +18,10 @@ function SubmitWishlistButton({
 
   if (!availableForSale) {
     return (
-      <button disabled className={clsx(buttonClasses, disabledClasses)}>
-        Out Of Stock
-      </button>
+      <></>
+      // <button disabled className={clsx(buttonClasses, disabledClasses)}>
+      //   Out Of Stock
+      // </button>
     );
   }
 

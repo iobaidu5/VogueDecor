@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import Drawer from 'components/drawer/index';
+import CurrencySwitcher from 'components/currency/CurrencySwitcher';
+import UserMenu from 'components/UserMenu';
 
 function SignupButton() {
   return (
@@ -16,6 +18,9 @@ function SignupButton() {
     </Link>
   );
 }
+
+
+
 
 const Header = async () => {
   const menu = await getMenu('main-menu');
@@ -49,7 +54,8 @@ const Header = async () => {
         alt="search"
         className="hidden h-5 w-5 cursor-pointer md:block"
       />
-      <SignupButton />
+      <UserMenu />
+      <CurrencySwitcher />
     </div>
   </div>
 
@@ -61,7 +67,7 @@ const Header = async () => {
         href={item.path}
         prefetch={true}
         className={`
-          cursor-pointer text-[14px] font-medium capitalize hover:scale-110
+          cursor-pointer text-[14px] font-small capitalize hover:scale-110
           ${item.title === "Sale" ? "text-red-500" : "text-black"}
         `}
       >

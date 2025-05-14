@@ -46,7 +46,7 @@ function SubmitButton({
 
   return (
 
-    <button aria-label="Add to cart" className="w-full rounded-md bg-gray-200 py-3 text-sm font-semibold uppercase text-black transition-colors duration-300 hover:bg-orange-400 hover:text-white">
+    <button aria-label="Add to cart" className="w-full rounded-md bg-gray-200 py-3 text-sm font-semibold uppercase text-black transition-colors duration-300 hover:bg-black hover:text-white">
       Add to Cart
     </button>
   );

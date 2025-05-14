@@ -5,6 +5,7 @@ import { cookies } from 'next/headers'
 import { getCart } from 'lib/shopify'
 import { ReactNode } from 'react'
 import './globals.css'
+import { CurrencyProvider } from 'components/currency/currencyContext'
 
 // ✅ Just declare poppins – do NOT export it
 const poppins = Poppins({
@@ -22,7 +23,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang="en" className={poppins.variable}>
       <body>
         <CartProvider cartPromise={cart}>
-          <main>{children}</main>
+          <CurrencyProvider>
+            <main>{children}</main>
+          </CurrencyProvider>
         </CartProvider>
       </body>
     </html>

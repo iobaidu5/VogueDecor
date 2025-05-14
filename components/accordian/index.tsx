@@ -28,7 +28,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         className="flex w-full cursor-pointer items-center justify-between border-none bg-white py-1.5"
         onClick={toggleAccordion}
       >
-        <h5 className="font-poppins xs:text-[13px] md:text-[15px]">{title}</h5>
+        <h5 className="font-poppins xs:text-[13px] md:text-[15px] font-medium">{title}</h5>
         <Image src={isOpen ? Up : Down} alt="icons" width={20} height={20} />
       </button>
       <motion.div
@@ -37,7 +37,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         animate={{ height: isOpen ? 'auto' : 0 }}
         transition={{ duration: 0.3 }}
       >
-        <div className={`py-3 ${contentColorClass} font-poppins`}>{content}</div>
+        <div className={`py-3 ${contentColorClass} font-poppins xs:text-[13px] md:text-[15px]`}>{content}</div>
       </motion.div>
     </div>
   );

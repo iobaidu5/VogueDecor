@@ -15,7 +15,7 @@ export function ProductCard({ product }: { product: any }) {
     <ProductProvider>
       <div className="relative inline-block h-full w-full">
         <div
-          className="relative flex w-full flex-col overflow-hidden xs:h-[450px] lg:h-[570px] group"
+          className="relative flex w-full flex-col overflow-hidden xs:h-[450px] lg:h-[550px] group"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -49,17 +49,11 @@ export function ProductCard({ product }: { product: any }) {
             </div>
             {/* Add to Cart Snackbar Button */}
             <div
-              className={`absolute bottom-0 left-0 z-10 w-full transform transition-all duration-500 ease-in-out ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                } flex items-center justify-center px-0`}
+              className={`absolute bottom-0 left-0 right-0 z-10 w-[98%] mx-auto transform transition-all duration-500 ease-in-out ${isHovered ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
+                } flex items-center justify-center px-0 `}
             >
               <AddToCartHover product={product} />
             </div>
-          </div>
-
-
-          {/* Spacer to make room for snackbar */}
-          <div className="relative flex flex-col items-center bg-white pb-[60px] pt-2">
-            {/* leave pb-[60px] to avoid overlapping */}
           </div>
         </div>
 

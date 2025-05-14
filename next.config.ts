@@ -1,6 +1,7 @@
 export default {
   images: {
     formats: ['image/avif', 'image/webp'],
+    domains: ['i.pravatar.cc'],
     remotePatterns: [
       {
         protocol: 'https',

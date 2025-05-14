@@ -24,3 +24,9 @@ body {
 .image-bg{
   background-color: #F1F1F1 !important;
 }
+
+@media (width >= 100px) {
+  .container {
+      max-width: 100% !important;
+  }
+}
