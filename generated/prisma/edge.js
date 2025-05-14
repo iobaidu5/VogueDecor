@@ -256,7 +256,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/ahmedhassan/Desktop/VougeDecor/decor-commerse/generated/prisma",
+      "value": "/Users/ahmedhassan/Desktop/VougeDecor/VogueDecorBuild/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -270,7 +270,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/ahmedhassan/Desktop/VougeDecor/decor-commerse/prisma/schema.prisma",
+    "sourceFilePath": "/Users/ahmedhassan/Desktop/VougeDecor/VogueDecorBuild/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
