@@ -7,7 +7,7 @@ import { ReactNode } from 'react'
 import './globals.css'
 import { CurrencyProvider } from 'components/currency/currencyContext'
 
-// ✅ Just declare poppins – do NOT export it
+
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
