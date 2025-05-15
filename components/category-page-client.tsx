@@ -5,8 +5,14 @@ import ProductGridItems from 'components/layout/product-grid-items';
 import { getCollectionProducts } from 'lib/shopify';
 import BreadCrumb from 'components/breadCrum/index';
 import FilterDropdown from 'components/filter-dropdown';
+import { Collection } from 'lib/shopify/types';
 
-export default function CategoryPageClient({ collection }) {
+
+type CategoryPageClientProps = {
+  collection: Collection;
+};
+
+export default function CategoryPageClient({ collection }: CategoryPageClientProps) {
   const [allProducts, setAllProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,7 +21,7 @@ export default function CategoryPageClient({ collection }) {
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      const fetched = await getCollectionProducts({ collection });
+      const fetched = await getCollectionProducts({ collection }: { collection: any });
       setAllProducts(fetched);
       setProducts(fetched);
       setLoading(false);
