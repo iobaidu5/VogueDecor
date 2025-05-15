@@ -277,7 +277,7 @@ export async function getCollectionProducts({
   reverse,
   sortKey,
 }: {
-  collection: string;
+  collection: any;
   reverse?: boolean;
   sortKey?: string;
 }): Promise<Product[]> {

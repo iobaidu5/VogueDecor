@@ -9,7 +9,7 @@ import FilterDropdown from 'components/filter-dropdown';
 import type { Collection, Product } from 'lib/shopify/types';
 
 type CategoryPageClientProps = {
-  collection: Collection | string;
+  collection: any;
 };
 
 
