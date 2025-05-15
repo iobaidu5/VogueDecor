@@ -9,7 +9,7 @@ import FilterDropdown from 'components/filter-dropdown';
 import type { Collection, Product } from 'lib/shopify/types';
 
 type CategoryPageClientProps = {
-  collection: Collection;
+  collection: Collection | string;
 };
 
 
@@ -22,7 +22,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      const fetched = await getCollectionProducts({ collection: collection.handle });
+      const fetched = await getCollectionProducts({ collection });
       setAllProducts(fetched);
       setProducts(fetched);
       setLoading(false);
