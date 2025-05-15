@@ -1,6 +1,12 @@
 "use client";
 
-export default function FilterDropdown({ selected, onFilter }) {
+type FilterDropdownProps = {
+  selected: string;
+  onFilter: (value: string) => void;
+};
+
+export default function FilterDropdown({ selected, onFilter }: FilterDropdownProps) {
+
   return (
     <div className="relative inline-block">
       <select
