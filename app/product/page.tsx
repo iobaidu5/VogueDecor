@@ -21,6 +21,7 @@ import parse from 'html-react-parser';
 import { GridTileImage } from 'components/grid/tile';
 import CartModal from 'components/cart/modal';
 import addtocartIcon from 'media/svg/addToCardIcon.svg';
+import { useCurrency } from 'components/currency/currencyContext';
 
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   await Promise.resolve();
@@ -62,6 +63,13 @@ export default async function ProductPage({ params }: { params: any }) {
   const handle = await params.handle;
   const product = await getProduct(handle);
   if (!product) return notFound();
+
+  // const { currency, rate } = useCurrency();
+
+  // const numericAmount = parseFloat(product?.priceRange?.maxVariantPrice?.amount) * rate;
+  // const numericSale = product?.variants[0]?.compareAtPrice?.amount ? parseFloat(product?.variants[0]?.compareAtPrice?.amount) * rate : 0;
+
+
 
   const extractFeatures = (htmlString: any) => {
     const parts = htmlString.split(

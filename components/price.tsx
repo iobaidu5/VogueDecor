@@ -32,7 +32,7 @@ const Price = ({
         <span className={clsx('ml-1 inline', currencyCodeClassName)}>{currency}</span>
       </span>
       {sale ? (
-        <span className="ml-2 font-bold text-red-700">
+        <span className="ml-2 font-medium text-red-700">
           {`${numericSale.toFixed(2)} ${currency}`}
         </span>
       ) : null}

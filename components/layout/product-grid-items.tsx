@@ -71,7 +71,7 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
             className={`
         px-4 py-2 rounded-md font-semibold
         ${currentPage === page
-                ? 'bg-blue-500 text-white cursor-default'
+                ? 'bg-black text-white cursor-default'
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }
       `}

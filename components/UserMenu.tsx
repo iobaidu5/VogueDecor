@@ -27,7 +27,7 @@ export default function UserMenu() {
       {mockUser.isLoggedIn ? (
         <button
           onClick={toggleDropdown}
-          className="flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 hover:bg-gray-200 transition"
+          className="flex items-center gap-2 rounded-full px-3 py-1 hover:bg-gray-200 transition"
         >
           <Image
             src={mockUser.image}
@@ -40,7 +40,7 @@ export default function UserMenu() {
         </button>
       ) : (
         <Link href="/login">
-          <button className="rounded-full bg-gray-100 p-2 hover:bg-gray-200 transition">
+          <button className="rounded-full p-2 hover:bg-gray-200 transition">
             <User size={20} />
           </button>
         </Link>

@@ -15,7 +15,7 @@ body {
 
 .cart-icon{
   position: absolute;
-  top: 20px;
+  top: 10px;
   right: 10px;
   z-index: 100000 !important;
   display: block;

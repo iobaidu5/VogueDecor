@@ -6,10 +6,30 @@ import { useRouter } from 'next/navigation';
 import { AddToCartSimple } from 'components/cart/add-to-cart-simple';
 import { ProductProvider } from 'components/product/product-context';
 import { AddToCartHover } from 'components/cart/add-to-cart-hover';
+import { useCurrency } from 'components/currency/currencyContext';
 
 export function ProductCard({ product }: { product: any }) {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
+  const { currency, rate } = useCurrency();
+
+  const numericAmount = parseFloat(product?.priceRange?.maxVariantPrice?.amount) * rate;
+  const numericSale = product?.variants[0]?.compareAtPrice?.amount ? parseFloat(product?.variants[0]?.compareAtPrice?.amount) * rate : 0;
+
+
+  const formattedPrice = new Intl.NumberFormat(undefined, {
+    style: 'currency',
+    currency: currency,
+    currencyDisplay: 'narrowSymbol'
+  }).format(numericSale);
+
+
+  const formattedSalePrice = new Intl.NumberFormat(undefined, {
+    style: 'currency',
+    currency: currency,
+    currencyDisplay: 'narrowSymbol'
+  }).format(numericAmount);
+
 
   return (
     <ProductProvider>
@@ -58,13 +78,24 @@ export function ProductCard({ product }: { product: any }) {
         </div>
 
         {/* Product Info */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 mt-2 ml-2">
           <p className="w-full flex-1 break-words font-medium text-black xs:text-[14px] md:text-[17px]">
             {product.title}
           </p>
-          <p className="w-full max-w-[80px] text-[17px] font-medium text-[#878787]">
-            {product?.priceRange?.maxVariantPrice?.amount || ''}
+          <div className="flex items-center space-x-2">
+          <p
+            className={`max-w-[80px] text-[17px] font-medium text-[#878787] ${formattedSalePrice && formattedSalePrice !== '$0.00' ? 'line-through' : ''
+              }`}
+          >
+            {formattedPrice || ''}
           </p>
+          {formattedSalePrice && formattedSalePrice !== '$0.00' && (
+            <p className="max-w-[80px] text-[17px] font-medium text-red-700">
+              {formattedSalePrice}
+            </p>
+          )}
+        </div>
+
         </div>
       </div>
 

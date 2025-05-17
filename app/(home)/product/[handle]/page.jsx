@@ -63,8 +63,6 @@ export default async function ProductPage(props) {
   const product = await getProduct(handle);
   if (!product) return notFound();
 
-  console.log("pp pp pp ", product)
-
   const extractFeatures = (htmlString) => {
     const marker = '<strong>Features:</strong>';
     const index = htmlString.indexOf(marker);
@@ -80,8 +78,6 @@ export default async function ProductPage(props) {
 
     return sliced;
   };
-
-
 
   function extractBeforeFeatures(text) {
     const splitText = text?.split('Features:');
@@ -108,14 +104,17 @@ export default async function ProductPage(props) {
           <div className="flex w-full flex-col items-start lg:w-4/12">
             <Suspense fallback={null}>
               <div className="mb-4 w-full pb-4">
-                <h1 className="font-medium xs:text-xl md:text-4xl whitespace-nowrap overflow-hidden">{product?.title}</h1>
+                <h1 className="font-medium xs:text-xl md:text-3xl whitespace-nowrap overflow-hidden text-clip md:whitespace-nowrap sm:whitespace-normal">
+                  {product?.title}
+                </h1>
+
                 <h5 className="font-normal xs:text-[15px] md:text-[15px] text-[#818181]">#{product?.variants[0]?.sku}</h5>
                 <div className="mt-2 inline-block rounded-full text-lg text-gray-400">
                   <Price
-                    amount={product?.priceRange.maxVariantPrice?.amount}
+                    amount={product?.variants[0]?.compareAtPrice?.amount}
                     currencyCode={product?.priceRange?.maxVariantPrice?.currencyCode}
                     className='text-2xl font-small md:text-3xl mt-5 text-[#000] whitespace-nowrap overflow-hidden flex items-center gap-2'
-                    sale={product?.variants[0]?.compareAtPrice?.amount}
+                    sale={product?.priceRange.maxVariantPrice?.amount}
                     saleCurreny={product?.variants[0]?.compareAtPrice?.currencyCode}
                   />
                 </div>

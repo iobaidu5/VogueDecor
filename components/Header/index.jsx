@@ -11,7 +11,7 @@ import UserMenu from 'components/UserMenu';
 function SignupButton() {
   return (
     <Link href="/signup" className="hidden md:block">
-      <button className="flex items-center justify-center rounded-md bg-black text-white xs:h-[36px] xs:w-[90px] md:h-[42px] md:w-[110px] font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105 shadow-md">
+      <button className="flex items-center justify-center rounded-md bg-black text-white xs:h-[36px] xs:w-[90px] md:h-[42px] md:w-[110px] font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105">
         Sign up
       </button>
 
@@ -52,7 +52,7 @@ const Header = async () => {
       <Image
         src={searchIcon}
         alt="search"
-        className="hidden h-5 w-5 cursor-pointer md:block"
+        className="hidden h-5 w-5 cursor-pointer md:block hover:text-gray-500"
       />
       <UserMenu />
       <CurrencySwitcher />
