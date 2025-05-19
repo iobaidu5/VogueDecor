@@ -57,7 +57,7 @@ const ProductCard = ({ data }: any) => {
                     currencyCode={data?.priceRange?.maxVariantPrice?.currencyCode}
                     className='text-md font-small md:text-md mt-2 text-[#000] whitespace-nowrap overflow-hidden flex items-center gap-2'
                     sale={data?.variants[0]?.compareAtPrice?.amount}
-                    saleCurreny={data?.variants[0]?.compareAtPrice?.currencyCode}
+                    // saleCurreny={data?.variants[0]?.compareAtPrice?.currencyCode}
                   />
                 </div>
             {/* <p className="text-lg font-medium">${data?.priceRange?.maxVariantPrice?.amount}</p> */}

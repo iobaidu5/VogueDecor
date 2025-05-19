@@ -1,3 +1,4 @@
+import { AnnouncementBar } from 'components/AnnouncementBar';
 import Footer from 'components/footer';
 import Header from 'components/Header/index';
 import { ReactNode } from 'react';
@@ -6,6 +7,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <>
       <div className="absolute top-0 z-10 w-full">
+        <AnnouncementBar />
         <Header />
       </div>
       <main>{children}</main>
