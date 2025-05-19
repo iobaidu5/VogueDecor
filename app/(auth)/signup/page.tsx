@@ -1,79 +1,110 @@
+'use client';
+
 import React from 'react';
 import BackgroundImage from 'media/png/bgimg.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { UserIcon, EnvelopeIcon, LockClosedIcon } from '@heroicons/react/24/outline';
 
-const LeftSideImage = () => {
-  return (
-    <div className="xs:hidden xs:w-0 relative h-screen flex-1 md:block md:w-4/5">
-      <Image
-        src={BackgroundImage}
-        alt="Background"
-        layout="fill"
-        className="absolute inset-0 h-full w-full"
-      />
-    </div>
-  );
-};
+const LeftSideImage = () => (
+  <div className="hidden md:block md:flex-1 relative h-screen">
+    <Image
+      src={BackgroundImage}
+      alt="Background"
+      fill
+      className="object-cover"
+      priority
+    />
+    <div className="absolute inset-0 bg-gradient-to-tr from-blue-800 via-purple-700 to-pink-600 opacity-60" />
+  </div>
+);
 
 const SignUp = () => {
   return (
     <div className="flex h-screen w-full">
       <LeftSideImage />
-      <div className="xs:w-full relative flex h-full flex-1 items-center justify-center md:w-1/5">
-        <div className="flex w-3/4 max-w-lg flex-col">
-          <div className="mb-12 flex flex-col items-center justify-center gap-2">
-            <span className="xs:text-[22px] font-[700] md:text-[28px]">Sign Up</span>
-          </div>
-          <form className="space-y-8">
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-600">UserName</label>
+
+      <div className="flex flex-1 items-center justify-center px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="w-full max-w-md space-y-8 bg-white rounded-2xl p-8 shadow-xl"
+        >
+          <h2 className="text-center text-3xl font-extrabold text-gray-900">
+            Create Your Account
+          </h2>
+          <p className="text-center text-sm text-gray-600">
+            Sign up to get started
+          </p>
+
+          <form className="mt-8 space-y-6">
+            {/* Username */}
+            <div className="relative">
+              <label htmlFor="username" className="sr-only">
+                Username
+              </label>
+              <UserIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
-                type="username"
+                id="username"
                 name="username"
+                type="text"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-800 focus:border-blue-500 focus:outline-none"
-                placeholder="Enter your username"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Username"
               />
             </div>
-            {/* Email Input */}
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-600">Email</label>
+
+            {/* Email */}
+            <div className="relative">
+              <label htmlFor="email" className="sr-only">
+                Email address
+              </label>
+              <EnvelopeIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
-                type="email"
+                id="email"
                 name="email"
+                type="email"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-800 focus:border-blue-500 focus:outline-none"
-                placeholder="Enter your email"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Email address"
               />
             </div>
 
-            {/* Password Input */}
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-600">Password</label>
+            {/* Password */}
+            <div className="relative">
+              <label htmlFor="password" className="sr-only">
+                Password
+              </label>
+              <LockClosedIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
-                type="password"
+                id="password"
                 name="password"
+                type="password"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-800 focus:border-blue-500 focus:outline-none"
-                placeholder="Enter your password"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Password"
               />
             </div>
 
-            {/* Submit Button */}
-            <Link href={'/'}>
-              <button className="mt-8 w-full rounded-lg bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700">
-                Sign Up
-              </button>
-            </Link>
+            <button
+              type="submit"
+              className="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-lg text-white bg-black hover:bg-black-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition"
+            >
+              Sign Up
+            </button>
           </form>
-          <div className="mt-4 text-center text-sm text-gray-600">
-            Already have account?{' '}
-            <Link href="/login" className="text-blue-500 hover:underline">
-              Login
+
+          <div className="flex items-center justify-between text-sm">
+            <Link href="/login" className="text-black hover:underline font-medium">
+              Already have an account?
+            </Link>
+            <Link href="/forgot-password" className="text-black hover:underline font-medium">
+              Forgot password?
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

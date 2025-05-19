@@ -100,14 +100,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ data, isDiscover = false }) =
       style: 'currency',
       currency: currency,
       currencyDisplay: 'narrowSymbol',
-    }).format(numericSale);
+    }).format(numericAmount);
 
-    const formattedSalePrice = numericAmount
+    const formattedSalePrice = numericSale
       ? new Intl.NumberFormat(undefined, {
           style: 'currency',
           currency: currency,
           currencyDisplay: 'narrowSymbol',
-        }).format(numericAmount)
+        }).format(numericSale)
       : null;
 
     return (
@@ -123,7 +123,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ data, isDiscover = false }) =
                 View
               </button>
             ) : (
-              <AddToCartSimple product={productForCart} />
+              <AddToCartSimple product={productForCart} icon={true} />
             )}
 
             {/* Favorite Icon */}

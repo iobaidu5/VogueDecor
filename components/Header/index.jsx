@@ -55,7 +55,9 @@ const Header = async () => {
         className="hidden h-5 w-5 cursor-pointer md:block hover:text-gray-500"
       />
       <UserMenu />
-      <CurrencySwitcher />
+      <div className="curreny-swithcer">
+        <CurrencySwitcher />
+      </div>
     </div>
   </div>
 

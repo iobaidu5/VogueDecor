@@ -8,8 +8,13 @@
   box-sizing: border-box;
 }
 
+html{
+  overflow-x: hidden !important
+}
+
 body {
   @apply font-sans;
+  overflow-x: hidden !important
 }
 
 
@@ -30,3 +35,13 @@ body {
       max-width: 100% !important;
   }
 }
+
+  .curreny-swithcer{
+    margin-right: 5px !important;
+  }
+
+  @media (width <= 768px) {
+  .curreny-swithcer{
+    margin-right: 25px !important;
+  }
+  }

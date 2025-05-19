@@ -21,14 +21,14 @@ export function ProductCard({ product }: { product: any }) {
     style: 'currency',
     currency: currency,
     currencyDisplay: 'narrowSymbol'
-  }).format(numericSale);
+  }).format(numericAmount);
 
 
   const formattedSalePrice = new Intl.NumberFormat(undefined, {
     style: 'currency',
     currency: currency,
     currencyDisplay: 'narrowSymbol'
-  }).format(numericAmount);
+  }).format(numericSale);
 
 
   return (

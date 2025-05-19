@@ -104,17 +104,18 @@ export default async function ProductPage(props) {
           <div className="flex w-full flex-col items-start lg:w-4/12">
             <Suspense fallback={null}>
               <div className="mb-4 w-full pb-4">
-                <h1 className="font-medium xs:text-xl md:text-3xl whitespace-nowrap overflow-hidden text-clip md:whitespace-nowrap sm:whitespace-normal">
+                <h1 className="font-medium xs:text-xl md:text-2xl overflow-hidden text-clip sm:whitespace-normal md:whitespace-normal">
                   {product?.title}
                 </h1>
+
 
                 <h5 className="font-normal xs:text-[15px] md:text-[15px] text-[#818181]">#{product?.variants[0]?.sku}</h5>
                 <div className="mt-2 inline-block rounded-full text-lg text-gray-400">
                   <Price
-                    amount={product?.variants[0]?.compareAtPrice?.amount}
+                    amount={product?.priceRange.maxVariantPrice?.amount}
                     currencyCode={product?.priceRange?.maxVariantPrice?.currencyCode}
-                    className='text-2xl font-small md:text-3xl mt-5 text-[#000] whitespace-nowrap overflow-hidden flex items-center gap-2'
-                    sale={product?.priceRange.maxVariantPrice?.amount}
+                    className='text-xl font-small md:text-xl mt-5 text-[#000] overflow-hidden flex items-center gap-2'
+                    sale={product?.variants[0]?.compareAtPrice?.amount}
                     saleCurreny={product?.variants[0]?.compareAtPrice?.currencyCode}
                   />
                 </div>

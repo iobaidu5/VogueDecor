@@ -1,70 +1,96 @@
+'use client';
+
 import React from 'react';
 import BackgroundImage from 'media/png/bgimg.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { EnvelopeIcon, LockClosedIcon } from '@heroicons/react/24/outline';
 
-const LeftSideImage = () => {
-  return (
-    <div className="xs:hidden xs:w-0 relative h-screen flex-1 md:block md:w-4/5">
-      <Image
-        src={BackgroundImage}
-        alt="Background"
-        layout="fill"
-        className="absolute inset-0 h-full w-full"
-      />
-    </div>
-  );
-};
+const LeftSideImage = () => (
+  <div className="hidden md:block md:flex-1 relative h-screen">
+    <Image
+      src={BackgroundImage}
+      alt="Background"
+      fill
+      className="object-cover"
+      priority
+    />
+    <div className="absolute inset-0 bg-gradient-to-tr from-blue-800 via-purple-700 to-pink-600 opacity-60" />
+  </div>
+);
 
 const Login = () => {
   return (
     <div className="flex h-screen w-full">
       <LeftSideImage />
-      <div className="xs:w-full relative flex h-full flex-1 items-center justify-center md:w-1/5">
-        <div className="flex w-3/4 max-w-lg flex-col">
-          <div className="mb-12 flex flex-col items-center justify-center gap-2">
-            <span className="xs:text-[22px] font-[700] md:text-[28px]">Login</span>
-          </div>
-          <form className="space-y-8">
-            {/* Email Input */}
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-600">Email</label>
+
+      <div className="flex flex-1 items-center justify-center px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="w-full max-w-md space-y-8 bg-white rounded-2xl p-8 shadow-xl"
+        >
+          <h2 className="text-center text-3xl font-extrabold text-gray-900">
+            Welcome Back
+          </h2>
+          <p className="text-center text-sm text-gray-600">
+            Enter your credentials to access your account
+          </p>
+
+          <form className="mt-8 space-y-6">
+            {/* Email Field */}
+            <div className="relative">
+              <label htmlFor="email" className="sr-only">
+                Email address
+              </label>
+              <EnvelopeIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
-                type="email"
+                id="email"
                 name="email"
+                type="email"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-800 focus:border-blue-500 focus:outline-none"
-                placeholder="Enter your email"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Email address"
               />
             </div>
 
-            {/* Password Input */}
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-600">Password</label>
+            {/* Password Field */}
+            <div className="relative">
+              <label htmlFor="password" className="sr-only">
+                Password
+              </label>
+              <LockClosedIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
               <input
-                type="password"
+                id="password"
                 name="password"
+                type="password"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-800 focus:border-blue-500 focus:outline-none"
-                placeholder="Enter your password"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Password"
               />
             </div>
 
-            {/* Submit Button */}
-            <Link href={'/'}>
-              <button className="mt-8 w-full rounded-lg bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700">
-                Login
-              </button>
-            </Link>
+            {/* Submit */}
+            <button
+              type="submit"
+              className="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-lg text-white bg-black hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition"
+            >
+              Sign In
+            </button>
           </form>
 
-          <div className="mt-4 text-center text-sm text-gray-600">
-            Don't have an account?{' '}
-            <Link href="/signup" className="text-blue-500 hover:underline">
-              Sign up
+          {/* Links */}
+          <div className="flex items-center justify-between text-sm">
+            <Link href="/forgot-password" className="text-black hover:underline font-medium">
+              Forgot your password?
+            </Link>
+            <Link href="/signup" className="text-black hover:underline font-medium">
+              Create account
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

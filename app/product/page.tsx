@@ -46,15 +46,15 @@ export async function generateMetadata({ params }: { params: any }): Promise<Met
     },
     openGraph: url
       ? {
-          images: [
-            {
-              url,
-              width,
-              height,
-              alt
-            }
-          ]
-        }
+        images: [
+          {
+            url,
+            width,
+            height,
+            alt
+          }
+        ]
+      }
       : null
   };
 }
@@ -109,10 +109,18 @@ export default async function ProductPage({ params }: { params: any }) {
               <div className="mb-6 w-full pb-6">
                 <h1 className="text-3xl font-medium md:text-4xl">{product.title}</h1>
                 <div className="mt-2 inline-block rounded-full px-4 py-2 text-lg text-gray-400">
+                  {/* <Price
+                   amount={product.priceRange.maxVariantPrice.amount}
+                   currencyCode={product.priceRange.maxVariantPrice.currencyCode}
+                  sale="104"
+                 /> */}
+
                   <Price
-                    amount={product.priceRange.maxVariantPrice.amount}
-                    currencyCode={product.priceRange.maxVariantPrice.currencyCode}
-                    // sale="104"
+                    amount={product?.priceRange.maxVariantPrice?.amount}
+                    currencyCode={product?.priceRange?.maxVariantPrice?.currencyCode}
+                    className='text-2xl font-small md:text-3xl mt-5 text-[#000] whitespace-nowrap overflow-hidden flex items-center gap-2'
+                    // sale={product?.variants[0]?.compareAtPrice?.amount}
+                    // saleCurreny={product?.variants[0]?.compareAtPrice?.currencyCode}
                   />
                 </div>
               </div>

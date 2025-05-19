@@ -5,6 +5,7 @@ import CartModal from 'components/cart/modal';
 import { AddToCartSimple } from 'components/cart/add-to-cart-simple';
 import { AddToCart } from 'components/cart/add-to-cart';
 import Link from 'next/link';
+import Price from 'components/price';
 
 const ProductCard = ({ data }: any) => {
   const [isHover, setIsHover] = useState(false);
@@ -43,13 +44,23 @@ const ProductCard = ({ data }: any) => {
         </div>
 
         {/* Content Section */}
-        <div className="flex items-center justify-between space-y-3 p-4">
+        <div className="flex items-center justify-between space-y-1 px-4">
           {/* Title and Price */}
           <div className="flex flex-col space-y-1">
             <p className="font-medium uppercase text-gray-900 xs:text-sm md:text-lg">
               {data?.title}
             </p>
-            <p className="text-lg font-medium">${data?.priceRange?.maxVariantPrice?.amount}</p>
+
+            <div className="mt-0 inline-block rounded-full text-lg text-gray-400">
+                  <Price
+                    amount={data?.priceRange.maxVariantPrice?.amount}
+                    currencyCode={data?.priceRange?.maxVariantPrice?.currencyCode}
+                    className='text-md font-small md:text-md mt-2 text-[#000] whitespace-nowrap overflow-hidden flex items-center gap-2'
+                    sale={data?.variants[0]?.compareAtPrice?.amount}
+                    saleCurreny={data?.variants[0]?.compareAtPrice?.currencyCode}
+                  />
+                </div>
+            {/* <p className="text-lg font-medium">${data?.priceRange?.maxVariantPrice?.amount}</p> */}
           </div>
           <AddToCartSimple product={data} icon={true} />
         </div>
