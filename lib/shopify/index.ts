@@ -183,7 +183,6 @@ export async function getMenu(handle: string): Promise<Menu[]> {
       handle,
     },
     cache: 'force-cache',       
-    next: { revalidate: 30 },
   });
 
   return (
@@ -215,7 +214,6 @@ export async function getProducts({
       sortKey,
     },
     cache: 'force-cache',       
-    next: { revalidate: 30 },
   });
 
   return reshapeProducts(removeEdgesAndNodes(res?.body?.data?.products));
@@ -294,7 +292,6 @@ export async function getCollectionProducts({
       sortKey: sortKey === "CREATED_AT" ? "CREATED" : sortKey,
     },
     cache: 'force-cache',       
-    next: { revalidate: 30 },
   });
 
   if (!res?.body?.data?.collection) {
@@ -313,8 +310,7 @@ export async function getProduct(handle: string): Promise<Product | undefined> {
     variables: {
       handle,
     },
-    cache: 'force-cache',       
-    next: { revalidate: 30 },
+    cache: 'force-cache',
   });
   return reshapeProduct(res?.body?.data?.product, false);
 }
@@ -328,8 +324,7 @@ export async function getProductRecommendations(
     variables: {
       productId,
     },
-    cache: 'force-cache',       
-    next: { revalidate: 30 },
+    cache: 'force-cache',
   });
 
   return reshapeProducts(res?.body?.data?.productRecommendations);
