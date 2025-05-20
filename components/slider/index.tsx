@@ -9,7 +9,7 @@ import { useCurrency } from 'components/currency/currencyContext';
 
 const Slider = ({ data }: { data: Array<Record<string, any>> }) => {
   const sliderRef = useRef<HTMLUListElement>(null);
-  const [visibleItems, setVisibleItems] = useState(1);
+  const [visibleItems, setVisibleItems] = useState(2);
 
   // Handle responsive item count
   useEffect(() => {
@@ -21,9 +21,9 @@ const Slider = ({ data }: { data: Array<Record<string, any>> }) => {
       } else if (window.innerWidth >= 640) {
         setVisibleItems(2);
       } else if (window.innerWidth >= 475) {
-        setVisibleItems(1);
+        setVisibleItems(2);
       } else {
-        setVisibleItems(1);
+        setVisibleItems(2);
       }
     };
 

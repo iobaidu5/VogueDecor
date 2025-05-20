@@ -5,38 +5,46 @@ import pintrist from 'media/svg/pintrist.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const furniture: object = [
-  'Furniture',
-  'Chairs',
-  'Barstools',
-  'Outdoor-furniture',
-  'Table-Bases',
-  'Booth'
-];
-const quikLinks: object = ['Quick Links', 'Home', 'About', 'Products'];
-const locations: object = ['Locations', 'Montreal'];
+const furniture = ['Furniture', 'Chairs', 'Barstools', 'Outdoor-furniture', 'Table-Bases', 'Booth'];
+const quikLinks = ['Quick Links', 'Home', 'About', 'Products'];
+const locations = ['Locations', 'Montreal', 'Toronto'];
 
 const Footer = () => {
   return (
     <>
+      {/* StayUpdated for small screens */}
       <div className="bg-black px-[20px] py-3 xs:mx-0 md:mx-[50px] lg:hidden">
         <StayUpdated />
       </div>
-      <div className="flex h-[385px] flex-col bg-black text-white xs:px-[20px] xs:pt-[30px] md:px-[50px] md:pt-[98px] lg:px-[60px] xl:px-[70px]">
-        <div className="flex xs:justify-start xs:space-x-2 md:justify-around md:space-x-0">
-          <Logo />
-          <FooterLinks links={furniture} />
-          <FooterLinks links={quikLinks} isQuick />
-          <FooterLinks links={locations} />
-          <Connects />
-          <div className="hidden lg:block">
+
+      {/* Main Footer */}
+      <div className="flex flex-col bg-black text-white xs:px-[20px] xs:pt-[30px] md:px-[50px] md:pt-[98px] lg:px-[60px] xl:px-[70px]">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12">
+          {/* Logo */}
+          <div className="lg:col-span-2">
+            <Logo />
+          </div>
+
+          {/* Footer Links & Connects */}
+          <div className="grid grid-cols-2 gap-y-6 gap-x-4 sm:grid-cols-2 md:grid-cols-3 lg:flex lg:flex-row lg:justify-between lg:gap-6 lg:col-span-6">
+            <div className="min-w-[120px]"><FooterLinks links={furniture} /></div>
+            <div className="min-w-[120px]"><FooterLinks links={quikLinks} isQuick /></div>
+            <div className="min-w-[120px]"><FooterLinks links={locations} /></div>
+            <div className="min-w-[120px]"><Connects /></div>
+          </div>
+
+          {/* Stay Updated (Large Screens) */}
+          <div className="hidden lg:block lg:col-span-4 -mt-1">
             <StayUpdated />
           </div>
         </div>
 
+        {/* Divider */}
         <div className="mt-[55px] h-[1px] w-full bg-white" />
+
+        {/* Bottom Section */}
         <div className="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
-          {/* Left Section */}
+          {/* Links */}
           <div className="flex flex-col items-center space-y-2 text-[12px] text-white md:flex-row md:space-x-4 md:space-y-0">
             <Link href="/privacy" className="hover:underline">
               Privacy Policy
@@ -49,7 +57,7 @@ const Footer = () => {
             </Link>
           </div>
 
-          {/* Right Section */}
+          {/* Copyright */}
           <p className="text-center text-[12px] text-white md:text-right">
             © {new Date().getFullYear()} VOGUE DECOR. All rights reserved.
           </p>
@@ -78,11 +86,11 @@ const FooterLinks = ({ links }: any) => {
     <div className="flex flex-col space-y-2">
       {links.map((link: string, index: number) =>
         index === 0 ? (
-          <p key={link} className="xs:text-[14px] md:text-[16px]">
+          <p key={link} className="xs:text-[14px] md:text-[16px] font-semibold">
             {link}
           </p>
         ) : (
-          <Link key={link} href={`/search/${link.toLowerCase()}`} className="text-[13px]">
+          <Link key={link} href={`/search/${link.toLowerCase()}`} className="text-[13px] hover:underline">
             {link}
           </Link>
         )
@@ -94,7 +102,7 @@ const FooterLinks = ({ links }: any) => {
 const Connects = () => {
   return (
     <div className="flex flex-col space-y-2">
-      <p className="xs:text-[14px] md:text-[16px]">Connects</p>
+      <p className="xs:text-[14px] md:text-[16px] font-semibold">Connects</p>
       <div className="flex items-center space-x-2">
         <Image src={insta} alt="insta" />
         <Image src={fb} alt="fb" />
@@ -106,19 +114,19 @@ const Connects = () => {
 
 const StayUpdated = () => {
   return (
-    <div className="mx-auto flex w-full max-w-sm flex-col gap-2 xs:mt-2 md:max-w-md">
-      <p className="text-center text-lg font-medium md:text-left">Stay Updated</p>
+    <div className="mx-auto flex w-full max-w-sm flex-col gap-2 md:max-w-md">
+      <p className="text-lg font-medium text-white">Stay Updated</p>
       <div className="flex items-center overflow-hidden rounded-md border border-gray-400">
         <input
           type="email"
           placeholder="Enter your email"
-          className="w-full min-w-0 flex-1 bg-transparent px-4 py-2 outline-none"
+          className="w-full min-w-0 flex-1 bg-transparent px-4 py-2 text-white placeholder:text-gray-300 outline-none"
         />
         <button className="whitespace-nowrap bg-white px-4 py-2 font-medium text-black">
           Subscribe
         </button>
       </div>
-      <p className="mt-3 text-center text-sm text-gray-500 md:text-left">
+      <p className="mt-3 text-center text-sm text-white md:text-left">
         Stay updated! Subscribe to our newsletter for exclusive offers,{' '}
         <br className="hidden md:block" /> latest trends, and design inspiration.
       </p>

@@ -6,7 +6,7 @@ import { User, LogOut, Settings } from 'lucide-react';
 import Image from 'next/image';
 
 const mockUser = {
-  isLoggedIn: false,
+  isLoggedIn: true,
   name: 'Obaid Khan',
   image: 'https://i.pravatar.cc/36?img=3',
 };

@@ -30,7 +30,7 @@ const data = [
     icon: SupportIcon,
     firstText: 'Free',
     secondText: 'Shipping',
-    desc: 'Free shipping to Canada and US for all orders over $1999.'
+    desc: 'Free shipping to Canada for all orders over $1999.'
   },
   {
     icon: likeIcon,
