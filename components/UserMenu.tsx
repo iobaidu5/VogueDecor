@@ -1,42 +1,85 @@
 'use client';
-import { useState } from 'react';
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { User, LogOut, Settings } from 'lucide-react';
 import Image from 'next/image';
-
-const mockUser = {
-  isLoggedIn: true,
-  name: 'Obaid Khan',
-  image: 'https://i.pravatar.cc/36?img=3',
-};
+import axios from 'axios';
 
 export default function UserMenu() {
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  const [user, setUser] = useState<{ isLoggedIn: boolean; name: string; image: string }>({
+    isLoggedIn: false,
+    name: '',
+    image: 'https://i.pravatar.cc/36?img=3', // default avatar
+  });
+
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const res = await axios.get('/api/profile/me');
+        if (res.data.profile) {
+          setUser(res.data.profile);
+        }
+      } catch (err) {
+        console.error(err);
+        setError('Failed to fetch profile');
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
   const [open, setOpen] = useState(false);
   const router = useRouter();
 
   const toggleDropdown = () => setOpen(!open);
+
   const handleLogout = () => {
-    // Logout logic here
-    alert('Logged out!');
+    // Clear auth tokens or user info from storage
+    localStorage.removeItem('user');
+    setUser({ isLoggedIn: false, name: '', image: 'https://i.pravatar.cc/36?img=3' });
     setOpen(false);
+    router.push('/login');
   };
+
+  useEffect(() => {
+    // Simulate fetching logged-in user from localStorage/session
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      try {
+        const parsedUser = JSON.parse(storedUser);
+        if (parsedUser?.username) {
+          setUser({
+            isLoggedIn: true,
+            name: parsedUser.username,
+            image: parsedUser.image || 'https://i.pravatar.cc/36?img=3',
+          });
+        }
+      } catch (error) {
+        console.error('Failed to parse user data:', error);
+      }
+    }
+  }, []);
 
   return (
     <div className="relative hidden md:block">
-      {mockUser.isLoggedIn ? (
+      {user.isLoggedIn ? (
         <button
           onClick={toggleDropdown}
           className="flex items-center gap-2 rounded-full px-3 py-1 hover:bg-gray-200 transition"
         >
           <Image
-            src={mockUser.image}
+            src={user.image}
             alt="User Avatar"
             width={32}
             height={32}
             className="rounded-full"
           />
-          <span className="text-sm font-medium">{mockUser.name.split(' ')[0]}</span>
+          <span className="text-sm font-medium">{user.name.split(' ')[0]}</span>
         </button>
       ) : (
         <Link href="/login">
@@ -50,14 +93,14 @@ export default function UserMenu() {
         <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-md z-50">
           <div className="px-4 py-3 flex items-center gap-3 border-b">
             <Image
-              src={mockUser.image}
+              src={user.image}
               alt="User Avatar"
               width={36}
               height={36}
               className="rounded-full"
             />
             <div>
-              <p className="text-sm font-semibold">{mockUser.name}</p>
+              <p className="text-sm font-semibold">{user.name}</p>
             </div>
           </div>
           <ul className="text-sm">

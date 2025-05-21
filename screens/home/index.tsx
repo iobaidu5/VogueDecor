@@ -10,6 +10,10 @@ import Upgrade from './components/upgrade';
 import WhyChooseUs from './components/whyChooseUs';
 import { ProductProvider } from 'components/product/product-context';
 import CartModal from 'components/cart/modal';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import HomeCategories from './components/homeCategories';
+import HomeBanners from './components/HomeBanners';
 
 export default function MainPage() {
   return (
@@ -43,20 +47,29 @@ export default function MainPage() {
           </div>
         </div>
       </div>
-      <main className="w-full px-[15px] md:px-[100px] md:pt-10">
-        <div>
+      <main className="w-full px-[15px] md:px-[100px] md:pt-4">
+        {/* <div>
           <DiscoverMore />
-        </div>
+        </div> */}
 
         <div>
           <BestSeller />
         </div>
 
         <div>
+          <HomeBanners />
+        </div>
+
+        <div>
+          <HomeCategories />
+        </div>
+
+
+        <div>
           <WhyChooseUs />
         </div>
       </main>
-      <div className="pb-20 xs:pt-[50px] lg:pt-[100px]">
+      <div className="pb-12 xs:pt-[30px] lg:pt-[30px]">
         <Upgrade />
       </div>
 

@@ -1,11 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import BackgroundImage from 'media/png/bgimg.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation'; // If using app directory
+// import { useRouter } from 'next/router'; // Use this instead if you're in the pages directory
 import { motion } from 'framer-motion';
 import { EnvelopeIcon, LockClosedIcon } from '@heroicons/react/24/outline';
+import axios from 'axios';
 
 const LeftSideImage = () => (
   <div className="hidden md:block md:flex-1 relative h-screen">
@@ -21,6 +24,38 @@ const LeftSideImage = () => (
 );
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setErrorMsg('');
+
+    try {
+      const res = await axios.post('/api/auth/login', { email, password });
+
+      if (res.data?.token && typeof window !== 'undefined') {
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem(
+          'user',
+          JSON.stringify({
+            username: res.data.user.username,
+            email: res.data.user.email,
+            image: null,
+          })
+        );
+        router.push('/');
+      } else {
+        setErrorMsg('Unexpected response from server.');
+      }
+    } catch (err: any) {
+      const message = err?.response?.data?.error || 'Login failed. Please try again.';
+      setErrorMsg(message);
+    }
+  };
+
   return (
     <div className="flex h-screen w-full">
       <LeftSideImage />
@@ -39,8 +74,7 @@ const Login = () => {
             Enter your credentials to access your account
           </p>
 
-          <form className="mt-8 space-y-6">
-            {/* Email Field */}
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
               <label htmlFor="email" className="sr-only">
                 Email address
@@ -51,12 +85,13 @@ const Login = () => {
                 name="email"
                 type="email"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Email address"
               />
             </div>
 
-            {/* Password Field */}
             <div className="relative">
               <label htmlFor="password" className="sr-only">
                 Password
@@ -67,12 +102,17 @@ const Login = () => {
                 name="password"
                 type="password"
                 required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Password"
               />
             </div>
 
-            {/* Submit */}
+            {errorMsg && (
+              <p className="text-red-600 text-sm text-center">{errorMsg}</p>
+            )}
+
             <button
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-lg text-white bg-black hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition"
@@ -81,7 +121,6 @@ const Login = () => {
             </button>
           </form>
 
-          {/* Links */}
           <div className="flex items-center justify-between text-sm">
             <Link href="/forgot-password" className="text-black hover:underline font-medium">
               Forgot your password?

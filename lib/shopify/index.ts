@@ -182,7 +182,8 @@ export async function getMenu(handle: string): Promise<Menu[]> {
     variables: {
       handle,
     },
-    cache: 'force-cache',       
+    cache: 'force-cache',    
+    next: { revalidate: 30 },   
   });
 
   return (

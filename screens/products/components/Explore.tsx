@@ -1,6 +1,6 @@
 const Explore = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-10 xs:px-4 md:flex-row md:px-[40px] md:py-[122px] lg:px-[70px] xl:px-[100px]">
+    <div className="flex flex-col items-center justify-center py-0 xs:px-4 md:flex-row md:px-[40px] md:py-[122px] lg:px-[70px] xl:px-[100px]">
       {/* Left Section - Title */}
       <div className="w-full text-center md:w-2/6 md:text-left">
         <p className="text-[28px] font-semibold leading-tight sm:text-[40px] md:text-[50px] lg:text-[86px]">

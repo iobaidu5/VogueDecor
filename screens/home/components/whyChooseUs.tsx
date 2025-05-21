@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const WhyChooseUs = () => {
   return (
-    <div className="pt-12">
+    <div className="py-6">
       <div className="flex flex-col items-center justify-center pt-10">
         <p className="text-[14px] text-[#878787]">Elevate your space with us</p>
         <p className="font-medium xs:text-[25px] md:text-[40px]">Why Choose Us</p>
@@ -28,8 +28,8 @@ const data = [
   },
   {
     icon: SupportIcon,
-    firstText: 'Free',
-    secondText: 'Shipping',
+    firstText: 'Free Shipping',
+    secondText: '',
     desc: 'Free shipping to Canada for all orders over $1999.'
   },
   {
@@ -48,9 +48,9 @@ const data = [
 
 const ChooseUsSection = () => {
   return (
-    <div className="grid gap-2 pt-[104px] xs:grid-cols-1 md:grid-cols-4">
+    <div className="grid gap-2 pt-[40px] grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
       {data?.map((item: any) => (
-        <div className="col-span-1 flex flex-col items-center" key={item?.firstText}>
+        <div className="flex flex-col items-center" key={item?.firstText}>
           {item?.secondText === 'Manufacturer' ? (
             <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full bg-[#D9D9D94F]">
               <Image src={item.icon} alt={item.firstText} />
@@ -58,25 +58,26 @@ const ChooseUsSection = () => {
           ) : (
             <Image src={item.icon} alt={item.firstText} />
           )}
-          <p className="pt-2 font-medium xs:text-[18px] sm:text-[22px] lg:text-[29px]">
+          <p className="pt-2 font-medium xs:text-[18px] sm:text-[22px] lg:text-[28px]">
             {item?.firstText}
           </p>
-          <p className="font-medium xs:text-[18px] sm:text-[22px] lg:text-[29px]">
+          <p className="font-medium xs:text-[18px] sm:text-[22px] lg:text-[28px]">
             {item?.secondText}
           </p>
-          <p className="py-2 text-center font-normal leading-[1.5] text-[#878787] xs:text-[13px] lg:text-[16px]">
+          <p className="mt-2 text-sm sm:text-base lg:text-[16px] text-[#878787] leading-[1.6] break-words text-center">
             {item.desc
-              .split(' ')
-              .slice(0, Math.ceil(item.desc.split(' ').length / 2))
-              .join(' ')}
+              ?.split(' ')
+              ?.slice(0, Math.ceil(item.desc.split(' ').length / 2))
+              ?.join(' ')}
             <br />
             {item.desc
-              .split(' ')
-              .slice(Math.ceil(item.desc.split(' ').length / 2))
-              .join(' ')}
+              ?.split(' ')
+              ?.slice(Math.ceil(item.desc.split(' ').length / 2))
+              ?.join(' ')}
           </p>
         </div>
       ))}
     </div>
   );
 };
+

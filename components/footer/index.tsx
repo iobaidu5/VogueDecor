@@ -55,6 +55,9 @@ const Footer = () => {
             <Link href="/shipping-return-policy" className="hover:underline">
               Shipping and Return Policy
             </Link>
+            <Link href="/contact-us" className="hover:underline">
+                Contact Us
+            </Link>
           </div>
 
           {/* Copyright */}

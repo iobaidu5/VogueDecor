@@ -6,7 +6,7 @@ const CurrencySwitcher = () => {
 
   return (
     <select
-      className="ml-4 bg-transparent p-1 text-sm"
+      className="bg-transparent p-1 text-sm"
       value={currency}
       onChange={(e) => setCurrency(e.target.value)}
     >
