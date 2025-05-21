@@ -1,20 +1,24 @@
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../../../lib/auth';
-import { PrismaClient } from '@prisma/client';
+// app/api/profile/route.ts
 import { NextResponse } from 'next/server';
+import { PrismaClient } from '@prisma/client';
+import jwt from 'jsonwebtoken';
 
 const prisma = new PrismaClient();
 
-export async function GET() {
-  const session = await getServerSession(authOptions);
+export async function GET(req: Request) {
+  const authHeader = req.headers.get('authorization');
+  const token = authHeader?.split(' ')[1]; // Expecting Bearer <token>
 
-  if (!session?.user?.email) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!token) {
+    return NextResponse.json({ error: 'Unauthorized: No token' }, { status: 401 });
   }
 
   try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { userId: string };
+    const userId = decoded.userId;
+
     const user = await prisma.user.findUnique({
-      where: { email: session.user.email },
+      where: { id: Number(userId) },
       include: { profile: true },
     });
 
@@ -24,7 +28,7 @@ export async function GET() {
 
     return NextResponse.json({ profile: user.profile });
   } catch (error) {
-    console.error(error);
-    return NextResponse.json({ error: 'Server Error' }, { status: 500 });
+    console.error('[PROFILE_GET_ERROR]', error);
+    return NextResponse.json({ error: 'Unauthorized or Server Error' }, { status: 401 });
   }
 }

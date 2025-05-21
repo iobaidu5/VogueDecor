@@ -20,15 +20,20 @@ export default function UserMenu() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get('/api/profile/me');
-        if (res.data.profile) {
-          setUser(res.data.profile);
-        }
+        const token = localStorage.getItem('token');
+        const res = await axios.get('/api/profile', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setUser(res.data.profile)
+        console.log(res.data.profile);
       } catch (err) {
-        console.error(err);
-        setError('Failed to fetch profile');
+        // setError(err.toString())
+        console.error('Failed to fetch profile', err);
       }
     };
+    
 
     fetchProfile();
   }, []);
