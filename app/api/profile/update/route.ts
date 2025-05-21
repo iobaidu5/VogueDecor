@@ -26,10 +26,10 @@ export async function POST(req: Request) {
 
   try {
     const updatedProfile = await prisma.profile.upsert({
-      where: { userId },
+      where: { userId: Number(userId) },
       update: { firstName, lastName, phone, address, image },
       create: {
-        userId,
+        userId: Number(userId),
         firstName,
         lastName,
         phone,
