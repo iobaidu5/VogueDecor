@@ -19,14 +19,14 @@ const categories = [
     href: '/search/barstools',
   },
   {
-    title: 'Tables',
+    title: 'Tables Tops',
     image: boothImage,
-    href: '/search/table-bases',
+    href: '/search/table-tops',
   },
   {
-    title: 'Booths',
+    title: 'Tables Bases',
     image: tableImage,
-    href: '/search/table-tops',
+    href: '/search/table-bases',
   },
 ];
 
