@@ -1,13 +1,23 @@
+'use client';
+
 import logo from 'media/png/whiteLogo.png';
 import fb from 'media/svg/fb.svg';
 import insta from 'media/svg/insta.svg';
 import pintrist from 'media/svg/pintrist.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import { ChevronDown } from "lucide-react";
 
 const furniture = ['Furniture', 'Chairs', 'Barstools', 'Outdoor-furniture', 'Table-Bases', 'Booth'];
 const quikLinks = ['Quick Links', 'Home', 'About', 'Products'];
 const locations = ['Locations', 'Montreal', 'Toronto'];
+
+
+interface FooterLinksProps {
+  links: string[];
+  isQuick?: boolean;
+}
 
 const Footer = () => {
   return (
@@ -26,12 +36,13 @@ const Footer = () => {
           </div>
 
           {/* Footer Links & Connects */}
-          <div className="grid grid-cols-2 gap-y-6 gap-x-4 sm:grid-cols-2 md:grid-cols-3 lg:flex lg:flex-row lg:justify-between lg:gap-6 lg:col-span-6">
-            <div className="min-w-[120px]"><FooterLinks links={furniture} /></div>
-            <div className="min-w-[120px]"><FooterLinks links={quikLinks} isQuick /></div>
-            <div className="min-w-[120px]"><FooterLinks links={locations} /></div>
-            <div className="min-w-[120px]"><Connects /></div>
+          <div className="flex flex-col gap-y-6 sm:flex-col md:flex-col lg:flex-row lg:justify-between lg:gap-6 lg:col-span-6">
+            <div className="w-full lg:min-w-[120px]"><FooterLinks links={furniture} /></div>
+            <div className="w-full lg:min-w-[120px]"><FooterLinks links={quikLinks} isQuick /></div>
+            <div className="w-full lg:min-w-[120px]"><FooterLinks links={locations} /></div>
+            <div className="w-full lg:min-w-[120px]"><Connects /></div>
           </div>
+
 
           {/* Stay Updated (Large Screens) */}
           <div className="hidden lg:block lg:col-span-4 -mt-1">
@@ -56,7 +67,7 @@ const Footer = () => {
               Shipping and Return Policy
             </Link>
             <Link href="/contact-us" className="hover:underline">
-                Contact Us
+              Contact Us
             </Link>
           </div>
 
@@ -84,20 +95,61 @@ const Logo = () => {
   );
 };
 
-const FooterLinks = ({ links }: any) => {
+const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleFAQ = () => setIsOpen((prev) => !prev);
+
   return (
-    <div className="flex flex-col space-y-2">
-      {links.map((link: string, index: number) =>
-        index === 0 ? (
-          <p key={link} className="xs:text-[14px] md:text-[16px] font-semibold">
-            {link}
-          </p>
-        ) : (
-          <Link key={link} href={`/search/${link.toLowerCase()}`} className="text-[13px] hover:underline">
-            {link}
-          </Link>
-        )
-      )}
+    <div className="w-full">
+      {/* Mobile: FAQ style */}
+      <div className="block lg:hidden border-b border-gray-300 pb-2">
+        <button
+          onClick={toggleFAQ}
+          className="w-full flex items-center justify-between font-semibold text-left xs:text-[14px] md:text-[16px]"
+        >
+          <span>{links[0]}</span>
+          <ChevronDown
+            className={`w-4 h-4 transform transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : ""}`}
+          />
+        </button>
+
+        <div
+          className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${
+            isOpen ? "max-h-96" : "max-h-0"
+          }`}
+        >
+          <div className="flex flex-col ml-2 mt-1 space-y-2">
+            {links.slice(1).map((link) => (
+              <Link
+                key={link}
+                href={`/search/${link.toLowerCase()}`}
+                className="text-[13px] hover:underline"
+              >
+                {link}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop: Inline style */}
+      <div className="hidden lg:flex lg:flex-col lg:space-y-2">
+        {links.map((link, index) =>
+          index === 0 ? (
+            <p key={link} className="xs:text-[14px] md:text-[16px] font-semibold">
+              {link}
+            </p>
+          ) : (
+            <Link
+              key={link}
+              href={`/search/${link.toLowerCase()}`}
+              className="text-[13px] hover:underline"
+            >
+              {link}
+            </Link>
+          )
+        )}
+      </div>
     </div>
   );
 };

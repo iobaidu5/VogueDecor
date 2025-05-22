@@ -75,7 +75,7 @@ const NextArrow = (props: any) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute -right-10 top-1/2 z-50 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
+      className="absolute -right-6 top-1/2 z-50 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
       onClick={onClick}
     >
       <ChevronRight size={48} />
@@ -87,7 +87,7 @@ const PrevArrow = (props: any) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute -left-10 top-1/2 z-45 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
+      className="absolute -left-6 top-1/2 z-45 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
       onClick={onClick}
     >
       <ChevronLeft size={48} />

@@ -11,6 +11,7 @@ const config: Config = {
       screens: {
         xs: '100px',
         lg991: '991px',
+        xl992: '992px',
       },
       fontFamily: {
         sans: ['var(--font-poppins)', 'sans-serif'],  // ← use your CSS var

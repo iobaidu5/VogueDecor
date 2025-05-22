@@ -31,14 +31,15 @@ const Header = async () => {
         </div>
 
         {/* Center: Logo */}
-        <div className="absolute left-1/2 lg991:-top-10 -translate-x-1/2">
+        <div className="absolute left-1/2  -translate-x-1/2">
           <Link href="/">
             <Image
               src={logo}
               alt="logo"
-              className="xs:w-[100px] md:w-[120px] lg:w-[140px] my-14"
+              className="lg991:my-14 mt-14 w-[100px] md:w-[120px] lg:w-[140px]"
             />
           </Link>
+
         </div>
 
         {/* Right: Search & User Menu */}

@@ -3,7 +3,7 @@ import React from 'react';
 
 const BreadCrumb = ({ currentPage }) => {
   return (
-    <div className="flex w-full items-center space-x-2 text-[15px] mt-3">
+    <div className="flex w-full items-center space-x-2 text-[15px] mt-10">
       <Link href="/" className="text-gray-500 hover:underline">
         Home
       </Link>
