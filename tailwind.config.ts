@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       screens: {
         xs: '100px',
+        lg991: '991px',
       },
       fontFamily: {
         sans: ['var(--font-poppins)', 'sans-serif'],  // ← use your CSS var

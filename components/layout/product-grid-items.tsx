@@ -34,7 +34,7 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
 
   return (
     <div>
-      <div className="my-[30px] grid grid-cols-1 justify-center gap-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="my-[30px] grid grid-cols-2 justify-center gap-6 gap-y-6 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {currentProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

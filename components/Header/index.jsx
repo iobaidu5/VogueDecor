@@ -26,13 +26,12 @@ const Header = async () => {
       {/* Top Row */}
       <div className="relative flex items-center justify-between pt-4">
         {/* Left: Currency Switcher */}
-        <div className="flex items-center">
-        <div className="h-5 w-px bg-[#A0A0A0] mr-1" />
-            <p> FR</p>
+        <div className="hidden lg991:flex items-center">
+          <CurrencySwitcher />
         </div>
 
         {/* Center: Logo */}
-        <div className="absolute left-1/2 -translate-x-1/2">
+        <div className="absolute left-1/2 lg991:-top-10 -translate-x-1/2">
           <Link href="/">
             <Image
               src={logo}
@@ -42,17 +41,20 @@ const Header = async () => {
           </Link>
         </div>
 
-        {/* Right: Search, UserMenu, Language Selector */}
-        <div className="flex items-center space-x-4 mt-4">
+        {/* Right: Search & User Menu */}
+        <div className="hidden lg991:flex items-center space-x-4 mt-4">
           <Image
             src={searchIcon}
             alt="search"
-            className="hidden h-5 w-5 cursor-pointer md:block hover:text-gray-500"
+            className="h-5 w-5 cursor-pointer md:block hover:text-gray-500"
           />
           <UserMenu />
-          <div className="flex items-center">
-            <CurrencySwitcher />
+
+          <div className="hidden lg991:flex items-center">
+            <div className="h-5 w-px bg-[#A0A0A0] mr-2" />
+            <p>FR</p>
           </div>
+
         </div>
       </div>
 
@@ -65,7 +67,7 @@ const Header = async () => {
             prefetch={true}
             className={`
               cursor-pointer text-[14px] font-small capitalize hover:scale-110
-              ${item.title === "Sale" ? "text-red-500" : "text-black"}
+              ${item.title === 'Sale' ? 'text-red-500' : 'text-black'}
             `}
           >
             {item.title}

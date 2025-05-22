@@ -1,12 +1,45 @@
-import Link from 'next/link';
-import { getCollectionProducts } from 'lib/shopify';
-import ProductCard from './productCard';
-import ProductSlider from './productSlider';
+'use client';
 
-const BestSeller = async () => {
-  const bestSellerItems = await getCollectionProducts({
-    collection: 'best-seller'
-  });
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import ProductSlider from './productSlider';
+import { getCollectionProducts } from 'lib/shopify'; // assume this can be called on client or adjust accordingly
+
+const BestSeller = () => {
+  const [bestSellerItems, setBestSellerItems] = useState<any[]>([]);
+  const [wishlistIds, setWishlistIds] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Fetch best seller items
+    async function fetchBestSellers() {
+      try {
+        const products = await getCollectionProducts({ collection: 'best-seller' });
+        setBestSellerItems(products);
+      } catch (err) {
+        console.error('Failed to fetch best sellers', err);
+      }
+    }
+
+    // Fetch wishlist ids
+    async function fetchWishlist() {
+      const token = localStorage.getItem('token');
+      if (!token) return;
+
+      try {
+        const res = await axios.get('/api/wishlist', {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        const ids = res.data.map((item: any) => item.productId);
+        setWishlistIds(ids);
+      } catch (err) {
+        console.error('Failed to fetch wishlist', err);
+      }
+    }
+
+    fetchBestSellers();
+    fetchWishlist();
+  }, []);
 
   return (
     <div className="xs:pt-6 md:pt-6">
@@ -15,8 +48,9 @@ const BestSeller = async () => {
         <p className="font-medium xs:text-[25px] md:text-[40px]">Best Sellers</p>
         <div className="h-[2px] w-[130px] bg-[#878787]" />
       </div>
-      {/* <ProductCard data={bestSellerItems} /> */}
-      <ProductSlider data={bestSellerItems} />
+
+      <ProductSlider data={bestSellerItems} wishlistIds={wishlistIds} />
+
       <Link href="/products">
         <div className="border-1 mx-auto mt-12 flex w-[200px] cursor-pointer justify-center rounded-full border border-solid bg-transparent px-4 py-2 font-medium transition duration-150 ease-in-out hover:scale-105">
           <p>View</p>

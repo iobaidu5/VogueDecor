@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 
 const ContactHeader = () => {
@@ -12,9 +11,9 @@ const ContactHeader = () => {
         <span className="font-[500]">Contact us</span>
       </div>
 
-      <h2 className="text-[53px] font-medium">Contact us.</h2>
+      <h2 className="text-[28px] font-medium lg:text-[53px]">Contact us.</h2>
 
-      <div className="flex flex-col gap-2 text-[16px] font-medium">
+      <div className="flex flex-col gap-2 text-[14px] font-medium xl:text-[16px]">
         <p>Have a question?</p>
         <p>We’re here to help. Fill out the form below and we’ll get back to you shortly.</p>
       </div>

@@ -6,6 +6,8 @@ import { getCart } from 'lib/shopify'
 import { ReactNode } from 'react'
 import './globals.css'
 import { CurrencyProvider } from 'components/currency/currencyContext'
+import CookieConsent from 'components/CookieConsent'
+import { Toaster } from 'sonner';
 
 
 const poppins = Poppins({
@@ -25,6 +27,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <CartProvider cartPromise={cart}>
           <CurrencyProvider>
             <main>{children}</main>
+            <CookieConsent />
+            <Toaster position="top-right" richColors />
           </CurrencyProvider>
         </CartProvider>
       </body>

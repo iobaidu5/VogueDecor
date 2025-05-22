@@ -1,3 +1,4 @@
+import CookieConsent from 'components/CookieConsent';
 import { ProductProvider } from 'components/product/product-context';
 import MainPage from 'screens/home/index';
 export const metadata = {
@@ -10,5 +11,6 @@ export const metadata = {
 export default function HomePage() {
   return <>
       <MainPage />
+      <CookieConsent />
   </>;
 }

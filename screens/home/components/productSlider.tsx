@@ -6,13 +6,13 @@ import { useCurrency } from 'components/currency/currencyContext';
 import { ProductProvider } from 'components/product/product-context';
 import { ProductForCart } from 'lib/shopify/types';
 import chairImage from 'media/png/chair.png';
-import heart from 'media/svg/heart.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider from 'react-slick';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import AddToWishlist from 'components/AddToWishlist';
 
 type Option = {
   id: string;
@@ -66,6 +66,7 @@ type Product = {
 type ProductSliderProps = {
   data: Product[] | any;
   isDiscover?: boolean;
+  wishlistIds?: string[];
 };
 
 
@@ -86,7 +87,7 @@ const PrevArrow = (props: any) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute -left-10 top-1/2 z-50 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
+      className="absolute -left-10 top-1/2 z-45 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
       onClick={onClick}
     >
       <ChevronLeft size={48} />
@@ -94,7 +95,7 @@ const PrevArrow = (props: any) => {
   );
 };
 
-const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false }) => {
+const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false, wishlistIds }) => {
   const { currency, rate } = useCurrency();
 
   const settings = {
@@ -164,11 +165,12 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false 
               }).format(numericSale)
             : null;
 
+            const isWishlisted = wishlistIds?.includes(item.id);
+
           return (
             <div key={item.handle} className="px-3">
               <ProductProvider>
                 <Link href={`/product/${item.handle}`} className="relative flex flex-col">
-                  {/* Image with Overlay Actions */}
                   <div className="relative flex h-[300px] items-center justify-center md:h-[460px] bg-white rounded-lg overflow-hidden">
                     <img
                       src={item.featuredImage?.url || chairImage}
@@ -177,26 +179,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false 
                     />
 
                     {/* Heart Icon */}
-                    {!isDiscover && (
-                      <Image
-                        src={heart}
-                        alt="heartIcon"
-                        width={24}
-                        height={24}
-                        className="absolute right-10 top-4 z-50"
-                      />
-                    )}
-
-                    {/* Add to Cart / View Button */}
-                    {/* {isDiscover ? (
-                      <button className="absolute right-5 top-12 z-50 h-8 w-28 rounded-full border border-black text-[12px] hover:bg-black hover:text-white">
-                        View
-                      </button>
-                    ) : (
-                      <div className="absolute right-5 top-12 z-50">
-                        <AddToCartSimple product={productForCart} icon={true} />
-                      </div>
-                    )} */}
+                    {!isDiscover && <AddToWishlist productId={item.id} isWishlisted={isWishlisted} />}
                   </div>
 
                   {/* Title & Price */}

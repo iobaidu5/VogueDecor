@@ -17,7 +17,7 @@ function SubmitButton({
   selectedVariantId: string | undefined;
 }) {
   const buttonClasses =
-    'w-full rounded-full text-[15px] font-medium capitalize text-black shadow-lg transition-all duration-700 ease-in-out';
+    'w-full rounded-md bg-gray-200 py-3 text-sm font-semibold uppercase text-black transition-colors duration-300 hover:bg-red hover:text-white';
   const disabledClasses = 'bg-red cursor-not-allowed bg-red-400 text-white';
 
   if (!availableForSale) {

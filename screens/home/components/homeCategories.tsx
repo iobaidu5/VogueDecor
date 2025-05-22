@@ -20,13 +20,13 @@ const categories = [
   },
   {
     title: 'Tables',
-    image: tableImage,
-    href: '/search/table-tops',
+    image: boothImage,
+    href: '/search/table-bases',
   },
   {
     title: 'Booths',
-    image: boothImage,
-    href: '/search/table-bases',
+    image: tableImage,
+    href: '/search/table-tops',
   },
 ];
 

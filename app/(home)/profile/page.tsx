@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { toast, Toaster } from 'sonner';
 
 const ProfilePage = () => {
   const [form, setForm] = useState({
@@ -11,19 +12,29 @@ const ProfilePage = () => {
     address: '',
     image: '', // base64 string
   });
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchProfile = async () => {
+      setLoading(true);
       try {
-        const res = await axios.get('/api/profile/me');
+        const token = localStorage.getItem('token');
+        if (!token) throw new Error('No token found');
+        const res = await axios.get('/api/profile/me', {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+
         if (res.data.profile) {
           setForm(res.data.profile);
+          localStorage.setItem('user', JSON.stringify(res.data.profile));
+          toast.success('Profile loaded successfully!');
         }
       } catch (err) {
         console.error(err);
-        setError('Failed to fetch profile');
+        toast.error('Failed to fetch profile');
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -44,112 +55,145 @@ const ProfilePage = () => {
           image: reader.result as string,
         }));
       };
-      reader.readAsDataURL(file); // Converts to Base64
+      reader.readAsDataURL(file);
     }
   };
-// In your handleSubmit (client-side)
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  try {
-    const token = localStorage.getItem('token'); // Assumes it's saved on login
-    if (!token) throw new Error('No token found');
 
-    await axios.post('/api/profile/update', form, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) throw new Error('No token found');
 
-    setMessage('Profile updated successfully!');
-    setError('');
-  } catch (err) {
-    console.error(err);
-    setMessage('');
-    setError('Error updating profile');
-  }
-};
+      await axios.post('/api/profile/update', form, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
+      toast.success('Profile updated successfully!');
+    } catch (err) {
+      console.error(err);
+      toast.error('Error updating profile');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12">
-      <div className="bg-white shadow-lg rounded-xl w-full max-w-2xl p-8">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Edit Profile</h2>
+    <div className="w-full px-[20px] py-[100px] lg:px-[74px] lg:py-[170px] relative">
 
-        {message && <p className="text-green-600 mb-4">{message}</p>}
-        {error && <p className="text-red-600 mb-4">{error}</p>}
+      {/* Loader Overlay */}
+      {loading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
+          <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-20 w-20"></div>
+        </div>
+      )}
 
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-gray-600 font-medium">First Name</label>
-              <input
-                type="text"
-                name="firstName"
-                value={form.firstName}
-                onChange={handleChange}
-                className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2"
-              />
+      <div className="max-w-5xl mx-auto px-6 py-10 bg-white rounded-lg shadow-md">
+        <h2 className="text-3xl font-semibold text-gray-800 mb-8">Edit Profile</h2>
+
+        <form
+          onSubmit={handleSubmit}
+          className="mb-6 w-full rounded-[8px] border border-[#CDCCCC] bg-white px-10 py-8 shadow-sm"
+        >
+          <div className="flex flex-wrap -mx-[15px]">
+            {/* Left column */}
+            <div className="w-full px-[15px] lg:w-6/12 flex flex-col gap-6">
+              <div>
+                <label className="block text-[16px] text-[#7E7E7E]">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={form.firstName}
+                  onChange={handleChange}
+                  className="mt-3 w-full rounded border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[16px] text-[#7E7E7E]">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={form.lastName}
+                  onChange={handleChange}
+                  className="mt-3 w-full rounded border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[16px] text-[#7E7E7E]">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  className="mt-3 w-full rounded border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[16px] text-[#7E7E7E]">Address</label>
+                <input
+                  type="text"
+                  name="address"
+                  value={form.address}
+                  onChange={handleChange}
+                  className="mt-3 w-full rounded border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+                />
+              </div>
             </div>
 
-            <div>
-              <label className="block text-gray-600 font-medium">Last Name</label>
-              <input
-                type="text"
-                name="lastName"
-                value={form.lastName}
-                onChange={handleChange}
-                className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2"
-              />
+            {/* Right column */}
+            <div className="w-full px-[15px] mt-8 lg:mt-0 lg:w-6/12 flex flex-col gap-6">
+              <div>
+                <label className="block text-[16px] text-[#7E7E7E] mb-2">Upload Image</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="w-full cursor-pointer rounded border border-gray-300 bg-white px-4 py-2 text-gray-600"
+                />
+                {form.image && (
+                  <img
+                    src={form.image}
+                    alt="Preview"
+                    className="mt-4 w-28 h-28 rounded-full object-cover border border-gray-300"
+                  />
+                )}
+              </div>
             </div>
           </div>
 
-          <div>
-            <label className="block text-gray-600 font-medium">Phone</label>
-            <input
-              type="text"
-              name="phone"
-              value={form.phone}
-              onChange={handleChange}
-              className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2"
-            />
+          <div className="mt-10 flex justify-end">
+            <button
+              type="submit"
+              disabled={loading}
+              className={`rounded-[3px] bg-black px-8 py-3 text-white transition-colors hover:bg-gray-800 ${
+                loading ? 'cursor-not-allowed opacity-60' : ''
+              }`}
+            >
+              {loading ? 'Saving...' : 'Save Changes'}
+            </button>
           </div>
-
-          <div>
-            <label className="block text-gray-600 font-medium">Address</label>
-            <input
-              type="text"
-              name="address"
-              value={form.address}
-              onChange={handleChange}
-              className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2"
-            />
-          </div>
-
-          <div>
-            <label className="block text-gray-600 font-medium">Upload Image</label>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-              className="mt-1 w-full border border-gray-300 rounded-lg px-3 py-2"
-            />
-            {form.image && (
-              <img
-                src={form.image}
-                alt="Preview"
-                className="mt-3 w-24 h-24 rounded-full object-cover border"
-              />
-            )}
-          </div>
-
-          <button
-            type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg"
-          >
-            Save Changes
-          </button>
         </form>
       </div>
+
+      {/* Loader CSS */}
+      <style jsx>{`
+        .loader {
+          border-top-color: #000;
+          animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
     </div>
   );
 };
