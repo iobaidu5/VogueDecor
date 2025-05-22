@@ -40,7 +40,7 @@ const HomeCategories = () => {
             href={category.href}
             className="flex flex-col items-center"
           >
-            <div className="relative w-full h-[420px] md:h-[420px] bg-white">
+            <div className="relative w-full h-[480px] md:h-[480px] bg-white">
               <Image
                 src={category.image}
                 alt={category.title}
