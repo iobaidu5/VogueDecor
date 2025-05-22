@@ -20,12 +20,12 @@ const categories = [
   },
   {
     title: 'Tables Tops',
-    image: boothImage,
+    image: tableImage,
     href: '/search/table-tops',
   },
   {
     title: 'Tables Bases',
-    image: tableImage,
+    image: boothImage,
     href: '/search/table-bases',
   },
 ];
