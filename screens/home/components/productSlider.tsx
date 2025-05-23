@@ -171,7 +171,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false,
             <div key={item.handle} className="px-3">
               <ProductProvider>
                 <Link href={`/product/${item.handle}`} className="relative flex flex-col">
-                  <div className="relative h-[300px] md:h-[460px] bg-white rounded-lg overflow-hidden">
+                  <div className="relative h-[100%] md:h-[100%] bg-white rounded-lg overflow-hidden">
                     <img
                       src={item.featuredImage?.url || chairImage}
                       alt={item.featuredImage?.altText || item?.title}

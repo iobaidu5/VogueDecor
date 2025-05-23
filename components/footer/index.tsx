@@ -41,7 +41,7 @@ const Footer = () => {
             <div className="w-full lg:min-w-[120px]"><FooterLinks links={furniture} /></div>
             <div className="w-full lg:min-w-[120px]"><FooterLinks links={quikLinks} isQuick /></div>
             <div className="w-full lg:min-w-[120px]"><FooterLinks links={locations} /></div>
-            <div className="w-full lg:min-w-[120px]"><FooterLinks links={policy} /></div>
+            <div className="block lg:hidden w-full lg:min-w-[120px]"><FooterLinks links={policy} /></div>
             <div className="w-full lg:min-w-[120px]"><Connects /></div>
           </div>
 
@@ -54,9 +54,11 @@ const Footer = () => {
 
         {/* Divider */}
 
+        <div className="hidden lg:block mt-[55px] h-[1px] w-full bg-white" />
+
         {/* Bottom Section */}
         <div className="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
-          {/* <div className="flex flex-col items-center space-y-2 text-[12px] text-white md:flex-row md:space-x-4 md:space-y-0">
+          <div className="hidden lg:flex flex-col items-center space-y-2 text-[12px] text-white md:flex-row md:space-x-4 md:space-y-0">
             <Link href="/privacy" className="hover:underline">
               Privacy Policy
             </Link>
@@ -69,7 +71,7 @@ const Footer = () => {
             <Link href="/contact-us" className="hover:underline">
               Contact Us
             </Link>
-          </div> */}
+          </div>
 
           {/* Copyright */}
           <p className="text-center text-[12px] text-white md:text-right uppercase">

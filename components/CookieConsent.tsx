@@ -36,7 +36,7 @@ export default function CookieConsent(): JSX.Element | null {
   return (
     <div
       className={`
-        fixed bottom-0 w-full bg-[#545454] text-white p-4 z-50 shadow-lg
+        fixed bottom-0 w-full bg-[#fff] text-white p-4 z-50 shadow-lg
         transition-transform transition-opacity duration-300 ease-in-out
         ${animate === 'enter' ? 'translate-y-0 opacity-100' : ''}
         ${animate === 'leave' ? 'translate-y-full opacity-0' : ''}
@@ -45,8 +45,8 @@ export default function CookieConsent(): JSX.Element | null {
       role="dialog"
       aria-live="polite"
     >
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center">
-        <p className="text-sm mb-2 md:mb-0">
+      <div className="max-100 px-10 mx-auto flex flex-col md:flex-row justify-between items-center">
+        <p className="text-sm mb-2 md:mb-0 text-black">
           We use cookies to improve your experience on our site. By using our site, you agree to our use of cookies.
         </p>
         <div className="flex gap-2">
