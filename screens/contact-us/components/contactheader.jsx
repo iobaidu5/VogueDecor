@@ -3,13 +3,13 @@ import Link from 'next/link';
 const ContactHeader = () => {
   return (
     <div className="mb-6 flex flex-col gap-3">
-      <div className="flex min-w-fit max-w-[170px] items-center space-x-2 rounded-[90px] border p-[14px] px-[25px] text-[12px]">
-        <Link href="/" className="hover:underline">
-          Home
-        </Link>
-        <span>{'>'}</span>
-        <span className="font-[500]">Contact us</span>
-      </div>
+    <div className="flex w-full items-center space-x-2 text-[15px] mt-20">
+      <Link href="/" className="text-gray-500 hover:underline">
+        Home
+      </Link>
+      <span className="text-gray-500 hover:underline"> / </span>
+      <span className="capitalize text-gray-500">Contact Us</span>
+    </div>
 
       <h2 className="text-[28px] font-medium lg:text-[53px]">Contact us.</h2>
 

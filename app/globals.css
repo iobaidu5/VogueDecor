@@ -20,7 +20,7 @@ body {
 
 .cart-icon{
   position: absolute;
-  top: 65px;
+  top: 68px;
   right: 10px;
   z-index: 100000 !important;
   display: block;
@@ -109,4 +109,9 @@ body {
 .cookie-banner .decline {
   background-color: #ef4444;
   color: white;
+}
+
+
+.slick-dots .slick-active div {
+  background-color: black !important;
 }

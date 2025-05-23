@@ -86,7 +86,7 @@ export default async function ProductPage(props) {
 
   return (
     <ProductProvider>
-      <div className="mt-40 px-4 py-16 xs:py-20 md:mt-40 md:px-10 lg:px-40">
+      <div className="mt-20 lg:mt-40 px-4 py-16 xs:py-20 md:mt-40 md:px-10 lg:px-40">
         <div className="flex flex-col gap-4 rounded-lg bg-white lg:flex-row lg:items-start lg:gap-12">
           <div className="w-full lg:w-8/12">
             <Suspense
@@ -124,7 +124,7 @@ export default async function ProductPage(props) {
               {/* Add to Cart & Quantity */}
               <div className="flex flex-col flex-wrap items-start gap-4">
                 <Quantity />
-                <div className="flex flex-nowrap xs:flex-wrap items-start gap-4">
+                <div className="flex flex-nowrap items-start gap-4">
                   <AddToCart product={product} />
                   <AddToWishlist product={product} />
                 </div>

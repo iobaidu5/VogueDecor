@@ -103,7 +103,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false,
     arrows: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -159,27 +159,28 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false,
 
           const formattedSalePrice = numericSale
             ? new Intl.NumberFormat(undefined, {
-                style: 'currency',
-                currency: currency,
-                currencyDisplay: 'narrowSymbol'
-              }).format(numericSale)
+              style: 'currency',
+              currency: currency,
+              currencyDisplay: 'narrowSymbol'
+            }).format(numericSale)
             : null;
 
-            const isWishlisted = wishlistIds?.includes(item.id);
+          const isWishlisted = wishlistIds?.includes(item.id);
 
           return (
             <div key={item.handle} className="px-3">
               <ProductProvider>
                 <Link href={`/product/${item.handle}`} className="relative flex flex-col">
-                  <div className="relative flex h-[300px] items-center justify-center md:h-[460px] bg-white rounded-lg overflow-hidden">
+                  <div className="relative h-[300px] md:h-[460px] bg-white rounded-lg overflow-hidden">
                     <img
                       src={item.featuredImage?.url || chairImage}
                       alt={item.featuredImage?.altText || item?.title}
-                      className="max-h-full object-contain"
+                      className="w-full h-full object-cover"
                     />
 
-                    {/* Heart Icon */}
-                    {!isDiscover && <AddToWishlist productId={item.id} isWishlisted={isWishlisted} />}
+                    <div className="absolute top-3 right-3 z-50">
+                      {!isDiscover && <AddToWishlist productId={item.id} isWishlisted={isWishlisted} />}
+                    </div>
                   </div>
 
                   {/* Title & Price */}
@@ -192,9 +193,8 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false,
                     </p>
                     <div className="flex items-center space-x-2">
                       <p
-                        className={`text-[15px] font-medium text-[#878787] ${
-                          formattedSalePrice ? 'line-through' : ''
-                        }`}
+                        className={`text-[15px] font-medium text-[#878787] ${formattedSalePrice ? 'line-through' : ''
+                          }`}
                       >
                         {formattedPrice}
                       </p>

@@ -1,5 +1,5 @@
 import { getMenu } from 'lib/shopify';
-import logo from 'media/png/logo.png';
+import logo from 'media/png/logo-new.png';
 import searchIcon from 'media/svg/searchIcon.svg';
 import Image from 'next/image';
 import Link from 'next/link';

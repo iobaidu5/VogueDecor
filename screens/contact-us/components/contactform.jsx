@@ -30,27 +30,27 @@ const ContactForm = () => {
       <div className="mx-[-8px] flex flex-wrap">
         <div className="flex w-full flex-col gap-3 px-[15px] lg:w-6/12">
           <div>
-            <label className="text-[16px] text-[#7E7E7E]">Your email address</label>
+            <label className="mb-0 text-[14px] text-[#7E7E7E]">Your email address</label>
             <input type="email" className="mt-3 w-full rounded border border-gray-300 px-4 py-2" />
           </div>
           <div>
-            <label className="mb-2 text-[16px] text-[#7E7E7E]">Order Type</label>
-            <select className="mt-3 w-full cursor-pointer appearance-none rounded border border-gray-300 bg-white px-4 py-2 outline-none">
-              <option value="">Select order type</option>
-              <option value="Online">Online</option>
-              <option value="In Store">In Store</option>
+            <label className="mb-0 text-[14px] text-[#7E7E7E]">Order Type</label>
+            <select className="mt-3 text-[14px] text-[#7E7E7E] w-full cursor-pointer appearance-none rounded border border-gray-300 bg-white px-4 py-2 outline-none">
+              <option value="" disabled className='text-[#7E7E7E]'>Select order type</option>
+              <option value="Online" className='text-[#7E7E7E]'>Online</option>
+              <option value="In Store" className='text-[#7E7E7E]'>In Store</option>
             </select>
           </div>
           <div>
-            <label className="mb-2 text-[16px] text-[#7E7E7E]">Name</label>
+            <label className="mb-0 text-[14px] text-[#7E7E7E]">Name</label>
             <input type="text" className="mt-3 w-full rounded border border-gray-300 px-4 py-2" />
           </div>
           <div>
-            <label className="mb-2 text-[16px] text-[#7E7E7E]">Phone</label>
+            <label className="mb-0 text-[14px] text-[#7E7E7E]">Phone</label>
             <input type="tel" className="mt-3 w-full rounded border border-gray-300 px-4 py-2" />
           </div>
           <div>
-            <label className="mb-2 text-[16px] text-[#7E7E7E]">
+            <label className="mb-0 text-[14px] text-[#7E7E7E]">
               Order number <span className="text-gray-400">(optional)</span>
             </label>
             <input type="text" className="mt-3 w-full rounded border border-gray-300 px-4 py-2" />
@@ -58,7 +58,7 @@ const ContactForm = () => {
         </div>
         <div className="flex w-full flex-col gap-3 px-[15px] lg:w-6/12">
           <div>
-            <label className="text-[16px] text-[#7E7E7E]">Subject</label>
+            <label className="mb-0 text-[14px] text-[#7E7E7E]">Subject</label>
             <input type="email" className="mt-3 w-full rounded border border-gray-300 px-4 py-2" />
           </div>
           <div>
@@ -66,7 +66,7 @@ const ContactForm = () => {
           </div>
 
           <div>
-            <label className="text-[16px] text-[#7E7E7E]">Attachments</label>
+            <label className="mb-0 text-[14px] text-[#7E7E7E]">Attachments</label>
             <div
               onClick={handleClick}
               onDragOver={(e) => e.preventDefault()}

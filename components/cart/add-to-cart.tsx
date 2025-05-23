@@ -46,7 +46,7 @@ function SubmitButton({
   return (
     <button
       aria-label="Add to cart"
-      className="text-md flex items-center justify-center bg-black px-10 py-[8px] text-white"
+      className="text-sm md:text-md lg:text-base flex items-center justify-center bg-black w-100 px-5 py-[9px] text-white h-18"
     >
       {/* <div className="absolute left-0 ml-4">
         <PlusIcon className="h-5" />

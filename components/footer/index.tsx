@@ -155,13 +155,52 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
 };
 
 const Connects = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleConnect = () => setIsOpen((prev) => !prev);
+
   return (
-    <div className="flex flex-col space-y-2">
-      <p className="xs:text-[14px] md:text-[16px] font-semibold">Connect</p>
-      <div className="flex items-center space-x-2">
-        <Link href="https://www.facebook.com/VogueDecorFurniture/" target='_blank'><Image src={fb} alt="fb" /></Link>
-        <Link href="https://www.instagram.com/voguedecorr/" target='_blank'><Image src={insta} alt="insta" /></Link>
-        {/* <Image src={pintrist} alt="pintrest" /> */}
+    <div className="w-full">
+      {/* Mobile/Tablet: Accordion style */}
+      <div className="block lg:hidden border-b border-gray-300 pb-2">
+        <button
+          onClick={toggleConnect}
+          className="w-full flex items-center justify-between font-semibold text-left xs:text-[14px] md:text-[16px]"
+        >
+          <span>Connect.</span>
+          <ChevronDown
+            className={`w-4 h-4 transform transition-transform duration-300 ease-in-out ${
+              isOpen ? 'rotate-180' : ''
+            }`}
+          />
+        </button>
+
+        <div
+          className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${
+            isOpen ? 'max-h-40' : 'max-h-0'
+          }`}
+        >
+          <div className="flex items-center space-x-2 ml-2 mt-2">
+            <Link href="https://www.facebook.com/VogueDecorFurniture/" target="_blank">
+              <Image src={fb} alt="fb" />
+            </Link>
+            <Link href="https://www.instagram.com/voguedecorr/" target="_blank">
+              <Image src={insta} alt="insta" />
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop: Inline style */}
+      <div className="hidden lg:flex lg:flex-col lg:space-y-2">
+        <p className="xs:text-[14px] md:text-[16px] font-semibold">Connect.</p>
+        <div className="flex items-center space-x-2">
+          <Link href="https://www.facebook.com/VogueDecorFurniture/" target="_blank">
+            <Image src={fb} alt="fb" />
+          </Link>
+          <Link href="https://www.instagram.com/voguedecorr/" target="_blank">
+            <Image src={insta} alt="insta" />
+          </Link>
+        </div>
       </div>
     </div>
   );

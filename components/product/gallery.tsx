@@ -7,11 +7,37 @@ import { useRef, useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 
 interface GalleryProps {
   images: { src: string; altText: string }[];
 }
+
+
+const NextArrow = (props: any) => {
+  const { onClick } = props;
+  return (
+    <div
+      className="absolute -right-10 top-1/2 z-1000 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
+      onClick={onClick}
+    >
+      <ChevronRight size={32} />
+    </div>
+  );
+};
+
+const PrevArrow = (props: any) => {
+  const { onClick } = props;
+  return (
+    <div
+      className="absolute -left-10 top-1/2 z-1005 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
+      onClick={onClick}
+    >
+      <ChevronLeft size={32} />
+    </div>
+  );
+};
 
 export function Gallery({ images }: GalleryProps) {
   const { state, updateImage } = useProduct();
@@ -50,9 +76,28 @@ export function Gallery({ images }: GalleryProps) {
     }
   };
 
+  // const sliderSettings = {
+  //   dots: true,
+  //   arrows: false,
+  //   infinite: true,
+  //   speed: 300,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   nextArrow: <NextArrow />,
+  //   prevArrow: <PrevArrow />,
+  //   customPaging: () => (
+  //     <div className="w-2.5 h-2.5 bg-gray-400 rounded-full mx-1" />
+  //   ),
+  //   appendDots: (dots: any) => (
+  //     <div className="flex justify-center mt-3">{dots}</div>
+  //   ),
+  // };
+
   const sliderSettings = {
     dots: true,
     arrows: false,
+    nextArrow: isMobile ? <NextArrow /> : undefined,
+    prevArrow: isMobile ? <PrevArrow /> : undefined,
     infinite: true,
     speed: 300,
     slidesToShow: 1,
@@ -64,11 +109,12 @@ export function Gallery({ images }: GalleryProps) {
       <div className="flex justify-center mt-3">{dots}</div>
     ),
   };
+  
 
   return (
-    <form className="mt-6 sm:mt-10 md:mt-0">
+    <form className="mt-6 sm:mt-10 md:mt-0 relative">
       {isMobile ? (
-        <div className="w-full">
+        <div className="w-full relative">
           <Slider {...sliderSettings}>
             {images.map((img, idx) => (
               <div key={img.src} className="relative aspect-square">

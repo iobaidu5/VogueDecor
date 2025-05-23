@@ -52,7 +52,7 @@ const AddToWishlist: React.FC<AddToWishlistProps> = ({ productId, isWishlisted =
       alt="heartIcon"
       width={20}
       height={20}
-      className="absolute right-10 top-4 z-50 cursor-pointer transition"
+      className="cursor-pointer transition"
       onClick={handleAddToWishlist}
     />
   );

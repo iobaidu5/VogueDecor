@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Product } from 'lib/shopify/types';
 import { ProductCard } from './productCard';
 import CartModal from 'components/cart/modal';
@@ -13,6 +13,13 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const currentProducts = products.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [currentPage]); // Trigger scroll when currentPage changes
+  
 
   const handlePrevPage = () => {
     if (currentPage > 1) {
@@ -27,6 +34,7 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
   };
 
   const handlePageChange = (page: any) => {
+    console.log("handlePageChange occr")
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
     }
@@ -39,6 +47,7 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+
 
       {/* Pagination Controls */}
       {/* <div className="flex justify-center items-center space-x-4 mt-4">

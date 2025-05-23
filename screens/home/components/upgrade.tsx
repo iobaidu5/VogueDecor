@@ -5,7 +5,7 @@ import logobtn from "media/svg/logobtn.svg";
 
 const Upgrade = () => {
   return (
-    <div className="relative w-full h-[25vh] sm:h-[20vh] md:h-[25vh] lg:h-[25vh] bg-[#013540]">
+    <div className="relative w-full h-[30vh] sm:h-[50vh] md:h-[30vh] lg:h-[30vh] bg-[#013540]">
       {/* Optional: overlay image */}
       {/* <Image src={overlayImage} alt="overlay" className="absolute inset-0 object-cover w-full h-full opacity-10" /> */}
 

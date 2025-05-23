@@ -43,7 +43,7 @@ export default function RichTextEditor() {
 
   return (
     <div className="">
-      <label htmlFor="editor" className="mb-2 block text-sm font-medium text-gray-600">
+      <label htmlFor="editor" className="mb-1 text-[14px] text-[#7E7E7E]">
         Message
       </label>
       <div
