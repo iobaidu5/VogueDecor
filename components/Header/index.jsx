@@ -27,8 +27,12 @@ const Header = async () => {
       <div className="relative flex items-center justify-between pt-4">
         {/* Left: Currency Switcher */}
         <div className="hidden lg991:flex items-center">
+            <p>FR</p>
+            <div className="h-5 w-px bg-[#A0A0A0] ml-2" />
           <CurrencySwitcher />
         </div>
+        <div className="hidden lg991:flex items-center">
+          </div>
 
         {/* Center: Logo */}
         <div className="absolute left-1/2  -translate-x-1/2">
@@ -36,7 +40,7 @@ const Header = async () => {
             <Image
               src={logo}
               alt="logo"
-              className="lg991:my-14 mt-14 w-[100px] md:w-[120px] lg:w-[140px]"
+              className="lg991:my-14 mt-8 w-[100px] md:w-[120px] lg:w-[140px]"
             />
           </Link>
 
@@ -51,16 +55,11 @@ const Header = async () => {
           />
           <UserMenu />
 
-          <div className="hidden lg991:flex items-center">
-            <div className="h-5 w-px bg-[#A0A0A0] mr-2" />
-            <p>FR</p>
-          </div>
-
         </div>
       </div>
 
       {/* Desktop Menu */}
-      <div className="mt-4 hidden items-center justify-center space-x-8 lg:flex">
+      <div className="mt-8 hidden items-center justify-center space-x-14 lg:flex">
         {menu?.map((item) => (
           <Link
             key={item.path}

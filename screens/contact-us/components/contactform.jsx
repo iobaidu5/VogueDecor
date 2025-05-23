@@ -26,7 +26,7 @@ const ContactForm = () => {
     }
   };
   return (
-    <form className="mb-6 w-full rounded-[8px] border border-[#CDCCCC] px-10 py-6">
+    <form className="mb-6 mt-14 w-full rounded-[8px] border border-[#CDCCCC] px-10 py-6">
       <div className="mx-[-8px] flex flex-wrap">
         <div className="flex w-full flex-col gap-3 px-[15px] lg:w-6/12">
           <div>

@@ -16,7 +16,7 @@ export default function OpenCart({
       <FaShoppingCart
         size={24}
         color="black"
-        className={clsx('h-4 transition-all ease-in-out hover:scale-110', className)}
+        className={clsx('mt-1 transition-all ease-in-out hover:scale-110', className)}
       />
 
       {quantity ? (

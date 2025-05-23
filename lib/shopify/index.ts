@@ -213,7 +213,7 @@ export async function getProducts({
       reverse,
       sortKey,
     },
-    cache: 'force-cache',       
+    cache: 'no-store',       
   });
 
   return reshapeProducts(removeEdgesAndNodes(res?.body?.data?.products));

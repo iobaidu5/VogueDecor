@@ -89,11 +89,11 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
           <BreadCrumb currentPage={collection} />
           <div className="flex items-start justify-between pt-5 mt-2">
             <div className="flex flex-col space-y-1">
-              <p className="text-[23px] font-medium uppercase text-gray-700">
-                {collection.title}
+              <p className="text-[23px] font-medium capitalize text-gray-700">
+                {collection}
               </p>
-              <p className="text-gray-700">
-                Discover Vogue Decor's chic {collection.title} for timeless elegance
+              <p className="text-sm lg991:text-medium text-gray-700">
+                Discover Vogue Decor's chic {collection} for timeless elegance
               </p>
             </div>
             <FilterDropdown selected={filter} onFilter={setFilter} />

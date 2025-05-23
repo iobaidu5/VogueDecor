@@ -27,7 +27,7 @@ const Upgrade = () => {
               <button className="flex items-center justify-center rounded-l-lg bg-white px-3 py-2 sm:py-2">
                 <Image src={logobtn} alt="logo" className="w-[90px] md:w-auto" />
               </button>
-              <button className="rounded-r-lg bg-[#05E5C8] h-[52px] px-4 sm:px-5 md:px-6 text-black font-medium">
+              <button className="rounded-r-lg bg-[#05E5C8] h-[56px] px-4 sm:px-5 md:px-6 text-black font-medium">
                 Apply Now
               </button>
             </div>

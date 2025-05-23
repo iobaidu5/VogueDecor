@@ -10,6 +10,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 
 const frames: any = [
@@ -31,6 +32,32 @@ const frames: any = [
   }
 ];
 
+
+const NextArrow = (props: any) => {
+  const { onClick } = props;
+  return (
+    <div
+      className="absolute -right-6 top-1/2 z-50 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
+      onClick={onClick}
+    >
+      <ChevronRight size={32} />
+    </div>
+  );
+};
+
+const PrevArrow = (props: any) => {
+  const { onClick } = props;
+  return (
+    <div
+      className="absolute -left-6 top-1/2 z-45 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
+      onClick={onClick}
+    >
+      <ChevronLeft size={32} />
+    </div>
+  );
+};
+
+
 const Community = () => {
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
 
@@ -47,13 +74,15 @@ const Community = () => {
   }, []);
 
   const sliderSettings = {
-    dots: true,
+    dots: false,
     arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (

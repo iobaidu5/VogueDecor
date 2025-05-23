@@ -65,9 +65,9 @@ const Drawer = ({ menu }) => {
             {/* Sign Up Link */}
             <button
               className="text-left text-lg font-medium text-red-500"
-              onClick={() => handleNavigation('/signup')}
+              onClick={() => handleNavigation('/login')}
             >
-              Sign Up
+              Login
             </button>
           </nav>
         </div>

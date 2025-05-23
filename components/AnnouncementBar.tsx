@@ -11,9 +11,11 @@ export function AnnouncementBar() {
   // if (error || !data?.announcement) return null;
 
   return (
-     <div className="w-full bg-[#545454] text-white text-center py-3 text-sm">
+     <div className="w-full bg-[#545454] text-white text-center py-3 text-xs lg991:text-sm">
     {/* {data?.announcement || "🚚 Free shipping on all orders over $50!"} */}
-      {"Free Shipping to Canada on all orders over $2999. *Conditions apply."}
+      {"Free Shipping to Canada on all orders over $2999."}
+      <br></br>
+      {"Conditions apply."}
     </div>
   );
 }

@@ -9,9 +9,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { ChevronDown } from "lucide-react";
 
-const furniture = ['Furniture', 'Chairs', 'Barstools', 'Outdoor-furniture', 'Table-Bases', 'Booth'];
-const quikLinks = ['Quick Links', 'Home', 'About', 'Products'];
-const locations = ['Locations', 'Montreal', 'Toronto'];
+const furniture = ['Furniture.', 'Chairs', 'Barstools', 'Table Tops', 'Table Bases', 'Outdoor Furniture'];
+const quikLinks = ['Vogue Decor.', 'Home', 'Contact Us'];
+const locations = ['Locations.', 'Montreal', 'Toronto'];
+const policy = ['Policy.','Privacy Policy.', 'Terms and Conditions', ' Shipping and Return Policy'];
 
 
 interface FooterLinksProps {
@@ -40,6 +41,7 @@ const Footer = () => {
             <div className="w-full lg:min-w-[120px]"><FooterLinks links={furniture} /></div>
             <div className="w-full lg:min-w-[120px]"><FooterLinks links={quikLinks} isQuick /></div>
             <div className="w-full lg:min-w-[120px]"><FooterLinks links={locations} /></div>
+            <div className="w-full lg:min-w-[120px]"><FooterLinks links={policy} /></div>
             <div className="w-full lg:min-w-[120px]"><Connects /></div>
           </div>
 
@@ -51,12 +53,10 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="mt-[55px] h-[1px] w-full bg-white" />
 
         {/* Bottom Section */}
         <div className="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
-          {/* Links */}
-          <div className="flex flex-col items-center space-y-2 text-[12px] text-white md:flex-row md:space-x-4 md:space-y-0">
+          {/* <div className="flex flex-col items-center space-y-2 text-[12px] text-white md:flex-row md:space-x-4 md:space-y-0">
             <Link href="/privacy" className="hover:underline">
               Privacy Policy
             </Link>
@@ -69,11 +69,11 @@ const Footer = () => {
             <Link href="/contact-us" className="hover:underline">
               Contact Us
             </Link>
-          </div>
+          </div> */}
 
           {/* Copyright */}
-          <p className="text-center text-[12px] text-white md:text-right">
-            © {new Date().getFullYear()} VOGUE DECOR. All rights reserved.
+          <p className="text-center text-[12px] text-white md:text-right uppercase">
+            © {new Date().getFullYear()} VOGUE DECOR. ALL rights reserved.
           </p>
         </div>
       </div>
@@ -157,11 +157,11 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
 const Connects = () => {
   return (
     <div className="flex flex-col space-y-2">
-      <p className="xs:text-[14px] md:text-[16px] font-semibold">Connects</p>
+      <p className="xs:text-[14px] md:text-[16px] font-semibold">Connect</p>
       <div className="flex items-center space-x-2">
-        <Image src={insta} alt="insta" />
-        <Image src={fb} alt="fb" />
-        <Image src={pintrist} alt="pintrest" />
+        <Link href="https://www.facebook.com/VogueDecorFurniture/" target='_blank'><Image src={fb} alt="fb" /></Link>
+        <Link href="https://www.instagram.com/voguedecorr/" target='_blank'><Image src={insta} alt="insta" /></Link>
+        {/* <Image src={pintrist} alt="pintrest" /> */}
       </div>
     </div>
   );
@@ -169,7 +169,7 @@ const Connects = () => {
 
 const StayUpdated = () => {
   return (
-    <div className="mx-auto flex w-full max-w-sm flex-col gap-2 md:max-w-md">
+    <div className="mx-auto flex w-full max-w-sm flex-col gap-2 md:max-w-md pt-10 lg991:pt-0">
       <p className="text-lg font-medium text-white">Stay Updated</p>
       <div className="flex items-center overflow-hidden rounded-md border border-gray-400">
         <input
@@ -181,9 +181,9 @@ const StayUpdated = () => {
           Subscribe
         </button>
       </div>
-      <p className="mt-3 text-center text-sm text-white md:text-left">
-        Stay updated! Subscribe to our newsletter for exclusive offers,{' '}
-        <br className="hidden md:block" /> latest trends, and design inspiration.
+      <p className="mt-3 text-center text-xs lg:991text-sm text-white md:text-left">
+        Stay updated! Subscribe to our newsletter{' '}
+        <br className="" />for exclusive offers, latest trends, and design inspiration.
       </p>
     </div>
   );

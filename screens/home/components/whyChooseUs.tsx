@@ -6,11 +6,11 @@ import Image from 'next/image';
 
 const WhyChooseUs = () => {
   return (
-    <div className="py-6">
+    <div className="py-16 pb-8">
       <div className="flex flex-col items-center justify-center pt-10">
         <p className="text-[14px] text-[#878787]">Elevate your space with us</p>
-        <p className="font-medium xs:text-[25px] md:text-[40px]">Why Choose Us</p>
-        <div className="h-[2px] w-[130px] bg-[#878787]" />
+        <p className="font-medium xs:text-[25px] md:text-[40px]">Why Choose Us.</p>
+        {/* <div className="h-[2px] w-[130px] bg-[#878787]" /> */}
       </div>
       <ChooseUsSection />
     </div>
@@ -27,16 +27,16 @@ const data = [
     desc: 'Our furniture is built with quality materials  designed to last.'
   },
   {
-    icon: SupportIcon,
-    firstText: 'Free Shipping',
-    secondText: '',
-    desc: 'Free shipping to Canada for all orders over $1999.'
-  },
-  {
     icon: likeIcon,
     firstText: 'Buy From',
     secondText: 'Manufacturer',
     desc: 'Shop directly from the manufacturer for  best price and quality.'
+  },
+  {
+    icon: SupportIcon,
+    firstText: 'Free',
+    secondText: 'Shipping',
+    desc: 'Free shipping to Canada for all orders over $2999.'
   },
   {
     icon: DeliveryIcon,
@@ -50,7 +50,7 @@ const ChooseUsSection = () => {
   return (
     <div className="grid gap-2 pt-[40px] grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
       {data?.map((item: any) => (
-        <div className="flex flex-col items-center" key={item?.firstText}>
+        <div className="flex flex-col items-center mt-4" key={item?.firstText}>
           {item?.secondText === 'Manufacturer' ? (
             <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full bg-[#D9D9D94F]">
               <Image src={item.icon} alt={item.firstText} />
@@ -58,13 +58,13 @@ const ChooseUsSection = () => {
           ) : (
             <Image src={item.icon} alt={item.firstText} />
           )}
-          <p className="pt-2 font-medium xs:text-[18px] sm:text-[22px] lg:text-[28px]">
+          <p className="pt-2 font-medium xs:text-[16px] sm:text-[22px] lg:text-[24px]">
             {item?.firstText}
           </p>
-          <p className="font-medium xs:text-[18px] sm:text-[22px] lg:text-[28px]">
+          <p className="font-medium xs:text-[16px] sm:text-[22px] lg:text-[24px]">
             {item?.secondText}
           </p>
-          <p className="mt-2 text-sm sm:text-base lg:text-[16px] text-[#878787] leading-[1.6] break-words text-center">
+          <p className="mt-2 sm:text-base text-[12px] lg:text-[16px] text-[#878787] leading-[1.6] break-words text-center">
             {item.desc
               ?.split(' ')
               ?.slice(0, Math.ceil(item.desc.split(' ').length / 2))

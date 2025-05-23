@@ -86,7 +86,7 @@ export default async function ProductPage(props) {
 
   return (
     <ProductProvider>
-      <div className="mt-10 px-4 py-16 xs:py-20 md:mt-24 md:px-10 lg:px-40">
+      <div className="mt-40 px-4 py-16 xs:py-20 md:mt-40 md:px-10 lg:px-40">
         <div className="flex flex-col gap-4 rounded-lg bg-white lg:flex-row lg:items-start lg:gap-12">
           <div className="w-full lg:w-8/12">
             <Suspense

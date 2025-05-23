@@ -78,7 +78,7 @@ const NextArrow = (props: any) => {
       className="absolute -right-6 top-1/2 z-50 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
       onClick={onClick}
     >
-      <ChevronRight size={48} />
+      <ChevronRight size={32} />
     </div>
   );
 };
@@ -90,7 +90,7 @@ const PrevArrow = (props: any) => {
       className="absolute -left-6 top-1/2 z-45 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
       onClick={onClick}
     >
-      <ChevronLeft size={48} />
+      <ChevronLeft size={32} />
     </div>
   );
 };
@@ -114,7 +114,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false,
       },
       {
         breakpoint: 640,
-        settings: { slidesToShow: 1 }
+        settings: { slidesToShow: 2 }
       }
     ],
     appendDots: (dots: React.ReactNode) => (

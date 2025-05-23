@@ -100,6 +100,7 @@ export function Gallery({ images }: GalleryProps) {
             >
               {images.map((img, idx) => {
                 const isActive = idx === imageIndex;
+                console.log("img.src img.src ", img.src)
                 return (
                   <li key={img.src} className="flex-shrink-0">
                     <button
