@@ -173,7 +173,7 @@ export default async function ProductPage(props) {
       </div>
 
       {/* Floating Cart Modal (visible on larger screens) */}
-      <div className="hidden justify-end md:flex md:w-1/3">
+      <div className="justify-end md:flex md:w-1/3">
         <CartModal />
       </div>
     </ProductProvider>
