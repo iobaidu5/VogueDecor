@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const hours = [
   { day: 'Monday', time: '8AM–4PM' },
   { day: 'Tuesday', time: '8AM–4PM' },
@@ -14,14 +16,18 @@ const ContactLocation = () => {
     <div className="mt-[100px]">
       <h3 className="mb-5 text-[28px] font-medium lg:text-[53px]">Find Us.</h3>
       <div className="mx-[-8px] flex w-full flex-wrap">
-        <div className="flex w-full flex-col gap-10 px-[20px] md:w-6/12">
+        <div className="flex w-full flex-col gap-10 px-[12px] md:px-[20px] md:w-6/12">
           <button className="max-w-[160px] rounded-[8px] bg-black px-4 py-2 text-white">
             Montreal
           </button>
-          <div className="flex flex-col gap-2 text-[14px] font-medium lg:text-[16px]">
-            <h3>514.823-5595</h3>
-            <h3>info@voguedecor.com</h3>
-            <h3>7550 Chemin de le Cote-de-Liesse. Saint-Laurent, OC HAT TE</h3>
+          <div className="flex flex-col gap-2 text-[14px] -mt-4 md:-mt-0 font-medium lg:text-[16px]">
+            <Link href="tel:5148235595"><h3>514.823-5595</h3></Link>
+            <Link href="mailto:info@voguedecor.com"><h3>info@voguedecor.com</h3></Link>
+            <div className="w-full">
+          <h3 className="block md:inline">{'7550 Chemin de le Cote-de-Liesse.'}</h3>
+          <h3 className="block md:inline">{'Saint-Laurent, OC H4T 1E7'}</h3>
+          
+        </div>
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div className="col-span-2 w-full rounded-[7px] bg-[#F7F7F7] lg:col-span-1">
@@ -59,12 +65,12 @@ const ContactLocation = () => {
 
         <div className="mt-5 flex w-full flex-col gap-10 px-[20px] md:mt-0 md:w-6/12">
           {' '}
-          <button className="max-w-[160px] rounded-[8px] bg-black px-4 py-2 text-white">
+          <button className="max-w-[160px] rounded-[8px] bg-black px-4 mt-6 lg:mt-0 py-2 text-white">
             Toronto
           </button>
-          <div className="flex flex-col gap-2 text-[16px] font-medium">
-            <h3>(416) 560-5595</h3>
-            <h3>info@voguedecor.com</h3>
+          <div className="flex flex-col gap-2 -mt-4 md:-mt-0 text-[16px] font-medium">
+          <Link href="tel:4165605595"><h3>(416) 560-5595</h3></Link>
+          <Link href="mailto:info@voguedecor.com"><h3>info@voguedecor.com</h3></Link>
             <h3>825 Denison St Unit 2, Markham, ON L3R 5E4</h3>
           </div>
           <div className="grid grid-cols-2 gap-3">

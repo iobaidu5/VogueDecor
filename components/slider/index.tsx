@@ -51,7 +51,7 @@ const Slider = ({ data }: { data: Array<Record<string, any>> }) => {
       <h2 className="xs:text-md mb-4 font-medium md:text-2xl">We think you may also like</h2>
       <div className="relative">
         {/* Slider Container */}
-        <div className="relative">
+        <div className="relative mt-12 md:mt-0">
           {/* Left Button */}
           <button
             className="absolute left-4 top-[40%] z-10 flex items-center justify-center rounded-full bg-white p-2 shadow-md xs:left-6 xs:size-10 md:size-12"
@@ -114,7 +114,7 @@ const Slider = ({ data }: { data: Array<Record<string, any>> }) => {
                       </div>
 
                       {/* Content Section */}
-                      <div className="flex items-center justify-between space-y-3 p-4">
+                      <div className="flex items-center justify-between space-y-3 px-12 py-4 md:p-4">
                         <div className="flex flex-col space-y-1">
                           <p className="md:text-md font-medium uppercase text-gray-900 xs:text-sm">
                             {item?.title}

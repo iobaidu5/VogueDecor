@@ -1,4 +1,5 @@
-import { getMenu } from 'lib/shopify';
+'use client';
+
 import logo from 'media/png/logo-new.png';
 import searchIcon from 'media/svg/searchIcon.svg';
 import Image from 'next/image';
@@ -7,6 +8,8 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import Drawer from 'components/drawer/index';
 import CurrencySwitcher from 'components/currency/CurrencySwitcher';
 import UserMenu from 'components/UserMenu';
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 function SignupButton() {
   return (
@@ -18,23 +21,31 @@ function SignupButton() {
   );
 }
 
-const Header = async () => {
-  const menu = await getMenu('main-menu');
+const Header = ({ menu }) => {
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const router = useRouter();
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchText.trim()) {
+      const formattedLink = searchText.toLowerCase().replace(/\s+/g, "-");
+      router.push(`/search/${formattedLink}`);
+      setSearchText("");
+      setShowSearch(false);
+    }
+  };
 
   return (
     <nav className="flex flex-col w-full px-6 md:px-[40px] lg:px-[70px]">
       {/* Top Row */}
       <div className="relative flex items-center justify-between pt-4">
-        {/* Left: Currency Switcher */}
         <div className="hidden lg991:flex items-center">
-            <p>FR</p>
-            <div className="h-5 w-px bg-[#A0A0A0] ml-2" />
+          <p>FR</p>
+          <div className="h-5 w-px bg-[#A0A0A0] ml-2" />
           <CurrencySwitcher />
         </div>
-        <div className="hidden lg991:flex items-center">
-          </div>
 
-        {/* Center: Logo */}
         <div className="absolute left-1/2  -translate-x-1/2">
           <Link href="/">
             <Image
@@ -43,18 +54,41 @@ const Header = async () => {
               className="lg991:my-14 mt-8 w-[100px] md:w-[120px] lg:w-[140px]"
             />
           </Link>
-
         </div>
 
-        {/* Right: Search & User Menu */}
+        {/* Search + User */}
         <div className="hidden lg991:flex items-center space-x-4 mt-4">
-          <Image
-            src={searchIcon}
-            alt="search"
-            className="h-5 w-5 cursor-pointer md:block hover:text-gray-500"
-          />
-          <UserMenu />
+          <div className="relative">
+            <Image
+              src={searchIcon}
+              alt="search"
+              onClick={() => setShowSearch((prev) => !prev)}
+              className="h-5 w-5 cursor-pointer md:block hover:text-gray-500"
+            />
 
+{showSearch && (
+  <form
+    onSubmit={handleSearchSubmit}
+    className="absolute top-10 right-0 bg-white border border-gray-300 shadow-xl rounded-lg flex items-center px-3 py-2 z-50 w-64"
+  >
+    <input
+      type="text"
+      value={searchText}
+      onChange={(e) => setSearchText(e.target.value)}
+      placeholder="Search..."
+      className="flex-grow px-3 py-1 text-sm text-gray-800 placeholder-gray-400 border-none focus:outline-none"
+    />
+    <button
+      type="submit"
+      className="ml-2 px-4 py-1.5 text-sm font-semibold text-white bg-black rounded-md hover:bg-gray-800 transition duration-200"
+    >
+      Go
+    </button>
+  </form>
+)}
+
+          </div>
+          <UserMenu />
         </div>
       </div>
 
@@ -75,7 +109,6 @@ const Header = async () => {
         ))}
       </div>
 
-      {/* Drawer for mobile */}
       <Drawer menu={menu} />
     </nav>
   );

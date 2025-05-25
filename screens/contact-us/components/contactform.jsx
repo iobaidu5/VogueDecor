@@ -26,7 +26,7 @@ const ContactForm = () => {
     }
   };
   return (
-    <form className="mb-6 mt-14 w-full rounded-[8px] border border-[#CDCCCC] px-10 py-6">
+    <form className="mb-6 mt-14 w-full rounded-[8px] border border-[#CDCCCC] px-2 md:px-10 py-6">
       <div className="mx-[-8px] flex flex-wrap">
         <div className="flex w-full flex-col gap-3 px-[15px] lg:w-6/12">
           <div>
@@ -36,7 +36,7 @@ const ContactForm = () => {
           <div>
             <label className="mb-0 text-[14px] text-[#7E7E7E]">Order Type</label>
             <select className="mt-3 text-[14px] text-[#7E7E7E] w-full cursor-pointer appearance-none rounded border border-gray-300 bg-white px-4 py-2 outline-none">
-              <option value="" disabled className='text-[#7E7E7E]'>Select order type</option>
+              <option value="" disabled selected className='text-[#7E7E7E]'>-</option>
               <option value="Online" className='text-[#7E7E7E]'>Online</option>
               <option value="In Store" className='text-[#7E7E7E]'>In Store</option>
             </select>
@@ -79,7 +79,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-      <div className="mt-3 flex justify-end">
+      <div className="mt-3 flex justify-center md:justify-end">
         <button className="rounded-[3px] bg-black px-4 py-2 text-white">Submit</button>
       </div>
     </form>

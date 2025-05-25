@@ -46,9 +46,12 @@ export default function CookieConsent(): JSX.Element | null {
       aria-live="polite"
     >
       <div className="max-100 px-10 mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div>
+        <h2 className="text-lg mb-2 md:mb-0 text-black">Cookie Consent</h2>
         <p className="text-sm mb-2 md:mb-0 text-black">
           We use cookies to improve your experience on our site. By using our site, you agree to our use of cookies.
         </p>
+        </div>
         <div className="flex gap-2">
           <button
             onClick={() => handleConsent('accepted')}

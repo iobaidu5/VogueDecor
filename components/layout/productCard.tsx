@@ -68,18 +68,18 @@ export function ProductCard({ product }: { product: any }) {
       </div>
 
       {/* Product Info */}
-      <div className="flex flex-col gap-2 p-3 items-center text-center md:items-start md:text-left">
-        <p className="w-full text-sm md:text-base font-medium text-black">
+      <div className="flex flex-col gap-2 p-3 items-start md:items-center text-left lg:text-center md:items-start md:text-left">
+        <p className="w-full text-xs lg:text-sm md:text-base  lg:font-medium text-black">
           {product.title}
         </p>
-        <div className="flex items-center justify-center md:justify-start space-x-2">
+        <div className="flex items-start md:items-center justify-start md:justify-start space-x-2">
           <p
-            className={`text-sm font-medium text-[#878787] ${formattedSalePrice && formattedSalePrice !== '$0.00' ? 'line-through' : ''}`}
+            className={`text-sm text-left lg:text-center font-medium text-[#878787] ${formattedSalePrice && formattedSalePrice !== '$0.00' ? 'line-through' : ''}`}
           >
             {formattedPrice || ''}
           </p>
           {formattedSalePrice && formattedSalePrice !== '$0.00' && (
-            <p className="text-sm font-medium text-red-700">
+            <p className="text-sm text-left lg:text-center font-medium text-red-700">
               {formattedSalePrice}
             </p>
           )}

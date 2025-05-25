@@ -12,7 +12,7 @@ import { ChevronDown } from "lucide-react";
 const furniture = ['Furniture.', 'Chairs', 'Barstools', 'Table Tops', 'Table Bases', 'Outdoor Furniture'];
 const quikLinks = ['Vogue Decor.', 'Home', 'Contact Us'];
 const locations = ['Locations.', 'Montreal', 'Toronto'];
-const policy = ['Policy.','Privacy Policy.', 'Terms and Conditions', ' Shipping and Return Policy'];
+const policy = ['Policy.', 'Privacy Policy.', 'Terms and Conditions', ' Shipping and Return Policy'];
 
 
 interface FooterLinksProps {
@@ -42,7 +42,7 @@ const Footer = () => {
             <div className="w-full lg:min-w-[120px]"><FooterLinks links={quikLinks} isQuick /></div>
             <div className="w-full lg:min-w-[120px]"><FooterLinks links={locations} /></div>
             <div className="block lg:hidden w-full lg:min-w-[120px]"><FooterLinks links={policy} /></div>
-            <div className="w-full lg:min-w-[120px]"><Connects /></div>
+            <div className="w-full lg:min-w-[120px] w-full f-left"><Connects /></div>
           </div>
 
 
@@ -59,22 +59,22 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
           <div className="hidden lg:flex flex-col items-center space-y-2 text-[12px] text-white md:flex-row md:space-x-4 md:space-y-0">
-            <Link href="/privacy" className="hover:underline">
+            <Link href="/privacy" className="hover:underline text-gray-500">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:underline">
+            <Link href="/terms" className="hover:underline text-gray-500">
               Terms and Conditions
             </Link>
-            <Link href="/shipping-return-policy" className="hover:underline">
+            <Link href="/shipping-return-policy" className="hover:underline text-gray-500">
               Shipping and Return Policy
             </Link>
-            <Link href="/contact-us" className="hover:underline">
+            {/* <Link href="/contact-us" className="hover:underline">
               Contact Us
-            </Link>
+            </Link> */}
           </div>
 
           {/* Copyright */}
-          <p className="text-center text-[12px] text-white md:text-right uppercase">
+          <p className="text-center text-[12px] text-gray-500 md:text-right uppercase">
             © {new Date().getFullYear()} VOGUE DECOR. ALL rights reserved.
           </p>
         </div>
@@ -116,19 +116,28 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
         </button>
 
         <div
-          className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${
-            isOpen ? "max-h-96" : "max-h-0"
-          }`}
+          className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-96" : "max-h-0"
+            }`}
         >
           <div className="flex flex-col ml-2 mt-1 space-y-2">
             {links.slice(1).map((link) => (
-              <Link
-                key={link}
-                href={`/search/${link.toLowerCase()}`}
-                className="text-[13px] hover:underline"
-              >
-                {link}
-              </Link>
+              link === "contact us" ?
+                <Link
+                  key={link}
+                  href={`/contact-us`}
+                  className="text-[13px] hover:underline"
+                >
+                  {link}
+                </Link>
+                :
+                <Link
+                  key={link}
+
+                  href={`/search/${link.toLowerCase()}`}
+                  className={`text-[13px] hover:underline`}
+                >
+                  {link}
+                </Link>
             ))}
           </div>
         </div>
@@ -142,6 +151,15 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
               {link}
             </p>
           ) : (
+            link === "Contact Us" ?
+                <Link
+                  key={link}
+                  href={`/contact-us`}
+                  className="text-[13px] hover:underline"
+                >
+                  {link}
+                </Link>
+                :
             <Link
               key={link}
               href={`/search/${link.toLowerCase()}`}
@@ -161,7 +179,7 @@ const Connects = () => {
   const toggleConnect = () => setIsOpen((prev) => !prev);
 
   return (
-    <div className="w-full">
+    <div className="w-full f-left">
       {/* Mobile/Tablet: Accordion style */}
       <div className="block lg:hidden border-b border-gray-300 pb-2">
         <button
@@ -170,16 +188,14 @@ const Connects = () => {
         >
           <span>Connect.</span>
           <ChevronDown
-            className={`w-4 h-4 transform transition-transform duration-300 ease-in-out ${
-              isOpen ? 'rotate-180' : ''
-            }`}
+            className={`w-4 h-4 transform transition-transform duration-300 ease-in-out ${isOpen ? 'rotate-180' : ''
+              }`}
           />
         </button>
 
         <div
-          className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${
-            isOpen ? 'max-h-40' : 'max-h-0'
-          }`}
+          className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${isOpen ? 'max-h-40' : 'max-h-0'
+            }`}
         >
           <div className="flex items-center space-x-2 ml-2 mt-2">
             <Link href="https://www.facebook.com/VogueDecorFurniture/" target="_blank">
