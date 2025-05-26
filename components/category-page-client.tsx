@@ -93,8 +93,9 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
                 {collection &&
                   collection
                     .split('-')
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ')}
+                    .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ')
+                }
               </p>
               <p className="text-sm lg991:text-medium text-gray-700">
                 Discover Vogue Decor's chic {collection} for timeless elegance
