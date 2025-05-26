@@ -72,7 +72,7 @@ export default function ProductGridItems({ products }: { products: Product[] }) 
         </button>
       </div> */}
 
-      <div className="flex justify-center items-center space-x-2 mt-4">
+      <div className="flex justify-center items-center space-x-2 my-4">
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
           <button
             key={page}

@@ -108,9 +108,9 @@ const Community = () => {
           {frames.map((frame: any) => (
             <div
               key={frame.alt}
-              className="w-full bg-gray-200 h-full"
+              className="w-full bg-white h-full"
             >
-              <Image className="h-full w-full mx-4" src={frame.image} alt={frame.alt} />
+              <Image className="h-full w-full mx-2" src={frame.image} alt={frame.alt} />
             </div>
           ))}
         </Slider>
