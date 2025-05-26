@@ -27,15 +27,17 @@ const Price = ({
 
   return (
     <p suppressHydrationWarning={true} className={className}>
-      <span className={clsx(sale && 'line-through')}>
+      {formattedPrice !== "$NaN" && <span className={clsx(sale && 'line-through')}>
         {formattedPrice}
         <span className={clsx('ml-1 inline', currencyCodeClassName)}>{currency}</span>
-      </span>
-      {sale ? (
-        <span className="ml-2 font-medium text-red-700">
+      </span>}
+      {sale && formattedPrice !== "$NaN" ? (
+        <span className={`ml-2 font-medium text-red-700`}>
           {`${numericSale.toFixed(2)} ${currency}`}
         </span>
-      ) : null}
+      ) :         <span className={clsx('ml-1 inline', currencyCodeClassName)}>
+      {`${numericSale.toFixed(2)} ${currency}`}
+    </span>}
     </p>
   );
 };

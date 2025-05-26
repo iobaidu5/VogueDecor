@@ -104,7 +104,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
@@ -127,7 +127,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false,
   return (
     <div className="pt-[40px]">
       <Slider {...settings}>
-        {data?.slice(0, 6)?.map((item: any) => {
+        {data?.slice(0, 20)?.map((item: any) => {
           const productForCart: ProductForCart = {
             ...item,
             featuredImage: {

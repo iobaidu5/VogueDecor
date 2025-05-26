@@ -66,26 +66,26 @@ const Header = ({ menu }) => {
               className="h-5 w-5 cursor-pointer md:block hover:text-gray-500"
             />
 
-{showSearch && (
-  <form
-    onSubmit={handleSearchSubmit}
-    className="absolute top-10 right-0 bg-white border border-gray-300 shadow-xl rounded-lg flex items-center px-3 py-2 z-50 w-64"
-  >
-    <input
-      type="text"
-      value={searchText}
-      onChange={(e) => setSearchText(e.target.value)}
-      placeholder="Search..."
-      className="flex-grow px-3 py-1 text-sm text-gray-800 placeholder-gray-400 border-none focus:outline-none"
-    />
-    <button
-      type="submit"
-      className="ml-2 px-4 py-1.5 text-sm font-semibold text-white bg-black rounded-md hover:bg-gray-800 transition duration-200"
-    >
-      Go
-    </button>
-  </form>
-)}
+            {showSearch && (
+              <form
+                onSubmit={handleSearchSubmit}
+                className="absolute top-10 right-0 bg-white border border-gray-300 shadow-xl rounded-lg flex items-center px-3 py-2 z-50 w-64"
+              >
+                <input
+                  type="text"
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                  placeholder="Search..."
+                  className="flex-grow px-3 py-1 text-sm text-gray-800 placeholder-gray-400 border-none focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  className="ml-2 px-4 py-1.5 text-sm font-semibold text-white bg-black rounded-md hover:bg-gray-800 transition duration-200"
+                >
+                  Go
+                </button>
+              </form>
+            )}
 
           </div>
           <UserMenu />
@@ -93,7 +93,7 @@ const Header = ({ menu }) => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="mt-8 hidden items-center justify-center space-x-14 lg:flex">
+      <div className="my-8 hidden items-center justify-center space-x-14 lg:flex">
         {menu?.map((item) => (
           <Link
             key={item.path}

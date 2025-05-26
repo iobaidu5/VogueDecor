@@ -58,20 +58,20 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
           a.availableForSale === b.availableForSale
             ? 0
             : a.availableForSale
-            ? -1
-            : 1
+              ? -1
+              : 1
         );
         break;
-        default:
-          sorted.sort((a, b) => {
-            const groupA = a.title?.split(' - ')[0] ?? '';
-            const groupB = b.title?.split(' - ')[0] ?? '';
-            if (groupA < groupB) return -1;
-            if (groupA > groupB) return 1;
-            return a.title.localeCompare(b.title);
-          });
-          break;
-        
+      default:
+        sorted.sort((a, b) => {
+          const groupA = a.title?.split(' - ')[0] ?? '';
+          const groupB = b.title?.split(' - ')[0] ?? '';
+          if (groupA < groupB) return -1;
+          if (groupA > groupB) return 1;
+          return a.title.localeCompare(b.title);
+        });
+        break;
+
     }
     setProducts(sorted);
   }, [filter, allProducts]);
@@ -90,7 +90,11 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
           <div className="flex items-start justify-between pt-5 mt-2">
             <div className="flex flex-col space-y-1">
               <p className="text-[23px] font-medium capitalize text-gray-700">
-                {collection}
+                {collection &&
+                  collection
+                    .split('-')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ')}
               </p>
               <p className="text-sm lg991:text-medium text-gray-700">
                 Discover Vogue Decor's chic {collection} for timeless elegance

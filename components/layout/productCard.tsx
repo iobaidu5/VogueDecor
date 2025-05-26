@@ -11,10 +11,10 @@ export function ProductCard({ product }: { product: any }) {
   const router = useRouter();
   const { currency, rate } = useCurrency();
 
-  const numericAmount = parseFloat(product?.priceRange?.maxVariantPrice?.amount) * rate;
-  const numericSale = product?.variants[0]?.compareAtPrice?.amount
-    ? parseFloat(product?.variants[0]?.compareAtPrice?.amount) * rate
-    : 0;
+  const numericAmount = product?.variants[0]?.compareAtPrice?.amount
+  ? parseFloat(product?.variants[0]?.compareAtPrice?.amount) * rate
+  : 0;
+  const numericSale = parseFloat(product?.priceRange?.maxVariantPrice?.amount) * rate;
 
   const formattedPrice = new Intl.NumberFormat(undefined, {
     style: 'currency',

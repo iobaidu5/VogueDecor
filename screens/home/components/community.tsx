@@ -1,9 +1,10 @@
 'use client';
 
-import frame1 from 'media/png/frame1.png';
-import frame2 from 'media/png/frame2.png';
-import frame3 from 'media/png/frame3.png';
-import frame4 from 'media/png/frame4.png';
+import frame1 from 'media/instagram/Instagram (2).png';
+import frame2 from 'media/instagram/Instagram.png';
+import frame3 from 'media/instagram/Instagram (3).png';
+import frame4 from 'media/instagram/Instagram (4).png';
+import frame5 from 'media/instagram/Instagram (6).png';
 import Image from 'next/image';
 
 import Slider from "react-slick";
@@ -14,6 +15,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 
 const frames: any = [
+  {
+    image: frame5,
+    alt: 'fram5'
+  },
   {
     image: frame1,
     alt: 'fram1'
@@ -29,7 +34,7 @@ const frames: any = [
   {
     image: frame4,
     alt: 'fram4'
-  }
+  },
 ];
 
 
@@ -37,7 +42,7 @@ const NextArrow = (props: any) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute -right-6 top-1/2 z-50 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
+      className="absolute -right-8 top-1/2 z-50 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
       onClick={onClick}
     >
       <ChevronRight size={32} />
@@ -49,7 +54,7 @@ const PrevArrow = (props: any) => {
   const { onClick } = props;
   return (
     <div
-      className="absolute -left-6 top-1/2 z-45 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
+      className="absolute -left-8 top-1/2 z-45 -translate-y-1/2 cursor-pointer text-black hover:text-gray-600"
       onClick={onClick}
     >
       <ChevronLeft size={32} />
@@ -75,10 +80,11 @@ const Community = () => {
 
   const sliderSettings = {
     dots: false,
-    arrows: false,
+    arrows: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 4,
+    margin: 0,
     slidesToScroll: 1,
     adaptiveHeight: true,
     nextArrow: <NextArrow />,
@@ -98,29 +104,17 @@ const Community = () => {
       </a>
 
       {/* Slider on small and medium, grid on large */}
-      {isMobileOrTablet ? (
         <Slider {...sliderSettings} className="mt-8">
           {frames.map((frame: any) => (
             <div
               key={frame.alt}
-              className="flex w-full items-center justify-center overflow-hidden bg-gray-200 h-60"
+              className="w-full bg-gray-200 h-full"
             >
-              <Image className="h-full w-full object-cover" src={frame.image} alt={frame.alt} />
+              <Image className="h-full w-full mx-4" src={frame.image} alt={frame.alt} />
             </div>
           ))}
         </Slider>
-      ) : (
-        <div className="mt-8 grid grid-cols-4 gap-3">
-          {frames.map((frame: any) => (
-            <div
-              key={frame.alt}
-              className="col-span-1 flex w-full items-center justify-center overflow-hidden bg-gray-200 h-96"
-            >
-              <Image className="h-full w-full object-cover" src={frame.image} alt={frame.alt} />
-            </div>
-          ))}
-        </div>
-      )}
+
     </div>
   );
 };

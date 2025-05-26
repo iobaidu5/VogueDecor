@@ -35,11 +35,27 @@ const ContactForm = () => {
           </div>
           <div>
             <label className="mb-0 text-[14px] text-[#7E7E7E]">Order Type</label>
-            <select className="mt-3 text-[14px] text-[#7E7E7E] w-full cursor-pointer appearance-none rounded border border-gray-300 bg-white px-4 py-2 outline-none">
-              <option value="" disabled selected className='text-[#7E7E7E]'>-</option>
-              <option value="Online" className='text-[#7E7E7E]'>Online</option>
-              <option value="In Store" className='text-[#7E7E7E]'>In Store</option>
-            </select>
+            <div className="relative w-full mt-3">
+              <select className="text-[14px] text-[#7E7E7E] w-full cursor-pointer appearance-none rounded border border-gray-300 bg-white px-4 py-2 outline-none">
+                <option value="" disabled selected className="text-[#7E7E7E]">-</option>
+                <option value="Online" className="text-[#7E7E7E]">Online</option>
+                <option value="In Store" className="text-[#7E7E7E]">In Store</option>
+              </select>
+
+              {/* Chevron Down Icon */}
+              <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+
           </div>
           <div>
             <label className="mb-0 text-[14px] text-[#7E7E7E]">Name</label>

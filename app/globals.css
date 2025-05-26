@@ -115,3 +115,8 @@ body {
 .slick-dots .slick-active div {
   background-color: black !important;
 }
+
+
+.slick-dots{
+  /* bottom: 20px !important; */
+}

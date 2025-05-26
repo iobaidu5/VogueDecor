@@ -125,14 +125,13 @@ export default async function ProductPage(props) {
                   {product?.title}
                 </h1>
 
-
                 <h5 className="font-normal xs:text-[15px] md:text-[15px] text-[#818181]">#{product?.variants[0]?.sku}</h5>
                 <div className="mt-2 inline-block rounded-full text-lg text-gray-400">
                   <Price
-                    amount={product?.priceRange.maxVariantPrice?.amount}
+                    amount={Number(product?.variants[0]?.compareAtPrice?.amount)}
                     currencyCode={product?.priceRange?.maxVariantPrice?.currencyCode}
                     className='text-xl font-small md:text-xl mt-5 text-[#000] overflow-hidden flex items-center gap-2'
-                    sale={product?.variants[0]?.compareAtPrice?.amount}
+                    sale={product?.priceRange.maxVariantPrice?.amount}
                     saleCurreny={product?.variants[0]?.compareAtPrice?.currencyCode}
                   />
                 </div>

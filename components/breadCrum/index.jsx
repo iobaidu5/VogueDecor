@@ -8,7 +8,13 @@ const BreadCrumb = ({ currentPage }) => {
         Home
       </Link>
       <span className="text-gray-500 hover:underline"> / </span>
-      <span className="capitalize text-gray-500">{currentPage}</span>
+      <span className="capitalize text-gray-500">
+        {currentPage &&
+          currentPage
+            .split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ')}
+      </span>
     </div>
   );
 };

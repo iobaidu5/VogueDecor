@@ -10,6 +10,8 @@ import Price from 'components/price';
 const ProductCard = ({ data }: any) => {
   const [isHover, setIsHover] = useState(false);
 
+
+
   return (
     <Link href={`product/${data.handle}`} key={data.handle} className="relative flex flex-col">
       <div
@@ -53,10 +55,10 @@ const ProductCard = ({ data }: any) => {
 
             <div className="mt-0 inline-block rounded-full text-lg text-gray-400">
                   <Price
-                    amount={data?.priceRange.maxVariantPrice?.amount}
+                    amount={data?.variants[0]?.compareAtPrice?.amount}
                     currencyCode={data?.priceRange?.maxVariantPrice?.currencyCode}
                     className='text-md font-small md:text-md mt-2 text-[#000] whitespace-nowrap overflow-hidden flex items-center gap-2'
-                    sale={data?.variants[0]?.compareAtPrice?.amount}
+                    sale={data?.priceRange.maxVariantPrice?.amount}
                     // saleCurreny={data?.variants[0]?.compareAtPrice?.currencyCode}
                   />
                 </div>
