@@ -104,7 +104,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
             <FilterDropdown selected={filter} onFilter={setFilter} />
           </div>
           <div className="mt-4">
-            <ProductGridItems products={products} collection={collection} />
+            <ProductGridItems products={products} />
           </div>
         </>
       )}
