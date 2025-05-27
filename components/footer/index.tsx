@@ -129,15 +129,22 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
                 >
                   {link}
                 </Link>
-                :
-                <Link
+                : link === "/search/home" ? <Link
                   key={link}
 
-                  href={`/search/${link.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={`/`}
                   className={`text-[13px] hover:underline`}
                 >
                   {link}
-                </Link>
+                </Link> :
+                  <Link
+                    key={link}
+
+                    href={`/search/${link.toLowerCase().replace(/\s+/g, '-')}`}
+                    className={`text-[13px] hover:underline`}
+                  >
+                    {link}
+                  </Link>
             ))}
           </div>
         </div>
@@ -152,21 +159,27 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
             </p>
           ) : (
             link === "Contact Us" ?
+              <Link
+                key={link}
+                href={`/contact-us`}
+                className="text-[13px] hover:underline"
+              >
+                {link}
+              </Link>
+              : link === "/search/home" ? <Link
+                key={link}
+                href={`/`}
+                className="text-[13px] hover:underline"
+              >
+                {link}
+              </Link> :
                 <Link
                   key={link}
-                  href={`/contact-us`}
+                  href={`/search/${link.toLowerCase().replace(/\s+/g, '-')}`}
                   className="text-[13px] hover:underline"
                 >
                   {link}
                 </Link>
-                :
-            <Link
-              key={link}
-              href={`/search/${link.toLowerCase().replace(/\s+/g, '-')}`}
-              className="text-[13px] hover:underline"
-            >
-              {link}
-            </Link>
           )
         )}
       </div>
