@@ -107,7 +107,7 @@ const HomeCategories = () => {
   );
 
   return (
-    <div className="pt-[30px]">
+    <div className="pt-[70px]">
       {isMobile ? (
         <Slider {...sliderSettings}>
           {categories.map((category) => (

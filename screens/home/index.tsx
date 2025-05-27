@@ -1,6 +1,10 @@
+'use client';
+
 import ForwardLink from 'components/forwardlink/forwardLink';
 import mainImage from 'media/png/mainImage.png';
-import hero from 'media/png/main-banner.png';
+// import hero from 'media/png/main-banner.png';
+import hero from 'media/png/Main Banner without button.png';
+import heroMobile from 'media/png/Mobile banner with button.png';
 import mainText from 'media/png/mainText.png';
 import Image from 'next/image';
 import BestSeller from './components/bestSeller';
@@ -15,34 +19,45 @@ import 'slick-carousel/slick/slick-theme.css';
 import HomeCategories from './components/homeCategories';
 import HomeBanners from './components/HomeBanners';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function MainPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1200);
+    };
+
+    // Run on mount
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
-<div className="w-full overflow-x-hidden">
-  <section className="relative w-full h-screen overflow-hidden">
-    {/* Background Image */}
-    <Image
-      src={hero}
-      alt="Hero Background"
-      fill
-      className="object-contain"
-      priority
-    />
-
-    {/* Centered Button */}
-    <div className="absolute bottom-[15%] left-1/2 transform -translate-x-1/2">
-      <Link
-        href="/"
-        className="bg-black text-white px-6 py-3 text-lg rounded hover:bg-gray-900 transition duration-300"
-      >
-        Shop Outdoor
-      </Link>
-    </div>
-  </section>
-</div>
-
-
+      <div className="w-full overflow-x-hidden">
+        <section className={isMobile ? "relative w-full h-auto" : "relative w-full h-screen overflow-hidden"}>
+          <Image
+            src={isMobile ? heroMobile : hero}
+            alt="Banner"
+            fill={isMobile ? false : true}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+            className={isMobile ? "object-contain mt-12 h-auto" : "object-cover"}
+            priority
+          />
+          {/* <div className="absolute bottom-[15%] left-1/2 transform -translate-x-1/2">
+            <Link
+              href="/"
+              className="bg-black text-white px-6 py-3 text-lg rounded hover:bg-gray-900 transition duration-300"
+            >
+              Shop Outdoor
+            </Link>
+          </div> */}
+        </section>
+      </div>
       <main className="w-full px-[15px] md:px-[100px] md:pt-4">
         {/* <div>
           <DiscoverMore />

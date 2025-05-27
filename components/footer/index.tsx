@@ -133,7 +133,7 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
                 <Link
                   key={link}
 
-                  href={`/search/${link.toLowerCase()}`}
+                  href={`/search/${link.toLowerCase().replace(/\s+/g, '-')}`}
                   className={`text-[13px] hover:underline`}
                 >
                   {link}
@@ -162,7 +162,7 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
                 :
             <Link
               key={link}
-              href={`/search/${link.toLowerCase()}`}
+              href={`/search/${link.toLowerCase().replace(/\s+/g, '-')}`}
               className="text-[13px] hover:underline"
             >
               {link}

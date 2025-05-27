@@ -84,13 +84,10 @@ export default async function ProductPage(props) {
     return splitText[0]?.trim();
   }
 
-
   return (
     <ProductProvider>
 
-      <div className="mt-20 lg:mt-40 px-4 py-16 xs:py-20 md:mt-40 md:px-10 lg:px-40">
-
-
+      <div className="px-4 py-16 xs:py-20 md:px-10 lg:px-40">
 
       <div className="flex w-full items-center space-x-2 text-[12px] mb-4 lg:mb-20">
         <Link href="/" className="text-gray-500 hover:underline">
@@ -101,9 +98,6 @@ export default async function ProductPage(props) {
         <span className="text-gray-500 hover:underline"> / </span>
         <span className="capitalize text-gray-500">{product?.title}</span>
       </div>
-
-
-
         <div className="flex flex-col gap-4 rounded-lg bg-white lg:flex-row lg:items-start lg:gap-12">
           <div className="w-full lg:w-8/12">
             <Suspense

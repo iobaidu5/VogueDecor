@@ -10,7 +10,7 @@ const HomeBanners = () => {
     <div className="container mx-auto px-0 md:px-0 py-8 mt-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Banner 1 */}
-        <div className="relative h-[400px] md:h-[400px] w-full">
+        <div className="relative h-[500px] md:h-[500px] w-full">
           <Image
             src={banner1}
             alt="Banner 1"
@@ -34,7 +34,7 @@ const HomeBanners = () => {
         </div>
 
         {/* Banner 2 */}
-        <div className="relative h-[400px] md:h-[400px] w-full">
+        <div className="relative h-[500px] md:h-[500px] w-full">
           <Image
             src={banner2}
             alt="Banner 2"

@@ -6,7 +6,7 @@ import { AddToCartHover } from 'components/cart/add-to-cart-hover';
 import { ProductProvider } from 'components/product/product-context';
 import { useCurrency } from 'components/currency/currencyContext';
 
-export function ProductCard({ product }: { product: any }) {
+export function ProductCard({ product, collection }: { product: any, collection: string }) {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
   const { currency, rate } = useCurrency();

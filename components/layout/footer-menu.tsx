@@ -14,10 +14,13 @@ export function FooterMenuItem({ item }: { item: Menu }) {
     setActive(pathname === item.path);
   }, [pathname, item.path]);
 
+
+  console.log("item.path- > ", item.path)
+
   return (
     <li>
       <Link
-        href={item.path}
+        href={item.path.replace(/\s+/g, '-')}
         className={clsx(
           'block p-2 text-lg underline-offset-4 hover:text-black hover:underline md:inline-block md:text-sm dark:hover:text-neutral-300',
           {

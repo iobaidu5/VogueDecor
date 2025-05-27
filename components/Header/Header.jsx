@@ -10,6 +10,7 @@ import CurrencySwitcher from 'components/currency/CurrencySwitcher';
 import UserMenu from 'components/UserMenu';
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Search from 'components/Search';
 
 function SignupButton() {
   return (
@@ -59,37 +60,26 @@ const Header = ({ menu }) => {
         {/* Search + User */}
         <div className="hidden lg991:flex items-center space-x-4 mt-4">
           <div className="relative">
+            {/* Search Icon */}
             <Image
               src={searchIcon}
               alt="search"
               onClick={() => setShowSearch((prev) => !prev)}
-              className="h-5 w-5 cursor-pointer md:block hover:text-gray-500"
+              className="h-5 w-5 cursor-pointer hover:text-gray-500 z-20 relative"
             />
 
-            {showSearch && (
-              <form
-                onSubmit={handleSearchSubmit}
-                className="absolute top-10 right-0 bg-white border border-gray-300 shadow-xl rounded-lg flex items-center px-3 py-2 z-50 w-64"
-              >
-                <input
-                  type="text"
-                  value={searchText}
-                  onChange={(e) => setSearchText(e.target.value)}
-                  placeholder="Search..."
-                  className="flex-grow px-3 py-1 text-sm text-gray-800 placeholder-gray-400 border-none focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  className="ml-2 px-4 py-1.5 text-sm font-semibold text-white bg-black rounded-md hover:bg-gray-800 transition duration-200"
-                >
-                  Go
-                </button>
-              </form>
-            )}
-
+            {/* Search Dropdown */}
+            <div
+              className={`absolute top-24 xl:top-12 -left-40 bg-white border border-gray-300 rounded shadow-lg w-72 p-3 transform transition-all duration-300 ease-in-out ${showSearch ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+                }`}
+            >
+              <Search />
+            </div>
           </div>
+
           <UserMenu />
         </div>
+
       </div>
 
       {/* Desktop Menu */}

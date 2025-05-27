@@ -7,7 +7,7 @@ const DiscoverMore = async () => {
     collection: 'new'
   });
   return (
-    <div className="xs:pt-4 md:pt-12">
+    <div className="xs:pt-4 md:pt-10">
       <div className="flex flex-col items-center justify-center pt-10">
         <p className="text-[14px] text-[#878787]">Elevate your space with us</p>
         <p className="font-medium xs:text-[25px] md:text-[40px]">Discover</p>

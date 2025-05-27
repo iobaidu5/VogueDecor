@@ -22,18 +22,18 @@ export default async function SearchPage(props: {
   return (
     <>
       {searchValue ? (
-        <p className="mb-4">
+        <p className="mb-4 text-black">
           {products.length === 0
             ? 'There are no products that match '
             : `Showing ${products.length} ${resultsText} for `}
-          <span className="font-bold">&quot;{searchValue}&quot;</span>
+          <span className="font-bold text-black">&quot;{searchValue}&quot;</span>
         </p>
       ) : null}
 
       {products.length > 0 ? (
-        <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-4">
           <ProductGridItems products={products} />
-        </Grid>
+        </div>
       ) : null}
       <div className="flex justify-end md:w-1/3">
         <CartModal />

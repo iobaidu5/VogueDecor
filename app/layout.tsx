@@ -10,6 +10,7 @@ import CookieConsent from 'components/CookieConsent'
 import EmailSubscriptionModal from 'components/EmailSubscriptionModal'
 import { Toaster } from 'sonner'
 // import { Providers } from 'components/Providers';
+import ChatbaseScript from 'components/ChatbaseScript'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -40,6 +41,7 @@ export default async function LocaleLayout({
     <html lang="en" className={poppins.variable}>
       <body>
         {/* <Providers locale={params.locale} messages={messages}> */}
+        <ChatbaseScript />
           <CartProvider cartPromise={cart}>
             <CurrencyProvider>
             <EmailSubscriptionModal />

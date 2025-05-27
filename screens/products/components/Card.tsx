@@ -10,8 +10,6 @@ import Price from 'components/price';
 const ProductCard = ({ data }: any) => {
   const [isHover, setIsHover] = useState(false);
 
-
-
   return (
     <Link href={`product/${data.handle}`} key={data.handle} className="relative flex flex-col">
       <div
