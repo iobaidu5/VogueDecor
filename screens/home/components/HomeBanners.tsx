@@ -24,7 +24,7 @@ const HomeBanners = () => {
             </h2>
             <div className="absolute bottom-[31%] left-1/2 transform -translate-x-1/2">
               <Link
-                href="/"
+                href="/search/chairs"
                 className="bg-black text-white px-4 py-2 text-sm rounded hover:bg-gray-900 transition duration-300"
               >
                 Shop Chairs
@@ -50,7 +50,7 @@ const HomeBanners = () => {
 
             <div className="absolute top-[20%] left-1/2 transform -translate-x-1/2">
               <Link
-                href="/"
+                href="/search/outdoor-furniture"
                 className="bg-black text-white px-4 py-2 text-sm rounded hover:bg-gray-900 transition duration-300"
               >
                 Shop Outdoor
