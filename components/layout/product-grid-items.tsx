@@ -7,7 +7,7 @@ import CartModal from 'components/cart/modal';
 
 const ITEMS_PER_PAGE = 15;
 
-export default function ProductGridItems({ products, collection }: { products: Product[], collection: string }) {
+export default function ProductGridItems({ products }: { products: Product[] }) {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
 
@@ -44,7 +44,7 @@ export default function ProductGridItems({ products, collection }: { products: P
     <div>
       <div className="my-[30px] grid grid-cols-2 justify-center gap-6 gap-y-6 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3">
         {currentProducts.map((product) => (
-          <ProductCard key={product.id} product={product} collection={collection} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
 
