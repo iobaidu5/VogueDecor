@@ -1,0 +1,71 @@
+{
+  "greeting": "Bonjour",
+  "welcome": "Livraison gratuite au Canada pour toute commande de plus de 2 999 $. Des conditions s'appliquent.",
+  "menu": {
+    "Chairs": "Chaises",
+    "Batstools": "Tabourets",
+    "Barstools": "Tabourets",
+    "Table Tops": "Plateaux de table",
+    "Table Base": "Bases de table",
+    "Table Bases": "Bases de table",
+    "Outdoor": "Mobilier extérieur",
+    "Sale": "Soldes"
+  },
+
+  "discoverBest": "Découvrez le meilleur du meilleur",
+  "bestSellers": "Meilleures ventes.",
+  "comfort": "Tout est une question",
+  "comfort2": "de confort.",
+  "outdoorCollection": "Collection extérieure",
+  "defineOutdoorStyle": "Définissez votre style extérieur et faites sensation",
+  "shopChairs": "Achetez des chaises",
+  "shopOutdoor": "Achetez en plein air",
+  "elevateSpace": "Sublimez votre espace avec nous",
+  "whyChooseUs": "Pourquoi nous choisir.",
+  "choose": {
+    "Commercial Grade": "Matériau de qualité",
+    "Material": "commerciale",
+    "Our furniture is built with quality materials designed to last.": "Nos meubles sont fabriqués avec des matériaux de qualité conçus pour durer.",
+    "Buy From": "Acheter chez le",
+    "Manufacturer": "fabricant",
+    "Shop directly from the manufacturer for  best price and quality.": "Achetez directement chez le fabricant pour le meilleur prix et la meilleure qualité.",
+    "Free": "Livraison",
+    "Shipping": "gratuite",
+    "Free shipping to Canada for all orders over $2999.": "Livraison gratuite au Canada pour toutes les commandes de plus de 2999 $.",
+    "Satisfaction": "Satisfaction",
+    "Guaranteed": "garantie",
+    "Our clients' satisfaction is always our priority.": "La satisfaction de nos clients est toujours notre priorité."
+  },
+  "upgradeWithEase": "Améliorez facilement",
+  "redefineSpace": "Redéfinissez votre espace sans tracas avec",
+  "applyNow": "Postuler maintenant",
+  "joinCommunity": "Rejoignez la communauté Vogue",
+
+  "footer": {
+    "Furniture.": "Mobilier.",
+    "Chairs": "Chaises",
+    "Barstools": "Tabourets de bar",
+    "Table Tops": "Plateaux de table",
+    "Table Bases": "Pieds de table",
+    "Outdoor Furniture": "Mobilier d'extérieur",
+    
+    "Vogue Decor.": "Vogue Décor.",
+    "Home": "Accueil",
+    "Contact Us": "Contactez-nous",
+    
+    "Locations.": "Lieux.",
+    "Montreal": "Montréal",
+    "Toronto": "Toronto",
+
+    "Policy.": "Politique.",
+    "Privacy Policy.": "Politique de confidentialité.",
+    "Terms and Conditions": "Conditions générales",
+    "Shipping and Return Policy": "Politique d'expédition et de retour"
+  },
+
+  "stayUpdated": "Restez informé",
+  "subscribe": "S'abonner",
+  "description1": "Restez informé ! Abonnez-vous à notre newsletter ",
+  "description2": "pour recevoir des offres exclusives, les dernières tendances et de l'inspiration en matière de design.",
+  "enterEmail": "Entrez votre adresse e-mail"
+}

@@ -12,6 +12,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import '../../../lib/i18nClient'
+import { useTranslation } from 'react-i18next';
 
 
 const frames: any = [
@@ -65,6 +67,7 @@ const PrevArrow = (props: any) => {
 
 const Community = () => {
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
+  const { t, ready } = useTranslation('common');
 
   useEffect(() => {
     const handleResize = () => {
@@ -89,11 +92,39 @@ const Community = () => {
     adaptiveHeight: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+
+    responsive: [
+      {
+        breakpoint: 1200, // screens < 1200px
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 992, // screens < 992px
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768, // screens < 768px
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+
+      {
+        breakpoint: 600, // screens < 768px
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
     <div className="xs:px-[50px] xs:pb-[50px] md:pb-[100px] lg:px-[70px]">
-      <p className="py-1 font-medium xs:text-[22px] md:text-[40px]">Join the Vogue Community</p>
+      <p className="py-1 font-medium xs:text-[22px] md:text-[40px]">{t('joinCommunity')}</p>
       <a
         href="https://www.instagram.com/voguedecorr/"
         target="_blank"

@@ -6,7 +6,17 @@ const hours = [
   { day: 'Wednesday', time: '8AM–4PM' },
   { day: 'Thursday', time: '8AM–4PM' },
   { day: 'Friday', time: '8AM–4PM' },
-  { day: 'Saturday', time: '9:30AM–12:30PM' },
+  { day: 'Saturday', time: 'Closed' },
+  { day: 'Sunday', time: 'Closed' }
+];
+
+const hoursToronto = [
+  { day: 'Monday', time: '10AM–4PM' },
+  { day: 'Tuesday', time: '10AM–4PM' },
+  { day: 'Wednesday', time: '10AM–4PM' },
+  { day: 'Thursday', time: '10AM–4PM' },
+  { day: 'Friday', time: '10AM–4PM' },
+  { day: 'Saturday', time: 'Closed' },
   { day: 'Sunday', time: 'Closed' }
 ];
 const ContactLocation = () => {
@@ -16,7 +26,7 @@ const ContactLocation = () => {
     <div className="mt-[100px]">
       <h3 className="mb-5 text-[28px] font-medium lg:text-[53px]">Find Us.</h3>
       <div className="mx-[-8px] flex w-full flex-wrap">
-        <div className="flex w-full flex-col gap-10 px-[12px] md:px-[20px] md:w-6/12">
+        <div className="flex w-full flex-col gap-10 px-[12px] md:px-[20px] md:w-6/12" id="location">
           <button className="max-w-[160px] rounded-[8px] bg-black px-4 py-2 text-white">
             Montreal
           </button>
@@ -77,7 +87,7 @@ const ContactLocation = () => {
             <div className="col-span-2 w-full rounded-[7px] bg-[#F7F7F7] lg:col-span-1">
               <table className="w-full">
                 <tbody>
-                  {hours?.map((item, index) => (
+                  {hoursToronto?.map((item, index) => (
                     <tr
                       key={item.day}
                       className={`${index !== hours.length - 1 ? 'border-b border-gray-200' : ''}`}

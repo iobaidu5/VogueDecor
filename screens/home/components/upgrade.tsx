@@ -2,8 +2,11 @@ import Image from "next/image";
 import overlayImage from "media/png/overlayImage.png";
 import upgradeImage from "media/png/upgradeImage.png";
 import logobtn from "media/svg/logobtn.svg";
+import '../../../lib/i18nClient'
+import { useTranslation } from 'react-i18next';
 
 const Upgrade = () => {
+  const { t, ready } = useTranslation('common');
   return (
     <div className="relative w-full h-[30vh] sm:h-[50vh] md:h-[30vh] lg:h-[30vh] bg-[#013540]">
       {/* Optional: overlay image */}
@@ -15,10 +18,11 @@ const Upgrade = () => {
             {/* Left Side - Text */}
             <div className="text-white text-center md:text-left">
               <h1 className="mb-2 font-medium font-poppins text-[28px] sm:text-[32px] md:text-[38px] lg:text-[42px] text-[#05E5C8]">
-                Upgrade with Ease
+                {t('upgradeWithEase')}
               </h1>
               <p className="text-[16px] sm:text-[17px] md:text-[18px] font-poppins tracking-wide">
                 Redefine your space hassle free with
+                {t('redefineSpace')}
               </p>
             </div>
 
@@ -27,8 +31,8 @@ const Upgrade = () => {
               <button className="flex items-center justify-center rounded-l-lg bg-white px-3 py-2 sm:py-2">
                 <Image src={logobtn} alt="logo" className="w-[90px] md:w-auto" />
               </button>
-              <button className="rounded-r-lg bg-[#05E5C8] h-[56px] px-4 sm:px-5 md:px-6 text-black font-medium">
-                Apply Now
+              <button className="rounded-r-lg bg-[#05E5C8] h-[59px] px-4 sm:px-5 md:px-6 text-black font-medium">
+                {t('applyNow')}
               </button>
             </div>
           </div>

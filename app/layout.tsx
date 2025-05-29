@@ -1,4 +1,5 @@
 // app/[locale]/layout.tsx
+
 import { Poppins } from 'next/font/google'
 import { CartProvider } from 'components/cart/cart-context'
 import { cookies } from 'next/headers'
@@ -9,8 +10,8 @@ import { CurrencyProvider } from 'components/currency/currencyContext'
 import CookieConsent from 'components/CookieConsent'
 import EmailSubscriptionModal from 'components/EmailSubscriptionModal'
 import { Toaster } from 'sonner'
-// import { Providers } from 'components/Providers';
 import ChatbaseScript from 'components/ChatbaseScript'
+import Script from 'next/script'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -18,7 +19,6 @@ const poppins = Poppins({
   display: 'swap',
   variable: '--font-poppins',
 })
-
 
 export default async function LocaleLayout({
   children,
@@ -30,27 +30,45 @@ export default async function LocaleLayout({
   const cartId = (await cookies()).get('cartId')?.value
   const cart = getCart(cartId)
 
-  // let messages
-  // try {
-  //   messages = (await import(`../messages/${params.locale}.json`)).default
-  // } catch {
-  //   messages = (await import(`../messages/en.json`)).default
-  // }
-
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang={params.locale} className={poppins.variable}>
+      <head>
+        {/* ✅ Google Translate Scripts */}
+        <Script
+          id="google-translate"
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
+        <Script id="google-translate-init" strategy="afterInteractive">
+          {`
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement(
+                {
+                  pageLanguage: 'en',
+                  includedLanguages: 'en,fr',
+                  autoDisplay: false
+                },
+                'google_translate_element'
+              );
+            }
+            window.googleTranslateElementInit = googleTranslateElementInit;
+          `}
+        </Script>
+      </head>
+
       <body>
-        {/* <Providers locale={params.locale} messages={messages}> */}
+        {/* ✅ Hidden div for Google Translate to attach */}
+        <div id="google_translate_element" style={{ display: 'none' }} />
+
         <ChatbaseScript />
-          <CartProvider cartPromise={cart}>
-            <CurrencyProvider>
+        <CartProvider cartPromise={cart}>
+          <CurrencyProvider>
             <EmailSubscriptionModal />
-              <main>{children}</main>
-              <CookieConsent />
-              <Toaster position="top-right" richColors />
-            </CurrencyProvider>
-          </CartProvider>
-        {/* </Providers> */}
+            <main>{children}</main>
+            <CookieConsent />
+            <Toaster position="top-right" richColors />
+          </CurrencyProvider>
+        </CartProvider>
       </body>
     </html>
   )

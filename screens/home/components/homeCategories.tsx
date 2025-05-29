@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
+import '../../../lib/i18nClient'
+import { useTranslation } from 'react-i18next';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -26,12 +28,12 @@ const categories = [
     href: '/search/barstools',
   },
   {
-    title: 'Tables Tops',
+    title: 'Table Tops',
     image: tableImage,
     href: '/search/table-tops',
   },
   {
-    title: 'Tables Bases',
+    title: 'Table Bases',
     image: boothImage,
     href: '/search/table-bases',
   },
@@ -63,6 +65,7 @@ const PrevArrow = (props: any) => {
 
 const HomeCategories = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { t, ready } = useTranslation('common');
 
   useEffect(() => {
     const checkMobile = () => {
@@ -101,7 +104,8 @@ const HomeCategories = () => {
       </div>
 
       <p className="overflow-hidden text-left text-ellipsis whitespace-nowrap text-[20px] font-medium mt-4">
-        {category.title}
+        {/* {category.title} */}
+        {t(`menu.${category.title}`)}
       </p>
     </Link>
   );

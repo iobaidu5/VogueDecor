@@ -4,11 +4,14 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductSlider from './productSlider';
-import { getCollectionProducts } from 'lib/shopify'; // assume this can be called on client or adjust accordingly
+import { getCollectionProducts } from 'lib/shopify';
+import '../../../lib/i18nClient'
+import { useTranslation } from 'react-i18next';
 
 const BestSeller = () => {
   const [bestSellerItems, setBestSellerItems] = useState<any[]>([]);
   const [wishlistIds, setWishlistIds] = useState<string[]>([]);
+  const { t, ready } = useTranslation('common');
 
   useEffect(() => {
     // Fetch best seller items
@@ -44,8 +47,8 @@ const BestSeller = () => {
   return (
     <div className="xs:pt-6 md:pt-6">
       <div className="flex flex-col items-center justify-center pt-10">
-        <p className="text-[14px] text-[#878787]">Discover best of the best</p>
-        <p className="font-medium xs:text-[25px] md:text-[40px]">Best Sellers.</p>
+        <p className="text-[14px] text-[#878787]">{t('discoverBest')}</p>
+        <p className="font-medium xs:text-[25px] md:text-[40px]">{t('bestSellers')}</p>
         {/* <div className="h-[2px] w-[130px] bg-[#878787]" /> */}
       </div>
 

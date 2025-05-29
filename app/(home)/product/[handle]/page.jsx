@@ -164,7 +164,7 @@ export default async function ProductPage(props) {
               </div>
 
               {/* Monthly Payment Option */}
-              <div className="mt-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+              <div className="mt-6 flex justify-center sm:justify-start items-center gap-4 sm:flex-row sm:items-center">
                 <a href="/" className="text-[#7DA6DD] underline">
                   Pay Monthly With
                 </a>

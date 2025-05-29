@@ -3,7 +3,7 @@ import Link from 'next/link';
 const ContactHeader = () => {
   return (
     <div className="mb-6 flex flex-col gap-3">
-      <div className="flex w-full items-center space-x-2 text-[12px] mt-20">
+      <div className="flex w-full items-center space-x-2 text-[12px] mt-8 md:mt-20">
         <Link href="/" className="text-gray-500 hover:underline">
           Home
         </Link>

@@ -3,13 +3,16 @@ import { default as ServiceIcon } from 'media/svg/serviceIcon.svg';
 import SupportIcon from 'media/svg/supportIcon.svg';
 import likeIcon from 'media/svg/like.svg';
 import Image from 'next/image';
+import '../../../lib/i18nClient'
+import { useTranslation } from 'react-i18next';
 
 const WhyChooseUs = () => {
+  const { t, ready } = useTranslation('common');
   return (
     <div className="py-16 pb-8">
       <div className="flex flex-col items-center justify-center pt-10">
-        <p className="text-[14px] text-[#878787]">Elevate your space with us</p>
-        <p className="font-medium xs:text-[25px] md:text-[40px]">Why Choose Us.</p>
+        <p className="text-[14px] text-[#878787]">{t('elevateSpace')}</p>
+        <p className="font-medium xs:text-[25px] md:text-[40px]">{t('whyChooseUs')}</p>
         {/* <div className="h-[2px] w-[130px] bg-[#878787]" /> */}
       </div>
       <ChooseUsSection />
@@ -24,7 +27,7 @@ const data = [
     icon: ServiceIcon,
     firstText: 'Commercial Grade',
     secondText: 'Material',
-    desc: 'Our furniture is built with quality materials  designed to last.'
+    desc: 'Our furniture is built with quality materials designed to last.'
   },
   {
     icon: likeIcon,
@@ -47,6 +50,7 @@ const data = [
 ];
 
 const ChooseUsSection = () => {
+  const { t, ready } = useTranslation('common');
   return (
     <div className="grid gap-2 pt-[40px] grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
       {data?.map((item: any) => (
@@ -59,21 +63,25 @@ const ChooseUsSection = () => {
             <Image src={item.icon} alt={item.firstText} />
           )}
           <p className="pt-2 font-medium xs:text-[16px] sm:text-[22px] lg:text-[24px]">
-            {item?.firstText}
+            {t(`choose.${item?.firstText}`)}
           </p>
           <p className="font-medium xs:text-[16px] sm:text-[22px] lg:text-[24px]">
-            {item?.secondText}
+            {t(`choose.${item?.secondText}`)}
           </p>
           <p className="mt-2 sm:text-base text-[12px] lg:text-[16px] text-[#878787] leading-[1.6] break-words text-center">
-            {item.desc
+
+            {t(`choose.${item.desc}`)
               ?.split(' ')
-              ?.slice(0, Math.ceil(item.desc.split(' ').length / 2))
+              ?.slice(0, Math.ceil(t(`choose.${item.desc}`).split(' ').length / 2))
               ?.join(' ')}
             <br />
-            {item.desc
+            {t(`choose.${item.desc}`)
               ?.split(' ')
               ?.slice(Math.ceil(item.desc.split(' ').length / 2))
               ?.join(' ')}
+
+
+
           </p>
         </div>
       ))}

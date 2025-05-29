@@ -8,6 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { ChevronDown } from "lucide-react";
+import i18n from '../../lib/i18nClient';
+import { useTranslation } from 'react-i18next';
 
 const furniture = ['Furniture.', 'Chairs', 'Barstools', 'Table Tops', 'Table Bases', 'Outdoor Furniture'];
 const quikLinks = ['Vogue Decor.', 'Home', 'Contact Us'];
@@ -54,18 +56,18 @@ const Footer = () => {
 
         {/* Divider */}
 
-        <div className="hidden lg:block mt-[55px] h-[1px] w-full bg-white" />
+        <div className="hidden lg:block mt-[55px] h-[1px] w-full bg-[#a6a6a6]" />
 
         {/* Bottom Section */}
         <div className="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
           <div className="hidden lg:flex flex-col items-center space-y-2 text-[12px] text-white md:flex-row md:space-x-4 md:space-y-0">
-            <Link href="/privacy" className="hover:underline text-gray-500">
+            <Link href="/privacy" className="hover:underline text-[#a6a6a6]">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:underline text-gray-500">
+            <Link href="/terms" className="hover:underline text-[#a6a6a6]">
               Terms and Conditions
             </Link>
-            <Link href="/shipping-return-policy" className="hover:underline text-gray-500">
+            <Link href="/shipping-return-policy" className="hover:underline text-[#a6a6a6]">
               Shipping and Return Policy
             </Link>
             {/* <Link href="/contact-us" className="hover:underline">
@@ -74,7 +76,7 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <p className="text-center text-[12px] text-gray-500 md:text-right uppercase">
+          <p className="text-center text-[12px] text-[#a6a6a6] md:text-right uppercase">
             © {new Date().getFullYear()} VOGUE DECOR. ALL rights reserved.
           </p>
         </div>
@@ -100,6 +102,7 @@ const Logo = () => {
 const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleFAQ = () => setIsOpen((prev) => !prev);
+  const { t, ready } = useTranslation('common');
 
   return (
     <div className="w-full">
@@ -121,13 +124,14 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
         >
           <div className="flex flex-col ml-2 mt-1 space-y-2">
             {links.slice(1).map((link) => (
-              link === "contact us" ?
+              link === "Contact Us" || link === "Montreal" || link === "Toronto"  ?
                 <Link
                   key={link}
-                  href={`/contact-us`}
+                  href={link === "Montreal" || link === "Toronto"  ? `/contact-us#location` : `/contact-us`}  
                   className="text-[13px] hover:underline"
                 >
-                  {link}
+                  {/* {link} */}
+                  {t(`footer.${link}`)}
                 </Link>
                 : link === "/search/home" ? <Link
                   key={link}
@@ -135,7 +139,8 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
                   href={`/`}
                   className={`text-[13px] hover:underline`}
                 >
-                  {link}
+                  {t(`footer.${link}`)}
+                  {/* {link} */}
                 </Link> :
                   <Link
                     key={link}
@@ -143,7 +148,8 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
                     href={`/search/${link.toLowerCase().replace(/\s+/g, '-')}`}
                     className={`text-[13px] hover:underline`}
                   >
-                    {link}
+                    {/* {link} */}
+                    {t(`footer.${link}`)}
                   </Link>
             ))}
           </div>
@@ -155,30 +161,34 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
         {links.map((link, index) =>
           index === 0 ? (
             <p key={link} className="xs:text-[14px] md:text-[16px] font-semibold">
-              {link}
+              {/* {link} */}
+              {t(`footer.${link}`)}
             </p>
           ) : (
-            link === "Contact Us" ?
+            link === "Contact Us" || link === "Montreal" || link === "Toronto" ?
               <Link
                 key={link}
-                href={`/contact-us`}
+                href={link === "Montreal" || link === "Toronto"  ? `/contact-us#location` : `/contact-us`} 
                 className="text-[13px] hover:underline"
               >
-                {link}
+                {/* {link} */}
+                {t(`footer.${link}`)}
               </Link>
               : link === "/search/home" ? <Link
                 key={link}
                 href={`/`}
                 className="text-[13px] hover:underline"
               >
-                {link}
+                {/* {link} */}
+                {t(`footer.${link}`)}
               </Link> :
                 <Link
                   key={link}
                   href={`/search/${link.toLowerCase().replace(/\s+/g, '-')}`}
                   className="text-[13px] hover:underline"
                 >
-                  {link}
+                  {/* {link} */}
+                  {t(`footer.${link}`)}
                 </Link>
           )
         )}
@@ -238,22 +248,23 @@ const Connects = () => {
 };
 
 const StayUpdated = () => {
+  const { t, ready } = useTranslation('common');
   return (
     <div className="mx-auto flex w-full max-w-sm flex-col gap-2 md:max-w-md pt-10 lg991:pt-0">
-      <p className="text-lg font-medium text-white">Stay Updated</p>
+      <p className="text-lg font-medium text-white">{t(`stayUpdated`)}</p>
       <div className="flex items-center overflow-hidden rounded-md border border-gray-400">
         <input
           type="email"
-          placeholder="Enter your email"
+          placeholder={t('enterEmail')}
           className="w-full min-w-0 flex-1 bg-transparent px-4 py-2 text-white placeholder:text-gray-300 outline-none"
         />
         <button className="whitespace-nowrap bg-white px-4 py-2 font-medium text-black">
-          Subscribe
+          {t(`subscribe`)}
         </button>
       </div>
       <p className="mt-3 text-center text-xs lg:991text-sm text-white md:text-left">
-        Stay updated! Subscribe to our newsletter{' '}
-        <br className="" />for exclusive offers, latest trends, and design inspiration.
+      {t(`description1`)}{' '}
+        <br className="" />{t(`description2`)}
       </p>
     </div>
   );

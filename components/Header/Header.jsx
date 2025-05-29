@@ -9,8 +9,14 @@ import Drawer from 'components/drawer/index';
 import CurrencySwitcher from 'components/currency/CurrencySwitcher';
 import UserMenu from 'components/UserMenu';
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Search from 'components/Search';
+import LanguageSwitcher from 'components/LanguageSwitcher';
+import i18n from '../../lib/i18nClient';
+import { useTranslation } from 'react-i18next';
+import GoogleTranslateScript from 'components/GoogleTranslateScript';
+
+
 
 function SignupButton() {
   return (
@@ -26,6 +32,7 @@ const Header = ({ menu }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [searchText, setSearchText] = useState("");
   const router = useRouter();
+  const { t, ready } = useTranslation('common');
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -37,12 +44,15 @@ const Header = ({ menu }) => {
     }
   };
 
+
+
   return (
     <nav className="flex flex-col w-full px-6 md:px-[40px] lg:px-[70px]">
       {/* Top Row */}
       <div className="relative flex items-center justify-between pt-4">
         <div className="hidden lg991:flex items-center">
-          <p>FR</p>
+          <LanguageSwitcher />
+          <GoogleTranslateScript />
           <div className="h-5 w-px bg-[#A0A0A0] ml-2" />
           <CurrencySwitcher />
         </div>
@@ -56,11 +66,8 @@ const Header = ({ menu }) => {
             />
           </Link>
         </div>
-
-        {/* Search + User */}
         <div className="hidden lg991:flex items-center space-x-4 mt-4">
           <div className="relative">
-            {/* Search Icon */}
             <Image
               src={searchIcon}
               alt="search"
@@ -68,7 +75,6 @@ const Header = ({ menu }) => {
               className="h-5 w-5 cursor-pointer hover:text-gray-500 z-20 relative"
             />
 
-            {/* Search Dropdown */}
             <div
               className={`absolute top-24 xl:top-12 -left-40 bg-white border border-gray-300 rounded shadow-lg w-72 p-3 transform transition-all duration-300 ease-in-out ${showSearch ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
                 }`}
@@ -81,10 +87,10 @@ const Header = ({ menu }) => {
         </div>
 
       </div>
-
-      {/* Desktop Menu */}
       <div className="my-8 hidden items-center justify-center space-x-14 lg:flex">
-        {menu?.map((item) => (
+        {!ready ? (
+          <div>Loading translations...</div>
+        ) : menu?.map((item) => (
           <Link
             key={item.path}
             href={item.path}
@@ -94,7 +100,8 @@ const Header = ({ menu }) => {
               ${item.title === 'Sale' ? 'text-red-500' : 'text-black'}
             `}
           >
-            {item.title}
+            {/* {item.title} */}
+            {t(`menu.${item.title}`)}
           </Link>
         ))}
       </div>

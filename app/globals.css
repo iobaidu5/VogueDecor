@@ -120,3 +120,8 @@ body {
 .slick-dots{
   /* bottom: 20px !important; */
 }
+
+
+.lk-grid-layout {
+  grid-template-columns: repeat(var(--lk-col-count), minmax(0, 1fr)) !important;
+}

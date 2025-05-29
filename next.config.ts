@@ -1,3 +1,5 @@
+const { i18n } = require('./next-i18next.config');
+
 export default {
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -9,5 +11,13 @@ export default {
         pathname: '/s/files/**'
       }
     ]
-  }
+  },
+  i18n: {
+    locales: ['en', 'fr'],
+    defaultLocale: 'en',
+    localeDetection: false,
+  },
+  experimental: {
+    appDir: true,
+  },
 };

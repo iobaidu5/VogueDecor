@@ -1,0 +1,73 @@
+{
+  "greeting": "Hello",
+  "welcome": "Free Shipping to Canada on all orders over $2999. Conditions apply.",
+  "menu": {
+    "Chairs": "Chairs",
+    "Batstools": "Barstools",
+    "Barstools": "Barstools",
+    "Table Tops": "Table Tops",
+    "Table Base": "Table Bases",
+    "Table Bases": "Table Bases",
+    "Outdoor": "Outdoor",
+    "Sale": "Sale"
+  },
+  "discoverBest": "Discover best of the best",
+  "bestSellers": "Best Sellers.",
+  "comfort": "It's all about",
+  "comfort2": "comfort.",
+  "outdoorCollection": "Outdoor Collection",
+  "defineOutdoorStyle": "Define Your Outdoor Style and Make a Statement",
+  "shopChairs": "Shop Chairs",
+  "shopOutdoor": "Shop Outdoor",
+  "elevateSpace": "Elevate your space with us",
+  "whyChooseUs": "Why Choose Us.",
+  "choose": {
+    "Commercial Grade": "Commercial Grade",
+    "Material": "Material",
+    "Our furniture is built with quality materials designed to last.": "Our furniture is built with quality materials designed to last.",
+    "Buy From": "Buy From",
+    "Manufacturer": "Manufacturer",
+    "Shop directly from the manufacturer for  best price and quality.": "Shop directly from the manufacturer for best price and quality.",
+    "Free": "Free",
+    "Shipping": "Shipping",
+    "Free shipping to Canada for all orders over $2999.": "Free shipping to Canada for all orders over $2999.",
+    "Satisfaction": "Satisfaction",
+    "Guaranteed": "Guaranteed",
+    "Our clients' satisfaction is always our priority.": "Our clients' satisfaction is always our priority."
+  },
+
+
+
+  "upgradeWithEase": "Upgrade with Ease",
+  "redefineSpace": "Redefine your space hassle free with",
+  "applyNow": "Apply Now",
+  "joinCommunity": "Join the Vogue Community",
+
+  "footer": {
+    "Furniture.": "Furniture.",
+    "Chairs": "Chairs",
+    "Barstools": "Barstools",
+    "Table Tops": "Table Tops",
+    "Table Bases": "Table Bases",
+    "Outdoor Furniture": "Outdoor Furniture",
+    
+    "Vogue Decor.": "Vogue Decor.",
+    "Home": "Home",
+    "Contact Us": "Contact Us",
+    
+    "Locations.": "Locations.",
+    "Montreal": "Montreal",
+    "Toronto": "Toronto",
+
+    "Policy.": "Policy.",
+    "Privacy Policy.": "Privacy Policy.",
+    "Terms and Conditions": "Terms and Conditions",
+    "Shipping and Return Policy": "Shipping and Return Policy"
+  },
+
+  "stayUpdated": "Stay Updated",
+  "subscribe": "Subscribe",
+  "description1": "Stay updated! Subscribe to our newsletter",
+  "description2": "for exclusive offers, latest trends, and design inspiration.",
+  "enterEmail": "Enter your email"
+}

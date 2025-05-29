@@ -1,19 +1,21 @@
-import React from 'react';
-//import useSWR from 'swr';
+'use client';
 
-//const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import React from 'react';
+import '../lib/i18nClient'
+import { useTranslation } from 'react-i18next';
 
 export function AnnouncementBar() {
-  // const { data, error } = useSWR<{ announcement: string }>('/api/announcement', fetcher, {
-  //   refreshInterval: 60_000, // re‑fetch every 60s
-  // });
+  const { t, ready } = useTranslation('common');
 
-  // if (error || !data?.announcement) return null;
+  if (!ready) {
+    return <div>Loading translations...</div>;
+  }
 
   return (
 <div className="w-full bg-[#545454] text-white text-center py-3 text-xs lg991:text-sm">
-  <span className="block sm:inline">{'Free Shipping to Canada on all orders over $2999. '}</span>
-  <span className="block sm:inline">{'Conditions apply.'}</span>
+  {/* <span className="block sm:inline">{'Free Shipping to Canada on all orders over $2999. '}</span>
+  <span className="block sm:inline">{'Conditions apply.'}</span> */}
+  <p>{t('welcome')}</p>
 </div>
   );
 }
