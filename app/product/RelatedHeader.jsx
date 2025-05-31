@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react'
-import i18n from '../lib/i18nClient';
+import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 
 
