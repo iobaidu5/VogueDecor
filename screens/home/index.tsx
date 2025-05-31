@@ -25,7 +25,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function MainPage() {
-  const { t } = useTranslation("common");
+  // const { t } = useTranslation("common");
   const { i18n } = useTranslation();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -65,7 +65,8 @@ export default function MainPage() {
               href="/"
               className="bg-black text-white px-6 py-3 text-lg rounded hover:bg-gray-900 transition duration-300"
             >
-               {t('shopOutdoor')}
+              Shop Outdoor
+               {/* {t('shopOutdoor')} */}
             </Link>
           </div>
         </section>

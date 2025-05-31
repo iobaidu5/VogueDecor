@@ -1,36 +1,50 @@
 'use client';
+
 import { createContext, useContext, useEffect, useState } from 'react';
 
-const CurrencyContext = createContext<{
+type CurrencyContextType = {
   currency: string;
   setCurrency: (val: string) => void;
   rate: number;
-}>({
+};
+
+const CurrencyContext = createContext<CurrencyContextType>({
   currency: 'CAD',
   setCurrency: () => {},
   rate: 1,
 });
 
 export const CurrencyProvider = ({ children }: { children: React.ReactNode }) => {
-  const [currency, setCurrency] = useState('CAD');
-  const [rate, setRate] = useState(1); // Default CAD to CAD
+  const [currency, setCurrency] = useState<string>('CAD');
+  const [rate, setRate] = useState<number>(1);
 
   useEffect(() => {
-    // Detect location (client side)
-    fetch('https://ipapi.co/json')
-      .then(res => res.json())
-      .then(data => {
-        if (data.country === 'US') {
+    const detectUserCountry = async () => {
+      try {
+        const res = await fetch('https://ipapi.co/json');
+        const data = await res.json();
+
+        if (data?.country === 'US') {
           setCurrency('USD');
-          setRate(0.75); // Hardcoded or fetched live
+        } else {
+          setCurrency('CAD');
         }
-      });
+      } catch (error) {
+        console.error('Failed to detect location:', error);
+      }
+    };
+
+    detectUserCountry();
   }, []);
 
-  // Update rate if currency changes manually
   useEffect(() => {
-    if (currency === 'USD') setRate(0.75);
-    else setRate(1);
+    switch (currency) {
+      case 'USD':
+        setRate(0.75);
+        break;
+      default:
+        setRate(1);
+    }
   }, [currency]);
 
   return (
