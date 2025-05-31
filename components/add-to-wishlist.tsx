@@ -4,6 +4,8 @@ import { HeartIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { useProduct } from 'components/product/product-context';
 import { Product, ProductVariant } from 'lib/shopify/types';
+import i18n from '../lib/i18nClient';
+import { useTranslation } from 'react-i18next';
 
 function SubmitWishlistButton({
   availableForSale,
@@ -12,6 +14,7 @@ function SubmitWishlistButton({
   availableForSale: boolean;
   selectedVariantId: string | undefined;
 }) {
+  const { t, ready } = useTranslation('common');
   const buttonClasses =
     'relative flex w-50 items-center justify-center rounded-half bg-white p-2 tracking-wide text-black border border-black';
   const disabledClasses = 'cursor-not-allowed opacity-60 hover:opacity-60';
@@ -35,7 +38,7 @@ function SubmitWishlistButton({
         <div className="absolute left-0 ml-4">
           {/* <HeartIcon className="h-5" /> */}
         </div>
-        Add To Wishlist!!!
+        {t("addToWishlist")}
       </button>
     );
   }
@@ -48,7 +51,7 @@ function SubmitWishlistButton({
       {/* <div className="absolute left-0 ml-4">
         <HeartIcon className="h-5" />
       </div> */}
-      Add To Wishlist
+     {t("addToWishlist")}
     </button>
   );
 }

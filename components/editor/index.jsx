@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import {
   FaBold,
   FaItalic,
@@ -11,8 +11,7 @@ import {
   FaHeading
 } from 'react-icons/fa';
 
-export default function RichTextEditor() {
-  const editorRef = useRef();
+export default function RichTextEditor({editorRef}) {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFormat = (command, value) => {

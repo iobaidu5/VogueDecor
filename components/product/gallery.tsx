@@ -167,7 +167,7 @@ export function Gallery({ images }: GalleryProps) {
                         p-1 
                         rounded 
                         transition-shadow 
-                        ${isActive ? 'ring-2 ring-primary' : 'ring-0'} 
+                        ${isActive ? 'ring-2 ring-black' : 'ring-0'} 
                       `}
                     >
                       <GridTileImage

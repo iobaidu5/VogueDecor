@@ -1,4 +1,7 @@
+'use client';
+
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 const hours = [
   { day: 'Monday', time: '8AM–4PM' },
@@ -21,10 +24,11 @@ const hoursToronto = [
 ];
 const ContactLocation = () => {
   // const mapSrc = `https://maps.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
+  const { t, ready } = useTranslation('common');
 
   return (
     <div className="mt-[100px]">
-      <h3 className="mb-5 text-[28px] font-medium lg:text-[53px]">Find Us.</h3>
+      <h3 className="mb-5 text-[28px] font-medium lg:text-[53px]">{t("find_us_heading")}</h3>
       <div className="mx-[-8px] flex w-full flex-wrap">
         <div className="flex w-full flex-col gap-10 px-[12px] md:px-[20px] md:w-6/12" id="location">
           <button className="max-w-[160px] rounded-[8px] bg-black px-4 py-2 text-white">

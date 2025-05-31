@@ -12,11 +12,7 @@ export default {
       }
     ]
   },
-  i18n: {
-    locales: ['en', 'fr'],
-    defaultLocale: 'en',
-    localeDetection: false,
-  },
+  i18n,
   experimental: {
     appDir: true,
   },

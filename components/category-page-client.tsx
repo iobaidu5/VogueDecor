@@ -7,6 +7,11 @@ import { getCollectionProducts } from 'lib/shopify';
 import BreadCrumb from 'components/breadCrum/index';
 import FilterDropdown from 'components/filter-dropdown';
 import type { Collection, Product } from 'lib/shopify/types';
+import i18n from '../lib/i18nClient';
+import { useTranslation } from 'react-i18next';
+import ArticleRenderer from "components/ArticleRenderer"
+import { barstools, barstoolsFr, chairs, chairsFr, tabletops, tabletopsFr, tablebases, tablebasesFr, outdoor, outdoorFr, sale, saleFr } from "../old-site-text/index";
+import { useParams } from 'next/navigation';
 
 type CategoryPageClientProps = {
   collection: any;
@@ -18,6 +23,44 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [filter, setFilter] = useState<string>('');
+  const [showContent, setShowContent] = useState(false);
+  const { t, ready } = useTranslation('common');
+  const { i18n } = useTranslation();
+  var content: any = [];
+
+
+  const params = useParams();
+  const collection2: any = params.collection;
+
+  if (collection2 === "chairs" && i18n.language === 'en') {
+    content = chairs;
+  } else if (collection2 === "barstools" && i18n.language === 'en') {
+    content = barstools
+  } else if (collection2 === "table-tops" && i18n.language === 'en') {
+    content = tabletops
+  } else if (collection2 === "table-bases" && i18n.language === 'en') {
+    content = tablebases
+   } else if (collection2 === "outdoor-furniture" && i18n.language === 'en') {
+    content = outdoor
+  } else if (collection2 === "sale" && i18n.language === 'en') {
+    content = sale
+  } else if (collection2 === "chairs" && i18n.language === 'fr') {
+    content = chairsFr;
+  } else if (collection2 === "barstools" && i18n.language === 'fr') {
+    content = barstoolsFr
+  } else if (collection2 === "table-tops" && i18n.language === 'fr') {
+    content = tabletopsFr
+  } else if (collection2 === "table-bases" && i18n.language === 'fr') {
+    content = tablebasesFr
+   } else if (collection2 === "outdoor-furniture" && i18n.language === 'fr') {
+    content = outdoorFr
+  } else if (collection2 === "sale" && i18n.language === 'fr') {
+    content = saleFr
+  } else {
+    content = []
+  }
+
+  <i></i>
 
   useEffect(() => {
     async function fetchData() {
@@ -91,20 +134,52 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
             <div className="flex flex-col space-y-1">
               <p className="text-[23px] font-medium capitalize text-gray-700">
                 {collection &&
-                  collection
-                    .split('-')
-                    .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ')
-                }
+                  t(
+                    `footer.${collection
+                      .split('-')
+                      .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+                      .join(' ')}`
+                  )}
               </p>
               <p className="text-sm lg991:text-medium text-gray-700">
-                Discover Vogue Decor's chic {collection} for timeless elegance
+
+                <span className="capitalize text-gray-500">
+                  {t("Discover Vogue Decor's chic") + ' ' +
+                    t(
+                      `footer.${collection
+                        .split('-')
+                        .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+                        .join(' ')}`
+                    ) + ' ' +
+                    t("for timeless elegance")}
+                </span>
               </p>
             </div>
             <FilterDropdown selected={filter} onFilter={setFilter} />
           </div>
           <div className="mt-4">
-            <ProductGridItems products={products} />
+            <ProductGridItems products={products} collection={collection2} />
+          </div>
+
+          <div className='mb-4'>
+            <h3 className="w-full text-xs lg:text-sm md:text-base lg:font-medium text-black">
+              <span className='uppercase'>{t(`menu.${collection2}`)} {t(`byBrand`)}</span><br />
+              <span>{t(`about`)} <span className='capitalize'>{t(`menu.${collection2}`)}</span></span>
+            </h3>
+
+            <div
+              className={`transition-all duration-1000 ease-in-out overflow-hidden ${showContent ? 'max-h-[full] opacity-100 mt-4' : 'max-h-0 opacity-0'
+                }`}
+            >
+              <ArticleRenderer content={content} />
+            </div>
+
+            <button
+              className="mt-3 text-sm text-black hover:underline"
+              onClick={() => setShowContent(!showContent)}
+            >
+              {showContent ? t('toggle.readLess') : t('toggle.readMore')}
+            </button>
           </div>
         </>
       )}

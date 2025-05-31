@@ -8,6 +8,9 @@ import { useProduct } from 'components/product/product-context';
 import { Product, ProductVariant } from 'lib/shopify/types';
 import { useActionState } from 'react';
 import { useCart } from './cart-context';
+import i18n from '../../lib/i18nClient';
+import { useTranslation } from 'react-i18next';
+
 
 function SubmitButton({
   availableForSale,
@@ -16,14 +19,16 @@ function SubmitButton({
   availableForSale: boolean;
   selectedVariantId: string | undefined;
 }) {
+  const { t, ready } = useTranslation('common');
   const buttonClasses =
     'w-full rounded-md bg-gray-200 py-3 text-sm font-semibold uppercase text-black transition-colors duration-300 hover:bg-red hover:text-white';
   const disabledClasses = 'bg-red cursor-not-allowed bg-red-400 text-white';
+  console.log(selectedVariantId);
 
   if (!availableForSale) {
     return (
       <button disabled className={clsx(buttonClasses, disabledClasses)}>
-        Out Of Stock
+       {t("outOfStock")}
       </button>
     );
   }
@@ -39,7 +44,7 @@ function SubmitButton({
         <div className="absolute left-0 ml-4">
           <PlusIcon className="h-5" />
         </div>
-        Add To Cart!!!
+        {t("addToCart")}
       </button>
     );
   }
@@ -47,7 +52,7 @@ function SubmitButton({
   return (
 
     <button aria-label="Add to cart" className="w-full rounded-md bg-gray-200 py-3 text-sm font-semibold uppercase text-black transition-colors duration-300 hover:bg-black hover:text-white">
-      Add to Cart
+      {t("addToCart")}
     </button>
   );
 }

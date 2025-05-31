@@ -4,6 +4,7 @@ import upgradeImage from "media/png/upgradeImage.png";
 import logobtn from "media/svg/logobtn.svg";
 import '../../../lib/i18nClient'
 import { useTranslation } from 'react-i18next';
+import Link from "next/link";
 
 const Upgrade = () => {
   const { t, ready } = useTranslation('common');
@@ -31,9 +32,9 @@ const Upgrade = () => {
               <button className="flex items-center justify-center rounded-l-lg bg-white px-3 py-2 sm:py-2">
                 <Image src={logobtn} alt="logo" className="w-[90px] md:w-auto" />
               </button>
-              <button className="rounded-r-lg bg-[#05E5C8] h-[59px] px-4 sm:px-5 md:px-6 text-black font-medium">
+              <Link href="/voguedecor-calculator" className="rounded-r-lg bg-[#05E5C8] h-[59px] flex align-center px-4 sm:px-5 md:px-6 text-black font-medium">
                 {t('applyNow')}
-              </button>
+              </Link>
             </div>
           </div>
         </div>

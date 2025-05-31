@@ -5,10 +5,13 @@ import { useRouter } from 'next/navigation';
 import { AddToCartHover } from 'components/cart/add-to-cart-hover';
 import { ProductProvider } from 'components/product/product-context';
 import { useCurrency } from 'components/currency/currencyContext';
+import i18n from '../../lib/i18nClient';
+import { useTranslation } from 'react-i18next';
 
-export function ProductCard({ product }: { product: any }) {
+export function ProductCard({ product, collection }: { product: any, collection? : string }) {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
+  const { t, ready } = useTranslation('common');
   const { currency, rate } = useCurrency();
 
   const numericAmount = product?.variants[0]?.compareAtPrice?.amount
@@ -39,7 +42,11 @@ export function ProductCard({ product }: { product: any }) {
       {/* Square Container */}
       <div
         className="relative w-full aspect-square bg-white cursor-pointer"
-        onClick={() => router.push(`/product/${product.handle}`)}
+        onClick={() => {
+          const url = `/product/${product.handle}${collection ? `?collection=${encodeURIComponent(collection)}` : ''}`;
+          router.push(url);
+        }}
+        
       >
         {/* First Image */}
         <Image
@@ -70,7 +77,8 @@ export function ProductCard({ product }: { product: any }) {
       {/* Product Info */}
       <div className="flex flex-col gap-2 p-3 items-start md:items-center text-left lg:text-center md:items-start md:text-left">
         <p className="w-full text-xs lg:text-sm md:text-base  lg:font-medium text-black">
-          {product.title}
+          {/* {product.title} */}
+          {t(`products.${product.title}`)}
         </p>
         <div className="flex items-start md:items-center justify-start md:justify-start space-x-2">
           <p

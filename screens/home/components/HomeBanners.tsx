@@ -21,7 +21,7 @@ const HomeBanners = () => {
             className="object-contain md:object-cover rounded-lg"
             priority
           />
-          <div className="absolute inset-0 -mt-12 flex items-center justify-center rounded-lg">
+          <div className="absolute inset-0 mt-0 sm:-mt-12 flex items-center justify-center rounded-lg">
             <h2 className="text-black text-center text-2xl sm:text-4xl font-semibold">
             {t('comfort')}<br></br>{t('comfort2')}
             </h2>
@@ -42,7 +42,7 @@ const HomeBanners = () => {
             src={banner2}
             alt="Banner 2"
             fill
-            className="object-cover rounded-lg"
+            className="object-contain md:object-cover rounded-lg"
             priority
           />
           <div className="absolute top inset-0 mt-4 rounded-lg">

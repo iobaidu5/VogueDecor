@@ -22,6 +22,7 @@ import { GridTileImage } from 'components/grid/tile';
 import CartModal from 'components/cart/modal';
 import addtocartIcon from 'media/svg/addToCardIcon.svg';
 import { useCurrency } from 'components/currency/currencyContext';
+import RelatedHeader from "./RelatedHeader"
 
 export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   await Promise.resolve();
@@ -193,7 +194,7 @@ async function RelatedPRoducts({ id }: { id: string }) {
 
   return (
     <div className="py-8">
-      <h2 className="mb-4 text-2xl font-medium">We think you may also like</h2>
+      <RelatedHeader />
       <ul className="flex w-full gap-4 overflow-x-auto pt-1">
         {relatedProducts?.map((data: any) => (
           <li

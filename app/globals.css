@@ -125,3 +125,17 @@ body {
 .lk-grid-layout {
   grid-template-columns: repeat(var(--lk-col-count), minmax(0, 1fr)) !important;
 }
+
+.elementor-widget-container {
+  margin-bottom: 1.5rem;
+}
+
+.elementor-heading-title {
+  margin: 0;
+  color: #000;
+}
+
+.p {
+  margin-bottom: 1rem;
+  color: #000;
+}

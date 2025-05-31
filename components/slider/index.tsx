@@ -7,6 +7,8 @@ import { useCurrency } from 'components/currency/currencyContext';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import RelatedHeader from 'app/product/RelatedHeader';
+import { useTranslation } from 'react-i18next';
 
 const NextArrow = (props: any) => {
   const { onClick } = props;
@@ -34,6 +36,7 @@ const PrevArrow = (props: any) => {
 
 const ProductSlider = ({ data }: { data: Array<Record<string, any>> }) => {
   const { currency, rate } = useCurrency();
+  const { t, ready } = useTranslation('common');
 
   const settings = {
     infinite: false,
@@ -64,7 +67,8 @@ const ProductSlider = ({ data }: { data: Array<Record<string, any>> }) => {
 
   return (
     <div className="relative xs:py-4 md:py-8">
-      <h2 className="xs:text-md mb-4 font-medium md:text-2xl">We think you may also like</h2>
+     
+     <RelatedHeader />
       <div className="relative">
         <Slider {...settings}>
           {data?.map((item) => {
@@ -99,7 +103,6 @@ const ProductSlider = ({ data }: { data: Array<Record<string, any>> }) => {
                   prefetch={true}
                 >
                   <div className="relative flex w-full cursor-pointer flex-col overflow-hidden">
-                    {/* Image Section */}
                     <div className="relative w-full xs:h-[300px] md:h-[300px]">
                       <Image
                         src={
@@ -114,12 +117,10 @@ const ProductSlider = ({ data }: { data: Array<Record<string, any>> }) => {
                         className="absolute transition-opacity duration-500"
                       />
                     </div>
-
-                    {/* Content Section */}
                     <div className="flex items-center justify-between space-y-3 px-12 py-4 md:p-4">
                       <div className="flex flex-col space-y-1">
                         <p className="md:text-md font-medium uppercase text-gray-900 xs:text-sm">
-                          {item?.title}
+                          {t(`products.${item?.title}`)}
                         </p>
                         <div className="flex items-center space-x-2">
                           <p

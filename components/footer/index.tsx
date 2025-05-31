@@ -10,6 +10,8 @@ import { useState } from 'react';
 import { ChevronDown } from "lucide-react";
 import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
+import { toast, Toaster } from 'sonner';
+import axios from 'axios';
 
 const furniture = ['Furniture.', 'Chairs', 'Barstools', 'Table Tops', 'Table Bases', 'Outdoor Furniture'];
 const quikLinks = ['Vogue Decor.', 'Home', 'Contact Us'];
@@ -124,10 +126,10 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
         >
           <div className="flex flex-col ml-2 mt-1 space-y-2">
             {links.slice(1).map((link) => (
-              link === "Contact Us" || link === "Montreal" || link === "Toronto"  ?
+              link === "Contact Us" || link === "Montreal" || link === "Toronto" ?
                 <Link
                   key={link}
-                  href={link === "Montreal" || link === "Toronto"  ? `/contact-us#location` : `/contact-us`}  
+                  href={link === "Montreal" || link === "Toronto" ? `/contact-us#location` : `/contact-us`}
                   className="text-[13px] hover:underline"
                 >
                   {/* {link} */}
@@ -168,7 +170,7 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
             link === "Contact Us" || link === "Montreal" || link === "Toronto" ?
               <Link
                 key={link}
-                href={link === "Montreal" || link === "Toronto"  ? `/contact-us#location` : `/contact-us`} 
+                href={link === "Montreal" || link === "Toronto" ? `/contact-us#location` : `/contact-us`}
                 className="text-[13px] hover:underline"
               >
                 {/* {link} */}
@@ -249,21 +251,71 @@ const Connects = () => {
 
 const StayUpdated = () => {
   const { t, ready } = useTranslation('common');
+  const [email, setEmail] = useState('');
+  const [loading, IsLoading] = useState(false);
+
+  const subscribe = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      IsLoading(true)
+      const res = await axios.post('/api/subscribe', { email });
+      toast.success(res.data.message);
+      IsLoading(false)
+    } catch (error: any) {
+      IsLoading(false)
+      console.error('Subscription error:', error.response?.data || error.message);
+      toast.error(error.response?.data?.message || 'Subscription failed');
+    }
+  };
+
+
   return (
     <div className="mx-auto flex w-full max-w-sm flex-col gap-2 md:max-w-md pt-10 lg991:pt-0">
       <p className="text-lg font-medium text-white">{t(`stayUpdated`)}</p>
+      <form onSubmit={subscribe}>
       <div className="flex items-center overflow-hidden rounded-md border border-gray-400">
-        <input
-          type="email"
-          placeholder={t('enterEmail')}
-          className="w-full min-w-0 flex-1 bg-transparent px-4 py-2 text-white placeholder:text-gray-300 outline-none"
-        />
-        <button className="whitespace-nowrap bg-white px-4 py-2 font-medium text-black">
-          {t(`subscribe`)}
-        </button>
+          <input
+            type="email"
+            placeholder={t('enterEmail')}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full min-w-0 flex-1 bg-transparent px-4 py-2 text-white placeholder:text-gray-300 outline-none"
+          />
+<button
+  type="submit"
+  className="flex items-center justify-center whitespace-nowrap bg-white px-4 py-2 font-medium text-black"
+  disabled={loading}
+>
+  {loading ? (
+    <svg
+      className="h-5 w-5 animate-spin text-black"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="4"
+      />
+      <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+      />
+    </svg>
+  ) : (
+    t('subscribe')
+  )}
+</button>
+
       </div>
+      </form>
       <p className="mt-3 text-center text-xs lg:991text-sm text-white md:text-left">
-      {t(`description1`)}{' '}
+        {t(`description1`)}{' '}
         <br className="" />{t(`description2`)}
       </p>
     </div>
