@@ -14,6 +14,5 @@ export default {
   },
   i18n,
   experimental: {
-    appDir: true,
   },
 };
