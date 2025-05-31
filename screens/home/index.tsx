@@ -22,6 +22,7 @@ import HomeCategories from './components/homeCategories';
 import HomeBanners from './components/HomeBanners';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 
 export default function MainPage() {

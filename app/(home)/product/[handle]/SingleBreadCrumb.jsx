@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import i18n from '../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/navigation';
 

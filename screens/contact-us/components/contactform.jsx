@@ -4,6 +4,7 @@ import RichTextEditor from '../../../components/editor';
 import axios from 'axios';
 import { useRef, useState } from 'react';
 import { toast, Toaster } from 'sonner';
+import i18n from '../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 
 const ContactForm = () => {

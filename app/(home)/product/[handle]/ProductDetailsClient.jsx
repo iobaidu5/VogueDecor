@@ -1,5 +1,6 @@
 "use client";
 
+import i18n from '../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import { AddToCart } from 'components/cart/add-to-cart';
 import Quantity from 'components/product/quantity';

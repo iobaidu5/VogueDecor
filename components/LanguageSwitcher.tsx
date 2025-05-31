@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import i18n from '../lib/i18nClient';
+import { useTranslation } from 'react-i18next';
 
 export default function LanguageSwitcher() {
   const { t } = useTranslation();

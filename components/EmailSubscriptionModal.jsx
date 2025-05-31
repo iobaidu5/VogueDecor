@@ -6,6 +6,7 @@ import NewsLetter from '../media/png/newsletter.png';
 import logo from 'media/png/logo-new.png';
 import { toast, Toaster } from 'sonner';
 import axios from 'axios';
+import i18n from '../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 
 export default function EmailSubscriptionModal() {
