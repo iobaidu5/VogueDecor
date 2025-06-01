@@ -11,6 +11,7 @@ import Chair from 'media/png/chair.png';
 import Left from 'media/png/left.png';
 import Right from 'media/png/right.png';
 import SilverChef from 'media/png/silverChef.png';
+import Link from 'next/link';
 
 const ProductPages: React.FC = () => {
   const [quantity, setQuantity] = useState<number>(1);
@@ -102,9 +103,9 @@ const ProductPages: React.FC = () => {
         {/* Monthly Payment Option */}
         <div className="mt-6 flex items-center gap-12">
           <p>
-            <a href="/" className="text-[#7DA6DD] underline">
+            <Link href="/" className="text-[#7DA6DD] underline">
               Pay Monthly With
-            </a>
+            </Link>
           </p>
           <Image src={SilverChef} alt="SilverChef" />
         </div>

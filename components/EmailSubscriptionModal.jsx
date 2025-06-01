@@ -65,7 +65,7 @@ export default function EmailSubscriptionModal() {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-      <div className="relative bg-white rounded-lg shadow-xl w-[90%] md:max-w-3xl flex flex-col sm:flex-row overflow-hidden h-[80%] sm:h-[550px] animate-fadeIn">
+      <div className="relative bg-white rounded-lg shadow-xl w-[90%] md:max-w-3xl flex flex-col sm:flex-row overflow-hidden h-auto sm:h-[550px] animate-fadeIn">
         {/* Close Button */}
         <button
           onClick={handleClose}
@@ -106,7 +106,7 @@ export default function EmailSubscriptionModal() {
               onChange={(e) => setEmail(e.target.value)}
             />
             <button
-              className="bg-black text-white py-2 px-4 rounded hover:bg-gray-900 transition duration-300"
+              className="bg-black text-white py-2 px-4 mx-auto flex justify-center rounded hover:bg-gray-900 transition duration-300"
             >
               {loading ? (
                 <svg

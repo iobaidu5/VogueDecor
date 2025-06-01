@@ -160,9 +160,9 @@ export default async function ProductPage({ params }: { params: any }) {
               {/* Monthly Payment Option */}
               <div className="mt-6 flex items-center gap-12">
                 <p>
-                  <a href="/" className="text-[#7DA6DD] underline">
+                  <Link href="/" className="text-[#7DA6DD] underline">
                     Pay Monthly With
-                  </a>
+                  </Link>
                 </p>
                 <Image src={SilverChef} alt="SilverChef" />
               </div>

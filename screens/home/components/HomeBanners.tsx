@@ -18,7 +18,7 @@ const HomeBanners = () => {
             src={banner1}
             alt="Banner 1"
             fill
-            className="object-contain md:object-cover rounded-lg"
+            className="object-cover md:object-cover rounded-lg"
             priority
           />
           <div className="absolute inset-0 mt-0 sm:-mt-12 flex items-center justify-center rounded-lg">
@@ -42,10 +42,10 @@ const HomeBanners = () => {
             src={banner2}
             alt="Banner 2"
             fill
-            className="object-contain md:object-cover rounded-lg"
+            className="object-cover md:object-cover rounded-lg"
             priority
           />
-          <div className="absolute top inset-0 mt-4 rounded-lg">
+          <div className="absolute top-12 sm:top inset-0 mt-4 rounded-lg">
             <h2 className="text-black text-center text-2xl sm:text-4xl font-semibold">
             {t('outdoorCollection')}
             </h2>

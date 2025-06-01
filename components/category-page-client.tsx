@@ -40,7 +40,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
     content = tabletops
   } else if (collection2 === "table-bases" && i18n.language === 'en') {
     content = tablebases
-   } else if (collection2 === "outdoor-furniture" && i18n.language === 'en') {
+  } else if (collection2 === "outdoor-furniture" && i18n.language === 'en') {
     content = outdoor
   } else if (collection2 === "sale" && i18n.language === 'en') {
     content = sale
@@ -52,7 +52,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
     content = tabletopsFr
   } else if (collection2 === "table-bases" && i18n.language === 'fr') {
     content = tablebasesFr
-   } else if (collection2 === "outdoor-furniture" && i18n.language === 'fr') {
+  } else if (collection2 === "outdoor-furniture" && i18n.language === 'fr') {
     content = outdoorFr
   } else if (collection2 === "sale" && i18n.language === 'fr') {
     content = saleFr
@@ -175,7 +175,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
             </div>
 
             <button
-              className="mt-3 text-sm text-black hover:underline"
+              className="font-poppins font-medium mt-3 text-sm text-black hover:underline"
               onClick={() => setShowContent(!showContent)}
             >
               {showContent ? t('toggle.readLess') : t('toggle.readMore')}
