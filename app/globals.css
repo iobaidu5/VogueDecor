@@ -26,6 +26,12 @@ body {
   display: block;
 }
 
+@media (width <= 990px) {
+  .cart-icon{
+    top: 58px;
+  }
+}
+
 .image-bg{
   background-color: #F1F1F1 !important;
 }

@@ -30,7 +30,7 @@ const Drawer = ({ menu }) => {
       {/* Hamburger Menu Icon */}
       <button
         onClick={toggleDrawer}
-        className="cursor-pointer xs:mr-12 md:mr-6 lg:hidden"
+        className="cursor-pointer mt-2 md:mt-0 xs:mr-12 md:mr-6 lg:hidden"
         aria-label="Open menu"
       >
         <RxHamburgerMenu size={22} />
