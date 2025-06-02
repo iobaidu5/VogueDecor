@@ -66,7 +66,7 @@ const Header = ({ menu }) => {
             />
           </Link>
         </div>
-        <div className="absolute right-10 md:right-2 top-2 md:top-0 lg:relative md:flex items-center space-x-4 mt-4">
+        <div className="absolute z50 right-10 md:right-2 top-2 md:top-0 lg:relative md:flex items-center space-x-4 mt-4">
           <div className="relative">
             <Image
               src={searchIcon}
@@ -76,7 +76,7 @@ const Header = ({ menu }) => {
             />
 
             <div
-              className={`absolute top-24 xl:top-12 right-0 lg:-left-40 bg-white border border-gray-300 rounded shadow-lg w-72 p-3 transform transition-all duration-300 ease-in-out ${showSearch ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+              className={`absolute top-14 z-50 xl:top-12 right-0 lg:-left-40 bg-white border-b border-b-black rounded shadow-lg w-72 p-1 transform transition-all duration-300 ease-in-out ${showSearch ? 'opacity-100 z-50 scale-100 visible' : 'opacity-0 scale-95 invisible'
                 }`}
             >
               <Search />

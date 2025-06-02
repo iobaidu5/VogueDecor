@@ -94,8 +94,8 @@ const Logo = () => {
     <div className="hidden sm:block">
       <Image src={logo} alt="logo" className="sm:w-[120px] xl:w-auto" />
       <div className="mt-[17px] flex flex-col space-y-2">
-        <p className="text-sm">+1 (888) 880 8232</p>
-        <p className="text-sm">Info@voguedecor.com</p>
+       <Link href={"tel:+1 (888) 880 8232"}><p className="text-sm">+1 (888) 880 8232</p></Link>
+       <Link href={"mailto:info@voguedecor.com"}><p className="text-sm">Info@voguedecor.com</p></Link>
       </div>
     </div>
   );
@@ -124,27 +124,27 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
           className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-96" : "max-h-0"
             }`}
         >
-<div className="flex flex-col ml-2 mt-1 space-y-2">
-  {links.slice(1).map((link, index) => {
-    const isContact = link === "Contact Us";
-    const isCity = link === "Montreal" || link === "Toronto";
-    const isHome = link === "Home";
-    
-    const href = isContact
-      ? "/contact-us"
-      : isCity
-      ? "/contact-us#location"
-      : isHome
-      ? "/"
-      : `/search/${link.toLowerCase().replace(/\s+/g, '-')}`;
+          <div className="flex flex-col ml-2 mt-1 space-y-2">
+            {links.slice(1).map((link, index) => {
+              const isContact = link === "Contact Us";
+              const isCity = link === "Montreal" || link === "Toronto";
+              const isHome = link === "Home";
 
-    return (
-      <Link key={`footer-link-${index}`} href={href} className="text-[13px] hover:underline">
-        {t(`footer.${link}`)}
-      </Link>
-    );
-  })}
-</div>
+              const href = isContact
+                ? "/contact-us"
+                : isCity
+                  ? "/contact-us#location"
+                  : isHome
+                    ? "/"
+                    : `/search/${link.toLowerCase().replace(/\s+/g, '-')}`;
+
+              return (
+                <Link key={`footer-link-${index}`} href={href} className="text-[13px] hover:underline">
+                  {t(`footer.${link}`)}
+                </Link>
+              );
+            })}
+          </div>
 
 
         </div>
@@ -152,31 +152,31 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
 
       {/* Desktop: Inline style */}
       <div className="hidden lg:flex lg:flex-col lg:space-y-2">
-  {links.map((link, index) => {
-    const isHeading = index === 0;
-    const isContact = link === "Contact Us";
-    const isCity = link === "Montreal" || link === "Toronto";
-    const isHome = link === "Home";
+        {links.map((link, index) => {
+          const isHeading = index === 0;
+          const isContact = link === "Contact Us";
+          const isCity = link === "Montreal" || link === "Toronto";
+          const isHome = link === "Home";
 
-    const href = isContact
-      ? "/contact-us"
-      : isCity
-      ? "/contact-us#location"
-      : isHome
-      ? "/"
-      : `/search/${link.toLowerCase().replace(/\s+/g, '-')}`;
+          const href = isContact
+            ? "/contact-us"
+            : isCity
+              ? "/contact-us#location"
+              : isHome
+                ? "/"
+                : `/search/${link.toLowerCase().replace(/\s+/g, '-')}`;
 
-    return isHeading ? (
-      <p key={`heading-${index}`} className="xs:text-[14px] md:text-[16px] font-semibold">
-        {t(`footer.${link}`)}
-      </p>
-    ) : (
-      <Link key={`link-${index}`} href={href} className="text-[13px] hover:underline">
-        {t(`footer.${link}`)}
-      </Link>
-    );
-  })}
-</div>
+          return isHeading ? (
+            <p key={`heading-${index}`} className="xs:text-[14px] md:text-[16px] font-semibold">
+              {t(`footer.${link}`)}
+            </p>
+          ) : (
+            <Link key={`link-${index}`} href={href} className="text-[13px] hover:underline">
+              {t(`footer.${link}`)}
+            </Link>
+          );
+        })}
+      </div>
 
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const ReadMoreParagraph = ({ text, bold, italic }) => {
   const [expanded, setExpanded] = useState(false);
-  const limit = 300;
+  const limit = 1000;
   const isLong = text.length > limit;
 
   const visibleText = expanded ? text : text.slice(0, limit) + (isLong ? '...' : '');
@@ -11,7 +11,7 @@ const ReadMoreParagraph = ({ text, bold, italic }) => {
     <div className="text-xs text-gray-700 leading-relaxed">
       <span
         style={{
-          fontWeight: bold ? 700 : 400,
+          fontWeight: 400,
           fontStyle: italic ? 'italic' : 'normal',
         }}
       >
@@ -73,10 +73,10 @@ const ArticleRenderer = ({ content }) => {
               1: 'text-md font-bold',
               2: 'text-xs font-semibold',
               3: 'text-sm font-semibold',
-              4: 'text-xs font-medium',
-              5: 'text-xs font-medium',
-              6: 'text-xs font-medium',
-            }[block.level] || 'text-xl font-medium';
+              4: 'text-xs',
+              5: 'text-xs',
+              6: 'text-xs',
+            }[block.level] || 'text-xl';
 
             return (
               <div key={key} className="elementor-element elementor-widget elementor-widget-heading">
@@ -104,13 +104,13 @@ const ArticleRenderer = ({ content }) => {
                       );
                     } else if (el.type === 'h3') {
                       return (
-                        <h3 key={`h3-${i}`} className="text-md font-semibold text-gray-800">
+                        <h3 key={`h3-${i}`} className="text-md text-gray-800">
                           <span style={{ fontWeight: el.bold ? 700 : 400 }}>{el.text}</span>
                         </h3>
                       );
                     } else if (el.type === 'h4') {
                       return (
-                        <h4 key={`h4-${i}`} className="text-sm font-medium text-gray-800">
+                        <h4 key={`h4-${i}`} className="text-sm text-gray-800">
                           <span style={{ fontWeight: el.bold ? 700 : 400 }}>{el.text}</span>
                         </h4>
                       );

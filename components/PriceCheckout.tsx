@@ -2,7 +2,7 @@
 import clsx from 'clsx';
 import { useCurrency } from './currency/currencyContext';
 
-const Price = ({
+const PriceCheckout = ({
   amount,
   className,
   currencyCodeClassName,
@@ -35,11 +35,10 @@ const Price = ({
         <span className={`ml-2 font-medium text-red-700`}>
           {`${numericSale.toFixed(2)} ${currency}`}
         </span>
-      ) : <span className={clsx('ml-1 inline', currencyCodeClassName)}>
-        {`${numericSale.toFixed(2)} ${currency}`}
+      ) : <span>
       </span>}
     </p>
   );
 };
 
-export default Price;
+export default PriceCheckout;

@@ -1,7 +1,9 @@
-"use client";
+'use client';
 import { createUrl } from "../lib/utils";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useRouter, useSearchParams } from "next/navigation";
+import i18n from '../lib/i18nClient';
+import { useTranslation } from 'react-i18next';
 
 export default function Search() {
   const router = useRouter();
@@ -22,6 +24,8 @@ export default function Search() {
 
     router.push(createUrl("/search", newParams));
   }
+
+  const { t, ready } = useTranslation('common');
   return (
     <form
       onSubmit={onSubmit}
@@ -31,10 +35,10 @@ export default function Search() {
         key={searchParams?.get("q")}
         type="text"
         name="search"
-        placeholder="Search for products..."
+        placeholder={t(`search`)}
         autoComplete="off"
         defaultValue={searchParams?.get("q") || ""}
-        className="text-md w-full rounded-lg border bg-white px-4 py-2 text-black placeholder:text-blaxk md:text-sm dark:border-neutral-800 dark:bg-transparent dark:text-black dark:placeholder:text-black"
+        className="text-md w-full rounded-lg bg-white px-4 py-2 text-black placeholder:text-blaxk md:text-sm dark:bg-transparent dark:text-black dark:placeholder:text-black"
       />
       {/* <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
         <MagnifyingGlassIcon className="h-4" />
@@ -44,12 +48,13 @@ export default function Search() {
 }
 
 export function SearchSkeleton() {
+  const { t, ready } = useTranslation('common');
   return (
-    <form className="w-max-[100%] relative w-full lg:w-full xl:w-full">
+    <form className="w-max-[100%] relative w-full lg:w-full xl:w-full z1000">
       <input
         type="text"
-        placeholder="Search for products..."
-        className="w-full rounded-lg border bg-white px-4 py-2 text-sm text-black placeholder:text-neutral-500 dark:border-neutral-800 dark:bg-transparent dark:text-white dark:placeholder:text-neutral-400"
+        placeholder={t(`search`)}
+        className="w-full rounded-lg bg-white px-4 py-2 text-sm text-black placeholder:text-neutral-500 dark:bg-transparent dark:text-white dark:placeholder:text-neutral-400"
       />
       {/* <div className="absolute right-0 top-0 mr-3 flex h-full items-center">
         <MagnifyingGlassIcon className="h-4" />

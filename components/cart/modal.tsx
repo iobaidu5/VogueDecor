@@ -16,6 +16,7 @@ import CloseCart from './close-cart';
 import { DeleteItemButton } from './delete-item-button';
 import { EditItemQuantityButton } from './edit-item-quantity-button';
 import OpenCart from './open-cart';
+import PriceCheckout from 'components/PriceCheckout';
 
 type MerchandiseSearchParams = {
   [key: string]: string;
@@ -149,10 +150,10 @@ export default function CartModal() {
                                 </Link>
                               </div>
                               <div className="flex h-16 flex-col justify-between">
-                                <Price
+                                <PriceCheckout
                                   className="flex justify-end space-y-2 text-right text-sm"
                                   amount={item.cost.totalAmount.amount}
-                                  currencyCode={item.cost.totalAmount.currencyCode}
+                                  // currencyCode={item.cost.totalAmount.currencyCode}
                                 />
                                 <div className="ml-auto flex h-9 flex-row items-center rounded-full border border-neutral-200 dark:border-neutral-700">
                                   <EditItemQuantityButton
@@ -178,10 +179,10 @@ export default function CartModal() {
                   <div className="py-4 text-sm text-neutral-500 dark:text-neutral-600">
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 dark:border-neutral-700">
                       <p>Taxes</p>
-                      <Price
+                      <PriceCheckout
                         className="text-right text-base text-black dark:text-black"
                         amount={cart.cost.totalTaxAmount.amount}
-                        currencyCode={cart.cost.totalTaxAmount.currencyCode}
+                        // currencyCode={cart.cost.totalTaxAmount.currencyCode}
                       />
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
@@ -190,10 +191,10 @@ export default function CartModal() {
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
                       <p>Total</p>
-                      <Price
+                      <PriceCheckout
                         className="text-right text-base text-black dark:text-black"
                         amount={cart.cost.totalAmount.amount}
-                        currencyCode={cart.cost.totalAmount.currencyCode}
+                        // currencyCode={cart.cost.totalAmount.currencyCode}
                       />
                     </div>
                   </div>
@@ -344,7 +345,7 @@ function CheckoutButton() {
 
   return (
     <button
-      className="block w-full rounded-full bg-blue-600 p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
+      className="block w-full rounded-full bg-black p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
       type="submit"
       disabled={pending}
     >

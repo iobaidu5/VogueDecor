@@ -145,3 +145,7 @@ body {
   margin-bottom: 1rem;
   color: #000;
 }
+
+.slick-dots{
+  bottom: 0 !important;
+}

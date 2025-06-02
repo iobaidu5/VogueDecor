@@ -5,7 +5,7 @@ import mainImage from 'media/png/mainImage.png';
 // import hero from 'media/png/main-banner.png';
 import hero from 'media/home-banner/Main Banner without button.png';
 import heroFr from 'media/home-banner/Main Banner without button fr.png';
-import heroMobile from 'media/png/Mobile banner with button.png';
+import heroMobile from 'media/home-banner/Mobile banner without button.png';
 import heroMobileFr from 'media/home-banner/Mobile banner without button fr.png';
 import mainText from 'media/png/mainText.png';
 import Image from 'next/image';
@@ -26,8 +26,8 @@ import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 
 export default function MainPage() {
-  // const { t } = useTranslation("common");
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation("common");
+  // const {  } = useTranslation();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -61,13 +61,13 @@ export default function MainPage() {
             className={isMobile ? "object-contain mt-12 h-auto" : "object-cover"}
             priority
           />
-          <div className="absolute bottom-[15%] left-1/2 transform -translate-x-1/2">
+          <div className="absolute bottom-[65%] left-1/2 transform -translate-x-1/2">
             <Link
-              href="/"
-              className="bg-black text-white px-6 py-3 text-lg rounded hover:bg-gray-900 transition duration-300"
+              href="/search/outdoor-furniture"
+              className="bg-black  text-white px-4 md:px-6 py-3 text-sm md:text-md rounded hover:bg-gray-900 transition duration-300"
             >
-              Shop Outdoor
-               {/* {t('shopOutdoor')} */}
+              {/* Shop Outdoor */}
+               {t('shopOutdoor')}
             </Link>
           </div>
         </section>

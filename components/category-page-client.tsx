@@ -141,7 +141,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
                       .join(' ')}`
                   )}
               </p>
-              <p className="text-sm lg991:text-medium text-gray-700">
+              <p className="text-xs md:text-sm lg991:text-medium text-gray-700">
 
                 <span className="capitalize text-gray-500">
                   {t("Discover Vogue Decor's chic") + ' ' +

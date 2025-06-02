@@ -13,12 +13,12 @@ const HomeBanners = () => {
     <div className="container mx-auto px-0 md:px-0 py-8 mt-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Banner 1 */}
-        <div className="relative h-[400px] md:h-[500px] w-full">
+        <div className="relative h-[320px] md:h-[500px] w-full">
           <Image
             src={banner1}
             alt="Banner 1"
             fill
-            className="object-cover md:object-cover rounded-lg"
+            className="object-contain md:object-cover rounded-lg"
             priority
           />
           <div className="absolute inset-0 mt-0 sm:-mt-12 flex items-center justify-center rounded-lg">
@@ -37,12 +37,12 @@ const HomeBanners = () => {
         </div>
 
         {/* Banner 2 */}
-        <div className="relative h-[400px] md:h-[500px] w-full">
+        <div className="relative h-[320px] md:h-[500px] w-full">
           <Image
             src={banner2}
             alt="Banner 2"
             fill
-            className="object-cover md:object-cover rounded-lg"
+            className="object-contain md:object-cover rounded-lg"
             priority
           />
           <div className="absolute top-12 sm:top inset-0 mt-4 rounded-lg">
