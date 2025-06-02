@@ -22,10 +22,10 @@
     "chairs": "chaises",
     "batstools": "tabourets",
     "barstools": "tabourets",
-    "table tops": "plateaux de table",
-    "table base": "bases de table",
-    "table bases": "bases de table",
-    "outdoor": "mobilier extérieur",
+    "table-tops": "plateaux de table",
+    "table-base": "bases de table",
+    "table-bases": "bases de table",
+    "outdoor-furniture": "mobilier extérieur",
     "sale": "soldes"
   },
 
