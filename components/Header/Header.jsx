@@ -57,16 +57,16 @@ const Header = ({ menu }) => {
           <CurrencySwitcher />
         </div>
 
-        <div className="absolute left-1/2  -translate-x-1/2">
+        <div className="absolute left-1/2 -translate-x-1/2">
           <Link href="/">
             <Image
               src={logo}
               alt="logo"
-              className="lg991:my-14 mt-10 md:mt-8 w-[100px] md:w-[120px] lg:w-[140px]"
+              className="lg991:my-14 -mb-6 md:mb-0 mt-4 md:mt-4 md:mt-8 w-[100px] md:w-[120px] lg:w-[140px]"
             />
           </Link>
         </div>
-        <div className="hidden lg991:flex items-center space-x-4 mt-4">
+        <div className="absolute right-10 md:right-2 top-2 md:top-0 lg:relative md:flex items-center space-x-4 mt-4">
           <div className="relative">
             <Image
               src={searchIcon}
@@ -76,14 +76,14 @@ const Header = ({ menu }) => {
             />
 
             <div
-              className={`absolute top-24 xl:top-12 -left-40 bg-white border border-gray-300 rounded shadow-lg w-72 p-3 transform transition-all duration-300 ease-in-out ${showSearch ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+              className={`absolute top-24 xl:top-12 right-0 lg:-left-40 bg-white border border-gray-300 rounded shadow-lg w-72 p-3 transform transition-all duration-300 ease-in-out ${showSearch ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
                 }`}
             >
               <Search />
             </div>
           </div>
 
-          <UserMenu />
+          <div className='hidden lg991:flex'><UserMenu /></div>
         </div>
 
       </div>

@@ -3,7 +3,7 @@ const { i18n } = require('./next-i18next.config');
 export default {
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['i.pravatar.cc'],
+    domains: ['i.pravatar.cc', 'images.unsplash.com'],
     remotePatterns: [
       {
         protocol: 'https',

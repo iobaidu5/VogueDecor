@@ -48,30 +48,6 @@ export default function ProductGridItems({ products, collection }: { products: P
         ))}
       </div>
 
-
-      {/* Pagination Controls */}
-      {/* <div className="flex justify-center items-center space-x-4 mt-4">
-        <button
-          onClick={handlePrevPage}
-          disabled={currentPage === 1}
-          className="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Previous
-        </button>
-
-        <span className="text-gray-700">
-          Page {currentPage} of {totalPages}
-        </span>
-
-        <button
-          onClick={handleNextPage}
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Next
-        </button>
-      </div> */}
-
       <div className="flex justify-center items-center space-x-2 my-4">
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
           <button

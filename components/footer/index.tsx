@@ -124,77 +124,60 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
           className={`transition-[max-height] duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-96" : "max-h-0"
             }`}
         >
-          <div className="flex flex-col ml-2 mt-1 space-y-2">
-            {links.slice(1).map((link) => (
-              link === "Contact Us" || link === "Montreal" || link === "Toronto" ?
-                <Link
-                  key={link}
-                  href={link === "Montreal" || link === "Toronto" ? `/contact-us#location` : `/contact-us`}
-                  className="text-[13px] hover:underline"
-                >
-                  {/* {link} */}
-                  {t(`footer.${link}`)}
-                </Link>
-                : link === "/search/home" ? <Link
-                  key={link}
+<div className="flex flex-col ml-2 mt-1 space-y-2">
+  {links.slice(1).map((link, index) => {
+    const isContact = link === "Contact Us";
+    const isCity = link === "Montreal" || link === "Toronto";
+    const isHome = link === "Home";
+    
+    const href = isContact
+      ? "/contact-us"
+      : isCity
+      ? "/contact-us#location"
+      : isHome
+      ? "/"
+      : `/search/${link.toLowerCase().replace(/\s+/g, '-')}`;
 
-                  href={`/`}
-                  className={`text-[13px] hover:underline`}
-                >
-                  {t(`footer.${link}`)}
-                  {/* {link} */}
-                </Link> :
-                  <Link
-                    key={link}
+    return (
+      <Link key={`footer-link-${index}`} href={href} className="text-[13px] hover:underline">
+        {t(`footer.${link}`)}
+      </Link>
+    );
+  })}
+</div>
 
-                    href={`/search/${link.toLowerCase().replace(/\s+/g, '-')}`}
-                    className={`text-[13px] hover:underline`}
-                  >
-                    {/* {link} */}
-                    {t(`footer.${link}`)}
-                  </Link>
-            ))}
-          </div>
+
         </div>
       </div>
 
       {/* Desktop: Inline style */}
       <div className="hidden lg:flex lg:flex-col lg:space-y-2">
-        {links.map((link, index) =>
-          index === 0 ? (
-            <p key={link} className="xs:text-[14px] md:text-[16px] font-semibold">
-              {/* {link} */}
-              {t(`footer.${link}`)}
-            </p>
-          ) : (
-            link === "Contact Us" || link === "Montreal" || link === "Toronto" ?
-              <Link
-                key={link}
-                href={link === "Montreal" || link === "Toronto" ? `/contact-us#location` : `/contact-us`}
-                className="text-[13px] hover:underline"
-              >
-                {/* {link} */}
-                {t(`footer.${link}`)}
-              </Link>
-              : link === "/search/home" ? <Link
-                key={link}
-                href={`/`}
-                className="text-[13px] hover:underline"
-              >
-                {/* {link} */}
-                {t(`footer.${link}`)}
-              </Link> :
-                <Link
-                  key={link}
-                  href={`/search/${link.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="text-[13px] hover:underline"
-                >
-                  {/* {link} */}
-                  {t(`footer.${link}`)}
-                </Link>
-          )
-        )}
-      </div>
+  {links.map((link, index) => {
+    const isHeading = index === 0;
+    const isContact = link === "Contact Us";
+    const isCity = link === "Montreal" || link === "Toronto";
+    const isHome = link === "Home";
+
+    const href = isContact
+      ? "/contact-us"
+      : isCity
+      ? "/contact-us#location"
+      : isHome
+      ? "/"
+      : `/search/${link.toLowerCase().replace(/\s+/g, '-')}`;
+
+    return isHeading ? (
+      <p key={`heading-${index}`} className="xs:text-[14px] md:text-[16px] font-semibold">
+        {t(`footer.${link}`)}
+      </p>
+    ) : (
+      <Link key={`link-${index}`} href={href} className="text-[13px] hover:underline">
+        {t(`footer.${link}`)}
+      </Link>
+    );
+  })}
+</div>
+
     </div>
   );
 };
@@ -274,45 +257,45 @@ const StayUpdated = () => {
     <div className="mx-auto flex w-full max-w-sm flex-col gap-2 md:max-w-md pt-10 lg991:pt-0">
       <p className="text-lg font-medium text-white">{t(`stayUpdated`)}</p>
       <form onSubmit={subscribe}>
-      <div className="flex items-center overflow-hidden rounded-md border border-gray-400">
+        <div className="flex items-center overflow-hidden rounded-md border border-gray-400">
           <input
             type="email"
             placeholder={t('enterEmail')}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full min-w-0 flex-1 bg-transparent px-4 py-2 text-white placeholder:text-gray-300 outline-none"
           />
-<button
-  type="submit"
-  className="flex items-center justify-center whitespace-nowrap bg-white px-4 py-2 font-medium text-black"
-  disabled={loading}
->
-  {loading ? (
-    <svg
-      className="h-5 w-5 animate-spin text-black"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <circle
-        className="opacity-25"
-        cx="12"
-        cy="12"
-        r="10"
-        stroke="currentColor"
-        strokeWidth="4"
-      />
-      <path
-        className="opacity-75"
-        fill="currentColor"
-        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-      />
-    </svg>
-  ) : (
-    t('subscribe')
-  )}
-</button>
+          <button
+            type="submit"
+            className="flex items-center justify-center whitespace-nowrap bg-white px-4 py-2 font-medium text-black"
+            disabled={loading}
+          >
+            {loading ? (
+              <svg
+                className="h-5 w-5 animate-spin text-black"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                />
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                />
+              </svg>
+            ) : (
+              t('subscribe')
+            )}
+          </button>
 
-      </div>
+        </div>
       </form>
       <p className="mt-3 text-center text-xs lg:991text-sm text-white md:text-left">
         {t(`description1`)}{' '}

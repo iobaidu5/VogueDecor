@@ -8,7 +8,7 @@ const ReadMoreParagraph = ({ text, bold, italic }) => {
   const visibleText = expanded ? text : text.slice(0, limit) + (isLong ? '...' : '');
 
   return (
-    <div className="text-sm text-gray-700 leading-relaxed">
+    <div className="text-xs text-gray-700 leading-relaxed">
       <span
         style={{
           fontWeight: bold ? 700 : 400,
@@ -38,7 +38,7 @@ const FAQItem = ({ question, answer }) => {
         className="flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-gray-600 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-lg">{question}</span>
+        <span className="text-md">{question}</span>
         <span className="ml-4 transform transition-transform duration-300">
           {isOpen ? (
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -70,7 +70,7 @@ const ArticleRenderer = ({ content }) => {
           case 'heading':
             const HeadingTag = `h${block.level}`;
             const headingSize = {
-              1: 'text-xl font-bold',
+              1: 'text-md font-bold',
               2: 'text-xs font-semibold',
               3: 'text-sm font-semibold',
               4: 'text-xs font-medium',
@@ -104,13 +104,13 @@ const ArticleRenderer = ({ content }) => {
                       );
                     } else if (el.type === 'h3') {
                       return (
-                        <h3 key={`h3-${i}`} className="text-xl font-semibold text-gray-800">
+                        <h3 key={`h3-${i}`} className="text-md font-semibold text-gray-800">
                           <span style={{ fontWeight: el.bold ? 700 : 400 }}>{el.text}</span>
                         </h3>
                       );
                     } else if (el.type === 'h4') {
                       return (
-                        <h4 key={`h4-${i}`} className="text-md font-medium text-gray-800">
+                        <h4 key={`h4-${i}`} className="text-sm font-medium text-gray-800">
                           <span style={{ fontWeight: el.bold ? 700 : 400 }}>{el.text}</span>
                         </h4>
                       );

@@ -22,9 +22,9 @@
     "chairs": "chairs",
     "batstools": "barstools",
     "barstools": "barstools",
-    "table tops": "table tops",
-    "table base": "table bases",
-    "table bases": "table bases",
+    "table-tops": "table tops",
+    "table0base": "table bases",
+    "table-bases": "table bases",
     "outdoor": "outdoor",
     "sale": "sale"
   },
@@ -322,8 +322,8 @@
     "subscribeText": "Subscribe to our newsletter and be the first to know about new arrivals, seasonal collections, and exclusive deals!"
   },
   "toggle": {
-    "readMore": "Read More →",
-    "readLess": "Read Less →"
+    "readMore": "Read More +",
+    "readLess": "Read Less -"
   },
   "byBrand": "by Vogue Decor",
   "about": "Everything You Need to Know About",
