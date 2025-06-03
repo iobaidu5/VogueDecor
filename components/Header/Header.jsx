@@ -58,7 +58,7 @@ const Header = ({ menu }) => {
         </div>
 
         <div className="absolute left-1/2 -translate-x-1/2">
-          <Link href="/">
+          <Link href="/"  passHref legacyBehavior>
             <Image
               src={logo}
               alt="logo"

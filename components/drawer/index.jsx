@@ -93,17 +93,16 @@ const Drawer = ({ menu }) => {
             <LanguageSwitcher />
             <div className="flex items-center space-x-3">
               <CurrencySwitcher />
-              <Image
+              {/* <Image
                 src={searchIcon}
                 alt="search"
                 onClick={() => setShowSearch(true)}
                 className="h-5 w-5 cursor-pointer hover:text-gray-500 z-20 relative"
-              />
+              /> */}
             </div>
           </div>
 
-          {/* Fullscreen Drawer */}
-          {showSearch && (
+          {/* {showSearch && (
             <div
               className="fixed inset-0 top-[80%] bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300"
               onClick={() => setShowSearch(false)} // click outside to close
@@ -112,7 +111,6 @@ const Drawer = ({ menu }) => {
                 className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 p-6 relative"
                 onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
               >
-                {/* Close Button */}
                 <button
                   onClick={() => setShowSearch(false)}
                   className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
@@ -122,7 +120,7 @@ const Drawer = ({ menu }) => {
                 <Search />
               </div>
             </div>
-          )}
+          )} */}
         </>
       </div>
     </>
