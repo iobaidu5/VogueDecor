@@ -1,6 +1,6 @@
 'use client';
 
-import logo from 'media/png/logo-new.png';
+import logo from 'media/png/Adobe Express - file.png';
 import searchIcon from 'media/svg/searchIcon.svg';
 import Image from 'next/image';
 import Link from 'next/link';
