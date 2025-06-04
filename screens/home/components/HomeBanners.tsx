@@ -61,7 +61,7 @@ const HomeBanners = () => {
       className="object-cover rounded-lg"
       priority
     />
-    <div className="absolute inset-0 flex flex-col items-center justify-center sm:justify-start text-center px-4 pt-16 sm:pt-10">
+    <div className="absolute bottom-[70%] sm:bottom-auto top-0 sm:inset-0 flex flex-col items-center justify-center sm:justify-start text-center px-4 pt-16 sm:pt-10">
       <h2 className="text-black text-2xl sm:text-4xl font-semibold">
         {t('outdoorCollection')}
       </h2>

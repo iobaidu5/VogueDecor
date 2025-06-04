@@ -16,7 +16,7 @@ import axios from 'axios';
 const furniture = ['Furniture.', 'Chairs', 'Barstools', 'Table Tops', 'Table Bases', 'Outdoor Furniture'];
 const quikLinks = ['Vogue Decor.', 'Home', 'Contact Us'];
 const locations = ['Locations.', 'Montreal', 'Toronto'];
-const policy = ['Policy.', 'Privacy Policy.', 'Terms and Conditions', ' Shipping and Return Policy'];
+const policy = ['Policy.', 'Privacy Policy.', 'Terms and Conditions', ' Shipping and Return Policy', 'Blogs'];
 
 
 interface FooterLinksProps {
@@ -72,9 +72,9 @@ const Footer = () => {
             <Link href="/shipping-return-policy" className="hover:underline text-[#a6a6a6]">
               Shipping and Return Policy
             </Link>
-            {/* <Link href="/contact-us" className="hover:underline">
-              Contact Us
-            </Link> */}
+            <Link href="/blogs" className="hover:underline text-[#a6a6a6]">
+              Blogs
+            </Link>
           </div>
 
           {/* Copyright */}
