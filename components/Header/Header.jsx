@@ -62,7 +62,7 @@ const Header = ({ menu }) => {
             <Image
               src={logo}
               alt="logo"
-              className="lg991:my-14 -mb-6 md:mb-0 mt-4 md:mt-4 md:mt-8 w-[100px] md:w-[120px] lg:w-[140px]"
+              className="lg991:my-14 -mb-6 md:mb-0 mt-4 md:mt-4 md:mt-8 w-[100px] md:w-[120px] lg:w-[140px] cursor-pointer"
             />
           </Link>
         </div>
