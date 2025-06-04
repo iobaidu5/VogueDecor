@@ -13,6 +13,16 @@ import { Toaster } from 'sonner'
 import ChatbaseScript from 'components/ChatbaseScript'
 import Script from 'next/script'
 
+export const metadata = {
+  description: 'High-performance ecommerce store',
+  openGraph: {
+    type: 'website'
+  },
+  icons: {
+    icon: './favicon.ico',
+  },
+};
+
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
@@ -33,7 +43,7 @@ export default async function LocaleLayout({
   return (
     <html lang={params.locale} className={poppins.variable}>
       <head>
-        {/* ✅ Google Translate Scripts */}
+      <link rel="icon" href="//favicon.ico" sizes="any" />
         <Script
           id="google-translate"
           src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"

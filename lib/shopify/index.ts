@@ -182,7 +182,7 @@ export async function getMenu(handle: string): Promise<Menu[]> {
     variables: {
       handle,
     },
-    cache: 'no-cache',
+    cache: 'force-cache',
   });
 
   return (
@@ -291,7 +291,7 @@ export async function getCollectionProducts({
       reverse,
       sortKey: sortKey === "CREATED_AT" ? "CREATED" : sortKey,
     },
-    cache: 'no-cache',       
+    cache: 'force-cache',       
   });
 
   if (!res?.body?.data?.collection) {
@@ -310,7 +310,7 @@ export async function getProduct(handle: string): Promise<Product | undefined> {
     variables: {
       handle,
     },
-    cache: 'no-cache',
+    cache: 'force-cache',
   });
   return reshapeProduct(res?.body?.data?.product, false);
 }
@@ -324,7 +324,7 @@ export async function getProductRecommendations(
     variables: {
       productId,
     },
-    cache: 'no-cache',
+    cache: 'force-cache',
   });
 
   return reshapeProducts(res?.body?.data?.productRecommendations);
@@ -414,7 +414,7 @@ export async function addToCart(
       cartId,
       lines,
     },
-    cache: "no-cache",
+    cache: "force-cache",
   });
 
   return reshapeCart(res?.body?.data?.cartLinesAdd?.cart);
