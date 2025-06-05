@@ -146,24 +146,39 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false,
             }
           };
 
-          const numericAmount = parseFloat(item?.priceRange.minVariantPrice?.amount) * rate;
-          const numericSale = item?.variants?.[0]?.compareAtPrice?.amount
-            ? parseFloat(item.variants[0].compareAtPrice.amount) * rate
+          // const numericAmount = parseFloat(item?.priceRange.minVariantPrice?.amount) * rate;
+          // const numericSale = item?.variants?.[0]?.compareAtPrice?.amount
+          //   ? parseFloat(item.variants[0].compareAtPrice.amount) * rate
+          //   : 0;
+
+          // const numericAmount = parseFloat(item?.priceRange.minVariantPrice?.amount) * rate;
+          // const numericSale = item?.variants?.[0]?.compareAtPrice?.amount
+          // ? parseFloat(item.variants[0].compareAtPrice.amount) * rate
+          // : 0;
+
+          // const formattedPrice = new Intl.NumberFormat(undefined, {
+          //   style: 'currency',
+          //   currency: currency,
+          //   currencyDisplay: 'narrowSymbol'
+          // }).format(numericAmount);
+
+          const numericAmount = item?.variants[0]?.compareAtPrice?.amount
+            ? parseFloat(item?.variants[0]?.compareAtPrice?.amount) * rate
             : 0;
+          const numericSale = parseFloat(item?.priceRange?.maxVariantPrice?.amount) * rate;
 
           const formattedPrice = new Intl.NumberFormat(undefined, {
             style: 'currency',
             currency: currency,
-            currencyDisplay: 'narrowSymbol'
+            currencyDisplay: 'narrowSymbol',
           }).format(numericAmount);
 
-          const formattedSalePrice = numericSale
-            ? new Intl.NumberFormat(undefined, {
-              style: 'currency',
-              currency: currency,
-              currencyDisplay: 'narrowSymbol'
-            }).format(numericSale)
-            : null;
+          const formattedSalePrice = new Intl.NumberFormat(undefined, {
+            style: 'currency',
+            currency: currency,
+            currencyDisplay: 'narrowSymbol',
+          }).format(numericSale);
+
 
           const isWishlisted = wishlistIds?.includes(item.id);
 
@@ -193,6 +208,18 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false,
                     </p>
                     <div className="flex items-center space-x-2">
                       <p
+                        className={`text-sm text-left lg:text-center font-medium text-[#878787] ${formattedPrice && formattedPrice !== '$0.00' ? 'line-through' : ''}`}
+                      >
+                        {formattedPrice === "$0.00" ? formattedSalePrice : formattedPrice || ''}
+                      </p>
+                      {formattedSalePrice && formattedPrice !== '$0.00' && (
+                        <p className="text-[15px] font-medium text-red-700">
+                          {formattedSalePrice}
+                        </p>
+                      )}
+                    </div>
+                    {/* <div className="flex items-center space-x-2">
+                      <p
                         className={`text-[15px] font-medium text-[#878787] ${formattedSalePrice ? 'line-through' : ''
                           }`}
                       >
@@ -203,7 +230,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false,
                           {formattedSalePrice}
                         </p>
                       )}
-                    </div>
+                    </div> */}
                   </div>
                 </Link>
               </ProductProvider>

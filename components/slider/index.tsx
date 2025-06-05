@@ -68,30 +68,28 @@ const ProductSlider = ({ data }: { data: Array<Record<string, any>> }) => {
 
   return (
     <div className="relative xs:py-4 md:py-8">
-     
-     <RelatedHeader />
+
+      <RelatedHeader />
       <div className="relative">
         <Slider {...settings}>
           {data?.map((item) => {
-            const numericAmount = parseFloat(item?.priceRange?.maxVariantPrice?.amount) * rate;
 
-            const numericSale = item?.variants?.[0]?.compareAtPrice?.amount
-              ? parseFloat(item.variants[0].compareAtPrice.amount) * rate
+            const numericAmount = item?.variants[0]?.compareAtPrice?.amount
+              ? parseFloat(item?.variants[0]?.compareAtPrice?.amount) * rate
               : 0;
+            const numericSale = parseFloat(item?.priceRange?.maxVariantPrice?.amount) * rate;
 
             const formattedPrice = new Intl.NumberFormat(undefined, {
               style: 'currency',
               currency: currency,
-              currencyDisplay: 'narrowSymbol'
+              currencyDisplay: 'narrowSymbol',
             }).format(numericAmount);
 
-            const formattedSalePrice = numericSale
-              ? new Intl.NumberFormat(undefined, {
-                style: 'currency',
-                currency: currency,
-                currencyDisplay: 'narrowSymbol'
-              }).format(numericSale)
-              : null;
+            const formattedSalePrice = new Intl.NumberFormat(undefined, {
+              style: 'currency',
+              currency: currency,
+              currencyDisplay: 'narrowSymbol',
+            }).format(numericSale);
 
             return (
               <div
@@ -124,18 +122,17 @@ const ProductSlider = ({ data }: { data: Array<Record<string, any>> }) => {
                           {t(`products.${item?.title}`)}
                         </p>
                         <div className="flex items-center space-x-2">
-                          <p
-                            className={`text-[15px] font-medium text-[#878787] ${formattedSalePrice ? 'line-through' : ''
-                              }`}
-                          >
-                            {formattedPrice}
-                          </p>
-                          {formattedSalePrice && (
-                            <p className="text-[15px] font-medium text-red-700">
-                              {formattedSalePrice}
-                            </p>
-                          )}
-                        </div>
+                      <p
+                        className={`text-sm text-left lg:text-center font-medium text-[#878787] ${formattedPrice && formattedPrice !== '$0.00' ? 'line-through' : ''}`}
+                      >
+                        {formattedPrice === "$0.00" ? formattedSalePrice : formattedPrice || ''}
+                      </p>
+                      {formattedSalePrice && formattedPrice !== '$0.00' && (
+                        <p className="text-[15px] font-medium text-red-700">
+                          {formattedSalePrice}
+                        </p>
+                      )}
+                    </div>
                       </div>
                     </div>
                   </div>
