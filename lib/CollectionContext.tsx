@@ -3,8 +3,8 @@
 import { createContext, useContext, useState } from 'react'
 
 type CollectionContextType = {
-  collection: string | null | undefined
-  setCollection: (value: string | null | undefined) => void
+  collection: string | null
+  setCollection: (value: string | null) => void
 }
 
 // 👇 Provide a default value of null (temporarily)
