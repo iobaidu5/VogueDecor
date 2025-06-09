@@ -190,7 +190,7 @@ export async function getMenu(handle: string): Promise<Menu[]> {
       title: item?.title,
       path: item?.url
         .replace(domain, "")
-        .replace("/collections", "/search")
+        .replace("/collections", "")
         .replace("/pages", ""),
     })) || []
   );
@@ -226,7 +226,7 @@ function reshapeCollection(
 
   return {
     ...collection,
-    path: `/search/${collection?.handle}`,
+    path: `/${collection?.handle}`,
   };
 }
 

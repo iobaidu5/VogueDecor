@@ -17,12 +17,12 @@ const SingleBreadCrumb = ({title, collection}) => {
     <span className="text-gray-500 hover:underline"> / </span>
     <span
       className="capitalize text-gray-500 cursor-pointer"
-      onClick={() => router.push(`/search/${encodeURIComponent(collection)}`)}
+      onClick={() => router.push(`/${encodeURIComponent(collection)}`)}
       role="link"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
-          router.push(`/search/${encodeURIComponent(collection)}`);
+          router.push(`/${encodeURIComponent(collection)}`);
         }
       }}
     >

@@ -136,7 +136,7 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
                   ? "/contact-us#location"
                   : isHome
                     ? "/"
-                    : `/search/${link.toLowerCase().replace(/\s+/g, '-')}`;
+                    : `/${link.toLowerCase().replace(/\s+/g, '-')}`;
 
               return (
                 <Link key={`footer-link-${index}`} href={href} className="text-[13px] hover:underline">
@@ -164,7 +164,7 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
               ? "/contact-us#location"
               : isHome
                 ? "/"
-                : `/search/${link.toLowerCase().replace(/\s+/g, '-')}`;
+                : `/${link.toLowerCase().replace(/\s+/g, '-')}`;
 
           return isHeading ? (
             <p key={`heading-${index}`} className="xs:text-[14px] md:text-[16px] font-semibold">

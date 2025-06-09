@@ -34,11 +34,14 @@ const Header = ({ menu }) => {
   const router = useRouter();
   const { t, ready } = useTranslation('common');
 
+
+  console.log("menu item ", menu)
+
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchText.trim()) {
       const formattedLink = searchText.toLowerCase().replace(/\s+/g, "-");
-      router.push(`/search/${formattedLink}`);
+      router.push(`/${formattedLink}`);
       setSearchText("");
       setShowSearch(false);
     }

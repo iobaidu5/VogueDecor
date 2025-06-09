@@ -20,22 +20,22 @@ const categories = [
   {
     title: 'Chairs',
     image: chairImage,
-    href: '/search/chairs',
+    href: '/chairs',
   },
   {
     title: 'Barstools',
     image: barstoolImage,
-    href: '/search/barstools',
+    href: '/barstools',
   },
   {
     title: 'Table Tops',
     image: tableImage,
-    href: '/search/table-tops',
+    href: '/table-tops',
   },
   {
     title: 'Table Bases',
     image: boothImage,
-    href: '/search/table-bases',
+    href: '/table-bases',
   },
 ];
 

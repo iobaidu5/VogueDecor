@@ -43,7 +43,7 @@ const HomeBanners = () => {
       </h2>
       <div className="mt-4 sm:mt-6">
         <Link
-          href="/search/chairs"
+          href="/chairs"
           className="bg-black text-white px-4 py-2 text-xs sm:text-sm rounded hover:bg-gray-900 transition duration-300"
         >
           {t('shopChairs')}
@@ -68,7 +68,7 @@ const HomeBanners = () => {
       <p className="text-black mt-2 mb-3 sm:mb-4">{t('defineOutdoorStyle')}</p>
       <div>
         <Link
-          href="/search/outdoor-furniture"
+          href="/outdoor-furniture"
           className="bg-black text-white px-4 py-2 text-xs sm:text-sm rounded hover:bg-gray-900 transition duration-300"
         >
           {t('shopOutdoor')}
