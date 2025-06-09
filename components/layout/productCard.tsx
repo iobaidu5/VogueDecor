@@ -67,7 +67,7 @@ export function ProductCard({ product, collection }: { product: any, collection?
             //   router.push(url);
             // }}
             onClick={() => {
-              setCollection(collection)
+              setCollection(collection ?? null)
               router.push(`/product/${product.handle}`)
             }}
           >
