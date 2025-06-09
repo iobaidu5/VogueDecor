@@ -19,11 +19,13 @@ import { GridTileImage } from 'components/grid/tile';
 import Link from 'next/link';
 import SingleBreadCrumb from './SingleBreadCrumb';
 import { useSearchParams } from 'next/navigation';
+import { useCollection } from 'lib/CollectionContext';
 
 export default function ProductDetailsClient({ product }) {
   const { t, ready } = useTranslation('common');
   const searchParams = useSearchParams();
-  const collection = searchParams.get('collection') || '...';
+  const { collection } = useCollection()
+  // const collection = searchParams.get('collection') || '...';
 
   const extractFeatures = (htmlString) => {
     const marker = '<strong>Features:</strong>';

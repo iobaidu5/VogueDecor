@@ -7,12 +7,14 @@ import { ProductProvider } from 'components/product/product-context';
 import { useCurrency } from 'components/currency/currencyContext';
 import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
+import { useCollection } from 'lib/CollectionContext';
 
 export function ProductCard({ product, collection }: { product: any, collection?: string }) {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
   const { t, ready } = useTranslation('common');
   const { currency, rate } = useCurrency();
+  const { setCollection } = useCollection()
 
   const numericAmount = product?.variants[0]?.compareAtPrice?.amount
     ? parseFloat(product?.variants[0]?.compareAtPrice?.amount) * rate
@@ -60,11 +62,14 @@ export function ProductCard({ product, collection }: { product: any, collection?
           {/* Square Container */}
           <div
             className="relative w-full aspect-square bg-white cursor-pointer"
+            // onClick={() => {
+            //   const url = `/product/${product.handle}${collection ? `?collection=${encodeURIComponent(collection)}` : ''}`;
+            //   router.push(url);
+            // }}
             onClick={() => {
-              const url = `/product/${product.handle}${collection ? `?collection=${encodeURIComponent(collection)}` : ''}`;
-              router.push(url);
+              setCollection(collection)
+              router.push(`/product/${product.handle}`)
             }}
-
           >
             {/* First Image */}
             <Image

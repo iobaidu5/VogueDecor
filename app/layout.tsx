@@ -12,6 +12,7 @@ import EmailSubscriptionModal from 'components/EmailSubscriptionModal'
 import { Toaster } from 'sonner'
 import ChatbaseScript from 'components/ChatbaseScript'
 import Script from 'next/script'
+import { CollectionProvider } from 'lib/CollectionContext'
 
 export const metadata = {
   description: 'High-performance ecommerce store',
@@ -74,7 +75,9 @@ export default async function LocaleLayout({
         <CartProvider cartPromise={cart}>
           <CurrencyProvider>
             <EmailSubscriptionModal />
+            <CollectionProvider>
             <main>{children}</main>
+            </CollectionProvider>
             <CookieConsent />
             <Toaster position="top-right" richColors />
           </CurrencyProvider>
