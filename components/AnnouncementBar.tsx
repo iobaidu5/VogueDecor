@@ -12,7 +12,7 @@ export function AnnouncementBar() {
   }
 
   return (
-<div className="w-full bg-[#545454] text-white text-center py-3 text-xs lg991:text-sm">
+<div className="w-full bg-[#586f5c] text-white text-center py-3 text-xs lg991:text-sm">
   {/* <span className="block sm:inline">{'Free Shipping to Canada on all orders over $2999. '}</span>
   <span className="block sm:inline">{'Conditions apply.'}</span> */}
   <p>{t('welcome')}</p>
