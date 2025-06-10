@@ -1,7 +1,8 @@
 {
   "greeting": "Hello",
   "home": "Home",
-  "welcome": "Free shipping to Canada on orders over $2999. Conditions apply. Note: we are currently experiencing some shipping delays.",
+  "welcome": "Free Shipping to Canada on all orders over $2999. Conditions apply.",
+  "sale": "Note: we are currently experiencing some shipping delays.",
   "menu": {
     "Chairs": "Chairs",
     "Batstools": "Barstools",

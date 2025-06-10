@@ -18,17 +18,32 @@ body {
 }
 
 
-.cart-icon{
+/* .cart-icon{
   position: absolute;
-  top: 78px;
+  top: 2.35%;
   right: 10px;
   z-index: 10 !important;
   display: block;
+} */
+
+.cart-icon {
+  position: fixed;
+  top: 123px;
+  right: 20px;
+  z-index: 1000;
 }
 
 @media (width <= 990px) {
   .cart-icon{
-    top: 58px;
+    right: 15px;
+  }
+}
+
+
+
+@media (width <= 660px) {
+  .cart-icon{
+    top: 112px;
   }
 }
 
