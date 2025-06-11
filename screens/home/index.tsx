@@ -24,6 +24,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
+import { SaleBar } from 'components/SaleBar';
 
 export default function MainPage() {
   const { t, i18n } = useTranslation("common");
@@ -44,6 +45,7 @@ export default function MainPage() {
   return (
     <>
       <div className="w-full overflow-x-hidden">
+        <SaleBar />
         <section className={isMobile ? "relative w-full h-auto" : "relative w-full h-screen overflow-hidden"}>
           <Image
            src={
