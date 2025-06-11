@@ -69,7 +69,7 @@ const Header = ({ menu }) => {
             />
           </Link>
         </div>
-        <div className="absolute z50 right-10 md:right-2 top-2 md:top-0 lg:relative md:flex items-center space-x-4 mt-4">
+        <div className="absolute z50 right-10 md:right-8 top-2 md:top-0 lg:relative md:flex items-center space-x-4 mt-4">
           <div className="relative">
             <Image
               src={searchIcon}

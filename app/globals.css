@@ -28,24 +28,24 @@ body {
 
 .cart-icon {
   position: fixed;
-  top: 123px;
+  top: 75px;
   right: 20px;
   z-index: 1000;
 }
 
 @media (width <= 990px) {
   .cart-icon{
-    right: 15px;
+    right: 10px;
+    top: 60px;
   }
 }
 
-
-
-@media (width <= 660px) {
+@media (width <= 667px) {
   .cart-icon{
-    top: 112px;
+    top: 75px;
   }
 }
+
 
 .image-bg{
   background-color: #F1F1F1 !important;

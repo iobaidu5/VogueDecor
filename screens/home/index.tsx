@@ -45,8 +45,9 @@ export default function MainPage() {
   return (
     <>
       <div className="w-full overflow-x-hidden">
+        <section className={isMobile ? "mt-12 relative w-full h-auto" : "relative w-full h-screen overflow-hidden"}>
+        
         <SaleBar />
-        <section className={isMobile ? "relative w-full h-auto" : "relative w-full h-screen overflow-hidden"}>
           <Image
            src={
             i18n.language === 'fr'
@@ -60,7 +61,7 @@ export default function MainPage() {
             alt="Banner"
             fill={isMobile ? false : true}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-            className={isMobile ? "object-contain mt-12 h-auto" : "object-cover"}
+            className={isMobile ? "object-contain h-auto" : "object-cover"}
             priority
           />
           <div className="absolute bottom-[65%] md:bottom-[5%] left-1/2 transform -translate-x-1/2">
