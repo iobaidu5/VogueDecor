@@ -41,7 +41,7 @@ const Drawer = ({ menu }) => {
 
       {/* Drawer Menu */}
       <div
-        className={`fixed left-0 top-0 z-50 flex h-full w-80 flex-col justify-between bg-white shadow-lg transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed left-0 top-0 z-[100000000000] flex h-full w-80 flex-col justify-between bg-white shadow-lg transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
       >
         {/* Top part with close button and navigation links */}
