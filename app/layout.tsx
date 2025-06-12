@@ -13,6 +13,7 @@ import { Toaster } from 'sonner'
 import ChatbaseScript from 'components/ChatbaseScript'
 import Script from 'next/script'
 import { CollectionProvider } from 'lib/CollectionContext'
+import GoogleTagManager from 'components/GoogleTag'
 
 export const metadata = {
   description: 'High-performance ecommerce store',
@@ -44,7 +45,20 @@ export default async function LocaleLayout({
   return (
     <html lang={params.locale} className={poppins.variable}>
       <head>
-      <link rel="icon" href="//favicon.ico" sizes="any" />
+        <link rel="icon" href="//favicon.ico" sizes="any" />
+
+        <GoogleTagManager />
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PNZ7MNJM"
+            height={0}
+            width={0}
+            style={{ display: 'none', visibility: 'hidden' }}
+            title="GTM"
+          />
+        </noscript>
+
+
         <Script
           id="google-translate"
           src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
@@ -76,7 +90,7 @@ export default async function LocaleLayout({
           <CurrencyProvider>
             <EmailSubscriptionModal />
             <CollectionProvider>
-            <main>{children}</main>
+              <main>{children}</main>
             </CollectionProvider>
             <CookieConsent />
             <Toaster position="top-right" richColors />
