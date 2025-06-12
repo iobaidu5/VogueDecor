@@ -46,19 +46,19 @@ export default function MainPage() {
     <>
       <div className="w-full overflow-x-hidden">
         <section className={isMobile ? "mt-12 relative w-full h-auto" : "relative w-full h-screen overflow-hidden"}>
-        <div className='p-relative z1000000000'>
-        <SaleBar />
-        </div>
+          <div className='relative z-[1000000000]'>
+            <SaleBar />
+          </div>
           <Image
-           src={
-            i18n.language === 'fr'
-              ? isMobile
-                ? heroMobileFr
-                : heroFr
-              : isMobile
-                ? heroMobile
-                : hero
-          }          
+            src={
+              i18n.language === 'fr'
+                ? isMobile
+                  ? heroMobileFr
+                  : heroFr
+                : isMobile
+                  ? heroMobile
+                  : hero
+            }
             alt="Banner"
             fill={isMobile ? false : true}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
@@ -71,7 +71,7 @@ export default function MainPage() {
               className="bg-black  text-white px-4 md:px-6 py-3 text-sm md:text-md rounded hover:bg-gray-900 transition duration-300"
             >
               {/* Shop Outdoor */}
-               {t('shopOutdoor')}
+              {t('shopOutdoor')}
             </Link>
           </div>
         </section>
