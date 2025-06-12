@@ -64,7 +64,7 @@ export default function EmailSubscriptionModal() {
   if (!isMounted || !showModal) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[10000000000]">
       <div className="relative bg-white rounded-lg shadow-xl w-[90%] md:max-w-3xl flex flex-col sm:flex-row overflow-hidden h-auto sm:h-[550px] animate-fadeIn">
         {/* Close Button */}
         <button
