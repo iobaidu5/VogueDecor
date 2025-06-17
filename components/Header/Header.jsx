@@ -33,6 +33,7 @@ const Header = ({ menu }) => {
   const [searchText, setSearchText] = useState("");
   const router = useRouter();
   const { t, ready } = useTranslation('common');
+  const currentLang = i18n.language;
 
 
   console.log("menu item ", menu)
@@ -96,7 +97,7 @@ const Header = ({ menu }) => {
         ) : menu?.map((item) => (
           <Link
             key={item.path}
-            href={item.path}
+            href={currentLang === "fr" ? `fr/${item.path}` : item.path}
             prefetch={true}
             className={`
               cursor-pointer text-[14px] font-small capitalize hover:scale-110

@@ -12,7 +12,13 @@ export default {
       }
     ]
   },
-  i18n,
-  experimental: {
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/fr/:collection+',  // Use + for one or more segments
+  //       destination: '/fr/:collection*', // Match destination pattern
+  //     }
+  //   ]
+  // },
+  experimental: {},
 };

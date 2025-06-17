@@ -9,12 +9,14 @@ import CurrencySwitcher from 'components/currency/CurrencySwitcher';
 import Image from 'next/image';
 import searchIcon from 'media/svg/searchIcon.svg';
 import Search from 'components/Search';
+import i18n from '../../lib/i18nClient';
 import LanguageSwitcher from 'components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 
 const Drawer = ({ menu }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { t, ready } = useTranslation('common');
+  const currentLang = i18n.language;
 
   const toggleDrawer = () => setIsOpen(!isOpen);
 
@@ -60,7 +62,7 @@ const Drawer = ({ menu }) => {
             {menu?.map((item) => (
               <Link
                 key={item.path}
-                href={item.path}
+                href={currentLang === "fr" ? `fr/${item.path}` : item.path}
                 className="text-left text-lg font-medium text-gray-800 hover:text-gray-500"
                 onClick={() => handleNavigation(item.path)}
               >
