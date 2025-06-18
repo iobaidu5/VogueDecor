@@ -12,7 +12,7 @@ const WhyChooseUs = () => {
     <div className="py-16 pb-8">
       <div className="flex flex-col items-center justify-center pt-10">
         <p className="text-[14px] text-[#878787]">{t('elevateSpace')}</p>
-        <p className="font-medium xs:text-[25px] md:text-[40px]">{t('whyChooseUs')}</p>
+        <p className="font-medium xs:text-[25px] text-black md:text-[40px]">{t('whyChooseUs')}</p>
         {/* <div className="h-[2px] w-[130px] bg-[#878787]" /> */}
       </div>
       <ChooseUsSection />
@@ -62,10 +62,10 @@ const ChooseUsSection = () => {
           ) : (
             <Image src={item.icon} alt={item.firstText} />
           )}
-          <p className="pt-2 font-medium xs:text-[16px] sm:text-[22px] lg:text-[24px]">
+          <p className="pt-2 font-medium text-black xs:text-[16px] sm:text-[22px] lg:text-[24px]">
             {t(`choose.${item?.firstText}`)}
           </p>
-          <p className="font-medium xs:text-[16px] sm:text-[22px] lg:text-[24px]">
+          <p className="font-medium text-black xs:text-[16px] sm:text-[22px] lg:text-[24px]">
             {t(`choose.${item?.secondText}`)}
           </p>
           <p className="mt-2 sm:text-base text-[12px] lg:text-[16px] text-[#878787] leading-[1.6] break-words text-center">

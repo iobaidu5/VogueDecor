@@ -25,6 +25,7 @@ interface FooterLinksProps {
 }
 
 const Footer = () => {
+
   return (
     <>
       {/* StayUpdated for small screens */}
@@ -94,8 +95,8 @@ const Logo = () => {
     <div className="hidden sm:block">
       <Image src={logo} alt="logo" className="sm:w-[120px] xl:w-auto" />
       <div className="mt-[17px] flex flex-col space-y-2">
-       <Link href={"tel:+1 (888) 880 8232"}><p className="text-sm">+1 (888) 880 8232</p></Link>
-       <Link href={"mailto:info@voguedecor.com"}><p className="text-sm">Info@voguedecor.com</p></Link>
+        <Link href={"tel:+1 (888) 880 8232"}><p className="text-sm">+1 (888) 880 8232</p></Link>
+        <Link href={"mailto:info@voguedecor.com"}><p className="text-sm">Info@voguedecor.com</p></Link>
       </div>
     </div>
   );
@@ -105,6 +106,7 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleFAQ = () => setIsOpen((prev) => !prev);
   const { t, ready } = useTranslation('common');
+  const currentLang = i18n.language;
 
   return (
     <div className="w-full">
@@ -139,9 +141,18 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
                     : `/${link.toLowerCase().replace(/\s+/g, '-')}`;
 
               return (
-                <Link key={`footer-link-${index}`} href={href} className="text-[13px] hover:underline">
+                <Link
+                  key={`footer-link-${index}`}
+                  href={
+                    currentLang === "fr"
+                      ? href.startsWith("/fr") ? href : `/fr${href}`
+                      : href
+                  }
+                  className="text-[13px] hover:underline"
+                >
                   {t(`footer.${link}`)}
                 </Link>
+
               );
             })}
           </div>
@@ -171,7 +182,15 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
               {t(`footer.${link}`)}
             </p>
           ) : (
-            <Link key={`link-${index}`} href={href} className="text-[13px] hover:underline">
+            <Link
+              key={`link-${index}`}
+              href={
+                currentLang === "fr"
+                  ? href.startsWith("/fr") ? href : `/fr${href}`
+                  : href
+              }
+              className="text-[13px] hover:underline"
+            >
               {t(`footer.${link}`)}
             </Link>
           );

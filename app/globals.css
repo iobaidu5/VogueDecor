@@ -27,8 +27,8 @@ body {
 } */
 
 .cart-icon {
-  position: fixed;
-  top: 75px;
+  position: absolute;
+  top: 77px;
   right: 20px;
   z-index: 1000;
 }

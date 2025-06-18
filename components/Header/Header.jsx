@@ -8,7 +8,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import Drawer from 'components/drawer/index';
 import CurrencySwitcher from 'components/currency/CurrencySwitcher';
 import UserMenu from 'components/UserMenu';
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Search from 'components/Search';
 import LanguageSwitcher from 'components/LanguageSwitcher';
@@ -33,10 +33,8 @@ const Header = ({ menu }) => {
   const [searchText, setSearchText] = useState("");
   const router = useRouter();
   const { t, ready } = useTranslation('common');
-  const currentLang = i18n.language;
-
-
-  console.log("menu item ", menu)
+  var currentLang = i18n.language;
+  const pathname = usePathname()
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -47,6 +45,13 @@ const Header = ({ menu }) => {
       setShowSearch(false);
     }
   };
+
+  useEffect(() => {
+    console.log("pathname-> ", pathname)
+    console.log("pathname starty ", pathname.startsWith('/fr'))
+    currentLang = pathname.startsWith('/fr') ? "fr" : "en";
+    i18n.changeLanguage(currentLang)
+  }, [pathname])
 
 
 
@@ -62,7 +67,10 @@ const Header = ({ menu }) => {
         </div>
 
         <div className="absolute left-1/2 -translate-x-1/2">
-          <Link href="/"  passHref legacyBehavior>
+          <Link href={
+            pathname.startsWith("/fr") ? "/fr" : `/`
+
+          } passHref legacyBehavior>
             <Image
               src={logo}
               alt="logo"
@@ -97,16 +105,20 @@ const Header = ({ menu }) => {
         ) : menu?.map((item) => (
           <Link
             key={item.path}
-            href={currentLang === "fr" ? `fr/${item.path}` : item.path}
+            href={
+              currentLang === "fr"
+                ? item.path.startsWith("/fr") ? item.path : `/fr${item.path}`
+                : item.path
+            }
             prefetch={true}
             className={`
-              cursor-pointer text-[14px] font-small capitalize hover:scale-110
-              ${item.title === 'Sale' ? 'text-red-500' : 'text-black'}
-            `}
+    cursor-pointer text-[14px] font-small capitalize hover:scale-110
+    ${item.title === 'Sale' ? 'text-red-500' : 'text-black'}
+  `}
           >
-            {/* {item.title} */}
             {t(`menu.${item.title}`)}
           </Link>
+
         ))}
       </div>
 

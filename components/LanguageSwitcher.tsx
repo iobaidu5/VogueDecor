@@ -24,6 +24,7 @@ export default function LanguageSwitcher() {
     router.push(newPath || '/');
   };
 
+
   return (
     <button onClick={toggleLanguage}>
       {i18n.language === 'en' ? 'FR' : 'EN'}
