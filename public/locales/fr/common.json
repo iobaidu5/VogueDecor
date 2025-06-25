@@ -75,7 +75,9 @@
     "Privacy Policy.": "Politique de confidentialité.",
     "Terms and Conditions": "Conditions générales",
     "Shipping and Return Policy": "Politique d'expédition et de retour",
-    "Sale": "Soldes"
+    " Shipping and Return Policy": "Politique d'expédition et de retour",
+    "Sale": "Soldes",
+    "Blogs": "Blogues"
   },
   "stayUpdated": "Restez informé",
   "subscribe": "S'abonner",
@@ -162,6 +164,18 @@
     "M1 - BOOTH (48\"L, BLACK)": "M1 - BANQUETTE (48 po L, NOIR)",
     "LUCA - Chair": "LUCA - Chaise",
     "LUCA - Barstool": "LUCA - Tabouret de bar",
+    "LUCA - Barstool (black)": "LUCA - Tabouret de bar (noir)",
+    "LUCA - Barstool (caramel)": "LUCA - Tabouret de bar (caramel)",
+    "LUCA - Barstool (tan)": "LUCA - Tabouret de bar (tan)",
+
+
+    "EMMANUEL - Chair (tan/charcoal)": "EMMANUEL - Chaise (beige/anthracite)",
+    "LUCA - Chair (black)": "LUCA - Chaise (noire)",
+    "LUCA - Chair (caramel)": "LUCA - Chaise (caramel)",
+    "LUCA - Chair (tan)": "LUCA - Chaise (tan)",
+
+
+
     "LOLA - BOOTH (48\"L, BLACK)": "LOLA - BANQUETTE (48 po L, NOIR)",
     "LAURA - Barstool": "LAURA - Tabouret de bar",
     "LADDERBACK - Chair (red)": "LADDERBACK - Chaise (rouge)",

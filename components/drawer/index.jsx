@@ -62,7 +62,11 @@ const Drawer = ({ menu }) => {
             {menu?.map((item) => (
               <Link
                 key={item.path}
-                href={currentLang === "fr" ? `fr/${item.path}` : item.path}
+                href={
+                  currentLang === "fr"
+                    ? item.path.startsWith("/fr") ? item.path : `/fr${item.path}`
+                    : item.path
+                }
                 className="text-left text-lg font-medium text-gray-800 hover:text-gray-500"
                 onClick={() => handleNavigation(item.path)}
               >
@@ -92,15 +96,9 @@ const Drawer = ({ menu }) => {
         <>
           {/* Bottom Bar */}
           <div className="flex items-center justify-between border-t border-gray-200 p-4">
-            <LanguageSwitcher />
+          <LanguageSwitcher />
             <div className="flex items-center space-x-3">
               <CurrencySwitcher />
-              {/* <Image
-                src={searchIcon}
-                alt="search"
-                onClick={() => setShowSearch(true)}
-                className="h-5 w-5 cursor-pointer hover:text-gray-500 z-20 relative"
-              /> */}
             </div>
           </div>
 

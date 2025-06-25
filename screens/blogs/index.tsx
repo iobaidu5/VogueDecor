@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Pagination from 'components/pagination';
@@ -7,6 +8,8 @@ import { getBlogArticlesQuery } from "../../lib/shopify/queries/blogs";
 import { shopifyFetch } from 'lib/shopify';
 import { BlogArticle, ShopifyBlogOperation } from 'lib/shopify/types';
 import { useTranslation } from 'react-i18next';
+const BlogSlider = dynamic(() => import('./BlogSlider'), { ssr: false });
+
 
 
 export async function getBlogs(handle: string): Promise<BlogArticle[]> {
@@ -23,7 +26,7 @@ export async function getBlogs(handle: string): Promise<BlogArticle[]> {
   return blog.articles.edges.map(({ node }) => ({
     title: node.title,
     path: `/blog/${encodeURIComponent(node.title.toLowerCase().replace(/\s+/g, '-'))}`,
-    image: node.image?.originalSrc,
+    images: node.image?.originalSrc ? [node.image.originalSrc] : [],
     excerpt: node.excerpt,
     publishedAt: node.publishedAt,
   }));
@@ -36,7 +39,8 @@ export default function Component() {
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      const data = await getBlogs('news');
+      const data = await getBlogs('restaurant-furniture');
+      console.log("Fetched articles", data);
       setArticles(data);
     };
     fetchBlogs();
@@ -64,12 +68,9 @@ export default function Component() {
               className="cursor-pointer space-y-4"
             >
               <div className="relative">
-                <Image
-                  src={article.image || '/placeholder.svg'}
-                  alt={article.title}
-                  width={764}
-                  height={553}
-                  className="h-auto w-full object-cover rounded"
+              <BlogSlider
+                  images={article.images.length > 0 ? article.images : ['/placeholder.svg']}
+                  height={295} 
                   priority={index <= 2}
                 />
               </div>
@@ -94,12 +95,9 @@ export default function Component() {
               className="cursor-pointer space-y-4"
             >
               <div className="relative">
-                <Image
-                  src={article.image || '/placeholder.svg'}
-                  alt={article.title}
-                  width={396}
-                  height={295}
-                  className="h-auto w-full object-cover rounded"
+                <BlogSlider
+                  images={article.images.length > 0 ? article.images : ['/placeholder.svg']}
+                  height={295} 
                   priority={index <= 2}
                 />
               </div>

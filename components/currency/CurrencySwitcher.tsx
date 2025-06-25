@@ -6,7 +6,7 @@ const CurrencySwitcher = () => {
 
   return (
     <select
-      className="appearance-none bg-transparent p-1 text-sm"
+      className="appearance-none bg-transparent p-2 text-sm"
       value={currency}
       onChange={(e) => setCurrency(e.target.value)}
     >

@@ -26,7 +26,7 @@ export default function LanguageSwitcher() {
 
 
   return (
-    <button onClick={toggleLanguage}>
+    <button onClick={toggleLanguage} className='p-2'>
       {i18n.language === 'en' ? 'FR' : 'EN'}
     </button>
   );

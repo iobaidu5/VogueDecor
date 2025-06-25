@@ -6,7 +6,7 @@ export type Menu = {
 export type BlogArticle = {
   title: string;
   path: string;
-  image?: string;
+  images: string[]; 
   excerpt?: string;
   content?: string;
   publishedAt?: string;
