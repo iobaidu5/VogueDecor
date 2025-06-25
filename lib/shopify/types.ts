@@ -3,6 +3,15 @@ export type Menu = {
   path: string;
 };
 
+export type BlogArticle = {
+  title: string;
+  path: string;
+  image?: string;
+  excerpt?: string;
+  content?: string;
+  publishedAt?: string;
+};
+
 export type ShopifyMenuOperation = {
   data: {
     menu?: {
@@ -16,6 +25,34 @@ export type ShopifyMenuOperation = {
     handle: string;
   };
 };
+
+export type ShopifyBlogOperation = {
+  data: {
+    blog?: {
+      title: string;
+      articles: {
+        edges: {
+          node: {
+            id: string;
+            title: string;
+            excerpt: string;
+            contentHtml: string;
+            publishedAt: string;
+            image?: {
+              originalSrc: string;
+              altText?: string;
+            } | null;
+          };
+        }[];
+      };
+    };
+  };
+  variables: {
+    handle: string;
+    limit?: number;
+  };
+};
+
 
 export type Money = {
   amount: string;
