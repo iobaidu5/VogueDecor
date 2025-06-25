@@ -8,23 +8,6 @@ import { shopifyFetch } from 'lib/shopify';
 import { BlogArticle, ShopifyBlogOperation } from 'lib/shopify/types';
 import { useTranslation } from 'react-i18next';
 
-interface Article {
-  id: number;
-  title: string;
-  description: string;
-  desktopImage: {
-    src: string;
-    alt: string;
-  };
-  mobileImage: {
-    src: string;
-    alt: string;
-  };
-}
-
-interface ArticleListProps {
-  data: Article[];
-}
 
 export async function getBlogs(handle: string): Promise<BlogArticle[]> {
   const res = await shopifyFetch<ShopifyBlogOperation>({
