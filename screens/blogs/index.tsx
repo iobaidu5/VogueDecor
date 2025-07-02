@@ -12,17 +12,32 @@ import { useTranslation } from 'react-i18next';
 
 import BlogSlider from './BlogSlider';
 
+interface BlogNode {
+  handle: string;
+}
 
-// Fetch all blog handles
+interface BlogsData {
+  blogs: {
+    edges: {
+      node: BlogNode;
+    }[];
+  };
+}
+
+interface ShopifyResponse {
+  body?: {
+    data: BlogsData;
+  };
+}
+
+
 export async function getAllBlogHandles(): Promise<string[]> {
-  const res = await shopifyFetch({
+  const res: ShopifyResponse = await shopifyFetch({
     query: getAllBlogsQuery,
     cache: 'no-cache',
   });
 
-  return (
-    res.body?.data.blogs.edges.map(({ node }: any) => node.handle) || []
-  );
+  return res.body?.data.blogs.edges.map(({ node }) => node.handle) || [];
 }
 
 // Fetch articles by blog handle
@@ -94,7 +109,7 @@ export default function Component() {
             >
               <div className="relative">
               <BlogSlider
-                  images={article.images.length > 0 && article.images}
+                  images={article.images.length > 0 ? article.images : []}
                   height={395} 
                   priority={index <= 2}
                 />
