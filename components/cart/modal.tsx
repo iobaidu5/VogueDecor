@@ -55,7 +55,7 @@ export default function CartModal() {
         <OpenCart quantity={cart?.totalQuantity} />
       </button>
       <Transition show={isOpen}>
-        <Dialog onClose={closeCart} className="relative z-50">
+        <Dialog onClose={closeCart} className="relative z-[100000000000]">
           <Transition.Child
             as={Fragment}
             enter="transition-all ease-in-out duration-300"
@@ -76,7 +76,7 @@ export default function CartModal() {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl md:w-[390px] dark:border-neutral-700 dark:bg-white/80 dark:text-black z-50">
+            <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl md:w-[390px] dark:border-neutral-700 dark:bg-white/80 dark:text-black z-[100000000000]">
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold">My Cart</p>
                 <button aria-label="Close cart" onClick={closeCart}>

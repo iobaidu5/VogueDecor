@@ -1,4 +1,18 @@
-// lib/queries/blogs.ts
+// Query to get all blog handles
+export const getAllBlogsQuery = /* GraphQL */ `
+  query getAllBlogs {
+    blogs(first: 10) {
+      edges {
+        node {
+          handle
+          title
+        }
+      }
+    }
+  }
+`;
+
+// Query to get articles for one blog by handle
 export const getBlogArticlesQuery = /* GraphQL */ `
   query getBlogArticles($handle: String!, $limit: Int = 10) {
     blog(handle: $handle) {

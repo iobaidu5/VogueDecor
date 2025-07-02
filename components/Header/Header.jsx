@@ -88,7 +88,7 @@ const Header = ({ menu }) => {
             />
 
             <div
-              className={`absolute top-14 z-50 xl:top-12 right-0 lg:-left-40 bg-white border-b border-b-black rounded shadow-lg w-72 p-1 transform transition-all duration-300 ease-in-out ${showSearch ? 'opacity-100 z-50 scale-100 visible' : 'opacity-0 scale-95 invisible'
+              className={`absolute top-14 z-50000000 xl:top-12 right-0 lg:-left-40 bg-white border-b border-b-black rounded shadow-lg w-72 p-1 transform transition-all duration-300 ease-in-out ${showSearch ? 'opacity-100 z-50 scale-100 visible' : 'opacity-0 scale-95 invisible'
                 }`}
             >
               <Search />

@@ -4,15 +4,29 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Pagination from 'components/pagination';
-import { getBlogArticlesQuery } from "../../lib/shopify/queries/blogs";
+import { getBlogArticlesQuery, getAllBlogsQuery } from "../../lib/shopify/queries/blogs";
 import { shopifyFetch } from 'lib/shopify';
 import { BlogArticle, ShopifyBlogOperation } from 'lib/shopify/types';
 import { useTranslation } from 'react-i18next';
-const BlogSlider = dynamic(() => import('./BlogSlider'), { ssr: false });
+// const BlogSlider = dynamic(() => import('./BlogSlider'), { ssr: false });
+
+import BlogSlider from './BlogSlider';
 
 
+// Fetch all blog handles
+export async function getAllBlogHandles(): Promise<string[]> {
+  const res = await shopifyFetch({
+    query: getAllBlogsQuery,
+    cache: 'no-cache',
+  });
 
-export async function getBlogs(handle: string): Promise<BlogArticle[]> {
+  return (
+    res.body?.data.blogs.edges.map(({ node }: any) => node.handle) || []
+  );
+}
+
+// Fetch articles by blog handle
+export async function getBlogArticlesByHandle(handle: string): Promise<BlogArticle[]> {
   const res = await shopifyFetch<ShopifyBlogOperation>({
     query: getBlogArticlesQuery,
     variables: { handle },
@@ -20,7 +34,6 @@ export async function getBlogs(handle: string): Promise<BlogArticle[]> {
   });
 
   const blog = res.body?.data.blog;
-
   if (!blog) return [];
 
   return blog.articles.edges.map(({ node }) => ({
@@ -32,6 +45,18 @@ export async function getBlogs(handle: string): Promise<BlogArticle[]> {
   }));
 }
 
+// Fetch all articles across all blogs
+export async function getAllBlogArticles(): Promise<BlogArticle[]> {
+  const handles = await getAllBlogHandles();
+
+  const allArticles = await Promise.all(
+    handles.map((handle) => getBlogArticlesByHandle(handle))
+  );
+
+  return allArticles.flat();
+}
+
+
 export default function Component() {
   const [articles, setArticles] = useState<BlogArticle[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,7 +64,7 @@ export default function Component() {
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      const data = await getBlogs('restaurant-furniture');
+      const data = await getAllBlogArticles();
       console.log("Fetched articles", data);
       setArticles(data);
     };
@@ -56,7 +81,7 @@ export default function Component() {
 
   return (
     <div className="mx-auto md:mx-[60px]">
-      <div className="px-6 py-[100px] md:px-4 lg:py-[130px]">
+      <div className="px-6 py-[50px] md:px-4 lg:py-[50px]">
         <h3 className="mb-4 text-[18px] font-medium md:text-[28px]">{t(`Blogs`)}</h3>
 
         {/* Desktop Layout */}
@@ -69,8 +94,8 @@ export default function Component() {
             >
               <div className="relative">
               <BlogSlider
-                  images={article.images.length > 0 ? article.images : ['/placeholder.svg']}
-                  height={295} 
+                  images={article.images.length > 0 && article.images}
+                  height={395} 
                   priority={index <= 2}
                 />
               </div>

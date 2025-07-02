@@ -36,7 +36,7 @@ body {
 @media (width <= 990px) {
   .cart-icon{
     right: 10px;
-    top: 60px;
+    top: 75px;
   }
 }
 
@@ -163,4 +163,19 @@ body {
 
 .slick-dots{
   bottom: 0 !important;
+}
+
+/* Fix for Slick slider layout */
+.slick-slide > div {
+  display: flex !important;
+  height: 100%;
+}
+
+.slick-list {
+  overflow: visible;
+}
+
+.custom-dots {
+  position: relative;
+  bottom: -25px;
 }
