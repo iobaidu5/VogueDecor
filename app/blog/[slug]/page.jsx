@@ -5,26 +5,26 @@ import { BlogArticle } from 'lib/shopify/types';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import React from 'react';
-import type { Metadata } from 'next';
 
-// ✅ Use Next.js's type
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
 
-function slugify(title: string) {
+// // ✅ Use Next.js's type
+// interface PageProps {
+//   params: {
+//     slug: string;
+//   };
+// }
+
+function slugify(title) {
   return title.toLowerCase().replace(/\s+/g, '-');
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }) {
   return {
     title: decodeURIComponent(params.slug.replace(/-/g, ' ')),
   };
 }
 
-export default async function BlogArticlePage({ params }: PageProps) {
+export default async function BlogArticlePage({ params }) {
   // your commented code here is fine
 
   return (
