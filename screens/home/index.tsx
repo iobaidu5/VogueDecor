@@ -46,9 +46,9 @@ export default function MainPage() {
     <>
       <div className="w-full overflow-x-hidden">
         <section className={isMobile ? "mt-12 relative w-full h-auto" : "relative w-full h-screen overflow-hidden"}>
-          <div className='relative z-[1000000000]'>
+          {/* <div className='relative z-[1000000000]'>
             <SaleBar />
-          </div>
+          </div> */}
           <Image
             src={
               i18n.language === 'fr'
