@@ -45,6 +45,7 @@ export default async function LocaleLayout({
   return (
     <html lang={params.locale} className={poppins.variable}>
       <head>
+        <meta name="google-site-verification" content="3_4p_Iwcpg350S4xRemSlkguA-eA5_v8XkW8DF9Ebqw" />
         <link rel="icon" href="//favicon.ico" sizes="any" />
 
         <Script id="gtm" strategy="beforeInteractive">
