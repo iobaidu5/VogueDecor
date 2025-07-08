@@ -76,7 +76,8 @@ export async function shopifyFetch<T>({
   headers?: HeadersInit;
   query: string;
   tags?: string[];
-  variables?: ExtractVariables<T>;
+  // 
+  variables?: Record<string, any>;
 }): Promise<{ status: number; body: T } | never> {
   try {
   
