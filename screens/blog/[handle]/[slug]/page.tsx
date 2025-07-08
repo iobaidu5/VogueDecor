@@ -24,7 +24,7 @@ const getArticle = cache(async (handle: string, slug: string) => {
     if (!blog) {
       console.error(`Blog with handle "${handle}" not found`);
       return null;
-    }
+    } 
 
     // Find matching article by slug
     const matchedArticle = blog.articles.edges.find((edge: any) => {
