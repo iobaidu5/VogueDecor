@@ -20,9 +20,6 @@ const getArticle = cache(async (handle: string, slug: string) => {
       cache: 'no-cache',
     });
 
-
-    console.log("bbbbbbbbbllllllllll <><><><>< ", res.body)
-
     const blog = res.body?.data?.blog;
     if (!blog) {
       console.error(`Blog with handle "${handle}" not found`);
