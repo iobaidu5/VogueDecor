@@ -1,4 +1,43 @@
 // Query to get all blog handles
+// export const getAllBlogsQuery = /* GraphQL */ `
+//   query getAllBlogs {
+//     blogs(first: 10) {
+//       edges {
+//         node {
+//           handle
+//           title
+//         }
+//       }
+//     }
+//   }
+// `;
+
+// Query to get articles for one blog by handle
+// export const getBlogArticlesQuery = /* GraphQL */ `
+//   query getBlogArticles($handle: String!, $limit: Int = 10) {
+//     blog(handle: $handle) {
+//       title
+//       articles(first: $limit) {
+//         edges {
+//           node {
+//             id
+//             title
+//             excerpt
+//             contentHtml
+//             publishedAt
+//             image {
+//               originalSrc
+//               altText
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
+
+
+// Get all blog handles
 export const getAllBlogsQuery = /* GraphQL */ `
   query getAllBlogs {
     blogs(first: 10) {
@@ -12,7 +51,8 @@ export const getAllBlogsQuery = /* GraphQL */ `
   }
 `;
 
-// Query to get articles for one blog by handle
+// Get articles for one blog by handle
+// queries/blogs.ts
 export const getBlogArticlesQuery = /* GraphQL */ `
   query getBlogArticles($handle: String!, $limit: Int = 10) {
     blog(handle: $handle) {
@@ -20,7 +60,6 @@ export const getBlogArticlesQuery = /* GraphQL */ `
       articles(first: $limit) {
         edges {
           node {
-            id
             title
             excerpt
             contentHtml
@@ -35,3 +74,4 @@ export const getBlogArticlesQuery = /* GraphQL */ `
     }
   }
 `;
+
