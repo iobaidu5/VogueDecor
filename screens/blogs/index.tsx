@@ -181,10 +181,21 @@ import { BlogArticle, ShopifyBlogOperation } from 'lib/shopify/types';
 import { useTranslation } from 'react-i18next';
 const BlogSlider = dynamic(() => import('./BlogSlider'), { ssr: false });
 
-// ... (interface definitions remain the same)
+type GetAllBlogsResponse = {
+  data: {
+    blogs: {
+      edges: {
+        node: {
+          handle: string;
+          title: string;
+        };
+      }[];
+    };
+  };
+};
 
 export async function getAllBlogHandles(): Promise<string[]> {
-  const res = await shopifyFetch({
+  const res = await shopifyFetch<GetAllBlogsResponse>({
     query: getAllBlogsQuery,
     cache: 'no-cache',
   });
@@ -255,7 +266,7 @@ export default function BlogListPage() {
           {paginatedData.map((article, index) => (
             <Link
               href={article.path}
-              key={`${article.id}-${index}`}
+              key={`${article.path}-${index}`}
               className="cursor-pointer space-y-4"
             >
               <BlogSlider images={article.images} height={395} priority={index <= 2} />
@@ -272,7 +283,7 @@ export default function BlogListPage() {
           {paginatedData.map((article, index) => (
             <Link
               href={article.path}
-              key={`mobile-${article.id}-${index}`}
+              key={`mobile-${article.path}-${index}`}
               className="cursor-pointer space-y-4"
             >
               <BlogSlider images={article.images} height={295} priority={index <= 2} />
