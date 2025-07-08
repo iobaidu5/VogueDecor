@@ -11,10 +11,33 @@ interface PageProps {
   params: { handle: string; slug: string };
 }
 
+
+type BlogArticlesResponse = {
+  data: {
+    blog: {
+      title: string;
+      articles: {
+        edges: {
+          node: {
+            title: string;
+            excerpt: string;
+            contentHtml: string;
+            publishedAt: string;
+            image: {
+              originalSrc: string;
+              altText: string | null;
+            } | null;
+          };
+        }[];
+      };
+    } | null;
+  };
+};
+
 const getArticle = cache(async (handle: string, slug: string) => {
   try {
     handle = "new-affordable-restaurant-furniture-a-smart-choice-for-budget-conscious-owner"
-    const res = await shopifyFetch({
+    const res = await shopifyFetch<BlogArticlesResponse>({
       query: getBlogArticlesQuery,
       variables: { handle },
       cache: 'no-cache',
