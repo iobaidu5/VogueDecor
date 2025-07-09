@@ -1,15 +1,15 @@
 // app/(home)/blog/[handle]/[slug]/page.tsx
 import { notFound } from 'next/navigation';
-import { Metadata } from 'next';
+import { type Metadata, type ResolvingMetadata } from 'next';
 import { shopifyFetch } from 'lib/shopify';
 import { getBlogArticlesQuery } from '../../../../../lib/shopify/queries/blogs';
 import { format } from 'date-fns';
 import Image from 'next/image';
 import { cache } from 'react';
 
-interface PageProps {
+type PageProps = {
   params: { handle: string; slug: string };
-}
+};
 
 type BlogArticlesResponse = {
   data?: {
