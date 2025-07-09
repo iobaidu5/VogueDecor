@@ -65,10 +65,10 @@ export default function MainPage() {
             className={isMobile ? "object-contain h-auto" : "object-cover"}
             priority
           />
-          <div className="absolute bottom-[55%] md:bottom-[5%] left-1/2 transform -translate-x-1/2">
+          <div className="absolute bottom-[60%] md:bottom-[5%] left-1/2 transform -translate-x-1/2">
             <Link
               href="/outdoor-furniture"
-              className="bg-black  text-white px-4 md:px-6 py-3 text-sm md:text-md rounded hover:bg-gray-900 transition duration-300"
+              className="bg-black text-white px-4 md:px-6 py-3 text-sm md:text-md rounded hover:bg-gray-900 transition duration-300"
             >
               {/* Shop Outdoor */}
               {t('shopOutdoor')}
