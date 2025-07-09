@@ -5,9 +5,8 @@ import { shopifyFetch } from 'lib/shopify';
 import { getBlogArticlesQuery } from '../../../../../lib/shopify/queries/blogs';
 import { format } from 'date-fns';
 import Image from 'next/image';
-import { cache } from 'react';
+import { unstable_cache } from 'next/cache';
 
-// Define proper types
 interface BlogArticleNode {
   id: string;
   title: string;
@@ -34,15 +33,13 @@ interface BlogArticlesResponse {
   errors?: { message: string }[];
 }
 
-// Define PageProps interface
-interface PageProps {
-  params: {
-    handle: string;
-    slug: string;
-  };
-}
+// Use a type instead of interface for props
+type PageParams = {
+  handle: string;
+  slug: string;
+};
 
-const getArticle = cache(async (handle: string, slug: string) => {
+const getArticle = unstable_cache(async (handle: string, slug: string) => {
   try {
     console.log(`Fetching articles for blog handle: ${handle}`);
 
@@ -90,7 +87,7 @@ const getArticle = cache(async (handle: string, slug: string) => {
   }
 });
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: PageParams }): Promise<Metadata> {
   const { handle, slug } = params;
   const article = await getArticle(handle, slug);
 
@@ -105,7 +102,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function BlogPage({ params }: PageProps) {
+export default async function BlogPage({ params }: { params: PageParams }) {
   const { handle, slug } = params;
   console.log(`Requested article: handle=${handle}, slug=${slug}`);
 
