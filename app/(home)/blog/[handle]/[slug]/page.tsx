@@ -1,36 +1,46 @@
 // app/(home)/blog/[handle]/[slug]/page.tsx
 import { notFound } from 'next/navigation';
-import { type Metadata, type ResolvingMetadata } from 'next';
+import { type Metadata } from 'next';
 import { shopifyFetch } from 'lib/shopify';
 import { getBlogArticlesQuery } from '../../../../../lib/shopify/queries/blogs';
 import { format } from 'date-fns';
 import Image from 'next/image';
 import { cache } from 'react';
 
-type BlogArticlesResponse = {
+// Define proper types
+interface BlogArticleNode {
+  id: string;
+  title: string;
+  excerpt: string;
+  contentHtml: string;
+  publishedAt: string;
+  image: {
+    originalSrc: string;
+    altText: string | null;
+  } | null;
+}
+
+interface BlogArticlesResponse {
   data?: {
     blog: {
       title: string;
       articles: {
         edges: {
-          node: {
-            id: string;
-            title: string;
-            excerpt: string;
-            contentHtml: string;
-            publishedAt: string;
-            image: {
-              originalSrc: string;
-              altText: string | null;
-            } | null;
-          };
+          node: BlogArticleNode;
         }[];
       };
     } | null;
   };
   errors?: { message: string }[];
-};
+}
 
+// Define PageProps interface
+interface PageProps {
+  params: {
+    handle: string;
+    slug: string;
+  };
+}
 
 const getArticle = cache(async (handle: string, slug: string) => {
   try {
@@ -80,7 +90,7 @@ const getArticle = cache(async (handle: string, slug: string) => {
   }
 });
 
-export async function generateMetadata({ params }: { params: { handle: string; slug: string } } ): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { handle, slug } = params;
   const article = await getArticle(handle, slug);
 
@@ -95,9 +105,7 @@ export async function generateMetadata({ params }: { params: { handle: string; s
   };
 }
 
-export default async function BlogPage(
-  { params }: { params: { handle: string; slug: string } }
-) {
+export default async function BlogPage({ params }: PageProps) {
   const { handle, slug } = params;
   console.log(`Requested article: handle=${handle}, slug=${slug}`);
 
@@ -124,7 +132,7 @@ export default async function BlogPage(
             sizes="(max-width: 768px) 100vw, 70vw"
             className="rounded object-cover"
             priority
-            unoptimized // Add this line
+            unoptimized
           />
         </div>
       )}
