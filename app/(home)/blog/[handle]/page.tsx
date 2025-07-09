@@ -1,8 +1,8 @@
-import Blog from '../../../../screens/blog/[handle]/[slug]/page';
+import BlogPage from '../../../../screens/blog/[handle]/[slug]/page';
 
 
 export default function Page() {
-  return <Blog params={{
+  return <BlogPage params={{
     handle: '',
     slug: ''
   }} />;

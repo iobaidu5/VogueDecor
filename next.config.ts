@@ -8,6 +8,7 @@ export default {
       {
         protocol: 'https',
         hostname: 'cdn.shopify.com',
+        port: '',
         pathname: '/s/files/**'
       }
     ]

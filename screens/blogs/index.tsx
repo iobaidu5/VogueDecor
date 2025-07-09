@@ -224,6 +224,7 @@ export async function getBlogArticlesByHandle(handle: string): Promise<BlogArtic
       id: node.id,
       title: node.title,
       // Include both handle and slug in the path
+      // path: `/blog/${handle}/${slug}`,
       path: `/blog/${handle}/${slug}`,
       images: node.image?.originalSrc ? [node.image.originalSrc] : [],
       excerpt: node.excerpt,

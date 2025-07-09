@@ -201,7 +201,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({ data, isDiscover = false,
                   {/* Title & Price */}
                   <div className="flex flex-col justify-center space-y-1 bg-white px-4 py-3">
                     <p
-                      className="overflow-hidden text-ellipsis whitespace-nowrap text-[15px] font-medium"
+                      className="overflow-hidden text-ellipsis text-black whitespace-nowrap text-[15px] font-medium"
                       title={item?.title}
                     >
                       {item?.title}

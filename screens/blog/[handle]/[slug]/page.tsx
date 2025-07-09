@@ -1,4 +1,4 @@
-// app/blog/[handle]/[slug]/page.tsx
+// screen/blog/[handle]/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { shopifyFetch } from 'lib/shopify';
