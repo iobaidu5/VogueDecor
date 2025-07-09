@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "prisma generate && next build",
+    "build": "mkdir -p .config/prisma-nodejs && touch .config/prisma-nodejs/commands.json && prisma generate && next build",
     "start": "next start",
     "postinstall": "prisma generate",
     "prettier": "prettier --write --ignore-unknown .",
