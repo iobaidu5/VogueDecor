@@ -84,7 +84,7 @@ const getArticle = cache(async (handle: string, slug: string) => {
   }
 });
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { handle: string; slug: string } } ): Promise<Metadata> {
   const { handle, slug } = params;
   const article = await getArticle(handle, slug);
 
@@ -99,7 +99,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function BlogPage({ params }: PageProps) {
+export default async function BlogPage(
+  { params }: { params: { handle: string; slug: string } }
+) {
   const { handle, slug } = params;
   console.log(`Requested article: handle=${handle}, slug=${slug}`);
 
