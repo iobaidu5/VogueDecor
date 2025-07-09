@@ -7,10 +7,6 @@ import { format } from 'date-fns';
 import Image from 'next/image';
 import { cache } from 'react';
 
-type PageProps = {
-  params: { handle: string; slug: string };
-};
-
 type BlogArticlesResponse = {
   data?: {
     blog: {
