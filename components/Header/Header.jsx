@@ -31,6 +31,7 @@ function SignupButton() {
 const Header = ({ menu }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const [isSticky, setIsSticky] = useState(false);
   const router = useRouter();
   const { t, ready } = useTranslation('common');
   var currentLang = i18n.language;
@@ -53,10 +54,25 @@ const Header = ({ menu }) => {
     i18n.changeLanguage(currentLang)
   }, [pathname])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
 
   return (
-    <nav className="flex flex-col w-full px-6 md:px-[40px] lg:px-[70px]">
+    <nav
+    className={`z-[999] w-full px-6 md:px-[40px] lg:px-[70px] transition-all duration-300 ${
+      isSticky
+        ? "fixed top-0 bg-white shadow-md py-2"
+        : "relative bg-transparent"
+    }`}
+  >
       {/* Top Row */}
       <div className="relative flex items-center justify-between pt-4">
         <div className="hidden lg991:flex items-center">
