@@ -28,6 +28,7 @@ export default function CartModal() {
   const quantityRef = useRef(cart?.totalQuantity);
   const openCart = () => setIsOpen(true);
   const closeCart = () => setIsOpen(false);
+  const [isFrench, setIsFrench] = useState(false);
 
   useEffect(() => {
     if (!cart) {
@@ -48,10 +49,19 @@ export default function CartModal() {
     }
   }, [isOpen, cart?.totalQuantity, quantityRef]);
 
+  useEffect(() => {
+    setIsFrench(window.location.pathname.includes('/fr'));
+  }, []);
+
 
   return (
     <>
-      <button className='cart-icon' aria-label="Open cart" onClick={openCart}>
+      <button
+        className="cart-icon"
+        aria-label="Open cart"
+        onClick={openCart}
+        style={isFrench ? { top: '85px' } : {}}
+      >
         <OpenCart quantity={cart?.totalQuantity} />
       </button>
       <Transition show={isOpen}>
@@ -153,7 +163,7 @@ export default function CartModal() {
                                 <PriceCheckout
                                   className="flex justify-end space-y-2 text-right text-sm"
                                   amount={item.cost.totalAmount.amount}
-                                  // currencyCode={item.cost.totalAmount.currencyCode}
+                                // currencyCode={item.cost.totalAmount.currencyCode}
                                 />
                                 <div className="ml-auto flex h-9 flex-row items-center rounded-full border border-neutral-200 dark:border-neutral-700">
                                   <EditItemQuantityButton
@@ -182,7 +192,7 @@ export default function CartModal() {
                       <PriceCheckout
                         className="text-right text-base text-black dark:text-black"
                         amount={cart.cost.totalTaxAmount.amount}
-                        // currencyCode={cart.cost.totalTaxAmount.currencyCode}
+                      // currencyCode={cart.cost.totalTaxAmount.currencyCode}
                       />
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
@@ -194,7 +204,7 @@ export default function CartModal() {
                       <PriceCheckout
                         className="text-right text-base text-black dark:text-black"
                         amount={cart.cost.totalAmount.amount}
-                        // currencyCode={cart.cost.totalAmount.currencyCode}
+                      // currencyCode={cart.cost.totalAmount.currencyCode}
                       />
                     </div>
                   </div>

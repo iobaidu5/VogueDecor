@@ -32,6 +32,7 @@ const Header = ({ menu }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [isSticky, setIsSticky] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
   const { t, ready } = useTranslation('common');
   var currentLang = i18n.language;
@@ -63,16 +64,27 @@ const Header = ({ menu }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 990);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // run initially
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
 
 
   return (
     <nav
-    className={`z-[999] w-full px-6 md:px-[40px] lg:px-[70px] transition-all duration-300 ${
-      isSticky
-        ? "fixed top-0 bg-white shadow-md py-0"
-        : "relative bg-transparent"
-    }`}
-  >
+      className={`z-[999] w-full px-6 md:px-[40px] lg:px-[70px] transition-all duration-300 ${
+        isSticky
+          ? `fixed top-0 bg-white shadow-md py-0 ${isMobile ? "h-14" : ""}`
+          : "relative bg-transparent"
+      }`}
+    >
       {/* Top Row */}
       <div className={`relative flex items-center justify-between  ${
       isSticky
