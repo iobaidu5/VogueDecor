@@ -51,8 +51,10 @@ export async function removeItem(prevState: any, merchandiseId: string) {
 export async function updateItemQuantity(
   prevState: any,
   payload: {
+    lineId?: string;
     merchandiseId: string;
     quantity: number;
+    preventCartOpen?: boolean;
   }
 ) {
   let cartId = (await cookies()).get('cartId')?.value;
@@ -95,6 +97,8 @@ export async function updateItemQuantity(
     return 'Error updating item quantity';
   }
 }
+
+
 
 export async function redirectToCheckout() {
   let cartId = (await cookies()).get('cartId')?.value;

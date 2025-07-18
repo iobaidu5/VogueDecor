@@ -29,6 +29,7 @@ export default function CartModal() {
   const openCart = () => setIsOpen(true);
   const closeCart = () => setIsOpen(false);
   const [isFrench, setIsFrench] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (!cart) {
@@ -53,6 +54,17 @@ export default function CartModal() {
     setIsFrench(window.location.pathname.includes('/fr'));
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 990);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // run initially
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
 
   return (
     <>
@@ -60,7 +72,7 @@ export default function CartModal() {
         className="cart-icon"
         aria-label="Open cart"
         onClick={openCart}
-        style={isFrench ? { top: '85px' } : {}}
+        style={isFrench ? { top: isMobile ? '88px' : '80px' } : {}}
       >
         <OpenCart quantity={cart?.totalQuantity} />
       </button>

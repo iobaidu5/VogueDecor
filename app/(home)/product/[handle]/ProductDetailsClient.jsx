@@ -84,7 +84,7 @@ export default function ProductDetailsClient({ product }) {
               </div>
             </div>
             <div className="flex flex-col flex-wrap items-start gap-4">
-              <Quantity />
+              <Quantity item={product} />
               <div className="flex flex-nowrap items-start gap-4">
                 <AddToCart product={product} />
                 <AddToWishlist product={product} />
