@@ -23,7 +23,12 @@ type QuantityProps = {
 
 const Quantity = ({ item }: QuantityProps) => {
   const { cart, updateCartItem } = useCart();
-  const merchandiseId = item.variants?.[0]?.id;
+
+
+  console.log("item iteee ", item)
+
+
+  const merchandiseId = item?.variants?.[0]?.id;
   
   // Fixed: Use 'lines' instead of 'items'
   const cartLine = cart?.lines?.find(line => 

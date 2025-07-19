@@ -127,7 +127,7 @@ export default async function ProductPage({ params }: { params: any }) {
               </div>
 
               <div className="flex items-center space-x-2">
-                <Quantity />
+                <Quantity item={product} />
                 {/* <button className="text-md flex items-center justify-center bg-black px-10 py-[8px] text-white">
                   Add to Cart
                 </button> */}
