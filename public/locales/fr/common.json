@@ -5,6 +5,7 @@
   "sale": "Solde Flash d’Été I Jusqu’à 50% Off",
   "shopnow": "Magasiner",
   "Blogs": "Blogues",
+  "New Arrivals": "Nouveautés",
   "menu": {
     "Chairs": "Chaises",
     "Batstools": "Tabourets",
@@ -78,7 +79,8 @@
     "Shipping and Return Policy": "Politique d'expédition et de retour",
     " Shipping and Return Policy": "Politique d'expédition et de retour",
     "Sale": "Soldes",
-    "Blogs": "Blogues"
+    "Blogs": "Blogues",
+    "New Arrivals": "Nouveautés"
   },
   "stayUpdated": "Restez informé",
   "subscribe": "S'abonner",
@@ -311,7 +313,10 @@
     "ALICE - Barstool (natural)": "ALICE - Tabouret de bar (naturel)",
     "VERA - Barstool (white)": "VERA - Tabouret de bar (blanc)",
     "ALICE - Chair (natural)": "ALICE - Chaise (naturelle)",
-    "OSCAR - Chair (black)": "OSCAR - Chaise (noire)"
+    "OSCAR - Chair (black)": "OSCAR - Chaise (noire)",
+    "ALICE - Chair (brown)": "ALICE - Chaise (marron)",
+    "SAMUEL - Barstool (natural)": "SAMUEL - Tabouret de bar (naturel)",
+    "VERA - Chair (white)": "VERA - Chaise (blanche)"
   },
   "Discover Vogue Decor's chic": "Découvrez la collection chic de Vogue Decor",
   "for timeless elegance": "pour une élégance intemporelle",

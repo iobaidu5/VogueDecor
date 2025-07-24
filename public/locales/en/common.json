@@ -5,6 +5,7 @@
   "sale": "Summer Flash Sale I Up to 50% Off",
   "shopnow": "Shop Now",
   "Blogs": "Blogs",
+  "New Arrivals": "New Arrivals",
   "menu": {
     "Chairs": "Chairs",
     "Batstools": "Barstools",
@@ -78,7 +79,8 @@
     "Shipping and Return Policy": "Shipping and Return Policy",
     " Shipping and Return Policy": "Shipping and Return Policy",
     "Blogs": "Blogs",
-    "Sale": "Sale"
+    "Sale": "Sale",
+    "New Arrivals": "New Arrivals"
   },
   "stayUpdated": "Stay Updated",
   "subscribe": "Subscribe",
@@ -305,7 +307,10 @@
     "ALICE - Barstool (natural)": "ALICE - Barstool (natural)",
     "VERA - Barstool (white)": "VERA - Barstool (white)",
     "ALICE - Chair (natural)": "ALICE - Chair (natural)",
-    "OSCAR - Chair (black)": "OSCAR - Chair (black)"
+    "OSCAR - Chair (black)": "OSCAR - Chair (black)",
+    "ALICE - Chair (brown)": "ALICE - Chair (brown)",
+    "SAMUEL - Barstool (natural)": "SAMUEL - Barstool (natural)",
+    "VERA - Chair (white)": "VERA - Chair (white)"
   },
   "Discover Vogue Decor's chic": "Discover Vogue Decor's chic",
   "for timeless elegance": "for timeless elegance",
