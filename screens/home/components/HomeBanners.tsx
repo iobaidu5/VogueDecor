@@ -3,15 +3,18 @@
 import Image from 'next/image';
 import banner1 from 'media/small-banner/Chairs banner no txt.png';
 import banner2 from 'media/small-banner/Outdoor banner no txt.png';
+import NewArrivalEng from 'media/new-arrival/2.png';
+import NewArrivalFr from 'media/new-arrival/3.png';
 import Link from 'next/link';
 import '../../../lib/i18nClient'
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 
 const HomeBanners = () => {
-  const { t, ready } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
 
   const [isMobile, setIsMobile] = useState(false);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,22 +34,22 @@ const HomeBanners = () => {
   {/* Banner 1 */}
   <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
     <Image
-      src={banner1}
+      src={i18n.language === 'fr' ? NewArrivalFr  : NewArrivalEng}
       alt="Banner 1"
       fill
       className="object-cover rounded-lg"
       priority
     />
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-      <h2 className="text-black text-2xl sm:text-4xl font-semibold">
+      {/* <h2 className="text-black text-2xl sm:text-4xl font-semibold">
         {t('comfort')}<br />{t('comfort2')}
-      </h2>
+      </h2> */}
       <div className="mt-4 sm:mt-6">
         <Link
-          href="/chairs"
+          href="/new-arrivals"
           className="bg-black text-white px-4 py-2 text-xs sm:text-sm rounded hover:bg-gray-900 transition duration-300"
         >
-          {t('shopChairs')}
+          {t('shopnow')}
         </Link>
       </div>
     </div>
