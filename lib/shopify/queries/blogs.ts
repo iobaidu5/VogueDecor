@@ -54,7 +54,7 @@ export const getAllBlogsQuery = /* GraphQL */ `
 // Get articles for one blog by handle
 // queries/blogs.ts
 export const getBlogArticlesQuery = /* GraphQL */ `
-  query getBlogArticles($handle: String!, $limit: Int = 10) {
+  query getBlogArticles($handle: String!, $limit: Int = 100) {
     blog(handle: $handle) {
       title
       articles(first: $limit) {
