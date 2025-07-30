@@ -22,7 +22,6 @@ const Upgrade = () => {
                 {t('upgradeWithEase')}
               </h1>
               <p className="text-[16px] sm:text-[17px] md:text-[18px] font-poppins tracking-wide">
-                Redefine your space hassle free with
                 {t('redefineSpace')}
               </p>
             </div>
