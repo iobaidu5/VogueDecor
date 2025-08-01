@@ -1,17 +1,19 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Grid from 'components/grid';
 import ProductGridItems from 'components/layout/product-grid-items';
 import { getCollectionProducts } from 'lib/shopify';
 import BreadCrumb from 'components/breadCrum/index';
 import FilterDropdown from 'components/filter-dropdown';
-import type { Collection, Product } from 'lib/shopify/types';
+import type { Collection, CollectionSnippet, Product } from 'lib/shopify/types';
 import i18n from '../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import ArticleRenderer from "components/ArticleRenderer"
 import { barstools, barstoolsFr, chairs, chairsFr, tabletops, tabletopsFr, tablebases, tablebasesFr, outdoor, outdoorFr, sale, saleFr } from "../old-site-text/index";
 import { useParams } from 'next/navigation';
+import CollectionDropdown from './collection-dropdown';
+import { usePathname } from 'next/navigation';
 
 type CategoryPageClientProps = {
   collection: any;
@@ -23,10 +25,14 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [filter, setFilter] = useState<string>('');
+  const [collectionFilter, setCollectionFilter] = useState('');
   const [showContent, setShowContent] = useState(false);
   const { t, ready } = useTranslation('common');
   const { i18n } = useTranslation();
   var content: any = [];
+  const pathname = usePathname();
+
+  const showCollectionFilter = ['/new-arrivals', '/sale'].includes(pathname);
 
 
   const params = useParams();
@@ -60,7 +66,20 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
     content = []
   }
 
-  <i></i>
+
+  const allCollections = useMemo(() => {
+    const collectionsMap = new Map<string, CollectionSnippet>();
+
+    allProducts.forEach(product => {
+      product.collections.forEach(collection => {
+        if (!collectionsMap.has(collection.handle)) {
+          collectionsMap.set(collection.handle, collection);
+        }
+      });
+    });
+
+    return Array.from(collectionsMap.values());
+  }, [allProducts]);
 
   useEffect(() => {
     async function fetchData() {
@@ -73,8 +92,27 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
     fetchData();
   }, [collection]);
 
+
+
   useEffect(() => {
-    let sorted = [...allProducts];
+    let filtered = [...allProducts];
+
+    console.log("aaaaa collectionFilter ", collectionFilter)
+
+    if (collectionFilter) {
+      filtered = filtered.filter(product => {
+        console.log("aaaaa product.collections -> ", product.collections);
+
+        // FIX: Add return statement
+        return product.collections.some(c => {
+          console.log("aaaaa c.handle -> ", c.handle);
+          return c.handle === collectionFilter; // Add return here
+        });
+      });
+    }
+
+    let sorted = [...filtered];
+
     switch (filter) {
       case 'az':
         sorted.sort((a, b) => a.title.localeCompare(b.title));
@@ -117,7 +155,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
 
     }
     setProducts(sorted);
-  }, [filter, allProducts]);
+  }, [filter, collectionFilter, allProducts]);
 
   if (loading) return <p className="py-3 text-center">Loading...</p>;
 
@@ -155,7 +193,17 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
                 </span>
               </p>
             </div>
-            <FilterDropdown selected={filter} onFilter={setFilter} />
+            <div>
+              <FilterDropdown selected={filter} onFilter={setFilter} />
+
+              {showCollectionFilter && (
+                <CollectionDropdown
+                  selected={collectionFilter}
+                  onCollectionChange={setCollectionFilter}
+                  collections={allCollections}
+                />
+              )}
+            </div>
           </div>
           <div className="mt-4">
             <ProductGridItems products={products} collection={collection2} />

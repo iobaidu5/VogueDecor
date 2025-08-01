@@ -14,6 +14,27 @@ export const getCollectionsQuery = /* GraphQL */ `
   ${collectionFragment}
 `;
 
+// export const getCollectionProductsQuery = /* GraphQL */ `
+//   query getCollectionProducts(
+//     $handle: String!
+//     $sortKey: ProductCollectionSortKeys
+//     $reverse: Boolean
+//   ) {
+//     collection(handle: $handle) {
+//       title
+//       handle
+//       products(sortKey: $sortKey, reverse: $reverse, first: 100) {
+//         edges {
+//           node {
+//             ...product
+//           }
+//         }
+//       }
+//     }
+//   }
+//   ${productFragment}
+// `;
+
 export const getCollectionProductsQuery = /* GraphQL */ `
   query getCollectionProducts(
     $handle: String!
@@ -21,10 +42,12 @@ export const getCollectionProductsQuery = /* GraphQL */ `
     $reverse: Boolean
   ) {
     collection(handle: $handle) {
+      title
+      handle
       products(sortKey: $sortKey, reverse: $reverse, first: 100) {
         edges {
           node {
-            ...product
+            ...product  # This now includes collections
           }
         }
       }
