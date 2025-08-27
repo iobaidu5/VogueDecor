@@ -126,6 +126,29 @@ export async function shopifyFetch<T>({
   }
 }
 
+// lib/shopify-admin.ts
+export async function shopifyAdminFetch({
+  query,
+  variables,
+}: {
+  query: string;
+  variables?: any;
+}) {
+  const endpoint = process.env.SHOPIFY_STORE_DOMAIN!;
+  const key = process.env.SHOPIFY_STOREFRONT_API_TOKEN!;
+  
+  const result = await fetch(`https://${endpoint}/admin/api/2023-10/graphql.json`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Shopify-Access-Token': key,
+    },
+    body: JSON.stringify({ query, variables }),
+  });
+
+  return await result.json();
+}
+
 function removeEdgesAndNodes<T>(array: Connection<T>): T[] {
   return array?.edges?.map((edge) => edge?.node);
 }
@@ -153,13 +176,12 @@ function reshapeProduct(
     return undefined;
   }
 
-  const { images, variants, collections, ...rest } = product;
+  const { images, variants, ...rest } = product;
 
   return {
     ...rest,
     images: reshapeImages(images, product?.title),
     variants: removeEdgesAndNodes(variants),
-    collections: removeEdgesAndNodes(collections)
   };
 }
 function reshapeProducts(products: ShopifyProduct[]) {
@@ -486,3 +508,29 @@ export async function getPages(): Promise<Page[]> {
 
   return removeEdgesAndNodes(res?.body?.data?.pages);
 }
+
+
+// // lib/shopify/index.ts
+// export async function shopifyGraphQL<T>(query: string, variables?: Record<string, any>) {
+//   const domain = process.env.SHOPIFY_STORE_DOMAIN!;
+//   const token =
+//     process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN! || process.env.SHOPIFY_STOREFRONT_TOKEN!; // supports either name
+
+//   const res = await fetch(`https://${domain}/api/${process.env.SHOPIFY_API_VERSION}/graphql.json`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       "X-Shopify-Storefront-Access-Token": token,
+//     },
+//     body: JSON.stringify({ query, variables }),
+//     cache: "no-store",
+//   });
+
+//   const json = await res.json();
+//   if (json.errors) {
+//     console.error("Shopify Storefront API errors:", json.errors);
+//     throw new Error(JSON.stringify(json.errors));
+//   }
+//   return json.data as T;
+// }
+

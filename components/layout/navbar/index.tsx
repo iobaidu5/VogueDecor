@@ -12,8 +12,6 @@ const { SITE_NAME } = process.env;
 export async function Navbar() {
   const menu = await getMenu('next-js-frontend-header-menu');
 
-  console.log("menu item ", menu)
-
   return (
     <nav className="relative flex items-center justify-between p-4 lg:px-6">
       <div className="block flex-none md:hidden">
@@ -46,6 +44,15 @@ export async function Navbar() {
                   </Link>
                 </li>
               ))}
+              {/* <li key={"bundles"}>
+              <Link
+                href={"/bundles"}
+                prefetch={true}
+                className="text-neutral-500 underline-offset-4 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300"
+              >
+                Bundles
+              </Link>
+              </li> */}
             </ul>
           ) : null}
         </div>

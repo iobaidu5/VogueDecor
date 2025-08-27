@@ -69,17 +69,34 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
 
   const allCollections = useMemo(() => {
     const collectionsMap = new Map<string, CollectionSnippet>();
-
+  
     allProducts.forEach(product => {
-      product.collections.forEach(collection => {
-        if (!collectionsMap.has(collection.handle)) {
+      let collections: CollectionSnippet[] = [];
+  
+      // Ensure collections is an array
+      if (Array.isArray(product?.collections)) {
+        collections = product.collections;
+      }
+      // Handle Shopify GraphQL style { edges: [{ node: collection }] }
+      else if (product?.collections?.edges) {
+        collections = product.collections.edges.map((edge: any) => edge.node);
+      }
+      // Handle single collection object
+      else if (product?.collections && typeof product.collections === "object") {
+        collections = [product.collections];
+      }
+  
+      // Add collections to map to avoid duplicates
+      collections.forEach(collection => {
+        if (collection?.handle && !collectionsMap.has(collection.handle)) {
           collectionsMap.set(collection.handle, collection);
         }
       });
     });
-
+  
     return Array.from(collectionsMap.values());
   }, [allProducts]);
+  
 
   useEffect(() => {
     async function fetchData() {

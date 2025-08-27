@@ -79,18 +79,16 @@ const Header = ({ menu }) => {
 
   return (
     <nav
-      className={`z-[999] w-full px-6 md:px-[40px] lg:px-[70px] transition-all duration-300 ${
-        isSticky
-          ? `fixed top-0 bg-white shadow-md py-0 ${isMobile ? "h-14" : ""}`
-          : "relative bg-transparent"
-      }`}
+      className={`z-[999] w-full px-6 md:px-[40px] lg:px-[70px] transition-all duration-300 ${isSticky
+        ? `fixed top-0 bg-white shadow-md py-0 ${isMobile ? "h-14" : ""}`
+        : "relative bg-transparent"
+        }`}
     >
       {/* Top Row */}
-      <div className={`relative flex items-center justify-between  ${
-      isSticky
+      <div className={`relative flex items-center justify-between  ${isSticky
         ? "pt-2"
         : "pt-4"
-    }`}>
+        }`}>
         <div className="hidden lg991:flex items-center">
           <LanguageSwitcher />
           <GoogleTranslateScript />
@@ -135,6 +133,7 @@ const Header = ({ menu }) => {
         {!ready ? (
           <div>Loading translations...</div>
         ) : menu?.map((item) => (
+
           <Link
             key={item.path}
             href={
@@ -152,6 +151,17 @@ const Header = ({ menu }) => {
           </Link>
 
         ))}
+
+        {/* <Link
+          key={"bundles"}
+          href={"/bundles"}
+          prefetch={true}
+          className={`
+    cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-black'}
+  `}
+        >
+          Bundles
+        </Link> */}
       </div>
 
       <Drawer menu={menu} />

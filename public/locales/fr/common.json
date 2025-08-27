@@ -172,15 +172,10 @@
     "LUCA - Barstool (black)": "LUCA - Tabouret de bar (noir)",
     "LUCA - Barstool (caramel)": "LUCA - Tabouret de bar (caramel)",
     "LUCA - Barstool (tan)": "LUCA - Tabouret de bar (tan)",
-
-
     "EMMANUEL - Chair (tan/charcoal)": "EMMANUEL - Chaise (beige/anthracite)",
     "LUCA - Chair (black)": "LUCA - Chaise (noire)",
     "LUCA - Chair (caramel)": "LUCA - Chaise (caramel)",
     "LUCA - Chair (tan)": "LUCA - Chaise (tan)",
-
-
-
     "LOLA - BOOTH (48\"L, BLACK)": "LOLA - BANQUETTE (48 po L, NOIR)",
     "LAURA - Barstool": "LAURA - Tabouret de bar",
     "LADDERBACK - Chair (red)": "LADDERBACK - Chaise (rouge)",
@@ -304,7 +299,6 @@
     "luca_chair_black": "Chaise LUCA (noir)",
     "luca_chair_caramel": "Chaise LUCA (caramel)",
     "emmanuel_chair_tan_charcoal": "Chaise EMMANUEL (beige/charbon)",
-
     "SAMUEL - Chair (natural)": "SAMUEL - Chaise (naturel)",
     "P6027D8 (76CM×120CM) – Table top (HPL laminated) Bohemian Oak": "P6027D8 (76CM×120CM) – Plateau de table (stratifié HPL) Chêne Bohème",
     "P6027D8 (60CM×76CM) – Table top (HPL laminated) Bohemian Oak": "P6027D8 (60CM×76CM) – Plateau de table (stratifié HPL) Chêne Bohème",
@@ -318,7 +312,12 @@
     "OSCAR - Chair (black)": "OSCAR - Chaise (noire)",
     "ALICE - Chair (brown)": "ALICE - Chaise (marron)",
     "SAMUEL - Barstool (natural)": "SAMUEL - Tabouret de bar (naturel)",
-    "VERA - Chair (white)": "VERA - Chaise (blanche)"
+    "VERA - Chair (white)": "VERA - Chaise (blanche)",
+    "TARA - CHAIR (BLACK)": "TARA - CHAISE (NOIR)",
+    "KATE - Barstool (tan)": "KATE - Tabouret de bar (beige)",
+    "KATE - Barstool (black)": "KATE - Tabouret de bar (noir)",
+    "KATE - CHAIR (tan)": "KATE - CHAISE (beige)",
+    "KATE - CHAIR (black)": "KATE - CHAISE (noir)"
   },
   "Discover Vogue Decor's chic": "Découvrez la collection chic de Vogue Decor",
   "for timeless elegance": "pour une élégance intemporelle",
