@@ -89,14 +89,14 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                       </li>
                     ))}
 
-                    {/* <li
+                    <li
                       className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white"
                       key={"bundles"}
                     >
                       <Link href={"/bundles"} prefetch={true} onClick={closeMobileMenu}>
                         Bundles
                       </Link>
-                    </li> */}
+                    </li>
                   </ul>
                 ) : null}
               </div>

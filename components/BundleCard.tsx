@@ -2,8 +2,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AddToCartBundles } from "./cart/add-to-cart-bundles";
 
-export default function BundleCard({ bundle }: { bundle: any }) {
+export default function BundleCard({ bundle }: { bundle: any}) {
   const [products, setProducts] = useState<any[]>([]);
 
   useEffect(() => {
@@ -48,6 +49,12 @@ export default function BundleCard({ bundle }: { bundle: any }) {
             </div>
           </li>
         ))}
+
+        {/* <AddToCartBundles products={products} /> */}
+
+        <AddToCartBundles
+          products={products}
+        />
       </ul>
     </div>
   );

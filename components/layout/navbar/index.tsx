@@ -44,7 +44,7 @@ export async function Navbar() {
                   </Link>
                 </li>
               ))}
-              {/* <li key={"bundles"}>
+              <li key={"bundles"}>
               <Link
                 href={"/bundles"}
                 prefetch={true}
@@ -52,7 +52,7 @@ export async function Navbar() {
               >
                 Bundles
               </Link>
-              </li> */}
+              </li>
             </ul>
           ) : null}
         </div>

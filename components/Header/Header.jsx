@@ -152,7 +152,7 @@ const Header = ({ menu }) => {
 
         ))}
 
-        {/* <Link
+        <Link
           key={"bundles"}
           href={"/bundles"}
           prefetch={true}
@@ -161,7 +161,7 @@ const Header = ({ menu }) => {
   `}
         >
           Bundles
-        </Link> */} 
+        </Link>
       </div>
 
       <Drawer menu={menu} />

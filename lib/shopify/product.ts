@@ -5,21 +5,48 @@ export async function getProductsByIds(ids: string[]) {
     return `gid://shopify/Product/${id}`;   // convert numeric/string ID
   });
 
+  // const query = `
+  //   query getProductsByIds($ids: [ID!]!) {
+  //     nodes(ids: $ids) {
+  //       ... on Product {
+  //         id
+  //         title
+  //         handle
+  //         featuredImage { url altText }
+  //         priceRange {
+  //           minVariantPrice { amount }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `;
+
   const query = `
-    query getProductsByIds($ids: [ID!]!) {
-      nodes(ids: $ids) {
-        ... on Product {
-          id
-          title
-          handle
-          featuredImage { url altText }
-          priceRange {
-            minVariantPrice { amount }
+  query getProductsByIds($ids: [ID!]!) {
+    nodes(ids: $ids) {
+      ... on Product {
+        id
+        title
+        handle
+        featuredImage { url altText }
+        priceRange {
+          minVariantPrice { amount currencyCode }
+        }
+        availableForSale
+        variants(first: 10) {
+          nodes {
+            id
+            title
+            availableForSale
+            selectedOptions { name value }
+            priceV2 { amount currencyCode }
           }
         }
       }
     }
-  `;
+  }
+`;
+
 
   const domain = process.env.SHOPIFY_STORE_DOMAIN!;
   const token = process.env.SHOPIFY_STOREFRONT_API_TOKEN!;

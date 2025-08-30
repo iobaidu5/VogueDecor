@@ -510,6 +510,55 @@ export async function getPages(): Promise<Page[]> {
 }
 
 
+// lib/shopify.ts
+export async function applyDiscountToCart(discountCode: string) {
+  try {
+    // Get the current cart ID from cookies
+    const cartId = getCookie('cartId');
+    
+    if (!cartId) {
+      throw new Error('No cart found');
+    }
+
+    // Apply discount code to cart using Shopify API
+    const response = await fetch('/api/cart/discount', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        cartId,
+        discountCode,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Failed to apply discount');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error applying discount:', error);
+    throw error;
+  }
+}
+
+// Helper function to get cookies (you might already have this elsewhere)
+function getCookie(name: string): string | null {
+  if (typeof document === 'undefined') return null;
+  
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  
+  if (parts.length === 2) {
+    const cookieValue = parts.pop()?.split(';').shift();
+    return cookieValue || null;
+  }
+  return null;
+}
+
 // // lib/shopify/index.ts
 // export async function shopifyGraphQL<T>(query: string, variables?: Record<string, any>) {
 //   const domain = process.env.SHOPIFY_STORE_DOMAIN!;
