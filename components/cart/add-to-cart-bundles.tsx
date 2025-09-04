@@ -16,7 +16,7 @@ function SubmitButton({ loading }: { loading: boolean }) {
         loading ? 'opacity-60 cursor-not-allowed' : ''
       }`}
     >
-      {loading ? t('adding') : t('addToCart')}
+      {loading ? t('adding') : t('addBundleToCart')}
     </button>
   );
 }

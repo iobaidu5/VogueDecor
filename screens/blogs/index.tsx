@@ -188,11 +188,13 @@ type GetAllBlogsResponse = {
         node: {
           handle: string;
           title: string;
+          url: string;
         };
       }[];
     };
   };
 };
+
 
 export async function getAllBlogHandles(): Promise<string[]> {
   const res = await shopifyFetch<GetAllBlogsResponse>({
@@ -219,6 +221,7 @@ export async function getBlogArticlesByHandle(handle: string): Promise<BlogArtic
       .toLowerCase()
       .replace(/\s+/g, '-')
       .replace(/[^a-z0-9-]/g, '');
+      const n = node as typeof node & { blog: { handle: string } }
     
     return {
       id: node.id,
@@ -226,11 +229,12 @@ export async function getBlogArticlesByHandle(handle: string): Promise<BlogArtic
       // Include both handle and slug in the path
       // path: `/blog/${handle}/${slug}`,
       path: `/blog/${handle}/${slug}`,
-      images: node.image?.originalSrc ? [node.image.originalSrc] : [],
-      excerpt: node.excerpt,
-      publishedAt: node.publishedAt,
-      contentHtml: node.contentHtml,
-      blogHandle: handle,
+      images: n.image?.originalSrc ? [n.image.originalSrc] : [],
+      excerpt: n.excerpt,
+      publishedAt: n.publishedAt,
+      contentHtml: n.contentHtml,
+      blogHandle: n.blog.handle,    // ✅ parent blog
+      articleHandle: n.handle,      // ✅ article handle
     };
   });
 }
@@ -249,6 +253,7 @@ export default function BlogListPage() {
   useEffect(() => {
     const fetchBlogs = async () => {
       const data = await getAllBlogArticles();
+      console.log("blogs data -> ", data)
       setArticles(data);
     };
     fetchBlogs();
@@ -266,7 +271,7 @@ export default function BlogListPage() {
         <div className="hidden gap-x-8 gap-y-12 md:grid md:grid-cols-2">
           {paginatedData.map((article, index) => (
             <Link
-              href={article.path}
+            href={`/blog/${article.blogHandle}/${article.articleHandle}`}
               key={`${article.path}-${index}`}
               className="cursor-pointer space-y-4"
             >

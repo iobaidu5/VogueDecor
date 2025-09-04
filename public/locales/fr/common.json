@@ -317,7 +317,8 @@
     "KATE - Barstool (tan)": "KATE - Tabouret de bar (beige)",
     "KATE - Barstool (black)": "KATE - Tabouret de bar (noir)",
     "KATE - CHAIR (tan)": "KATE - CHAISE (beige)",
-    "KATE - CHAIR (black)": "KATE - CHAISE (noir)"
+    "KATE - CHAIR (black)": "KATE - CHAISE (noir)",
+    "KATE - Chair (black/gold)": "KATE - Chaise (noir/or)"
   },
   "Discover Vogue Decor's chic": "Découvrez la collection chic de Vogue Decor",
   "for timeless elegance": "pour une élégance intemporelle",
@@ -330,6 +331,7 @@
     "price-desc": "Du plus cher au moins cher"
   },
   "addToCart": "Ajouter au panier",
+  "addBundleToCart": "Ajouter le lot au panier",
   "outOfStock": "En rupture de stock",
   "addToWishlist": "Ajouter à la liste de souhaits",
   "DESCRIPTION": "DESCRIPTION",

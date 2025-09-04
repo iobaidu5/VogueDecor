@@ -6,10 +6,14 @@ export type Menu = {
 export type BlogArticle = {
   title: string;
   path: string;
+  handle: string;
+  blogHandle: string;
+  articleHandle: string;
   images: string[]; 
   excerpt?: string;
   content?: string;
   publishedAt?: string;
+  blog: { handle: string };
 };
 
 export type ShopifyMenuOperation = {
@@ -30,11 +34,13 @@ export type ShopifyBlogOperation = {
   data: {
     blog?: {
       title: string;
+      handle: string;
       articles: {
         edges: {
           node: {
             id: string;
             title: string;
+            handle: string;
             excerpt: string;
             contentHtml: string;
             publishedAt: string;

@@ -11,7 +11,7 @@ export default function UserMenu() {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [user, setUser] = useState<{ isLoggedIn: boolean; firstName: string; lastName: string; image: string }>({
-    isLoggedIn: false,
+    isLoggedIn: localStorage.getItem("user") ? true : false,
     firstName: '',
     lastName: '',
     image: 'https://i.pravatar.cc/36?img=3',
@@ -41,7 +41,7 @@ export default function UserMenu() {
             Authorization: `Bearer ${token}`,
           },
         });
-        
+
         if (res.data.profile) {
           setUser({
             ...res.data.profile,
@@ -97,7 +97,7 @@ export default function UserMenu() {
             height={32}
             className="rounded-full"
           />
-          <span className="text-sm font-medium">{user.firstName || "User"}</span>
+          <span className="text-sm font-medium">{JSON.parse(localStorage?.getItem("user") || "{}")?.username || user.firstName}</span>
         </button>
       ) : (
         <Link href="/login">
@@ -118,10 +118,23 @@ export default function UserMenu() {
               className="rounded-full"
             />
             <div>
-              <p className="text-sm font-semibold">{user.firstName}</p>
+              <p className="text-sm font-semibold">{JSON.parse(localStorage?.getItem("user") || "{}")?.username || user.firstName}</p>
             </div>
           </div>
           <ul className="text-sm">
+
+            {JSON.parse(localStorage?.getItem("user") || "{}")?.username === "Gary" && (
+              <li>
+                <Link
+                  href="/bundles/add"
+                  className="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2"
+                >
+                  <User size={16} /> Add Bundles
+                </Link>
+              </li>
+            )}
+
+
             <li>
               <Link
                 href="/profile"

@@ -6,10 +6,12 @@ import { applyDiscountToCart } from "lib/shopify";
 
 export default function DiscountForm({ 
   bundleDiscountCode, 
-  originalPrice 
+  originalPrice,
+  bundlePrice
 }: { 
   bundleDiscountCode: string | null;
   originalPrice: number;
+  bundlePrice?: number;
 }) {
   const [discountCode, setDiscountCode] = useState("");
   const [appliedDiscount, setAppliedDiscount] = useState(false);
@@ -37,7 +39,7 @@ export default function DiscountForm({
         setAppliedDiscount(true);
         
         // Apply discount to cart in Shopify
-        await applyDiscountToCart(discountCode);
+        await applyDiscountToCart(discountCode, bundlePrice || originalPrice);
       } else {
         setError("Invalid discount code");
       }

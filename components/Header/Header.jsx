@@ -49,8 +49,6 @@ const Header = ({ menu }) => {
   };
 
   useEffect(() => {
-    console.log("pathname-> ", pathname)
-    console.log("pathname starty ", pathname.startsWith('/fr'))
     currentLang = pathname.startsWith('/fr') ? "fr" : "en";
     i18n.changeLanguage(currentLang)
   }, [pathname])
@@ -152,7 +150,7 @@ const Header = ({ menu }) => {
 
         ))}
 
-        <Link
+        {/* <Link
           key={"bundles"}
           href={"/bundles"}
           prefetch={true}
@@ -161,7 +159,7 @@ const Header = ({ menu }) => {
   `}
         >
           Bundles
-        </Link>
+        </Link> */}
       </div>
 
       <Drawer menu={menu} />

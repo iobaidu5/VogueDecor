@@ -319,7 +319,8 @@
     "KATE - Barstool (tan)": "KATE - Barstool (tan)",
     "KATE - Barstool (black)": "KATE - Barstool (black)",
     "KATE - CHAIR (tan)": "KATE - CHAIR (tan)",
-    "KATE - CHAIR (black)": "KATE - CHAIR (black)"
+    "KATE - CHAIR (black)": "KATE - CHAIR (black)",
+    "KATE - Chair (black/gold)": "KATE - Chair (black/gold)"
   },
   "Discover Vogue Decor's chic": "Discover Vogue Decor's chic",
   "for timeless elegance": "for timeless elegance",
@@ -332,6 +333,7 @@
     "price-desc": "High to Low"
   },
   "addToCart": "Add to Cart",
+  "addBundleToCart": "Add Bundle to Cart",
   "outOfStock": "Out Of Stock",
   "addToWishlist": "Add To Wishlist",
   "DESCRIPTION": "DESCRIPTION",

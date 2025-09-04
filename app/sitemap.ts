@@ -1,6 +1,8 @@
-import { getCollections, getPages, getProducts } from 'lib/shopify';
+import { getCollections, getPages, getProducts, getBlogs } from 'lib/shopify';
+import { getBlogArticlesByHandleForSitemap } from 'lib/shopify/sitemap';
 import { validateEnvironmentVariables } from 'lib/utils';
 import { MetadataRoute } from 'next';
+import { getBlogArticlesByHandle } from 'screens/blogs';
 
 type Route = {
   url: string;
@@ -40,6 +42,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
+
+  const blogs = await getBlogs();
+
+  const articles = (
+    await Promise.all(
+      blogs.map((blog) => getBlogArticlesByHandleForSitemap(blog.handle))
+    )
+  ).flat();
+  
+  const blogsRoutes = articles.map((article) => ({
+    url: `${baseUrl}${article.url}`,
+    lastModified: article.publishedAt ?? new Date().toISOString(),
+  }));
+  
+
+
   let fetchedRoutes: Route[] = [];
 
   try {
@@ -48,5 +66,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     throw JSON.stringify(error, null, 2);
   }
 
-  return [...routesMap, ...fetchedRoutes];
+  return [...routesMap, ...fetchedRoutes, ...blogsRoutes];
 }

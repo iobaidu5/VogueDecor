@@ -7,6 +7,7 @@ import CartModal from "components/cart/modal";
 import { getProductsByIds } from "lib/shopify/product";
 import DiscountForm from "components/DiscountForm";
 
+
 export default async function BundleDetail({
   params,
 }: {
@@ -33,7 +34,7 @@ export default async function BundleDetail({
     }, 0);
   }
 
-  const displayPrice = totalPrice;
+  const displayPrice = bundle.bundlePrice || totalPrice;
 
   return (
     <ProductProvider>
@@ -66,15 +67,7 @@ export default async function BundleDetail({
 
           {/* Price display */}
           <div className="space-y-2">
-            {bundle.bundlePrice ? (
-              <>
-                {(
-                  <div className="text-3xl font-semibold text-green-600">
-                    ${totalPrice.toFixed(2)}
-                  </div>
-                )}
-              </>
-            ) : (
+            {(
               <div className="text-3xl font-semibold text-green-600">
                 ${totalPrice.toFixed(2)}
               </div>
@@ -86,6 +79,7 @@ export default async function BundleDetail({
             <DiscountForm 
               bundleDiscountCode={bundle.discountCode} 
               originalPrice={displayPrice}
+              bundlePrice={totalPrice}
             />
           )}
 

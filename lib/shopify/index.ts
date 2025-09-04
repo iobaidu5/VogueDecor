@@ -31,6 +31,7 @@ import {
   Image,
   Menu,
   Page,
+  BlogArticle,
   Product,
   ShopifyAddToCartOperation,
   ShopifyCart,
@@ -48,10 +49,12 @@ import {
   ShopifyProductsOperation,
   ShopifyRemoveFromCartOperation,
   ShopifyUpdateCartOperation,
+  ShopifyBlogOperation,
 } from "./types";
 import { headers } from "next/headers";
 import { revalidateTag } from "next/cache";
 import { getPageQuery, getPagesQuery } from "./queries/page";
+import { getBlogArticlesQuery, getAllBlogsQuery } from "./queries/blogs";
 
 const domain = process.env.SHOPIFY_STORE_DOMAIN
   ? ensureStartWith(process.env.SHOPIFY_STORE_DOMAIN, "https://")
@@ -510,8 +513,20 @@ export async function getPages(): Promise<Page[]> {
 }
 
 
+export async function getBlogs(): Promise<BlogArticle[]> {
+  const res = await shopifyFetch<ShopifyBlogOperation>({
+    query: getAllBlogsQuery,
+    cache: "no-store",
+  });
+
+  //return res.body?.data.blogs.edges.map(({ node }) => node.handle) || [];
+
+  return removeEdgesAndNodes(res.body?.data.blogs);
+}
+
+
 // lib/shopify.ts
-export async function applyDiscountToCart(discountCode: string) {
+export async function applyDiscountToCart(discountCode: string, bundlePrice?: number) {
   try {
     // Get the current cart ID from cookies
     const cartId = getCookie('cartId');
@@ -520,25 +535,71 @@ export async function applyDiscountToCart(discountCode: string) {
       throw new Error('No cart found');
     }
 
-    // Apply discount code to cart using Shopify API
-    const response = await fetch('/api/cart/discount', {
+    // First, check if the discount code is valid
+    const checkResponse = await fetch('/api/check-discount', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        cartId,
-        discountCode,
-      }),
+      body: JSON.stringify({ discountCode }),
     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Failed to apply discount');
+    if (!checkResponse.ok) {
+      const errorData = await checkResponse.json();
+      throw new Error(errorData.message || 'Invalid discount code');
     }
 
-    const data = await response.json();
-    return data;
+    const checkData = await checkResponse.json();
+    
+    if (!checkData.valid) {
+      throw new Error('Invalid discount code');
+    }
+
+    // If we have a bundle price, we need to create a custom line item
+    // with the discounted price instead of using Shopify's discount system
+    if (bundlePrice) {
+      // Apply 10% discount to the bundle price
+      const discountedPrice = bundlePrice * 0.9;
+      
+      // Create a custom line item with the discounted price
+      const response = await fetch('/api/cart/custom-item', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          cartId,
+          title: 'Bundle Discount',
+          price: discountedPrice,
+          quantity: 1,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to apply discount to cart');
+      }
+
+      return await response.json();
+    } else {
+      // Apply discount code to cart using Shopify API
+      const response = await fetch('/api/cart/discount', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          cartId,
+          discountCode,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to apply discount');
+      }
+
+      return await response.json();
+    }
   } catch (error) {
     console.error('Error applying discount:', error);
     throw error;
