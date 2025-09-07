@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Search } from "lucide-react";
 
 interface ShopifyProduct {
   id: string;
   title: string;
+  featuredImage?: { url: string };
   variants: { id: string; title: string; price: string }[];
 }
 
@@ -19,6 +21,10 @@ export default function CreateBundlePage() {
   const [selectedItems, setSelectedItems] = useState<
     { productId: string; variantId: string; quantity: number }[]
   >([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Preview URL for uploaded image
+  const imagePreview = imageFile ? URL.createObjectURL(imageFile) : null;
 
   // Fetch Shopify products
   useEffect(() => {
@@ -56,28 +62,22 @@ export default function CreateBundlePage() {
       if (imageFile) {
         const formData = new FormData();
         formData.append("file", imageFile);
-      
+
         const uploadRes = await fetch("/api/upload", {
           method: "POST",
           body: formData,
         });
-      
+
         if (!uploadRes.ok) {
           throw new Error(`Image upload failed: ${uploadRes.statusText}`);
         }
-      
+
         const uploadData = await uploadRes.json();
-        console.log("upload response ->", uploadData);
-      
-        // Your API returns { url: base64Image }
         uploadedImageBase64 = uploadData.url;
       }
-      
-
 
       const generatedSlug =
         slug.trim() || title.trim().toLowerCase().replace(/\s+/g, "-");
-
 
       const newBundle = {
         title: title.trim(),
@@ -116,6 +116,11 @@ export default function CreateBundlePage() {
       alert(err.message || "Something went wrong. Please try again.");
     }
   };
+
+  // Filter products by search
+  const filteredProducts = products.filter((p) =>
+    p.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white shadow rounded">
@@ -165,22 +170,19 @@ export default function CreateBundlePage() {
           <input
             type="file"
             accept="image/*"
-            className="w-full rounded-md border px-3 py-2 text-sm file:mr-3 file:rounded-md file:border-0 file:bg-black-50 file:px-3 file:py-2 file:text-black-700 hover:file:bg-black-100"
+            className="w-full rounded-md border px-3 py-2 text-sm file:mr-3 file:rounded-md file:border-0 file:bg-black/5 file:px-3 file:py-2 file:text-black hover:file:bg-black/10"
             onChange={(e) => setImageFile(e.target.files?.[0] || null)}
           />
+          {imagePreview && (
+            <div className="mt-2">
+              <img
+                src={imagePreview}
+                alt="Preview"
+                className="h-24 w-24 object-cover rounded-md border"
+              />
+            </div>
+          )}
         </div>
-
-        {/* Price */}
-        {/* <div>
-          <label className="block text-sm font-medium mb-1">Bundle Price</label>
-          <input
-            type="number"
-            step="0.01"
-            className="w-full rounded-md border px-3 py-2 focus:outline-none focus:ring focus:ring-black"
-            value={bundlePrice}
-            onChange={(e) => setBundlePrice(e.target.value)}
-          />
-        </div> */}
 
         {/* Discount */}
         <div>
@@ -195,16 +197,28 @@ export default function CreateBundlePage() {
         {/* Product selection */}
         <div>
           <label className="block text-sm font-medium mb-2">Add Products</label>
-          <div className="border rounded-md p-3 max-h-64 overflow-y-auto">
-            {products.length === 0 ? (
+          <div className="border rounded-md p-3 max-h-72 overflow-y-auto space-y-2">
+            {/* Search bar */}
+            <div className="flex items-center gap-2 mb-2 border rounded-md px-2 py-1">
+              <Search className="h-4 w-4 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Search products..."
+                className="flex-1 text-sm focus:outline-none"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+
+            {filteredProducts.length === 0 ? (
               <p className="text-sm text-gray-500">No products found.</p>
             ) : (
-              products.map((p) => {
+              filteredProducts.map((p) => {
                 const isChecked = !!selectedItems.find((i) => i.productId === p.id);
                 return (
                   <label
                     key={p.id}
-                    className="flex items-center gap-2 cursor-pointer mb-2"
+                    className="flex items-center gap-3 cursor-pointer rounded-md hover:bg-gray-50 p-2"
                   >
                     <input
                       type="checkbox"
@@ -212,7 +226,14 @@ export default function CreateBundlePage() {
                       checked={isChecked}
                       onChange={() => toggleProduct(p)}
                     />
-                    <span>{p.title}</span>
+                    {p.featuredImage?.url && (
+                      <img
+                        src={p.featuredImage.url}
+                        alt={p.title}
+                        className="h-10 w-10 rounded-md object-cover border"
+                      />
+                    )}
+                    <span className="text-sm font-medium">{p.title}</span>
                   </label>
                 );
               })
@@ -232,11 +253,20 @@ export default function CreateBundlePage() {
                   key={idx}
                   className="flex items-center justify-between border rounded-md p-2 bg-white"
                 >
-                  <div>
-                    <p className="font-medium">{product?.title}</p>
-                    <p className="text-sm text-gray-600">
-                      {variant?.title} — ${variant?.price}
-                    </p>
+                  <div className="flex items-center gap-3">
+                    {product?.featuredImage?.url && (
+                      <img
+                        src={product.featuredImage.url}
+                        alt={product.title}
+                        className="h-10 w-10 rounded-md object-cover border"
+                      />
+                    )}
+                    <div>
+                      <p className="font-medium">{product?.title}</p>
+                      <p className="text-sm text-gray-600">
+                        {variant?.title} — ${variant?.price}
+                      </p>
+                    </div>
                   </div>
                   <input
                     type="number"
@@ -256,7 +286,7 @@ export default function CreateBundlePage() {
         {/* Submit */}
         <button
           type="submit"
-          className="w-full rounded-md bg-black px-4 py-2 text-white font-medium hover:bg-black-700 focus:outline-none focus:ring"
+          className="w-full rounded-md bg-black px-4 py-2 text-white font-medium hover:bg-black/80 focus:outline-none focus:ring"
         >
           Create Bundle
         </button>

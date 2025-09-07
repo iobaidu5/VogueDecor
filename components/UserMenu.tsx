@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { User, LogOut, Settings } from 'lucide-react';
+import { User, LogOut, Settings, Package } from 'lucide-react';
 import Image from 'next/image';
 import axios from 'axios';
 
@@ -129,12 +129,10 @@ export default function UserMenu() {
                   href="/bundles/add"
                   className="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2"
                 >
-                  <User size={16} /> Add Bundles
+                  <Package size={16} /> Add Bundles
                 </Link>
               </li>
             )}
-
-
             <li>
               <Link
                 href="/profile"

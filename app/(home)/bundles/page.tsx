@@ -8,7 +8,7 @@ export default async function BundlesPage() {
     <section className="container mx-auto w-100 p-6">
       {bundles.length === 0 ? (
         <p className="py-3 text-center text-lg">
-          No bundles found in this collection
+          No bundles found
         </p>
       ) : (
         <>
@@ -36,7 +36,7 @@ export default async function BundlesPage() {
                   <img
                     src={b.imageUrl}
                     alt={b.title}
-                    className="rounded-md mb-3 w-full h-70 object-cover"
+                    className="rounded-md mb-3 w-full h-50 object-cover"
                   />
                 )}
                 <h2 className="text-lg font-medium text-gray-700">{b.title}</h2>

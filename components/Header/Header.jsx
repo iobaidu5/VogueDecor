@@ -150,7 +150,9 @@ const Header = ({ menu }) => {
 
         ))}
 
-        {/* <Link
+{JSON.parse(localStorage?.getItem("user") || "{}")?.username === "Gary" && (
+
+        <Link
           key={"bundles"}
           href={"/bundles"}
           prefetch={true}
@@ -159,7 +161,8 @@ const Header = ({ menu }) => {
   `}
         >
           Bundles
-        </Link> */}
+        </Link>
+        )}
       </div>
 
       <Drawer menu={menu} />
