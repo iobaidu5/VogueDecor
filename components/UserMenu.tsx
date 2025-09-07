@@ -54,6 +54,9 @@ export default function UserMenu() {
         }
       } catch (err) {
         console.error(err);
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+        setUser({ isLoggedIn: false, firstName: '', lastName: '', image: '' });
         setError('Failed to fetch profile');
       }
     };

@@ -185,14 +185,14 @@ export default function CreateBundlePage() {
         </div>
 
         {/* Discount */}
-        <div>
+        {/* <div>
           <label className="block text-sm font-medium mb-1">Discount Code</label>
           <input
             className="w-full rounded-md border px-3 py-2 focus:outline-none focus:ring focus:ring-black"
             value={discountCode}
             onChange={(e) => setDiscountCode(e.target.value)}
           />
-        </div>
+        </div> */}
 
         {/* Product selection */}
         <div>
