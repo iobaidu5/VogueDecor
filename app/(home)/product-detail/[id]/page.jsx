@@ -77,9 +77,9 @@ export default async function ProductPage(props) {
         <RelatedProducts id={product.id} />
       </div>
 
-      <div className="flex justify-end md:w-1/3">
+      {/* <div className="flex justify-end md:w-1/3">
         <CartModal />
-      </div>
+      </div> */}
     </ProductProvider>
   );
 }

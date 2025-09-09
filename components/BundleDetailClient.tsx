@@ -91,11 +91,11 @@ export default function BundleDetailClient({
           </div>
 
 
-          <div className="flex justify-end md:w-1/3">
+          {/* <div className="flex justify-end md:w-1/3">
             <div>
               <CartModal />
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
     </ProductProvider>

@@ -198,7 +198,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
               </p>
               <p className="text-xs md:text-sm lg991:text-medium text-gray-700">
 
-                {collection2 === "clearance" ? <span className="capitalize text-gray-500">
+                {collection2 === "clearance" ? <span className="capitalize text-red-500">
                {t("Last Chance Deals. Final Sale, No Refunds or Exchanges.")}
                 </span> : <span className="capitalize text-gray-500">
                   {t("Discover Vogue Decor's chic") + ' ' +

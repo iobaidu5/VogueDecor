@@ -18,6 +18,7 @@
     "Outdoor": "Outdoor",
     "Sale": "Sale",
     "Clearance": "Clearance",
+    "clearance": "clearance",
     "CHAIRS": "Chairs",
     "BATSTOOLS": "Barstools",
     "BARSTOOLS": "Barstools",
@@ -323,7 +324,13 @@
     "KATE - Barstool (black)": "KATE - Barstool (black)",
     "KATE - CHAIR (tan)": "KATE - CHAIR (tan)",
     "KATE - CHAIR (black)": "KATE - CHAIR (black)",
-    "KATE - Chair (black/gold)": "KATE - Chair (black/gold)"
+    "KATE - Chair (black/gold)": "KATE - Chair (black/gold)",
+
+    "ALESSIA - Chair (blue)": "ALESSIA - Chair (blue)",
+    "ALESSIA - Chair (green)": "ALESSIA - Chair (green)",
+    "ALESSIA - Chair (orange)": "ALESSIA - Chair (orange)",
+    "BRIANNA - Chair (pink)": "BRIANNA - Chair (pink)"
+
   },
   "Discover Vogue Decor's chic": "Discover Vogue Decor's chic",
   "for timeless elegance": "for timeless elegance",

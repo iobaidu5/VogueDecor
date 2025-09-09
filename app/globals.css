@@ -28,15 +28,15 @@ body {
 
 .cart-icon {
   position: absolute;
-  top: 77px;
-  right: 20px;
+  top: 6px;
+  right: -50px;
   z-index: 1000;
 }
 
 @media (width <= 990px) {
   .cart-icon{
-    right: 10px;
-    top: 77px;
+    right: -50px;
+    top: 0px;
   }
 }
 

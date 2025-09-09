@@ -1,4 +1,5 @@
 import { FaShoppingCart } from 'react-icons/fa';
+import { ShoppingCart } from "lucide-react";
 import clsx from 'clsx';
 
 export default function OpenCart({
@@ -13,10 +14,12 @@ export default function OpenCart({
       {/* <ShoppingCartIcon
         className={clsx('h-4 transition-all ease-in-out hover:scale-110', className)}
       /> */}
-      <FaShoppingCart
-        size={24}
-        color="black"
-        className={clsx('mt-1 transition-all ease-in-out hover:scale-110', className)}
+      <ShoppingCart
+        size={22}
+        className={clsx(
+          "mt-1 text-black hover:text-black-300 transition-all ease-in-out hover:scale-110 dark:text-black dark:hover:text-black-300",
+          className
+        )}
       />
 
       {quantity ? (

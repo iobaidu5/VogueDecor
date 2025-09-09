@@ -16,7 +16,8 @@ import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import GoogleTranslateScript from 'components/GoogleTranslateScript';
 
-
+// import your CartModal (contains the dialog and logic)
+import CartModal from 'components/cart/modal';
 
 function SignupButton() {
   return (
@@ -36,7 +37,7 @@ const Header = ({ menu }) => {
   const router = useRouter();
   const { t, ready } = useTranslation('common');
   var currentLang = i18n.language;
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -50,8 +51,8 @@ const Header = ({ menu }) => {
 
   useEffect(() => {
     currentLang = pathname.startsWith('/fr') ? "fr" : "en";
-    i18n.changeLanguage(currentLang)
-  }, [pathname])
+    i18n.changeLanguage(currentLang);
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,8 +74,6 @@ const Header = ({ menu }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
-
   return (
     <nav
       className={`z-[999] w-full px-6 md:px-[40px] lg:px-[70px] transition-all duration-300 ${isSticky
@@ -83,10 +82,7 @@ const Header = ({ menu }) => {
         }`}
     >
       {/* Top Row */}
-      <div className={`relative flex items-center justify-between  ${isSticky
-        ? "pt-2"
-        : "pt-4"
-        }`}>
+      <div className={`relative flex items-center justify-between  ${isSticky ? "pt-2" : "pt-4"}`}>
         <div className="hidden lg991:flex items-center">
           <LanguageSwitcher />
           <GoogleTranslateScript />
@@ -95,10 +91,11 @@ const Header = ({ menu }) => {
         </div>
 
         <div className="absolute left-1/2 -translate-x-1/2">
-          <Link href={
-            pathname.startsWith("/fr") ? "/fr" : `/`
-
-          } passHref legacyBehavior>
+          <Link
+            href={pathname.startsWith("/fr") ? "/fr" : `/`}
+            passHref
+            legacyBehavior
+          >
             <Image
               src={logo}
               alt="logo"
@@ -106,6 +103,7 @@ const Header = ({ menu }) => {
             />
           </Link>
         </div>
+
         <div className="absolute z50 right-10 md:right-8 top-2 md:top-0 lg:relative md:flex items-center space-x-4 mt-4">
           <div className="relative">
             <Image
@@ -123,15 +121,19 @@ const Header = ({ menu }) => {
             </div>
           </div>
 
+          {/* User Menu */}
           <div className='hidden lg991:flex'><UserMenu /></div>
-        </div>
 
+          {/* Cart Icon + Modal */}
+          <CartModal />
+        </div>
       </div>
+
+      {/* Navigation menu */}
       <div className="my-8 hidden items-center justify-center space-x-14 lg:flex">
         {!ready ? (
           <div>Loading translations...</div>
         ) : menu?.map((item) => (
-
           <Link
             key={item.path}
             href={
@@ -141,13 +143,12 @@ const Header = ({ menu }) => {
             }
             prefetch={true}
             className={`
-    cursor-pointer text-[14px] font-small capitalize hover:scale-110
-    ${item.title === 'Sale' ? 'text-red-500' : 'text-black'}
-  `}
+              cursor-pointer text-[14px] font-small capitalize hover:scale-110
+              ${item.title === 'Sale' ? 'text-red-500' : 'text-black'}
+            `}
           >
             {t(`menu.${item.title}`)}
           </Link>
-
         ))}
 
         <Link
@@ -155,22 +156,21 @@ const Header = ({ menu }) => {
           href={"/clearance"}
           prefetch={true}
           className={`
-    cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-black'}
-  `}
+            cursor-pointer text-[14px] font-medium capitalize hover:scale-110 
+            text-grey-500 bg-[#ffed00] px-3 py-1 rounded-full transition-transform duration-200
+          `}
         >
-
           {t(`menu.Clearance`)}
         </Link>
 
         {JSON.parse(localStorage?.getItem("user") || "{}")?.username === "Gary" && (
-
           <Link
             key={"bundles"}
             href={"/bundles"}
             prefetch={true}
             className={`
-    cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-black'}
-  `}
+              cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-gray-500'}
+            `}
           >
             Bundles
           </Link>

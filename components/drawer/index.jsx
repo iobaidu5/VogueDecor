@@ -72,22 +72,46 @@ const Drawer = ({ menu }) => {
               >
                 {/* {item.title} */}
                 {t(`menu.${item.title}`)}
-                
+
               </Link>
             ))}
+
+            <Link
+              key={"clearance"}
+              href={"/clearance"}
+              prefetch={true}
+              className={`
+              text-left text-lg font-medium text-gray-800 hover:text-gray-500
+  `}
+            >
+              {t(`menu.Clearance`)}
+            </Link>
+
+
+            {JSON.parse(localStorage?.getItem("user") || "{}")?.username === "Gary" && (
+
+              <Link
+                key={"bundles"}
+                href={"/bundles"}
+                prefetch={true}
+                className={`text-left text-lg font-medium text-gray-800 hover:text-gray-500`}
+              >
+                Bundles
+              </Link>
+            )}
 
             {/* Sign Up Link */}
             <div className='border-t border-gray-200 my-4'>
               <p className='text-left text-lg font-bold text-gray-800 hover:text-gray-500 mt-4'>{t('myAccount')}</p>
-            <button
-              className="text-left text-lg mt-2 font-medium text-black"
-              onClick={() => handleNavigation('/login')}
-            >
-              <Link key={"/login"}
-                href={"/login"}>
-                {t('loginSignup')}
-              </Link>
-            </button>
+              <button
+                className="text-left text-lg mt-2 font-medium text-black"
+                onClick={() => handleNavigation('/login')}
+              >
+                <Link key={"/login"}
+                  href={"/login"}>
+                  {t('loginSignup')}
+                </Link>
+              </button>
             </div>
           </nav>
         </div>
@@ -96,7 +120,7 @@ const Drawer = ({ menu }) => {
         <>
           {/* Bottom Bar */}
           <div className="flex items-center justify-between border-t border-gray-200 p-4">
-          <LanguageSwitcher />
+            <LanguageSwitcher />
             <div className="flex items-center space-x-3">
               <CurrencySwitcher />
             </div>

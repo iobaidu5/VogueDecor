@@ -37,9 +37,9 @@ export default async function SearchPage(props: {
           <ProductGridItems products={products} />
         </div>
       ) : null}
-      <div className="flex justify-end md:w-1/3">
+      {/* <div className="flex justify-end md:w-1/3">
         <CartModal />
-      </div>
+      </div> */}
     </>
   );
 }

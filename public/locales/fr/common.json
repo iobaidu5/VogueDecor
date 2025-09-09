@@ -15,7 +15,8 @@
     "Table Bases": "Bases de table",
     "Outdoor": "Mobilier extérieur",
     "Sale": "Soldes",
-    "Clearance": "Autorisation",
+    "Clearance": "Liquidation",
+    "clearance": "Liquidation",
     "CHAIRS": "Chaises",
     "BATSTOOLS": "Tabourets",
     "BARSTOOLS": "Tabourets",
@@ -45,7 +46,7 @@
   "shopOutdoor": "Achetez en plein air",
   "elevateSpace": "Sublimez votre espace avec nous",
   "whyChooseUs": "Pourquoi nous choisir.",
-  "Last Chance Deals. Final Sale, No Refunds or Exchanges.": "Dernière chance. Vente finale, aucun remboursement ni échange.",
+  "Last Chance Deals. Final Sale, No Refunds or Exchanges.": "Offres de dernière chance. Vente finale, aucun remboursement ni échange.",
   "choose": {
     "Commercial Grade": "Matériau de qualité",
     "Material": "commerciale",
@@ -85,7 +86,7 @@
     "Sale": "Soldes",
     "Blogs": "Blogues",
     "New Arrivals": "Nouveautés",
-    "Clearance": "Autorisation"
+    "Clearance": "Liquidation"
   },
   "stayUpdated": "Restez informé",
   "subscribe": "S'abonner",
@@ -321,7 +322,12 @@
     "KATE - Barstool (black)": "KATE - Tabouret de bar (noir)",
     "KATE - CHAIR (tan)": "KATE - CHAISE (beige)",
     "KATE - CHAIR (black)": "KATE - CHAISE (noir)",
-    "KATE - Chair (black/gold)": "KATE - Chaise (noir/or)"
+    "KATE - Chair (black/gold)": "KATE - Chaise (noir/or)",
+    "ALESSIA - Chair (blue)": "ALESSIA - Chaise (bleu)",
+    "ALESSIA - Chair (green)": "ALESSIA - Chaise (vert)",
+    "ALESSIA - Chair (orange)": "ALESSIA - Chaise (orange)",
+    "BRIANNA - Chair (pink)": "BRIANNA - Chaise (rose)"
+    
   },
   "Discover Vogue Decor's chic": "Découvrez la collection chic de Vogue Decor",
   "for timeless elegance": "pour une élégance intemporelle",
