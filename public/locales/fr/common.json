@@ -15,6 +15,7 @@
     "Table Bases": "Bases de table",
     "Outdoor": "Mobilier extérieur",
     "Sale": "Soldes",
+    "Clearance": "Autorisation",
     "CHAIRS": "Chaises",
     "BATSTOOLS": "Tabourets",
     "BARSTOOLS": "Tabourets",
@@ -44,6 +45,7 @@
   "shopOutdoor": "Achetez en plein air",
   "elevateSpace": "Sublimez votre espace avec nous",
   "whyChooseUs": "Pourquoi nous choisir.",
+  "Last Chance Deals. Final Sale, No Refunds or Exchanges.": "Dernière chance. Vente finale, aucun remboursement ni échange.",
   "choose": {
     "Commercial Grade": "Matériau de qualité",
     "Material": "commerciale",
@@ -82,7 +84,8 @@
     " Shipping and Return Policy": "Politique d'expédition et de retour",
     "Sale": "Soldes",
     "Blogs": "Blogues",
-    "New Arrivals": "Nouveautés"
+    "New Arrivals": "Nouveautés",
+    "Clearance": "Autorisation"
   },
   "stayUpdated": "Restez informé",
   "subscribe": "S'abonner",

@@ -150,18 +150,30 @@ const Header = ({ menu }) => {
 
         ))}
 
-{JSON.parse(localStorage?.getItem("user") || "{}")?.username === "Gary" && (
-
         <Link
-          key={"bundles"}
-          href={"/bundles"}
+          key={"clearance"}
+          href={"/clearance"}
           prefetch={true}
           className={`
     cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-black'}
   `}
         >
-          Bundles
+
+          {t(`menu.Clearance`)}
         </Link>
+
+        {JSON.parse(localStorage?.getItem("user") || "{}")?.username === "Gary" && (
+
+          <Link
+            key={"bundles"}
+            href={"/bundles"}
+            prefetch={true}
+            className={`
+    cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-black'}
+  `}
+          >
+            Bundles
+          </Link>
         )}
       </div>
 

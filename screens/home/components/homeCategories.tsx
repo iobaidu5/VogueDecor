@@ -37,6 +37,11 @@ const categories = [
     image: boothImage,
     href: '/table-bases',
   },
+  // {
+  //   title: 'Clearance',
+  //   image: boothImage,
+  //   href: '/clearance',
+  // },
 ];
 
 const NextArrow = (props: any) => {

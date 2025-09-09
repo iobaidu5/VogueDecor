@@ -69,10 +69,10 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
 
   const allCollections = useMemo(() => {
     const collectionsMap = new Map<string, CollectionSnippet>();
-  
+
     allProducts.forEach(product => {
       let collections: CollectionSnippet[] = [];
-  
+
       // Ensure collections is an array
       if (Array.isArray(product?.collections)) {
         collections = product.collections;
@@ -85,7 +85,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
       else if (product?.collections && typeof product.collections === "object") {
         collections = [product.collections];
       }
-  
+
       // Add collections to map to avoid duplicates
       collections.forEach(collection => {
         if (collection?.handle && !collectionsMap.has(collection.handle)) {
@@ -93,10 +93,10 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
         }
       });
     });
-  
+
     return Array.from(collectionsMap.values());
   }, [allProducts]);
-  
+
 
   useEffect(() => {
     async function fetchData() {
@@ -114,8 +114,6 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
   useEffect(() => {
     let filtered = [...allProducts];
 
-    console.log("aaaaa collectionFilter ", collectionFilter)
-
     if (collectionFilter) {
       filtered = filtered.filter(product => {
         console.log("aaaaa product.collections -> ", product.collections);
@@ -127,6 +125,8 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
         });
       });
     }
+
+    console.log("allProducts -> ", allProducts)
 
     let sorted = [...filtered];
 
@@ -198,7 +198,9 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
               </p>
               <p className="text-xs md:text-sm lg991:text-medium text-gray-700">
 
-                <span className="capitalize text-gray-500">
+                {collection2 === "clearance" ? <span className="capitalize text-gray-500">
+               {t("Last Chance Deals. Final Sale, No Refunds or Exchanges.")}
+                </span> : <span className="capitalize text-gray-500">
                   {t("Discover Vogue Decor's chic") + ' ' +
                     t(
                       `footer.${collection
@@ -207,7 +209,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
                         .join(' ')}`
                     ) + ' ' +
                     t("for timeless elegance")}
-                </span>
+                </span>}
               </p>
             </div>
             <div>

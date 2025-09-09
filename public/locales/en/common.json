@@ -17,6 +17,7 @@
     "Table Bases": "Table Bases",
     "Outdoor": "Outdoor",
     "Sale": "Sale",
+    "Clearance": "Clearance",
     "CHAIRS": "Chairs",
     "BATSTOOLS": "Barstools",
     "BARSTOOLS": "Barstools",
@@ -46,6 +47,7 @@
   "shopOutdoor": "Shop Outdoor",
   "elevateSpace": "Elevate your space with us",
   "whyChooseUs": "Why Choose Us.",
+  "Last Chance Deals. Final Sale, No Refunds or Exchanges.": "Last Chance Deals. Final Sale, No Refunds or Exchanges.",
   "choose": {
     "Commercial Grade": "Commercial Grade",
     "Material": "Material",
@@ -84,7 +86,8 @@
     " Shipping and Return Policy": "Shipping and Return Policy",
     "Blogs": "Blogs",
     "Sale": "Sale",
-    "New Arrivals": "New Arrivals"
+    "New Arrivals": "New Arrivals",
+    "Clearance": "Clearance"
   },
   "stayUpdated": "Stay Updated",
   "subscribe": "Subscribe",
