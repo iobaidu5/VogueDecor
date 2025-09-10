@@ -20,15 +20,21 @@ export default async function BundleDetailPage({
   let discountApplied = false;
   let discountedPrice = 0;
 
+  let safeProducts: { id: string; title: string; price: number }[] = [];
+
   if (bundle.items?.length) {
     const productIds = bundle.items.map((item: any) => item.productId);
     const products = await getProductsByIds(productIds);
 
-    totalPrice = products.reduce((sum: number, product: any) => {
-      return sum + parseFloat(product.priceRange.minVariantPrice.amount);
-    }, 0);
+    safeProducts = products.map((p: any) => ({
+      id: p.id,
+      title: p.title,
+      price: parseFloat(p.priceRange.minVariantPrice.amount),
+    }));
 
-    if (products.length >= 3) {
+    totalPrice = safeProducts.reduce((sum, product) => sum + product.price, 0);
+
+    if (safeProducts.length >= 3) {
       discountApplied = true;
       discountedPrice = totalPrice * 0.95;
     }
@@ -36,10 +42,17 @@ export default async function BundleDetailPage({
 
   return (
     <BundleDetailClient
-      bundle={bundle}
+      bundle={{
+        id: bundle._id?.toString?.() ?? bundle.id,
+        title: bundle.title,
+        description: bundle.description,
+        imageUrl: bundle.imageUrl,
+        items: bundle.items ?? [],
+      }}
       totalPrice={totalPrice}
       discountApplied={discountApplied}
       discountedPrice={discountedPrice}
     />
   );
+  
 }
