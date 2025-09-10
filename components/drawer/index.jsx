@@ -79,10 +79,10 @@ const Drawer = ({ menu }) => {
             <Link
               key={"clearance"}
               href={"/clearance"}
-              prefetch={true}
               className={`
               text-left text-lg font-medium text-gray-800 hover:text-gray-500
-  `}
+              bg-[#ffed00] px-3 w-[150] py-1 rounded-full -ml-3`}
+              onClick={() => handleNavigation("/clearance")}
             >
               {t(`menu.Clearance`)}
             </Link>

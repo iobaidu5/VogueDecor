@@ -50,7 +50,7 @@ export async function getProductsByIds(ids: string[]) {
 
   const domain = process.env.SHOPIFY_STORE_DOMAIN!;
   const token = process.env.SHOPIFY_STOREFRONT_API_TOKEN!;
-  const version = process.env.SHOPIFY_API_VERSION || "2023-07";
+  const version = "2023-07";
 
   console.log("Fetching products from Shopify with IDs:", formattedIds);
 

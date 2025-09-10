@@ -156,7 +156,7 @@ const Header = ({ menu }) => {
           href={"/clearance"}
           prefetch={true}
           className={`
-            cursor-pointer text-[14px] font-medium capitalize hover:scale-110 
+            cursor-pointer text-[14px] capitalize hover:scale-110 
             text-grey-500 bg-[#ffed00] px-3 py-1 rounded-full transition-transform duration-200
           `}
         >
