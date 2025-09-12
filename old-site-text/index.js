@@ -2379,7 +2379,7 @@ export const outdoor = [
       },
       { 
         type: 'p', 
-        text: 'Reach out to us today! Call our toll-free number at (888) 880-8232 for assistance or dial (514) 823-5595 for inquiries in Montreal and (416) 560-5575 for Toronto. You can also drop us an email at info@voguedecor.com. We’re here to help you make your home a haven of style and comfort.', 
+        text: 'Reach out to us today! Call our toll-free number at (888) 880-8232 for assistance or dial (514) 823-5595 for inquiries in Montreal and (416) 560 5575 for Toronto. You can also drop us an email at info@voguedecor.com. We’re here to help you make your home a haven of style and comfort.', 
         bold: false 
       }
     ],
@@ -2645,7 +2645,7 @@ export const outdoorFr = [
       },
       { 
         type: 'p', 
-        text: 'Contactez-nous dès aujourd\'hui ! Appelez sans frais au (888) 880-8232 ou composez le (514) 823-5595 pour Montréal et le (416) 560-5575 pour Toronto. Vous pouvez aussi nous écrire à info@voguedecor.com. Nous sommes là pour vous aider à créer un havre de style et confort.', 
+        text: 'Contactez-nous dès aujourd\'hui ! Appelez sans frais au (888) 880-8232 ou composez le (514) 823-5595 pour Montréal et le (416) 560 5575 pour Toronto. Vous pouvez aussi nous écrire à info@voguedecor.com. Nous sommes là pour vous aider à créer un havre de style et confort.', 
         bold: false 
       }
     ],

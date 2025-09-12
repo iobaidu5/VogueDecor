@@ -83,7 +83,7 @@ const ContactLocation = () => {
             Toronto
           </button>
           <div className="flex flex-col gap-2 -mt-4 md:-mt-0 text-[16px] font-medium">
-          <Link href="tel:4165605595"><h3>(416) 560-5595</h3></Link>
+          <Link href="tel:4165605595"><h3>(416) 560 5575</h3></Link>
           <Link href="mailto:info@voguedecor.com"><h3>info@voguedecor.com</h3></Link>
             <h3>825 Denison St Unit 2, Markham, ON L3R 5E4</h3>
           </div>
