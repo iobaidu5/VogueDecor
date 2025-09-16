@@ -74,13 +74,13 @@ export default async function ProductPage({ params }: { params: any }) {
 
   const extractFeatures = (htmlString: any) => {
     const parts = htmlString.split(
-      '<span style="color: #333333;"><strong>Features:</strong></span>'
+      '<strong>Materials:<br></strong>'
     );
     return parts.length > 1 ? parts[1] : '';
   };
 
   function extractBeforeFeatures(text: any) {
-    const splitText = text.split('Features:');
+    const splitText = text.split('Materials:');
     return splitText[0].trim();
   }
 

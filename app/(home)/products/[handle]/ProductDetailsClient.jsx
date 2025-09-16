@@ -28,25 +28,30 @@ export default function ProductDetailsClient({ product }) {
   // const collection = searchParams.get('collection') || '...';
 
   const extractFeatures = (htmlString) => {
-    const marker = '<strong>Features:</strong>';
+    const marker = '<strong>Materials:<br></strong>';
     const index = htmlString.indexOf(marker);
     if (index === -1) return '';
 
     let sliced = htmlString.slice(index);
 
-    // Add <br> after the first "Features:" only
+    // Add <br> after the first "Materials:" only
     sliced = sliced.replace(marker, `${marker}`);
 
     // Add <br> before all subsequent <strong> tags (except the first one)
-    sliced = sliced.replace(/(<strong>(?!Features:))/g, '<br>$1');
+    sliced = sliced.replace(/(<strong>(?!Materials:))/g, '$1');
+
+    sliced = sliced.replace(/\s*style="[^"]*"/g, '');
 
     return sliced;
   };
 
   function extractBeforeFeatures(text) {
-    const splitText = text?.split('Features:');
+    const splitText = text?.split('Materials:');
     return splitText[0]?.trim();
   }
+
+
+  console.log("product?.descriptionHtml -> ", product?.descriptionHtml)
 
   return (
     <>

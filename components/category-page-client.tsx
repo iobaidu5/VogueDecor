@@ -32,7 +32,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
   var content: any = [];
   const pathname = usePathname();
 
-  const showCollectionFilter = ['/new-arrivals', '/sale'].includes(pathname);
+  const showCollectionFilter = ['/new-arrivals', '/sale', '/clearance'].includes(pathname);
 
 
   const params = useParams();
@@ -212,7 +212,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
                 </span>}
               </p>
             </div>
-            <div>
+            <div className='flex flex-col justify-center items-center gap-[10px] md:flex-row'>
               <FilterDropdown selected={filter} onFilter={setFilter} />
 
               {showCollectionFilter && (

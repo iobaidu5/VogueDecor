@@ -81,7 +81,7 @@ const Drawer = ({ menu }) => {
               href={"/clearance"}
               className={`
               text-left text-lg font-medium text-gray-800 hover:text-gray-500
-              bg-[#ffed00] px-3 w-[150] py-1 rounded-full -ml-3`}
+              bg-[#ffed00] px-3 w-[140] py-1 rounded-full -ml-3`}
               onClick={() => handleNavigation("/clearance")}
             >
               {t(`menu.Clearance`)}
