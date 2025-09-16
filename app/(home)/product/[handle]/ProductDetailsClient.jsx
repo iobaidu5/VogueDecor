@@ -27,29 +27,56 @@ export default function ProductDetailsClient({ product }) {
   const { collection } = useCollection()
   // const collection = searchParams.get('collection') || '...';
 
+  // const extractFeatures = (htmlString) => {
+  //   const marker = '<strong>Materials:<br></strong>' || '<strong>Materials:<br>';
+  //   const index = htmlString.indexOf(marker);
+  //   if (index === -1) return '';
+
+  //   let sliced = htmlString.slice(index);
+
+  //   // Add <br> after the first "Materials:" only
+  //   sliced = sliced.replace(marker, `${marker}`);
+
+  //   // Add <br> before all subsequent <strong> tags (except the first one)
+  //   sliced = sliced.replace(/(<strong>(?!Materials:))/g, '<br>$1');
+
+  //   sliced = sliced.replace(/\s*style="[^"]*"/g, '');
+
+
+  //   return sliced;
+  // };
+
   const extractFeatures = (htmlString) => {
-    const marker = '<strong>Materials:<br></strong>';
-    const index = htmlString.indexOf(marker);
-    if (index === -1) return '';
-
-    let sliced = htmlString.slice(index);
-
-    // Add <br> after the first "Materials:" only
-    sliced = sliced.replace(marker, `${marker}`);
-
-    // Add <br> before all subsequent <strong> tags (except the first one)
-    sliced = sliced.replace(/(<strong>(?!Materials:))/g, '<br>$1');
-
+    // Match both variations of "Materials"
+    const markerRegex = /<strong>Materials:<br>.*?<\/strong>|<strong>Materials:<br>/i;
+    const match = htmlString.match(markerRegex);
+  
+    if (!match) return '';
+  
+    // Start slicing from where "Materials" begins
+    let sliced = htmlString.slice(match.index);
+  
+    // Remove inline styles
     sliced = sliced.replace(/\s*style="[^"]*"/g, '');
-
-
+  
+    // Remove meta tags
+    sliced = sliced.replace(/<meta[^>]*>/g, '');
+  
+    // Ensure only one <br> after "Materials:"
+    sliced = sliced.replace(/(<strong>Materials:)(<br>)+/i, '$1<br>');
+  
+  
     return sliced;
   };
+  
+  
 
   function extractBeforeFeatures(text) {
     const splitText = text?.split('Materials:');
     return splitText[0]?.trim();
   }
+
+  console.log("product?.descriptionHtml -> ", product?.descriptionHtml)
 
   return (
     <>
