@@ -27,27 +27,37 @@ export default async function BundlesPage() {
           {/* Grid */}
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {bundles.map((b: any) => (
-              <Link
+              <div
                 key={b.id}
-                href={`/bundles/${b.slug}`}
-                className="rounded-2xl border p-4 transition-all hover:shadow-lg hover:-translate-y-1"
+                className="rounded-2xl border p-4 transition-all hover:shadow-lg hover:-translate-y-1 flex flex-col"
               >
-                {b.imageUrl && (
-                  <img
-                    src={b.imageUrl}
-                    alt={b.title}
-                    className="rounded-md mb-3 w-full h-50 object-cover"
-                  />
-                )}
-                <h2 className="text-lg font-medium text-gray-700">{b.title}</h2>
-                {b.description && (
-                  <p className="text-xs md:text-sm text-gray-600 mt-1 line-clamp-2">
-                    {b.description}
-                  </p>
-                )}
-              </Link>
+                <Link href={`/bundles/${b.slug}`} className="flex-1">
+                  {b.imageUrl && (
+                    <img
+                      src={b.imageUrl}
+                      alt={b.title}
+                      className="rounded-md mb-3 w-full h-50 object-cover"
+                    />
+                  )}
+                  <h2 className="text-lg font-medium text-gray-700">{b.title}</h2>
+                  {b.description && (
+                    <p className="text-xs md:text-sm text-gray-600 mt-1 line-clamp-2">
+                      {b.description}
+                    </p>
+                  )}
+                </Link>
+
+                {/* Edit Button */}
+                <Link
+                  href={`/bundles/${b.slug}/edit`}
+                  className="mt-3 inline-block rounded-md bg-gray-800 px-3 py-1 text-sm text-white hover:bg-gray-700"
+                >
+                  Edit
+                </Link>
+              </div>
             ))}
           </div>
+
         </>
       )}
     </section>

@@ -116,15 +116,15 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
 
     if (collectionFilter) {
       filtered = filtered.filter(product => {
-        console.log("aaaaa product.collections -> ", product.collections);
-
-        // FIX: Add return statement
-        return product.collections.some(c => {
-          console.log("aaaaa c.handle -> ", c.handle);
-          return c.handle === collectionFilter; // Add return here
+        const collections = product.collections?.edges || [];
+    
+        return collections.some(edge => {
+          console.log("c.handle -> ", edge.node.handle);
+          return edge.node.handle === collectionFilter;
         });
       });
     }
+    
 
     console.log("allProducts -> ", allProducts)
 

@@ -262,6 +262,9 @@ export default async function BlogPage({
   }
 
 
+  console.log("article.contentHtml -> ", article.contentHtml)
+
+
   return (
     <div className="max-w-6xl mx-auto px-6 py-12">
       <h1 className="text-4xl font-extrabold tracking-tight mb-4 leading-snug">
@@ -285,16 +288,16 @@ export default async function BlogPage({
           />
         </div>
       )}
-      <article
-        className="
+<article
+  className="
     prose prose-lg lg:prose-xl max-w-none 
     font-sans leading-relaxed text-justify
 
     /* Headings */
     prose-headings:font-semibold 
     prose-headings:tracking-tight 
-    prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-3xl prose-h2:text-gray-800
-    prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-2xl prose-h3:text-gray-700
+    prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-4xl prose-h2:text-gray-900 prose-h2:border-b prose-h2:border-gray-200
+    prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-2xl prose-h3:text-blue-700
 
     /* Paragraphs */
     prose-p:mb-6 prose-p:text-gray-800 prose-p:leading-loose
@@ -314,8 +317,9 @@ export default async function BlogPage({
     /* Blockquote */
     prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-600
   "
-        dangerouslySetInnerHTML={{ __html: article.contentHtml }}
-      />
+  dangerouslySetInnerHTML={{ __html: article.contentHtml }}
+/>
+
 
 
     </div>

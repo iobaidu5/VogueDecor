@@ -25,7 +25,7 @@ export default function CollectionDropdown({
       >
         <option value="">{t('allCollections') || 'All Collections'}</option>
         {collections
-          .filter(c => c.handle !== 'new-arrivals' && c.handle !== 'sale' && c.handle !== 'all')
+          .filter(c => c.handle !== 'new-arrivals' && c.handle !== 'sale' && c.handle !== 'all' && c.handle !== 'clearance')
           .map(collection => (
             <option key={collection.handle} value={collection.handle}>
               {collection.title}
