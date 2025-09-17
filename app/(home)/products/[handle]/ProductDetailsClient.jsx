@@ -47,7 +47,7 @@ export default function ProductDetailsClient({ product }) {
 
   const extractFeatures = (htmlString) => {
     // Match both variations of "Materials"
-    const markerRegex = /<strong>Materials:<br>.*?<\/strong>|<strong>Materials:<br>/i;
+    const markerRegex = /<strong>Materials:<br>.*?<\/strong>|<strong>Materials:<br>|Materials:<br><\/strong>|Materials:<\/span><\/strong>|Materials:/i;
     const match = htmlString.match(markerRegex);
   
     if (!match) return '';

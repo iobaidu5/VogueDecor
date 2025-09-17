@@ -11,8 +11,8 @@ import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import chairImage from 'media/home-categories/Sofia-Chair_red_1.png';
-import barstoolImage from 'media/png/barstool-new.png';
+import chairImage from 'media/png/NEW/Chairs.png';
+import barstoolImage from 'media/png/NEW/Barstool.png';
 import tableImage from 'media/home-categories/Table Tops Category.png';
 import boothImage from 'media/home-categories/Tables Bases Category.png';
 

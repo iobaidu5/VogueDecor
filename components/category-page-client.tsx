@@ -176,6 +176,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
 
   if (loading) return <p className="py-3 text-center">Loading...</p>;
 
+
   return (
     <section className="container mx-auto w-100">
       {products.length === 0 ? (
@@ -212,7 +213,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
                 </span>}
               </p>
             </div>
-            <div className='flex flex-col justify-center items-center gap-[10px] md:flex-row'>
+            <div className='flex flex-col justify-center items-end gap-[10px] md:flex-row'>
               <FilterDropdown selected={filter} onFilter={setFilter} />
 
               {showCollectionFilter && (

@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 
 interface BundleItem {
   id: string;
+  productId: string;
   title: string;
   price: number;
 }
 
 interface Bundle {
   id: string;
+  productId: string;
   title: string;
   slug: string;
   description?: string;
@@ -45,11 +47,11 @@ export default function EditBundlePage({ slug }: { slug: string }) {
     setBundle(prev =>
       prev
         ? {
-            ...prev,
-            items: prev.items.some(i => i.id === item.id)
-              ? prev.items.filter(i => i.id !== item.id)
-              : [...prev.items, item],
-          }
+          ...prev,
+          items: prev.items.some(i => i.id === item.id)
+            ? prev.items.filter(i => i.id !== item.id)
+            : [...prev.items, item],
+        }
         : null
     );
   };
@@ -83,7 +85,18 @@ export default function EditBundlePage({ slug }: { slug: string }) {
     alert(`Bundle "${saved.title}" updated successfully!`);
   };
 
+  const [query, setQuery] = useState("");
+
+  const filteredProducts = allProducts.filter((p) =>
+    p.title.toLowerCase().includes(query.toLowerCase())
+  );
+
   if (!bundle) return <p>Loading...</p>;
+
+
+  console.log("bundle to edit ", bundle)
+
+  console.log("filteredProductst ", filteredProducts)
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white shadow rounded">
@@ -143,24 +156,40 @@ export default function EditBundlePage({ slug }: { slug: string }) {
         {/* Products */}
         <div>
           <label className="block text-sm font-medium">Select Products</label>
-          <div className="mt-2 grid grid-cols-2 gap-3">
-            {allProducts.map(p => (
+
+          {/* Search input */}
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="mt-2 w-full rounded border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+
+          {/* Product list */}
+          <div className="mt-3 grid grid-cols-2 gap-3 max-h-64 overflow-y-auto border rounded p-2">
+            {filteredProducts.map((p) => (
               <label
                 key={p.id}
-                className={`flex items-center space-x-2 border p-2 rounded cursor-pointer ${
-                  bundle.items.some(i => i.id === p.id)
+                className={`flex items-center space-x-2 border p-2 rounded cursor-pointer ${bundle.items.some((i) => i.productId === p.id)
                     ? "bg-blue-50 border-blue-400"
                     : ""
-                }`}
+                  }`}
               >
                 <input
                   type="checkbox"
-                  checked={bundle.items.some(i => i.id === p.id)}
+                  checked={bundle.items.some((i) => i.productId === p.id)}
                   onChange={() => toggleItemSelection(p)}
                 />
-                <span>{p.title}</span>
+                <span className="truncate">{p.title}</span>
               </label>
             ))}
+
+            {filteredProducts.length === 0 && (
+              <div className="col-span-2 text-sm text-gray-500 text-center py-4">
+                No products found
+              </div>
+            )}
           </div>
         </div>
 
