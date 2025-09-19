@@ -72,8 +72,8 @@ const ArticleRenderer = ({ content }) => {
           case 'heading':
             const HeadingTag = `h${block.level}`;
             const headingSize = {
-              1: 'text-md font-bold',
-              2: 'text-xs font-semibold',
+              1: 'text-lg font-bold',
+              2: 'text-md font-semibold',
               3: 'text-sm font-semibold',
               4: 'text-xs',
               5: 'text-xs',

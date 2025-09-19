@@ -34,9 +34,9 @@ export default async function BundleDetailPage({
 
     totalPrice = safeProducts.reduce((sum, product) => sum + product.price, 0);
 
-    if (safeProducts.length >= 3) {
+    if (safeProducts.length >= 2) {
       discountApplied = true;
-      discountedPrice = totalPrice * 0.95;
+      discountedPrice = totalPrice * 0.93;
     }
   }
 
@@ -48,6 +48,7 @@ export default async function BundleDetailPage({
         description: bundle.description,
         imageUrl: bundle.imageUrl,
         items: bundle.items ?? [],
+        slug: bundle.slug ?? ""
       }}
       totalPrice={totalPrice}
       discountApplied={discountApplied}

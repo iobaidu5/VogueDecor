@@ -50,26 +50,26 @@ export default function ProductDetailsClient({ product }) {
     // Match both variations of "Materials"
     const markerRegex = /<strong>Materials:<br>.*?<\/strong>|<strong>Materials:<br>|Materials:<br><\/strong>|Materials:<\/span><\/strong>|Materials:/i;
     const match = htmlString.match(markerRegex);
-  
+
     if (!match) return '';
-  
+
     // Start slicing from where "Materials" begins
     let sliced = htmlString.slice(match.index);
-  
+
     // Remove inline styles
     sliced = sliced.replace(/\s*style="[^"]*"/g, '');
-  
+
     // Remove meta tags
     sliced = sliced.replace(/<meta[^>]*>/g, '');
-  
+
     // Ensure only one <br> after "Materials:"
     sliced = sliced.replace(/(<strong>Materials:)(<br>)+/i, '$1<br>');
-  
-  
+
+
     return sliced;
   };
-  
-  
+
+
 
   function extractBeforeFeatures(text) {
     const splitText = text?.split('Materials:');
@@ -77,6 +77,8 @@ export default function ProductDetailsClient({ product }) {
   }
 
   console.log("product?.descriptionHtml -> ", product?.descriptionHtml)
+
+
 
   return (
     <>
@@ -111,10 +113,22 @@ export default function ProductDetailsClient({ product }) {
                   sale={product?.priceRange.maxVariantPrice?.amount}
                   saleCurreny={product?.variants[0]?.compareAtPrice?.currencyCode}
                 />
+
               </div>
             </div>
             <div className="flex flex-col flex-wrap items-start gap-4">
-              <Quantity item={product} />
+
+              <div className="flex justify-center items-center gap-4">
+                <Quantity item={product} />
+                <div>
+                  <p className={`py-3 ${product?.availableForSale === true
+                    ? 'text-green-600'
+                    : product?.availableForSale === false
+                      ? 'text-grey-600'
+                      : 'text-[#818181]'} font-poppins xs:text-[16px] md:text-[16px]`}>{product?.availableForSale ? 'IN-STOCK' : 'Out of Stock'}</p>
+                </div>
+              </div>
+
               <div className="flex flex-nowrap items-start gap-4">
                 <AddToCart product={product} />
                 <AddToWishlist product={product} />
@@ -134,12 +148,12 @@ export default function ProductDetailsClient({ product }) {
                   content={parse(extractFeatures(product?.descriptionHtml))}
                 />
               </div>
-              <div className="border-b border-black/80">
+              {/* <div className="border-b border-black/80">
                 <Accordion
                   title={t("AVAILABILITY")}
                   content={product?.availableForSale ? 'In-Stock' : 'Out of Stock'}
                 />
-              </div>
+              </div> */}
             </div>
             <div className="mt-6 flex justify-center sm:justify-start items-center gap-4 sm:flex-row sm:items-center">
               <Link href="/voguedecor-calculator" className="text-[#7DA6DD] underline">

@@ -210,7 +210,7 @@ export async function getBlogArticlesByHandle(handle: string): Promise<BlogArtic
     variables: { handle },
     cache: 'no-cache',
   });
-  
+
 
   const blog = res.body?.data.blog;
   if (!blog) return [];
@@ -221,8 +221,8 @@ export async function getBlogArticlesByHandle(handle: string): Promise<BlogArtic
       .toLowerCase()
       .replace(/\s+/g, '-')
       .replace(/[^a-z0-9-]/g, '');
-      const n = node as typeof node & { blog: { handle: string } }
-    
+    const n = node as typeof node & { blog: { handle: string } }
+
     return {
       id: node.id,
       title: node.title,
@@ -271,7 +271,7 @@ export default function BlogListPage() {
         <div className="hidden gap-x-8 gap-y-12 md:grid md:grid-cols-2">
           {paginatedData.map((article, index) => (
             <Link
-            href={`/blog/${article.blogHandle}/${article.articleHandle}`}
+              href={`/blog/${article.blogHandle}/${article.articleHandle}`}
               key={`${article.path}-${index}`}
               className="cursor-pointer space-y-4"
             >
@@ -288,7 +288,7 @@ export default function BlogListPage() {
         <div className="flex flex-col gap-5 md:hidden">
           {paginatedData.map((article, index) => (
             <Link
-              href={article.path}
+              href={`/blog/${article.blogHandle}/${article.articleHandle}`}
               key={`mobile-${article.path}-${index}`}
               className="cursor-pointer space-y-4"
             >

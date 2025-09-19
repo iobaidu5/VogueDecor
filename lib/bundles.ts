@@ -53,6 +53,12 @@ export async function getBundleBySlug(slug: string) {
   return serializeBundle(bundle);
 }
 
+export async function deleteBundle(id: string) {
+  return prisma.bundle.delete({
+    where: { id },
+  });
+}
+
 function serializeBundle(bundle: any) {
   return {
     ...bundle,

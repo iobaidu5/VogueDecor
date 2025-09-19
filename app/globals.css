@@ -252,3 +252,29 @@ h3.wp-block-heading {
   color: #000;      /* blue-700 */
   text-align: left;
 }
+
+
+p a{
+  color: #ef4444 !important;
+  font-weight: 500 !important;
+}
+
+
+
+
+@media (width <= 990px) {
+  .wp-block-heading.h2,
+  h2.wp-block-heading {
+    font-size: 1.4rem;  /* text-3xl */
+    border-bottom: 1px solid #e5e7eb; /* subtle divider */
+    padding-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .wp-block-heading.h3,
+h3.wp-block-heading {
+  font-size: 1.2rem;   /* text-2xl */
+  color: #000;      /* blue-700 */
+  text-align: left;
+}
+}

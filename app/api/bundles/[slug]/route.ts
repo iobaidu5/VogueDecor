@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { prisma } from "../../../../lib/db";
 
+import { deleteBundle } from 'lib/bundles';
+
 export async function GET(
   req: Request,
   { params }: { params: { slug: string } }
@@ -55,5 +57,22 @@ export async function PUT(
   } catch (error) {
     console.error("Error updating bundle:", error);
     return NextResponse.json({ error: "Failed to update bundle" }, { status: 500 });
+  }
+}
+
+
+export async function DELETE(
+  req: Request,
+  { params }: { params: { slug: string } }
+) {
+  try {
+    await deleteBundle(params.slug);
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { error: 'Failed to delete bundle' },
+      { status: 500 }
+    );
   }
 }
