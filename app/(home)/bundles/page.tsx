@@ -1,10 +1,13 @@
 // app/bundles/page.tsx
 import { listBundles } from 'lib/bundles';
-import BundleCard from './BundleCard';
+import { getBundleWithPrice } from "lib/bundlesWithPrice";
 import AllBundleCard from 'components/AllBundleCard';
 
 export default async function BundlesPage() {
   const bundles = await listBundles();
+  const bundlesWithPrice = await Promise.all(bundles.map(getBundleWithPrice));
+
+  console.log("bundlesWithPrice -> ", bundlesWithPrice)
 
   return (
     <section className="container mx-auto w-100 p-6">
@@ -26,7 +29,7 @@ export default async function BundlesPage() {
 
           {/* Grid */}
           <div className="mt-6 grid gap-6 md:grid-cols-3">
-            {bundles.map((b: any) => (
+            {bundlesWithPrice.map((b: any) => (
               <AllBundleCard key={b.id} bundle={b} />
             ))}
           </div>

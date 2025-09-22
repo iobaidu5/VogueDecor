@@ -78,6 +78,8 @@ export default function ProductDetailsClient({ product }) {
 
   console.log("product?.descriptionHtml -> ", product?.descriptionHtml)
 
+  console.log("collection -> ", collection)
+
 
 
   return (
@@ -120,13 +122,31 @@ export default function ProductDetailsClient({ product }) {
 
               <div className="flex justify-center items-center gap-4">
                 <Quantity item={product} />
-                <div>
-                  <p className={`py-3 ${product?.availableForSale === true
-                    ? 'text-green-600'
-                    : product?.availableForSale === false
-                      ? 'text-grey-600'
-                      : 'text-[#818181]'} font-poppins xs:text-[16px] md:text-[16px]`}>{product?.availableForSale ? 'IN-STOCK' : 'Out of Stock'}</p>
+                <div className="flex items-center space-x-3">
+                  {/* Quantity badge */}
+
+                  {collection === "clearance" && (
+                    <span
+                      className={`rounded-full px-3 py-1 text-sm font-medium shadow-sm ${(product?.variants[0]?.quantityAvailable ?? 0) > 0
+                        ? "bg-green-50 text-green-700 ring-1 ring-green-200"
+                        : "bg-red-50 text-red-700 ring-1 ring-red-200"
+                        }`}
+                    >
+                      {product?.variants[0]?.quantityAvailable ?? "N/A"}
+                    </span>
+                  )}
+
+                  {/* Availability text */}
+                  <p
+                    className={`text-sm font-medium ${product?.availableForSale
+                      ? "text-green-700"
+                      : "text-red-700"
+                      }`}
+                  >
+                    {product?.availableForSale ? "IN STOCK" : "OUT OF STOCK"}
+                  </p>
                 </div>
+
               </div>
 
               <div className="flex flex-nowrap items-start gap-4">

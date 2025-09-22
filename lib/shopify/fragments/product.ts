@@ -97,6 +97,7 @@ export const productFragment = /* GraphQL */ `
           title
           sku
           availableForSale
+          quantityAvailable
           selectedOptions {
             name
             value

@@ -2,11 +2,24 @@
 
 import { useEffect, useState } from "react";
 
-interface BundleItem {
+interface ProductVariant {
   id: string;
-  productId: string;
   title: string;
-  price: number;
+  price: string;
+}
+
+interface Product {
+  id: string;
+  title: string;
+  variants: ProductVariant[];
+}
+
+interface BundleItem {
+  productId: string;
+  variantId: string;
+  titleSnap: string;
+  priceSnap: number;
+  quantity: number;
 }
 
 interface Bundle {
@@ -23,8 +36,9 @@ interface Bundle {
 
 export default function EditBundlePage({ slug }: { slug: string }) {
   const [bundle, setBundle] = useState<Bundle | null>(null);
-  const [allProducts, setAllProducts] = useState<BundleItem[]>([]);
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     async function fetchBundle() {
@@ -42,18 +56,36 @@ export default function EditBundlePage({ slug }: { slug: string }) {
     fetchProducts();
   }, [slug]);
 
-  const toggleItemSelection = (item: BundleItem) => {
+  const toggleItemSelection = (product: Product) => {
     if (!bundle) return;
-    setBundle(prev =>
-      prev
-        ? {
+
+    setBundle((prev) => {
+      if (!prev) return null;
+
+      const alreadySelected = prev.items.some(
+        (i) => i.productId === product.id
+      );
+
+      if (alreadySelected) {
+        return {
           ...prev,
-          items: prev.items.some(i => i.id === item.id)
-            ? prev.items.filter(i => i.id !== item.id)
-            : [...prev.items, item],
-        }
-        : null
-    );
+          items: prev.items.filter((i) => i.productId !== product.id),
+        };
+      }
+
+      // default to first variant if exists
+      const variant = product.variants[0];
+
+      const newItem: BundleItem = {
+        productId: product.id,
+        variantId: variant?.id || "",
+        titleSnap: product.title,
+        priceSnap: variant ? parseFloat(variant.price) : 0,
+        quantity: 1,
+      };
+
+      return { ...prev, items: [...prev.items, newItem] };
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -73,7 +105,18 @@ export default function EditBundlePage({ slug }: { slug: string }) {
     const res = await fetch(`/api/bundles/${slug}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...bundle, imageUrl: uploadedImageBase64 }),
+      body: JSON.stringify({
+        ...bundle,
+        imageUrl: uploadedImageBase64,
+        // Ensure items are only the required fields
+        items: bundle.items.map((i) => ({
+          productId: i.productId,
+          variantId: i.variantId,
+          titleSnap: i.titleSnap,
+          priceSnap: i.priceSnap,
+          quantity: i.quantity,
+        })),
+      }),
     });
 
     if (!res.ok) {
@@ -85,18 +128,11 @@ export default function EditBundlePage({ slug }: { slug: string }) {
     alert(`Bundle "${saved.title}" updated successfully!`);
   };
 
-  const [query, setQuery] = useState("");
-
   const filteredProducts = allProducts.filter((p) =>
     p.title.toLowerCase().includes(query.toLowerCase())
   );
 
   if (!bundle) return <p>Loading...</p>;
-
-
-  console.log("bundle to edit ", bundle)
-
-  console.log("filteredProductst ", filteredProducts)
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white shadow rounded">
@@ -109,7 +145,7 @@ export default function EditBundlePage({ slug }: { slug: string }) {
           <input
             type="text"
             value={bundle.title}
-            onChange={e => setBundle({ ...bundle, title: e.target.value })}
+            onChange={(e) => setBundle({ ...bundle, title: e.target.value })}
             className="mt-1 w-full rounded border px-3 py-2"
           />
         </div>
@@ -130,7 +166,9 @@ export default function EditBundlePage({ slug }: { slug: string }) {
           <label className="block text-sm font-medium">Description</label>
           <textarea
             value={bundle.description}
-            onChange={e => setBundle({ ...bundle, description: e.target.value })}
+            onChange={(e) =>
+              setBundle({ ...bundle, description: e.target.value })
+            }
             className="mt-1 w-full rounded border px-3 py-2"
           />
         </div>
@@ -141,7 +179,9 @@ export default function EditBundlePage({ slug }: { slug: string }) {
           <input
             type="file"
             accept="image/*"
-            onChange={e => setImageFile(e.target.files ? e.target.files[0] : null)}
+            onChange={(e) =>
+              setImageFile(e.target.files ? e.target.files[0] : null)
+            }
           />
           {(imageFile || bundle.imageUrl) && (
             <img
@@ -152,12 +192,10 @@ export default function EditBundlePage({ slug }: { slug: string }) {
           )}
         </div>
 
-
         {/* Products */}
         <div>
           <label className="block text-sm font-medium">Select Products</label>
 
-          {/* Search input */}
           <input
             type="text"
             placeholder="Search products..."
@@ -166,15 +204,15 @@ export default function EditBundlePage({ slug }: { slug: string }) {
             className="mt-2 w-full rounded border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
 
-          {/* Product list */}
           <div className="mt-3 grid grid-cols-2 gap-3 max-h-64 overflow-y-auto border rounded p-2">
             {filteredProducts.map((p) => (
               <label
                 key={p.id}
-                className={`flex items-center space-x-2 border p-2 rounded cursor-pointer ${bundle.items.some((i) => i.productId === p.id)
+                className={`flex items-center space-x-2 border p-2 rounded cursor-pointer ${
+                  bundle.items.some((i) => i.productId === p.id)
                     ? "bg-blue-50 border-blue-400"
                     : ""
-                  }`}
+                }`}
               >
                 <input
                   type="checkbox"

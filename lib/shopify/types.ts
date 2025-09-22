@@ -83,7 +83,7 @@ export type ProductVariant = {
   id: string;
   title: string;
   sku: string;
-  quantity: string;
+  quantityAvailable: number;
   availableForSale: boolean;
   selectedOptions: {
     name: string;
@@ -115,7 +115,7 @@ export type ShopifyProduct = {
   availableForSale: boolean;
   title: string;
   description: string;
-  quantity: string;
+  quantityAvailable: number;
   descriptionHtml: string;
   options: ProductOption[];
   priceRange: {
