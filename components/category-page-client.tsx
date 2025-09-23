@@ -24,11 +24,15 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [filter, setFilter] = useState<string>('');
+  // const [filter, setFilter] = useState<string>('');
   const [collectionFilter, setCollectionFilter] = useState('');
   const [showContent, setShowContent] = useState(false);
   const { t, ready } = useTranslation('common');
   const { i18n } = useTranslation();
+  const [filter, setFilter] = useState(() =>
+  collection === "clearance" ? "availability" : ""
+);
+
   var content: any = [];
   const pathname = usePathname();
 
@@ -37,6 +41,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
 
   const params = useParams();
   const collection2: any = params.collection;
+
 
   if (collection2 === "chairs" && i18n.language === 'en') {
     content = chairs;

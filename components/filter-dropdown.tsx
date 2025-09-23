@@ -11,6 +11,8 @@ type FilterDropdownProps = {
 export default function FilterDropdown({ selected, onFilter }: FilterDropdownProps) {
   const { t, ready } = useTranslation('common');
 
+  
+
   return (
     <div className="relative inline-block">
       <select

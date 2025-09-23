@@ -9,11 +9,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-
 interface GalleryProps {
   images: { src: string; altText: string }[];
 }
-
 
 const NextArrow = (props: any) => {
   const { onClick } = props;
@@ -76,23 +74,6 @@ export function Gallery({ images }: GalleryProps) {
     }
   };
 
-  // const sliderSettings = {
-  //   dots: true,
-  //   arrows: false,
-  //   infinite: true,
-  //   speed: 300,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   nextArrow: <NextArrow />,
-  //   prevArrow: <PrevArrow />,
-  //   customPaging: () => (
-  //     <div className="w-2.5 h-2.5 bg-gray-400 rounded-full mx-1" />
-  //   ),
-  //   appendDots: (dots: any) => (
-  //     <div className="flex justify-center mt-3">{dots}</div>
-  //   ),
-  // };
-
   const sliderSettings = {
     dots: true,
     arrows: false,
@@ -109,26 +90,38 @@ export function Gallery({ images }: GalleryProps) {
       <div className="flex justify-center mt-3">{dots}</div>
     ),
   };
-  
 
   return (
     <form className="mt-6 sm:mt-10 md:mt-0 relative">
       {isMobile ? (
         <div className="w-full relative">
-          <Slider {...sliderSettings}>
-            {images.map((img, idx) => (
-              <div key={img.src} className="relative aspect-square">
-                <Image
-                  className="h-full w-full object-contain"
-                  fill
-                  alt={img.altText}
-                  src={img.src}
-                  priority={idx === 0}
-                  sizes="100vw"
-                />
-              </div>
-            ))}
-          </Slider>
+          {images.length > 1 ? (
+            <Slider {...sliderSettings}>
+              {images.map((img, idx) => (
+                <div key={img.src} className="relative aspect-square">
+                  <Image
+                    className="h-full w-full object-contain"
+                    fill
+                    alt={img.altText}
+                    src={img.src}
+                    priority={idx === 0}
+                    sizes="100vw"
+                  />
+                </div>
+              ))}
+            </Slider>
+          ) : (
+            <div className="relative aspect-square">
+              <Image
+                className="h-full w-full object-contain"
+                fill
+                alt={images[0].altText}
+                src={images[0].src}
+                priority
+                sizes="100vw"
+              />
+            </div>
+          )}
         </div>
       ) : (
         <div className="flex flex-col md:flex-row items-start gap-4">
@@ -146,7 +139,6 @@ export function Gallery({ images }: GalleryProps) {
             >
               {images.map((img, idx) => {
                 const isActive = idx === imageIndex;
-                console.log("img.src img.src ", img.src)
                 return (
                   <li key={img.src} className="flex-shrink-0">
                     <button
