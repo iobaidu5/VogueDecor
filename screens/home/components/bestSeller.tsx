@@ -47,8 +47,8 @@ const BestSeller = () => {
   return (
     <div className="xs:pt-6 md:pt-6">
       <div className="flex flex-col items-center justify-center pt-10">
-        <p className="text-[14px] text-[#878787]">{t('discoverBest')}</p>
-        <p className="font-medium xs:text-[25px] md:text-[40px]">{t('bestSellers')}</p>
+        <p className="text-[14px] text-black text-[#878787]">{t('discoverBest')}</p>
+        <p className="font-medium text-black xs:text-[25px] md:text-[40px]">{t('bestSellers')}</p>
         {/* <div className="h-[2px] w-[130px] bg-[#878787]" /> */}
       </div>
 
