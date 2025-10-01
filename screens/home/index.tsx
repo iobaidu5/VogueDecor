@@ -218,7 +218,7 @@ export default function MainPage() {
                   <h2 className="font-medium text-[28px] md:text-[34px]">
                     {t(`${banner.title}`)}
                   </h2>
-                  <p className="font-medium text-[18px] md:text-[22px]">
+                  <p className="font-medium text-[16px] md:text-[18px]">
                     {t(`${banner.description}`)}
                   </p>
                   <Link
@@ -234,7 +234,7 @@ export default function MainPage() {
                   <h2 className="font-medium text-[28px] md:text-[34px]">
                     {t(`${banner.title2}`)}
                   </h2>
-                  <p className="font-medium text-[18px] md:text-[22px]">
+                  <p className="font-medium text-[16px] md:text-[18px]">
                     {t(`${banner.description2}`)}
                   </p>
                   <Link
@@ -266,8 +266,8 @@ export default function MainPage() {
                 <p
                   className={`font-medium ${
                     isMobile
-                      ? "text-[16px] md:text-[20px]"
-                      : "xs:text-[20px] md:text-[24px]"
+                      ? "text-[16px] md:text-[18px]"
+                      : "font-medium text-[16px] md:text-[18px]"
                   } text-black`}
                 >
                   {t(`${banner.description}`)}
