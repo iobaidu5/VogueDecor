@@ -84,18 +84,18 @@ export default function MainPage() {
   const bannerPairsDesktop = [
     [
       {
+        image: newBanner3,
+        title: "bannerThreeTitle",
+        description: "bannerThreeDesc",
+        buttonText: "shopnow",
+        link: "/new-arrivals",
+      },
+      {
         image: combineBanner,
         title: "bannerOneTitle",
         description: "bannerOneDesc",
         title2: "bannerTwoTitle",
         description2: "bannerTwoDesc",
-        buttonText: "shopnow",
-        link: "/new-arrivals",
-      },
-      {
-        image: newBanner3,
-        title: "bannerThreeTitle",
-        description: "bannerThreeDesc",
         buttonText: "shopnow",
         link: "/new-arrivals",
       },
@@ -105,6 +105,13 @@ export default function MainPage() {
 
   // Mobile banners (single)
   const bannerMobile = [
+    {
+      image: newBanner3Mobile,
+      title: 'bannerThreeTitle',
+      description: 'bannerThreeDesc',
+      buttonText: 'shopnow',
+      link: '/new-arrivals',
+    },
     {
       image: newBanner1Mobile,
       title: 'bannerOneTitle',
@@ -116,13 +123,6 @@ export default function MainPage() {
       image: newBanner2Mobile,
       title: 'bannerTwoTitle',
       description: 'bannerTwoDesc',
-      buttonText: 'shopnow',
-      link: '/new-arrivals',
-    },
-    {
-      image: newBanner3Mobile,
-      title: 'bannerThreeTitle',
-      description: 'bannerThreeDesc',
       buttonText: 'shopnow',
       link: '/new-arrivals',
     },
