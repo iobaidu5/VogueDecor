@@ -197,11 +197,12 @@ export default function MainPage() {
     {(isMobile ? bannerMobile : bannerPairsDesktop.flat()).map(
       (banner, index) => (
         <div key={index} className="relative w-full">
-          <div
-            className={`relative w-full flex items-center justify-center ${
-              isMobile ? "max-h-[500px] aspect-[3/5]" : "aspect-[1920/1024]"
-            }`}
-          >
+<div
+  className={`relative w-full flex items-center justify-center ${
+    isMobile ? "max-h-[500px] aspect-[3/5]" : "aspect-[1920/1024] max-h-[800px]"
+  }`}
+>
+
             <Image
               src={banner.image}
               alt={`Banner ${index}`}

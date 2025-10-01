@@ -56,7 +56,7 @@ const Header = ({ menu }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 50);
+      setIsSticky(window.scrollY > 150);
     };
 
     window.addEventListener("scroll", handleScroll);
