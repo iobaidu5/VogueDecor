@@ -1,5 +1,6 @@
 'use client';
 
+import Head from "next/head";
 import { useState, useEffect, useMemo } from 'react';
 import Grid from 'components/grid';
 import ProductGridItems from 'components/layout/product-grid-items';
@@ -14,6 +15,7 @@ import { barstools, barstoolsFr, chairs, chairsFr, tabletops, tabletopsFr, table
 import { useParams } from 'next/navigation';
 import CollectionDropdown from './collection-dropdown';
 import { usePathname } from 'next/navigation';
+import { metaInfo } from "../lib/meta";
 
 type CategoryPageClientProps = {
   collection: any;
@@ -30,8 +32,8 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
   const { t, ready } = useTranslation('common');
   const { i18n } = useTranslation();
   const [filter, setFilter] = useState(() =>
-  collection === "clearance" ? "availability" : ""
-);
+    collection === "clearance" ? "availability" : ""
+  );
 
   var content: any = [];
   const pathname = usePathname();
@@ -40,7 +42,10 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
 
 
   const params = useParams();
-  const collection2: any = params.collection;
+  // const collection2: any = params.collection;
+  const collection2: any = params.collection || "home";
+
+  const meta = metaInfo[collection2] || metaInfo["home"];
 
 
   if (collection2 === "chairs" && i18n.language === 'en') {
@@ -122,14 +127,14 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
     if (collectionFilter) {
       filtered = filtered.filter(product => {
         const collections = product.collections?.edges || [];
-    
+
         return collections.some(edge => {
           console.log("c.handle -> ", edge.node.handle);
           return edge.node.handle === collectionFilter;
         });
       });
     }
-    
+
 
     console.log("allProducts -> ", allProducts)
 
@@ -183,79 +188,88 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
 
 
   return (
-    <section className="container mx-auto w-100">
-      {products.length === 0 ? (
-        <p className="py-3 text-center text-lg">
-          No products found in this collection
-        </p>
-      ) : (
-        <>
-          <BreadCrumb currentPage={collection} />
-          <div className="flex items-start justify-between pt-5 mt-2">
-            <div className="flex flex-col space-y-1">
-              <p className="text-[23px] font-medium capitalize text-gray-700">
-                {collection &&
-                  t(
-                    `footer.${collection
-                      .split('-')
-                      .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
-                      .join(' ')}`
-                  )}
-              </p>
-              <p className="text-xs md:text-sm lg991:text-medium text-gray-700">
+    <>
+      {meta && (
+        <Head>
+          <title>{meta.title}</title>
+          <meta name="description" content={meta.description} />
+        </Head>
+      )}
 
-                {collection2 === "clearance" ? <span className="capitalize text-red-500">
-               {t("Last Chance Deals. Final Sale, No Refunds or Exchanges.")}
-                </span> : <span className="capitalize text-gray-500">
-                  {t("Discover Vogue Decor's chic") + ' ' +
+      <section className="container mx-auto w-100">
+        {products.length === 0 ? (
+          <p className="py-3 text-center text-lg">
+            No products found in this collection
+          </p>
+        ) : (
+          <>
+            <BreadCrumb currentPage={collection} />
+            <div className="flex items-start justify-between pt-5 mt-2">
+              <div className="flex flex-col space-y-1">
+                <p className="text-[23px] font-medium capitalize text-gray-700">
+                  {collection &&
                     t(
                       `footer.${collection
                         .split('-')
                         .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
                         .join(' ')}`
-                    ) + ' ' +
-                    t("for timeless elegance")}
-                </span>}
-              </p>
+                    )}
+                </p>
+                <p className="text-xs md:text-sm lg991:text-medium text-gray-700">
+
+                  {collection2 === "clearance" ? <span className="capitalize text-red-500">
+                    {t("Last Chance Deals. Final Sale, No Refunds or Exchanges.")}
+                  </span> : <span className="capitalize text-gray-500">
+                    {t("Discover Vogue Decor's chic") + ' ' +
+                      t(
+                        `footer.${collection
+                          .split('-')
+                          .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+                          .join(' ')}`
+                      ) + ' ' +
+                      t("for timeless elegance")}
+                  </span>}
+                </p>
+              </div>
+              <div className='flex flex-col justify-center items-end gap-[10px] md:flex-row'>
+                <FilterDropdown selected={filter} onFilter={setFilter} />
+
+                {showCollectionFilter && (
+                  <CollectionDropdown
+                    selected={collectionFilter}
+                    onCollectionChange={setCollectionFilter}
+                    collections={allCollections}
+                  />
+                )}
+              </div>
             </div>
-            <div className='flex flex-col justify-center items-end gap-[10px] md:flex-row'>
-              <FilterDropdown selected={filter} onFilter={setFilter} />
-
-              {showCollectionFilter && (
-                <CollectionDropdown
-                  selected={collectionFilter}
-                  onCollectionChange={setCollectionFilter}
-                  collections={allCollections}
-                />
-              )}
-            </div>
-          </div>
-          <div className="mt-4">
-            <ProductGridItems products={products} collection={collection2} />
-          </div>
-
-          <div className='mb-4'>
-            <h3 className="w-full text-xs lg:text-sm md:text-base lg:font-medium text-black">
-              <span className='uppercase'>{t(`menu.${collection2}`)} {t(`byBrand`)}</span><br />
-              <span>{t(`about`)} <span className='capitalize'>{t(`menu.${collection2}`)}</span></span>
-            </h3>
-
-            <div
-              className={`transition-all duration-1000 ease-in-out overflow-hidden ${showContent ? 'max-h-[full] opacity-100 mt-4' : 'max-h-0 opacity-0'
-                }`}
-            >
-              <ArticleRenderer content={content} />
+            <div className="mt-4">
+              <ProductGridItems products={products} collection={collection2} />
             </div>
 
-            <button
-              className="font-poppins font-medium mt-3 text-sm text-black hover:underline"
-              onClick={() => setShowContent(!showContent)}
-            >
-              {showContent ? t('toggle.readLess') : t('toggle.readMore')}
-            </button>
-          </div>
-        </>
-      )}
-    </section>
+            <div className='mb-4'>
+              <h3 className="w-full text-xs lg:text-sm md:text-base lg:font-medium text-black">
+                <span className='uppercase'>{t(`menu.${collection2}`)} {t(`byBrand`)}</span><br />
+                <span>{t(`about`)} <span className='capitalize'>{t(`menu.${collection2}`)}</span></span>
+              </h3>
+
+              <div
+                className={`transition-all duration-1000 ease-in-out overflow-hidden ${showContent ? 'max-h-[full] opacity-100 mt-4' : 'max-h-0 opacity-0'
+                  }`}
+              >
+                <ArticleRenderer content={content} />
+              </div>
+
+              <button
+                className="font-poppins font-medium mt-3 text-sm text-black hover:underline"
+                onClick={() => setShowContent(!showContent)}
+              >
+                {showContent ? t('toggle.readLess') : t('toggle.readMore')}
+              </button>
+            </div>
+          </>
+        )}
+      </section>
+    </>
   );
 }

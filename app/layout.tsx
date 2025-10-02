@@ -16,14 +16,16 @@ import { CollectionProvider } from 'lib/CollectionContext'
 import GoogleTagManager from 'components/GoogleTag'
 
 export const metadata = {
-  description: 'High-performance ecommerce store',
+  title: "Vogue Decor – Restaurant Chairs, Tables & Furniture",
+  description:
+    'Shop restaurant chairs, tables, barstools & table bases. Vogue Decor delivers premium restaurant furniture across the USA & Canada.',
   openGraph: {
-    type: 'website'
+    type: 'website',
   },
   icons: {
     icon: './favicon.ico',
   },
-};
+}
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -42,12 +44,104 @@ export default async function LocaleLayout({
   const cartId = (await cookies()).get('cartId')?.value
   const cart = getCart(cartId)
 
+  // ---- JSON-LD Schemas ----
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vogue Decor",
+    "url": "https://www.voguedecor.com",
+    "logo": "https://www.voguedecor.com/wp-content/uploads/2024/01/voguedecor-logo.png",
+    "description":
+      "Vogue Decor is a Canadian supplier of high-quality restaurant furniture, including restaurant chairs, tables, barstools, booths, and outdoor furniture. Serving Montreal, Toronto, and across North America.",
+    "sameAs": [
+      "https://www.facebook.com/VogueDecorFurniture",
+      "https://www.instagram.com/voguedecorr"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-514-823-5595",
+      "contactType": "customer service",
+      "areaServed": "CA",
+      "availableLanguage": ["en", "fr"]
+    },
+    "department": [
+      {
+        "@type": "FurnitureStore",
+        "name": "Vogue Decor Montreal",
+        "image": "https://www.voguedecor.com/wp-content/uploads/2024/01/montreal-showroom.jpg",
+        "description":
+          "Visit our Montreal showroom for premium restaurant furniture including restaurant chairs, tables, booths, and barstools.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "7550 Chemin de la Côte-de-Liesse",
+          "addressLocality": "Saint-Laurent",
+          "addressRegion": "QC",
+          "postalCode": "H4T 1E7",
+          "addressCountry": "CA"
+        },
+        "telephone": "+1-514-823-5595",
+        "email": "info@voguedecor.com",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "08:00",
+            "closes": "16:00"
+          }
+        ]
+      },
+      {
+        "@type": "FurnitureStore",
+        "name": "Vogue Decor Toronto",
+        "image": "https://www.voguedecor.com/wp-content/uploads/2024/01/toronto-showroom.jpg",
+        "description":
+          "Our Toronto showroom offers restaurant furniture for cafes, hotels, and dining spaces, including restaurant tables, chairs, and outdoor collections.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "825 Denison St Unit 2",
+          "addressLocality": "Markham",
+          "addressRegion": "ON",
+          "postalCode": "L3R 5E4",
+          "addressCountry": "CA"
+        },
+        "telephone": "+1-416-560-5575",
+        "email": "info@voguedecor.com",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "10:00",
+            "closes": "16:00"
+          }
+        ]
+      }
+    ]
+  }
+
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.voguedecor.com",
+    "name": "Vogue Decor - Restaurant Furniture Online Store",
+    "description":
+      "Shop restaurant furniture online at Vogue Decor. Discover restaurant chairs, tables, booths, and outdoor dining furniture shipped across Canada and the USA.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.voguedecor.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+
   return (
     <html lang={params.locale} className={poppins.variable}>
       <head>
-        <meta name="google-site-verification" content="3_4p_Iwcpg350S4xRemSlkguA-eA5_v8XkW8DF9Ebqw" />
+        <meta
+          name="google-site-verification"
+          content="3_4p_Iwcpg350S4xRemSlkguA-eA5_v8XkW8DF9Ebqw"
+        />
         <link rel="icon" href="//favicon.ico" sizes="any" />
 
+        {/* GTM */}
         <Script id="gtm" strategy="beforeInteractive">
           {`
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -58,7 +152,7 @@ export default async function LocaleLayout({
           `}
         </Script>
 
-
+        {/* Google Translate */}
         <Script
           id="google-translate"
           src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
@@ -79,6 +173,16 @@ export default async function LocaleLayout({
             window.googleTranslateElementInit = googleTranslateElementInit;
           `}
         </Script>
+
+        {/* JSON-LD Schemas */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+        />
       </head>
 
       <body>
@@ -92,7 +196,6 @@ export default async function LocaleLayout({
           />
         </noscript>
         <div id="google_translate_element" style={{ display: 'none' }} />
-
 
         <ChatbaseScript />
         <CartProvider cartPromise={cart}>

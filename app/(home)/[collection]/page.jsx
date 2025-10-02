@@ -1,4 +1,15 @@
 import CategoryPageClient from 'components/category-page-client';
+import { metaInfo } from "lib/meta"; 
+
+
+export function generateMetadata({ params }) {
+  const meta = metaInfo[params.collection] ?? metaInfo.home;
+
+  return {
+    title: meta.title,
+    description: meta.description,
+  };
+}
 
 export default async function CategoryPage({ params }) {
   const collection = params?.collection;
