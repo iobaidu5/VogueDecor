@@ -210,7 +210,7 @@ export default function MainPage() {
                 className={`relative w-full flex items-center justify-center ${
                   isMobile
                     ? "max-h-[500px] aspect-[3/5]"
-                    : "aspect-[1920/900] max-h-[700px]"
+                    : "aspect-[1920/900] max-h-[900px]"
                 }`}
               >
                 <Image
