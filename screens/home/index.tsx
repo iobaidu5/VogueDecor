@@ -39,6 +39,7 @@ import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import { SaleBar } from 'components/SaleBar';
 import Slider from 'react-slick';
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function MainPage() {
   const { t, i18n } = useTranslation("common");
@@ -148,6 +149,14 @@ export default function MainPage() {
     }
   };
 
+  const goPrev = () => {
+    sliderRef.current?.slickPrev();
+  };
+
+  const goNext = () => {
+    sliderRef.current?.slickNext();
+  };
+
 
   return (
     <>
@@ -183,132 +192,151 @@ export default function MainPage() {
         </section> */}
 
 <section
-  className={
-    isMobile
-      ? "mt-12 relative w-full h-auto"
-      : "relative w-full overflow-hidden"
-  }
->
-  <div className="relative z-[10]">
-    <SaleBar />
-  </div>
+      className={
+        isMobile
+          ? "mt-12 relative w-full h-auto"
+          : "relative w-full overflow-hidden"
+      }
+    >
+      <div className="relative z-[10]">
+        <SaleBar />
+      </div>
 
-  <Slider ref={sliderRef} {...settings}>
-    {(isMobile ? bannerMobile : bannerPairsDesktop.flat()).map(
-      (banner, index) => (
-        <div key={index} className="relative w-full">
-<div
-  className={`relative w-full flex items-center justify-center ${
-    isMobile ? "max-h-[500px] aspect-[3/5]" : "aspect-[1920/1024] max-h-[800px]"
-  }`}
->
-
-            <Image
-              src={banner.image}
-              alt={`Banner ${index}`}
-              fill
-              className="object-cover"
-              priority
-            />
-
-            {/* Overlay content */}
-            {banner.title2 && banner.description2 && !isMobile ? (
-              <>
-                {/* Left block (20% from left) */}
-                <div className="absolute top-[10%] left-[10%] text-center text-black max-w-lg">
-                  <h2 className="font-medium text-[28px] md:text-[34px]">
-                    {t(`${banner.title}`)}
-                  </h2>
-                  <p className="text-[12px] md:text-[16px]">
-                    {t(`${banner.description}`)}
-                  </p>
-                  <Link
-                    href={banner.link}
-                    className="mt-3 inline-block text-black border-b-2 border-black text-sm md:text-base font-medium hover:text-gray-700 transition duration-300"
-                  >
-                    {t(`${banner.buttonText}`)}
-                  </Link>
-                </div>
-
-                {/* Right block (20% from right) */}
-                <div className="absolute top-[10%] right-[15%] text-center text-black max-w-lg">
-                  <h2 className="font-medium text-[28px] md:text-[34px]">
-                    {t(`${banner.title2}`)}
-                  </h2>
-                  <p className="text-[12px] md:text-[16px]">
-                    {t(`${banner.description2}`)}
-                  </p>
-                  <Link
-                    href={banner.link}
-                    className="mt-3 inline-block text-black border-b-2 border-black text-sm md:text-base font-medium hover:text-gray-700 transition duration-300"
-                  >
-                    {t(`${banner.buttonText}`)}
-                  </Link>
-                </div>
-              </>
-            ) : (
-              // Normal banners
+      <Slider ref={sliderRef} {...settings}>
+        {(isMobile ? bannerMobile : bannerPairsDesktop.flat()).map(
+          (banner, index) => (
+            <div key={index} className="relative w-full">
               <div
-                className={`absolute ${
-                  isMobile ? "top-[15%]" : "top-[10%]"
-                } left-1/2 -translate-x-1/2 text-center text-white px-4 ${
-                  isMobile ? "max-w-2xl" : "max-w-4xl"
-                } w-full`}
-              >
-                <h2
-                  className={`font-medium ${
-                    isMobile
-                      ? "text-[20px] md:text-[28px]"
-                      : "xs:text-[24px] md:text-[36px]"
-                  } text-black`}
-                >
-                  {t(`${banner.title}`)}
-                </h2>
-                <p
-                  className={`${
-                    isMobile
-                      ? "text-[12px] md:text-[16px]"
-                      : "text-[12px] md:text-[16px]"
-                  } text-black`}
-                >
-                  {t(`${banner.description}`)}
-                </p>
-                <span className="py-2 block"></span>
-                <Link
-                  href={banner.link}
-                  className="text-black border-b-2 border-black text-xs md:text-sm font-medium hover:text-gray-700 transition duration-300"
-                >
-                  {t(`${banner.buttonText}`)}
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* Custom slide indicators */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 flex gap-2">
-            {Array.from({ length: totalSlides }).map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => goToSlide(i)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    goToSlide(i);
-                  }
-                }}
-                aria-label={`Go to slide ${i + 1}`}
-                className={`h-[3px] w-8 rounded-full transition-all duration-200 focus:outline-none ${
-                  activeSlide === i ? "bg-white" : "bg-gray-300"
+                className={`relative w-full flex items-center justify-center ${
+                  isMobile
+                    ? "max-h-[500px] aspect-[3/5]"
+                    : "aspect-[1920/900] max-h-[700px]"
                 }`}
-              />
-            ))}
-          </div>
-        </div>
-      )
-    )}
-  </Slider>
-</section>
+              >
+                <Image
+                  src={banner.image}
+                  alt={`Banner ${index}`}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+
+                {/* Overlay content */}
+                {banner.title2 && banner.description2 && !isMobile ? (
+                  <>
+                    {/* Left block (20% from left) */}
+                    <div className="absolute top-[10%] left-[10%] text-center text-black max-w-lg">
+                      <h2 className="font-medium text-[28px] md:text-[34px]">
+                        {t(`${banner.title}`)}
+                      </h2>
+                      <p className="text-[12px] md:text-[16px]">
+                        {t(`${banner.description}`)}
+                      </p>
+                      <Link
+                        href={banner.link}
+                        className="mt-3 inline-block text-black border-b-2 border-black text-sm md:text-base font-medium hover:text-gray-700 transition duration-300"
+                      >
+                        {t(`${banner.buttonText}`)}
+                      </Link>
+                    </div>
+
+                    {/* Right block (20% from right) */}
+                    <div className="absolute top-[10%] right-[15%] text-center text-black max-w-lg">
+                      <h2 className="font-medium text-[28px] md:text-[34px]">
+                        {t(`${banner.title2}`)}
+                      </h2>
+                      <p className="text-[12px] md:text-[16px]">
+                        {t(`${banner.description2}`)}
+                      </p>
+                      <Link
+                        href={banner.link}
+                        className="mt-3 inline-block text-black border-b-2 border-black text-sm md:text-base font-medium hover:text-gray-700 transition duration-300"
+                      >
+                        {t(`${banner.buttonText}`)}
+                      </Link>
+                    </div>
+                  </>
+                ) : (
+                  // Normal banners
+                  <div
+                    className={`absolute ${
+                      isMobile ? "top-[15%]" : "top-[10%]"
+                    } left-1/2 -translate-x-1/2 text-center text-white px-4 ${
+                      isMobile ? "max-w-2xl" : "max-w-4xl"
+                    } w-full`}
+                  >
+                    <h2
+                      className={`font-medium ${
+                        isMobile
+                          ? "text-[20px] md:text-[28px]"
+                          : "xs:text-[24px] md:text-[36px]"
+                      } text-black`}
+                    >
+                      {t(`${banner.title}`)}
+                    </h2>
+                    <p
+                      className={`${
+                        isMobile
+                          ? "text-[12px] md:text-[16px]"
+                          : "text-[12px] md:text-[16px]"
+                      } text-black`}
+                    >
+                      {t(`${banner.description}`)}
+                    </p>
+                    <span className="py-2 block"></span>
+                    <Link
+                      href={banner.link}
+                      className="text-black border-b-2 border-black text-xs md:text-sm font-medium hover:text-gray-700 transition duration-300"
+                    >
+                      {t(`${banner.buttonText}`)}
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Custom slide indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 flex gap-2">
+                {Array.from({ length: totalSlides }).map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => goToSlide(i)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        goToSlide(i);
+                      }
+                    }}
+                    aria-label={`Go to slide ${i + 1}`}
+                    className={`h-[3px] w-8 rounded-full transition-all duration-200 focus:outline-none ${
+                      activeSlide === i ? "bg-white" : "bg-gray-300"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* Left Arrow */}
+              <button
+                onClick={goPrev}
+                className="absolute top-1/2 left-4 -translate-y-1/2 z-50 bg-white/10 hover:bg-white rounded-full p-1 shadow-md"
+                aria-label="Previous Slide"
+              >
+                <ChevronLeft className="w-4 h-4 text-black" />
+              </button>
+
+              {/* Right Arrow */}
+              <button
+                onClick={goNext}
+                className="absolute top-1/2 right-4 -translate-y-1/2 z-50 bg-white/10 hover:bg-white rounded-full p-1 shadow-md"
+                aria-label="Next Slide"
+              >
+                <ChevronRight className="w-4 h-4 text-black" />
+              </button>
+            </div>
+          )
+        )}
+      </Slider>
+    </section>
 
 
       </div>
