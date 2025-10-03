@@ -16,9 +16,9 @@ export const metaInfo: Record<string, { title: string; description: string }> = 
       "Browse restaurant barstools built for comfort & durability. Metal, wood & modern designs to complement restaurant tables & bars.",
   },
   "table-tops": {
-    title: "Restaurant Table Tops – Wood & Laminate | Vogue Decor",
+    title: "Restaurant Table Tops  | Vogue Decor",
     description:
-      "Shop restaurant table tops in wood, laminate & custom finishes. Durable, stylish, and built to match any restaurant table base.",
+      "hop restaurant table tops in laminate & custom finishes. Durable, stylish, and built to match any restaurant table base.",
   },
   "table-bases": {
     title: "Restaurant Table Bases – Cast Iron & Metal | Vogue Decor",

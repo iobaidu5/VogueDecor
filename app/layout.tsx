@@ -1,5 +1,4 @@
-// app/[locale]/layout.tsx
-
+// app/layout.tsx
 import { Poppins } from 'next/font/google'
 import { CartProvider } from 'components/cart/cart-context'
 import { cookies } from 'next/headers'
@@ -14,9 +13,10 @@ import ChatbaseScript from 'components/ChatbaseScript'
 import Script from 'next/script'
 import { CollectionProvider } from 'lib/CollectionContext'
 import GoogleTagManager from 'components/GoogleTag'
+import PathnameScripts from './PathnameScripts'
 
 export const metadata = {
-  title: "Vogue Decor – Restaurant Chairs, Tables & Furniture",
+  title: 'Vogue Decor – Restaurant Chairs, Tables & Furniture',
   description:
     'Shop restaurant chairs, tables, barstools & table bases. Vogue Decor delivers premium restaurant furniture across the USA & Canada.',
   openGraph: {
@@ -44,7 +44,7 @@ export default async function LocaleLayout({
   const cartId = (await cookies()).get('cartId')?.value
   const cart = getCart(cartId)
 
-  // ---- JSON-LD Schemas ----
+  // ---- Common JSON-LD Schemas ----
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -174,7 +174,7 @@ export default async function LocaleLayout({
           `}
         </Script>
 
-        {/* JSON-LD Schemas */}
+        {/* Common JSON-LD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
@@ -183,6 +183,9 @@ export default async function LocaleLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
+
+        {/* Page-specific breadcrumbs */}
+        <PathnameScripts />
       </head>
 
       <body>
