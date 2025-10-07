@@ -1,5 +1,5 @@
 import BundleDetailClient from "components/BundleDetailClient";
-import { getBundleBySlug } from "lib/bundles";
+import { getBundleBySlug, listBundles } from "lib/bundles";
 import { getProductsByIds } from "lib/shopify/product";
 
 export default async function BundleDetailPage({
@@ -9,6 +9,7 @@ export default async function BundleDetailPage({
 }) {
   const { slug } = params;
   const bundle = await getBundleBySlug(slug);
+  const bundles = await listBundles();
 
   if (!bundle) {
     return (
@@ -53,6 +54,7 @@ export default async function BundleDetailPage({
       totalPrice={totalPrice}
       discountApplied={discountApplied}
       discountedPrice={discountedPrice}
+      allBundles={bundles}
     />
   );
   

@@ -16,7 +16,7 @@ import Quantity from 'components/product/quantity';
 import Image from 'next/image';
 import { BsHeart } from 'react-icons/bs';
 import Accordion from 'components/accordian';
-import SilverChef from 'media/png/silverChef.png';
+import Econolease from "media/png/econolease.jpeg"
 import parse from 'html-react-parser';
 import { GridTileImage } from 'components/grid/tile';
 import CartModal from 'components/cart/modal';
@@ -164,7 +164,7 @@ export default async function ProductPage({ params }: { params: any }) {
                     Pay Monthly With
                   </Link>
                 </p>
-                <Image src={SilverChef} alt="SilverChef" />
+                <Image src={Econolease} alt="Econolease" />
               </div>
 
               <VariantSelector options={product.options} variants={product.variants} />

@@ -16,7 +16,7 @@ function SubmitButton({ loading }: { loading: boolean }) {
         loading ? 'opacity-60 cursor-not-allowed' : ''
       }`}
     >
-      {loading ? t('adding') : t('addBundleToCart')}
+      {loading ? t('adding') : t('addToCart')}
     </button>
   );
 }
@@ -58,7 +58,7 @@ export function AddToCartBundles({ products }: { products: Product[] }) {
         await addItem(null, variant.id);
       }
       
-      setMessage('Bundle added to cart successfully');
+      // setMessage('Bundle added to cart successfully');
     } catch (error) {
       console.error('Error adding bundle to cart:', error);
       setMessage('Error adding bundle to cart');

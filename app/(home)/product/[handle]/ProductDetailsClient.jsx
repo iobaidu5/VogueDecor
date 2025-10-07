@@ -8,7 +8,7 @@ import Price from 'components/price';
 import Accordion from 'components/accordian';
 import parse from 'html-react-parser';
 import Image from 'next/image';
-import SilverChef from 'media/png/silverChef.png';
+import Econolease from "media/png/econolease.jpeg"
 import { AddToWishlist } from 'components/add-to-wishlist';
 import { Suspense } from 'react';
 import { Gallery } from 'components/product/gallery';
@@ -75,11 +75,6 @@ export default function ProductDetailsClient({ product }) {
     const splitText = text?.split('Materials:');
     return splitText[0]?.trim();
   }
-
-  console.log("product?.descriptionHtml -> ", product?.descriptionHtml)
-
-  console.log("collection -> ", collection)
-
 
 
   return (
@@ -179,7 +174,7 @@ export default function ProductDetailsClient({ product }) {
               <Link href="/voguedecor-calculator" className="text-[#7DA6DD] underline">
                 {t(`payMonthlyWith`)}
               </Link>
-              <Image src={SilverChef} alt="SilverChef" width={120} height={40} />
+              <Image src={Econolease} alt="Econolease" width={120} height={40} />
             </div>
 
             <VariantSelector options={product.options} variants={product.variants} />

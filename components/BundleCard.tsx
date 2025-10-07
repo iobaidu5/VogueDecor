@@ -29,7 +29,6 @@ export default function BundleCard({ bundle }: { bundle: any }) {
 
   return (
     <div className="space-y-3">
-      <h2 className="font-semibold text-lg">Included Products</h2>
       <ul className="space-y-3">
         {products.map((p) => (
           <Link
@@ -58,10 +57,6 @@ export default function BundleCard({ bundle }: { bundle: any }) {
         ))}
 
         {/* <AddToCartBundles products={products} /> */}
-
-        <AddToCartBundles
-          products={products}
-        />
       </ul>
     </div>
   );

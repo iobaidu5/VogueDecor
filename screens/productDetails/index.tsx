@@ -10,7 +10,7 @@ import Back from 'media/png/back.png';
 import Chair from 'media/png/chair.png';
 import Left from 'media/png/left.png';
 import Right from 'media/png/right.png';
-import SilverChef from 'media/png/silverChef.png';
+import Econolease from "media/png/econolease.jpeg"
 import Link from 'next/link';
 
 const ProductPages: React.FC = () => {
@@ -107,7 +107,7 @@ const ProductPages: React.FC = () => {
               Pay Monthly With
             </Link>
           </p>
-          <Image src={SilverChef} alt="SilverChef" />
+          <Image src={Econolease} alt="Econolease" />
         </div>
       </div>
     </div>

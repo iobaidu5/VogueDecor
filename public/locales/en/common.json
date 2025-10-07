@@ -335,6 +335,8 @@
     "ALESSIA - Chair (green)": "ALESSIA - Chair (green)",
     "ALESSIA - Chair (orange)": "ALESSIA - Chair (orange)",
     "BRIANNA - Chair (pink)": "BRIANNA - Chair (pink)",
+
+
     "LS50 - Chair (blue)": "LS50 - Chair (blue)",
     "LS60 - Chair  (red)": "LS60 - Chair (red)",
     "RH11 - Chair (black/red)": "RH11 - Chair (black/red)",
@@ -361,6 +363,7 @@
   "DETAILS": "Details",
   "AVAILABILITY": "Availability",
   "We think you may also like": "We think you may also like",
+  "Available Bundles": "Available Bundles",
   "yourEmailAddress": "Your email address",
   "orderType": "Order Type",
   "orderTypeOnline": "Online",

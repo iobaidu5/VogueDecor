@@ -253,6 +253,19 @@ h3.wp-block-heading {
   text-align: left;
 }
 
+h2 span{
+  font-size: 1.875rem;  /* text-3xl */
+  border-bottom: 1px solid #e5e7eb; /* subtle divider */
+  padding-bottom: 1rem;
+  text-align: left;
+}
+
+h3 span{
+  font-size: 1.5rem;   /* text-2xl */
+  color: #000;      /* blue-700 */
+  text-align: left;
+}
+
 
 p a{
   color: #ef4444 !important;
@@ -273,6 +286,19 @@ p a{
 
   .wp-block-heading.h3,
 h3.wp-block-heading {
+  font-size: 1.2rem;   /* text-2xl */
+  color: #000;      /* blue-700 */
+  text-align: left;
+}
+
+h2 span{
+  font-size: 1.4rem;  /* text-3xl */
+  border-bottom: 1px solid #e5e7eb; /* subtle divider */
+  padding-bottom: 0.5rem;
+  text-align: left;
+}
+
+h3 span{
   font-size: 1.2rem;   /* text-2xl */
   color: #000;      /* blue-700 */
   text-align: left;

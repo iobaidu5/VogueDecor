@@ -9,11 +9,7 @@ const Calculator = () => {
 
   return (
     <div className=''>
-      <iframe
-        style={{ width: '100%', height: '100vh' }}
-        loading="lazy"
-        src={`https://www.silverchef.finance/${i18n.language}_CA/embed/calculator/10000/?affiliateLink=https://go.silverchef.ca/voguedecor/calculator`}
-      ></iframe>
+      <iframe id="efs_object" style={{ width: '100%', height: '100vh', border: 'none;' }} src={`https://apps.econolease.com/calculator/efscalculator?lang=${i18n.language}-ca&lease=true&rental=true&loan=true&init=rental&apply=true&apply-link=https://go.econolease.com/vogue-decor-toronto/apply`}></iframe>
     </div>
   );
 
