@@ -86,12 +86,12 @@ export default function BundleDetailClient({
 
   return (
     <ProductProvider>
-      <div className="px-4 py-5 xs:py-20 md:px-10 lg:px-40">
+      <div className="">
         <SingleBreadCrumb title={bundle?.title} collection={"Bundles"} />
-        <main className="container mx-auto p-6 grid gap-10 md:grid-cols-2">
-          {/* Left Side - Gallery */}
-          <div className="w-full lg:w-12/12">
-            <Suspense
+        <main className="flex flex-col gap-4 rounded-lg bg-white lg:flex-row lg:items-start lg:gap-12">
+          {/* Left Side - Gallery (col-8) */}
+          <div className="w-full lg:w-8/12">
+            {/* <Suspense
               fallback={
                 <div className="relative aspect-square h-full w-full overflow-hidden bg-gray-100" />
               }
@@ -110,11 +110,22 @@ export default function BundleDetailClient({
                   </div>
                 )}
               </motion.div>
-            </Suspense>
+            </Suspense> */}
+
+<Suspense
+            fallback={<div className="relative aspect-square h-full w-full overflow-hidden" />}
+          >
+            <Gallery
+              images={galleryImages?.slice(0, 5)?.map((image) => ({
+                src: image.src,
+                altText: image.altText
+              }))}
+            />
+          </Suspense>
           </div>
 
-          {/* Right Side - Bundle Info */}
-          <div className="space-y-4">
+          {/* Right Side - Bundle Info (col-4) */}
+          <div className="flex w-full flex-col items-start lg:w-4/12">
             <div>
               <h1 className="font-medium xs:text-xl md:text-2xl text-gray-900">
                 {bundle?.title}
@@ -149,13 +160,13 @@ export default function BundleDetailClient({
               )}
             </div>
 
-            <div className="w-full space-y-4 xs:mt-4 md:mt-8">
+            <div className="w-full space-y-2 xs:mt-4 md:mt-4">
               <div className="border-b border-black/80">
                 <Accordion title={t("DESCRIPTION")} content={bundle.description} />
               </div>
             </div>
 
-            <div className="w-full space-y-4 xs:mt-4 md:mt-8">
+            <div className="w-full space-y-2 xs:mt-4 md:mt-4">
               <div className="border-b border-black/80">
                 <div className="overflow-hidden rounded-lg last:mb-0 xs:mb-2 md:mb-4">
                   <button
@@ -193,12 +204,13 @@ export default function BundleDetailClient({
             {/* Bundle Variant Selector - uses allBundles passed from server */}
           </div>
         </main>
+
         {allBundles && allBundles.length > 1 && (
-              <BundleVariantSelector 
-                bundles={allBundles} 
-                currentBundle={bundle} 
-              />
-            )}
+          <BundleVariantSelector
+            bundles={allBundles}
+            currentBundle={bundle}
+          />
+        )}
       </div>
     </ProductProvider>
   );

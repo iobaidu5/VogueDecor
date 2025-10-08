@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html{
+
+html {
   overflow-x: hidden !important
 }
 
@@ -33,53 +35,54 @@ body {
   z-index: 1000;
 }
 
-@media (width <= 990px) {
-  .cart-icon{
+@media (width <=990px) {
+  .cart-icon {
     right: -50px;
     top: 0px;
   }
 }
 
-@media (width <= 768px) {
-  .cart-icon{
+@media (width <=768px) {
+  .cart-icon {
     right: -50px;
     top: -5px;
   }
 }
 
 
-.image-bg{
+.image-bg {
   background-color: #F1F1F1 !important;
 }
 
-@media (width >= 100px) {
+@media (width >=100px) {
   .container {
-      max-width: 100% !important;
+    max-width: 100% !important;
   }
 }
 
-  .curreny-swithcer{
-    margin-right: 5px !important;
-  }
+.curreny-swithcer {
+  margin-right: 5px !important;
+}
 
-  @media (width <= 768px) {
-  .curreny-swithcer{
+@media (width <=768px) {
+  .curreny-swithcer {
     margin-right: 25px !important;
   }
-  }
+}
 
-  .slick-dots li button:before {
-    font-size: 14px !important;
-    margin: 5px 0 !important;
-  }
+.slick-dots li button:before {
+  font-size: 14px !important;
+  margin: 5px 0 !important;
+}
 
-  /* Arrows */
+/* Arrows */
 .slick-prev,
 .slick-next {
   z-index: 100 !important;
   width: 40px !important;
   height: 40px !important;
 }
+
 .slick-prev:before,
 .slick-next:before {
   font-size: 36px !important;
@@ -92,14 +95,15 @@ body {
   font-size: 20px;
   color: #000 !important;
 }
+
 .slick-dots li.slick-active button:before {
   color: #000 !important;
 }
 
 
-@media (width >= 100px) {
+@media (width >=100px) {
   .xs\:flex-wrap {
-      flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important;
   }
 }
 
@@ -112,11 +116,13 @@ body {
   color: white;
   padding: 1rem;
   z-index: 9999;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
+
 .cookie-banner p {
   margin: 0 1rem 0 0;
 }
+
 .cookie-banner button {
   margin-left: 0.5rem;
   padding: 0.5rem 1rem;
@@ -124,10 +130,12 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
+
 .cookie-banner .accept {
   background-color: #10b981;
   color: white;
 }
+
 .cookie-banner .decline {
   background-color: #ef4444;
   color: white;
@@ -139,7 +147,7 @@ body {
 }
 
 
-.slick-dots{
+.slick-dots {
   /* bottom: 20px !important; */
 }
 
@@ -162,12 +170,12 @@ body {
   color: #000;
 }
 
-.slick-dots{
+.slick-dots {
   bottom: 0 !important;
 }
 
 /* Fix for Slick slider layout */
-.slick-slide > div {
+.slick-slide>div {
   display: flex !important;
   height: 100%;
 }
@@ -228,46 +236,77 @@ body {
 
 
 .wp-block-heading {
-  margin-top: 2.5rem;   /* space above */
-  margin-bottom: 1rem;  /* space below */
-  font-weight: 700;     /* bold */
-  line-height: 1.3;     /* tighter line height */
+  margin-top: 2.5rem;
+  /* space above */
+  margin-bottom: 1rem;
+  /* space below */
+  font-weight: 700;
+  /* bold */
+  line-height: 1.3;
+  /* tighter line height */
   letter-spacing: -0.01em;
-  color: #1f2937;       /* gray-800 */
+  color: #1f2937;
+  /* gray-800 */
   text-align: left;
 }
 
 /* make h2 and h3 inside look different */
 .wp-block-heading.h2,
 h2.wp-block-heading {
-  font-size: 1.875rem;  /* text-3xl */
-  border-bottom: 1px solid #e5e7eb; /* subtle divider */
+  font-size: 1.875rem;
+  /* text-3xl */
+  border-bottom: 1px solid #e5e7eb;
+  /* subtle divider */
   padding-bottom: 0.5rem;
   text-align: left;
 }
 
 .wp-block-heading.h3,
 h3.wp-block-heading {
-  font-size: 1.5rem;   /* text-2xl */
-  color: #000;      /* blue-700 */
+  font-size: 1.5rem;
+  /* text-2xl */
+  color: #000;
+  /* blue-700 */
   text-align: left;
 }
 
-h2 span{
-  font-size: 1.875rem;  /* text-3xl */
-  border-bottom: 1px solid #e5e7eb; /* subtle divider */
-  padding-bottom: 1rem;
+h2 span {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.875rem;
+  /* text-3xl */
+  border-bottom: 1px solid #e5e7eb;
+  /* subtle divider */
+  padding: 1rem 0 !important;
   text-align: left;
+  font-weight: 600 !important;
 }
 
-h3 span{
-  font-size: 1.5rem;   /* text-2xl */
-  color: #000;      /* blue-700 */
+
+h3 span {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  /* text-2xl */
+  color: #000;
+  /* blue-700 */
   text-align: left;
+  padding: 1rem 0 !important;
+  font-weight: 600 !important;
+}
+
+h4 span {
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  font-size: 1.2rem;
+  /* text-2xl */
+  color: #000;
+  /* blue-700 */
+  text-align: left;
+  padding: 1rem 0 !important;
+  font-weight: 600 !important;
 }
 
 
-p a{
+p a {
   color: #ef4444 !important;
   font-weight: 500 !important;
 }
@@ -275,32 +314,56 @@ p a{
 
 
 
-@media (width <= 990px) {
+@media (width <=990px) {
+
   .wp-block-heading.h2,
   h2.wp-block-heading {
-    font-size: 1.4rem;  /* text-3xl */
-    border-bottom: 1px solid #e5e7eb; /* subtle divider */
+    font-size: 1.4rem;
+    /* text-3xl */
+    border-bottom: 1px solid #e5e7eb;
+    /* subtle divider */
     padding-bottom: 0.5rem;
     text-align: left;
   }
 
   .wp-block-heading.h3,
-h3.wp-block-heading {
-  font-size: 1.2rem;   /* text-2xl */
-  color: #000;      /* blue-700 */
-  text-align: left;
-}
+  h3.wp-block-heading {
+    font-size: 1.2rem;
+    /* text-2xl */
+    color: #000;
+    /* blue-700 */
+    text-align: left;
+  }
 
-h2 span{
-  font-size: 1.4rem;  /* text-3xl */
-  border-bottom: 1px solid #e5e7eb; /* subtle divider */
-  padding-bottom: 0.5rem;
-  text-align: left;
-}
+  h2 span {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    /* text-3xl */
+    border-bottom: 1px solid #e5e7eb;
+    /* subtle divider */
+    padding-bottom: 0.5rem;
+    text-align: left;
+    font-weight: 600 !important;
+  }
 
-h3 span{
-  font-size: 1.2rem;   /* text-2xl */
-  color: #000;      /* blue-700 */
-  text-align: left;
-}
+  h3 span {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    /* text-2xl */
+    color: #000;
+    /* blue-700 */
+    text-align: left;
+    font-weight: 600 !important;
+  }
+
+  h4 span {
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    font-size: 1rem;
+    /* text-2xl */
+    color: #000;
+    /* blue-700 */
+    text-align: left;
+    font-weight: 600 !important;
+  }
 }

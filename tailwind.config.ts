@@ -14,7 +14,7 @@ const config: Config = {
         xl992: '992px',
       },
       fontFamily: {
-        sans: ['var(--font-poppins)', 'sans-serif'],  // ← use your CSS var
+        sans: ['var(--font-poppins)', 'sans-serif', 'Inter', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
       },
     }

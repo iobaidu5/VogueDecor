@@ -42,6 +42,7 @@ export default async function BundleDetailPage({
   }
 
   return (
+    <div className="px-4 py-16 xs:py-20 md:px-10 lg:px-40">
     <BundleDetailClient
       bundle={{
         id: bundle._id?.toString?.() ?? bundle.id,
@@ -56,6 +57,7 @@ export default async function BundleDetailPage({
       discountedPrice={discountedPrice}
       allBundles={bundles}
     />
+    </div>
   );
   
 }
