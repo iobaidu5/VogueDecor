@@ -163,7 +163,7 @@ const Header = ({ menu }) => {
           {t(`menu.Clearance`)}
         </Link>
 
-        {JSON.parse(localStorage?.getItem("user") || "{}")?.username === "Gary" && (
+        {(
           <Link
             key={"bundles"}
             href={"/bundles"}

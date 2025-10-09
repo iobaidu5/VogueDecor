@@ -88,17 +88,15 @@ const Drawer = ({ menu }) => {
             </Link>
 
 
-            {JSON.parse(localStorage?.getItem("user") || "{}")?.username === "Gary" && (
+            <Link
+              key={"bundles"}
+              href={"/bundles"}
+              className={`text-left text-lg font-medium text-gray-800 hover:text-gray-500 px-3 w-[140px] py-1 rounded-full -ml-3`}
+              onClick={() => handleNavigation("/bundles")}
+            >
+              {t(`menu.Bundles`)}
+            </Link>
 
-              <Link
-                key={"bundles"}
-                href={"/bundles"}
-                prefetch={true}
-                className={`text-left text-lg font-medium text-gray-800 hover:text-gray-500`}
-              >
-                Bundles
-              </Link>
-            )}
 
             {/* Sign Up Link */}
             <div className='border-t border-gray-200 my-4'>

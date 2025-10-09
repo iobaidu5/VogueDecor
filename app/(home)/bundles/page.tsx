@@ -24,9 +24,7 @@ export default async function BundlesPage() {
               </span>
             </p>
           </div>
-
-          {/* Grid */}
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
+          <div className="mt-6 grid grid-cols-2 gap-6 md:grid-cols-3">
             {bundlesWithPrice.map((b: any) => (
               <AllBundleCard key={b.id} bundle={b} />
             ))}

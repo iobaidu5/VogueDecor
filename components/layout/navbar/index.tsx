@@ -44,7 +44,7 @@ export async function Navbar() {
                   </Link>
                 </li>
               ))}
-              {JSON.parse(localStorage?.getItem("user") || "{}")?.username === "Gary" && (
+              {(
               <li key={"bundles"}>
               <Link
                 href={"/bundles"}

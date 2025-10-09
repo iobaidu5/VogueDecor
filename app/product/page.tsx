@@ -157,7 +157,6 @@ export default async function ProductPage({ params }: { params: any }) {
                 </div>
               </div>
 
-              {/* Monthly Payment Option */}
               <div className="mt-6 flex items-center gap-12">
                 <p>
                   <Link href="/" className="text-[#7DA6DD] underline">

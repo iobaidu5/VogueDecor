@@ -171,7 +171,17 @@ export default function ProductDetailsClient({ product }) {
               </div> */}
             </div>
             <div className="mt-6 flex justify-center sm:justify-start items-center gap-4 sm:flex-row sm:items-center">
-              <Link href="/voguedecor-calculator" className="text-[#7DA6DD] underline">
+              {/* <Link href="/voguedecor-calculator" className="text-[#7DA6DD] underline">
+                {t(`payMonthlyWith`)}
+              </Link> */}
+
+              <Link
+                href={{
+                  pathname: "/voguedecor-calculator",
+                  query: { amount: product?.priceRange.maxVariantPrice?.amount ? product?.priceRange.maxVariantPrice?.amount : Number(product?.variants[0]?.compareAtPrice?.amount) },
+                }}
+                className="text-[#7DA6DD] underline"
+              >
                 {t(`payMonthlyWith`)}
               </Link>
               <Image src={Econolease} alt="Econolease" width={120} height={40} />

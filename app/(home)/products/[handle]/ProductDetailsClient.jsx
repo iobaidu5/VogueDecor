@@ -49,22 +49,22 @@ export default function ProductDetailsClient({ product }) {
     // Match both variations of "Materials"
     const markerRegex = /<strong>Materials:<br>.*?<\/strong>|<strong>Materials:<br>|Materials:<br><\/strong>|Materials:<\/span><\/strong>|Materials:/i;
     const match = htmlString.match(markerRegex);
-  
+
     if (!match) return '';
-  
+
     // Start slicing from where "Materials" begins
     let sliced = htmlString.slice(match.index);
-  
+
     // Remove inline styles
     sliced = sliced.replace(/\s*style="[^"]*"/g, '');
-  
+
     // Remove meta tags
     sliced = sliced.replace(/<meta[^>]*>/g, '');
-  
+
     // Ensure only one <br> after "Materials:"
     sliced = sliced.replace(/(<strong>Materials:)(<br>)+/i, '$1<br>');
 
-  
+
     return sliced;
   };
 
@@ -72,9 +72,6 @@ export default function ProductDetailsClient({ product }) {
     const splitText = text?.split('Materials:');
     return splitText[0]?.trim();
   }
-
-
-  console.log("product?.descriptionHtml -> ", product?.descriptionHtml)
 
   return (
     <>
@@ -140,7 +137,17 @@ export default function ProductDetailsClient({ product }) {
               </div>
             </div>
             <div className="mt-6 flex justify-center sm:justify-start items-center gap-4 sm:flex-row sm:items-center">
-              <Link href="/voguedecor-calculator" className="text-[#7DA6DD] underline">
+              {/* <Link href="/voguedecor-calculator" className="text-[#7DA6DD] underline">
+                {t(`payMonthlyWith`)}
+              </Link> */}
+
+              <Link
+                href={{
+                  pathname: "/voguedecor-calculator",
+                  query: { amount: product?.priceRange.maxVariantPrice?.amount ? product?.priceRange.maxVariantPrice?.amount : Number(product?.variants[0]?.compareAtPrice?.amount) },
+                }}
+                className="text-[#7DA6DD] underline"
+              >
                 {t(`payMonthlyWith`)}
               </Link>
               <Image src={Econolease} alt="Econolease" width={120} height={40} />
