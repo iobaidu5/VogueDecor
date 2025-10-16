@@ -87,7 +87,7 @@ const Drawer = ({ menu }) => {
               {t(`menu.Clearance`)}
             </Link>
 
-
+{/* 
             <Link
               key={"bundles"}
               href={"/bundles"}
@@ -95,7 +95,7 @@ const Drawer = ({ menu }) => {
               onClick={() => handleNavigation("/bundles")}
             >
               {t(`menu.Bundles`)}
-            </Link>
+            </Link> */}
 
 
             {/* Sign Up Link */}
