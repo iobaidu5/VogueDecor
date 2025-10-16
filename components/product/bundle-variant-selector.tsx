@@ -99,7 +99,8 @@ export function BundleVariantSelector({
         <Slider {...settings}>
           {bundles.map((bundle) => {
             const isActive = currentBundle.id === bundle.id;
-            const price = formatPrice(bundle.bundlePrice);
+            console.log("bundle.bundlePrice) ", bundle)
+            const price = formatPrice(bundle.totalPrice);
             const discount = bundle.discountCode && bundle.discountCode.trim() !== '';
 
             return (

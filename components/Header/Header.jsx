@@ -163,7 +163,7 @@ const Header = ({ menu }) => {
           {t(`menu.Clearance`)}
         </Link>
 
-        {/* {(
+        {(
           <Link
             key={"bundles"}
             href={"/bundles"}
@@ -174,7 +174,7 @@ const Header = ({ menu }) => {
           >
             Bundles
           </Link>
-        )} */}
+        )}
       </div>
 
       <Drawer menu={menu} />
