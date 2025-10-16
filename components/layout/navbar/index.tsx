@@ -44,7 +44,7 @@ export async function Navbar() {
                   </Link>
                 </li>
               ))}
-              {(
+              {/* {(
               <li key={"bundles"}>
               <Link
                 href={"/bundles"}
@@ -54,7 +54,7 @@ export async function Navbar() {
                 Bundles
               </Link>
               </li>
-              )}
+              )} */}
             </ul>
           ) : null}
         </div>
