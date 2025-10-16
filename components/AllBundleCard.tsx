@@ -5,10 +5,13 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import clsx from 'clsx';
 
+
 export default function AllBundleCard({ bundle }: { bundle: any }) {
   const [isHovered, setIsHovered] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
+  console.log("singkle bundle ", bundle)
 
   const buttonClasses =
     'w-full rounded-md bg-gray-200 py-3 text-sm font-semibold uppercase text-black transition-colors duration-300 hover:bg-red hover:text-black';
@@ -38,10 +41,17 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
     }
   };
 
+  // const handleNavigate = () => {
+  //   setLoading(true);
+  //   router.push(`/bundles/${bundle.slug}`);
+  // };
+
   const handleNavigate = () => {
     setLoading(true);
-    router.push(`/bundles/${bundle.slug}`);
+    const url = `/bundles/${bundle.slug}?totalPrice=${encodeURIComponent(bundle.totalPrice)}`;
+    router.push(url);
   };
+  
 
   return (
     <div className="w-full">

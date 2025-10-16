@@ -84,6 +84,9 @@ export default function BundleDetailClient({
       .slice(0, 4), // limit to 4 product images
   ];
 
+
+  console.log("bundlebbbb ", bundle)
+
   return (
     <ProductProvider>
       <div className="">

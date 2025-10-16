@@ -5,7 +5,9 @@ import AllBundleCard from 'components/AllBundleCard';
 
 export default async function BundlesPage() {
   const bundles = await listBundles();
+  console.log("bundles check ", bundles)
   const bundlesWithPrice = await Promise.all(bundles.map(getBundleWithPrice));
+  console.log("bundlesWithPrice check ", bundlesWithPrice)
 
   return (
     <section className="container mx-auto w-100 p-6">

@@ -1,7 +1,10 @@
+"use client";
+
 import BundleDetailClient from "components/BundleDetailClient";
 import { getBundleBySlug, listBundles } from "lib/bundles";
 import { getBundleWithPrice } from "lib/bundlesWithPrice";
 import { getProductsByIds } from "lib/shopify/product";
+import { useSearchParams } from 'next/navigation';
 
 export default async function BundleDetailPage({
   params,
@@ -11,7 +14,11 @@ export default async function BundleDetailPage({
   const { slug } = params;
   const bundle = await getBundleBySlug(slug);
   const bundles = await listBundles();
+  console.log("111111 -> ", bundle)
+  console.log("bundles -> ", bundles)
   const bundlesWithPrice = await Promise.all(bundles.map(getBundleWithPrice));
+  const searchParams = useSearchParams();
+  var totalPrice = searchParams.get('totalPrice') ?? "0";
 
   console.log("bundlesWithPrice -> ", bundlesWithPrice)
 
@@ -21,29 +28,29 @@ export default async function BundleDetailPage({
     );
   }
 
-  let totalPrice = 0;
-  let discountApplied = false;
-  let discountedPrice = 0;
+  // let totalPrice = 0;
+  // let discountApplied = false;
+  // let discountedPrice = 0;
 
-  let safeProducts: { id: string; title: string; price: number }[] = [];
+  // let safeProducts: { id: string; title: string; price: number }[] = [];
 
-  if (bundle.items?.length) {
-    const productIds = bundle.items.map((item: any) => item.productId);
-    const products = await getProductsByIds(productIds);
+  // if (bundle.items?.length) {
+  //   const productIds = bundle.items.map((item: any) => item.productId);
+  //   const products = await getProductsByIds(productIds);
 
-    safeProducts = products.map((p: any) => ({
-      id: p.id,
-      title: p.title,
-      price: parseFloat(p.priceRange.minVariantPrice.amount),
-    }));
+  //   safeProducts = products.map((p: any) => ({
+  //     id: p.id,
+  //     title: p.title,
+  //     price: parseFloat(p.priceRange.minVariantPrice.amount),
+  //   }));
 
-    totalPrice = safeProducts.reduce((sum, product) => sum + product.price, 0);
+  //   totalPrice = safeProducts.reduce((sum, product) => sum + product.price, 0);
 
-    if (safeProducts.length >= 2) {
-      discountApplied = true;
-      discountedPrice = totalPrice * 0.93;
-    }
-  }
+  //   if (safeProducts.length >= 2) {
+  //     discountApplied = true;
+  //     discountedPrice = totalPrice * 0.93;
+  //   }
+  //}
 
   return (
     <div className="px-4 py-16 xs:py-20 md:px-10 lg:px-40">
@@ -54,11 +61,11 @@ export default async function BundleDetailPage({
         description: bundle.description,
         imageUrl: bundle.imageUrl,
         items: bundle.items ?? [],
-        slug: bundle.slug ?? ""
+        slug: bundle.slug ?? "",
       }}
       totalPrice={totalPrice}
-      discountApplied={discountApplied}
-      discountedPrice={discountedPrice}
+      // discountApplied={discountApplied}
+      // discountedPrice={discountedPrice}
       allBundles={bundlesWithPrice}
     />
     </div>
