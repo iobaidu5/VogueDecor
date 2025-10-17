@@ -1,4 +1,5 @@
 import { prisma } from './db';
+import { Prisma } from "@prisma/client";
 
 export async function listBundles() {
   return prisma.bundle.findMany({
@@ -59,15 +60,33 @@ export async function deleteBundle(id: string) {
   });
 }
 
+// function serializeBundle(bundle: any) {
+//   return {
+//     ...bundle,
+//     bundlePrice: bundle.bundlePrice?.toNumber() ?? null, // ✅ convert Decimal → number
+//     createdAt: bundle.createdAt.toISOString(),
+//     updatedAt: bundle.updatedAt.toISOString(),
+//     items: bundle.items.map((i: any) => ({
+//       ...i,
+//       priceSnap: i.priceSnap?.toNumber() ?? null, // ✅ convert Decimal → number
+//     })),
+//   };
+// }
+
+
 function serializeBundle(bundle: any) {
   return {
     ...bundle,
-    bundlePrice: bundle.bundlePrice?.toNumber() ?? null, // ✅ convert Decimal → number
-    createdAt: bundle.createdAt.toISOString(),
-    updatedAt: bundle.updatedAt.toISOString(),
-    items: bundle.items.map((i: any) => ({
-      ...i,
-      priceSnap: i.priceSnap?.toNumber() ?? null, // ✅ convert Decimal → number
+    totalPrice:
+      bundle.totalPrice instanceof Prisma.Decimal
+        ? parseFloat(bundle.totalPrice.toString())
+        : bundle.totalPrice,
+    items: bundle.items?.map((item: any) => ({
+      ...item,
+      priceSnap:
+        item.priceSnap instanceof Prisma.Decimal
+          ? parseFloat(item.priceSnap.toString())
+          : item.priceSnap,
     })),
   };
 }

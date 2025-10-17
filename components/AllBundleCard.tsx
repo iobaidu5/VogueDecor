@@ -48,7 +48,12 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
 
   const handleNavigate = () => {
     setLoading(true);
-    const url = `/bundles/${bundle.slug}?totalPrice=${encodeURIComponent(bundle.totalPrice)}`;
+    const price =
+      typeof bundle.totalPrice === "object" && "toNumber" in bundle.totalPrice
+        ? bundle.totalPrice.toNumber()
+        : Number(bundle.totalPrice || 0);
+  
+    const url = `/bundles/${bundle.slug}?totalPrice=${encodeURIComponent(price)}`;
     router.push(url);
   };
   
@@ -142,7 +147,14 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
           </p>
           <div className="flex items-center justify-start md:justify-center space-x-2">
             <p className="text-sm text-left lg:text-center font-medium text-[#878787]">
-              {bundle.totalPrice ? `$${bundle.totalPrice.toFixed(2)}` : 'N/A'}
+             
+            {bundle.totalPrice
+    ? `$${(
+        typeof bundle.totalPrice === "object" && "toNumber" in bundle.totalPrice
+          ? bundle.totalPrice.toNumber()
+          : Number(bundle.totalPrice)
+      ).toFixed(2)}`
+    : "N/A"}
             </p>
           </div>
         </div>
