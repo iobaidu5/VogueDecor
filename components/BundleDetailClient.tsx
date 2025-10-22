@@ -435,7 +435,7 @@ export default function BundleDetailClient({
                     transition={{ duration: 0.3 }}
                   >
                     <div className="py-3 font-poppins xs:text-[13px] md:text-[13px]">
-                      <BundleCard bundle={bundle} />
+                      <BundleCard bundle={bundle} productsWithQuantity={productsWithQuantity} />
                     </div>
                   </motion.div>
                 </div>

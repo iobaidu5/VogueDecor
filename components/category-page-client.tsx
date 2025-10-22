@@ -248,10 +248,10 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
             </div>
 
             <div className='mb-4'>
-              <h3 className="w-full text-xs lg:text-sm md:text-base lg:font-medium text-black">
+              <p className="w-full text-xs lg:text-sm md:text-base lg:font-medium text-black">
                 <span className='uppercase'>{t(`menu.${collection2}`)} {t(`byBrand`)}</span><br />
                 <span>{t(`about`)} <span className='capitalize'>{t(`menu.${collection2}`)}</span></span>
-              </h3>
+              </p>
 
               <div
                 className={`transition-all duration-1000 ease-in-out overflow-hidden ${showContent ? 'max-h-[full] opacity-100 mt-4' : 'max-h-0 opacity-0'
