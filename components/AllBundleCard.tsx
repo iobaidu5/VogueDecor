@@ -11,8 +11,6 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  console.log("singkle bundle ", bundle)
-
   const buttonClasses =
     'w-full rounded-md bg-gray-200 py-3 text-sm font-semibold uppercase text-black transition-colors duration-300 hover:bg-red hover:text-black';
 
@@ -52,11 +50,12 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
       typeof bundle.totalPrice === "object" && "toNumber" in bundle.totalPrice
         ? bundle.totalPrice.toNumber()
         : Number(bundle.totalPrice || 0);
-  
+
     const url = `/bundles/${bundle.slug}?totalPrice=${encodeURIComponent(price)}`;
     router.push(url);
   };
-  
+
+
 
   return (
     <div className="w-full">
@@ -75,9 +74,8 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
               src={bundle.imageUrl}
               alt={bundle.title}
               fill
-              className={`object-contain lg:object-cover transition-opacity duration-700 ease-in-out ${
-                isHovered ? 'opacity-90' : 'opacity-100'
-              }`}
+              className={`object-contain lg:object-cover transition-opacity duration-700 ease-in-out ${isHovered ? 'opacity-90' : 'opacity-100'
+                }`}
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gray-100 text-sm text-gray-400">
@@ -94,13 +92,12 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
 
           {/* Actions */}
           {JSON.parse(localStorage?.getItem('user') || '{}')?.username ===
-          'Gary' ? (
+            'Gary' ? (
             <div
-              className={`absolute bottom-0 left-0 right-0 z-10 mx-auto flex items-center justify-center gap-2 transition-all duration-500 ease-in-out ${
-                isHovered
+              className={`absolute bottom-0 left-0 right-0 z-10 mx-auto flex items-center justify-center gap-2 transition-all duration-500 ease-in-out ${isHovered
                   ? 'translate-y-0 opacity-100'
                   : 'translate-y-full opacity-0'
-              }`}
+                }`}
             >
               <button
                 onClick={(e) => {
@@ -124,11 +121,10 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
             </div>
           ) : (
             <div
-              className={`absolute bottom-0 left-0 right-0 z-10 mx-auto transition-all duration-500 ease-in-out ${
-                isHovered
+              className={`absolute bottom-0 left-0 right-0 z-10 mx-auto transition-all duration-500 ease-in-out ${isHovered
                   ? 'translate-y-0 opacity-100'
                   : 'translate-y-full opacity-0'
-              } flex items-center justify-center`}
+                } flex items-center justify-center`}
             >
               <button
                 onClick={handleNavigate}
@@ -147,14 +143,14 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
           </p>
           <div className="flex items-center justify-start md:justify-center space-x-2">
             <p className="text-sm text-left lg:text-center font-medium text-[#878787]">
-             
-            {bundle.totalPrice
-    ? `$${(
-        typeof bundle.totalPrice === "object" && "toNumber" in bundle.totalPrice
-          ? bundle.totalPrice.toNumber()
-          : Number(bundle.totalPrice)
-      ).toFixed(2)}`
-    : "N/A"}
+
+              {bundle.totalPrice
+                ? `$${(
+                  typeof bundle.totalPrice === "object" && "toNumber" in bundle.totalPrice
+                    ? bundle.totalPrice.toNumber()
+                    : Number(bundle.totalPrice)
+                ).toFixed(2)}`
+                : "N/A"}
             </p>
           </div>
         </div>

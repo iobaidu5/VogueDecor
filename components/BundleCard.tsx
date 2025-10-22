@@ -52,6 +52,9 @@ export default function BundleCard({ bundle }: { bundle: any }) {
                   {p.priceRange.minVariantPrice.currencyCode}
                 </p>
               </div>
+              {/* <div>
+              <p className="font-medium">{p.quantity}</p>
+              </div> */}
             </li>
           </Link>
         ))}

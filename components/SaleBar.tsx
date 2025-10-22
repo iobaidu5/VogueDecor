@@ -14,8 +14,8 @@ export function SaleBar() {
 
   return (
     <>
-      <div className="w-full bg-[#ffed00] text-black text-center py-3 text-xs lg991:text-sm p-relative z100000">
-      <p>{t('sale')} <Link href="/clearance"><span className="underline text-black">{t('shopnow')}</span></Link></p>
+      <div className="w-full bg-[#715843] text-white text-center py-3 text-xs lg991:text-sm p-relative z100000">
+      <p>{t('sale')} <Link href="/clearance"><span className="underline text-white">{t('shopnow')}</span></Link></p>
       </div>
     </>
   );

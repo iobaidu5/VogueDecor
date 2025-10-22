@@ -172,7 +172,7 @@ const Header = ({ menu }) => {
               cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-gray-500'}
             `}
           >
-            Bundles
+            {t(`menu.Bundles`)}
           </Link>
         )}
       </div>

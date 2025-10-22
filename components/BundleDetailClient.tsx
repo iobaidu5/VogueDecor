@@ -344,9 +344,6 @@ export default function BundleDetailClient({
       .slice(0, 4),
   ];
 
-  console.log("bundle ", bundle);
-  console.log("productsWithQuantity ", productsWithQuantity);
-
   return (
     <ProductProvider>
       <div>
