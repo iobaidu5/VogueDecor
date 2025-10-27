@@ -64,13 +64,13 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
           <div className="hidden lg:flex flex-col items-center space-y-2 text-[12px] text-white md:flex-row md:space-x-4 md:space-y-0">
-            <Link href="/privacy" className="hover:underline text-[#a6a6a6]">
+            <Link href="/privacy-policy" className="hover:underline text-[#a6a6a6]">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:underline text-[#a6a6a6]">
+            <Link href="/terms-and-conditions" className="hover:underline text-[#a6a6a6]">
               Terms and Conditions
             </Link>
-            <Link href="/shipping-return-policy" className="hover:underline text-[#a6a6a6]">
+            <Link href="/shipping-and-return-policy" className="hover:underline text-[#a6a6a6]">
               Shipping and Return Policy
             </Link>
             <Link href="/blogs" className="hover:underline text-[#a6a6a6]">
