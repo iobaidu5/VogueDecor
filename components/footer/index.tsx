@@ -16,7 +16,7 @@ import axios from 'axios';
 const furniture = ['Furniture.', 'Chairs', 'Barstools', 'Table Tops', 'Table Bases', 'Outdoor Furniture'];
 const quikLinks = ['Vogue Decor.', 'Home', 'Contact Us'];
 const locations = ['Locations.', 'Montreal', 'Toronto'];
-const policy = ['Policy.', 'Privacy Policy.', 'Terms and Conditions', ' Shipping and Return Policy', 'Blogs'];
+const policy = ['Policy.', 'Privacy Policy', 'Terms and Conditions', ' Shipping and Return Policy', 'Blogs'];
 
 
 interface FooterLinksProps {
