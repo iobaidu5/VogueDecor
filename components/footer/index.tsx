@@ -16,7 +16,7 @@ import axios from 'axios';
 const furniture = ['Furniture.', 'Chairs', 'Barstools', 'Table Tops', 'Table Bases', 'Outdoor Furniture'];
 const quikLinks = ['Vogue Decor.', 'Home', 'Contact Us'];
 const locations = ['Locations.', 'Montreal', 'Toronto'];
-const policy = ['Policy.', 'Privacy Policy', 'Terms and Conditions', ' Shipping and Return Policy', 'Blogs'];
+const policy = ['Policy.', 'Privacy Policy', 'Terms and Conditions', ' Shipping and Return Policy', 'Blogs', "FAQs"];
 
 
 interface FooterLinksProps {
@@ -25,7 +25,7 @@ interface FooterLinksProps {
 }
 
 const Footer = () => {
-
+  const currentLang = i18n.language;
   return (
     <>
       {/* StayUpdated for small screens */}
@@ -64,13 +64,16 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
           <div className="hidden lg:flex flex-col items-center space-y-2 text-[12px] text-white md:flex-row md:space-x-4 md:space-y-0">
-            <Link href="/privacy-policy" className="hover:underline text-[#a6a6a6]">
+            <Link href="/terms-and-conditions?tab=privacy" className="hover:underline text-[#a6a6a6]">
               Privacy Policy
             </Link>
             <Link href="/terms-and-conditions" className="hover:underline text-[#a6a6a6]">
               Terms and Conditions
             </Link>
-            <Link href="/shipping-and-return-policy" className="hover:underline text-[#a6a6a6]">
+            <Link
+              href={"/terms-and-conditions?tab=shipping"}
+              className="hover:underline text-[#a6a6a6]"
+            >
               Shipping and Return Policy
             </Link>
             <Link href="/blogs" className="hover:underline text-[#a6a6a6]">
@@ -147,9 +150,15 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
                 <Link
                   key={`footer-link-${index}`}
                   href={
-                    currentLang === "fr"
-                      ? href.startsWith("/fr") ? href : `/fr${href}`
-                      : href
+                    href === '/shipping-and-return-policy'
+                      ? currentLang === 'fr'
+                        ? '/fr/terms-and-conditions?tab=shipping'
+                        : '/terms-and-conditions?tab=shipping'
+                      : currentLang === 'fr'
+                        ? href.startsWith('/fr')
+                          ? href
+                          : `/fr${href}`
+                        : href
                   }
                   className="text-[13px] hover:underline"
                 >
