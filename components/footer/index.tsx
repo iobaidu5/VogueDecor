@@ -16,7 +16,7 @@ import axios from 'axios';
 const furniture = ['Furniture.', 'Chairs', 'Barstools', 'Table Tops', 'Table Bases', 'Outdoor Furniture'];
 const quikLinks = ['Vogue Decor.', 'Home', 'Contact Us'];
 const locations = ['Locations.', 'Montreal', 'Toronto'];
-const policy = ['Policy.', 'Privacy Policy', 'Terms and Conditions', ' Shipping and Return Policy', 'Blogs', "FAQs"];
+const policy = ['Policy.', 'Privacy Policy', 'Terms and Conditions', 'Shipping and Return Policy', 'Blogs', "FAQs"];
 
 
 interface FooterLinksProps {
@@ -146,24 +146,36 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
                     ? "/"
                     : `/${link.toLowerCase().replace(/\s+/g, '-')}`;
 
+
+                    console.log("href ---- ", href)
+
               return (
                 <Link
-                  key={`footer-link-${index}`}
-                  href={
-                    href === '/shipping-and-return-policy'
+                key={`footer-link-${index}`}
+                href={
+                  href === '/privacy-policy'
+                    ? currentLang === 'fr'
+                      ? '/fr/terms-and-conditions?tab=privacy'
+                      : '/terms-and-conditions?tab=privacy'
+                    : href === '/terms-and-conditions'
                       ? currentLang === 'fr'
-                        ? '/fr/terms-and-conditions?tab=shipping'
-                        : '/terms-and-conditions?tab=shipping'
-                      : currentLang === 'fr'
-                        ? href.startsWith('/fr')
-                          ? href
-                          : `/fr${href}`
-                        : href
-                  }
-                  className="text-[13px] hover:underline"
-                >
-                  {t(`footer.${link}`)}
-                </Link>
+                        ? '/fr/terms-and-conditions?tab=terms'
+                        : '/terms-and-conditions?tab=terms'
+                      : href === '/shipping-and-return-policy'
+                        ? currentLang === 'fr'
+                          ? '/fr/terms-and-conditions?tab=shipping'
+                          : '/terms-and-conditions?tab=shipping'
+                        : currentLang === 'fr'
+                          ? href.startsWith('/fr')
+                            ? href
+                            : `/fr${href}`
+                          : href
+                }
+                className="text-[13px] hover:underline"
+              >
+                {t(`footer.${link}`)}
+              </Link>
+              
 
               );
             })}
