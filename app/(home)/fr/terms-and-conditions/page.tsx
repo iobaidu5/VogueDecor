@@ -3,6 +3,7 @@
 import BreadCrumb from 'components/breadCrum';
 import { useState, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const tabs = [
   {
@@ -56,11 +57,11 @@ const tabs = [
         <p className='text-xs'>
           <strong>Coûts d'expédition et titre :</strong> Les coûts d'expédition varient selon l'article et la destination ; les frais d'expédition finaux sont indiqués au paiement. Le titre et le risque de perte sont transférés conformément à la Politique d'expédition (voir le lien ci-dessous).
         </p>
-        <p className='text-xs'>Voir notre Politique d'expédition complète : <em>Lien</em></p>
+        <p className='text-xs'>Voir notre Politique d'expédition complète : <em><Link className='text-black' href='/fr/terms-and-conditions?tab=shipping'>Lien</Link></em></p>
 
         <h2 className="font-semibold text-sm mt-4">6. Retours, annulations et remboursements</h2>
         <p className='text-xs'>
-          Les retours et échanges sont régis par notre Politique de retours : <em>Lien</em>. Délai de retour standard : 14 jours après la livraison pour les articles éligibles, sauf si une période différente est indiquée lors de l'achat. Les commandes personnalisées ou commerciales peuvent être non remboursables ou soumises à des conditions d'annulation spéciales communiquées lors de la confirmation de commande. Les remboursements sont émis sur le mode de paiement d'origine une fois les produits retournés reçus et inspectés.
+          Les retours et échanges sont régis par notre Politique de retours : <em><Link className='text-black' href='/fr/terms-and-conditions?tab=privacy'>Lien</Link></em>. Délai de retour standard : 14 jours après la livraison pour les articles éligibles, sauf si une période différente est indiquée lors de l'achat. Les commandes personnalisées ou commerciales peuvent être non remboursables ou soumises à des conditions d'annulation spéciales communiquées lors de la confirmation de commande. Les remboursements sont émis sur le mode de paiement d'origine une fois les produits retournés reçus et inspectés.
         </p>
 
         <h2 className="font-semibold text-sm mt-4">7. Garantie et entretien des produits</h2>

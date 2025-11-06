@@ -3,6 +3,7 @@
 import BreadCrumb from 'components/breadCrum';
 import { useState, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const tabs = [
   {
@@ -56,11 +57,11 @@ const tabs = [
         <p className='text-xs'>
           <strong>Shipping costs & title:</strong> Shipping costs vary by item and destination; final shipping is shown at checkout. Title and risk of loss pass in accordance with the Shipping Policy (see link below).
         </p>
-        <p className='text-xs'>See our full Shipping Policy: <em>Link</em></p>
+        <p className='text-xs'>See our full Shipping Policy: <em><Link className='text-black' href='/terms-and-conditions?tab=shipping'>Link</Link></em></p>
 
         <h2 className="font-semibold text-sm mt-4">6. Returns, Cancellations & Refunds</h2>
         <p className='text-xs'>
-          Returns and exchanges are governed by our Returns Policy: <em>Link</em>. Standard returns window: 14 days from delivery for eligible items, unless a different period is stated at purchase. Custom or commercial orders may be non-returnable or subject to special cancellation terms disclosed at order confirmation. Refunds are issued to the original payment method once the returned goods are received and inspected.
+          Returns and exchanges are governed by our Returns Policy: <em><Link className='text-black' href='/terms-and-conditions?tab=privacy'>Link</Link></em>. Standard returns window: 14 days from delivery for eligible items, unless a different period is stated at purchase. Custom or commercial orders may be non-returnable or subject to special cancellation terms disclosed at order confirmation. Refunds are issued to the original payment method once the returned goods are received and inspected.
         </p>
 
         <h2 className="font-semibold text-sm mt-4">7. Warranty & Product Care</h2>
