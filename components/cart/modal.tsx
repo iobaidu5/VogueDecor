@@ -69,7 +69,7 @@ export default function CartModal() {
   return (
     <>
       <button
-        className="cart-icon"
+        className="cart-icon" 
         aria-label="Open cart"
         onClick={openCart}
         // style={isFrench ? { top: isMobile ? '88px' : '80px' } : {}}
