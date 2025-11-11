@@ -72,7 +72,7 @@ export default function CartModal() {
         className="cart-icon"
         aria-label="Open cart"
         onClick={openCart}
-        style={isFrench ? { top: isMobile ? '88px' : '80px' } : {}}
+        // style={isFrench ? { top: isMobile ? '88px' : '80px' } : {}}
       >
         <OpenCart quantity={cart?.totalQuantity} />
       </button>

@@ -22,7 +22,7 @@ import newBanner2Mobile from 'media/home-banner/new/2-mobile.png';
 import newBanner3Mobile from 'media/home-banner/new/3-mobile.png';
 
 import saleBannerEnMob from 'media/home-banner/new/blackfridayengmob.png';
-import saleBannerFrMob from 'media/home-banner/new/blackfridayengmob.png';
+import saleBannerFrMob from 'media/home-banner/new/blackfridaymobfr.png';
 
 
 
