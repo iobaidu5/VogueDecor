@@ -121,7 +121,7 @@ export default function MainPage() {
   // Mobile banners (single)
   const bannerMobile = [
     {
-      image: i18n.language === 'fr' ? saleBannerEnMob : saleBannerFrMob,
+      image: i18n.language === 'fr' ? saleBannerFrMob : saleBannerEnMob,
       title: "",
       description: "",
       buttonText: "",
