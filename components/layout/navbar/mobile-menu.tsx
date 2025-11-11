@@ -88,6 +88,7 @@ export default function MobileMenu({ menu }: { menu: Menu[] }) {
                         </Link>
                       </li>
                     ))}
+
                     {(
                       <li
                         className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white"

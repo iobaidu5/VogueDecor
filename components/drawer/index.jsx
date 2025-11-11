@@ -67,7 +67,7 @@ const Drawer = ({ menu }) => {
                     ? item.path.startsWith("/fr") ? item.path : `/fr${item.path}`
                     : item.path
                 }
-                className={`text-left text-lg font-medium text-gray-800 hover:text-gray-500 ${item.title === 'Sale' ? 'text-red-500' : 'text-black'}`}
+                className={`text-left text-lg font-medium text-gray-800 hover:text-gray-500 ${item.title === 'Sale' ? 'text-[#cbcf67]' : 'text-black'}`}
                 onClick={() => handleNavigation(item.path)}
               >
                 {/* {item.title} */}
@@ -86,7 +86,6 @@ const Drawer = ({ menu }) => {
             >
               {t(`menu.Clearance`)}
             </Link>
-
 
             <Link
               key={"bundles"}

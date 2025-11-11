@@ -44,6 +44,22 @@ export async function Navbar() {
                   </Link>
                 </li>
               ))}
+
+{/* {(
+              <li key={"bundles"}>
+<Link
+              key={"sale"}
+              href={"/sale"}
+              className={`text-[#cbcf67] cursor-pointer text-[14px] font-small capitalize hover:scale-110`}
+              onClick={() => handleNavigation("/sale")}
+            >
+             
+            </Link>
+</li>
+              )} */}
+
+
+              
               {(
               <li key={"bundles"}>
               <Link

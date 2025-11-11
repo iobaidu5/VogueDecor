@@ -144,7 +144,7 @@ const Header = ({ menu }) => {
             prefetch={true}
             className={`
               cursor-pointer text-[14px] font-small capitalize hover:scale-110
-              ${item.title === 'Sale' ? 'text-red-500' : 'text-black'}
+              ${item.title === 'Sale' ? 'text-[#cbcf67]' : 'text-black'}
             `}
           >
             {t(`menu.${item.title}`)}
