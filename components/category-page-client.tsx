@@ -217,28 +217,28 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
                 </p>
                 <p className="text-xs md:text-sm lg991:text-medium text-gray-700">
 
-                {collection2 === "clearance" ? (
-  <span className="capitalize text-red-500">
-    {t("Last Chance Deals. Final Sale, No Refunds or Exchanges.")}
-  </span>
-) : collection2 === "sale" ? (
-  <span className="capitalize text-gray-500">
-    {t("Upgrade your space with exclusive early offers.")}
-  </span>
-) : (
-  <span className="capitalize text-gray-500">
-    {t("Discover Vogue Decor's chic") +
-      " " +
-      t(
-        `footer.${collection
-          .split("-")
-          .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ")}`
-      ) +
-      " " +
-      t("for timeless elegance")}
-  </span>
-)}
+                  {collection2 === "clearance" ? (
+                    <span className="capitalize text-red-500">
+                      {t("Last Chance Deals. Final Sale, No Refunds or Exchanges.")}
+                    </span>
+                  ) : collection2 === "sale" ? (
+                    <span className="capitalize text-gray-500">
+                      {t("Upgrade your space with exclusive early offers.")}
+                    </span>
+                  ) : (
+                    <span className="capitalize text-gray-500">
+                      {t("Discover Vogue Decor's chic") +
+                        " " +
+                        t(
+                          `footer.${collection
+                            .split("-")
+                            .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
+                            .join(" ")}`
+                        ) +
+                        " " +
+                        t("for timeless elegance")}
+                    </span>
+                  )}
 
                 </p>
               </div>
