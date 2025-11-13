@@ -1,86 +1,93 @@
+import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { IncomingForm } from 'formidable';
-import fs from 'fs';
-import path from 'path';
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+export async function POST(request) {
+  try {
+    const formData = await request.formData();
+    
+    // Extract form fields
+    const email = formData.get('email');
+    const name = formData.get('name');
+    const phone = formData.get('phone') || 'Not provided';
+    const orderType = formData.get('orderType') || 'Not specified';
+    const orderNumber = formData.get('orderNumber') || 'Not provided';
+    const subject = formData.get('subject');
+    const message = formData.get('message') || 'No message provided';
+    const attachment = formData.get('attachment');
 
-export async function POST(req) {
-  return new Promise((resolve, reject) => {
-    const form = new IncomingForm({ keepExtensions: true });
+    // Validate required fields
+    if (!email || !name || !subject) {
+      return NextResponse.json(
+        { message: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
 
-    form.parse(req, async (err, fields, files) => {
-      if (err) {
-        return resolve(
-          new Response(JSON.stringify({ message: 'Error parsing form data' }), { status: 500 })
-        );
-      }
+    // Create transporter
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.SMTP_EMAIL,
+        pass: process.env.SMTP_PASSWORD,
+      },
+    });
 
-      const {
-        email,
-        name,
-        phone,
-        orderType,
-        orderNumber,
-        subject,
-        message,
-      } = fields;
+    // Verify transporter configuration
+    await transporter.verify();
 
-      const attachment = files.attachment;
-
-      try {
-        const transporter = nodemailer.createTransport({
-          service: 'gmail', // or use host, port, auth if not Gmail
-          auth: {
-            user: process.env.SMTP_EMAIL,
-            pass: process.env.SMTP_PASSWORD,
-          },
-        });
-
-        const mailOptions = {
-          from: process.env.SMTP_EMAIL,
-          to: process.env.CONTACT_RECEIVER_EMAIL,
-          replyTo: email,
-          subject: `New Contact Form Submission: ${subject}`,
-          html: `
-            <h2>Contact Request</h2>
+    const mailOptions = {
+      from: process.env.SMTP_EMAIL,
+      to: process.env.CONTACT_RECEIVER_EMAIL,
+      replyTo: email,
+      subject: `New Contact Form: ${subject}`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #333; border-bottom: 2px solid #333; padding-bottom: 10px;">New Contact Form Submission</h2>
+          <div style="background: #f9f9f9; padding: 20px; border-radius: 5px; margin: 20px 0;">
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone}</p>
             <p><strong>Order Type:</strong> ${orderType}</p>
             <p><strong>Order Number:</strong> ${orderNumber}</p>
-            <p><strong>Message:</strong><br/>${message}</p>
-          `,
-        };
+            <p><strong>Subject:</strong> ${subject}</p>
+          </div>
+          <div style="margin: 20px 0;">
+            <h3 style="color: #333;">Message:</h3>
+            <div style="background: white; padding: 15px; border-left: 4px solid #007bff; border-radius: 3px;">
+              ${message}
+            </div>
+          </div>
+        </div>
+      `,
+    };
 
-        if (attachment) {
-          mailOptions.attachments = [
-            {
-              filename: attachment.originalFilename,
-              path: attachment.filepath,
-            },
-          ];
-        }
+    // Add attachment if exists
+    if (attachment && attachment.size > 0) {
+      const bytes = await attachment.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+      
+      mailOptions.attachments = [
+        {
+          filename: attachment.name,
+          content: buffer,
+          contentType: attachment.type,
+        },
+      ];
+    }
 
-        await transporter.sendMail(mailOptions);
+    // Send email
+    await transporter.sendMail(mailOptions);
 
-        return resolve(
-          new Response(JSON.stringify({ message: 'Message sent successfully' }), {
-            status: 200,
-          })
-        );
-      } catch (error) {
-        console.error('Email send error:', error);
-        return resolve(
-          new Response(JSON.stringify({ message: 'Failed to send email' }), {
-            status: 500,
-          })
-        );
-      }
-    });
-  });
+    return NextResponse.json(
+      { message: 'Message sent successfully!' },
+      { status: 200 }
+    );
+
+  } catch (error) {
+    console.error('Email send error:', error);
+    return NextResponse.json(
+      { message: 'Failed to send message. Please try again.' },
+      { status: 500 }
+    );
+  }
 }
