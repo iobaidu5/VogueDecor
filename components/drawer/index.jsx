@@ -59,58 +59,74 @@ const Drawer = ({ menu }) => {
 
           {/* Navigation Links */}
           <nav className="mt-10 flex flex-col space-y-4 p-4">
-            {menu?.map((item) => (
-              <Link
-                key={item.path}
-                href={
-                  currentLang === "fr"
-                    ? item.path.startsWith("/fr") ? item.path : `/fr${item.path}`
-                    : item.path
-                }
-                className={`text-left text-lg font-medium  hover:text-gray-500 ${item.title === 'Sale' ? 'text-[#cbcf67]' : 'text-gray-800'}`}
-                onClick={() => handleNavigation(item.path)}
-              >
-                {/* {item.title} */}
-                {t(`menu.${item.title}`)}
+  {menu?.map((item) => {
+    // Extract clean internal path
+    let cleanPath = item.path;
 
-              </Link>
-            ))}
+    try {
+      const url = new URL(item.path);
+      cleanPath = url.pathname; // "/chairs"
+    } catch (e) {
+      // already relative
+    }
 
-            <Link
-              key={"clearance"}
-              href={"/clearance"}
-              className={`
-              text-left text-lg font-medium text-gray-800 hover:text-gray-500
-              bg-[#ffed00] px-3 w-[140px] py-1 rounded-full -ml-3`}
-              onClick={() => handleNavigation("/clearance")}
-            >
-              {t(`menu.Clearance`)}
-            </Link>
+    // Apply language prefix
+    const finalHref =
+      currentLang === "fr"
+        ? cleanPath.startsWith("/fr") ? cleanPath : `/fr${cleanPath}`
+        : cleanPath;
 
-            <Link
-              key={"bundles"}
-              href={"/bundles"}
-              className={`text-left text-lg font-medium text-gray-800 hover:text-gray-500 px-3 w-[140px] py-1 rounded-full -ml-3`}
-              onClick={() => handleNavigation("/bundles")}
-            >
-              {t(`menu.Bundles`)}
-            </Link>
+    return (
+      <Link
+        key={item.path}
+        href={finalHref}
+        className={`text-left text-lg font-medium hover:text-gray-500 ${
+          item.title === "Sale" ? "text-[#cbcf67]" : "text-gray-800"
+        }`}
+        onClick={() => handleNavigation(finalHref)}
+      >
+        {t(`menu.${item.title}`)}
+      </Link>
+    );
+  })}
 
+  <Link
+    key={"clearance"}
+    href={"/clearance"}
+    className={`
+      text-left text-lg font-medium text-gray-800 hover:text-gray-500
+      bg-[#ffed00] px-3 w-[140px] py-1 rounded-full -ml-3`}
+    onClick={() => handleNavigation("/clearance")}
+  >
+    {t(`menu.Clearance`)}
+  </Link>
 
-            {/* Sign Up Link */}
-            <div className='border-t border-gray-200 my-4'>
-              <p className='text-left text-lg font-bold text-gray-800 hover:text-gray-500 mt-4'>{t('myAccount')}</p>
-              <button
-                className="text-left text-lg mt-2 font-medium text-black"
-                onClick={() => handleNavigation('/login')}
-              >
-                <Link key={"/login"}
-                  href={"/login"}>
-                  {t('loginSignup')}
-                </Link>
-              </button>
-            </div>
-          </nav>
+  <Link
+    key={"bundles"}
+    href={"/bundles"}
+    className={`text-left text-lg font-medium text-gray-800 hover:text-gray-500 px-3 w-[140px] py-1 rounded-full -ml-3`}
+    onClick={() => handleNavigation("/bundles")}
+  >
+    {t(`menu.Bundles`)}
+  </Link>
+
+  {/* Sign Up Section */}
+  <div className="border-t border-gray-200 my-4">
+    <p className="text-left text-lg font-bold text-gray-800 hover:text-gray-500 mt-4">
+      {t("myAccount")}
+    </p>
+
+    <button
+      className="text-left text-lg mt-2 font-medium text-black"
+      onClick={() => handleNavigation("/login")}
+    >
+      <Link key={"/login"} href={"/login"}>
+        {t("loginSignup")}
+      </Link>
+    </button>
+  </div>
+</nav>
+
         </div>
 
         {/* Bottom fixed section */}
