@@ -39,6 +39,9 @@ const Header = ({ menu }) => {
   var currentLang = i18n.language;
   const pathname = usePathname();
 
+
+  console.log("menu 0 ", menu[0])
+
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchText.trim()) {
@@ -131,51 +134,66 @@ const Header = ({ menu }) => {
 
       {/* Navigation menu */}
       <div className="my-8 hidden items-center justify-center space-x-14 lg:flex">
-        {!ready ? (
-          <div>Loading translations...</div>
-        ) : menu?.map((item) => (
-          <Link
-            key={item.path}
-            href={
-              currentLang === "fr"
-                ? item.path.startsWith("/fr") ? item.path : `/fr${item.path}`
-                : item.path
-            }
-            prefetch={true}
-            className={`
-              cursor-pointer text-[14px] font-small capitalize hover:scale-110
-              ${item.title === 'Sale' ? 'text-[#cbcf67]' : 'text-black'}
-            `}
-          >
-            {t(`menu.${item.title}`)}
-          </Link>
-        ))}
+  {!ready ? (
+    <div>Loading translations...</div>
+  ) : (
+    menu?.map((item) => {
+      // Extract clean internal path
+      let cleanPath = item.path;
 
+      try {
+        const url = new URL(item.path);
+        cleanPath = url.pathname; // e.g. "/chairs"
+      } catch (e) {
+        // item.path was already a relative path, no change needed
+      }
+
+      // Apply language prefix
+      const finalHref =
+        currentLang === "fr"
+          ? cleanPath.startsWith("/fr") ? cleanPath : `/fr${cleanPath}`
+          : cleanPath;
+
+      return (
         <Link
-          key={"clearance"}
-          href={"/clearance"}
+          key={item.path}
+          href={finalHref}
           prefetch={true}
           className={`
-            cursor-pointer text-[14px] capitalize hover:scale-110 
-            text-grey-500 bg-[#ffed00] px-3 py-1 rounded-full transition-transform duration-200
+            cursor-pointer text-[14px] font-small capitalize hover:scale-110
+            ${item.title === "Sale" ? "text-[#cbcf67]" : "text-black"}
           `}
         >
-          {t(`menu.Clearance`)}
+          {t(`menu.${item.title}`)}
         </Link>
+      );
+    })
+  )}
 
-        {(
-          <Link
-            key={"bundles"}
-            href={"/bundles"}
-            prefetch={true}
-            className={`
-              cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-gray-500'}
-            `}
-          >
-            {t(`menu.Bundles`)}
-          </Link>
-        )}
-      </div>
+  <Link
+    key="clearance"
+    href="/clearance"
+    prefetch={true}
+    className={`
+      cursor-pointer text-[14px] capitalize hover:scale-110 
+      text-grey-500 bg-[#ffed00] px-3 py-1 rounded-full transition-transform duration-200
+    `}
+  >
+    {t(`menu.Clearance`)}
+  </Link>
+
+  <Link
+    key="bundles"
+    href="/bundles"
+    prefetch={true}
+    className={`
+      cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-gray-500'
+    `}
+  >
+    {t(`menu.Bundles`)}
+  </Link>
+</div>
+
 
       <Drawer menu={menu} />
     </nav>
