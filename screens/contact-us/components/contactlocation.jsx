@@ -14,11 +14,11 @@ const hours = [
 ];
 
 const hoursToronto = [
-  { day: 'Monday', time: '10AM–4PM' },
-  { day: 'Tuesday', time: '10AM–4PM' },
-  { day: 'Wednesday', time: '10AM–4PM' },
-  { day: 'Thursday', time: '10AM–4PM' },
-  { day: 'Friday', time: '10AM–4PM' },
+  { day: 'Monday', time: '10:30AM–4PM' },
+  { day: 'Tuesday', time: '10:30AM–06:30PM' },
+  { day: 'Wednesday', time: '10:30AM–06:30PM' },
+  { day: 'Thursday', time: '10:30AM–06:30PM' },
+  { day: 'Friday', time: '10:30AM–06:30PM' },
   { day: 'Saturday', time: 'Closed' },
   { day: 'Sunday', time: 'Closed' }
 ];
