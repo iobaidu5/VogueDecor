@@ -14,7 +14,7 @@ const hours = [
 ];
 
 const hoursToronto = [
-  { day: 'Monday', time: '10:30AM–4PM' },
+  { day: 'Monday', time: '10:30AM–06:30PM' },
   { day: 'Tuesday', time: '10:30AM–06:30PM' },
   { day: 'Wednesday', time: '10:30AM–06:30PM' },
   { day: 'Thursday', time: '10:30AM–06:30PM' },
