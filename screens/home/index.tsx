@@ -26,6 +26,14 @@ import saleBannerFrMob from 'media/home-banner/new/blackfridaymobfr.png';
 
 
 
+import blackFridayWebEn from "media/blackfriday/blackfridayEngWeb.png"
+import blackFridayWebFr from "media/blackfriday/blackfridayFrWeb.png"
+import blackFridayMobEn from "media/blackfriday/blackfridayEngMob.png"
+import blackFridayMobFr from "media/blackfriday/blackfridayFrMob.png"
+
+
+
+
 import mainText from 'media/png/mainText.png';
 import Image from 'next/image';
 import BestSeller from './components/bestSeller';
@@ -92,7 +100,7 @@ export default function MainPage() {
   const bannerPairsDesktop = [
     [
       {
-        image: i18n.language === 'fr' ? saleBannerFr : saleBanner,
+        image: i18n.language === 'fr' ? blackFridayWebFr : blackFridayWebEn,
         title: "",
         description: "",
         buttonText: "",
@@ -121,7 +129,7 @@ export default function MainPage() {
   // Mobile banners (single)
   const bannerMobile = [
     {
-      image: i18n.language === 'fr' ? saleBannerFrMob : saleBannerEnMob,
+      image: i18n.language === 'fr' ? blackFridayMobFr : blackFridayMobEn,
       title: "",
       description: "",
       buttonText: "",
