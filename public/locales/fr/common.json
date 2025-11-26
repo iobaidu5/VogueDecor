@@ -41,7 +41,9 @@
     "sale": "Vente du vendredi noir",
     "New Arrivals": "Nouveautés",
     "new-arrivals": "Nouveautés",
-    "Bundles": "Forfaits"
+    "Bundles": "Forfaits",
+    "Booth": "Stand",
+    "booth": "Stand"
   },
   "discoverBest": "Découvrez le meilleur du meilleur",
   "bestSellers": "Meilleures ventes.",
@@ -96,7 +98,8 @@
     "Clearance": "Liquidation",
     "Other Items": "Autres articles",
     "Terms of Service": "Terms of Service",
-    "FAQs": "FAQs"
+    "FAQs": "FAQs",
+    "Booth": "Stand"
   },
   "stayUpdated": "Restez informé",
   "subscribe": "S'abonner",

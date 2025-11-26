@@ -40,7 +40,7 @@ const Header = ({ menu }) => {
   const pathname = usePathname();
 
 
-  console.log("menu 0 ", menu[0])
+  console.log("menu 0 ", menu)
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();

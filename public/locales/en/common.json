@@ -43,7 +43,9 @@
     "sale": "Black Friday Sale",
     "New Arrivals": "New Arrivals",
     "new-arrivals": "New Arrivals",
-    "Bundles": "Bundles"
+    "Bundles": "Bundles",
+    "Booth": "Booth",
+    "booth": "Booth"
   },
   "discoverBest": "Discover best of the best",
   "bestSellers": "Best Sellers.",
@@ -98,7 +100,8 @@
     "Clearance": "Clearance",
     "Other Items": "Other Items",
     "Terms of Service": "Terms of Service",
-    "FAQs": "FAQs"
+    "FAQs": "FAQs",
+    "Booth": "Booth"
   },
   "stayUpdated": "Stay Updated",
   "subscribe": "Subscribe",
