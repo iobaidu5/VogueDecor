@@ -237,6 +237,8 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
                         ) +
                         " " +
                         t("for timeless elegance")}
+                        <br />
+                        {collection === "booth" && t("boothAllow")}
                     </span>
                   )}
 

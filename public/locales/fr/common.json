@@ -12,6 +12,7 @@
   "bannerTwoDesc": "L’élégance dans chaque ton",
   "bannerThreeTitle": "Collection Alessi",
   "bannerThreeDesc": "Des nuances qui façonnent votre espace",
+  "boothAllow": "Veuillez prévoir un délai de 1 à 2 semaines pour la préparation du stand.",
   "menu": {
     "Chairs": "Chaises",
     "Batstools": "Tabourets",
@@ -355,7 +356,7 @@
   },
   "Upgrade your space with exclusive early offers.": "Mettez votre espace à niveau avec nos offres exclusives.",
   "Discover Vogue Decor's chic": "Découvrez la collection chic de Vogue Decor",
-  "for timeless elegance": "pour une élégance intemporelle",
+  "for timeless elegance": "pour une élégance intemporelle.",
   "sortBy": "Trier par",
   "sortOptions": {
     "az": "A - Z",

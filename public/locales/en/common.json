@@ -14,6 +14,7 @@
   "bannerTwoDesc": "Elegance in Every Tone",
   "bannerThreeTitle": "Alessia Collection",
   "bannerThreeDesc": "Shades Shaping Your Space",
+  "boothAllow": "Please allow 1–2 weeks for booth preparation.",
   "menu": {
     "Chairs": "Chairs",
     "Batstools": "Barstools",
@@ -358,7 +359,7 @@
 
   "Upgrade your space with exclusive early offers.": "Upgrade your space with exclusive early offers.",
   "Discover Vogue Decor's chic": "Discover Vogue Decor's chic",
-  "for timeless elegance": "for timeless elegance",
+  "for timeless elegance": "for timeless elegance.",
   "sortBy": "Sort by",
   "sortOptions": {
     "az": "A - Z",
