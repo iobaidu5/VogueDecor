@@ -31,10 +31,10 @@ import blackFridayWebFr from "media/blackfriday/blackfridayFrWeb.png"
 import blackFridayMobEn from "media/blackfriday/blackfridayEngMob.png"
 import blackFridayMobFr from "media/blackfriday/blackfridayFrMob.png"
 
-import cyberMondayWebEn from "media/cyberMonday/cyberMondayWebEn.png"
-import cyberMondayWebFr from "media/cyberMonday/cyberMondayWebFr.png"
-import cyberMondayMobEn from "media/cyberMonday/cyberMondayMobEn.png"
-import cyberMondayMobFr from "media/cyberMonday/cyberMondayMobFr.png"
+// import cyberMondayWebEn from "media/cyberMonday/cyberMondayWebEn.png"
+// import cyberMondayWebFr from "media/cyberMonday/cyberMondayWebFr.png"
+// import cyberMondayMobEn from "media/cyberMonday/cyberMondayMobEn.png"
+// import cyberMondayMobFr from "media/cyberMonday/cyberMondayMobFr.png"
 
 
 
@@ -104,13 +104,13 @@ export default function MainPage() {
 
   const bannerPairsDesktop = [
     [
-      {
-        image: i18n.language === 'fr' ? cyberMondayWebFr : cyberMondayWebEn,
-        title: "",
-        description: "",
-        buttonText: "",
-        link: "/sale",
-      },
+      // {
+      //   image: i18n.language === 'fr' ? cyberMondayWebFr : cyberMondayWebEn,
+      //   title: "",
+      //   description: "",
+      //   buttonText: "",
+      //   link: "/sale",
+      // },
       {
         image: newBanner3,
         title: "bannerThreeTitle",
@@ -133,13 +133,13 @@ export default function MainPage() {
 
   // Mobile banners (single)
   const bannerMobile = [
-    {
-      image: i18n.language === 'fr' ? cyberMondayMobFr : cyberMondayMobEn,
-      title: "",
-      description: "",
-      buttonText: "",
-      link: "/sale",
-    },
+    // {
+    //   image: i18n.language === 'fr' ? cyberMondayMobFr : cyberMondayMobEn,
+    //   title: "",
+    //   description: "",
+    //   buttonText: "",
+    //   link: "/sale",
+    // },
     {
       image: newBanner3Mobile,
       title: 'bannerThreeTitle',
