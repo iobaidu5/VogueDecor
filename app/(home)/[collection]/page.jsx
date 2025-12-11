@@ -1,9 +1,11 @@
 import CategoryPageClient from 'components/category-page-client';
-import { metaInfo } from "lib/meta"; 
+import { metaInfo } from "lib/meta";
 
-
-export function generateMetadata({ params }) {
-  const meta = metaInfo[params.collection] ?? metaInfo.home;
+// generateMetadata must await params
+export async function generateMetadata({ params }) {
+  // Await the params promise
+  const { collection } = await params;
+  const meta = metaInfo[collection] ?? metaInfo.home;
 
   return {
     title: meta.title,
@@ -11,8 +13,11 @@ export function generateMetadata({ params }) {
   };
 }
 
+// Page component must also await params
 export default async function CategoryPage({ params }) {
-  const collection = params?.collection;
+  // Await the params promise
+  const { collection } = await params;
+  
   return (
     <div className='mx-auto flex flex-col gap-8 pb-4 text-black xs:px-[15px] xs:py-[0px] md:flex-row md:px-[100px] md:px-[60px] md:py-[0px] dark:text-white'>
       <CategoryPageClient collection={collection} />

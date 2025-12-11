@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "downlevelIteration": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -13,7 +17,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "baseUrl": ".",
     "noUncheckedIndexedAccess": true,
@@ -23,7 +27,25 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Header/Header.jsx", "app/(home)/product-detail/[id]/page.jsx", "app/(home)/product/[handle]/page.jsx", "app/(home)/[collection]/page.jsx", "components/rangeSlider/index.jsx", "app/(home)/contact-us/page.jsx", "screens/blog/[handle]/[slug]/page.tsx"],
-  "exclude": ["node_modules"],
-  "typeRoots": ["./types", "./node_modules/@types"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "components/Header/Header.jsx",
+    "app/(home)/product-detail/[id]/page.jsx",
+    "app/(home)/product/[handle]/page.jsx",
+    "app/(home)/[collection]/page.jsx",
+    "components/rangeSlider/index.jsx",
+    "app/(home)/contact-us/page.jsx",
+    "screens/blog/[handle]/[slug]/page.tsx",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "typeRoots": [
+    "./types",
+    "./node_modules/@types"
+  ]
 }
