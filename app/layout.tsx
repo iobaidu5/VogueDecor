@@ -114,7 +114,8 @@ export default async function LocaleLayout({
             "closes": "16:00"
           }
         ]
-      }
+      },
+      
     ]
   }
 

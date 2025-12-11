@@ -2877,3 +2877,240 @@ export const saleFr = [
     ],
   }
 ];
+
+
+export const booths = [
+  {
+    type: 'heading',
+    level: 1,
+    text: 'Premium Restaurant Booths for Comfort, Luxury, and Versatile Settings',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'The restaurant industry has evolved and become highly competitive. Every couple of weeks, there is a new name emerging and becoming a buzz for its aesthetics and ambiance, being Instagrammable is the holy grail for new restaurants.', bold: false },
+      { type: 'p', text: 'But you can leverage that aspect only in the start. What happens after six months? Are you maintaining the same turnaround? Are the patrons coming back? Food cannot be the only hero for the restaurant to sustain. With so many new cuisine ideas and new restaurants emerging, you need other segments to keep winning your customers.', bold: false },
+      { type: 'p', text: 'Of course, food innovation is essential. But you have to work on creating the ambiance keeping comfort as a priority. Restaurant booths are taking over the restaurant scene with their comfort and appeal.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'Why Choose Booth for Restaurants ǀ Main Appeal of Restaurant Booth',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'For many decades, restaurants comprised of seats and tables. Then the revolution happened and came the comfortable booth for restaurants. The appeal of a booth goes beyond functionality. It gives comfortable seating options, privacy, and aesthetic value.', bold: false },
+      { type: 'p', text: 'Customizable restaurant booths offer restaurant owners the leverage to design their space as they see fit. With options of fabric, material, and color to choose from, restaurant owners are looking for hundreds of options for a Montreal restaurant booth.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'Achieve Privacy and Luxury in One Fix',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'The restaurant booth seatings offer a space that patrons can have with their family. After a long day, restaurant-goers can have a comfortable and cozy space that the family can reclaim and enjoy.', bold: false },
+      { type: 'p', text: 'They can sit down after a long day, relax, and mingle with the group they came with. Instead of sitting on chairs, patrons can enjoy the comfort of sitting on bench-like booths that help them feel instantly at home.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'Accommodate Space and Aesthetics',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'Many people do not notice, only restaurant owners know how the legs of chairs add to aesthetics. Lesser legs, it looks less crowded.', bold: false },
+      { type: 'p', text: 'In that manner, booths for restaurants don’t take up so much space. They give you a clean-looking floor, fewer legs, and more space to accommodate people. The booth seating looks luxurious, clean, and aesthetically beautiful.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'Create Versatile Settings with Different Booth Types',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'There are several booths for restaurants that you can choose for your restaurant in Montreal.', bold: false },
+      { type: 'h3', text: 'Single for Everyone', bold: true },
+      { type: 'p', text: 'This one benefits the restaurant owners. It is best for small cafés and coffee houses. When the booths are placed against the wall, they take up less space leaving more space for patrons to move around.', bold: false },
+      { type: 'h3', text: 'Deuce for Special You', bold: true },
+      { type: 'p', text: 'These booths for restaurants face each other across the table. It has great seating arrangements for a few friends.', bold: false },
+      { type: 'h3', text: 'Double Because You Need More', bold: true },
+      { type: 'p', text: 'With two single booths on a single table, doubles create more walking space in a restaurant, with one group sitting around the table.', bold: false },
+      { type: 'h3', text: 'Wall Bench for Big Groups', bold: true },
+      { type: 'p', text: 'This setting works with some chairs, tables, and booth seating. This presentation creates a large space taking up less space in the restaurant.', bold: false },
+      { type: 'h3', text: 'Half Circle', bold: true },
+      { type: 'p', text: 'Accommodates around six diners, and takes less room than a restaurant.', bold: false },
+      { type: 'h3', text: '3/4 Circle', bold: true },
+      { type: 'p', text: 'Large seating option which accommodates 3/4 circle meanwhile takes lesser space compared to ten chairs.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'A Quick Guide to the Best Restaurant Booth Seating Layout',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'You cannot make the buying decision based on design and color. The decision requires some contemplation, thinking, and then planning. You can begin by browsing the restaurant booth section to find what article you like the best. Then you can continue to look at the measurements of each booth.', bold: false },
+      { type: 'p', text: 'Once you’ve found the measurement and the dining space of the restaurant, draw the markings of the booths and tables with the gracious distance between every table. Measurement and placement are crucial. So, let’s take a specific example to understand how you can do the markings and decide the perfect restaurant booth placement.', bold: false },
+      { type: 'p', text: 'A standard booth layout requires 16-18 inches of seating depth. If booths have a 30” wide table, keep a graceful distance of 72” from the center of each tabletop. Meanwhile, a 24” wide table would require at least 66” space.', bold: false },
+      { type: 'p', text: 'Restaurant owners find booths have more margin of space, taking up less room on the floor, and accommodating more people compared to a table with chairs.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'Frequently Asked Questions',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'h3', text: 'Is buying restaurant booths a smart decision?', bold: false },
+      { type: 'p', text: 'Yes, a booth for restaurants is a smart investment of your money. Compared to the space chairs take, the restaurant booth takes up less space on the floor, making restaurant floors look spacious and clean. Patrons are always picking the restaurant booth over chairs due to all the comfort and luxury.', bold: false },
+      { type: 'h3', text: 'Are there different booth styles?', bold: false },
+      { type: 'p', text: 'Yes, there are several restaurant booth styles. You can choose from:', bold: false },
+      { type: 'p', text: '-> Upholstered back', bold: false },
+      { type: 'p', text: '-> Metal legs', bold: false },
+      { type: 'p', text: '-> Padded base', bold: false },
+      { type: 'p', text: '-> Solid base', bold: false },
+      { type: 'p', text: '-> Metal legs', bold: false },
+      { type: 'p', text: '-> Bar height', bold: false },
+      { type: 'p', text: 'These options give you ample leverage to work with the theme and ambiance of the restaurant. You can find something in this selection that would complement your restaurant theme. Vogue Decor offers its customers (the restaurant owners) the option to get customized restaurant booths.', bold: false },
+      { type: 'p', text: 'With Vogue Decor, you don’t have to work with just the pre-designed options and compromise on design, you can place the order for color, material, style, and design for what works for your restaurant.', bold: false },
+      { type: 'h3', text: 'What are restaurant booths made of?', bold: false },
+      { type: 'p', text: 'Restaurant booths are made from a combination of sturdy metal framing, laminated bottoms, and stainless steel. The corners are made with stainless steel to avoid any tempering in a high-paced restaurant environment. The rest of the bench is upholstered with fabric and vinyl. These fabrics are commercial grade materials, best to clean any spillage.', bold: false },
+      { type: 'h3', text: 'Are the restaurant booth, banquette, and wall bench the same?', bold: false },
+      { type: 'p', text: 'A restaurant booth usually comprises two benches opposite each other around a table. It is a usual sight in restaurants for patrons to have a more personalized dining experience. This seating can accommodate around four or six people depending on booth size. Vogue Decor has customized restaurant booth options for restaurant owners in Montreal.', bold: false },
+      { type: 'p', text: 'Banquettes are often known as wall benches. These benches are mostly placed against or built into the wall. These are fixed seating options that work well for a quaint and cozy café. Vogue Decor has customized wall bench options for restaurant owners in Canada.', bold: false },
+      { type: 'h3', text: 'What should be the distance between two restaurant booths?', bold: false },
+      { type: 'p', text: 'The minimum space between two booths is 66 inches. This gives enough space for patrons to sit, stretch their legs, and have food at the table in the middle of two booths. If the table is wider, organically there should be more room for patrons to sit relaxed.', bold: false }
+    ],
+  }
+];
+
+export const boothsFR = [
+  {
+    type: 'heading',
+    level: 1,
+    text: 'Bancs de Restaurant Premium pour Confort, Luxe et Ambiances Polyvalentes',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'L\'industrie de la restauration a évolué et est devenue très compétitive. Toutes les deux semaines, un nouveau nom émerge et fait le buzz pour son esthétique et son ambiance : être « Instagrammable » est le graal pour les nouveaux restaurants.', bold: false },
+      { type: 'p', text: 'Mais vous ne pouvez tirer parti de cet aspect qu\'au début. Que se passe-t-il après six mois ? Maintenez-vous le même roulement ? Les clients reviennent-ils ? La nourriture ne peut pas être le seul héros pour qu\'un restaurant survive. Avec tant de nouvelles idées culinaires et de nouveaux restaurants qui émergent, vous avez besoin d\'autres atouts pour fidéliser vos clients.', bold: false },
+      { type: 'p', text: 'Bien sûr, l\'innovation culinaire est essentielle. Mais vous devez travailler à créer une ambiance en priorisant le confort. Les banquettes de restaurant prennent d\'assaut la scène de la restauration grâce à leur confort et leur attrait.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'Pourquoi Choisir une Banquette pour Restaurant ? | Principal Atrait de la Banquette de Restaurant',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'Pendant des décennies, les restaurants se composaient de chaises et de tables. Puis la révolution est arrivée avec la confortable banquette pour restaurant. L\'attrait d\'une banquette va au-delà de la fonctionnalité. Elle offre des options d\'assise confortables, de l\'intimité et une valeur esthétique.', bold: false },
+      { type: 'p', text: 'Les banquettes de restaurant personnalisables offrent aux propriétaires la possibilité d\'aménager leur espace comme bon leur semble. Avec des options de tissu, de matériau et de couleur au choix, les propriétaires de restaurants recherchent des centaines d\'options pour une banquette de restaurant à Montréal.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'Atteignez Intimité et Luxe en Une Seule Solution',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'Les banquettes de restaurant offrent un espace que les clients peuvent partager avec leur famille. Après une longue journée, les clients peuvent profiter d\'un espace confortable et chaleureux que la famille peut s\'approprier et apprécier.', bold: false },
+      { type: 'p', text: 'Ils peuvent s\'asseoir après une longue journée, se détendre et discuter avec le groupe avec lequel ils sont venus. Au lieu de s\'asseoir sur des chaises, les clients peuvent profiter du confort des banquettes ressemblant à des bancs qui les aident à se sentir instantanément comme à la maison.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'Optimisez l\'Espace et l\'Esthétique',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'Beaucoup de gens ne le remarquent pas, seuls les propriétaires de restaurants savent à quel point les pieds des chaises influencent l\'esthétique. Moins de pieds, cela paraît moins encombré.', bold: false },
+      { type: 'p', text: 'De cette manière, les banquettes pour restaurants ne prennent pas autant de place. Elles vous offrent un sol d\'apparence propre, moins de pieds, et plus d\'espace pour accueillir les gens. L\'assise en banquette paraît luxueuse, propre et esthétiquement belle.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'Créez des Ambiances Polyvalentes avec Différents Types de Banquettes',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'Il existe plusieurs banquettes pour restaurants que vous pouvez choisir pour votre restaurant à Montréal.', bold: false },
+      { type: 'h3', text: 'Simple pour Tout le Monde', bold: true },
+      { type: 'p', text: 'Celle-ci profite aux propriétaires de restaurants. Elle est idéale pour les petits cafés et maisons de café. Lorsque les banquettes sont placées contre le mur, elles occupent moins d\'espace, laissant plus de place aux clients pour circuler.', bold: false },
+      { type: 'h3', text: 'Doublette pour un Moment Spécial', bold: true },
+      { type: 'p', text: 'Ces banquettes pour restaurants se font face de part et d\'autre de la table. Elle offre une excellente disposition pour quelques amis.', bold: false },
+      { type: 'h3', text: 'Double Parce que Vous Avez Besoin de Plus', bold: true },
+      { type: 'p', text: 'Avec deux banquettes simples sur une seule table, les doubles créent plus d\'espace de circulation dans un restaurant, avec un groupe assis autour de la table.', bold: false },
+      { type: 'h3', text: 'Banc Murale pour Grands Groupes', bold: true },
+      { type: 'p', text: 'Cette configuration fonctionne avec des chaises, des tables et une banquette. Cette présentation crée un grand espace tout en occupant moins de place dans le restaurant.', bold: false },
+      { type: 'h3', text: 'Demi-Cercle', bold: true },
+      { type: 'p', text: 'Accueille environ six convives et prend moins de place qu\'un restaurant.', bold: false },
+      { type: 'h3', text: '3/4 de Cercle', bold: true },
+      { type: 'p', text: 'Option d\'assise de grande capacité qui accueille un 3/4 de cercle tout en prenant moins de place que dix chaises.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'Un Guide Rapide pour la Meilleure Disposition des Banquettes de Restaurant',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'p', text: 'Vous ne pouvez pas prendre une décision d\'achat basée uniquement sur le design et la couleur. La décision nécessite de la réflexion, de la considération, puis de la planification. Vous pouvez commencer par parcourir la section des banquettes de restaurant pour trouver l\'article qui vous plaît le plus. Ensuite, vous pouvez examiner les dimensions de chaque banquette.', bold: false },
+      { type: 'p', text: 'Une fois que vous avez trouvé les dimensions et l\'espace de salle à manger du restaurant, dessinez le marquage des banquettes et des tables avec une distance gracieuse entre chaque table. La mesure et le placement sont cruciaux. Prenons donc un exemple spécifique pour comprendre comment vous pouvez effectuer les marquages et décider du placement parfait des banquettes de restaurant.', bold: false },
+      { type: 'p', text: 'Une disposition de banquette standard nécessite une profondeur d\'assise de 16 à 18 pouces. Si les banquettes ont une table de 30\" de large, gardez une distance gracieuse de 72\" du centre de chaque plateau de table. Par ailleurs, une table de 24\" de large nécessiterait au moins 66\" d\'espace.', bold: false },
+      { type: 'p', text: 'Les propriétaires de restaurants constatent que les banquettes offrent une plus grande marge d\'espace, occupent moins de place au sol et accueillent plus de personnes par rapport à une table avec des chaises.', bold: false }
+    ],
+  },
+  {
+    type: 'heading',
+    level: 2,
+    text: 'Questions Fréquemment Posées',
+  },
+  {
+    type: 'paragraph',
+    content: [
+      { type: 'h3', text: 'Est-ce un choix judicieux d\'acheter des banquettes de restaurant ?', bold: false },
+      { type: 'p', text: 'Oui, une banquette pour restaurants est un investissement intelligent de votre argent. Comparé à l\'espace que prennent les chaises, la banquette de restaurant occupe moins de place au sol, rendant les sols des restaurants spacieux et propres. Les clients choisissent toujours la banquette de restaurant plutôt que les chaises en raison de tout le confort et le luxe qu\'elle offre.', bold: false },
+      { type: 'h3', text: 'Existe-t-il différents styles de banquettes ?', bold: false },
+      { type: 'p', text: 'Oui, il existe plusieurs styles de banquettes de restaurant. Vous pouvez choisir parmi :', bold: false },
+      { type: 'p', text: '-> Dossier rembourré', bold: false },
+      { type: 'p', text: '-> Pieds en métal', bold: false },
+      { type: 'p', text: '-> Base rembourrée', bold: false },
+      { type: 'p', text: '-> Base pleine', bold: false },
+      { type: 'p', text: '-> Pieds en métal', bold: false },
+      { type: 'p', text: '-> Hauteur de bar', bold: false },
+      { type: 'p', text: 'Ces options vous offrent une grande latitude pour travailler avec le thème et l\'ambiance du restaurant. Vous pouvez trouver dans cette sélection quelque chose qui complémente le thème de votre restaurant. Vogue Decor offre à ses clients (les propriétaires de restaurants) la possibilité d\'obtenir des banquettes de restaurant personnalisées.', bold: false },
+      { type: 'p', text: 'Avec Vogue Decor, vous n\'avez pas à vous contenter des options préconçues et à faire des compromis sur le design, vous pouvez passer commande pour la couleur, le matériau, le style et le design qui conviennent à votre restaurant.', bold: false },
+      { type: 'h3', text: 'De quoi sont faites les banquettes de restaurant ?', bold: false },
+      { type: 'p', text: 'Les banquettes de restaurant sont fabriquées à partir d\'une combinaison de structure métallique robuste, de fonds stratifiés et d\'acier inoxydable. Les coins sont en acier inoxydable pour éviter toute altération dans un environnement de restaurant à rythme soutenu. Le reste de la banquette est rembourré avec du tissu et du vinyle. Ces tissus sont des matériaux de qualité commerciale, les meilleurs pour nettoyer tout déversement.', bold: false },
+      { type: 'h3', text: 'La banquette de restaurant, la banquette fixe et le banc mural sont-ils la même chose ?', bold: false },
+      { type: 'p', text: 'Une banquette de restaurant comprend généralement deux bancs qui se font face autour d\'une table. C\'est un spectacle habituel dans les restaurants pour que les clients aient une expérience de restauration plus personnalisée. Cette assise peut accueillir environ quatre ou six personnes selon la taille de la banquette. Vogue Decor propose des options de banquettes de restaurant personnalisées pour les propriétaires de restaurants à Montréal.', bold: false },
+      { type: 'p', text: 'Les banquettes fixes sont souvent appelées bancs muraux. Ces bancs sont principalement placés contre ou intégrés au mur. Ce sont des options d\'assise fixes qui fonctionnent bien pour un café pittoresque et chaleureux. Vogue Decor propose des options de bancs muraux personnalisés pour les propriétaires de restaurants au Canada.', bold: false },
+      { type: 'h3', text: 'Quelle doit être la distance entre deux banquettes de restaurant ?', bold: false },
+      { type: 'p', text: 'L\'espace minimum entre deux banquettes est de 66 pouces. Cela donne assez d\'espace aux clients pour s\'asseoir, étirer leurs jambes et avoir de la nourriture sur la table au milieu des deux banquettes. Si la table est plus large, il devrait naturellement y avoir plus de place pour que les clients soient assis détendus.', bold: false }
+    ],
+  }
+];

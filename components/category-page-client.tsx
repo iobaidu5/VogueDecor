@@ -11,7 +11,7 @@ import type { Collection, CollectionSnippet, Product } from 'lib/shopify/types';
 import i18n from '../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import ArticleRenderer from "components/ArticleRenderer"
-import { barstools, barstoolsFr, chairs, chairsFr, tabletops, tabletopsFr, tablebases, tablebasesFr, outdoor, outdoorFr, sale, saleFr } from "../old-site-text/index";
+import { barstools, barstoolsFr, chairs, chairsFr, tabletops, tabletopsFr, tablebases, tablebasesFr, outdoor, outdoorFr, sale, saleFr, booths, boothsFR } from "../old-site-text/index";
 import { useParams } from 'next/navigation';
 import CollectionDropdown from './collection-dropdown';
 import { usePathname } from 'next/navigation';
@@ -60,6 +60,8 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
     content = outdoor
   } else if (collection2 === "sale" && i18n.language === 'en') {
     content = sale
+  } else if (collection2 === "booth" && i18n.language === 'en') {
+    content = booths
   } else if (collection2 === "chairs" && i18n.language === 'fr') {
     content = chairsFr;
   } else if (collection2 === "barstools" && i18n.language === 'fr') {
@@ -72,6 +74,8 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
     content = outdoorFr
   } else if (collection2 === "sale" && i18n.language === 'fr') {
     content = saleFr
+  } else if (collection2 === "booth" && i18n.language === 'fr') {
+    content = boothsFR
   } else {
     content = []
   }

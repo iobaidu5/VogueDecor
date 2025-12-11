@@ -35,4 +35,9 @@ export const metaInfo: Record<string, { title: string; description: string }> = 
     description:
       "Save big on restaurant furniture. Shop clearance chairs, barstools, tables & more. Limited stock, final sale.",
   },
+  booth: {
+    title: "Restaurant Booth Seating | Commercial Banquette Furniture",
+    description:
+      "Shop premium restaurant booth seating at Vogue Decor. Commercial-grade banquettes, custom configurations, and durable materials for hospitality venues. Free shipping available.",
+  },
 };
