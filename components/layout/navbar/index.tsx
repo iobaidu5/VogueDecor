@@ -50,7 +50,7 @@ export async function Navbar() {
 <Link
               key={"sale"}
               href={"/sale"}
-              className={`text-[#cbcf67] cursor-pointer text-[14px] font-small capitalize hover:scale-110`}
+              className={`text-[#FF0000] cursor-pointer text-[14px] font-small capitalize hover:scale-110`}
               onClick={() => handleNavigation("/sale")}
             >
              

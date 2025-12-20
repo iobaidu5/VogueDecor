@@ -81,7 +81,7 @@ const Drawer = ({ menu }) => {
         key={item.path}
         href={finalHref}
         className={`text-left text-lg font-medium hover:text-gray-500 ${
-          item.title === "Sale" ? "text-[#cbcf67]" : "text-gray-800"
+          item.title === "Sale" ? "text-[#FF0000]" : "text-gray-800"
         }`}
         onClick={() => handleNavigation(finalHref)}
       >
