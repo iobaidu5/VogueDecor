@@ -37,6 +37,12 @@ import preBoxingMobEn from "media/pre-boxing/preBoxingMobEn.png"
 import preBoxingMobFr from "media/pre-boxing/preBoxingMobFr.png"
 
 
+import boxingBannerWebEn from "media/BoxingDay/Boxing Day sale web banner (eng).png"
+import boxingBannerWebFr from "media/BoxingDay/Boxing Day sale web banner (fr).png"
+import boxingBannerMobEn from "media/BoxingDay/Boxing Day Sale mobile (eng).png"
+import boxingBannerMobFr from "media/BoxingDay/Boxing Day Sale mobile (fr).png"
+
+
 
 
 import mainText from 'media/png/mainText.png';
@@ -105,7 +111,7 @@ export default function MainPage() {
   const bannerPairsDesktop = [
     [
       {
-        image: i18n.language === 'fr' ? preBoxingWebFr : preBoxingWebEn,
+        image: i18n.language === 'fr' ? boxingBannerWebFr : boxingBannerWebEn,
         title: "",
         description: "",
         buttonText: "",
@@ -134,7 +140,7 @@ export default function MainPage() {
   // Mobile banners (single)
   const bannerMobile = [
     {
-      image: i18n.language === 'fr' ? preBoxingMobFr : preBoxingMobEn,
+      image: i18n.language === 'fr' ? boxingBannerMobFr : boxingBannerMobEn,
       title: "",
       description: "",
       buttonText: "",
