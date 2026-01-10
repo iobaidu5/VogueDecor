@@ -110,13 +110,13 @@ export default function MainPage() {
 
   const bannerPairsDesktop = [
     [
-      {
-        image: i18n.language === 'fr' ? boxingBannerWebFr : boxingBannerWebEn,
-        title: "",
-        description: "",
-        buttonText: "",
-        link: "/sale",
-      },
+      // {
+      //   image: i18n.language === 'fr' ? boxingBannerWebFr : boxingBannerWebEn,
+      //   title: "",
+      //   description: "",
+      //   buttonText: "",
+      //   link: "/sale",
+      // },
       {
         image: newBanner3,
         title: "bannerThreeTitle",
@@ -139,13 +139,13 @@ export default function MainPage() {
 
   // Mobile banners (single)
   const bannerMobile = [
-    {
-      image: i18n.language === 'fr' ? boxingBannerMobFr : boxingBannerMobEn,
-      title: "",
-      description: "",
-      buttonText: "",
-      link: "/sale",
-    },
+    // {
+    //   image: i18n.language === 'fr' ? boxingBannerMobFr : boxingBannerMobEn,
+    //   title: "",
+    //   description: "",
+    //   buttonText: "",
+    //   link: "/sale",
+    // },
     {
       image: newBanner3Mobile,
       title: 'bannerThreeTitle',
