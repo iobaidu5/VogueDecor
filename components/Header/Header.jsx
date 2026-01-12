@@ -93,7 +93,7 @@ const Header = ({ menu }) => {
           <CurrencySwitcher />
         </div>
 
-        <div className="absolute left-1/2 -translate-x-1/2">
+        <div className="absolute left-1/2 -translate-x-1/2 mt-3">
           <Link
             href={pathname.startsWith("/fr") ? "/fr" : `/`}
             passHref
@@ -102,8 +102,9 @@ const Header = ({ menu }) => {
             <Image
               src={logo}
               alt="logo"
-              className="lg991:my-14 -mb-6 md:mb-0 mt-4 md:mt-4 md:mt-8 w-[100px] md:w-[120px] lg:w-[140px] cursor-pointer"
+              className="block w-[100px] md:w-[120px] lg:w-[140px] cursor-pointer"
             />
+
           </Link>
         </div>
 
@@ -134,65 +135,65 @@ const Header = ({ menu }) => {
 
       {/* Navigation menu */}
       <div className="my-8 hidden items-center justify-center space-x-14 lg:flex">
-  {!ready ? (
-    <div>Loading translations...</div>
-  ) : (
-    menu?.map((item) => {
-      // Extract clean internal path
-      let cleanPath = item.path;
+        {!ready ? (
+          <div>Loading translations...</div>
+        ) : (
+          menu?.map((item) => {
+            // Extract clean internal path
+            let cleanPath = item.path;
 
-      try {
-        const url = new URL(item.path);
-        cleanPath = url.pathname; // e.g. "/chairs"
-      } catch (e) {
-        // item.path was already a relative path, no change needed
-      }
+            try {
+              const url = new URL(item.path);
+              cleanPath = url.pathname; // e.g. "/chairs"
+            } catch (e) {
+              // item.path was already a relative path, no change needed
+            }
 
-      // Apply language prefix
-      const finalHref =
-        currentLang === "fr"
-          ? cleanPath.startsWith("/fr") ? cleanPath : `/fr${cleanPath}`
-          : cleanPath;
+            // Apply language prefix
+            const finalHref =
+              currentLang === "fr"
+                ? cleanPath.startsWith("/fr") ? cleanPath : `/fr${cleanPath}`
+                : cleanPath;
 
-      return (
-        <Link
-          key={item.path}
-          href={finalHref}
-          prefetch={true}
-          className={`
+            return (
+              <Link
+                key={item.path}
+                href={finalHref}
+                prefetch={true}
+                className={`
             cursor-pointer text-[14px] font-small capitalize hover:scale-110
             ${item.title === "Sale" ? "text-[#7d0709]" : "text-black"}
           `}
-        >
-          {t(`menu.${item.title}`)}
-        </Link>
-      );
-    })
-  )}
+              >
+                {t(`menu.${item.title}`)}
+              </Link>
+            );
+          })
+        )}
 
-  <Link
-    key="clearance"
-    href="/clearance"
-    prefetch={true}
-    className={`
+        <Link
+          key="clearance"
+          href="/clearance"
+          prefetch={true}
+          className={`
       cursor-pointer text-[14px] capitalize hover:scale-110 
       text-grey-500 bg-[#ffed00] px-3 py-1 rounded-full transition-transform duration-200
     `}
-  >
-    {t(`menu.Clearance`)}
-  </Link>
+        >
+          {t(`menu.Clearance`)}
+        </Link>
 
-  <Link
-    key="bundles"
-    href="/bundles"
-    prefetch={true}
-    className={`
+        <Link
+          key="bundles"
+          href="/bundles"
+          prefetch={true}
+          className={`
       cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-gray-500'
     `}
-  >
-    {t(`menu.Bundles`)}
-  </Link>
-</div>
+        >
+          {t(`menu.Bundles`)}
+        </Link>
+      </div>
 
 
       <Drawer menu={menu} />
