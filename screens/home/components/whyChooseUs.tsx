@@ -13,7 +13,6 @@ const WhyChooseUs = () => {
       <div className="flex flex-col items-center justify-center pt-10">
         <p className="text-[14px] text-[#878787]">{t('elevateSpace')}</p>
         <p className="font-medium xs:text-[25px] text-black md:text-[40px]">{t('whyChooseUs')}</p>
-        {/* <div className="h-[2px] w-[130px] bg-[#878787]" /> */}
       </div>
       <ChooseUsSection />
     </div>
@@ -51,41 +50,51 @@ const data = [
 
 const ChooseUsSection = () => {
   const { t, ready } = useTranslation('common');
-  return (
-    <div className="grid gap-2 pt-[40px] grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
-      {data?.map((item: any) => (
-        <div className="flex flex-col items-center mt-4" key={item?.firstText}>
-          {item?.secondText === 'Manufacturer' ? (
-            <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full bg-[#D9D9D94F]">
-              <Image src={item.icon} alt={item.firstText} />
+    
+    return (
+      <div className="grid gap-6 pt-[40px] grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
+        {data?.map((item: any) => {
+          const description = t(`choose.${item.desc}`) || item.desc;
+          
+          return (
+            <div 
+              className="flex flex-col items-center" 
+              key={item?.firstText}
+            >
+              {/* Icon with consistent size */}
+              <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full bg-[#D9D9D94F] mb-4">
+                <Image 
+                  src={item.icon} 
+                  alt={item.firstText}
+                />
+              </div>
+
+              
+              
+              {/* First Text with fixed height */}
+              <div className="h-[35px] flex items-center justify-center w-full">
+                <p className="font-medium text-black text-center xs:text-[16px] sm:text-[22px] lg:text-[24px] w-full">
+                  {t(`choose.${item?.firstText}`)}
+                </p>
+              </div>
+              
+              {/* Second Text with fixed height */}
+              <div className="h-[35px] flex items-center justify-center w-full">
+                <p className="font-medium text-black text-center xs:text-[16px] sm:text-[22px] lg:text-[24px] w-full">
+                  {t(`choose.${item?.secondText}`)}
+                </p>
+              </div>
+              
+              {/* Description with fixed height */}
+              <div className="h-[80px] flex items-start justify-center w-full mt-2">
+                <p className="sm:text-base text-[12px] lg:text-[16px] text-[#878787] leading-[1.6] break-words text-center px-2">
+                  {description}
+                </p>
+              </div>
             </div>
-          ) : (
-            <Image src={item.icon} alt={item.firstText} />
-          )}
-          <p className="pt-2 font-medium text-black xs:text-[16px] sm:text-[22px] lg:text-[24px]">
-            {t(`choose.${item?.firstText}`)}
-          </p>
-          <p className="font-medium text-black xs:text-[16px] sm:text-[22px] lg:text-[24px]">
-            {t(`choose.${item?.secondText}`)}
-          </p>
-          <p className="mt-2 sm:text-base text-[12px] lg:text-[16px] text-[#878787] leading-[1.6] break-words text-center">
-
-            {t(`choose.${item.desc}`)
-              ?.split(' ')
-              ?.slice(0, Math.ceil(t(`choose.${item.desc}`).split(' ').length / 2))
-              ?.join(' ')}
-            <br />
-            {t(`choose.${item.desc}`)
-              ?.split(' ')
-              ?.slice(Math.ceil(item.desc.split(' ').length / 2))
-              ?.join(' ')}
-
-
-
-          </p>
-        </div>
-      ))}
-    </div>
-  );
-};
+          );
+        })}
+      </div>
+    );
+  };
 

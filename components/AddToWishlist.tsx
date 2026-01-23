@@ -50,8 +50,8 @@ const AddToWishlist: React.FC<AddToWishlistProps> = ({ productId, isWishlisted =
     <Image
       src={wishlisted ? heartFilled : heart}
       alt="heartIcon"
-      width={20}
-      height={20}
+      width={15}
+      height={15}
       className="cursor-pointer transition"
       onClick={handleAddToWishlist}
     />

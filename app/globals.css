@@ -71,7 +71,7 @@ body {
 }
 
 .slick-dots li button:before {
-  font-size: 14px !important;
+  font-size: 10px !important;
   margin: 5px 0 !important;
 }
 
@@ -365,5 +365,14 @@ p a {
     /* blue-700 */
     text-align: left;
     font-weight: 600 !important;
+  }
+}
+
+@keyframes pump {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
   }
 }
