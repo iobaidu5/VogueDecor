@@ -376,3 +376,20 @@ p a {
     transform: scale(1.1);
   }
 }
+
+
+/* Handle extreme zoom levels */
+@media screen and (min-resolution: 500%) {
+  .contact-location-grid {
+    min-height: auto !important;
+    height: auto !important;
+  }
+  
+  .contact-table-container {
+    min-height: 500px !important;
+  }
+  
+  .contact-map-container {
+    min-height: 500px !important;
+  }
+}
