@@ -74,7 +74,7 @@ const Quantity = ({ item }: QuantityProps) => {
   return (
     <div className="flex items-center justify-center border border-gray-300">
       <button
-        className="flex h-10 w-10 items-center justify-center text-xl text-gray-500 disabled:opacity-50"
+        className="flex h-8 w-8 rounded-md items-center justify-center text-xl text-gray-500 disabled:opacity-50"
         onClick={() => handleQuantityChange(quantity - 1)}
         disabled={quantity <= 1 || isPending}
       >
@@ -84,7 +84,7 @@ const Quantity = ({ item }: QuantityProps) => {
         {quantity}
       </span>
       <button
-        className="flex h-10 w-10 items-center justify-center text-xl text-gray-500 disabled:opacity-50"
+        className="flex h-8 w-8 rounded-md items-center justify-center text-xl text-gray-500 disabled:opacity-50"
         onClick={() => handleQuantityChange(quantity + 1)}
         disabled={isPending}
       >

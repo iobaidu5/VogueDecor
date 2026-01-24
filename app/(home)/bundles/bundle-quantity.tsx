@@ -114,7 +114,7 @@ const BundleQuantity = ({ bundleItems, products }: BundleQuantityProps) => {
     <div className="flex items-center space-x-4">
       <div className="flex items-center justify-center border border-gray-300">
         <button
-          className="flex h-10 w-10 items-center justify-center text-xl text-gray-500 disabled:opacity-50"
+          className="flex h-8 w-8 items-center justify-center text-xl text-gray-500 disabled:opacity-50"
           onClick={handleDecrement}
           disabled={bundleQuantity <= 1 || isPending}
         >
@@ -132,7 +132,7 @@ const BundleQuantity = ({ bundleItems, products }: BundleQuantityProps) => {
         </span>
         
         <button
-          className="flex h-10 w-10 items-center justify-center text-xl text-gray-500 disabled:opacity-50"
+          className="flex h-8 w-8 items-center justify-center text-xl text-gray-500 disabled:opacity-50"
           onClick={handleIncrement}
           disabled={isPending}
         >
