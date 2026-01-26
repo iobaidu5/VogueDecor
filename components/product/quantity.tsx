@@ -72,7 +72,7 @@ const Quantity = ({ item }: QuantityProps) => {
   };
 
   return (
-    <div className="flex items-center justify-center border border-gray-300">
+    <div className="flex items-center justify-center border border-gray-300 rounded-md">
       <button
         className="flex h-8 w-8 rounded-md items-center justify-center text-xl text-gray-500 disabled:opacity-50"
         onClick={() => handleQuantityChange(quantity - 1)}

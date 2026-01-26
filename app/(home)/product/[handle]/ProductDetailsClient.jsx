@@ -124,7 +124,8 @@ export default function ProductDetailsClient({ product }) {
               </div>
               {collection === "clearance" && (
               <p className="px-3 py-1 mt-4 text-sm w-auto text-center lg:w-[40%] font-semibold text-gray-700 bg-[#ffed00] rounded-full animate-[pump_1.6s_ease-in-out_infinite]">
-                CLEARANCE ITEM
+                
+                {t(`Clearance: Final Sale`)}
               </p>
               )}
 

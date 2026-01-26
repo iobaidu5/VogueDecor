@@ -3,7 +3,7 @@
 import React, { useState } from 'react'; 
 
 const ReadMoreParagraph = ({ text, bold, italic }) => {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
   const limit = 1000;
   const isLong = text.length > limit;
 
@@ -32,7 +32,7 @@ const ReadMoreParagraph = ({ text, bold, italic }) => {
 };
 
 const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div className="border-b border-gray-200 py-4">

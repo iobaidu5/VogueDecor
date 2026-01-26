@@ -110,7 +110,7 @@ export function ProductCard({ product, collection }: { product: any, collection?
                 {formattedPrice === "$0.00" ? formattedSalePrice : formattedPrice || ''}
               </p>
               {formattedSalePrice && formattedPrice !== '$0.00' && (
-                <p className="text-sm text-left lg:text-center font-medium text-red-700">
+                <p className={collection === "clearance" ? "text-gray-700 bg-[#ffed00] p-1 rounded-full text-sm text-left lg:text-center font-medium" : "text-sm text-left lg:text-center font-medium text-red-700"}>
                   {formattedSalePrice}
                 </p>
               )}
