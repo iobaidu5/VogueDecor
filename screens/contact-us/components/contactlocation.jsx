@@ -14,12 +14,12 @@ const hours = [
 ];
 
 const hoursToronto = [
-  { day: 'Monday', time: '10:30AM–06:30PM' },
-  { day: 'Tuesday', time: '10:30AM–06:30PM' },
-  { day: 'Wednesday', time: '10:30AM–06:30PM' },
-  { day: 'Thursday', time: '10:30AM–06:30PM' },
-  { day: 'Friday', time: '10:30AM–06:30PM' },
-  { day: 'Saturday', time: 'Closed' },
+  { day: 'Monday', time: '10AM–5PM' },
+  { day: 'Tuesday', time: '10AM–5PM' },
+  { day: 'Wednesday', time: '10AM–5PM' },
+  { day: 'Thursday', time: '10AM–5PM' },
+  { day: 'Friday', time: '10AM–5PM' },
+  { day: 'Saturday', time: '10AM–3PM' },
   { day: 'Sunday', time: 'Closed' }
 ];
 
@@ -96,7 +96,7 @@ const ContactLocation = () => {
             {/* Hours Table - Use min-height and responsive text */}
             <div className="col-span-2 w-full rounded-[7px] bg-[#F7F7F7] lg:col-span-1 min-h-[380px]">
               <div className="h-full overflow-hidden">
-                <table className="w-full h-full text-[12px] lg:text-[14px]">
+                <table className="w-full h-full">
                   <tbody>
                     {hoursToronto?.map((item, index) => (
                       <tr

@@ -74,12 +74,13 @@ export default function ProductDetailsClient({ product }) {
     return sliced;
   };
 
-
-
   function extractBeforeFeatures(text) {
     const splitText = text?.split('Materials:');
     return splitText[0]?.trim();
   }
+
+
+  console.log("collectioncollection ", collection)
 
 
   return (
