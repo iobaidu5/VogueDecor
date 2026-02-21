@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 
-import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import Link from 'next/link';
 import CurrencySwitcher from 'components/currency/CurrencySwitcher';
@@ -13,15 +12,12 @@ import i18n from '../../lib/i18nClient';
 import LanguageSwitcher from 'components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 
-const Drawer = ({ menu }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Drawer = ({ menu, open = false, onClose }) => {
   const { t, ready } = useTranslation('common');
   const currentLang = i18n.language;
 
-  const toggleDrawer = () => setIsOpen(!isOpen);
-
   const handleNavigation = () => {
-    setIsOpen(false);
+    onClose?.();
   };
 
   const [showSearch, setShowSearch] = useState(false);
@@ -29,21 +25,12 @@ const Drawer = ({ menu }) => {
 
   return (
     <>
-      {/* Hamburger Menu Icon */}
-      <button
-        onClick={toggleDrawer}
-        className="cursor-pointer mt-2 md:mt-0 xs:mr-12 md:mr-6 lg:hidden"
-        aria-label="Open menu"
-      >
-        <RxHamburgerMenu size={22} />
-      </button>
-
       {/* Drawer Overlay */}
-      {isOpen && <div className="fixed inset-0 z-50 bg-black/50" onClick={toggleDrawer} />}
+      {open && <div className="fixed inset-0 z-50 bg-black/50" onClick={onClose} aria-hidden="true" />}
 
       {/* Drawer Menu */}
       <div
-        className={`fixed left-0 top-0 z-[100000000000] flex h-full w-80 flex-col justify-between bg-white shadow-lg transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed left-0 top-0 z-[100000000000] flex h-full w-80 flex-col justify-between bg-white shadow-lg transition-transform duration-300 ease-in-out ${open ? 'translate-x-0' : '-translate-x-full'
           }`}
       >
         {/* Top part with close button and navigation links */}
@@ -51,7 +38,7 @@ const Drawer = ({ menu }) => {
           {/* Close Button */}
           <button
             className="absolute right-4 top-4 cursor-pointer"
-            onClick={toggleDrawer}
+            onClick={onClose}
             aria-label="Close menu"
           >
             <IoIosCloseCircleOutline size={30} color="red" />

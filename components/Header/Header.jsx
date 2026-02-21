@@ -31,6 +31,7 @@ function SignupButton() {
 
 const Header = ({ menu }) => {
   const [showSearch, setShowSearch] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [isSticky, setIsSticky] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -85,7 +86,15 @@ const Header = ({ menu }) => {
         }`}
     >
       {/* Top Row */}
-      <div className={`relative flex items-center justify-between  ${isSticky ? "pt-2" : "pt-4"}`}>
+      <div className={`relative flex min-h-14 items-center justify-between ${isSticky ? "pt-2" : "pt-4"}`}>
+        {/* Hamburger - mobile only, aligned left like logo/icons */}
+        <button
+          onClick={() => setDrawerOpen(true)}
+          className="absolute left-6 top-1/2 z-50 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center lg991:hidden md:left-8"
+          aria-label="Open menu"
+        >
+          <RxHamburgerMenu size={22} />
+        </button>
         <div className="hidden lg991:flex items-center gap-2">
           <LanguageSwitcher />
           <GoogleTranslateScript />
@@ -93,13 +102,13 @@ const Header = ({ menu }) => {
           <CurrencySwitcher />
           <a
             href="tel:+18888808232"
-            className="flex items-center justify-center rounded-md bg-black text-white xs:h-[36px] xs:w-[90px] md:h-[42px] md:px-4 font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap"
+            className="flex items-center justify-center rounded-md bg-black text-white h-[42px] px-5 text-base font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap"
           >
             Call Now
           </a>
         </div>
 
-        <div className="absolute left-1/2 -translate-x-1/2 mt-3">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <Link
             href={pathname.startsWith("/fr") ? "/fr" : `/`}
             passHref
@@ -114,7 +123,14 @@ const Header = ({ menu }) => {
           </Link>
         </div>
 
-        <div className="absolute z-50 right-6 md:right-8 top-1/2 -translate-y-1/2 lg:top-auto lg:translate-y-0 lg:relative flex items-center gap-3 lg:gap-4 [&_.cart-icon]:!relative [&_.cart-icon]:!top-auto [&_.cart-icon]:!right-auto">
+        <div className="absolute z-50 right-6 md:right-8 top-1/2 -translate-y-1/2 lg991:top-auto lg991:translate-y-0 lg991:relative flex items-center gap-2 lg991:gap-4 [&_.cart-icon]:!relative [&_.cart-icon]:!top-auto [&_.cart-icon]:!right-auto">
+          {/* Call Now - visible on mobile only (desktop has it in left section), compact size */}
+          <a
+            href="tel:+18888808232"
+            className="flex shrink-0 items-center justify-center rounded-md bg-black px-2.5 py-1.5 text-[11px] font-medium text-white transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap lg991:hidden sm:px-3 sm:py-2 sm:text-xs"
+          >
+            Call
+          </a>
           <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
             <button
               type="button"
@@ -213,7 +229,7 @@ const Header = ({ menu }) => {
       </div>
 
 
-      <Drawer menu={menu} />
+      <Drawer menu={menu} open={drawerOpen} onClose={() => setDrawerOpen(false)} />
     </nav>
   );
 };
