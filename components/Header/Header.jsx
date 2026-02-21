@@ -95,14 +95,14 @@ const Header = ({ menu }) => {
         >
           <RxHamburgerMenu size={22} />
         </button>
-        <div className="hidden lg991:flex items-center gap-2">
+        <div className="hidden lg991:flex items-center gap-1.5 -ml-2 [&_button]:text-sm [&_button]:py-1.5 [&_button]:px-2 [&_select]:text-sm [&_select]:py-1.5 [&_select]:px-2">
           <LanguageSwitcher />
           <GoogleTranslateScript />
-          <div className="h-5 w-px bg-[#A0A0A0] ml-2" />
+          <div className="h-4 w-px bg-[#A0A0A0] mx-1" />
           <CurrencySwitcher />
           <a
             href="tel:+18888808232"
-            className="flex items-center justify-center rounded-md bg-black text-white h-[42px] px-5 text-base font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap"
+            className="flex items-center justify-center rounded-md bg-black text-white h-[30px] px-3 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap shrink-0"
           >
             Call Now
           </a>
@@ -117,17 +117,17 @@ const Header = ({ menu }) => {
             <Image
               src={logo}
               alt="logo"
-              className="block w-[100px] md:w-[120px] lg:w-[140px] cursor-pointer"
+              className="block w-[80px] min-[420px]:w-[100px] md:w-[120px] lg:w-[140px] cursor-pointer"
             />
 
           </Link>
         </div>
 
-        <div className="absolute z-50 right-6 md:right-8 top-1/2 -translate-y-1/2 lg991:top-auto lg991:translate-y-0 lg991:relative flex items-center gap-2 lg991:gap-4 [&_.cart-icon]:!relative [&_.cart-icon]:!top-auto [&_.cart-icon]:!right-auto">
-          {/* Call Now - visible on mobile only (desktop has it in left section), compact size */}
+        <div className="absolute z-50 right-6 md:right-8 top-1/2 -translate-y-1/2 lg991:top-auto lg991:translate-y-0 lg991:relative flex items-center gap-1.5 sm:gap-2 lg991:gap-4 [&_.cart-icon]:!relative [&_.cart-icon]:!top-auto [&_.cart-icon]:!right-auto">
+          {/* Call Now - visible on mobile only (desktop has it in left section), hidden on very small screens to avoid logo overlap */}
           <a
             href="tel:+18888808232"
-            className="flex shrink-0 items-center justify-center rounded-md bg-black px-2.5 py-1.5 text-[11px] font-medium text-white transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap lg991:hidden sm:px-3 sm:py-2 sm:text-xs"
+            className="hidden min-[420px]:flex shrink-0 items-center justify-center rounded-md bg-black px-2.5 py-1.5 text-[11px] font-medium text-white transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap lg991:hidden sm:px-3 sm:py-2 sm:text-xs"
           >
             Call
           </a>
