@@ -86,11 +86,17 @@ const Header = ({ menu }) => {
     >
       {/* Top Row */}
       <div className={`relative flex items-center justify-between  ${isSticky ? "pt-2" : "pt-4"}`}>
-        <div className="hidden lg991:flex items-center">
+        <div className="hidden lg991:flex items-center gap-2">
           <LanguageSwitcher />
           <GoogleTranslateScript />
           <div className="h-5 w-px bg-[#A0A0A0] ml-2" />
           <CurrencySwitcher />
+          <a
+            href="tel:+18888808232"
+            className="flex items-center justify-center rounded-md bg-black text-white xs:h-[36px] xs:w-[90px] md:h-[42px] md:px-4 font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap"
+          >
+            Call Now
+          </a>
         </div>
 
         <div className="absolute left-1/2 -translate-x-1/2 mt-3">
@@ -108,17 +114,24 @@ const Header = ({ menu }) => {
           </Link>
         </div>
 
-        <div className="absolute z50 right-10 md:right-8 top-2 md:top-0 lg:relative md:flex items-center space-x-4 mt-4">
-          <div className="relative">
-            <Image
-              src={searchIcon}
-              alt="search"
+        <div className="absolute z-50 right-6 md:right-8 top-1/2 -translate-y-1/2 lg:top-auto lg:translate-y-0 lg:relative flex items-center gap-3 lg:gap-4 [&_.cart-icon]:!relative [&_.cart-icon]:!top-auto [&_.cart-icon]:!right-auto">
+          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
+            <button
+              type="button"
               onClick={() => setShowSearch((prev) => !prev)}
-              className="h-5 w-5 cursor-pointer hover:text-gray-500 z-20 relative"
-            />
-
+              className="flex h-full w-full items-center justify-center rounded-full transition-colors hover:bg-gray-100"
+              aria-label="Search"
+            >
+              <Image
+                src={searchIcon}
+                alt=""
+                width={20}
+                height={20}
+                className="h-5 w-5 cursor-pointer text-gray-600"
+              />
+            </button>
             <div
-              className={`absolute top-14 z-50000000 xl:top-12 right-0 lg:-left-40 bg-white border-b border-b-black rounded shadow-lg w-72 p-1 transform transition-all duration-300 ease-in-out ${showSearch ? 'opacity-100 z-50 scale-100 visible' : 'opacity-0 scale-95 invisible'
+              className={`absolute top-full right-0 mt-2 xl:right-auto xl:left-1/2 xl:-translate-x-1/2 z-[99999] bg-white border-b border-b-black rounded shadow-lg w-72 p-1 transform transition-all duration-300 ease-in-out ${showSearch ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible pointer-events-none'
                 }`}
             >
               <Search />
@@ -126,10 +139,14 @@ const Header = ({ menu }) => {
           </div>
 
           {/* User Menu */}
-          <div className='hidden lg991:flex'><UserMenu /></div>
+          <div className="hidden lg991:flex h-10 shrink-0 items-center">
+            <UserMenu />
+          </div>
 
           {/* Cart Icon + Modal */}
-          <CartModal />
+          <div className="flex h-10 min-w-10 shrink-0 items-center justify-center">
+            <CartModal />
+          </div>
         </div>
       </div>
 
