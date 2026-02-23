@@ -95,14 +95,15 @@ const Header = ({ menu }) => {
         >
           <RxHamburgerMenu size={22} />
         </button>
-        <div className="hidden lg991:flex items-center gap-1.5 -ml-2 [&_button]:text-sm [&_button]:py-1.5 [&_button]:px-2 [&_select]:text-sm [&_select]:py-1.5 [&_select]:px-2">
+        <div className="hidden lg991:flex items-center gap-1 -ml-2 [&_button]:text-sm [&_button]:py-1 [&_button]:px-1.5 [&_select]:text-sm [&_select]:py-1 [&_select]:px-1.5">
           <LanguageSwitcher />
           <GoogleTranslateScript />
-          <div className="h-4 w-px bg-[#A0A0A0] mx-1" />
+          <div className="h-3.5 w-px bg-[#A0A0A0] shrink-0" />
           <CurrencySwitcher />
+          <div className="h-3.5 w-px bg-[#A0A0A0] shrink-0" />
           <a
             href="tel:+18888808232"
-            className="flex items-center justify-center rounded-md bg-black text-white h-[30px] px-3 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap shrink-0"
+            className="flex items-center justify-center rounded-md bg-black text-white h-6 px-2 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap shrink-0"
           >
             Call Now
           </a>
