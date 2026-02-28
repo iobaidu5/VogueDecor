@@ -5,7 +5,7 @@ function getBaseUrl(): string {
     return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '');
   }
   if (process.env.VERCEL_ENV === 'production' || process.env.NODE_ENV === 'production') {
-    return 'https://voguedecor.com';
+    return 'https://www.voguedecor.com';
   }
   if (process.env.NEXT_PUBLIC_VERCEL_URL) {
     return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
@@ -20,8 +20,19 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/_next/', '/private/'],
+        allow: ['/', '/_next/static/', '/images/', '/assets/'],
+        disallow: [
+          '/api/',
+          '/_next/',
+          '/cart',
+          '/checkout',
+          '/account',
+          '/login',
+          '/register',
+          '/search',
+          '/?',
+          '/add-to-cart',
+        ],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
