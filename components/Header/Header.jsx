@@ -81,7 +81,7 @@ const Header = ({ menu }) => {
   return (
     <nav
       className={`z-[999] w-full px-6 md:px-[40px] lg:px-[70px] transition-all duration-300 ${isSticky
-        ? `fixed top-0 bg-white shadow-md py-0 ${isMobile ? "h-14" : ""}`
+        ? "fixed top-0 left-0 right-0 bg-white shadow-md py-0"
         : "relative bg-transparent"
         }`}
     >
