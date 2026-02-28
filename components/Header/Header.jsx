@@ -85,31 +85,10 @@ const Header = ({ menu }) => {
         : "relative bg-transparent"
         }`}
     >
-      {/* Top Row */}
-      <div className={`relative flex min-h-14 items-center justify-between ${isSticky ? "pt-2" : "pt-4"}`}>
-        {/* Hamburger - mobile only, aligned left like logo/icons */}
-        <button
-          onClick={() => setDrawerOpen(true)}
-          className="absolute left-6 top-1/2 z-50 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center lg991:hidden md:left-8"
-          aria-label="Open menu"
-        >
-          <RxHamburgerMenu size={22} />
-        </button>
-        <div className="hidden lg991:flex items-center gap-1 -ml-2 [&_button]:text-sm [&_button]:py-1 [&_button]:px-1.5 [&_select]:text-sm [&_select]:py-1 [&_select]:px-1.5">
-          <LanguageSwitcher />
-          <GoogleTranslateScript />
-          <div className="h-3.5 w-px bg-[#A0A0A0] shrink-0" />
-          <CurrencySwitcher />
-          <div className="h-3.5 w-px bg-[#A0A0A0] shrink-0" />
-          <a
-            href="tel:+18888808232"
-            className="flex items-center justify-center rounded-md bg-black text-white h-6 px-2 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap shrink-0"
-          >
-            Call Now
-          </a>
-        </div>
-
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+      {/* Top section: on mobile = 2 rows (logo then nav), on desktop = 1 row */}
+        <div className={`relative flex flex-col lg991:flex-row min-h-14 items-center justify-between ${isSticky ? "pt-2" : "pt-2"}`}>
+        {/* Mobile only: logo row, top center */}
+        <div className="w-full flex justify-center py-2 lg991:hidden">
           <Link
             href={pathname.startsWith("/fr") ? "/fr" : `/`}
             passHref
@@ -118,20 +97,61 @@ const Header = ({ menu }) => {
             <Image
               src={logo}
               alt="logo"
-              className="block w-[80px] min-[420px]:w-[100px] md:w-[120px] lg:w-[140px] cursor-pointer"
+              className="block w-[100px] cursor-pointer"
             />
-
           </Link>
         </div>
 
-        <div className="absolute z-50 right-6 md:right-8 top-1/2 -translate-y-1/2 lg991:top-auto lg991:translate-y-0 lg991:relative flex items-center gap-1.5 sm:gap-2 lg991:gap-4 [&_.cart-icon]:!relative [&_.cart-icon]:!top-auto [&_.cart-icon]:!right-auto">
-          {/* Call Now - visible on mobile only (desktop has it in left section), hidden on very small screens to avoid logo overlap */}
-          <a
-            href="tel:+18888808232"
-            className="hidden min-[420px]:flex shrink-0 items-center justify-center rounded-md bg-black px-2.5 py-1.5 text-[11px] font-medium text-white transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap lg991:hidden sm:px-3 sm:py-2 sm:text-xs"
+        {/* Row 2 (mobile) / single row (desktop): hamburger + left section, center logo (desktop), right section */}
+        <div className="relative flex w-full min-h-12 lg991:min-h-0 items-center justify-between">
+          {/* Hamburger - mobile only, left side of row 2 */}
+          <button
+            onClick={() => setDrawerOpen(true)}
+            className="absolute left-0 top-1/2 z-50 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center lg991:hidden"
+            aria-label="Open menu"
           >
-            Call
-          </a>
+            <RxHamburgerMenu size={22} />
+          </button>
+
+          {/* Desktop: left section (language, currency, Call Now) */}
+          <div className="hidden lg991:flex items-center gap-1 -ml-2 [&_button]:text-sm [&_button]:py-1 [&_button]:px-1.5 [&_select]:text-sm [&_select]:py-1 [&_select]:px-1.5">
+            <LanguageSwitcher />
+            <GoogleTranslateScript />
+            <div className="h-3.5 w-px bg-[#A0A0A0] shrink-0" />
+            <CurrencySwitcher />
+            <div className="h-3.5 w-px bg-[#A0A0A0] shrink-0" />
+            <a
+              href="tel:+18888808232"
+              className="flex items-center justify-center rounded-md bg-black text-white h-6 px-2 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap shrink-0"
+            >
+              Call Now
+            </a>
+          </div>
+
+          {/* Desktop only: center logo */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg991:block">
+            <Link
+              href={pathname.startsWith("/fr") ? "/fr" : `/`}
+              passHref
+              legacyBehavior
+            >
+              <Image
+                src={logo}
+                alt="logo"
+                className="block w-[120px] lg:w-[140px] cursor-pointer"
+              />
+            </Link>
+          </div>
+
+          {/* Right section: Call (mobile) + search + cart; on mobile in flow with ml-auto */}
+          <div className="flex items-center gap-1.5 sm:gap-2 lg991:gap-4 ml-auto lg991:ml-0 [&_.cart-icon]:!relative [&_.cart-icon]:!top-auto [&_.cart-icon]:!right-auto">
+            {/* Call Now - mobile only (desktop has it in left section) */}
+            <a
+              href="tel:+18888808232"
+              className="flex shrink-0 items-center justify-center rounded-md bg-black px-2.5 py-1.5 text-xs font-medium text-white transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap lg991:hidden sm:px-3 sm:py-2 sm:text-sm"
+            >
+              Call Now
+            </a>
           <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
             <button
               type="button"
@@ -164,11 +184,12 @@ const Header = ({ menu }) => {
           <div className="flex h-10 min-w-10 shrink-0 items-center justify-center">
             <CartModal />
           </div>
+          </div>
         </div>
       </div>
 
       {/* Navigation menu */}
-      <div className="my-8 hidden items-center justify-center space-x-14 lg:flex">
+      <div className="my-2 hidden items-center justify-center space-x-14 lg:flex">
         {!ready ? (
           <div>Loading translations...</div>
         ) : (

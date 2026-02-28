@@ -236,7 +236,7 @@ export default function MainPage() {
 <section
       className={
         isMobile
-          ? "mt-12 relative w-full h-auto"
+          ? "md:mt-12 relative w-full h-auto"
           : "relative w-full overflow-hidden"
       }
     >
