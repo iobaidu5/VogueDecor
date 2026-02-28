@@ -5,6 +5,7 @@ import searchIcon from 'media/svg/searchIcon.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { RxHamburgerMenu } from 'react-icons/rx';
+import { FiPhone } from 'react-icons/fi';
 import Drawer from 'components/drawer/index';
 import CurrencySwitcher from 'components/currency/CurrencySwitcher';
 import UserMenu from 'components/UserMenu';
@@ -85,27 +86,10 @@ const Header = ({ menu }) => {
         : "relative bg-transparent"
         }`}
     >
-      {/* Top section: on mobile = 2 rows (logo then nav), on desktop = 1 row */}
-        <div className={`relative flex flex-col lg991:flex-row min-h-14 items-center justify-between ${isSticky ? "pt-2" : "pt-2"}`}>
-        {/* Mobile only: logo row, top center */}
-        <div className="w-full flex justify-center py-2 lg991:hidden">
-          <Link
-            href={pathname.startsWith("/fr") ? "/fr" : `/`}
-            passHref
-            legacyBehavior
-          >
-            <Image
-              src={logo}
-              alt="logo"
-              className="block w-[100px] cursor-pointer"
-            />
-          </Link>
-        </div>
-
-        {/* Row 2 (mobile) / single row (desktop): hamburger + left section, center logo (desktop), right section */}
-        <div className="relative flex w-full min-h-12 lg991:min-h-0 items-center justify-between">
-          {/* Hamburger - mobile only, left side of row 2 */}
-          <button
+      {/* Top section: single row on all screen sizes */}
+      <div className={`relative flex min-h-14 items-center justify-between ${isSticky ? "pt-2" : "pt-2"}`}>
+        {/* Hamburger - mobile only */}
+        <button
             onClick={() => setDrawerOpen(true)}
             className="absolute left-0 top-1/2 z-50 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center lg991:hidden"
             aria-label="Open menu"
@@ -128,30 +112,31 @@ const Header = ({ menu }) => {
             </a>
           </div>
 
-          {/* Desktop only: center logo */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg991:block">
-            <Link
-              href={pathname.startsWith("/fr") ? "/fr" : `/`}
-              passHref
-              legacyBehavior
-            >
-              <Image
-                src={logo}
-                alt="logo"
-                className="block w-[120px] lg:w-[140px] cursor-pointer"
-              />
-            </Link>
-          </div>
+        {/* Center logo - on small screens: slightly bigger, shifted left */}
+        <div className="absolute left-[38%] top-1/2 -translate-x-1/2 -translate-y-1/2 min-[440px]:left-1/2">
+          <Link
+            href={pathname.startsWith("/fr") ? "/fr" : `/`}
+            passHref
+            legacyBehavior
+          >
+            <Image
+              src={logo}
+              alt="logo"
+              className="block w-[65px] min-[440px]:w-[65px] sm:w-[80px] md:w-[120px] lg:w-[140px] cursor-pointer"
+            />
+          </Link>
+        </div>
 
-          {/* Right section: Call (mobile) + search + cart; on mobile in flow with ml-auto */}
-          <div className="flex items-center gap-1.5 sm:gap-2 lg991:gap-4 ml-auto lg991:ml-0 [&_.cart-icon]:!relative [&_.cart-icon]:!top-auto [&_.cart-icon]:!right-auto">
-            {/* Call Now - mobile only (desktop has it in left section) */}
-            <a
-              href="tel:+18888808232"
-              className="flex shrink-0 items-center justify-center rounded-md bg-black px-2.5 py-1.5 text-xs font-medium text-white transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap lg991:hidden sm:px-3 sm:py-2 sm:text-sm"
-            >
-              Call Now
-            </a>
+        {/* Right section: phone icon (mobile), search, cart */}
+        <div className="absolute right-0 top-1/2 z-50 -translate-y-1/2 lg991:relative lg991:top-auto lg991:translate-y-0 flex items-center gap-1.5 sm:gap-2 lg991:gap-4 [&_.cart-icon]:!relative [&_.cart-icon]:!top-auto [&_.cart-icon]:!right-auto">
+          {/* Phone icon on mobile (desktop has Call Now in left section) */}
+          <a
+            href="tel:+18888808232"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-black text-white transition-all duration-300 hover:bg-orange-600 hover:scale-105 lg991:hidden"
+            aria-label="Call Now"
+          >
+            <FiPhone size={18} />
+          </a>
           <div className="relative flex h-10 w-10 shrink-0 items-center justify-center">
             <button
               type="button"
@@ -183,7 +168,6 @@ const Header = ({ menu }) => {
           {/* Cart Icon + Modal */}
           <div className="flex h-10 min-w-10 shrink-0 items-center justify-center">
             <CartModal />
-          </div>
           </div>
         </div>
       </div>
