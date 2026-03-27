@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useState, useEffect, useMemo } from 'react';
 import Grid from 'components/grid';
 import ProductGridItems from 'components/layout/product-grid-items';
+import ProductGridSkeleton from 'components/layout/product-grid-skeleton';
 import { getCollectionProducts } from 'lib/shopify';
 import BreadCrumb from 'components/breadCrum/index';
 import FilterDropdown from 'components/filter-dropdown';
@@ -188,7 +189,13 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
     setProducts(sorted);
   }, [filter, collectionFilter, allProducts]);
 
-  if (loading) return <p className="py-3 text-center">Loading...</p>;
+  if (loading) {
+    return (
+      <section className="container mx-auto w-100" aria-busy="true" aria-label="Loading products">
+        <ProductGridSkeleton />
+      </section>
+    );
+  }
 
 
   return (

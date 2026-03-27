@@ -5,7 +5,7 @@ import { Product } from 'lib/shopify/types';
 import { ProductCard } from './productCard';
 import CartModal from 'components/cart/modal';
 
-const ITEMS_PER_PAGE = 15;
+export const ITEMS_PER_PAGE = 15;
 
 export default function ProductGridItems({ products, collection }: { products: Product[], collection?: string }) {
   const [currentPage, setCurrentPage] = useState(1);
