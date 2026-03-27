@@ -121,18 +121,21 @@ export default function ProductDetailsClient({ product }) {
                 <Accordion
                   title={t("DESCRIPTION")}
                   content={extractBeforeFeatures(product?.description)}
+                  defaultOpen
                 />
               </div>
               <div className="border-b border-black/80">
                 <Accordion
                   title={t("DETAILS")}
                   content={parse(extractFeatures(product?.descriptionHtml))}
+                  defaultOpen
                 />
               </div>
               <div className="border-b border-black/80">
                 <Accordion
                   title={t("AVAILABILITY")}
                   content={product?.availableForSale ? 'In-Stock' : 'Out of Stock'}
+                  defaultOpen
                 />
               </div>
             </div>

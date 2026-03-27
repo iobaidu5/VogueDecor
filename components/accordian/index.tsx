@@ -10,10 +10,11 @@ import Up from 'media/svg/arrow-up.svg';
 interface AccordionProps {
   title: string;
   content: ReactNode;
+  defaultOpen?: boolean;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+const Accordion: React.FC<AccordionProps> = ({ title, content, defaultOpen = false }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(defaultOpen);
 
   const toggleAccordion = (): void => {
     setIsOpen((prev) => !prev);
