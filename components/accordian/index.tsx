@@ -65,7 +65,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content, defaultOpen = fal
       </button>
       <motion.div
         className="overflow-hidden bg-white"
-        initial={{ height: 0 }}
+        initial={false}
         animate={{ height: isOpen ? 'auto' : 0 }}
         transition={{ duration: 0.3 }}
       >
