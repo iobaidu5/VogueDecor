@@ -258,7 +258,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
               <div className='flex flex-col justify-center items-end gap-[10px] md:flex-row'>
                 <FilterDropdown selected={filter} onFilter={setFilter} />
 
-                {showCollectionFilter && (
+                {showCollectionFilter && ( 
                   <CollectionDropdown
                     selected={collectionFilter}
                     onCollectionChange={setCollectionFilter}
