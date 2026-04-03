@@ -14,6 +14,7 @@ import Script from 'next/script'
 import { CollectionProvider } from 'lib/CollectionContext'
 import GoogleTagManager from 'components/GoogleTag'
 import PathnameScripts from './PathnameScripts'
+import WhatsAppStickyButton from 'components/WhatsAppStickyButton'
 
 export const metadata = {
   title: 'Vogue Decor – Restaurant Chairs, Tables & Furniture',
@@ -227,6 +228,7 @@ export default async function LocaleLayout({
             <CollectionProvider>
               <main>{children}</main>
             </CollectionProvider>
+            <WhatsAppStickyButton />
             <CookieConsent />
             <Toaster position="top-right" richColors />
           </CurrencyProvider>
