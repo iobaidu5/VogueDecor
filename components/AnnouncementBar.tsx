@@ -17,7 +17,7 @@ export function AnnouncementBar() {
   /** HTML collapses normal spaces — use NBSP + em space so gaps stay wide. */
   const nbsp = '\u00A0';
   const emSp = '\u2003'; /* em space, wider than a normal space */
-  const betweenRepeats = `${nbsp.repeat(28)}${emSp}${emSp} · ${emSp}${emSp}${nbsp.repeat(28)}`;
+  const betweenRepeats = `${nbsp.repeat(10)}${emSp} · ${emSp}${nbsp.repeat(10)}`;
   const repeatedLine = Array.from({ length: 12 }, () => text).join(betweenRepeats);
 
   return (
