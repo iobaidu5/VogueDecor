@@ -29,7 +29,7 @@ const config: Config = {
       },
       animation: {
         shimmer: 'shimmer 1.8s ease-in-out infinite',
-        'announcement-marquee': 'announcement-marquee 22s linear infinite',
+        'announcement-marquee': 'announcement-marquee 155s linear infinite',
       },
     }
   },
