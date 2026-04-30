@@ -181,7 +181,7 @@ body {
 }
 
 .slick-list {
-  overflow: visible;
+  overflow: hidden;
 }
 
 .custom-dots {

@@ -1,46 +1,9 @@
 'use client';
 
 import ForwardLink from 'components/forwardlink/forwardLink';
-import mainImage from 'media/png/mainImage.png';
-// import hero from 'media/png/main-banner.png';
-import hero from 'media/home-banner/Main Banner without button.png';
-import heroFr from 'media/home-banner/Main Banner without button fr.png';
-import heroMobile from 'media/home-banner/Mobile banner without button.png';
-import heroMobileFr from 'media/home-banner/Mobile banner without button fr.png';
-
-
-import newBanner1 from 'media/home-banner/new/1.png';
-import newBanner2 from 'media/home-banner/new/2.png';
-import newBanner3 from 'media/home-banner/new/3.png';
-import saleBanner from 'media/home-banner/new/Early Black Friday with text.png';
-import combineBanner from 'media/home-banner/new/combine.png';
-import saleBannerFr from 'media/home-banner/new/Early Black Friday french with text.png';
-
-
-import newBanner1Mobile from 'media/home-banner/new/1-mobile.png';
-import newBanner2Mobile from 'media/home-banner/new/2-mobile.png';
-import newBanner3Mobile from 'media/home-banner/new/3-mobile.png';
-
-import saleBannerEnMob from 'media/home-banner/new/blackfridayengmob.png';
-import saleBannerFrMob from 'media/home-banner/new/blackfridaymobfr.png';
-
-
-
-import blackFridayWebEn from "media/blackfriday/blackfridayEngWeb.png"
-import blackFridayWebFr from "media/blackfriday/blackfridayFrWeb.png"
-import blackFridayMobEn from "media/blackfriday/blackfridayEngMob.png"
-import blackFridayMobFr from "media/blackfriday/blackfridayFrMob.png"
-
-import preBoxingWebEn from "media/pre-boxing/preBoxingWebEn.png"
-import preBoxingWebFr from "media/pre-boxing/preBoxingWebFr.png"
-import preBoxingMobEn from "media/pre-boxing/preBoxingMobEn.png"
-import preBoxingMobFr from "media/pre-boxing/preBoxingMobFr.png"
-
-
-import boxingBannerWebEn from "media/BoxingDay/Boxing Day sale web banner (eng).png"
-import boxingBannerWebFr from "media/BoxingDay/Boxing Day sale web banner (fr).png"
-import boxingBannerMobEn from "media/BoxingDay/Boxing Day Sale mobile (eng).png"
-import boxingBannerMobFr from "media/BoxingDay/Boxing Day Sale mobile (fr).png"
+import webBannerEngNoText from 'media/rebrancreative/Web Banner Eng no text.png';
+import webBannerFrNoText from 'media/rebrancreative/Web Banner FR no text.png';
+import mobileBannerEngNoText from 'media/rebrancreative/Mobile Banner Eng no text.png';
 
 
 
@@ -54,16 +17,13 @@ import Upgrade from './components/upgrade';
 import WhyChooseUs from './components/whyChooseUs';
 import { ProductProvider } from 'components/product/product-context';
 import CartModal from 'components/cart/modal';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import HomeCategories from './components/homeCategories';
 import HomeBanners from './components/HomeBanners';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import { SaleBar } from 'components/SaleBar';
-import Slider from 'react-slick';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from 'next/navigation';
 
@@ -72,7 +32,6 @@ export default function MainPage() {
   // const {  } = useTranslation();
   const [isMobile, setIsMobile] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
-  const sliderRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -110,94 +69,44 @@ export default function MainPage() {
 
   const bannerPairsDesktop = [
     [
-      // {
-      //   image: i18n.language === 'fr' ? boxingBannerWebFr : boxingBannerWebEn,
-      //   title: "",
-      //   description: "",
-      //   buttonText: "",
-      //   link: "/sale",
-      // },
       {
-        image: newBanner3,
-        title: "bannerThreeTitle",
-        description: "bannerThreeDesc",
-        buttonText: "shopnow",
-        link: "/new-arrivals",
-      },
-      {
-        image: combineBanner,
-        title: "bannerOneTitle",
-        description: "bannerOneDesc",
-        title2: "bannerTwoTitle",
-        description2: "bannerTwoDesc",
+        image: i18n.language === 'fr' ? webBannerFrNoText : webBannerEngNoText,
+        title: "springBannerTitle",
+        description: "springBannerDesc",
         buttonText: "shopnow",
         link: "/new-arrivals",
       },
     ],
   ];
 
-
   // Mobile banners (single)
   const bannerMobile = [
-    // {
-    //   image: i18n.language === 'fr' ? boxingBannerMobFr : boxingBannerMobEn,
-    //   title: "",
-    //   description: "",
-    //   buttonText: "",
-    //   link: "/sale",
-    // },
     {
-      image: newBanner3Mobile,
-      title: 'bannerThreeTitle',
-      description: 'bannerThreeDesc',
-      buttonText: 'shopnow',
-      link: '/new-arrivals',
-    },
-    {
-      image: newBanner1Mobile,
-      title: 'bannerOneTitle',
-      description: 'bannerOneDesc',
-      buttonText: 'shopnow',
-      link: '/new-arrivals',
-    },
-    {
-      image: newBanner2Mobile,
-      title: 'bannerTwoTitle',
-      description: 'bannerTwoDesc',
+      image: mobileBannerEngNoText,
+      title: 'springBannerTitle',
+      description: 'springBannerDesc',
       buttonText: 'shopnow',
       link: '/new-arrivals',
     },
   ];
 
 
-  const totalSlides = isMobile ? bannerMobile.length : bannerPairsDesktop.length;
-
-  const settings = {
-    dots: false,
-    arrows: false,
-    speed: 600,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    beforeChange: (_, next) => setActiveSlide(next),
-  };
-
-  const goToSlide = (index) => {
-    if (sliderRef.current && typeof sliderRef.current.slickGoTo === 'function') {
-      sliderRef.current.slickGoTo(index);
-    }
-  };
-
-  const goPrev = () => {
-    sliderRef.current?.slickPrev();
-  };
-
-  const goNext = () => {
-    sliderRef.current?.slickNext();
-  };
-
   const router = useRouter();
+
+  const banners = isMobile ? bannerMobile : bannerPairsDesktop.flat();
+  const totalSlides = banners.length;
+
+  const goPrev = () => setActiveSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  const goNext = () => setActiveSlide((prev) => (prev + 1) % totalSlides);
+  const goToSlide = (i: number) => setActiveSlide(i);
+
+  // Auto-advance only when there is more than 1 slide
+  useEffect(() => {
+    if (totalSlides <= 1) return;
+    const timer = setInterval(goNext, 4000);
+    return () => clearInterval(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [totalSlides]);
 
 
   return (
@@ -244,162 +153,95 @@ export default function MainPage() {
         <SaleBar />
       </div> */}
 
-<Slider ref={sliderRef} {...settings}>
-      {(isMobile ? bannerMobile : bannerPairsDesktop.flat()).map(
-        (banner, index) => (
+    {/* Custom carousel — no react-slick, no CSS dependency issues */}
+    <div className="relative w-full overflow-hidden">
+      {banners.map((banner, index) => (
+        <div
+          key={index}
+          className={`w-full transition-opacity duration-700 ${
+            index === activeSlide ? "block opacity-100" : "hidden opacity-0"
+          }`}
+        >
           <div
-            key={index}
-            className="relative w-full"
-            onClick={() => {
-              if (index === 0) router.push("/sale");
-            }}
-            style={{ cursor: index === 0 ? "pointer" : "default" }}
+            className={`relative w-full ${
+              isMobile ? "aspect-[3/5]" : "aspect-[1920/900]"
+            }`}
           >
+            <Image
+              src={banner.image}
+              alt={`Banner ${index + 1}`}
+              fill
+              className="object-cover"
+              priority={index === 0}
+            />
+
+            {/* Overlay */}
             <div
-              className={`relative w-full flex items-center justify-center ${
-                isMobile
-                  ? "max-h-[500px] aspect-[3/5]"
-                  : "aspect-[1920/900] max-h-[900px]"
+              className={`absolute ${
+                isMobile ? "top-[12%]" : "top-[10%]"
+              } left-1/2 -translate-x-1/2 text-center px-4 w-full ${
+                isMobile ? "max-w-2xl" : "max-w-4xl"
               }`}
             >
-              <Image
-                src={banner.image}
-                alt={`Banner ${index}`}
-                fill
-                className="object-cover"
-                priority
-              />
-
-              {/* Overlay content */}
-              {banner.title2 && banner.description2 && !isMobile ? (
-                <>
-                  {/* Left block (20% from left) */}
-                  <div className="absolute top-[10%] left-[10%] text-center text-black max-w-lg">
-                    <h2 className="font-medium text-[28px] md:text-[34px]">
-                      {t(`${banner.title}`)}
-                    </h2>
-                    <p className="text-[12px] md:text-[16px]">
-                      {t(`${banner.description}`)}
-                    </p>
-                    <Link
-                      href={banner.link}
-                      className="mt-3 inline-block text-black border-b-2 border-black text-sm md:text-base font-medium hover:text-gray-700 transition duration-300"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {t(`${banner.buttonText}`)}
-                    </Link>
-                  </div>
-
-                  {/* Right block (20% from right) */}
-                  <div className="absolute top-[10%] right-[15%] text-center text-black max-w-lg">
-                    <h2 className="font-medium text-[28px] md:text-[34px]">
-                      {t(`${banner.title2}`)}
-                    </h2>
-                    <p className="text-[12px] md:text-[16px]">
-                      {t(`${banner.description2}`)}
-                    </p>
-                    <Link
-                      href={banner.link}
-                      className="mt-3 inline-block text-black border-b-2 border-black text-sm md:text-base font-medium hover:text-gray-700 transition duration-300"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {t(`${banner.buttonText}`)}
-                    </Link>
-                  </div>
-                </>
-              ) : (
-                // Normal banners
-                <div
-                  className={`absolute ${
-                    isMobile ? "top-[15%]" : "top-[10%]"
-                  } left-1/2 -translate-x-1/2 text-center text-white px-4 ${
-                    isMobile ? "max-w-2xl" : "max-w-4xl"
-                  } w-full`}
-                >
-                  <h2
-                    className={`font-medium ${
-                      isMobile
-                        ? "text-[20px] md:text-[28px]"
-                        : "xs:text-[24px] md:text-[36px]"
-                    } text-black`}
-                  >
-                    {t(`${banner.title}`)}
-                  </h2>
-                  <p
-                    className={`${
-                      isMobile
-                        ? "text-[12px] md:text-[16px]"
-                        : "text-[12px] md:text-[16px]"
-                    } text-black`}
-                  >
-                    {t(`${banner.description}`)}
-                  </p>
-                  <span className="py-2 block"></span>
-                  <Link
-                    href={banner.link}
-                    className="text-black border-b-2 border-black text-xs md:text-sm font-medium hover:text-gray-700 transition duration-300"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {t(`${banner.buttonText}`)}
-                  </Link>
-                </div>
-              )}
+              <h2
+                className={`font-medium text-black ${
+                  isMobile ? "text-[20px]" : "text-[24px] md:text-[36px]"
+                }`}
+              >
+                {t(banner.title)}
+              </h2>
+              <p className="mt-2 text-[12px] md:text-[16px] text-black">
+                {t(banner.description)}
+              </p>
+              <span className="py-2 block" />
+              <Link
+                href={banner.link}
+                className="text-black border-b-2 border-black text-xs md:text-sm font-medium hover:text-gray-700 transition duration-300"
+              >
+                {t(banner.buttonText)}
+              </Link>
             </div>
-
-            {/* Custom slide indicators */}
-            <div
-              className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 flex gap-2"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {Array.from({ length: totalSlides }).map((_, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToSlide(i);
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      goToSlide(i);
-                    }
-                  }}
-                  aria-label={`Go to slide ${i + 1}`}
-                  className={`h-[3px] w-8 rounded-full transition-all duration-200 focus:outline-none ${
-                    activeSlide === i ? "bg-white" : "bg-gray-300"
-                  }`}
-                />
-              ))}
-            </div>
-
-            {/* Left Arrow */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                goPrev();
-              }}
-              className="absolute top-1/2 left-4 -translate-y-1/2 z-50 bg-white/10 hover:bg-white rounded-full p-1 shadow-md"
-              aria-label="Previous Slide"
-            >
-              <ChevronLeft className="w-4 h-4 text-black" />
-            </button>
-
-            {/* Right Arrow */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                goNext();
-              }}
-              className="absolute top-1/2 right-4 -translate-y-1/2 z-50 bg-white/10 hover:bg-white rounded-full p-1 shadow-md"
-              aria-label="Next Slide"
-            >
-              <ChevronRight className="w-4 h-4 text-black" />
-            </button>
           </div>
-        )
+        </div>
+      ))}
+
+      {/* Dots — only show when more than 1 slide */}
+      {totalSlides > 1 && (
+        <div className="absolute bottom-4 left-1/2 z-50 flex -translate-x-1/2 gap-2">
+          {banners.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => goToSlide(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`h-[3px] w-8 rounded-full transition-all duration-200 focus:outline-none ${
+                activeSlide === i ? "bg-white" : "bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
       )}
-    </Slider>
+
+      {/* Arrows — only show when more than 1 slide */}
+      {totalSlides > 1 && (
+        <>
+          <button
+            onClick={goPrev}
+            className="absolute left-4 top-1/2 z-50 -translate-y-1/2 rounded-full bg-white/10 p-1 shadow-md hover:bg-white"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-4 w-4 text-black" />
+          </button>
+          <button
+            onClick={goNext}
+            className="absolute right-4 top-1/2 z-50 -translate-y-1/2 rounded-full bg-white/10 p-1 shadow-md hover:bg-white"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-4 w-4 text-black" />
+          </button>
+        </>
+      )}
+    </div>
     </section>
 
 
