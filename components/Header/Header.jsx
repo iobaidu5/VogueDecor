@@ -87,7 +87,7 @@ const Header = ({ menu }) => {
         }`}
     >
       {/* Top section: single row on all screen sizes */}
-      <div className={`relative flex min-h-14 items-center justify-between ${isSticky ? "pt-2" : "pt-2"}`}>
+      <div className={`relative flex min-h-[68px] lg991:min-h-14 items-center justify-between ${isSticky ? "pt-2 pb-2" : "pt-3 pb-3"}`}>
         {/* Hamburger - mobile only */}
         <button
             onClick={() => setDrawerOpen(true)}

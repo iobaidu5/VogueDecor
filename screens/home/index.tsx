@@ -9,7 +9,7 @@ import mobileBannerEngNoText from 'media/rebrancreative/Mobile Banner Eng no tex
 
 
 import mainText from 'media/png/mainText.png';
-import Image from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import BestSeller from './components/bestSeller';
 import Community from './components/community';
 import DiscoverMore from './components/Discover';
@@ -145,14 +145,10 @@ export default function MainPage() {
 <section
       className={
         isMobile
-          ? "md:mt-12 relative w-full h-auto"
+          ? "md:mt-12 relative w-full h-auto overflow-hidden"
           : "relative w-full overflow-hidden"
       }
     >
-      {/* <div className="relative z-[10]">
-        <SaleBar />
-      </div> */}
-
     {/* Custom carousel — no react-slick, no CSS dependency issues */}
     <div className="relative w-full overflow-hidden">
       {banners.map((banner, index) => (
@@ -162,35 +158,54 @@ export default function MainPage() {
             index === activeSlide ? "block opacity-100" : "hidden opacity-0"
           }`}
         >
-          <div
-            className={`relative w-full ${
-              isMobile ? "aspect-[3/5]" : "aspect-[1920/900]"
-            }`}
-          >
-            <Image
-              src={banner.image}
-              alt={`Banner ${index + 1}`}
-              fill
-              className="object-cover"
-              priority={index === 0}
-            />
+          <div className="relative w-full">
+            {isMobile ? (
+              <Image
+                src={banner.image as StaticImageData}
+                alt={`Banner ${index + 1}`}
+                width={(banner.image as StaticImageData).width}
+                height={(banner.image as StaticImageData).height}
+                className="block h-auto w-full max-w-full"
+                sizes="100vw"
+                priority={index === 0}
+              />
+            ) : (
+              <div className="relative aspect-[1920/900] max-h-[900px] w-full">
+                <Image
+                  src={banner.image}
+                  alt={`Banner ${index + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                  priority={index === 0}
+                />
+              </div>
+            )}
 
             {/* Overlay */}
             <div
               className={`absolute ${
-                isMobile ? "top-[12%]" : "top-[10%]"
+                isMobile ? "top-[15%]" : "top-[10%]"
               } left-1/2 -translate-x-1/2 text-center px-4 w-full ${
                 isMobile ? "max-w-2xl" : "max-w-4xl"
               }`}
             >
               <h2
                 className={`font-medium text-black ${
-                  isMobile ? "text-[20px]" : "text-[24px] md:text-[36px]"
+                  isMobile
+                    ? "text-[20px] md:text-[28px]"
+                    : "text-[24px] md:text-[36px]"
                 }`}
               >
                 {t(banner.title)}
               </h2>
-              <p className="mt-2 text-[12px] md:text-[16px] text-black">
+              <p
+                className={`mt-2 text-black ${
+                  isMobile
+                    ? "mx-auto max-w-[265px] text-[12px] leading-snug line-clamp-2 text-center"
+                    : "text-[12px] md:text-[16px]"
+                }`}
+              >
                 {t(banner.description)}
               </p>
               <span className="py-2 block" />
