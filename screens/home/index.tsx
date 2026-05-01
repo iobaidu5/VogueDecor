@@ -112,35 +112,6 @@ export default function MainPage() {
   return (
     <>
       <div className="w-full overflow-x-hidden">
-        {/* <section className={isMobile ? "mt-12 relative w-full h-auto" : "relative w-full h-screen overflow-hidden"}>
-          <div className='relative z-[10]'>
-            <SaleBar />
-          </div>
-          <Image
-            src={
-              i18n.language === 'fr'
-                ? isMobile
-                  ? heroMobileFr
-                  : heroFr
-                : isMobile
-                  ? heroMobile
-                  : hero
-            }
-            alt="Banner"
-            fill={isMobile ? false : true}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-            className={isMobile ? "object-contain h-auto" : "object-cover"}
-            priority
-          />
-          <div className="absolute bottom-[60%] md:bottom-[5%] left-1/2 transform -translate-x-1/2">
-            <Link
-              href="/outdoor-furniture"
-              className="bg-black text-white px-4 md:px-6 py-3 text-sm md:text-md rounded hover:bg-gray-900 transition duration-300"
-            >
-              {t('shopOutdoor')}
-            </Link>
-          </div>
-        </section> */}
 
 <section
       className={
