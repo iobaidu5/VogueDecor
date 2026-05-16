@@ -3,11 +3,11 @@
 import React, { useState } from 'react'; 
 
 const ReadMoreParagraph = ({ text, bold, italic }) => {
-  const [expanded, setExpanded] = useState(true);
-  const limit = 1000;
-  const isLong = text.length > limit;
+  const [expanded, setExpanded] = useState(false);
+  const previewLength = 280;
+  const hasMore = text.length > previewLength;
 
-  const visibleText = expanded ? text : text.slice(0, limit) + (isLong ? '...' : '');
+  const visibleText = expanded ? text : `${text.slice(0, previewLength)}${hasMore ? '…' : ''}`;
 
   return (
     <div className="text-xs text-gray-700 leading-relaxed">
@@ -19,12 +19,13 @@ const ReadMoreParagraph = ({ text, bold, italic }) => {
       >
         {visibleText}
       </span>
-      {isLong && (
+      {hasMore && (
         <button
+          type="button"
           onClick={() => setExpanded(!expanded)}
           className="ml-2 font-poppins font-medium mt-3 text-sm text-black hover:underline"
         >
-          {expanded ? 'Read Less' : 'Read More'}
+          {expanded ? 'Read less' : 'Read more'}
         </button>
       )}
     </div>
@@ -32,7 +33,7 @@ const ReadMoreParagraph = ({ text, bold, italic }) => {
 };
 
 const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="border-b border-gray-200 py-4">

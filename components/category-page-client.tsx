@@ -29,7 +29,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
   const [loading, setLoading] = useState<boolean>(true);
   // const [filter, setFilter] = useState<string>('');
   const [collectionFilter, setCollectionFilter] = useState('');
-  const [showContent, setShowContent] = useState(true);
+  const [showContent, setShowContent] = useState(false);
   const { t, ready } = useTranslation('common');
   const { i18n } = useTranslation();
   const [filter, setFilter] = useState(() =>
