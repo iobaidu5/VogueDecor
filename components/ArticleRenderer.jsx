@@ -6,7 +6,6 @@ const ReadMoreParagraph = ({ text, bold, italic }) => {
   const [expanded, setExpanded] = useState(false);
   const previewLength = 280;
   const hasMore = text.length > previewLength;
-
   const visibleText = expanded ? text : `${text.slice(0, previewLength)}${hasMore ? '…' : ''}`;
 
   return (
