@@ -33,7 +33,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
   const { t, ready } = useTranslation('common');
   const { i18n } = useTranslation();
   const [filter, setFilter] = useState(() =>
-    collection === "clearance" ? "availability" : ""
+    collection === "clearance" || collection === "outdoor-furniture" ? "availability" : ""
   );
 
   var content: any = [];
