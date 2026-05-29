@@ -40,7 +40,7 @@ const tabs = [
         </p>
 
         <h2 className="font-semibold text-sm mt-4">5. Shipping & Pickup (summary)</h2>
-        <p className='text-xs'><strong>Free shipping promotion:</strong> FREE SHIPPING ON ORDERS OVER $2,999 WITHIN CANADA (promotion).</p>
+        <p className='text-xs'><strong>Free shipping promotion:</strong> FREE SHIPPING ON ORDERS OVER $4,999 WITHIN CANADA (promotion).</p>
         <p className='text-xs'><strong>Delivery & Transit:</strong> Typical carrier transit times (business days):</p>
         <ul className="list-none pl-6">
           <li className='text-xs'>Ontario & Quebec: 1–3</li>
@@ -260,7 +260,7 @@ const tabs = [
 
         <h2 className="font-semibold text-sm mt-4">Free Shipping Promotion</h2>
         <p className='text-xs'>
-          FREE SHIPPING ON ORDERS OVER $2,999 WITHIN CANADA. Oversized or remote addresses may be excluded.
+          FREE SHIPPING ON ORDERS OVER $4,999 WITHIN CANADA. Oversized or remote addresses may be excluded.
         </p>
 
         <h2 className="font-semibold text-sm mt-4">Shipping Methods & Processing</h2>

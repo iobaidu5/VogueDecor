@@ -19,7 +19,7 @@ const ShippingTable = () => {
           <p className="mb-4 font-semibold">Effective Date: YYYY-MM-DD</p>
 
           <p className="mb-4 font-bold text-red-600">
-            Free shipping promotion: FREE SHIPPING ON ORDERS OVER $2,999 WITHIN CANADA. Promotion applies at checkout. Oversized/freight items, remote addresses, and certain islands may be excluded.
+            Free shipping promotion: FREE SHIPPING ON ORDERS OVER $4,999 WITHIN CANADA. Promotion applies at checkout. Oversized/freight items, remote addresses, and certain islands may be excluded.
           </p>
 
           <h2 className="mt-6 mb-2 text-xl font-bold">Shipping Methods & Processing</h2>
