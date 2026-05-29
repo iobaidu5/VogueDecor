@@ -2693,7 +2693,7 @@ export const sale = [
       },
       { 
         type: 'p', 
-        text: 'The best part? You\'ll no longer have to worry about presenting your brand\'s personality. Custom dimensions, colors, or finishes, we\'ve got all. Our personalization options will make the furniture fit your vision perfectly. And with free shipping on orders over $1999, now is the perfect time to go all in.', 
+        text: 'The best part? You\'ll no longer have to worry about presenting your brand\'s personality. Custom dimensions, colors, or finishes, we\'ve got all. Our personalization options will make the furniture fit your vision perfectly. And with free shipping on orders over $4999, now is the perfect time to go all in.', 
         bold: false 
       }
     ],
@@ -2733,7 +2733,7 @@ export const sale = [
       },
       { 
         type: 'p', 
-        text: 'Free Shipping Over $1999:', 
+        text: 'Free Shipping Over $4999:', 
         bold: true 
       },
       { 
@@ -2806,7 +2806,7 @@ export const saleFr = [
       },
       { 
         type: 'p', 
-        text: 'Le meilleur ? Plus besoin de craindre pour l\'expression de votre identité de marque. Dimensions, couleurs ou finitions sur mesure - nous avons tout prévu. Nos options de personnalisation adapteront parfaitement le mobilier à votre vision. Et avec la livraison gratuite pour les commandes de plus de 1999 $, c\'est le moment idéal pour tout acheter.', 
+        text: 'Le meilleur ? Plus besoin de craindre pour l\'expression de votre identité de marque. Dimensions, couleurs ou finitions sur mesure - nous avons tout prévu. Nos options de personnalisation adapteront parfaitement le mobilier à votre vision. Et avec la livraison gratuite pour les commandes de plus de 4999 $, c\'est le moment idéal pour tout acheter.', 
         bold: false 
       }
     ],
@@ -2846,7 +2846,7 @@ export const saleFr = [
       },
       { 
         type: 'p', 
-        text: 'Livraison gratuite dès 1999 $ :', 
+        text: 'Livraison gratuite dès 4999 $ :', 
         bold: true 
       },
       { 
