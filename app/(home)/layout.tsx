@@ -1,5 +1,4 @@
 import { AnnouncementBar } from 'components/AnnouncementBar';
-import { SaleBar } from 'components/SaleBar';
 import Footer from 'components/footer';
 import HeaderWrapper from 'components/Header/HeaderWrapper';
 import { ReactNode, Suspense } from 'react';
@@ -10,8 +9,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <>
       <div className="">
         <Suspense fallback={<div>Loading translations...</div>}>
-          <SaleBar />
-          {/* <AnnouncementBar /> */}
+          <AnnouncementBar />
         </Suspense>
         <HeaderWrapper />
       </div>

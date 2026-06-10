@@ -11,6 +11,7 @@ import Upgrade from './components/upgrade';
 import WhyChooseUs from './components/whyChooseUs';
 import HomeCategories from './components/homeCategories';
 import HomeBanners from './components/HomeBanners';
+import { SaleBar } from 'components/SaleBar';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
@@ -24,6 +25,7 @@ export default function MainPage() {
 
   return (
     <>
+      <SaleBar />
       <div className="w-full overflow-x-hidden">
         <section className="relative w-full h-auto overflow-hidden max-[1200px]:md:mt-12">
           <div className="relative w-full overflow-hidden">

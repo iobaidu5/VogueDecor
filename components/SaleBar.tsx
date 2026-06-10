@@ -10,12 +10,12 @@ export function SaleBar() {
 
   if (!ready) {
     return (
-      <div className="w-full bg-[#ff914d] py-3 text-center text-xs text-white lg991:text-sm">Loading…</div>
+      <div className="w-full bg-[#fff27d] py-3 text-center text-xs text-black lg991:text-sm">Loading…</div>
     );
   }
 
   return (
-    <div className="w-full bg-[#ff914d] py-3 text-center text-xs text-white lg991:text-sm">
+    <div className="w-full bg-[#fff27d] py-3 text-center text-xs text-black lg991:text-sm">
       <p>
         {t('announcementSaleIntro')}
         <span className="font-semibold">{t('announcementSaleDiscount')}</span>
