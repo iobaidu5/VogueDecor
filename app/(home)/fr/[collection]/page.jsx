@@ -1,4 +1,20 @@
 import CategoryPageClient from 'components/category-page-client';
+import { metaInfo } from 'lib/meta';
+import { getBaseUrl } from 'lib/site-url';
+
+export async function generateMetadata({ params }) {
+  const { collection } = await params;
+  const meta = metaInfo[collection] ?? metaInfo.home;
+  const baseUrl = getBaseUrl();
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: `${baseUrl}/fr/${collection}`,
+    },
+  };
+}
 
 export default async function CategoryPage({ params }) {
   try {

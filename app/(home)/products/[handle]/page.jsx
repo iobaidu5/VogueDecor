@@ -8,6 +8,7 @@ import { ProductProvider } from 'components/product/product-context';
 import CartModal from 'components/cart/modal';
 import Slider from 'components/slider';
 import ProductDetailsClient from "./ProductDetailsClient"
+import { getBaseUrl } from 'lib/site-url';
 
 export async function generateMetadata(props) {
   const params = await props.params;
@@ -15,15 +16,16 @@ export async function generateMetadata(props) {
   const product = await getProduct(handle);
   if (!product) return notFound();
 
-
-  console.log("productproductproductproduct", product)
-
   const { url, width, height, altText: alt } = product.featuredImage || {};
   const indexable = !product.tags.includes(HIDDEN_PRODUCT_TAG);
+  const baseUrl = getBaseUrl();
 
   return {
     title: product.seo.title || product.title,
     description: product.seo.description || product.description,
+    alternates: {
+      canonical: `${baseUrl}/product/${handle}`,
+    },
     robots: {
       index: indexable,
       follow: indexable,

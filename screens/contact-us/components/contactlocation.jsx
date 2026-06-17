@@ -1,7 +1,8 @@
 'use client';
 
 import Link from "next/link";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from 'react-i18next';
+import '../../../lib/i18nClient';
 
 const hours = [
   { day: 'Monday', time: '8AM–4PM' },

@@ -15,11 +15,19 @@ import { CollectionProvider } from 'lib/CollectionContext'
 import GoogleTagManager from 'components/GoogleTag'
 import PathnameScripts from './PathnameScripts'
 import WhatsAppStickyButton from 'components/WhatsAppStickyButton'
+import { I18nProvider } from 'components/I18nProvider'
+import { getBaseUrl } from 'lib/site-url'
+
+const baseUrl = getBaseUrl()
 
 export const metadata = {
+  metadataBase: new URL(baseUrl),
   title: 'Vogue Decor – Restaurant Chairs, Tables & Furniture',
   description:
     'Shop restaurant chairs, tables, barstools & table bases. Vogue Decor delivers premium restaurant furniture across the USA & Canada.',
+  alternates: {
+    canonical: baseUrl,
+  },
   openGraph: {
     type: 'website',
   },
@@ -224,10 +232,12 @@ export default async function LocaleLayout({
         <ChatbaseScript />
         <CartProvider cartPromise={cart}>
           <CurrencyProvider>
+            <I18nProvider>
             <EmailSubscriptionModal />
             <CollectionProvider>
               <main>{children}</main>
             </CollectionProvider>
+            </I18nProvider>
             <WhatsAppStickyButton />
             <CookieConsent />
             <Toaster position="top-right" richColors />

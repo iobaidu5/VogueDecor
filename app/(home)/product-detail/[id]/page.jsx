@@ -7,6 +7,7 @@ import { ProductProvider } from 'components/product/product-context';
 import { ProductDescription } from 'components/product/product-description';
 import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
 import { getProduct, getProductRecommendations } from 'lib/shopify';
+import { getBaseUrl } from 'lib/site-url';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
@@ -21,10 +22,14 @@ export async function generateMetadata(props) {
 
   const { url, width, height, altText: alt } = product.featuredImage || {};
   const indexable = !product.tags.includes(HIDDEN_PRODUCT_TAG);
+  const baseUrl = getBaseUrl();
 
   return {
     title: product.seo.title || product.title,
     description: product.seo.description || product.description,
+    alternates: {
+      canonical: `${baseUrl}/product/${product.handle}`,
+    },
     robots: {
       index: indexable,
       follow: indexable,

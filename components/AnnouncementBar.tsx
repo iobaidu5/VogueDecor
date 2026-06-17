@@ -1,11 +1,51 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 
+const HOLD_MS = 3000;
+const FADE_MS = 700;
+
 export function AnnouncementBar() {
   const { t, ready } = useTranslation('common');
+  const [activeLine, setActiveLine] = useState<'line1' | 'line2'>('line1');
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    const timeouts: ReturnType<typeof setTimeout>[] = [];
+
+    const schedule = (fn: () => void, ms: number) => {
+      timeouts.push(
+        setTimeout(() => {
+          if (!cancelled) fn();
+        }, ms),
+      );
+    };
+
+    const cycle = () => {
+      schedule(() => {
+        setVisible(false);
+
+        schedule(() => {
+          setActiveLine((prev) => (prev === 'line1' ? 'line2' : 'line1'));
+
+          schedule(() => {
+            setVisible(true);
+            schedule(cycle, HOLD_MS + FADE_MS);
+          }, 50);
+        }, FADE_MS);
+      }, HOLD_MS);
+    };
+
+    cycle();
+
+    return () => {
+      cancelled = true;
+      timeouts.forEach(clearTimeout);
+    };
+  }, []);
 
   if (!ready) {
     return (
@@ -13,25 +53,16 @@ export function AnnouncementBar() {
     );
   }
 
-  const text = `${t('welcomeLine1')} ${t('welcomeLine2')}`;
-  /** HTML collapses normal spaces — use NBSP + em space so gaps stay wide. */
-  const nbsp = '\u00A0';
-  const emSp = '\u2003';
-  const betweenRepeats = `${nbsp.repeat(10)}${emSp} · ${emSp}${nbsp.repeat(10)}`;
-  const repeatedLine = Array.from({ length: 12 }, () => text).join(betweenRepeats);
+  const text = activeLine === 'line1' ? t('welcomeLine1') : t('welcomeLine2');
 
   return (
-    <div className="w-full overflow-hidden bg-[#545454] py-3 text-xs text-white lg991:text-sm">
-      <p className="hidden text-center motion-reduce:block">{text}</p>
-
-      <div className="motion-reduce:hidden">
-        <div className="flex w-max max-w-none animate-announcement-marquee items-center [animation-timing-function:linear]">
-          <span className="inline-block shrink-0 whitespace-nowrap px-6">{repeatedLine}</span>
-          <span className="inline-block shrink-0 whitespace-nowrap px-6" aria-hidden="true">
-            {repeatedLine}
-          </span>
-        </div>
-      </div>
+    <div className="w-full bg-[#545454] py-3 text-center text-xs text-white lg991:text-sm">
+      <p
+        className="transition-opacity duration-700 ease-in-out motion-reduce:transition-none"
+        style={{ opacity: visible ? 1 : 0 }}
+      >
+        {text}
+      </p>
     </div>
   );
 }

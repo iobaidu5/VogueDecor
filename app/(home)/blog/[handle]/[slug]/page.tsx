@@ -48,14 +48,20 @@ const getArticle = cache(async (handle: string, slug: string) => {
   return blog.articles.edges.find(edge => edge.node.handle === slug)?.node || null
 })
 
+import { getBaseUrl } from 'lib/site-url'
+
 export async function generateMetadata({ params }: { params: Promise<{ handle: string; slug: string }> }): Promise<Metadata> {
   // Await the params promise first
   const { handle, slug } = await params
   const article = await getArticle(handle, slug)
+  const baseUrl = getBaseUrl()
   
   return {
     title: article?.title || 'Blog Post',
     description: article?.excerpt || 'Read this interesting blog post',
+    alternates: {
+      canonical: `${baseUrl}/blog/${handle}/${slug}`,
+    },
     openGraph: {
       title: article?.title || 'Blog Post',
       description: article?.excerpt || 'Read this interesting blog post',

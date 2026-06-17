@@ -9,7 +9,9 @@ type Route = {
   lastModified: string;
 };
 
-const baseUrl = `https://voguedecor.com`;
+import { getBaseUrl } from 'lib/site-url';
+
+const baseUrl = getBaseUrl();
 
 export const dynamic = 'force-dynamic';
 

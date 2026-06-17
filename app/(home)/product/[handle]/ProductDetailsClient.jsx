@@ -1,7 +1,5 @@
 "use client";
 
-import Head from 'next/head';
-import { usePathname } from 'next/navigation';
 import i18n from '../../../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import { AddToCart } from 'components/cart/add-to-cart';
@@ -27,9 +25,6 @@ export default function ProductDetailsClient({ product }) {
   const { t, ready } = useTranslation('common');
   const searchParams = useSearchParams();
   const { collection } = useCollection()
-  const pathname = usePathname();
-  console.log("path name ", pathname)
-  const canonicalUrl = `https://www.voguedecor.com${pathname}`;
   // const collection = searchParams.get('collection') || '...';
 
   // const extractFeatures = (htmlString) => {
@@ -85,11 +80,6 @@ export default function ProductDetailsClient({ product }) {
 
   return (
     <>
-      <Head>
-        <link rel="canonical" href={canonicalUrl} />
-        <title>{product.title} | Vogue Decor</title>
-        <meta name="description" content={product.description} />
-      </Head>
       <SingleBreadCrumb title={product?.title} collection={collection} />
       <div className="flex flex-col gap-4 rounded-lg bg-white lg:flex-row lg:items-start lg:gap-12">
         <div className="w-full lg:w-8/12">

@@ -8,6 +8,9 @@ import { ProductProvider } from 'components/product/product-context';
 import CartModal from 'components/cart/modal';
 import Slider from 'components/slider';
 import ProductDetailsClient from "./ProductDetailsClient"
+import { getBaseUrl } from 'lib/site-url';
+import { buildProductBreadcrumbSchema, buildProductSchema } from 'lib/seo/product-schema';
+import Script from 'next/script';
 
 export async function generateMetadata(props) {
   const params = await props.params;
@@ -17,10 +20,14 @@ export async function generateMetadata(props) {
 
   const { url, width, height, altText: alt } = product.featuredImage || {};
   const indexable = !product.tags.includes(HIDDEN_PRODUCT_TAG);
+  const baseUrl = getBaseUrl();
 
   return {
     title: product.seo.title || product.title,
     description: product.seo.description || product.description,
+    alternates: {
+      canonical: `${baseUrl}/product/${handle}`,
+    },
     robots: {
       index: indexable,
       follow: indexable,
@@ -50,9 +57,21 @@ export default async function ProductPage(props) {
   const product = await getProduct(handle);
   if (!product) return notFound();
 
+  const productSchema = buildProductSchema(product);
+  const breadcrumbSchema = buildProductBreadcrumbSchema(product);
 
   return (
     <ProductProvider>
+      <Script
+        id="product-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <Script
+        id="product-breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="px-4 py-16 xs:py-20 md:px-10 lg:px-40">
       <ProductDetailsClient product={product} />
         <div className="mt-8">

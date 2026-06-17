@@ -1,15 +1,20 @@
 import CategoryPageClient from 'components/category-page-client';
 import { metaInfo } from "lib/meta";
+import { getBaseUrl } from 'lib/site-url';
 
 // generateMetadata must await params
 export async function generateMetadata({ params }) {
   // Await the params promise
   const { collection } = await params;
   const meta = metaInfo[collection] ?? metaInfo.home;
+  const baseUrl = getBaseUrl();
 
   return {
     title: meta.title,
     description: meta.description,
+    alternates: {
+      canonical: `${baseUrl}/${collection}`,
+    },
   };
 }
 
