@@ -7,6 +7,7 @@ import Quantity from 'components/product/quantity';
 import Price from 'components/price';
 import Accordion from 'components/accordian';
 import parse from 'html-react-parser';
+import { extractProductFeaturesHtml } from 'lib/product-details-html';
 import Image from 'next/image';
 import Econolease from "media/png/econolease.jpeg"
 import { AddToWishlist } from 'components/add-to-wishlist';
@@ -46,28 +47,7 @@ export default function ProductDetailsClient({ product }) {
   //   return sliced;
   // };
 
-  const extractFeatures = (htmlString) => {
-    // Match both variations of "Materials"
-    const markerRegex = /<strong>Materials:<br>.*?<\/strong>|<strong>Materials:<br>|Materials:<br><\/strong>|Materials:<\/span><\/strong>|Materials:/i;
-    const match = htmlString.match(markerRegex);
-
-    if (!match) return '';
-
-    // Start slicing from where "Materials" begins
-    let sliced = htmlString.slice(match.index);
-
-    // Remove inline styles
-    sliced = sliced.replace(/\s*style="[^"]*"/g, '');
-
-    // Remove meta tags
-    sliced = sliced.replace(/<meta[^>]*>/g, '');
-
-    // Ensure only one <br> after "Materials:"
-    sliced = sliced.replace(/(<strong>Materials:)(<br>)+/i, '$1<br>');
-
-
-    return sliced;
-  };
+  const extractFeatures = (htmlString) => extractProductFeaturesHtml(htmlString);
 
   function extractBeforeFeatures(text) {
     const splitText = text?.split('Materials:');
@@ -171,6 +151,7 @@ export default function ProductDetailsClient({ product }) {
                 <Accordion
                   title={t("DETAILS")}
                   content={parse(extractFeatures(product?.descriptionHtml))}
+                  contentClassName="product-details-content"
                   defaultOpen
                 />
               </div>

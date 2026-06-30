@@ -306,10 +306,22 @@ h4 span {
 }
 
 
+.product-details-content,
+.product-details-content * {
+  font-weight: 400 !important;
+}
+
+.product-details-content p,
+.product-details-content span,
+.product-details-content li {
+  color: #818181;
+}
+
 p a {
   color: #ef4444;
   font-weight: 500 !important;
 }
+
 
 
 

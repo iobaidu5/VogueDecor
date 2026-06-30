@@ -11,38 +11,19 @@ interface AccordionProps {
   title: string;
   content: ReactNode;
   defaultOpen?: boolean;
+  contentClassName?: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ title, content, defaultOpen = false }) => {
+const Accordion: React.FC<AccordionProps> = ({
+  title,
+  content,
+  defaultOpen = false,
+  contentClassName = '',
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(defaultOpen);
 
   const toggleAccordion = (): void => {
     setIsOpen((prev) => !prev);
-  };
-
-  // recursive render function to catch all <strong> nodes
-  const renderContent = (nodes: ReactNode): ReactNode => {
-    if (Array.isArray(nodes)) {
-      return nodes.map((node, idx) => renderContentWithKey(node, idx));
-    }
-    return renderContentWithKey(nodes);
-  };
-
-  const renderContentWithKey = (node: ReactNode, key?: string | number): ReactNode => {
-    if (React.isValidElement(node)) {
-      if (node.type === 'strong') {
-        return React.cloneElement(node, {
-          key: node.key || key,
-          className: 'text-black font-semibold',
-          children: renderContent(node.props.children),
-        });
-      }
-      return React.cloneElement(node, {
-        key: node.key || key,
-        children: renderContent(node.props.children),
-      });
-    }
-    return node;
   };
 
   const contentColorClass =
@@ -70,9 +51,9 @@ const Accordion: React.FC<AccordionProps> = ({ title, content, defaultOpen = fal
         transition={{ duration: 0.3 }}
       >
         <div
-          className={`py-3 ${contentColorClass} font-poppins xs:text-[13px] md:text-[13px]`}
+          className={`py-3 ${contentColorClass} font-poppins xs:text-[13px] md:text-[13px] ${contentClassName}`}
         >
-          {renderContent(content)}
+          {content}
         </div>
       </motion.div>
     </div>
