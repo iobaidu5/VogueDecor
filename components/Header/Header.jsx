@@ -232,6 +232,15 @@ const Header = ({ menu }) => {
         >
           {t(`menu.Bundles`)}
         </Link>
+
+        <Link
+          key="financing"
+          href={currentLang === 'fr' ? '/fr/financing' : '/financing'}
+          prefetch={true}
+          className="cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-black"
+        >
+          {t('menu.Financing')}
+        </Link>
       </div>
 
 

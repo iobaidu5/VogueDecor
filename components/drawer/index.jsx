@@ -97,6 +97,15 @@ const Drawer = ({ menu, open = false, onClose }) => {
     {t(`menu.Bundles`)}
   </Link>
 
+  <Link
+    key={"financing"}
+    href={currentLang === "fr" ? "/fr/financing" : "/financing"}
+    className="text-left text-lg font-medium text-gray-800 hover:text-gray-500 px-3 w-[140px] py-1 rounded-full -ml-3"
+    onClick={() => handleNavigation(currentLang === "fr" ? "/fr/financing" : "/financing")}
+  >
+    {t("menu.Financing")}
+  </Link>
+
   {/* Sign Up Section */}
   <div className="border-t border-gray-200 my-4">
     <p className="text-left text-lg font-bold text-gray-800 hover:text-gray-500 mt-4">

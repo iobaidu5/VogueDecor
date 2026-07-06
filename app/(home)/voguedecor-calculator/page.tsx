@@ -1,24 +1,16 @@
-'use client';
+import { redirect } from 'next/navigation';
 
-import React from 'react';
-import { useSearchParams } from 'next/navigation';
-import '../../../lib/i18nClient';
-import { useTranslation } from 'react-i18next';
-
-const Calculator = () => {
-  const { i18n } = useTranslation('common');
-  const searchParams = useSearchParams();
-  const amount = searchParams.get('amount');
-
-  return (
-    <div>
-      <iframe
-        id="efs_object"
-        style={{ width: '100%', height: '100vh', border: 'none' }}
-        src={`https://www.silverchef.finance/${i18n.language}/embed/weekly-rent-widget/${amount || ''}/`}
-      />
-    </div>
-  );
+type CalculatorRedirectProps = {
+  searchParams: Promise<{ amount?: string; mode?: string }>;
 };
 
-export default Calculator;
+export default async function CalculatorRedirect({ searchParams }: CalculatorRedirectProps) {
+  const params = await searchParams;
+  const query = new URLSearchParams();
+
+  if (params.amount) query.set('amount', params.amount);
+  if (params.mode) query.set('mode', params.mode);
+
+  const suffix = query.toString();
+  redirect(suffix ? `/financing?${suffix}` : '/financing');
+}

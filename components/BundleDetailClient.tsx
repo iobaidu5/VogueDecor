@@ -445,7 +445,7 @@ export default function BundleDetailClient({
             {/* Econolease Link */}
             <div className="mt-6 flex justify-center sm:justify-start items-center gap-4 sm:flex-row sm:items-center">
               <Link
-                href="/voguedecor-calculator"
+                href="/financing"
                 className="text-[#7DA6DD] underline"
               >
                 {t(`payMonthlyWith`)}

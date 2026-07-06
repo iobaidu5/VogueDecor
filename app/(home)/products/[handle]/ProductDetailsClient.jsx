@@ -127,7 +127,7 @@ export default function ProductDetailsClient({ product }) {
 
               <Link
                 href={{
-                  pathname: "/voguedecor-calculator",
+                  pathname: "/financing",
                   query: { amount: product?.priceRange.maxVariantPrice?.amount ? product?.priceRange.maxVariantPrice?.amount : Number(product?.variants[0]?.compareAtPrice?.amount) },
                 }}
                 className="text-[#7DA6DD] underline"
