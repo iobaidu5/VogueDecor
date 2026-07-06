@@ -311,6 +311,12 @@ h4 span {
   font-weight: 400 !important;
 }
 
+.product-details-content .product-detail-label,
+.product-details-content span.product-detail-label {
+  font-weight: 600 !important;
+  color: #000 !important;
+}
+
 .product-details-content p,
 .product-details-content span,
 .product-details-content li {

@@ -3,6 +3,22 @@ import { parse as parseHtml } from 'node-html-parser';
 const MATERIALS_MARKER =
   /<strong>Materials:<br>.*?<\/strong>|<strong>Materials:<br>|Materials:<br><\/strong>|Materials:<\/span><\/strong>|Materials:/i;
 
+const DETAIL_LABEL_CLASS = 'product-detail-label';
+
+function wrapDetailSectionLabels(html: string): string {
+  let result = html;
+
+  if (!result.includes(`${DETAIL_LABEL_CLASS}">Materials:`)) {
+    result = result.replace(/Materials:/i, `<span class="${DETAIL_LABEL_CLASS}">Materials:</span>`);
+  }
+
+  if (!result.includes(`${DETAIL_LABEL_CLASS}">Dimensions:`)) {
+    result = result.replace(/Dimensions:/i, `<span class="${DETAIL_LABEL_CLASS}">Dimensions:</span>`);
+  }
+
+  return result;
+}
+
 export function extractProductFeaturesHtml(htmlString: string): string {
   if (!htmlString) return '';
 
@@ -56,5 +72,5 @@ export function normalizeProductDetailsHtml(html: string): string {
   let normalized = root.toString();
   normalized = normalized.replace(/(<strong>Materials:)(<br>)+/i, '$1<br>');
 
-  return normalized;
+  return wrapDetailSectionLabels(normalized);
 }
