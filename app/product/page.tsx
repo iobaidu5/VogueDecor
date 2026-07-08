@@ -18,12 +18,7 @@ import { BsHeart } from 'react-icons/bs';
 import Accordion from 'components/accordian';
 import Econolease from "media/png/econolease.jpeg"
 import parse from 'html-react-parser';
-import {
-  extractProductDescriptionHtml,
-  extractProductDescriptionPlain,
-  extractProductFeaturesHtml,
-  extractProductFeaturesPlain,
-} from 'lib/product-details-html';
+import { splitProductDescription } from 'lib/product-details-html';
 import { GridTileImage } from 'components/grid/tile';
 import CartModal from 'components/cart/modal';
 import addtocartIcon from 'media/svg/addToCardIcon.svg';
@@ -78,16 +73,13 @@ export default async function ProductPage({ params }: { params: any }) {
 
 
 
-  const extractFeatures = (htmlString: string) =>
-    extractProductFeaturesHtml(htmlString) ||
-    extractProductFeaturesPlain(product?.description || '');
-
-  const descriptionContent = parse(
-    extractProductDescriptionHtml(product?.descriptionHtml || '') ||
-      extractProductDescriptionPlain(product?.description || ''),
+  const { descriptionHtml, detailsHtml } = splitProductDescription(
+    product?.descriptionHtml || '',
+    product?.description || '',
   );
 
-  const detailsContent = parse(extractFeatures(product?.descriptionHtml || ''));
+  const descriptionContent = parse(descriptionHtml);
+  const detailsContent = parse(detailsHtml);
 
   return (
     <ProductProvider>

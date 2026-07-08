@@ -7,12 +7,7 @@ import Quantity from 'components/product/quantity';
 import Price from 'components/price';
 import Accordion from 'components/accordian';
 import parse from 'html-react-parser';
-import {
-  extractProductDescriptionHtml,
-  extractProductDescriptionPlain,
-  extractProductFeaturesHtml,
-  extractProductFeaturesPlain,
-} from 'lib/product-details-html';
+import { splitProductDescription } from 'lib/product-details-html';
 import Image from 'next/image';
 import Econolease from "media/png/econolease.jpeg"
 import { AddToWishlist } from 'components/add-to-wishlist';
@@ -52,17 +47,13 @@ export default function ProductDetailsClient({ product }) {
   //   return sliced;
   // };
 
-  const extractFeatures = (htmlString) =>
-    extractProductFeaturesHtml(htmlString) ||
-    extractProductFeaturesPlain(product?.description || '');
-
-  const descriptionContent = parse(
-    extractProductDescriptionHtml(product?.descriptionHtml || '') ||
-      extractProductDescriptionPlain(product?.description || ''),
+  const { descriptionHtml, detailsHtml } = splitProductDescription(
+    product?.descriptionHtml || '',
+    product?.description || '',
   );
 
-  const detailsContent = parse(extractFeatures(product?.descriptionHtml || ''));
-
+  const descriptionContent = parse(descriptionHtml);
+  const detailsContent = parse(detailsHtml);
 
   return (
     <>
