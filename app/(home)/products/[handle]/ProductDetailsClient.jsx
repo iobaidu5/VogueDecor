@@ -7,7 +7,12 @@ import Quantity from 'components/product/quantity';
 import Price from 'components/price';
 import Accordion from 'components/accordian';
 import parse from 'html-react-parser';
-import { extractProductFeaturesHtml } from 'lib/product-details-html';
+import {
+  extractProductDescriptionHtml,
+  extractProductDescriptionPlain,
+  extractProductFeaturesHtml,
+  extractProductFeaturesPlain,
+} from 'lib/product-details-html';
 import Image from 'next/image';
 import Econolease from "media/png/econolease.jpeg"
 import { AddToWishlist } from 'components/add-to-wishlist';
@@ -46,12 +51,16 @@ export default function ProductDetailsClient({ product }) {
   //   return sliced;
   // };
 
-  const extractFeatures = (htmlString) => extractProductFeaturesHtml(htmlString);
+  const extractFeatures = (htmlString) =>
+    extractProductFeaturesHtml(htmlString) ||
+    extractProductFeaturesPlain(product?.description || '');
 
-  function extractBeforeFeatures(text) {
-    const splitText = text?.split('Materials:');
-    return splitText[0]?.trim();
-  }
+  const descriptionContent = parse(
+    extractProductDescriptionHtml(product?.descriptionHtml || '') ||
+      extractProductDescriptionPlain(product?.description || ''),
+  );
+
+  const detailsContent = parse(extractFeatures(product?.descriptionHtml || ''));
 
   return (
     <>
@@ -100,14 +109,15 @@ export default function ProductDetailsClient({ product }) {
               <div className="border-b border-black/80">
                 <Accordion
                   title={t("DESCRIPTION")}
-                  content={extractBeforeFeatures(product?.description)}
+                  content={descriptionContent}
+                  contentClassName="product-description-content"
                   defaultOpen
                 />
               </div>
               <div className="border-b border-black/80">
                 <Accordion
                   title={t("DETAILS")}
-                  content={parse(extractFeatures(product?.descriptionHtml))}
+                  content={detailsContent}
                   contentClassName="product-details-content"
                   defaultOpen
                 />

@@ -18,6 +18,12 @@ import { BsHeart } from 'react-icons/bs';
 import Accordion from 'components/accordian';
 import Econolease from "media/png/econolease.jpeg"
 import parse from 'html-react-parser';
+import {
+  extractProductDescriptionHtml,
+  extractProductDescriptionPlain,
+  extractProductFeaturesHtml,
+  extractProductFeaturesPlain,
+} from 'lib/product-details-html';
 import { GridTileImage } from 'components/grid/tile';
 import CartModal from 'components/cart/modal';
 import addtocartIcon from 'media/svg/addToCardIcon.svg';
@@ -72,17 +78,16 @@ export default async function ProductPage({ params }: { params: any }) {
 
 
 
-  const extractFeatures = (htmlString: any) => {
-    const parts = htmlString.split(
-      '<strong>Materials:<br></strong>'
-    );
-    return parts.length > 1 ? parts[1] : '';
-  };
+  const extractFeatures = (htmlString: string) =>
+    extractProductFeaturesHtml(htmlString) ||
+    extractProductFeaturesPlain(product?.description || '');
 
-  function extractBeforeFeatures(text: any) {
-    const splitText = text.split('Materials:');
-    return splitText[0].trim();
-  }
+  const descriptionContent = parse(
+    extractProductDescriptionHtml(product?.descriptionHtml || '') ||
+      extractProductDescriptionPlain(product?.description || ''),
+  );
+
+  const detailsContent = parse(extractFeatures(product?.descriptionHtml || ''));
 
   return (
     <ProductProvider>
@@ -140,13 +145,15 @@ export default async function ProductPage({ params }: { params: any }) {
                 <div className="border-y">
                   <Accordion
                     title="DESCRIPTION"
-                    content={extractBeforeFeatures(product?.description)}
+                    content={descriptionContent}
+                    contentClassName="product-description-content"
                   />
                 </div>
                 <div className="border-b">
                   <Accordion
                     title="DETAILS"
-                    content={parse(extractFeatures(product?.descriptionHtml || ''))}
+                    content={detailsContent}
+                    contentClassName="product-details-content"
                   />
                 </div>
                 <div className="border-b">
