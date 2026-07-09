@@ -125,6 +125,33 @@ function wrapStandaloneHeaderLines(html: string): string {
   return result;
 }
 
+function cleanupSectionHeaderMarkup(html: string): string {
+  let result = html;
+
+  result = result.replace(
+    new RegExp(
+      `<strong class="${DETAIL_LABEL_CLASS}">\\s*<strong class="${DETAIL_LABEL_CLASS}">(MATERIALS|DIMENSIONS)<\\/strong>\\s*<\\/strong>`,
+      'gi',
+    ),
+    `<strong class="${DETAIL_LABEL_CLASS}">$1</strong>`,
+  );
+
+  result = result.replace(
+    /<strong[^>]*>\s*<br\s*\/?>\s*<\/strong>/gi,
+    '',
+  );
+
+  result = result.replace(
+    new RegExp(
+      `(<strong class="${DETAIL_LABEL_CLASS}">(?:MATERIALS|DIMENSIONS)<\\/strong>)\\s*(?:<br\\s*\\/?>\\s*){2,}`,
+      'gi',
+    ),
+    '$1<br>',
+  );
+
+  return result;
+}
+
 function finalizeSectionHeaders(html: string): string {
   let result = html;
 
@@ -145,14 +172,6 @@ function finalizeSectionHeaders(html: string): string {
 
   result = result.replace(
     new RegExp(
-      `(<strong class="${DETAIL_LABEL_CLASS}">(?:MATERIALS|DIMENSIONS)<\\/strong>)(?!\\s*<br\\s*\\/?>)(?!\\s*<\\/p>)`,
-      'gi',
-    ),
-    '$1<br>',
-  );
-
-  result = result.replace(
-    new RegExp(
       `(<strong class="${DETAIL_LABEL_CLASS}">(?:MATERIALS|DIMENSIONS)<\\/strong>)([A-Za-z0-9])`,
       'gi',
     ),
@@ -164,7 +183,7 @@ function finalizeSectionHeaders(html: string): string {
     `<strong class="${DETAIL_LABEL_CLASS}">$1</strong><br>$2`,
   );
 
-  return result;
+  return cleanupSectionHeaderMarkup(result);
 }
 
 export function splitProductDescription(
@@ -253,9 +272,21 @@ export function normalizeProductDetailsHtml(html: string): string {
   stripMetaTags(root);
 
   root.querySelectorAll('strong, b').forEach((node) => {
-    if (isSectionHeader(node.text)) {
-      node.setAttribute('class', DETAIL_LABEL_CLASS);
+    if (!isSectionHeader(node.text)) {
+      return;
     }
+
+    const nestedHeader = node.querySelector('strong, b');
+    if (nestedHeader && isSectionHeader(nestedHeader.text)) {
+      node.replaceWith(
+        parseHtml(
+          `<strong class="${DETAIL_LABEL_CLASS}">${nestedHeader.text.trim()}</strong>`,
+        ).firstChild ?? node,
+      );
+      return;
+    }
+
+    node.setAttribute('class', DETAIL_LABEL_CLASS);
   });
 
   root.querySelectorAll('span').forEach((node) => {
