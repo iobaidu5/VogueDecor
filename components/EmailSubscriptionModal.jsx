@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import NewsLetter from '../media/png/newsletter.png';
+import NewsLetter from 'media/png/RARE0099.jpg';
 import logo from 'media/png/logo-new.png';
 import { toast, Toaster } from 'sonner';
 import axios from 'axios';
