@@ -65,7 +65,7 @@ export default function EmailSubscriptionModal() {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[10000000000]">
-      <div className="relative bg-white rounded-lg shadow-xl w-[90%] md:max-w-3xl flex flex-col sm:flex-row overflow-hidden h-auto sm:h-[550px] animate-fadeIn">
+      <div className="relative bg-white rounded-lg shadow-xl w-[90%] md:max-w-3xl flex flex-col sm:flex-row overflow-hidden h-auto max-h-[90vh] sm:h-[550px] animate-fadeIn">
         {/* Close Button */}
         <button
           onClick={handleClose}
@@ -76,23 +76,20 @@ export default function EmailSubscriptionModal() {
         </button>
 
         {/* Left Image */}
-        <div className="w-full sm:w-1/2 relative md:block">
+        <div className="w-full sm:w-1/2 relative shrink-0 h-40 sm:h-full">
           <Image
             src={NewsLetter}
             alt="Subscribe"
-            layout="sm:fill"
-            objectFit="cover"
-            className='h-[100%] object-cover'
+            className="w-full h-full object-cover"
           />
         </div>
 
         {/* Right Content */}
-        <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
+        <div className="w-full sm:w-1/2 p-5 sm:p-8 flex flex-col justify-center overflow-y-auto">
           <Image
             src={logo}
             alt="logo"
-            objectFit="cover"
-            className="d-flex justify-center mx-auto relative w-[150px] md:w-[220px] lg:w-[300px]"
+            className="mx-auto w-[150px] md:w-[220px] lg:w-[300px] h-auto"
           />
           <p className="text-gray-600 mb-4 text-center">
             {t('newsletter.subscribeText')}
