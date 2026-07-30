@@ -76,11 +76,11 @@ export default function EmailSubscriptionModal() {
         </button>
 
         {/* Left Image */}
-        <div className="w-full sm:w-1/2 relative shrink-0 h-auto sm:h-full">
+        <div className="w-full sm:w-1/2 relative shrink-0 h-[38vh] sm:h-full">
           <Image
             src={NewsLetter}
             alt="Subscribe"
-            className="w-full h-auto max-h-[35vh] object-contain sm:h-full sm:max-h-none sm:object-cover"
+            className="w-full h-full object-cover"
           />
         </div>
 
