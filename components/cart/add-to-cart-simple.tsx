@@ -2,10 +2,10 @@
 
 import { PlusIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
-import { addItem } from 'components/cart/actions';
+import { queueAdd } from 'components/cart/pending-cart-writes';
 import { useProduct } from 'components/product/product-context';
 import { Product, ProductForCart, ProductVariant } from 'lib/shopify/types';
-import { useActionState } from 'react';
+import { useState } from 'react';
 import { useCart } from './cart-context';
 import addtocartIcon from 'media/svg/addToCardIcon.svg';
 import Image from 'next/image';
@@ -73,14 +73,13 @@ export function AddToCartSimple({ product, icon }: { product: ProductForCart; ic
 
   const { addCartItem } = useCart();
   const { state } = useProduct();
-  const [message, formAction] = useActionState(addItem, null);
+  const [message, setMessage] = useState<string | undefined>();
 
   const variant = variants.find((variant: ProductVariant) =>
     variant.selectedOptions.every((option) => option.value === state[option.name.toLowerCase()])
   );
   const defaultVariantId = variants.length === 1 ? variants[0]?.id : undefined;
   const selectedVariantId = variant?.id || defaultVariantId;
-  const actionWithVariant = formAction.bind(null, selectedVariantId);
   const finalVariant = variants.find((variant) => variant.id === selectedVariantId)!;
 
   const handleClick = (e: any) => {
@@ -91,8 +90,10 @@ export function AddToCartSimple({ product, icon }: { product: ProductForCart; ic
     <form
       onClick={(e) => e.stopPropagation()}
       action={async () => {
+        if (!selectedVariantId) return;
         addCartItem(finalVariant, product);
-        await actionWithVariant();
+        const result = await queueAdd(selectedVariantId);
+        if (result) setMessage(result);
       }}
     >
       <SubmitButton

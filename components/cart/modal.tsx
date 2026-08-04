@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { createCartAndSetCookie, redirectToCheckout } from './actions';
+import { flushPendingCartWrites } from './pending-cart-writes';
 import { useCart } from './cart-context';
 import CloseCart from './close-cart';
 import { DeleteItemButton } from './delete-item-button';
@@ -220,7 +221,12 @@ export default function CartModal() {
                       />
                     </div>
                   </div>
-                  <form action={redirectToCheckout}>
+                  <form
+                    action={async () => {
+                      await flushPendingCartWrites();
+                      await redirectToCheckout();
+                    }}
+                  >
                     <CheckoutButton />
                   </form>
                 </div>
