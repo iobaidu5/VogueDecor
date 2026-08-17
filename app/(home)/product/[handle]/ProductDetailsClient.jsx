@@ -2,6 +2,7 @@
 
 import i18n from '../../../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
+import { productName } from 'lib/product-name';
 import { AddToCart } from 'components/cart/add-to-cart';
 import Quantity from 'components/product/quantity';
 import Price from 'components/price';
@@ -76,7 +77,7 @@ export default function ProductDetailsClient({ product }) {
           <Suspense fallback={null}>
             <div className="mb-4 w-full pb-4">
               <h1 className="font-medium xs:text-xl md:text-2xl overflow-hidden text-clip sm:whitespace-normal md:whitespace-normal">
-                {t(`products.${product.title}`)}
+                {productName(t, product.title)}
               </h1>
 
               <h5 className="font-normal xs:text-[15px] md:text-[15px] text-[#818181]">#{product?.variants[0]?.sku}</h5>

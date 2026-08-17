@@ -10,6 +10,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import RelatedHeader from 'app/product/RelatedHeader';
 import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
+import { productName } from 'lib/product-name';
 
 const NextArrow = (props: any) => {
   const { onClick } = props;
@@ -119,7 +120,7 @@ const ProductSlider = ({ data }: { data: Array<Record<string, any>> }) => {
                     <div className="flex items-center justify-between space-y-3 px-12 py-4 md:p-4">
                       <div className="flex flex-col space-y-1">
                         <p className="md:text-md font-medium uppercase text-gray-900 xs:text-sm">
-                          {t(`products.${item?.title}`)}
+                          {productName(t, item?.title)}
                         </p>
                         <div className="flex items-center space-x-2">
                       <p

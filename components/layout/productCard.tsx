@@ -7,6 +7,7 @@ import { ProductProvider } from 'components/product/product-context';
 import { useCurrency } from 'components/currency/currencyContext';
 import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
+import { productName } from 'lib/product-name';
 import { useCollection } from 'lib/CollectionContext';
 
 export function ProductCard({ product, collection }: { product: any, collection?: string }) {
@@ -101,7 +102,7 @@ export function ProductCard({ product, collection }: { product: any, collection?
           <div className="flex flex-col gap-2 p-3 items-start md:items-center text-left lg:text-center md:items-start md:text-left">
             <p className="w-full text-xs lg:text-sm md:text-base  lg:font-medium text-black">
               {/* {product.title} */}
-              {t(`products.${product.title}`)}
+              {productName(t, product.title)}
             </p>
             <div className="flex items-start md:items-center justify-start md:justify-start space-x-2">
               <p

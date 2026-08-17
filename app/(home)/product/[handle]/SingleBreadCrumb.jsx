@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import i18n from '../../../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
+import { productName } from 'lib/product-name';
 import { useRouter } from 'next/navigation';
 
 const SingleBreadCrumb = ({title, collection}) => {
@@ -29,7 +30,7 @@ const SingleBreadCrumb = ({title, collection}) => {
       {collection}
     </span>
     <span className="text-gray-500 hover:underline"> / </span>
-    <span className="capitalize text-gray-500">{t(`products.${title}`)}</span>
+    <span className="capitalize text-gray-500">{productName(t, title)}</span>
   </div>
   )
 }
