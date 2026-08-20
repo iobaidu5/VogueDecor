@@ -91,6 +91,11 @@ export default function ProductDetailsClient({ product }) {
                 />
 
               </div>
+              {product?.title?.toLowerCase().includes('booth') && (
+                <p className="mt-2 text-sm font-medium text-gray-600">
+                  {t('boothPreparationNotice')}
+                </p>
+              )}
               {collection === "clearance" && (
               <p className="px-3 py-1 whitespace-nowrap mt-4 text-sm w-auto text-center lg:w-[80%] font-semibold text-gray-700 bg-[#ffed00] rounded-full animate-[pump_1.6s_ease-in-out_infinite]">
                 

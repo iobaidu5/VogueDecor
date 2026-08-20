@@ -89,6 +89,11 @@ export default function ProductDetailsClient({ product }) {
                   saleCurreny={product?.variants[0]?.compareAtPrice?.currencyCode}
                 />
               </div>
+              {product?.title?.toLowerCase().includes('booth') && (
+                <p className="mt-2 text-sm font-medium text-gray-600">
+                  {t('boothPreparationNotice')}
+                </p>
+              )}
             </div>
             <div className="flex flex-col flex-wrap items-start gap-4">
               <Quantity item={product} />
