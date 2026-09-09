@@ -4,7 +4,7 @@ import { shopifyFetch } from 'lib/shopify';
 const getBlogArticlesQuerySiteMap = `
   query BlogArticles($handle: String!) {
     blog(handle: $handle) {
-      articles(first: 100, sortKey: PUBLISHED_AT, reverse: true) {
+      articles(first: 250, sortKey: PUBLISHED_AT, reverse: true) {
         edges {
           node {
             id

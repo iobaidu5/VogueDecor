@@ -40,7 +40,7 @@
 // Get all blog handles
 export const getAllBlogsQuery = /* GraphQL */ `
   query getAllBlogs {
-    blogs(first: 100) {
+    blogs(first: 250) {
       edges {
         node {
           handle
@@ -54,7 +54,7 @@ export const getAllBlogsQuery = /* GraphQL */ `
 // Get articles for one blog by handle
 // queries/blogs.ts
 export const getBlogArticlesQuery = /* GraphQL */ `
-  query getBlogArticles($handle: String!, $limit: Int = 100) {
+  query getBlogArticles($handle: String!, $limit: Int = 250) {
     blog(handle: $handle) {
       title
       articles(first: $limit) {
