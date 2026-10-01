@@ -119,6 +119,12 @@
   "enterEmail": "Entrez votre adresse e-mail",
   "products": {
     "Title": "Titre",
+    "NOVA - Chair": "NOVA - Chaise",
+    "FORMA - Chair": "FORMA - Chaise",
+    "FORMA - Barstool": "FORMA - Tabouret de bar",
+    "LUCA - Chair (walnut leg / black)": "LUCA - Chaise (pieds noyer / noir)",
+    "LUCA - Barstool (walnut leg / black)": "LUCA - Tabouret de bar (pieds noyer / noir)",
+    "LUCA - Barstool (walnut leg/ cognac)": "LUCA - Tabouret de bar (pieds noyer / cognac)",
     "WPC - Table top (28x28) walnut": "WPC - Plateau de table (28x28) noyer",
     "WPC - Table top (28x28) grey marble": "WPC - Plateau de table (28x28) marbre gris",
     "WPC - Table top (28x28) grey": "WPC - Plateau de table (28x28) gris",
