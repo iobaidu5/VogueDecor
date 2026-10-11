@@ -116,7 +116,11 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      const fetched = await getCollectionProducts({ collection });
+      const fetched = await getCollectionProducts(
+        collection === 'new-arrivals'
+          ? { collection, sortKey: 'CREATED_AT', reverse: true }
+          : { collection }
+      );
       setAllProducts(fetched);
       setProducts(fetched);
       setLoading(false);
@@ -176,6 +180,8 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
         );
         break;
       default:
+        // New arrivals keep Shopify's newest-to-oldest order
+        if (collection === 'new-arrivals') break;
         sorted.sort((a, b) => {
           const groupA = a.title?.split(' - ')[0] ?? '';
           const groupB = b.title?.split(' - ')[0] ?? '';
