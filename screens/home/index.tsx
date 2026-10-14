@@ -1,9 +1,7 @@
 'use client';
 
-import summerBannerWebEn from 'media/eid/Summer Banner (ENG).png';
-import summerBannerWebFr from 'media/eid/Summer Banner (FR).png';
-import summerBannerMobileEn from 'media/eid/Summer Banner mobile (ENG).png';
-import summerBannerMobileFr from 'media/eid/Summer Banner mobile (FR).png';
+import heroWebBanner from 'media/home-banner/update/mobile/desktop.png';
+import heroMobileBanner from 'media/home-banner/update/desktop/mobile.png';
 import Image from 'next/image';
 import BestSeller from './components/bestSeller';
 import Community from './components/community';
@@ -16,12 +14,44 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
 export default function MainPage() {
-  const { t, i18n } = useTranslation('common');
+  const { t } = useTranslation('common');
 
-  const isFr = i18n.language === 'fr';
-  const mobileBanner = isFr ? summerBannerMobileFr : summerBannerMobileEn;
-  const webBanner = isFr ? summerBannerWebFr : summerBannerWebEn;
-  const bannerLink = '/outdoor-furniture';
+  const bannerLink = '/new-arrivals';
+
+  // Positions and sizes are scaled from the designer's text versions of the banners
+  const heroText = (variant: 'web' | 'mobile') => (
+    <div
+      className={
+        variant === 'web'
+          ? 'absolute left-[4.4%] top-[15%] text-black'
+          : 'absolute left-[8%] top-[13%] max-w-[60%] text-black'
+      }
+    >
+      <h2
+        className={`font-semibold leading-tight ${
+          variant === 'web' ? 'text-[3.1vw]' : 'text-[clamp(26px,5.8vw,75px)]'
+        }`}
+      >
+        {t('heroNewTitle')}
+      </h2>
+      <p
+        className={`mt-[0.6em] leading-snug ${
+          variant === 'web' ? 'max-w-[34vw] text-[1.45vw]' : 'text-[clamp(15px,2.6vw,34px)]'
+        }`}
+      >
+        {t('announcementLine1')}
+        <br />
+        {t('announcementLine2')}
+      </p>
+      <span
+        className={`mt-[0.9em] inline-block font-medium underline underline-offset-2 ${
+          variant === 'web' ? 'text-[1.2vw]' : 'text-[clamp(14px,2.2vw,28px)]'
+        }`}
+      >
+        {t('announcementShopNow')}
+      </span>
+    </div>
+  );
 
   return (
     <>
@@ -32,34 +62,32 @@ export default function MainPage() {
             <Link
               href={bannerLink}
               className="relative block w-full cursor-pointer min-[1201px]:hidden"
-              aria-label={t('shopOutdoor')}
             >
               <Image
-                key={`hero-mobile-${i18n.language}`}
-                src={mobileBanner}
-                alt={t('outdoorCollection')}
-                width={mobileBanner.width}
-                height={mobileBanner.height}
+                src={heroMobileBanner}
+                alt=""
+                width={heroMobileBanner.width}
+                height={heroMobileBanner.height}
                 className="block h-auto w-full max-w-full"
                 sizes="100vw"
                 priority
               />
+              {heroText('mobile')}
             </Link>
             <Link
               href={bannerLink}
               className="relative hidden w-full cursor-pointer min-[1201px]:block"
-              aria-label={t('shopOutdoor')}
             >
               <Image
-                key={`hero-web-${i18n.language}`}
-                src={webBanner}
-                alt={t('outdoorCollection')}
-                width={webBanner.width}
-                height={webBanner.height}
+                src={heroWebBanner}
+                alt=""
+                width={heroWebBanner.width}
+                height={heroWebBanner.height}
                 className="block h-auto w-full max-w-full"
                 sizes="100vw"
                 priority
               />
+              {heroText('web')}
             </Link>
           </div>
         </section>

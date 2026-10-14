@@ -17,10 +17,9 @@ export function SaleBar() {
   return (
     <div className="w-full bg-[#fff27d] py-3 text-center text-xs text-black lg991:text-sm">
       <p>
-        {t('announcementSaleIntro')}
-        <span className="font-semibold">{t('announcementSaleDiscount')}</span>
-        {t('announcementSaleMid')}
-        <Link href="/outdoor-furniture">
+        <span className="font-semibold">{t('announcementTitle')}</span>{' '}
+        {t('announcementLine1')} {t('announcementLine2')}{' '}
+        <Link href="/new-arrivals">
           <span className="underline text-black">{t('announcementShopNow')}</span>
         </Link>
       </p>
