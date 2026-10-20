@@ -10,14 +10,6 @@ export const metadata = {
   },
 };
 
-type FinancingPageProps = {
-  searchParams: Promise<{ amount?: string; mode?: string }>;
-};
-
-export default async function SpanishFinancingPage({ searchParams }: FinancingPageProps) {
-  const params = await searchParams;
-  const amount = params.amount ?? null;
-  const mode = params.mode === 'rent-try-buy' ? 'rent-try-buy' : 'all';
-
-  return <EconoLeaseFinanceEmbed amount={amount} mode={mode} />;
+export default function SpanishFinancingPage() {
+  return <EconoLeaseFinanceEmbed />;
 }

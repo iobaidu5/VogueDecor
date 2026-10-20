@@ -1,4 +1,10 @@
 {
+  "financingPage": {
+    "title": "Financiamiento flexible para tu negocio",
+    "description": "Equipa tu espacio con las opciones flexibles de financiamiento de EconoLease. Envía tu solicitud de forma segura y su equipo te ayudará a encontrar la solución adecuada para tu negocio.",
+    "button": "Solicitar financiamiento",
+    "disclaimer": "Continuarás en el sitio seguro de EconoLease."
+  },
   "productPage": {
     "inStock": "EN STOCK",
     "outOfStock": "AGOTADO",

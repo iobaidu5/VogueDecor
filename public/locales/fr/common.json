@@ -1,4 +1,10 @@
 {
+  "financingPage": {
+    "title": "Des solutions de financement adaptées à votre entreprise",
+    "description": "Aménagez votre espace grâce aux options de financement flexibles d'EconoLease. Faites votre demande en ligne en toute sécurité; leur équipe vous aidera à trouver la solution qui convient à votre entreprise.",
+    "button": "Faire une demande de financement",
+    "disclaimer": "Vous serez redirigé vers le site sécurisé d'EconoLease."
+  },
   "productPage": {
     "inStock": "EN STOCK",
     "outOfStock": "EN RUPTURE DE STOCK",

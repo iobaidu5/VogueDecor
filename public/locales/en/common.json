@@ -1,4 +1,10 @@
 {
+  "financingPage": {
+    "title": "Flexible financing for your business",
+    "description": "Furnish your space with flexible financing options from EconoLease. Apply securely online and their team will help you find the right solution for your business.",
+    "button": "Apply for financing",
+    "disclaimer": "You'll continue to EconoLease's secure website."
+  },
   "productPage": {
     "inStock": "IN STOCK",
     "outOfStock": "OUT OF STOCK",
