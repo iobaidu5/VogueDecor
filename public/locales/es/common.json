@@ -1,4 +1,35 @@
 {
+  "bundleTitles": {
+    "Table set - Black (76x120cm)": "Juego de mesa - Negro (76 × 120 cm)",
+    "Table set - Natural (76x120cm)": "Juego de mesa - Natural (76 × 120 cm)",
+    "Table set - Amazon Grey (76x120cm)": "Juego de mesa - Gris Amazon (76 × 120 cm)",
+    "Table set - Walnut (76x120cm)": "Juego de mesa - Nogal (76 × 120 cm)",
+    "Table set - Dark Brown (76x120cm)": "Juego de mesa - Marrón oscuro (76 × 120 cm)",
+    "Table set - Bohemian (76x120cm)": "Juego de mesa - Bohemio (76 × 120 cm)",
+    "Table set - Bohemian (60x76cm)": "Juego de mesa - Bohemio (60 × 76 cm)",
+    "Table set - Natural (60x76cm)": "Juego de mesa - Natural (60 × 76 cm)",
+    "Table set - Black (60x76cm)": "Juego de mesa - Negro (60 × 76 cm)",
+    "Table set - Walnut (60x76cm)": "Juego de mesa - Nogal (60 × 76 cm)",
+    "Table Set - Amazon Grey (60x76cm)": "Juego de mesa - Gris Amazon (60 × 76 cm)",
+    "Table set - Dark Walnut  (60x76cm)": "Juego de mesa - Nogal oscuro (60 × 76 cm)"
+  },
+  "bundlePage": {
+    "title": "Paquetes",
+    "subtitle": "Descubre los elegantes paquetes de Vogue Decor, pensados para espacios atemporales",
+    "empty": "No hay paquetes disponibles",
+    "noImage": "Sin imagen",
+    "showBundle": "Ver paquete",
+    "loading": "Cargando...",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "deleting": "Eliminando...",
+    "confirmDelete": "¿Seguro que quieres eliminar \"{{title}}\"?",
+    "deleteError": "Se produjo un error al eliminar el paquete.",
+    "includedProducts": "Productos incluidos",
+    "quantity": "Cant.",
+    "custom": "Personalizado",
+    "bundleImage": "Imagen del paquete"
+  },
   "financingPage": {
     "title": "Financiamiento flexible para tu negocio",
     "description": "Equipa tu espacio con las opciones flexibles de financiamiento de EconoLease. Envía tu solicitud de forma segura y su equipo te ayudará a encontrar la solución adecuada para tu negocio.",

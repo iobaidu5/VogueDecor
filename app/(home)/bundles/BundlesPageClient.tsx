@@ -4,6 +4,8 @@
 import { useState, useMemo } from 'react';
 import AllBundleCard from 'components/AllBundleCard';
 import FilterDropdown from 'components/filter-dropdown';
+import { useTranslation } from 'react-i18next';
+import { bundleName } from 'lib/bundle-name';
 
 interface BundleItem {
   id: string;
@@ -33,6 +35,7 @@ interface BundlesPageClientProps {
 }
 
 export default function BundlesPageClient({ initialBundles }: BundlesPageClientProps) {
+  const { t, i18n } = useTranslation('common');
   const [filter, setFilter] = useState<string>('');
   
   // Ensure initialBundles is always an array
@@ -43,10 +46,10 @@ export default function BundlesPageClient({ initialBundles }: BundlesPageClientP
 
     switch (filter) {
       case 'az':
-        sorted.sort((a, b) => a.title.localeCompare(b.title));
+        sorted.sort((a, b) => bundleName(t, a.title).localeCompare(bundleName(t, b.title), i18n.language));
         break;
       case 'za':
-        sorted.sort((a, b) => b.title.localeCompare(a.title));
+        sorted.sort((a, b) => bundleName(t, b.title).localeCompare(bundleName(t, a.title), i18n.language));
         break;
       case 'price-asc':
         sorted.sort((a, b) => (a.totalPrice || 0) - (b.totalPrice || 0));
@@ -55,29 +58,28 @@ export default function BundlesPageClient({ initialBundles }: BundlesPageClientP
         sorted.sort((a, b) => (b.totalPrice || 0) - (a.totalPrice || 0));
         break;
       default:
-        // Default sorting - you can keep the original order or add your preferred default
-        sorted.sort((a, b) => a.title.localeCompare(b.title));
+        sorted.sort((a, b) => bundleName(t, a.title).localeCompare(bundleName(t, b.title), i18n.language));
         break;
     }
     
     return sorted;
-  }, [filter, safeBundles]);
+  }, [filter, i18n.language, safeBundles, t]);
 
   return (
     <section className="container mx-auto w-100 p-6">
       {safeBundles.length === 0 ? (
-        <p className="py-3 text-center text-lg">No bundles found</p>
+        <p className="py-3 text-center text-lg">{t('bundlePage.empty')}</p>
       ) : (
         <>
           {/* Header */}
           <div className="flex items-start justify-between pt-5 mt-2">
             <div className="flex flex-col space-y-1">
               <p className="text-[23px] font-medium capitalize text-gray-700">
-                Bundles
+                {t('bundlePage.title')}
               </p>
               <p className="text-xs md:text-sm lg991:text-medium text-gray-700">
                 <span className="capitalize text-gray-500">
-                  Discover Vogue Decor's chic bundles for timeless elegance
+                  {t('bundlePage.subtitle')}
                 </span>
               </p>
             </div>

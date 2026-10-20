@@ -12,6 +12,8 @@ const SingleBreadCrumb = ({title, collection}) => {
   const router = useRouter();
   const pathname = usePathname();
   const locale = localeFromPathname(pathname);
+  const collectionPath = collection?.toLowerCase() === 'bundles' ? 'bundles' : collection;
+  const collectionKey = collection?.toLowerCase() === 'bundles' ? 'Bundles' : collection;
   return (
     <div className="flex w-full items-center space-x-2 text-[12px] mb-4 lg:mb-20">
     <Link href={withLocalePath('/', locale)} className="text-gray-500 hover:underline">
@@ -21,16 +23,16 @@ const SingleBreadCrumb = ({title, collection}) => {
     <span className="text-gray-500 hover:underline"> / </span>
     <span
       className="capitalize text-gray-500 cursor-pointer"
-      onClick={() => router.push(withLocalePath(`/${encodeURIComponent(collection)}`, locale))}
+      onClick={() => router.push(withLocalePath(`/${encodeURIComponent(collectionPath)}`, locale))}
       role="link"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
-          router.push(withLocalePath(`/${encodeURIComponent(collection)}`, locale));
+          router.push(withLocalePath(`/${encodeURIComponent(collectionPath)}`, locale));
         }
       }}
     >
-      {t(`menu.${collection}`, { defaultValue: collection })}
+      {t(`menu.${collectionKey}`, { defaultValue: collection })}
     </span>
     </>}
     <span className="text-gray-500 hover:underline"> / </span>

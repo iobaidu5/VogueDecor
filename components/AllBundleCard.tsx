@@ -2,8 +2,11 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import clsx from 'clsx';
+import { useTranslation } from 'react-i18next';
+import { localeFromPathname, withLocalePath } from 'lib/locale-path';
+import { bundleName } from 'lib/bundle-name';
 
 
 export default function AllBundleCard({ bundle }: { bundle: any }) {
@@ -11,6 +14,10 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
   const [loading, setLoading] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
+  const { t } = useTranslation('common');
+  const translatedTitle = bundleName(t, bundle.title);
 
   useEffect(() => {
     try {
@@ -26,7 +33,7 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
 
   const handleDelete = async () => {
     const confirmDelete = window.confirm(
-      `Are you sure you want to delete "${bundle.title}"?`
+      t('bundlePage.confirmDelete', { title: translatedTitle })
     );
     if (!confirmDelete) return;
 
@@ -42,7 +49,7 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
 
       router.refresh();
     } catch (error) {
-      alert('Something went wrong while deleting.');
+      alert(t('bundlePage.deleteError'));
       console.error(error);
     } finally {
       setLoading(false);
@@ -61,7 +68,7 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
         ? bundle.totalPrice.toNumber()
         : Number(bundle.totalPrice || 0);
 
-    const url = `/bundles/${bundle.slug}?totalPrice=${encodeURIComponent(price)}`;
+    const url = `${withLocalePath(`/bundles/${bundle.slug}`, locale)}?totalPrice=${encodeURIComponent(price)}`;
     router.push(url);
   };
 
@@ -82,14 +89,14 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
           {bundle.imageUrl ? (
             <Image
               src={bundle.imageUrl}
-              alt={bundle.title}
+              alt={translatedTitle}
               fill
               className={`object-contain lg:object-cover transition-opacity duration-700 ease-in-out ${isHovered ? 'opacity-90' : 'opacity-100'
                 }`}
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gray-100 text-sm text-gray-400">
-              No image
+              {t('bundlePage.noImage')}
             </div>
           )}
 
@@ -115,7 +122,7 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
                 }}
                 className="rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-100 transition-colors"
               >
-                Edit
+                {t('bundlePage.edit')}
               </button>
               <button
                 onClick={(e) => {
@@ -125,7 +132,7 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
                 disabled={loading}
                 className="rounded-lg bg-red-600 px-3 py-2 text-xs font-medium text-white hover:bg-red-500 disabled:opacity-50 transition-colors"
               >
-                {loading ? 'Deleting...' : 'Delete'}
+                {loading ? t('bundlePage.deleting') : t('bundlePage.delete')}
               </button>
             </div>
           ) : (
@@ -139,7 +146,7 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
                 onClick={handleNavigate}
                 className={clsx(buttonClasses)}
               >
-                {loading ? 'Loading...' : 'Show Bundle'}
+                {loading ? t('bundlePage.loading') : t('bundlePage.showBundle')}
               </button>
             </div>
           )}
@@ -148,7 +155,7 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
         {/* Info */}
         <div className="flex flex-col gap-2 p-3 items-start md:items-center text-left lg:text-center">
           <p className="w-full text-xs lg:text-sm md:text-base lg:font-medium text-black">
-            {bundle.title}
+            {translatedTitle}
           </p>
           <div className="flex items-center justify-start md:justify-center space-x-2">
             <p className="text-sm text-left lg:text-center font-medium text-[#878787]">

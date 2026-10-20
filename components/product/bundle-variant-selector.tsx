@@ -2,11 +2,13 @@
 
 import Slider from 'react-slick';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { localeFromPathname, withLocalePath } from 'lib/locale-path';
+import { bundleName } from 'lib/bundle-name';
 
 type Bundle = {
   id: string;
@@ -51,18 +53,20 @@ export function BundleVariantSelector({
   currentBundle: Bundle;
 }) {
   const router = useRouter();
-  const { t, ready } = useTranslation('common');
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
+  const { t } = useTranslation('common');
   if (!bundles?.length || bundles.length === 1) return null;
 
   const handleBundleChange = (bundleSlug: string) => {
-    router.push(`/bundles/${bundleSlug}`);
+    router.push(withLocalePath(`/bundles/${bundleSlug}`, locale));
   };
 
   const formatPrice = (price: string | number | null | undefined): string => {
     if (price === null || price === undefined) return 'N/A';
     const num = Number(price);
     if (isNaN(num)) return 'N/A';
-    if (num === 0) return 'Custom';
+    if (num === 0) return t('bundlePage.custom');
     return `$${num.toFixed(2)}`;
   };
 
@@ -121,21 +125,21 @@ export function BundleVariantSelector({
                             ? bundle.imageUrl
                             : `data:image/png;base64,${bundle.imageUrl}`
                         }
-                        alt={bundle.title}
+                        alt={bundleName(t, bundle.title)}
                         layout="fill"
                         objectFit="cover"
                         quality={100}
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center bg-gray-100 text-gray-400 text-sm">
-                        No Image
+                        {t('bundlePage.noImage')}
                       </div>
                     )}
                   </div>
 
                   <div className="flex flex-col items-center justify-between px-4 py-3 text-center">
                     <p className="text-sm font-medium uppercase truncate max-w-[160px]">
-                      {bundle.title}
+                      {bundleName(t, bundle.title)}
                     </p>
 
                     <p className="mt-1 text-green-700 font-semibold text-sm">

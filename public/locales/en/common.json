@@ -1,4 +1,35 @@
 {
+  "bundleTitles": {
+    "Table set - Black (76x120cm)": "Table set - Black (76x120cm)",
+    "Table set - Natural (76x120cm)": "Table set - Natural (76x120cm)",
+    "Table set - Amazon Grey (76x120cm)": "Table set - Amazon Grey (76x120cm)",
+    "Table set - Walnut (76x120cm)": "Table set - Walnut (76x120cm)",
+    "Table set - Dark Brown (76x120cm)": "Table set - Dark Brown (76x120cm)",
+    "Table set - Bohemian (76x120cm)": "Table set - Bohemian (76x120cm)",
+    "Table set - Bohemian (60x76cm)": "Table set - Bohemian (60x76cm)",
+    "Table set - Natural (60x76cm)": "Table set - Natural (60x76cm)",
+    "Table set - Black (60x76cm)": "Table set - Black (60x76cm)",
+    "Table set - Walnut (60x76cm)": "Table set - Walnut (60x76cm)",
+    "Table Set - Amazon Grey (60x76cm)": "Table Set - Amazon Grey (60x76cm)",
+    "Table set - Dark Walnut  (60x76cm)": "Table set - Dark Walnut (60x76cm)"
+  },
+  "bundlePage": {
+    "title": "Bundles",
+    "subtitle": "Discover Vogue Decor's chic bundles for timeless elegance",
+    "empty": "No bundles found",
+    "noImage": "No image",
+    "showBundle": "Show bundle",
+    "loading": "Loading...",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleting": "Deleting...",
+    "confirmDelete": "Are you sure you want to delete \"{{title}}\"?",
+    "deleteError": "Something went wrong while deleting.",
+    "includedProducts": "Included products",
+    "quantity": "Qty",
+    "custom": "Custom",
+    "bundleImage": "Bundle image"
+  },
   "financingPage": {
     "title": "Flexible financing for your business",
     "description": "Furnish your space with flexible financing options from EconoLease. Apply securely online and their team will help you find the right solution for your business.",

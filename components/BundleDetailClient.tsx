@@ -238,6 +238,9 @@ import { AddToWishlist } from "components/add-to-wishlist";
 import Link from "next/link";
 import Econolease from "media/png/econolease.jpeg";
 import { BundleVariantSelector } from "./product/bundle-variant-selector";
+import { usePathname } from "next/navigation";
+import { localeFromPathname, withLocalePath } from "lib/locale-path";
+import { bundleName } from "lib/bundle-name";
 
 // Define types for better type safety
 interface BundleItem {
@@ -276,6 +279,9 @@ export default function BundleDetailClient({
   allBundles?: Bundle[];
 }) {
   const { t } = useTranslation("common");
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
+  const translatedTitle = bundleName(t, bundle.title);
   const [products, setProducts] = useState<any[]>([]);
   const [productsWithQuantity, setProductsWithQuantity] = useState<ProductWithQuantity[]>([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -331,7 +337,7 @@ export default function BundleDetailClient({
       ? [
           {
             src: bundle.imageUrl,
-            altText: bundle?.title || "Bundle image",
+            altText: translatedTitle || t('bundlePage.bundleImage'),
           },
         ]
       : []),
@@ -347,7 +353,7 @@ export default function BundleDetailClient({
   return (
     <ProductProvider>
       <div>
-        <SingleBreadCrumb title={bundle?.title} collection={"Bundles"} />
+        <SingleBreadCrumb title={translatedTitle} collection={"Bundles"} />
 
         <main className="flex flex-col gap-4 rounded-lg bg-white lg:flex-row lg:items-start lg:gap-12">
           {/* Left Side - Gallery */}
@@ -370,7 +376,7 @@ export default function BundleDetailClient({
           <div className="flex w-full flex-col items-start lg:w-4/12">
             <div>
               <h1 className="font-medium xs:text-xl md:text-2xl text-gray-900">
-                {bundle?.title}
+                {translatedTitle}
               </h1>
               {bundle?.slug && (
                 <h5 className="font-normal text-sm text-gray-500">
@@ -419,7 +425,7 @@ export default function BundleDetailClient({
                     onClick={toggleAccordion}
                   >
                     <h5 className="font-poppins xs:text-[13px] md:text-[13px] font-small capitalize text-black">
-                      Included Products
+                      {t('bundlePage.includedProducts')}
                     </h5>
                     <Image
                       src={isOpen ? Up : Down}
@@ -445,7 +451,7 @@ export default function BundleDetailClient({
             {/* Econolease Link */}
             <div className="mt-6 flex justify-center sm:justify-start items-center gap-4 sm:flex-row sm:items-center">
               <Link
-                href="/financing"
+                href={withLocalePath('/financing', locale)}
                 className="text-[#7DA6DD] underline"
               >
                 {t(`payMonthlyWith`)}

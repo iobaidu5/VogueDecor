@@ -1,4 +1,35 @@
 {
+  "bundleTitles": {
+    "Table set - Black (76x120cm)": "Ensemble de table - Noir (76 × 120 cm)",
+    "Table set - Natural (76x120cm)": "Ensemble de table - Naturel (76 × 120 cm)",
+    "Table set - Amazon Grey (76x120cm)": "Ensemble de table - Gris Amazon (76 × 120 cm)",
+    "Table set - Walnut (76x120cm)": "Ensemble de table - Noyer (76 × 120 cm)",
+    "Table set - Dark Brown (76x120cm)": "Ensemble de table - Brun foncé (76 × 120 cm)",
+    "Table set - Bohemian (76x120cm)": "Ensemble de table - Bohème (76 × 120 cm)",
+    "Table set - Bohemian (60x76cm)": "Ensemble de table - Bohème (60 × 76 cm)",
+    "Table set - Natural (60x76cm)": "Ensemble de table - Naturel (60 × 76 cm)",
+    "Table set - Black (60x76cm)": "Ensemble de table - Noir (60 × 76 cm)",
+    "Table set - Walnut (60x76cm)": "Ensemble de table - Noyer (60 × 76 cm)",
+    "Table Set - Amazon Grey (60x76cm)": "Ensemble de table - Gris Amazon (60 × 76 cm)",
+    "Table set - Dark Walnut  (60x76cm)": "Ensemble de table - Noyer foncé (60 × 76 cm)"
+  },
+  "bundlePage": {
+    "title": "Ensembles",
+    "subtitle": "Découvrez les ensembles raffinés de Vogue Decor, conçus pour une élégance intemporelle",
+    "empty": "Aucun ensemble disponible",
+    "noImage": "Aucune image",
+    "showBundle": "Voir l'ensemble",
+    "loading": "Chargement...",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "deleting": "Suppression...",
+    "confirmDelete": "Voulez-vous vraiment supprimer \"{{title}}\"?",
+    "deleteError": "Une erreur est survenue pendant la suppression.",
+    "includedProducts": "Produits inclus",
+    "quantity": "Qté",
+    "custom": "Sur mesure",
+    "bundleImage": "Image de l'ensemble"
+  },
   "financingPage": {
     "title": "Des solutions de financement adaptées à votre entreprise",
     "description": "Aménagez votre espace grâce aux options de financement flexibles d'EconoLease. Faites votre demande en ligne en toute sécurité; leur équipe vous aidera à trouver la solution qui convient à votre entreprise.",
@@ -98,7 +129,7 @@
     "sale": "Vente",
     "New Arrivals": "Nouveautés",
     "new-arrivals": "Nouveautés",
-    "Bundles": "Forfaits",
+    "Bundles": "Ensembles",
     "Financing": "Financement",
     "Booth": "Stand",
     "booth": "Stand"
@@ -469,7 +500,7 @@
   "DETAILS": "Détails",
   "AVAILABILITY": "Disponibilité",
   "We think you may also like": "Nous pensons que vous aimerez aussi",
-  "Available Bundles": "Forfaits disponibles",
+  "Available Bundles": "Ensembles disponibles",
   "yourEmailAddress": "Votre adresse e-mail",
   "orderType": "Type de commande",
   "orderTypeOnline": "En ligne",
