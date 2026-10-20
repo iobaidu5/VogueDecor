@@ -9,6 +9,8 @@ import { useState } from 'react';
 import { useCart } from './cart-context';
 import addtocartIcon from 'media/svg/addToCardIcon.svg';
 import Image from 'next/image';
+import i18n from '../../lib/i18nClient';
+import { useTranslation } from 'react-i18next';
 
 function SubmitButton({
   availableForSale,
@@ -21,6 +23,7 @@ function SubmitButton({
   handleClick: any;
   icon?: boolean;
 }) {
+  const { t } = useTranslation('common');
   const buttonClasses =
     // "absolute right-14 top-3 z-50 h-8 w-28 rounded-full border border-black text-[12px] hover:bg-black hover:text-white";
     'absolute right-12  top-3 h-8 w-32 rounded-full border border-red-400 bg-red-500 text-white text-xs font-semibold flex items-center justify-center hover:bg-black hover:text-white transition-all duration-200';
@@ -29,7 +32,7 @@ function SubmitButton({
   if (!availableForSale) {
     return (
       <button disabled className={clsx(buttonClasses, disabledClasses)}>
-        Out Of Stock
+        {i18n.language === 'es' ? t('spanish.outOfStock') : 'Out Of Stock'}
       </button>
     );
   }
@@ -45,7 +48,7 @@ function SubmitButton({
         <div className="absolute left-0 ml-4">
           <PlusIcon className="h-5" />
         </div>
-        Add To Cart!!!
+        {i18n.language === 'es' ? t('addToCart') : 'Add To Cart!!!'}
       </button>
     );
   }
@@ -60,7 +63,7 @@ function SubmitButton({
       onClick={(e) => e.stopPropagation()} // stops the event from bubbling up
       className="absolute right-14 top-3 h-8 w-28 rounded-full border border-black text-[12px] hover:bg-black hover:text-white"
     >
-      Add To Cart
+      {i18n.language === 'es' ? t('addToCart') : 'Add To Cart'}
     </button>
   );
 }

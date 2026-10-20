@@ -2,12 +2,16 @@ import Link from 'next/link';
 import React from 'react';
 import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
+import { localeFromPathname, withSpanishPath } from '../../lib/locale-path';
+import { usePathname } from 'next/navigation';
 
 const BreadCrumb = ({ currentPage }) => {
   const { t, ready } = useTranslation('common');
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
   return (
     <div className="flex w-full items-center space-x-2 text-[12px] mt-14">
-      <Link href="/" className="text-gray-500 hover:underline">
+      <Link href={withSpanishPath('/', locale)} className="text-gray-500 hover:underline">
         {t(`home`)}
       </Link>
       <span className="text-gray-500 hover:underline"> / </span>

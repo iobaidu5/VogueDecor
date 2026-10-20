@@ -8,13 +8,15 @@ import CurrencySwitcher from 'components/currency/CurrencySwitcher';
 import Image from 'next/image';
 import searchIcon from 'media/svg/searchIcon.svg';
 import Search from 'components/Search';
-import i18n from '../../lib/i18nClient';
 import LanguageSwitcher from 'components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
+import { localeFromPathname, withLocalePath, withSpanishPath } from '../../lib/locale-path';
+import { usePathname } from 'next/navigation';
 
 const Drawer = ({ menu, open = false, onClose }) => {
   const { t, ready } = useTranslation('common');
-  const currentLang = i18n.language;
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
 
   const handleNavigation = () => {
     onClose?.();
@@ -59,9 +61,7 @@ const Drawer = ({ menu, open = false, onClose }) => {
 
     // Apply language prefix
     const finalHref =
-      currentLang === "fr"
-        ? cleanPath.startsWith("/fr") ? cleanPath : `/fr${cleanPath}`
-        : cleanPath;
+      withLocalePath(cleanPath, locale);
 
     return (
       <Link
@@ -79,29 +79,29 @@ const Drawer = ({ menu, open = false, onClose }) => {
 
   <Link
     key={"clearance"}
-    href={"/clearance"}
+    href={withSpanishPath('/clearance', locale)}
     className={`
       text-left text-lg font-medium text-gray-800 hover:text-gray-500
       bg-[#ffed00] px-3 w-[140px] py-1 rounded-full -ml-3`}
-    onClick={() => handleNavigation("/clearance")}
+    onClick={() => handleNavigation(withSpanishPath('/clearance', locale))}
   >
     {t(`menu.Clearance`)}
   </Link>
 
   <Link
     key={"bundles"}
-    href={"/bundles"}
+    href={withSpanishPath('/bundles', locale)}
     className={`text-left text-lg font-medium text-gray-800 hover:text-gray-500 px-3 w-[140px] py-1 rounded-full -ml-3`}
-    onClick={() => handleNavigation("/bundles")}
+    onClick={() => handleNavigation(withSpanishPath('/bundles', locale))}
   >
     {t(`menu.Bundles`)}
   </Link>
 
   <Link
     key={"financing"}
-    href={currentLang === "fr" ? "/fr/financing" : "/financing"}
+    href={withLocalePath('/financing', locale)}
     className="text-left text-lg font-medium text-gray-800 hover:text-gray-500 px-3 w-[140px] py-1 rounded-full -ml-3"
-    onClick={() => handleNavigation(currentLang === "fr" ? "/fr/financing" : "/financing")}
+    onClick={() => handleNavigation(withLocalePath('/financing', locale))}
   >
     {t("menu.Financing")}
   </Link>

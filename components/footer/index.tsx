@@ -8,10 +8,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { ChevronDown } from "lucide-react";
-import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import { toast, Toaster } from 'sonner';
 import axios from 'axios';
+import { localeFromPathname, withLocalePath, withSpanishPath } from '../../lib/locale-path';
+import { usePathname } from 'next/navigation';
 
 const furniture = ['Furniture.', 'Chairs', 'Barstools', 'Table Tops', 'Table Bases', 'Outdoor Furniture'];
 const quikLinks = ['Vogue Decor.', 'Home', 'Contact Us'];
@@ -25,7 +26,8 @@ interface FooterLinksProps {
 }
 
 const Footer = () => {
-  const currentLang = i18n.language;
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
   return (
     <>
       {/* StayUpdated for small screens */}
@@ -64,22 +66,22 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col items-center justify-between gap-4 py-4 md:flex-row">
           <div className="hidden lg:flex flex-col items-center space-y-2 text-[12px] text-white md:flex-row md:space-x-4 md:space-y-0">
-            <Link href="/terms-and-conditions?tab=privacy" className="hover:underline text-[#a6a6a6]">
+            <Link href={withSpanishPath('/terms-and-conditions?tab=privacy', locale)} className="hover:underline text-[#a6a6a6]">
               Privacy Policy
             </Link>
-            <Link href="/terms-and-conditions?tab=terms" className="hover:underline text-[#a6a6a6]">
+            <Link href={withSpanishPath('/terms-and-conditions?tab=terms', locale)} className="hover:underline text-[#a6a6a6]">
               Terms and Conditions
             </Link>
             <Link
-              href={"/terms-and-conditions?tab=shipping"}
+              href={withSpanishPath('/terms-and-conditions?tab=shipping', locale)}
               className="hover:underline text-[#a6a6a6]"
             >
               Shipping and Return Policy
             </Link>
-            <Link href="/blogs" className="hover:underline text-[#a6a6a6]">
+            <Link href={withSpanishPath('/blogs', locale)} className="hover:underline text-[#a6a6a6]">
               Blogs
             </Link>
-            <Link href="/faqs" className="hover:underline text-[#a6a6a6]">
+            <Link href={withSpanishPath('/faqs', locale)} className="hover:underline text-[#a6a6a6]">
               FAQs
             </Link>
           </div>
@@ -112,7 +114,8 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleFAQ = () => setIsOpen((prev) => !prev);
   const { t, ready } = useTranslation('common');
-  const currentLang = i18n.language;
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
 
   return (
     <div className="w-full">
@@ -153,23 +156,13 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
                 <Link
                 key={`footer-link-${index}`}
                 href={
-                  href === '/privacy-policy'
-                    ? currentLang === 'fr'
-                      ? '/fr/terms-and-conditions?tab=privacy'
-                      : '/terms-and-conditions?tab=privacy'
+                    href === '/privacy-policy'
+                    ? withLocalePath('/terms-and-conditions?tab=privacy', locale)
                     : href === '/terms-and-conditions'
-                      ? currentLang === 'fr'
-                        ? '/fr/terms-and-conditions?tab=terms'
-                        : '/terms-and-conditions?tab=terms'
+                      ? withLocalePath('/terms-and-conditions?tab=terms', locale)
                       : href === '/shipping-and-return-policy'
-                        ? currentLang === 'fr'
-                          ? '/fr/terms-and-conditions?tab=shipping'
-                          : '/terms-and-conditions?tab=shipping'
-                        : currentLang === 'fr'
-                          ? href.startsWith('/fr')
-                            ? href
-                            : `/fr${href}`
-                          : href
+                        ? withLocalePath('/terms-and-conditions?tab=shipping', locale)
+                    : withLocalePath(href, locale)
                 }
                 className="text-[13px] hover:underline"
               >
@@ -209,9 +202,7 @@ const FooterLinks = ({ links, isQuick = false }: FooterLinksProps) => {
             <Link
               key={`link-${index}`}
               href={
-                currentLang === "fr"
-                  ? href.startsWith("/fr") ? href : `/fr${href}`
-                  : href
+                withLocalePath(href, locale)
               }
               className="text-[13px] hover:underline"
             >

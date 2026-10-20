@@ -4,9 +4,10 @@ import i18n from '../lib/i18nClient';
 import { usePathname } from 'next/navigation';
 import { I18nextProvider } from 'react-i18next';
 import { useMemo, type ReactNode } from 'react';
+import { localeFromPathname } from '../lib/locale-path';
 
 function syncLanguage(pathname: string): string {
-  const lng = pathname.startsWith('/fr') ? 'fr' : 'en';
+  const lng = localeFromPathname(pathname);
   if (i18n.language !== lng) {
     i18n.changeLanguage(lng);
   }

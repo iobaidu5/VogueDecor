@@ -2,32 +2,33 @@
 
 import { usePathname, useRouter } from 'next/navigation';
 import i18n from '../lib/i18nClient';
+import { localeFromPathname, withLocalePath, type SiteLocale } from '../lib/locale-path';
 
 export default function LanguageSwitcher() {
   const pathname = usePathname(); // e.g. "/chairs" or "/fr/chairs"
   const router = useRouter();
 
-  const toggleLanguage = () => {
-    const currentLang = i18n.language;
-    const newLang = currentLang === 'en' ? 'fr' : 'en';
+  const currentLang = localeFromPathname(pathname);
 
+  const changeLanguage = (newLang: SiteLocale) => {
+    if (newLang === currentLang) return;
     i18n.changeLanguage(newLang);
-
-    let newPath = pathname;
-
-    if (newLang === 'fr' && !pathname.startsWith('/fr')) {
-      newPath = `/fr${pathname}`;
-    } else if (newLang === 'en' && pathname.startsWith('/fr')) {
-      newPath = pathname.replace(/^\/fr/, '');
-    }
-
-    router.push(newPath || '/');
+    router.push(withLocalePath(pathname, newLang));
   };
 
-
   return (
-    <button onClick={toggleLanguage} className='p-2'>
-      {i18n.language === 'en' ? 'FR' : 'EN'}
-    </button>
+    <div className='flex items-center gap-0.5' aria-label='Language selector'>
+      {(['en', 'fr', 'es'] as SiteLocale[]).map((locale) => (
+        <button
+          key={locale}
+          type='button'
+          onClick={() => changeLanguage(locale)}
+          aria-pressed={locale === currentLang}
+          className={`p-2 text-xs ${locale === currentLang ? 'font-semibold underline underline-offset-4' : ''}`}
+        >
+          {locale.toUpperCase()}
+        </button>
+      ))}
+    </div>
   );
 }

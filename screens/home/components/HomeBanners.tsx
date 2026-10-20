@@ -5,10 +5,12 @@ import banner1 from 'media/small-banner/Chairs banner no txt.png';
 import banner2 from 'media/small-banner/Outdoor banner no txt.png';
 import NewArrivalEng from 'media/new-arrival/2.png';
 import NewArrivalFr from 'media/new-arrival/3.png';
+import NewArrivalEs from 'media/new-arrival/4.png';
 import Link from 'next/link';
 import '../../../lib/i18nClient'
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
+import { toSiteLocale, withSpanishPath } from '../../../lib/locale-path';
 
 const HomeBanners = () => {
   const { t, i18n } = useTranslation('common');
@@ -34,7 +36,7 @@ const HomeBanners = () => {
   {/* Banner 1 */}
   <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px]">
     <Image
-      src={i18n.language === 'fr' ? NewArrivalFr  : NewArrivalEng}
+      src={i18n.language === 'fr' ? NewArrivalFr : i18n.language === 'es' ? NewArrivalEs : NewArrivalEng}
       alt="Banner 1"
       fill
       className="object-cover rounded-lg"
@@ -46,7 +48,7 @@ const HomeBanners = () => {
       </h2> */}
       <div className="mt-4 sm:mt-6">
         <Link
-          href="/new-arrivals"
+          href={withSpanishPath('/new-arrivals', toSiteLocale(i18n.language))}
           className="bg-black text-white px-4 py-2 text-xs sm:text-sm rounded hover:bg-gray-900 transition duration-300"
         >
           {t('shopnow')}
@@ -71,7 +73,7 @@ const HomeBanners = () => {
       <p className="text-black mt-2 mb-3 sm:mb-4">{t('defineOutdoorStyle')}</p>
       <div>
         <Link
-          href="/outdoor-furniture"
+          href={withSpanishPath('/outdoor-furniture', toSiteLocale(i18n.language))}
           className="bg-black text-white px-4 py-2 text-xs sm:text-sm rounded hover:bg-gray-900 transition duration-300"
         >
           {t('shopOutdoor')}

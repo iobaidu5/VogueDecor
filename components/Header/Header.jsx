@@ -16,6 +16,7 @@ import LanguageSwitcher from 'components/LanguageSwitcher';
 import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import GoogleTranslateScript from 'components/GoogleTranslateScript';
+import { localeFromPathname, withLocalePath, withSpanishPath } from '../../lib/locale-path';
 
 // import your CartModal (contains the dialog and logic)
 import CartModal from 'components/cart/modal';
@@ -24,7 +25,7 @@ function SignupButton() {
   return (
     <Link href="/signup" className="hidden md:block">
       <button className="flex items-center justify-center rounded-md bg-black text-white xs:h-[36px] xs:w-[90px] md:h-[42px] md:w-[110px] font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105">
-        Sign up
+        {i18n.language === 'es' ? 'Registrarse' : 'Sign up'}
       </button>
     </Link>
   );
@@ -38,8 +39,8 @@ const Header = ({ menu }) => {
   const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
   const { t, ready } = useTranslation('common');
-  var currentLang = i18n.language;
   const pathname = usePathname();
+  const currentLang = localeFromPathname(pathname);
 
 
   console.log("menu 0 ", menu)
@@ -55,7 +56,6 @@ const Header = ({ menu }) => {
   };
 
   useEffect(() => {
-    currentLang = pathname.startsWith('/fr') ? "fr" : "en";
     i18n.changeLanguage(currentLang);
   }, [pathname]);
 
@@ -108,7 +108,7 @@ const Header = ({ menu }) => {
               href="tel:+18888808232"
               className="flex items-center justify-center rounded-md bg-black text-white h-6 px-2 text-sm font-medium tracking-wide transition-all duration-300 hover:bg-orange-600 hover:scale-105 whitespace-nowrap shrink-0"
             >
-              Call Now
+              {currentLang === 'es' ? t('spanish.callNow') : 'Call Now'}
             </a>
           </div>
 
@@ -133,7 +133,7 @@ const Header = ({ menu }) => {
           <a
             href="tel:+18888808232"
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-black text-white transition-all duration-300 hover:bg-orange-600 hover:scale-105 lg991:hidden"
-            aria-label="Call Now"
+            aria-label={currentLang === 'es' ? t('spanish.callNow') : 'Call Now'}
           >
             <FiPhone size={18} />
           </a>
@@ -175,7 +175,7 @@ const Header = ({ menu }) => {
       {/* Navigation menu */}
       <div className="my-2 hidden items-center justify-center space-x-14 lg:flex">
         {!ready ? (
-          <div>Loading translations...</div>
+          <div>{currentLang === 'es' ? t('spanish.loadingTranslations') : 'Loading translations...'}</div>
         ) : (
           menu?.map((item) => {
             // Extract clean internal path
@@ -190,9 +190,7 @@ const Header = ({ menu }) => {
 
             // Apply language prefix
             const finalHref =
-              currentLang === "fr"
-                ? cleanPath.startsWith("/fr") ? cleanPath : `/fr${cleanPath}`
-                : cleanPath;
+              withLocalePath(cleanPath, currentLang);
 
             return (
               <Link
@@ -212,7 +210,7 @@ const Header = ({ menu }) => {
 
         <Link
           key="clearance"
-          href="/clearance"
+          href={withSpanishPath('/clearance', currentLang)}
           prefetch={true}
           className={`
       cursor-pointer text-[14px] capitalize hover:scale-110 
@@ -224,7 +222,7 @@ const Header = ({ menu }) => {
 
         <Link
           key="bundles"
-          href="/bundles"
+          href={withSpanishPath('/bundles', currentLang)}
           prefetch={true}
           className={`
       cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-gray-500'

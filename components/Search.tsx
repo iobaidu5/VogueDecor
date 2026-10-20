@@ -1,12 +1,15 @@
 'use client';
 
 import { createUrl } from "../lib/utils";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from 'react-i18next';
+import { localeFromPathname, withSpanishPath } from '../lib/locale-path';
 
 export default function Search() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
   const { t } = useTranslation('common');
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -22,7 +25,7 @@ export default function Search() {
       newParams.delete("q");
     }
 
-    router.push(createUrl("/search", newParams));
+    router.push(createUrl(withSpanishPath('/search', locale), newParams));
   }
 
   return (

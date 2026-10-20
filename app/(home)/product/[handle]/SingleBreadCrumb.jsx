@@ -5,25 +5,28 @@ import Link from 'next/link';
 import i18n from '../../../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import { productName } from 'lib/product-name';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { localeFromPathname, withSpanishPath } from '../../../../lib/locale-path';
 
 const SingleBreadCrumb = ({title, collection}) => {
   const { t, ready } = useTranslation('common');
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
   return (
     <div className="flex w-full items-center space-x-2 text-[12px] mb-4 lg:mb-20">
-    <Link href="/" className="text-gray-500 hover:underline">
+    <Link href={withSpanishPath('/', locale)} className="text-gray-500 hover:underline">
     {t(`home`)}
     </Link>
     <span className="text-gray-500 hover:underline"> / </span>
     <span
       className="capitalize text-gray-500 cursor-pointer"
-      onClick={() => router.push(`/${encodeURIComponent(collection)}`)}
+      onClick={() => router.push(withSpanishPath(`/${encodeURIComponent(collection)}`, locale))}
       role="link"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
-          router.push(`/${encodeURIComponent(collection)}`);
+          router.push(withSpanishPath(`/${encodeURIComponent(collection)}`, locale));
         }
       }}
     >

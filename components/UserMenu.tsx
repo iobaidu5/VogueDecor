@@ -6,8 +6,11 @@ import { useRouter } from 'next/navigation';
 import { User, LogOut, Settings, Package } from 'lucide-react';
 import Image from 'next/image';
 import axios from 'axios';
+import i18n from '../lib/i18nClient';
+import { useTranslation } from 'react-i18next';
 
 export default function UserMenu() {
+  const { t } = useTranslation('common');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [user, setUser] = useState<{ isLoggedIn: boolean; firstName: string; lastName: string; image: string }>({
@@ -132,7 +135,7 @@ export default function UserMenu() {
                   href="/bundles/add"
                   className="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2"
                 >
-                  <Package size={16} /> Add Bundles
+                  <Package size={16} /> {i18n.language === 'es' ? t('spanish.addBundles') : 'Add Bundles'}
                 </Link>
               </li>
             )}
@@ -141,7 +144,7 @@ export default function UserMenu() {
                 href="/profile"
                 className="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2"
               >
-                <User size={16} /> Account
+                <User size={16} /> {i18n.language === 'es' ? t('spanish.account') : 'Account'}
               </Link>
             </li>
             <li>
@@ -149,7 +152,7 @@ export default function UserMenu() {
                 href="/settings"
                 className="block px-4 py-2 hover:bg-gray-100 flex items-center gap-2"
               >
-                <Settings size={16} /> Settings
+                <Settings size={16} /> {i18n.language === 'es' ? t('spanish.settings') : 'Settings'}
               </Link>
             </li>
             <li>
@@ -157,7 +160,7 @@ export default function UserMenu() {
                 onClick={handleLogout}
                 className="w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center gap-2"
               >
-                <LogOut size={16} /> Logout
+                <LogOut size={16} /> {i18n.language === 'es' ? t('spanish.logout') : 'Logout'}
               </button>
             </li>
           </ul>

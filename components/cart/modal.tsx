@@ -18,6 +18,8 @@ import { DeleteItemButton } from './delete-item-button';
 import { EditItemQuantityButton } from './edit-item-quantity-button';
 import OpenCart from './open-cart';
 import PriceCheckout from 'components/PriceCheckout';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../lib/i18nClient';
 
 type MerchandiseSearchParams = {
   [key: string]: string;
@@ -25,6 +27,7 @@ type MerchandiseSearchParams = {
 
 export default function CartModal() {
   const { cart, updateCartItem } = useCart();
+  const { t } = useTranslation('common');
   const [isOpen, setIsOpen] = useState(false);
   const quantityRef = useRef(cart?.totalQuantity);
   const openCart = () => setIsOpen(true);
@@ -101,7 +104,7 @@ export default function CartModal() {
           >
             <Dialog.Panel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl md:w-[390px] dark:border-neutral-700 dark:bg-white/80 dark:text-black z-[100000000000]">
               <div className="flex items-center justify-between">
-                <p className="text-lg font-semibold">My Cart</p>
+                <p className="text-lg font-semibold">{i18n.language === 'es' ? t('spanish.myCart') : 'My Cart'}</p>
                 <button aria-label="Close cart" onClick={closeCart}>
                   <CloseCart />
                 </button>
@@ -110,7 +113,7 @@ export default function CartModal() {
               {!cart || cart.lines.length === 0 ? (
                 <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
                   <ShoppingCartIcon className="h-16" />
-                  <p className="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
+                  <p className="mt-6 text-center text-2xl font-bold">{i18n.language === 'es' ? t('spanish.emptyCart') : 'Your cart is empty.'}</p>
                 </div>
               ) : (
                 <div className="flex h-full flex-col justify-between overflow-hidden p-1">
@@ -201,7 +204,7 @@ export default function CartModal() {
                   </ul>
                   <div className="py-4 text-sm text-neutral-500 dark:text-neutral-600">
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 dark:border-neutral-700">
-                      <p>Taxes</p>
+                      <p>{i18n.language === 'es' ? t('spanish.taxes') : 'Taxes'}</p>
                       <PriceCheckout
                         className="text-right text-base text-black dark:text-black"
                         amount={cart.cost.totalTaxAmount.amount}
@@ -209,11 +212,11 @@ export default function CartModal() {
                       />
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
-                      <p>Shipping</p>
-                      <p className="text-right">Calculated at checkout</p>
+                      <p>{i18n.language === 'es' ? t('spanish.shipping') : 'Shipping'}</p>
+                      <p className="text-right">{i18n.language === 'es' ? t('spanish.calculatedAtCheckout') : 'Calculated at checkout'}</p>
                     </div>
                     <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
-                      <p>Total</p>
+                      <p>{i18n.language === 'es' ? t('spanish.total') : 'Total'}</p>
                       <PriceCheckout
                         className="text-right text-base text-black dark:text-black"
                         amount={cart.cost.totalAmount.amount}
@@ -377,7 +380,7 @@ function CheckoutButton() {
       type="submit"
       disabled={pending}
     >
-      {pending ? <LoadingDots className="bg-white" /> : 'Proceed to Checkout'}
+      {pending ? <LoadingDots className="bg-white" /> : i18n.language === 'es' ? t('spanish.proceedToCheckout') : 'Proceed to Checkout'}
     </button>
   );
 }

@@ -20,12 +20,15 @@ import { BsHeart } from 'react-icons/bs';
 import { GridTileImage } from 'components/grid/tile';
 import Link from 'next/link';
 import SingleBreadCrumb from './SingleBreadCrumb';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { useCollection } from 'lib/CollectionContext';
+import { localeFromPathname, withSpanishPath } from '../../../../lib/locale-path';
 
 export default function ProductDetailsClient({ product }) {
   const { t, ready } = useTranslation('common');
   const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
   const { collection } = useCollection()
   // const collection = searchParams.get('collection') || '...';
 
@@ -130,7 +133,9 @@ export default function ProductDetailsClient({ product }) {
                       : "text-red-700"
                       }`}
                   >
-                    {product?.availableForSale ? "IN STOCK" : "OUT OF STOCK"}
+                    {i18n.language === 'es'
+                      ? product?.availableForSale ? t('spanish.inStock') : t('spanish.outOfStock')
+                      : product?.availableForSale ? "IN STOCK" : "OUT OF STOCK"}
                   </p>
                 </div>
 
@@ -173,7 +178,7 @@ export default function ProductDetailsClient({ product }) {
 
               <Link
                 href={{
-                  pathname: "/financing",
+                  pathname: withSpanishPath('/financing', locale),
                   query: { amount: product?.priceRange.maxVariantPrice?.amount ? product?.priceRange.maxVariantPrice?.amount : Number(product?.variants[0]?.compareAtPrice?.amount) },
                 }}
                 className="text-[#7DA6DD] underline"

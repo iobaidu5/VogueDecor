@@ -11,11 +11,13 @@ import HomeCategories from './components/homeCategories';
 import HomeBanners from './components/HomeBanners';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import i18n from '../../../lib/i18nClient';
+import { toSiteLocale, withSpanishPath } from '../../../lib/locale-path';
 
 export default function MainPage() {
   const { t } = useTranslation('common');
 
-  const bannerLink = '/new-arrivals';
+  const bannerLink = withSpanishPath('/new-arrivals', toSiteLocale(i18n.language));
 
   // Positions and sizes are scaled from the designer's text versions of the banners
   const heroText = (variant: 'web' | 'mobile') => (

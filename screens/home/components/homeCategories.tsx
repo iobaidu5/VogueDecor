@@ -7,6 +7,8 @@ import Slider from 'react-slick';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import '../../../lib/i18nClient'
 import { useTranslation } from 'react-i18next';
+import i18n from '../../../lib/i18nClient';
+import { toSiteLocale, withSpanishPath } from '../../../lib/locale-path';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -96,7 +98,7 @@ const HomeCategories = () => {
   const CategoryCard = ({ category }: { category: typeof categories[0] }) => (
     <Link
       key={category.title}
-      href={category.href}
+      href={withSpanishPath(category.href, toSiteLocale(i18n.language))}
       className="flex flex-col"
     >
       <div className="relative w-full aspect-[4/4] lg:aspect-[3/4] bg-white">

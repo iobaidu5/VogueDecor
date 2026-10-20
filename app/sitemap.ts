@@ -68,5 +68,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     throw JSON.stringify(error, null, 2);
   }
 
-  return [...routesMap, ...fetchedRoutes, ...blogsRoutes];
+  const [spanishCollections, spanishProducts] = await Promise.all([collectionsPromise, productsPromise]);
+
+  const spanishRoutes: Route[] = [
+    {
+      url: `${baseUrl}/es`,
+      lastModified: new Date().toISOString(),
+    },
+    ...spanishCollections.map((collection) => ({
+      url: `${baseUrl}/es${collection.path}`,
+      lastModified: collection.updatedAt,
+    })),
+    ...spanishProducts.map((product) => ({
+      url: `${baseUrl}/es/product/${product.handle}`,
+      lastModified: product.updatedAt,
+    })),
+  ];
+
+  return [...routesMap, ...fetchedRoutes, ...spanishRoutes, ...blogsRoutes];
 }

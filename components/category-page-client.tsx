@@ -17,6 +17,8 @@ import { useParams } from 'next/navigation';
 import CollectionDropdown from './collection-dropdown';
 import { usePathname } from 'next/navigation';
 import { metaInfo } from "../lib/meta";
+import { metaInfoEs } from "../lib/meta-es";
+import { esCollectionContent } from "../lib/es-collection-content";
 
 type CategoryPageClientProps = {
   collection: any;
@@ -46,7 +48,8 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
   // const collection2: any = params.collection;
   const collection2: any = params.collection || "home";
 
-  const meta = metaInfo[collection2] || metaInfo["home"];
+  const metaMap = i18n.language === 'es' ? metaInfoEs : metaInfo;
+  const meta = metaMap[collection2] || metaMap["home"];
 
 
   if (collection2 === "chairs" && i18n.language === 'en') {
@@ -77,6 +80,8 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
     content = saleFr
   } else if (collection2 === "booth" && i18n.language === 'fr') {
     content = boothsFR
+  } else if (i18n.language === 'es') {
+    content = esCollectionContent[collection2] || [];
   } else {
     content = []
   }
@@ -197,7 +202,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
 
   if (loading) {
     return (
-      <section className="container mx-auto w-100" aria-busy="true" aria-label="Loading products">
+      <section className="container mx-auto w-100" aria-busy="true" aria-label={i18n.language === 'es' ? t('spanish.loadingProducts') : 'Loading products'}>
         <ProductGridSkeleton />
       </section>
     );
@@ -216,7 +221,7 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
       <section className="container mx-auto w-100">
         {products.length === 0 ? (
           <p className="py-3 text-center text-lg">
-            No products found in this collection
+            {i18n.language === 'es' ? t('spanish.noProducts') : 'No products found in this collection'}
           </p>
         ) : (
           <>

@@ -71,7 +71,7 @@ export default async function LocaleLayout({
       "telephone": "+1-514-823-5595",
       "contactType": "customer service",
       "areaServed": "CA",
-      "availableLanguage": ["en", "fr"]
+      "availableLanguage": ["en", "fr", "es"]
     },
     "department": [
       {
@@ -179,7 +179,7 @@ export default async function LocaleLayout({
               new google.translate.TranslateElement(
                 {
                   pageLanguage: 'en',
-                  includedLanguages: 'en,fr',
+                  includedLanguages: 'en,fr,es',
                   autoDisplay: false
                 },
                 'google_translate_element'
