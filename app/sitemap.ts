@@ -68,7 +68,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     throw JSON.stringify(error, null, 2);
   }
 
-  const [spanishCollections, spanishProducts] = await Promise.all([collectionsPromise, productsPromise]);
+  const spanishCollections = await collectionsPromise;
 
   const spanishRoutes: Route[] = [
     {
@@ -78,10 +78,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...spanishCollections.map((collection) => ({
       url: `${baseUrl}/es${collection.path}`,
       lastModified: collection.updatedAt,
-    })),
-    ...spanishProducts.map((product) => ({
-      url: `${baseUrl}/es/product/${product.handle}`,
-      lastModified: product.updatedAt,
     })),
   ];
 

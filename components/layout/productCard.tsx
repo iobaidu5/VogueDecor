@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { AddToCartHover } from 'components/cart/add-to-cart-hover';
 import { ProductProvider } from 'components/product/product-context';
 import { useCurrency } from 'components/currency/currencyContext';
@@ -9,13 +9,10 @@ import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import { productName } from 'lib/product-name';
 import { useCollection } from 'lib/CollectionContext';
-import { localeFromPathname, withSpanishPath } from 'lib/locale-path';
 
 export function ProductCard({ product, collection }: { product: any, collection?: string }) {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
-  const pathname = usePathname();
-  const locale = localeFromPathname(pathname);
   const { t, ready } = useTranslation('common');
   const { currency, rate } = useCurrency();
   const { setCollection } = useCollection()
@@ -72,7 +69,7 @@ export function ProductCard({ product, collection }: { product: any, collection?
             // }}
             onClick={() => {
               setCollection(collection ?? null)
-              router.push(withSpanishPath(`/product/${product.handle}`, locale))
+              router.push(`/product/${product.handle}`)
             }}
           >
             {/* First Image */}
