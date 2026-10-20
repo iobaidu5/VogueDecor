@@ -222,7 +222,7 @@ const Header = ({ menu }) => {
 
         <Link
           key="bundles"
-          href={withSpanishPath('/bundles', currentLang)}
+          href={withLocalePath('/bundles', currentLang)}
           prefetch={true}
           className={`
       cursor-pointer text-[14px] font-small capitalize hover:scale-110 text-gray-500'

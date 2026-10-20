@@ -90,9 +90,9 @@ const Drawer = ({ menu, open = false, onClose }) => {
 
   <Link
     key={"bundles"}
-    href={withSpanishPath('/bundles', locale)}
+    href={withLocalePath('/bundles', locale)}
     className={`text-left text-lg font-medium text-gray-800 hover:text-gray-500 px-3 w-[140px] py-1 rounded-full -ml-3`}
-    onClick={() => handleNavigation(withSpanishPath('/bundles', locale))}
+    onClick={() => handleNavigation(withLocalePath('/bundles', locale))}
   >
     {t(`menu.Bundles`)}
   </Link>
