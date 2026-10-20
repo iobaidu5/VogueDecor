@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'components/product/localized-link';
 import Slider from 'react-slick';
 import { useCurrency } from 'components/currency/currencyContext';
 import { ChevronLeft, ChevronRight } from 'lucide-react';

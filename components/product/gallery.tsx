@@ -8,6 +8,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface GalleryProps {
   images: { src: string; altText: string }[];
@@ -38,6 +39,7 @@ const PrevArrow = (props: any) => {
 };
 
 export function Gallery({ images }: GalleryProps) {
+  const { t } = useTranslation('common');
   const { state, updateImage } = useProduct();
   const updateURL = useUpdateURL();
   const imageIndex = state.image ? parseInt(state.image, 10) : 0;
@@ -151,7 +153,7 @@ export function Gallery({ images }: GalleryProps) {
                         const newState = updateImage(idx.toString());
                         updateURL(newState);
                       }}
-                      aria-label={`Select image ${idx + 1}`}
+                      aria-label={t('productPage.selectImage', { number: idx + 1 })}
                       className={`
                         block 
                         w-[80px] 

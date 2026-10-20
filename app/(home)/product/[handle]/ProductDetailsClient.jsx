@@ -1,6 +1,5 @@
 "use client";
 
-import i18n from '../../../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 import { productName } from 'lib/product-name';
 import { AddToCart } from 'components/cart/add-to-cart';
@@ -20,13 +19,12 @@ import { BsHeart } from 'react-icons/bs';
 import { GridTileImage } from 'components/grid/tile';
 import Link from 'next/link';
 import SingleBreadCrumb from './SingleBreadCrumb';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useCollection } from 'lib/CollectionContext';
-import { localeFromPathname, withSpanishPath } from '../../../../lib/locale-path';
+import { localeFromPathname, withLocalePath } from '../../../../lib/locale-path';
 
 export default function ProductDetailsClient({ product }) {
-  const { t, ready } = useTranslation('common');
-  const searchParams = useSearchParams();
+  const { t } = useTranslation('common');
   const pathname = usePathname();
   const locale = localeFromPathname(pathname);
   const { collection } = useCollection()
@@ -61,7 +59,7 @@ export default function ProductDetailsClient({ product }) {
 
   return (
     <>
-      <SingleBreadCrumb title={product?.title} collection={collection} />
+      <SingleBreadCrumb title={product?.title} collection={collection || product.collections?.[0]?.handle} />
       <div className="flex flex-col gap-4 rounded-lg bg-white lg:flex-row lg:items-start lg:gap-12">
         <div className="w-full lg:w-8/12">
           <Suspense
@@ -133,9 +131,7 @@ export default function ProductDetailsClient({ product }) {
                       : "text-red-700"
                       }`}
                   >
-                    {i18n.language === 'es'
-                      ? product?.availableForSale ? t('spanish.inStock') : t('spanish.outOfStock')
-                      : product?.availableForSale ? "IN STOCK" : "OUT OF STOCK"}
+                    {t(product?.availableForSale ? 'productPage.inStock' : 'productPage.outOfStock')}
                   </p>
                 </div>
 
@@ -178,7 +174,7 @@ export default function ProductDetailsClient({ product }) {
 
               <Link
                 href={{
-                  pathname: withSpanishPath('/financing', locale),
+                  pathname: withLocalePath('/financing', locale),
                   query: { amount: product?.priceRange.maxVariantPrice?.amount ? product?.priceRange.maxVariantPrice?.amount : Number(product?.variants[0]?.compareAtPrice?.amount) },
                 }}
                 className="text-[#7DA6DD] underline"

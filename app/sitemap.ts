@@ -76,10 +76,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date().toISOString(),
     },
     ...spanishCollections.map((collection) => ({
-      url: `${baseUrl}/es${collection.path}`,
-      lastModified: collection.updatedAt,
+      url: `${baseUrl}/es${collection.url.slice(baseUrl.length)}`,
+      lastModified: collection.lastModified,
     })),
   ];
 
-  return [...routesMap, ...fetchedRoutes, ...spanishRoutes, ...blogsRoutes];
+  const localizedProducts = (await productsPromise).flatMap((product) =>
+    ['fr', 'es'].map((locale) => ({
+      url: `${baseUrl}/${locale}${product.url.slice(baseUrl.length)}`,
+      lastModified: product.lastModified,
+    })),
+  );
+
+  return [...routesMap, ...fetchedRoutes, ...spanishRoutes, ...localizedProducts, ...blogsRoutes];
 }

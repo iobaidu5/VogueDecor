@@ -1,5 +1,6 @@
 import { getBaseUrl } from '../site-url';
 import type { Product } from '../shopify/types';
+import { withLocalePath, type SiteLocale } from '../locale-path';
 
 type SchemaOffer = {
   '@type': 'Offer';
@@ -11,9 +12,9 @@ type SchemaOffer = {
   sku?: string;
 };
 
-export function buildProductSchema(product: Product) {
+export function buildProductSchema(product: Product, locale: SiteLocale = 'en') {
   const baseUrl = getBaseUrl();
-  const productUrl = `${baseUrl}/product/${product.handle}`;
+  const productUrl = `${baseUrl}${withLocalePath(`/product/${product.handle}`, locale)}`;
   const images = product.images.map((img) => img.url).filter(Boolean);
 
   const minPrice = product.priceRange.minVariantPrice.amount;
@@ -65,6 +66,7 @@ export function buildProductSchema(product: Product) {
 export function buildProductBreadcrumbSchema(
   product: Product,
   collectionHandle?: string,
+  locale: SiteLocale = 'en',
 ) {
   const baseUrl = getBaseUrl();
   const collection = collectionHandle ?? product.collections[0]?.handle;
@@ -73,8 +75,8 @@ export function buildProductBreadcrumbSchema(
     {
       '@type': 'ListItem',
       position: 1,
-      name: 'Home',
-      item: baseUrl,
+      name: locale === 'fr' ? 'Accueil' : locale === 'es' ? 'Inicio' : 'Home',
+      item: locale === 'en' ? baseUrl : `${baseUrl}/${locale}`,
     },
   ];
 
@@ -83,7 +85,7 @@ export function buildProductBreadcrumbSchema(
       '@type': 'ListItem',
       position: 2,
       name: product.collections[0]?.title ?? collection,
-      item: `${baseUrl}/${collection}`,
+      item: `${baseUrl}${withLocalePath(`/${collection}`, locale)}`,
     });
   }
 
@@ -91,7 +93,7 @@ export function buildProductBreadcrumbSchema(
     '@type': 'ListItem',
     position: items.length + 1,
     name: product.title,
-    item: `${baseUrl}/product/${product.handle}`,
+    item: `${baseUrl}${withLocalePath(`/product/${product.handle}`, locale)}`,
   });
 
   return {

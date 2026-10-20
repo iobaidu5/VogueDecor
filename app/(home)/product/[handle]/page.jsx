@@ -11,8 +11,11 @@ import ProductDetailsClient from "./ProductDetailsClient"
 import { getBaseUrl } from 'lib/site-url';
 import { buildProductBreadcrumbSchema, buildProductSchema } from 'lib/seo/product-schema';
 import Script from 'next/script';
+import { withLocalePath } from 'lib/locale-path';
+import { translatedProductTitle } from 'lib/product-translation';
 
 export async function generateMetadata(props) {
+  const locale = props.locale || 'en';
   const params = await props.params;
   const handle = params.handle;
   const product = await getProduct(handle);
@@ -23,10 +26,16 @@ export async function generateMetadata(props) {
   const baseUrl = getBaseUrl();
 
   return {
-    title: product.seo.title || product.title,
+    title: locale === 'en' ? product.seo.title || product.title : translatedProductTitle(product.title, locale),
     description: product.seo.description || product.description,
     alternates: {
-      canonical: `${baseUrl}/product/${handle}`,
+      canonical: `${baseUrl}${withLocalePath(`/product/${handle}`, locale)}`,
+      languages: {
+        en: `${baseUrl}/product/${handle}`,
+        fr: `${baseUrl}/fr/product/${handle}`,
+        es: `${baseUrl}/es/product/${handle}`,
+        'x-default': `${baseUrl}/product/${handle}`,
+      },
     },
     robots: {
       index: indexable,
@@ -52,13 +61,19 @@ export async function generateMetadata(props) {
 }
 
 export default async function ProductPage(props) {
+  const locale = props.locale || 'en';
   const params = await props.params;
   const handle = params.handle;
   const product = await getProduct(handle);
   if (!product) return notFound();
 
-  const productSchema = buildProductSchema(product);
-  const breadcrumbSchema = buildProductBreadcrumbSchema(product);
+  const schemaProduct = locale === 'en' ? product : {
+    ...product,
+    title: translatedProductTitle(product.title, locale),
+    seo: { ...product.seo, title: translatedProductTitle(product.title, locale) },
+  };
+  const productSchema = buildProductSchema(schemaProduct, locale);
+  const breadcrumbSchema = buildProductBreadcrumbSchema(schemaProduct, undefined, locale);
 
   return (
     <ProductProvider>

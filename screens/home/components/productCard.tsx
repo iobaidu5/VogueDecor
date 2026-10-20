@@ -7,7 +7,7 @@ import { ProductForCart } from 'lib/shopify/types';
 import chairImage from 'media/png/chair.png';
 import heart from 'media/svg/heart.svg';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'components/product/localized-link';
 
 type Option = {
   id: string;

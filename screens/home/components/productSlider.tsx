@@ -7,7 +7,7 @@ import { ProductProvider } from 'components/product/product-context';
 import { ProductForCart } from 'lib/shopify/types';
 import chairImage from 'media/png/chair.png';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'components/product/localized-link';
 import Slider from 'react-slick';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import 'slick-carousel/slick/slick.css';

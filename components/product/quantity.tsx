@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useCart } from '../../components/cart/cart-context';
 import { updateItemQuantity } from 'components/cart/actions';
+import { useTranslation } from 'react-i18next';
 
 type Product = {
   id: string;
@@ -22,6 +23,7 @@ type QuantityProps = {
 };
 
 const Quantity = ({ item }: QuantityProps) => {
+  const { t } = useTranslation('common');
   const { cart, updateCartItem } = useCart();
 
   const merchandiseId = item?.variants?.[0]?.id;
@@ -76,6 +78,7 @@ const Quantity = ({ item }: QuantityProps) => {
       <button
         className="flex h-8 w-8 rounded-md items-center justify-center text-xl text-gray-500 disabled:opacity-50"
         onClick={() => handleQuantityChange(quantity - 1)}
+        aria-label={t('productPage.decreaseQuantity')}
         disabled={quantity <= 1 || isPending}
       >
         -
@@ -86,6 +89,7 @@ const Quantity = ({ item }: QuantityProps) => {
       <button
         className="flex h-8 w-8 rounded-md items-center justify-center text-xl text-gray-500 disabled:opacity-50"
         onClick={() => handleQuantityChange(quantity + 1)}
+        aria-label={t('productPage.increaseQuantity')}
         disabled={isPending}
       >
         +

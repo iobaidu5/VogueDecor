@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { AddToCartBundles } from "./cart/add-to-cart-bundles";
-import Link from "next/link";
+import Link from 'components/product/localized-link';
 
 export default function BundleCard({
   bundle,

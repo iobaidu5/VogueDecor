@@ -7,7 +7,6 @@ import { useProduct } from 'components/product/product-context';
 import { Product, ProductVariant } from 'lib/shopify/types';
 import { useState } from 'react';
 import { useCart } from './cart-context';
-import i18n from '../../lib/i18nClient';
 import { useTranslation } from 'react-i18next';
 
 function SubmitButton({
@@ -17,7 +16,7 @@ function SubmitButton({
   availableForSale: boolean;
   selectedVariantId: string | undefined;
 }) {
-  const { t, ready } = useTranslation('common');
+  const { t } = useTranslation('common');
   const buttonClasses =
     'relative flex w-50 items-center justify-center rounded-half bg-red-600 p-2 tracking-wide text-white';
   const disabledClasses = 'cursor-not-allowed opacity-60 hover:opacity-60';
@@ -34,7 +33,7 @@ function SubmitButton({
   if (!selectedVariantId) {
     return (
       <button
-        aria-label="Please select an option"
+        aria-label={t('productPage.selectOption')}
         disabled
         className={clsx(buttonClasses, disabledClasses)}
       >
@@ -48,7 +47,7 @@ function SubmitButton({
 
   return (
     <button
-      aria-label="Add to cart"
+      aria-label={t('addToCart')}
       className="text-sm md:text-md lg:text-base flex items-center justify-center bg-black w-100 px-5 py-[9px] text-white h-18"
     >
       {/* <div className="absolute left-0 ml-4">
