@@ -7,7 +7,6 @@ import Slider from 'react-slick';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import '../../../lib/i18nClient'
 import { useTranslation } from 'react-i18next';
-import i18n from '../../../lib/i18nClient';
 import { toSiteLocale, withSpanishPath } from '../../../lib/locale-path';
 
 import 'slick-carousel/slick/slick.css';
@@ -72,7 +71,7 @@ const PrevArrow = (props: any) => {
 
 const HomeCategories = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const { t, ready } = useTranslation('common');
+  const { t, ready, i18n } = useTranslation('common');
 
   useEffect(() => {
     const checkMobile = () => {
