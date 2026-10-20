@@ -13,8 +13,9 @@ export default function UserMenu() {
   const { t } = useTranslation('common');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const [user, setUser] = useState<{ isLoggedIn: boolean; firstName: string; lastName: string; image: string }>({
-    isLoggedIn: localStorage.getItem("user") ? true : false,
+  const [username, setUsername] = useState('');
+  const [user, setUser] = useState<{ isLoggedIn: boolean; username?: string; firstName: string; lastName: string; image: string }>({
+    isLoggedIn: false,
     firstName: '',
     lastName: '',
     image: 'https://i.pravatar.cc/36?img=3',
@@ -29,6 +30,7 @@ export default function UserMenu() {
   const handleLogout = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('token');
+    setUsername('');
     setUser({ isLoggedIn: false, firstName: '', lastName: '', image: '' });
     setOpen(false);
     router.push('/login');
@@ -39,6 +41,12 @@ export default function UserMenu() {
       try {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('No token found');
+        try {
+          const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
+          setUsername(typeof storedUser?.username === 'string' ? storedUser.username : '');
+        } catch {
+          setUsername('');
+        }
         const res = await axios.get('/api/profile/me', {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -59,6 +67,7 @@ export default function UserMenu() {
         console.error(err);
         localStorage.removeItem('user');
         localStorage.removeItem('token');
+        setUsername('');
         setUser({ isLoggedIn: false, firstName: '', lastName: '', image: '' });
         setError('Failed to fetch profile');
       }
@@ -103,7 +112,7 @@ export default function UserMenu() {
             height={32}
             className="rounded-full"
           />
-          <span className="text-sm font-medium">{JSON.parse(localStorage?.getItem("user") || "{}")?.username || user.firstName}</span>
+          <span className="text-sm font-medium">{username || user.username || user.firstName}</span>
         </button>
       ) : (
         <Link href="/login">
@@ -124,12 +133,12 @@ export default function UserMenu() {
               className="rounded-full"
             />
             <div>
-              <p className="text-sm font-semibold">{JSON.parse(localStorage?.getItem("user") || "{}")?.username || user.firstName}</p>
+              <p className="text-sm font-semibold">{username || user.username || user.firstName}</p>
             </div>
           </div>
           <ul className="text-sm">
 
-            {JSON.parse(localStorage?.getItem("user") || "{}")?.username === "Gary" && (
+            {(username || user.username) === "Gary" && (
               <li>
                 <Link
                   href="/bundles/add"
