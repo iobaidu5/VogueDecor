@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import clsx from 'clsx';
 
@@ -9,7 +9,17 @@ import clsx from 'clsx';
 export default function AllBundleCard({ bundle }: { bundle: any }) {
   const [isHovered, setIsHovered] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    try {
+      const user = JSON.parse(window.localStorage.getItem('user') || '{}');
+      setIsAdmin(user?.username === 'Gary');
+    } catch {
+      setIsAdmin(false);
+    }
+  }, []);
 
   const buttonClasses =
     'w-full rounded-md bg-gray-200 py-3 text-sm font-semibold uppercase text-black transition-colors duration-300 hover:bg-red hover:text-black';
@@ -91,8 +101,7 @@ export default function AllBundleCard({ bundle }: { bundle: any }) {
           )}
 
           {/* Actions */}
-          {JSON.parse(localStorage?.getItem('user') || '{}')?.username ===
-            'Gary' ? (
+          {isAdmin ? (
             <div
               className={`absolute bottom-0 left-0 right-0 z-10 mx-auto flex items-center justify-center gap-2 transition-all duration-500 ease-in-out ${isHovered
                   ? 'translate-y-0 opacity-100'

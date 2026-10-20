@@ -2,10 +2,12 @@ import { prisma } from './db';
 import { Prisma } from "@prisma/client";
 
 export async function listBundles() {
-  return prisma.bundle.findMany({
+  const bundles = await prisma.bundle.findMany({
     orderBy: { createdAt: 'desc' },
     include: { items: true },
   });
+
+  return bundles.map(serializeBundle);
 }
 
 // export async function getBundleBySlug(slug: string) {
@@ -77,10 +79,18 @@ export async function deleteBundle(id: string) {
 function serializeBundle(bundle: any) {
   return {
     ...bundle,
-    totalPrice:
-      bundle.totalPrice instanceof Prisma.Decimal
-        ? parseFloat(bundle.totalPrice.toString())
-        : bundle.totalPrice,
+    bundlePrice:
+      bundle.bundlePrice instanceof Prisma.Decimal
+        ? parseFloat(bundle.bundlePrice.toString())
+        : bundle.bundlePrice,
+    createdAt:
+      bundle.createdAt instanceof Date
+        ? bundle.createdAt.toISOString()
+        : bundle.createdAt,
+    updatedAt:
+      bundle.updatedAt instanceof Date
+        ? bundle.updatedAt.toISOString()
+        : bundle.updatedAt,
     items: bundle.items?.map((item: any) => ({
       ...item,
       priceSnap:
