@@ -22,13 +22,14 @@ import { esCollectionContent } from "../lib/es-collection-content";
 
 type CategoryPageClientProps = {
   collection: any;
+  initialProducts?: Product[];
 };
 
 
-export default function CategoryPageClient({ collection }: CategoryPageClientProps) {
-  const [allProducts, setAllProducts] = useState<Product[]>([]);
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+export default function CategoryPageClient({ collection, initialProducts }: CategoryPageClientProps) {
+  const [allProducts, setAllProducts] = useState<Product[]>(initialProducts ?? []);
+  const [products, setProducts] = useState<Product[]>(initialProducts ?? []);
+  const [loading, setLoading] = useState<boolean>(initialProducts === undefined);
   // const [filter, setFilter] = useState<string>('');
   const [collectionFilter, setCollectionFilter] = useState('');
   const [showContent, setShowContent] = useState(false);
@@ -119,19 +120,33 @@ export default function CategoryPageClient({ collection }: CategoryPageClientPro
 
 
   useEffect(() => {
+    if (initialProducts !== undefined) {
+      setAllProducts(initialProducts);
+      setProducts(initialProducts);
+      setLoading(false);
+      return;
+    }
+
     async function fetchData() {
       setLoading(true);
-      const fetched = await getCollectionProducts(
-        collection === 'new-arrivals'
-          ? { collection, sortKey: 'CREATED_AT', reverse: true }
-          : { collection }
-      );
-      setAllProducts(fetched);
-      setProducts(fetched);
-      setLoading(false);
+      try {
+        const fetched = await getCollectionProducts(
+          collection === 'new-arrivals'
+            ? { collection, sortKey: 'CREATED_AT', reverse: true }
+            : { collection }
+        );
+        setAllProducts(fetched);
+        setProducts(fetched);
+      } catch (error) {
+        console.error(`Unable to load collection "${collection}":`, error);
+        setAllProducts([]);
+        setProducts([]);
+      } finally {
+        setLoading(false);
+      }
     }
     fetchData();
-  }, [collection]);
+  }, [collection, initialProducts]);
 
 
 

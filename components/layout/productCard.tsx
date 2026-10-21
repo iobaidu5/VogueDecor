@@ -15,6 +15,7 @@ export function ProductCard({ product, collection }: { product: any, collection?
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
   const locale = localeFromPathname(usePathname());
+  const numberLocale = locale === 'fr' ? 'fr-CA' : locale === 'es' ? 'es-CA' : 'en-CA';
   const { t, ready } = useTranslation('common');
   const { currency, rate } = useCurrency();
   const { setCollection } = useCollection()
@@ -24,7 +25,7 @@ export function ProductCard({ product, collection }: { product: any, collection?
     : 0;
   const numericSale = parseFloat(product?.priceRange?.maxVariantPrice?.amount) * rate;
 
-  const formattedPrice = new Intl.NumberFormat(undefined, {
+  const formattedPrice = new Intl.NumberFormat(numberLocale, {
     style: 'currency',
     currency: currency,
     currencyDisplay: 'narrowSymbol',
@@ -47,7 +48,7 @@ export function ProductCard({ product, collection }: { product: any, collection?
   // }).format(numericSale);
 
   const formattedSalePrice = numericSale
-    ? new Intl.NumberFormat(undefined, {
+    ? new Intl.NumberFormat(numberLocale, {
       style: 'currency',
       currency: currency,
       currencyDisplay: 'narrowSymbol',
