@@ -58,19 +58,24 @@ export function AnnouncementBar() {
 
   return (
     <div className="w-full bg-[#545454] py-3 text-center text-xs text-white lg991:text-sm">
-      <div className="mx-auto flex max-w-full flex-wrap items-center justify-center gap-2 px-3">
+      <div className="mx-auto flex max-w-full flex-wrap items-center justify-center gap-x-2 px-3">
         <p
           className="transition-opacity duration-700 ease-in-out motion-reduce:transition-none"
           style={{ opacity: visible ? 1 : 0 }}
         >
           {text}
         </p>
-        <Link
-          href="/shipping-and-return-policy"
-          className="inline-flex items-center justify-center rounded-md border border-white/70 bg-white/10 px-3 py-1 text-[11px] font-medium text-white transition-colors hover:bg-white hover:text-[#545454] focus:outline-none focus:ring-2 focus:ring-white/80 focus:ring-offset-2 focus:ring-offset-[#545454] lg991:text-xs"
-        >
-          {t('checkEligibility')}
-        </Link>
+        {activeLine === 'line1' && (
+          <>
+            <span aria-hidden="true">|</span>
+            <Link
+              href="/shipping-and-return-policy"
+              className="underline underline-offset-2 hover:no-underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#545454]"
+            >
+              {t('checkEligibility')}
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
