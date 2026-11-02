@@ -58,13 +58,11 @@ export function AnnouncementBar() {
 
   return (
     <div className="w-full bg-[#545454] py-3 text-center text-xs text-white lg991:text-sm">
-      <div className="mx-auto flex max-w-full flex-wrap items-center justify-center gap-x-2 px-3">
-        <p
-          className="transition-opacity duration-700 ease-in-out motion-reduce:transition-none"
-          style={{ opacity: visible ? 1 : 0 }}
-        >
-          {text}
-        </p>
+      <div
+        className="mx-auto flex max-w-full flex-wrap items-center justify-center gap-x-2 px-3 transition-opacity duration-700 ease-in-out motion-reduce:transition-none"
+        style={{ opacity: visible ? 1 : 0 }}
+      >
+        <p>{text}</p>
         {activeLine === 'line1' && (
           <>
             <span aria-hidden="true">|</span>
