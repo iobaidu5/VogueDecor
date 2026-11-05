@@ -15,9 +15,9 @@ import { localeFromPathname, withLocalePath, withSpanishPath } from '../../lib/l
 import { usePathname } from 'next/navigation';
 
 const furniture = ['Furniture.', 'Chairs', 'Barstools', 'Table Tops', 'Table Bases', 'Outdoor Furniture'];
-const quikLinks = ['Vogue Decor.', 'Home', 'Contact Us'];
+const quikLinks = ['Vogue Decor.', 'Home', 'Contact Us', 'Blogs', 'FAQs'];
 const locations = ['Locations.', 'Montreal', 'Toronto'];
-const policy = ['Policy.', 'Privacy Policy', 'Terms and Conditions', 'Shipping and Return Policy', 'Blogs', "FAQs"];
+const policy = ['Policy.', 'Privacy Policy', 'Terms and Conditions', 'Shipping and Return Policy'];
 
 
 interface FooterLinksProps {
@@ -77,12 +77,6 @@ const Footer = () => {
               className="hover:underline text-[#a6a6a6]"
             >
               Shipping and Return Policy
-            </Link>
-            <Link href={withSpanishPath('/blogs', locale)} className="hover:underline text-[#a6a6a6]">
-              Blogs
-            </Link>
-            <Link href={withSpanishPath('/faqs', locale)} className="hover:underline text-[#a6a6a6]">
-              FAQs
             </Link>
           </div>
 
