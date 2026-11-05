@@ -17,6 +17,7 @@ import barstoolImage from 'media/png/NEW/Barstool.png';
 import tableImage from 'media/home-categories/Table Tops Category.png';
 import boothImage from 'media/home-categories/Tables Bases Category.png';
 
+
 const categories = [ 
   {
     title: 'Chairs',
