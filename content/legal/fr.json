@@ -1,0 +1,1250 @@
+{
+  "privacy": {
+    "title": "POLITIQUE DE CONFIDENTIALITÉ",
+    "effectiveDate": "Date d’entrée en vigueur: 1er novembre 2026",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "1. QUI NOUS SOMMES ET PORTÉE DE LA POLITIQUE"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor Inc. (« Vogue Decor », « nous », « notre » ou « nos ») est une entreprise dont le siège social se trouve au Québec, Canada (NEQ 1169120186). Nous exploitons la boutique en ligne www.voguedecor.com (le « Site ») et des salles d’exposition à Montréal, au Québec, et à Markham, en Ontario. Nous vendons à des consommateurs et à des clients commerciaux ou professionnels au Canada et aux États-Unis. La présente Politique de confidentialité explique comment nous recueillons, utilisons, communiquons, conservons et protégeons les renseignements personnels lorsque vous visitez le Site ou y faites des achats, demandez une soumission, créez un compte, communiquez avec nous ou visitez une salle d’exposition. Elle s’applique à toutes les personnes dont nous traitons les renseignements personnels dans le cadre de ces activités, notamment les visiteurs, les clients et les contacts d’affaires. En utilisant le Site ou en nous fournissant vos renseignements personnels, vous reconnaissez avoir pris connaissance de la présente Politique. Lorsque la loi exige votre consentement, nous vous le demanderons séparément; vous pourrez le refuser ou le retirer selon les modalités ci-dessous. Responsable. Vogue Decor Inc. est l’entreprise responsable de vos renseignements personnels (le « responsable du traitement » ou l’« entreprise »). La personne responsable de la protection des renseignements personnels (la « Personne responsable ») est mentionnée à la section 15."
+      },
+      {
+        "type": "heading",
+        "text": "2. RENSEIGNEMENTS QUE NOUS RECUEILLONS A. RENSEIGNEMENTS QUE VOUS NOUS FOURNISSEZ"
+      },
+      {
+        "type": "paragraph",
+        "text": "Coordonnées et renseignements professionnels: nom, nom de l’entreprise, titre du poste, adresse courriel, numéro de téléphone, adresses de facturation et de livraison ainsi que, pour les clients commerciaux, numéros de revente ou d’inscription fiscale."
+      },
+      {
+        "type": "paragraph",
+        "text": "Renseignements de compte: nom d’utilisateur, mot de passe (conservé sous une forme protégée), adresses enregistrées, préférences et vérification du statut de client professionnel."
+      },
+      {
+        "type": "paragraph",
+        "text": "Renseignements sur les commandes et transactions: produits achetés, historique des commandes, factures, état des paiements (nous ne recevons ni ne conservons le numéro complet de votre carte), rendez-vous de livraison, retours, réclamations de transport et dossiers de garantie."
+      },
+      {
+        "type": "paragraph",
+        "text": "Renseignements sur les soumissions et projets: formulaires de demande de soumission, spécifications, plans d’étage, dessins et détails de projets transmis à notre équipe de design ou de vente. Veuillez ne pas inclure de renseignements concernant d’autres personnes sans leur autorisation."
+      },
+      {
+        "type": "paragraph",
+        "text": "Communications: courriels, historiques de clavardage, enregistrements d’appels (nous vous avisons au début de l’appel s’il est enregistré), avis, réponses aux sondages et commentaires."
+      },
+      {
+        "type": "heading",
+        "text": "B. RENSEIGNEMENTS RECUEILLIS AUTOMATIQUEMENT"
+      },
+      {
+        "type": "paragraph",
+        "text": "Lorsque vous utilisez le Site, nous et nos fournisseurs de services recueillons automatiquement: votre adresse IP; les renseignements sur votre appareil, votre navigateur et votre système d’exploitation; la langue et le fuseau horaire; les pages consultées, les recherches, les produits parcourus, les articles ajoutés au panier, les paniers abandonnés, les pages de provenance et de sortie, le temps passé sur les pages et les clics; ainsi que votre emplacement approximatif (ville ou pays) déduit de l’adresse IP. Nous ne recueillons pas votre géolocalisation précise."
+      },
+      {
+        "type": "heading",
+        "text": "C. RENSEIGNEMENTS PROVENANT D’AUTRES SOURCES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Partenaires de transport et de logistique (validation des adresses, confirmation et suivi de livraison, preuve de livraison)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Fournisseurs de traitement des paiements et outils de prévention de la fraude (confirmation du paiement, résultats de vérification d’adresse, scores de risque)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Plateformes d’analyse et de publicité (données agrégées ou pseudonymisées sur l’engagement et les audiences)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Shopify et les applications installées sur notre boutique, qui peuvent fournir des données techniques, de paiement et de prévention de la fraude."
+      },
+      {
+        "type": "paragraph",
+        "text": "Renseignements commerciaux accessibles au public concernant les clients professionnels. Si vous choisissez Shop Pay ou l’application Shop, Shopify Inc. peut recueillir et utiliser vos renseignements conformément à sa propre politique de confidentialité, en tant qu’entreprise indépendante."
+      },
+      {
+        "type": "heading",
+        "text": "3. POURQUOI NOUS UTILISONS VOS RENSEIGNEMENTS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous utilisons les renseignements personnels uniquement aux fins décrites dans la présente Politique ou communiquées lors de leur collecte:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Commandes et livraisons: traiter les paiements, émettre les factures, organiser le transport de marchandises et la livraison de colis, gérer les retours et les réclamations de garantie."
+      },
+      {
+        "type": "paragraph",
+        "text": "Soumissions et services commerciaux: préparer des estimations, des tarifs professionnels, des délais et des projets de fabrication sur mesure."
+      },
+      {
+        "type": "paragraph",
+        "text": "Comptes: créer et sécuriser les comptes, enregistrer les paniers et vérifier le statut professionnel."
+      },
+      {
+        "type": "paragraph",
+        "text": "Service à la clientèle: répondre aux questions, résoudre les problèmes de livraison et offrir du soutien sur les produits."
+      },
+      {
+        "type": "paragraph",
+        "text": "Fonctionnement et amélioration du Site: mesurer la performance, comprendre l’utilisation du Site, corriger les erreurs et améliorer le design et le contenu."
+      },
+      {
+        "type": "paragraph",
+        "text": "Marketing: transmettre des courriels promotionnels, des catalogues et des offres lorsque vous y avez consenti (ou lorsque la loi permet autrement ce consentement) et afficher de la publicité pertinente lorsque vous l’autorisez."
+      },
+      {
+        "type": "paragraph",
+        "text": "Sécurité et prévention de la fraude: détecter les activités suspectes, prévenir les accès non autorisés et les abus liés aux contestations de paiement, et protéger nos systèmes."
+      },
+      {
+        "type": "paragraph",
+        "text": "Fins juridiques et commerciales: fiscalité et comptabilité, audits, application de nos conditions, établissement ou défense de droits en justice et respect des lois, ordonnances judiciaires et demandes légales. Nous n’utilisons pas vos renseignements à des fins substantiellement différentes sans vous en informer et, lorsque requis, obtenir votre consentement."
+      },
+      {
+        "type": "paragraph",
+        "text": "Traitement automatisé. Nous ne prenons pas de décisions à votre sujet uniquement au moyen d’un traitement automatisé, sauf lorsque nos outils de paiement et de prévention de la fraude utilisent un tel traitement pour signaler ou refuser une transaction. Dans ce cas, vous pouvez communiquer avec la Personne responsable afin de présenter vos observations et de faire réviser la décision par une personne. Si nous utilisons un jour le traitement automatisé pour d’autres décisions vous concernant, nous vous en informerons et vous offrirons la même possibilité."
+      },
+      {
+        "type": "heading",
+        "text": "4. FONDEMENT JURIDIQUE ET CONSENTEMENT"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous recueillons, utilisons et communiquons les renseignements personnels avec votre consentement ou lorsque la loi le permet ou l’exige sans consentement, par exemple pour exécuter un contrat, respecter nos obligations légales ou poursuivre des fins commerciales légitimes expliquées dans la présente Politique. Au Québec, le consentement est demandé séparément pour chaque fin, en termes clairs et simples, et demeure valide uniquement pendant la période nécessaire à la réalisation de cette fin. Vous pouvez retirer votre consentement à tout moment, sous réserve des restrictions légales ou contractuelles et d’un préavis raisonnable. Ce retrait peut nous empêcher de fournir certains services (par exemple, nous ne pouvons expédier une commande sans adresse de livraison)."
+      },
+      {
+        "type": "heading",
+        "text": "5. TÉMOINS, PIXELS ET TECHNOLOGIES SIMILAIRES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous et nos partenaires utilisons des témoins de connexion (cookies), pixels, balises Web, stockage local et outils similaires:"
+      },
+      {
+        "type": "paragraph",
+        "text": "STRICTEMENT NÉCESSAIRES: pour le paiement, le panier, la sécurité, la gestion des sessions et la répartition de charge. Ils ne peuvent être désactivés dans nos systèmes."
+      },
+      {
+        "type": "paragraph",
+        "text": "ANALYSE ET PERFORMANCE: notamment Google Analytics, pour comprendre le trafic et améliorer le Site."
+      },
+      {
+        "type": "paragraph",
+        "text": "FONCTIONNALITÉS: pour mémoriser la région, la devise (CAD ou USD) et les articles consultés récemment."
+      },
+      {
+        "type": "paragraph",
+        "text": "PUBLICITÉ ET MARKETING: notamment le pixel Meta, les balises Google Ads et le pixel TikTok, pour mesurer les publicités, suivre les conversions et afficher des publicités ciblées selon les centres d’intérêt sur d’autres sites et plateformes."
+      },
+      {
+        "type": "paragraph",
+        "text": "Vos choix. Les témoins non essentiels (catégories 2 à 4) sont désactivés par défaut et ne sont utilisés qu’après votre acceptation dans notre bannière de consentement, qui permet d’accepter ou de refuser chaque catégorie et de modifier votre choix en tout temps. Vous pouvez également bloquer ou supprimer les témoins dans votre navigateur, mais certaines fonctions du Site pourraient alors ne pas fonctionner correctement. Lorsque notre Site détecte un signal Global Privacy Control (GPC) ou un signal similaire de retrait, nous le traitons comme une demande de retrait de la vente ou du partage de renseignements et de la publicité ciblée pour ce navigateur."
+      },
+      {
+        "type": "paragraph",
+        "text": "Technologies d’identification, de localisation ou de profilage. Lorsque les technologies du Site permettent de vous identifier, de vous localiser ou d’établir votre profil, nous vous en informons et expliquons comment activer ou désactiver ces fonctions. Les outils de profilage demeurent désactivés jusqu’à votre activation. Les tiers fournissant des outils d’analyse ou de publicité (dont Google, Meta et TikTok) ont leurs propres pratiques de confidentialité et peuvent utiliser les données recueillies à leurs propres fins conformément à leurs politiques. Si nous transmettons à des plateformes publicitaires des renseignements de clients hachés, comme des adresses courriel, pour mesurer la publicité ou constituer des audiences, nous le faisons uniquement avec votre consentement ou lorsque la loi le permet. Vous pouvez vous retirer selon la section 10. Les outils de retrait comprennent https://optout.aboutads.info, https://optout.networkadvertising.org et les paramètres publicitaires de vos comptes Google, Meta et TikTok."
+      },
+      {
+        "type": "heading",
+        "text": "6. COMMENT NOUS COMMUNIQUONS LES RENSEIGNEMENTS PERSONNELS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous communiquons les renseignements personnels uniquement dans la mesure nécessaire aux fins décrites dans la présente Politique et exigeons que nos fournisseurs les utilisent seulement pour nous fournir leurs services et qu’ils les protègent."
+      },
+      {
+        "type": "paragraph",
+        "text": "Shopify Inc. et ses sociétés affiliées: notre plateforme de commerce électronique. Shopify héberge notre boutique et traite en notre nom les données de la boutique, des clients, des commandes et du paiement au Canada, aux États-Unis et dans les autres pays où elle ou ses sous-traitants exercent leurs activités. Ses pratiques sont décrites à https://www.shopify.com/legal/privacy."
+      },
+      {
+        "type": "paragraph",
+        "text": "Fournisseurs de traitement des paiements: notamment Shopify Payments, Stripe et PayPal, qui traitent les paiements par carte et autres moyens. Les numéros complets de carte sont traités par ces fournisseurs et non conservés par Vogue Decor."
+      },
+      {
+        "type": "paragraph",
+        "text": "Partenaires de livraison: transporteurs de marchandises, messageries (notamment FedEx, UPS et Postes Canada) et entrepôts tiers reçoivent le nom, l’adresse de livraison, le numéro de téléphone et les instructions de livraison."
+      },
+      {
+        "type": "paragraph",
+        "text": "Fournisseurs de technologies et de services opérationnels: hébergement, courriel, clavardage, avis, soutien à la clientèle, analyse, prévention de la fraude, comptabilité et services informatiques."
+      },
+      {
+        "type": "paragraph",
+        "text": "Partenaires de publicité et d’analyse: notamment Google, Meta et TikTok, dans la mesure où vous autorisez les témoins ou pixels publicitaires et analytiques."
+      },
+      {
+        "type": "paragraph",
+        "text": "Conseillers professionnels et autorités: comptables, auditeurs, avocats, assureurs et organismes gouvernementaux ou policiers lorsque la loi ou une ordonnance l’exige, ou pour protéger les droits, la sécurité et les biens, ou détecter et prévenir la fraude."
+      },
+      {
+        "type": "paragraph",
+        "text": "Transferts d’entreprise: lors d’une fusion, acquisition, opération de financement, réorganisation ou vente d’actifs, les renseignements peuvent être communiqués aux autres parties et à leurs conseillers sous obligation de confidentialité, puis utilisés selon la présente Politique."
+      },
+      {
+        "type": "paragraph",
+        "text": "Selon vos instructions ou avec votre consentement: par exemple, lorsque vous nous demandez de transmettre les détails d’un projet à un designer, un entrepreneur ou un fabricant."
+      },
+      {
+        "type": "paragraph",
+        "text": "Aucune vente contre rémunération; « partage » publicitaire. Nous ne vendons pas vos renseignements personnels contre de l’argent. Toutefois, lorsque vous acceptez les témoins publicitaires, nos pixels et balises partagent des identifiants (adresse IP, identifiants d’appareil ou de témoin), des activités Internet et de navigation, des achats et des déductions qui en découlent avec Google, Meta et TikTok à des fins de publicité comportementale intercontextuelle. Selon certaines lois américaines, cela constitue un « partage » (et parfois une « vente ») de renseignements personnels. Vous pouvez vous y opposer en tout temps selon la section 10. Nous pouvons également communiquer des données agrégées ou anonymisées qui ne permettent raisonnablement pas de vous identifier. Nous ne tenterons pas de les réidentifier."
+      },
+      {
+        "type": "heading",
+        "text": "7. CONSERVATION ET TRANSFERTS HORS DE VOTRE PROVINCE, ÉTAT OU PAYS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vos renseignements personnels peuvent être conservés, traités ou consultés au Québec, dans d’autres provinces canadiennes, aux États-Unis et dans d’autres pays où nos fournisseurs de services, plateformes publicitaires (notamment Meta, Google et TikTok) ou leurs sous-traitants exercent leurs activités. Lorsqu’ils sont conservés hors de votre territoire, ils sont assujettis aux lois de ce lieu et peuvent être accessibles aux tribunaux, aux forces de l’ordre et aux autorités de sécurité nationale qui y exercent leurs pouvoirs. Résidents du Québec: avant de communiquer des renseignements personnels à l’extérieur du Québec, nous évaluons les facteurs relatifs à la vie privée, notamment la sensibilité des renseignements, les fins poursuivies, les mesures de protection et le cadre juridique du lieu de destination. Nous concluons des ententes écrites avec les fournisseurs limitant l’utilisation aux services contractuels, exigeant la protection des renseignements et la notification des incidents. Vous pouvez communiquer avec la Personne responsable pour obtenir de l’information sur ces transferts."
+      },
+      {
+        "type": "heading",
+        "text": "8. DURÉE DE CONSERVATION ET DESTRUCTION"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous conservons les renseignements personnels uniquement pendant la période nécessaire aux fins de leur collecte, au respect de la loi ou à l’établissement, l’exercice ou la défense de droits en justice. Périodes habituelles:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Dossiers de commandes, factures et comptabilité: jusqu’à sept (7) ans après la transaction, conformément aux exigences fiscales et de vérification canadiennes et américaines."
+      },
+      {
+        "type": "paragraph",
+        "text": "Dossiers de garantie: pendant la garantie, puis pendant une période raisonnable pour les réclamations."
+      },
+      {
+        "type": "paragraph",
+        "text": "Comptes clients: tant que le compte est actif, puis suppression ou anonymisation après un (1) an d’inactivité, sous réserve des documents que la loi nous oblige à conserver."
+      },
+      {
+        "type": "paragraph",
+        "text": "Soumissions et dossiers de projets: un (1) an après la dernière communication, sauf si une commande suit."
+      },
+      {
+        "type": "paragraph",
+        "text": "Contacts marketing: jusqu’au désabonnement ou au retrait du consentement."
+      },
+      {
+        "type": "paragraph",
+        "text": "Enregistrements d’appels, clavardages et dossiers de soutien: jusqu’à vingt-quatre (24) mois."
+      },
+      {
+        "type": "paragraph",
+        "text": "Journaux du Site et de sécurité: généralement jusqu’à 24 mois. Lorsque les renseignements ne sont plus nécessaires, nous les détruisons ou les anonymisons (de façon irréversible et uniquement à des fins sérieuses et légitimes) selon les pratiques généralement reconnues."
+      },
+      {
+        "type": "heading",
+        "text": "9. SÉCURITÉ"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous appliquons des mesures de protection administratives, techniques et physiques raisonnables adaptées à la sensibilité des renseignements, notamment des connexions chiffrées (TLS/SSL), des contrôles d’accès, l’authentification multifacteur lorsqu’elle est disponible et des fournisseurs de paiement conformes à la norme PCI-DSS. Aucun site Web, serveur ou moyen de transmission n’est entièrement sécurisé; nous ne pouvons donc garantir une sécurité absolue. Protégez votre compte en choisissant un mot de passe fort et unique et en évitant de le communiquer."
+      },
+      {
+        "type": "paragraph",
+        "text": "Incidents. Si un incident de confidentialité concernant vos renseignements personnels présente un risque de préjudice sérieux (norme québécoise) ou un risque réel de préjudice grave (norme fédérale de la LPRPDE applicable ailleurs au Canada), nous vous aviserons ainsi que les autorités compétentes, notamment la Commission d’accès à l’information du Québec et le Commissariat à la protection de la vie privée du Canada, conformément à la loi. Pour les résidents américains, nous donnerons les avis exigés par les lois des États applicables. Nous tenons un registre des incidents."
+      },
+      {
+        "type": "heading",
+        "text": "10. VOS DROITS EN MATIÈRE DE CONFIDENTIALITÉ"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vos droits dépendent de votre lieu de résidence. Nous respectons les droits prévus par les lois applicables dans votre lieu de résidence, et vous pouvez nous demander des renseignements à leur sujet. Droits des résidents du Canada (y compris du Québec et de l’Ontario):"
+      },
+      {
+        "type": "paragraph",
+        "text": "Accès: savoir si nous détenons des renseignements personnels vous concernant et en obtenir une copie. Au Québec, vous pouvez également demander quels renseignements nous avons recueillis auprès de vous, les catégories de personnes au sein de Vogue Decor qui y ont accès, leur durée de conservation et les coordonnées de la Personne responsable."
+      },
+      {
+        "type": "paragraph",
+        "text": "Rectification: faire corriger les renseignements inexacts, incomplets ou équivoques."
+      },
+      {
+        "type": "paragraph",
+        "text": "Retrait du consentement: retirer en tout temps votre consentement à l’utilisation ou à la communication, notamment à des fins de marketing."
+      },
+      {
+        "type": "paragraph",
+        "text": "Portabilité (Québec): recevoir vos renseignements personnels informatisés dans un format technologique structuré et couramment utilisé ou les faire transmettre à une autre organisation."
+      },
+      {
+        "type": "paragraph",
+        "text": "Cessation de diffusion ou désindexation (Québec): demander la cessation de diffusion, la désindexation ou la réindexation de renseignements personnels lorsque la loi le permet."
+      },
+      {
+        "type": "paragraph",
+        "text": "Décisions automatisées (Québec): être informé des décisions prises exclusivement par traitement automatisé et demander leur révision."
+      },
+      {
+        "type": "paragraph",
+        "text": "Plaintes: communiquer d’abord avec la Personne responsable. Vous pouvez également communiquer avec la Commission d’accès à l’information du Québec (www.cai.gouv.qc.ca) ou le Commissariat à la protection de la vie privée du Canada (www.priv.gc.ca)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Droits des résidents des États américains dotés de lois sur la protection des renseignements personnels (notamment la Californie, le Colorado, le Connecticut, le Texas et la Virginie), dans la mesure où leurs lois s’appliquent à nous:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Connaître les catégories et les renseignements personnels précis que nous détenons ainsi que leurs fins d’utilisation."
+      },
+      {
+        "type": "paragraph",
+        "text": "Faire corriger les renseignements inexacts."
+      },
+      {
+        "type": "paragraph",
+        "text": "Faire supprimer les renseignements personnels, sous réserve des exceptions (notamment les documents à conserver pour des raisons fiscales ou légales)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Obtenir une copie portable de vos données."
+      },
+      {
+        "type": "paragraph",
+        "text": "Refuser (a) la vente ou le partage des renseignements personnels, (b) la publicité ciblée ou comportementale intercontextuelle et (c) le profilage visant des décisions ayant des effets juridiques ou d’importance similaire (nous ne pratiquons pas ce dernier type de profilage)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Limiter l’utilisation des renseignements personnels sensibles (nous ne les utilisons que pour fournir les services demandés et à des fins autorisées)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Non-discrimination: nous ne refuserons pas de biens ou de services, ne facturerons pas de prix différents et ne fournirons pas une qualité de service différente parce que vous exercez vos droits, sauf lorsque la loi permet une différence liée à la valeur de vos données (par exemple, un programme de fidélité)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Les résidents de la Californie peuvent également demander des renseignements sur les communications à des tiers à des fins de marketing direct (« Shine the Light »)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Exercice de vos droits. Écrivez à la Personne responsable à l’adresse indiquée à la section 15 ou téléphonez au numéro qui y figure, en précisant « Demande relative à la confidentialité » et le droit que vous souhaitez exercer. Vous pouvez également utiliser le lien « Ne pas vendre ni partager mes renseignements personnels » dans le pied de page du Site ou transmettre un signal GPC. Nous pourrions devoir vérifier votre identité et, pour les demandes américaines, comparer les renseignements fournis à ceux que nous détenons. Vous pouvez mandater un représentant autorisé, qui devra prouver son autorisation. Nous répondrons dans les 30 jours (au Québec) et dans les 45 jours pour les demandes américaines; ce dernier délai peut être prolongé une fois lorsque la loi le permet, et nous vous en expliquerons la raison. Nous pouvons refuser une demande lorsque la loi le permet, par exemple si la communication révèle des renseignements concernant une autre personne ou si une exception s’applique. En cas de refus d’une demande américaine, vous pourriez pouvoir faire appel en répondant à notre décision; nous répondrons dans le délai prévu par la loi de votre État. Vous pouvez également communiquer avec le procureur général de votre État."
+      },
+      {
+        "type": "paragraph",
+        "text": "Catégories de renseignements personnels (aux fins des lois des États américains). Au cours des 12 derniers mois, nous avons recueilli: des identifiants (nom, courriel, adresse, adresse IP); des dossiers clients et renseignements commerciaux (historique d’achats); des activités Internet (navigation et interactions); la géolocalisation approximative; des renseignements audio (appels enregistrés); des renseignements professionnels ou commerciaux (entreprise, numéro de revente); et des déductions tirées de la navigation et des achats. Nous communiquons ces catégories aux destinataires mentionnés à la section 6 à des fins commerciales. Comme indiqué à la section 6, les identifiants, activités Internet, achats et déductions sont aussi partagés avec des partenaires publicitaires pour la publicité comportementale intercontextuelle. Nous ne vendons ni ne partageons sciemment les renseignements personnels des personnes de moins de 16 ans."
+      },
+      {
+        "type": "heading",
+        "text": "11. MARKETING ET LCAP / CAN-SPAM"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous envoyons des messages électroniques commerciaux uniquement avec un consentement exprès ou lorsque le consentement tacite est permis par la Loi canadienne anti-pourriel (LCAP), et nous respectons la loi américaine CAN-SPAM. Chaque courriel promotionnel indique notre identité, nos coordonnées et un lien de désabonnement. Nous traitons les demandes de désabonnement rapidement et au plus tard dans le délai légal (10 jours ouvrables). Vous pouvez également vous désabonner en écrivant à info@voguedecor.com. Le désabonnement aux communications marketing n’interrompt pas les messages transactionnels comme les reçus, les avis d’expédition, la planification du transport et les avis de garantie. Si nous envoyons des messages textes, nous le ferons uniquement avec votre consentement et en fournissant des instructions de retrait."
+      },
+      {
+        "type": "heading",
+        "text": "12. ENFANTS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Le Site n’est pas destiné aux enfants de moins de 16 ans et nous ne recueillons pas sciemment leurs renseignements personnels. Au Québec, le consentement d’un parent ou d’un tuteur est requis pour les enfants de moins de 14 ans. Si vous croyez qu’un enfant nous a fourni des renseignements personnels, communiquez avec la Personne responsable et nous les supprimerons."
+      },
+      {
+        "type": "heading",
+        "text": "13. SITES ET SERVICES TIERS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Le Site peut contenir des liens vers les portails de suivi des transporteurs, les réseaux sociaux, les sites de fabricants et d’autres services tiers. Nous ne contrôlons pas leur contenu, leur sécurité ni leurs pratiques de confidentialité et n’en sommes pas responsables. Veuillez consulter leurs politiques de confidentialité. Les renseignements que vous fournissez directement à des tiers sont régis par leurs politiques, et non par la nôtre."
+      },
+      {
+        "type": "heading",
+        "text": "14. MODIFICATIONS DE LA PRÉSENTE POLITIQUE"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous pouvons mettre à jour la présente Politique pour refléter l’évolution de nos pratiques, de la technologie ou des lois. La date de « Dernière mise à jour » indique la version la plus récente. En cas de modification importante, nous vous aviserons sur le Site ou par courriel et demanderons séparément votre consentement lorsque la loi l’exige pour une nouvelle utilisation. Lorsque le consentement n’est pas requis, votre utilisation continue du Site après la date d’entrée en vigueur signifie que vous acceptez la Politique mise à jour, dans la mesure permise par la loi. Version française. Une version française de la présente Politique est disponible sur le Site (voir le lien au bas de page)."
+      },
+      {
+        "type": "heading",
+        "text": "15. NOUS JOINDRE"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor Inc. | Courriel: info@voguedecor.com"
+      },
+      {
+        "type": "paragraph",
+        "text": "Téléphone: +1 514 823-5595 | Sans frais (facultatif): +1 888 880-8232"
+      },
+      {
+        "type": "paragraph",
+        "text": "Siège social et salle d’exposition de Montréal: 7550, chemin de la Côte-de-Liesse, Montréal (Québec) H4T 1E7, Canada"
+      },
+      {
+        "type": "paragraph",
+        "text": "Salle d’exposition de Markham (région de Toronto, ramassage seulement): 825 Denison Street, unité 2, Markham (Ontario) L3R 5E4, Canada"
+      },
+      {
+        "type": "heading",
+        "text": "16. DISPOSITIONS GÉNÉRALES"
+      },
+      {
+        "type": "paragraph",
+        "text": "La présente Politique est régie par les lois de la province de Québec et les lois fédérales canadiennes qui y sont applicables, sauf lorsque les lois sur la protection des renseignements personnels de votre lieu de résidence vous confèrent des droits auxquels vous ne pouvez renoncer. Elle doit être lue conjointement avec nos Conditions générales. Si une disposition est jugée inapplicable, les autres demeurent en vigueur. Aucune disposition ne limite les droits que vous confère la loi applicable."
+      }
+    ]
+  },
+  "shipping": {
+    "title": "POLITIQUE D’EXPÉDITION",
+    "effectiveDate": "Date d’entrée en vigueur: 1er novembre 2026",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor Inc."
+      },
+      {
+        "type": "heading",
+        "text": "APERÇU ET ZONES DESSERVIES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor Inc. expédie du mobilier et des articles d’ameublement commerciaux dans toutes les provinces canadiennes et dans les États contigus des États-Unis, sous réserve des exclusions ci-dessous. Cette politique s’applique à toutes les commandes passées sur www.voguedecor.com et entre en vigueur le 1er novembre 2026."
+      },
+      {
+        "type": "paragraph",
+        "text": "Toutes les commandes sont expédiées de notre entrepôt de Montréal, au Québec. Notre salle d’exposition de Markham, en Ontario, est réservée au ramassage sur place et n’expédie pas de commandes."
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous livrons dans:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Toutes les provinces canadiennes: Québec, Ontario, Manitoba, Alberta, Colombie-Britannique, Saskatchewan, Nouveau-Brunswick, Nouvelle-Écosse, Île-du-Prince-Édouard et Terre-Neuve-et-Labrador."
+      },
+      {
+        "type": "paragraph",
+        "text": "Les 48 États américains contigus et Washington, D.C."
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous ne livrons pas dans:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les territoires du Nord canadien: Yukon, Territoires du Nord-Ouest et Nunavut."
+      },
+      {
+        "type": "paragraph",
+        "text": "L’Alaska, Hawaï, Porto Rico et tous les autres territoires américains."
+      },
+      {
+        "type": "paragraph",
+        "text": "Les destinations éloignées, hors réseau ou insulaires, y compris certaines régions des provinces et États autrement desservis."
+      },
+      {
+        "type": "paragraph",
+        "text": "Vous ne savez pas si votre adresse est admissible? Communiquez avec nous avant de commander pour confirmer la disponibilité du service de livraison."
+      },
+      {
+        "type": "paragraph",
+        "text": "Droit de refuser ou d’annuler une commande. Nous pourrions ne pas être en mesure de livrer dans certaines villes ou à certaines adresses, même après la passation d’une commande. Le cas échéant, nous communiquerons avec vous, annulerons la commande et rembourserons intégralement le montant payé."
+      },
+      {
+        "type": "heading",
+        "text": "TRAITEMENT DES COMMANDES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les commandes de produits en stock sont traitées et expédiées dans un délai de 1 à 2 jours ouvrables après la confirmation du paiement. Les jours ouvrables sont du lundi au vendredi, à l’exclusion des jours fériés."
+      },
+      {
+        "type": "paragraph",
+        "text": "Les produits sur mesure et fabriqués à la commande nécessitent des délais de production plus longs. Nous vous communiquons ces délais au moment de la commande ou de l’approbation de la soumission; ils s’ajoutent aux délais de transport ci-dessous."
+      },
+      {
+        "type": "paragraph",
+        "text": "Les commandes contenant des articles de différentes catégories peuvent être expédiées séparément ou par différents modes de transport (par exemple, colis et palette de marchandises). Chaque expédition possède son propre numéro de suivi."
+      },
+      {
+        "type": "paragraph",
+        "text": "Une fois la commande expédiée, vous recevrez un courriel de confirmation contenant les renseignements de suivi du transporteur."
+      },
+      {
+        "type": "heading",
+        "text": "MODES D’EXPÉDITION"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous choisissons le mode d’expédition selon la taille, le poids et la destination des produits."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "MODE",
+          "UTILISATION",
+          "À QUOI S’ATTENDRE"
+        ],
+        "rows": [
+          [
+            "Colis standard",
+            "Articles en boîte, quincaillerie et petits articles décoratifs",
+            "Expédiés par messagerie, notamment FedEx, UPS ou Postes Canada, avec suivi"
+          ],
+          [
+            "Transport LTL (bordure de rue / quai de chargement)",
+            "Mobilier commercial volumineux, lourd ou en grande quantité",
+            "Livraison sur palette par transporteur de chargements partiels (LTL); le chauffeur descend la palette du camion"
+          ],
+          [
+            "Livraison haut de gamme (White-Glove)",
+            "Livraison à l’intérieur, déballage ou assemblage",
+            "Doit être organisée à l’avance; devis distinct"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous n’offrons pas de services d’installation."
+      },
+      {
+        "type": "heading",
+        "text": "CONDITIONS DE LIVRAISON PAR TRANSPORT LTL"
+      },
+      {
+        "type": "paragraph",
+        "text": "La livraison LTL standard se fait uniquement en bordure de rue ou au quai de chargement."
+      },
+      {
+        "type": "paragraph",
+        "text": "Le chauffeur n’est pas responsable du déplacement des articles à l’intérieur, du déballage ou de l’assemblage, sauf si un service White-Glove a été organisé avant l’expédition."
+      },
+      {
+        "type": "paragraph",
+        "text": "Prévoyez suffisamment de personnes ou d’équipement pour déplacer les palettes et les cartons lourds à l’arrivée du camion."
+      },
+      {
+        "type": "paragraph",
+        "text": "Informez-nous à la caisse ou avant l’expédition si votre établissement possède un quai de chargement, présente un accès restreint ou nécessite un hayon élévateur. Des frais supplémentaires peuvent s’appliquer au hayon élévateur, à la livraison résidentielle ou à un lieu d’accès restreint."
+      },
+      {
+        "type": "heading",
+        "text": "TARIFS D’EXPÉDITION ET LIVRAISON GRATUITE"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les frais d’expédition sont calculés à la caisse selon la taille de la commande, son poids total et la destination. Les commandes canadiennes sont facturées en dollars canadiens (CAD) et les commandes américaines en dollars américains (USD)."
+      },
+      {
+        "type": "paragraph",
+        "text": "La livraison gratuite s’applique aux commandes admissibles dont le montant se situe dans la fourchette indiquée pour la destination. L’admissibilité varie selon la destination. Les articles surdimensionnés, les demandes particulières de hayon élévateur et certaines régions éloignées des provinces et États desservis peuvent être exclus."
+      },
+      {
+        "type": "heading",
+        "text": "CANADA (CAD)"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "DESTINATION",
+          "MONTANT DE COMMANDE POUR LA LIVRAISON GRATUITE"
+        ],
+        "rows": [
+          [
+            "Québec, Ontario, Manitoba, Alberta, Colombie-Britannique, Saskatchewan, Nouveau-Brunswick, Nouvelle-Écosse, Île-du- Prince-Édouard, Terre-Neuve-et-Labrador",
+            "Plus de 5 000,00 $ CAD, jusqu’à 14 999,99 $ CAD"
+          ],
+          [
+            "Yukon, Territoires du Nord-Ouest, Nunavut et régions éloignées",
+            "Non desservis"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "ÉTATS-UNIS (USD)"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "RÉGION",
+          "ÉTATS",
+          "MONTANT POUR LA LIVRAISON GRATUITE"
+        ],
+        "rows": [
+          [
+            "Nord-Est",
+            "CT, ME, MA, NH, NY, NJ, RI, VT",
+            "Plus de 5 000,00 $ USD, jusqu’à 14 999,99 $ USD"
+          ],
+          [
+            "Centre-Atlantique et Midwest",
+            "DE, GA, IL, IN, KY, MD, MI, MO, NC, OH, VA, WV",
+            "Plus de 5 000,00 $ USD, jusqu’à 14 999,99 $ USD"
+          ],
+          [
+            "Centre et Sud",
+            "AL, AR, CO, DC, IA, KS, LA, MN, MS, NE, OK, PA, SC, TN, WI",
+            "Plus de 5 000,00 $ USD, jusqu’à 14 999,99 $ USD"
+          ],
+          [
+            "Floride",
+            "FL",
+            "Plus de 5 000,00 $ USD, jusqu’à 14 999,99 $ USD"
+          ],
+          [
+            "Californie et Texas",
+            "CA, TX",
+            "10 000,00 $ USD à 14 999,99 $ USD"
+          ],
+          [
+            "Ouest et Nord-Ouest",
+            "AZ, ID, MT, NV, NM, ND, OR, SD, UT, WA, WY",
+            "Non offerte"
+          ],
+          [
+            "Alaska, Hawaï, Porto Rico et territoires américains",
+            "—",
+            "Non desservis"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Commandes de 15 000 $ ou plus (CAD ou USD): les commandes commerciales de grande envergure peuvent nécessiter des arrangements de transport particuliers. Communiquez avec notre équipe avant de commander pour obtenir une soumission de transport."
+      },
+      {
+        "type": "heading",
+        "text": "DÉLAIS DE LIVRAISON ESTIMÉS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les délais de transport sont des estimations en jours ouvrables calculées à partir de la date d’expédition, et non de la date de commande. Ils n’incluent pas le traitement ni la production et ne sont pas garantis: les conditions météorologiques, les retards des transporteurs et les périodes de pointe peuvent les prolonger."
+      },
+      {
+        "type": "heading",
+        "text": "CANADA"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "DESTINATION",
+          "DÉLAI DE TRANSPORT ESTIMÉ"
+        ],
+        "rows": [
+          [
+            "Québec",
+            "1 à 3 jours ouvrables"
+          ],
+          [
+            "Ontario",
+            "1 à 3 jours ouvrables"
+          ],
+          [
+            "Manitoba",
+            "2 à 6 jours ouvrables"
+          ],
+          [
+            "Alberta",
+            "3 à 7 jours ouvrables"
+          ],
+          [
+            "Saskatchewan, Nouveau-Brunswick, Nouvelle-Écosse, Île-du-Prince-Édouard, Terre-Neuve-et-Labrador",
+            "3 à 8 jours ouvrables"
+          ],
+          [
+            "Colombie-Britannique",
+            "5 à 9 jours ouvrables"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "ÉTATS-UNIS"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "RÉGION",
+          "ÉTATS",
+          "DÉLAI DE TRANSPORT ESTIMÉ"
+        ],
+        "rows": [
+          [
+            "Nord-Est",
+            "CT, ME, MA, NH, NY, NJ, RI, VT",
+            "2 à 4 jours ouvrables"
+          ],
+          [
+            "Centre-Atlantique et Midwest",
+            "DE, GA, IL, IN, KY, MD, MI, MO, NC, OH, VA, WV",
+            "3 à 6 jours ouvrables"
+          ],
+          [
+            "Centre et Sud",
+            "AL, AR, CO, DC, IA, KS, LA, MN, MS, NE, OK, PA, SC, TN, WI",
+            "4 à 8 jours ouvrables"
+          ],
+          [
+            "Floride",
+            "FL",
+            "5 à 8 jours ouvrables"
+          ],
+          [
+            "Californie et Texas",
+            "CA, TX",
+            "7 à 10 jours ouvrables"
+          ],
+          [
+            "Ouest et Nord-Ouest",
+            "AZ, ID, MT, NV, NM, ND, OR, SD, UT, WA, WY",
+            "6 à 10 jours ouvrables"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous ne livrons pas au Yukon, dans les Territoires du Nord-Ouest, au Nunavut, en Alaska, à Hawaï, à Porto Rico ni dans les territoires américains."
+      },
+      {
+        "type": "heading",
+        "text": "DROITS DE DOUANE, TAXES ET FORMALITÉS DOUANIÈRES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Toutes les commandes américaines sont traitées en dollars américains. Les frais d’expédition, les taxes et les droits d’importation applicables sont calculés à la caisse par Shopify et payés par le client au moment de l’achat."
+      },
+      {
+        "type": "paragraph",
+        "text": "Les droits d’importation et les taxes sur les commandes américaines sont à la charge du client. Les droits d’importation ne sont pas remboursables, même lorsqu’une commande est retournée ou remboursée (voir notre Politique de retour et de remboursement)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Les taxes de vente sur les commandes canadiennes sont calculées à la caisse selon la province de livraison."
+      },
+      {
+        "type": "heading",
+        "text": "RÉCEPTION DE LA COMMANDE ET INSPECTION DU TRANSPORT DE MARCHANDISES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Prise de rendez-vous. Pour les livraisons LTL, le transporteur communiquera avec vous par téléphone ou par courriel afin de fixer un rendez-vous. Veuillez maintenir vos coordonnées à jour et répondre rapidement, car les appels manqués peuvent retarder la livraison."
+      },
+      {
+        "type": "paragraph",
+        "text": "Inspection avant signature. Vérifiez chaque palette et chaque boîte extérieure avant de signer le reçu de livraison du transporteur."
+      },
+      {
+        "type": "paragraph",
+        "text": "Comptez les palettes et les boîtes et comparez-les au connaissement (BOL)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Vérifiez la présence de dommages extérieurs visibles, de coins écrasés, d’emballages déchirés ou mouillés et de pièces manquantes."
+      },
+      {
+        "type": "paragraph",
+        "text": "Inscrivez tous les problèmes directement sur le connaissement avant le départ du chauffeur. Soyez précis, par exemple « 2 boîtes sur 4 écrasées » ou « 1 palette manquante »."
+      },
+      {
+        "type": "paragraph",
+        "text": "Prenez des photos des dommages et des notes inscrites sur le connaissement."
+      },
+      {
+        "type": "paragraph",
+        "text": "Conservez une copie du connaissement signé."
+      },
+      {
+        "type": "paragraph",
+        "text": "Si le chauffeur ne peut attendre pendant l’inspection, indiquez sur le connaissement que les marchandises ont été reçues sous réserve d’inspection. Une signature sans réserve peut limiter notre capacité à déposer une réclamation auprès du transporteur."
+      },
+      {
+        "type": "heading",
+        "text": "COMMANDES ENDOMMAGÉES, INCOMPLÈTES OU INCORRECTES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Signalez tout article endommagé, manquant ou incorrect à info@voguedecor.com dans les 48 heures suivant la livraison. Fournissez:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Votre numéro de commande."
+      },
+      {
+        "type": "paragraph",
+        "text": "Des photos claires de l’article endommagé, de son emballage et de l’étiquette d’expédition."
+      },
+      {
+        "type": "paragraph",
+        "text": "Une photo du reçu de livraison (BOL) indiquant les dommages, pour les expéditions de marchandises."
+      },
+      {
+        "type": "paragraph",
+        "text": "Une brève description du problème."
+      },
+      {
+        "type": "paragraph",
+        "text": "Après réception de votre signalement, nous examinerons la situation et communiquerons les prochaines étapes conformément à notre Politique de retour et de remboursement. Conservez tous les emballages et le produit endommagé jusqu’à la résolution de la réclamation, car le transporteur pourrait devoir les inspecter."
+      },
+      {
+        "type": "heading",
+        "text": "EXCEPTIONS DE LIVRAISON"
+      },
+      {
+        "type": "paragraph",
+        "text": "Exactitude de l’adresse. Indiquez une adresse de livraison complète et exacte à la caisse. Communiquez avec nous dès que possible pour la modifier; après l’expédition, les changements dépendent du transporteur et peuvent entraîner des frais."
+      },
+      {
+        "type": "paragraph",
+        "text": "Livraison manquée ou échouée. Si le transporteur ne peut effectuer la livraison parce que personne n’est disponible, que l’accès est bloqué ou que le destinataire est injoignable, il peut tenter une nouvelle livraison ou retenir la marchandise. Les frais de nouvelle livraison, d’entreposage et de retour fixés par le transporteur peuvent être facturés au client."
+      },
+      {
+        "type": "paragraph",
+        "text": "Livraisons refusées. Ne refusez pas une livraison sans communiquer d’abord avec nous. Des frais de transport de retour et de remise en stock peuvent s’appliquer."
+      },
+      {
+        "type": "paragraph",
+        "text": "Retards. Nous ne sommes pas responsables des retards causés par des événements indépendants de notre volonté, notamment les intempéries, les interruptions de service des transporteurs, les retenues douanières ou les conflits de travail. Nous vous aiderons à suivre et à résoudre les retards."
+      },
+      {
+        "type": "paragraph",
+        "text": "Envois perdus. Si le suivi n’évolue pas pendant plusieurs jours ouvrables ou si votre commande n’arrive pas dans le délai estimé, communiquez avec nous; nous ouvrirons une enquête auprès du transporteur."
+      },
+      {
+        "type": "heading",
+        "text": "RAMASSAGE SUR PLACE"
+      },
+      {
+        "type": "paragraph",
+        "text": "Le ramassage sur place est gratuit pour les commandes admissibles. Sélectionnez cette option à la caisse et donnez-nous un préavis d’au moins 2 jours ouvrables."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "EMPLACEMENT",
+          "ADRESSE",
+          "PRÉAVIS REQUIS"
+        ],
+        "rows": [
+          [
+            "Salle d’exposition et entrepôt de Montréal",
+            "7550, chemin de la Côte-de-Liesse, Montréal (Québec) H4T 1E7",
+            "2 jours ouvrables"
+          ],
+          [
+            "Salle d’exposition de Markham (région de Toronto), ramassage seulement",
+            "825 Denison Street, unité 2, Markham (Ontario) L3R 5E4",
+            "2 jours ouvrables"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Vous recevrez un courriel lorsque votre commande sera prête à être ramassée. Attendez cette confirmation avant de vous rendre sur place et apportez votre numéro de commande et une pièce d’identité avec photo. Pour les meubles volumineux, prévoyez un véhicule et de l’aide adaptés aux articles à récupérer."
+      },
+      {
+        "type": "heading",
+        "text": "NOUS JOINDRE"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pour le suivi des expéditions, les mises à jour de livraison ou toute question logistique, communiquez avec Vogue Decor Inc.:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Courriel: info@voguedecor.com"
+      },
+      {
+        "type": "paragraph",
+        "text": "Téléphone: +1 514 823-5595"
+      },
+      {
+        "type": "paragraph",
+        "text": "Sans frais (facultatif): +1 888 880-8232"
+      },
+      {
+        "type": "paragraph",
+        "text": "Adresse postale: 7550, chemin de la Côte-de-Liesse, Montréal (Québec) H4T 1E7, Canada"
+      },
+      {
+        "type": "paragraph",
+        "text": "Site Web: www.voguedecor.com"
+      },
+      {
+        "type": "paragraph",
+        "text": "Veuillez indiquer votre numéro de commande pour que nous puissions vous aider plus rapidement."
+      }
+    ]
+  },
+  "terms": {
+    "title": "CONDITIONS GÉNÉRALES",
+    "effectiveDate": "Date d’entrée en vigueur: 1er novembre 2026",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor Inc."
+      },
+      {
+        "type": "paragraph",
+        "text": "Bienvenue chez Vogue Decor. Les présentes conditions générales (« Conditions ») régissent votre accès au site www.voguedecor.com (le « Site »), son utilisation et vos achats auprès de Vogue Decor Inc. (« Vogue Decor », « nous », « notre » ou « nos »). En accédant au Site, en créant un compte ou en passant une commande, vous confirmez avoir lu et compris les présentes Conditions et les accepter, sous réserve des lois applicables. Si vous ne les acceptez pas, veuillez ne pas utiliser le Site. Ces Conditions s’appliquent conjointement avec notre Politique d’expédition, notre Politique de retour et de remboursement et notre Politique de confidentialité, lesquelles font partie de votre entente avec nous."
+      },
+      {
+        "type": "heading",
+        "text": "NOS PRODUITS ET SERVICES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor se spécialise dans le mobilier commercial et les solutions d’ameublement destinés aux restaurants, aux établissements hôteliers et à d’autres espaces commerciaux. Vous pouvez acheter nos produits sur notre site Web ou dans nos salles d’exposition au Canada. Nous expédions partout au Canada, y compris au Québec, ainsi qu’aux États-Unis, à l’exception des régions exclues dans notre Politique d’expédition. Nous n’offrons pas de services d’installation. Nous nous efforçons de fournir des descriptions, caractéristiques, dimensions, finis et renseignements sur la disponibilité exacts, mais ces renseignements peuvent occasionnellement comporter des erreurs ou changer. Les couleurs, matériaux et finis peuvent différer légèrement des images affichées sur le Site en raison de l’éclairage, des paramètres d’écran, des variations de fabrication ou des caractéristiques naturelles des matériaux. Nous pouvons modifier, retirer ou mettre à jour les produits et leurs caractéristiques sans préavis, sous réserve des commandes confirmées et des lois applicables."
+      },
+      {
+        "type": "heading",
+        "text": "COMPTES ET RENSEIGNEMENTS DES CLIENTS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vous pouvez créer un compte pour faciliter vos achats, gérer vos commandes et enregistrer vos adresses de facturation et de livraison. En créant un compte ou en passant une commande, vous acceptez de fournir des renseignements exacts, à jour et complets, notamment votre nom, les renseignements sur votre entreprise (s’il y a lieu), vos adresses de facturation et de livraison ainsi que vos coordonnées. Vous êtes responsable de la confidentialité de vos identifiants de connexion et de toute activité effectuée dans votre compte. Veuillez nous aviser rapidement si vous soupçonnez un accès non autorisé ou une atteinte à la sécurité. Nous pouvons suspendre ou restreindre les comptes associés à une activité frauduleuse, à une utilisation abusive, à des renseignements inexacts ou à une violation des présentes Conditions, sous réserve des lois applicables."
+      },
+      {
+        "type": "heading",
+        "text": "RENSEIGNEMENTS SUR LES PRODUITS ET DISPONIBILITÉ"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tous les produits sont offerts sous réserve des stocks disponibles. Nous faisons notre possible pour maintenir des renseignements d’inventaire exacts, mais la disponibilité et les délais peuvent changer sans préavis. Certains produits sont offerts en différents matériaux, couleurs, dimensions ou finis."
+      },
+      {
+        "type": "paragraph",
+        "text": "Il vous appartient de vérifier les caractéristiques des produits et de vous assurer que le mobilier choisi convient à l’espace et à l’usage prévus. Pour les projets commerciaux, nous recommandons de confirmer les dimensions, les quantités, les matériaux et les exigences d’installation avant de commander. Les meubles fabriqués sur mesure, les commandes spéciales et les produits fabriqués à la commande peuvent être soumis à des conditions et à des délais de production supplémentaires, qui vous seront communiqués au moment de l’achat."
+      },
+      {
+        "type": "heading",
+        "text": "PRIX ET PAIEMENT"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les prix affichés sur le Site sont indiqués dans la devise précisée au moment de l’achat. Ils peuvent varier selon votre emplacement, la devise et les promotions en vigueur. Sauf indication contraire, ils n’incluent pas les taxes de vente, les frais d’expédition, les droits de douane, les taxes d’importation ni les autres frais applicables. Les taxes, les frais d’expédition et les droits d’importation sont calculés à la caisse et payés par le client à ce moment. Les droits d’importation ne sont pas remboursables (voir notre Politique de retour et de remboursement). Tout autre frais ne pouvant être déterminé à l’avance sera divulgué lorsque la loi l’exige et est expliqué dans notre Politique d’expédition. Les produits fabriqués sur mesure, fabriqués à la commande et les commandes spéciales nécessitent un acompte de 50 % du montant total à la caisse. Ces commandes sont des ventes finales; voir la section 7 et notre Politique de retour et de remboursement. Nous acceptons les modes de paiement indiqués à la caisse. Tous les paiements sont soumis à la vérification et à l’autorisation du fournisseur de paiement. Nous pouvons corriger les erreurs de prix, les inexactitudes ou les omissions. Si une erreur touche une commande déjà passée, nous vous en informerons et proposerons les options appropriées, notamment l’annulation et le remboursement lorsque la loi l’exige. Les promotions, rabais et offres spéciales peuvent comporter des conditions supplémentaires, des critères d’admissibilité et une disponibilité limitée."
+      },
+      {
+        "type": "heading",
+        "text": "COMMANDES ET CONFIRMATION"
+      },
+      {
+        "type": "paragraph",
+        "text": "Le fait de passer une commande sur le Site constitue une offre d’achat des produits sélectionnés. Après la soumission de votre commande, vous recevrez un accusé de réception par courriel. Nous acceptons votre commande lorsque nous envoyons une confirmation de commande ou un avis d’expédition. Nous pouvons refuser ou annuler une commande pour des motifs légitimes, notamment l’indisponibilité d’un produit, un problème de paiement, une fraude soupçonnée, une erreur importante de prix ou l’impossibilité de livrer à votre ville ou à votre adresse, même après la passation de la commande. Si nous ne pouvons exécuter une commande déjà payée, nous rembourserons intégralement le montant reçu. Pour les commandes commerciales importantes, les meubles sur mesure et les projets spéciaux, des conditions supplémentaires peuvent figurer dans une soumission, une facture ou une entente d’achat écrite. Lorsque les parties en conviennent expressément, ces conditions propres au projet s’appliquent à la commande visée, sous réserve des lois applicables."
+      },
+      {
+        "type": "heading",
+        "text": "EXPÉDITION ET LIVRAISON"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous expédions partout au Canada, y compris au Québec, et aux États-Unis, sauf dans les régions exclues par notre Politique d’expédition. Toutes les commandes partent de notre entrepôt de Montréal, au Québec. Notre salle d’exposition de Markham, en Ontario, est réservée au ramassage sur place et n’expédie pas de commandes. Les modes d’expédition, les délais de livraison estimés et les coûts dépendent de la destination, des dimensions des produits, du volume de la commande et des exigences du transporteur. Le mobilier volumineux ou surdimensionné peut nécessiter un transport de marchandises ou des arrangements de livraison particuliers. Les délais de livraison sont des estimations et non des garanties. Ils peuvent être touchés par les horaires des transporteurs, les conditions météorologiques, les formalités douanières ou d’autres circonstances indépendantes de notre volonté, sous réserve des lois applicables. Vous devez fournir des renseignements de livraison exacts et veiller à ce que le lieu de livraison soit accessible et adapté à la réception du mobilier."
+      },
+      {
+        "type": "paragraph",
+        "text": "Droits et taxes. Pour les expéditions aux États-Unis, les droits d’importation et les taxes sont calculés à la caisse et payés par le client au moment de l’achat. Les droits d’importation ne sont pas remboursables, même si la commande est retournée ou remboursée. Pour connaître les tarifs d’expédition, l’admissibilité à la livraison gratuite, les conditions de livraison, le transport de marchandises, le ramassage sur place et les expéditions transfrontalières, consultez notre Politique d’expédition. Aucune disposition de cette section ne limite vos droits ou recours prévus par les lois applicables en matière de protection du consommateur."
+      },
+      {
+        "type": "heading",
+        "text": "RETOURS, ANNULATIONS ET REMBOURSEMENTS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les retours, échanges, annulations et remboursements sont régis par notre Politique de retour et de remboursement. Les produits standard admissibles peuvent être retournés si vous en faites la demande dans les 14 jours suivant la livraison, sous réserve de cette politique. Les produits retournés doivent être inutilisés, dans leur état d’origine et dans leur emballage d’origine ou un emballage protecteur équivalent, sauf disposition légale contraire. Les produits fabriqués sur mesure, fabriqués à la commande et les commandes spéciales sont des ventes finales et ne sont pas remboursables. L’annulation de ces commandes peut être envisagée à notre discrétion uniquement avant l’achat des matériaux ou le début de la production, conformément à notre Politique de retour et de remboursement. Vérifiez attentivement les caractéristiques, dimensions, matériaux et détails de la commande avant de conclure votre achat. Pour les conditions d’admissibilité, les procédures d’annulation, les responsabilités liées au transport de retour et le traitement des remboursements, consultez notre Politique de retour et de remboursement. Aucune disposition de cette section ne limite les droits impératifs des consommateurs ni leurs recours légaux."
+      },
+      {
+        "type": "heading",
+        "text": "GARANTIE DES PRODUITS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor offre une garantie limitée contre les défauts de fabrication touchant les matériaux et la main-d’œuvre, pour la période indiquée sur la page du produit ou dans les documents d’achat. Sauf indication contraire, la garantie standard est de 12 mois à compter de la livraison. Elle couvre uniquement les défauts découlant du processus de fabrication. Elle ne couvre pas les dommages physiques, égratignures, bosses, taches, l’usure normale, les dommages accidentels, l’utilisation abusive, l’installation inadéquate, les modifications non autorisées ou les dommages causés par un entretien ou des soins inappropriés. Les dommages ou défauts visibles à la livraison doivent être signalés dans les 48 heures conformément à notre Politique de retour et de remboursement. Les défauts non apparents à la livraison et découverts plus tard sont traités au titre de la présente garantie pendant sa durée. Les réclamations admissibles peuvent donner lieu à une réparation, un remplacement ou un remboursement, à notre discrétion et sous réserve des lois applicables. Pour présenter une réclamation, écrivez à info@voguedecor.com avec les renseignements de commande, une description du problème et des photos justificatives. Cette garantie limitée ne remplace ni ne restreint les garanties légales obligatoires ou les droits prévus par les lois canadiennes ou américaines applicables."
+      },
+      {
+        "type": "heading",
+        "text": "PROPRIÉTÉ INTELLECTUELLE"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tout le contenu du Site de Vogue Decor, notamment les photographies, images de produits, créations, éléments graphiques, logos, marques de commerce, textes et autres éléments (le « Contenu du Site »), appartient à Vogue Decor ou est utilisé sous licence et est protégé par les lois sur la propriété intellectuelle. Vous ne pouvez copier, reproduire, modifier, distribuer, publier ou utiliser le Contenu du Site à des fins commerciales sans notre autorisation écrite préalable ou celle du titulaire des droits. Vous pouvez utiliser le Site et son contenu uniquement pour la navigation légitime, la recherche de produits et les achats. Toute autre utilisation du Contenu du Site ou de notre propriété intellectuelle est interdite."
+      },
+      {
+        "type": "heading",
+        "text": "UTILISATION ET SÉCURITÉ DU SITE WEB"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vous acceptez d’utiliser le Site uniquement à des fins légales et conformément aux présentes Conditions. Vous ne pouvez nuire à son fonctionnement, à sa sécurité ou à son accessibilité, notamment par des accès non autorisés, des transactions frauduleuses, la diffusion de logiciels malveillants ou des tentatives de compromettre nos systèmes. L’utilisation d’outils automatisés pour extraire, reproduire ou recueillir le Contenu du Site ou les renseignements des clients sans notre autorisation écrite préalable est interdite, sauf lorsque la loi le permet. Nous pouvons restreindre ou suspendre l’accès au Site en cas de fraude soupçonnée, de menace à la sécurité, d’utilisation abusive ou de violation des présentes Conditions, sous réserve des lois applicables. Nous prenons des mesures raisonnables pour assurer la sécurité et la disponibilité du Site, sans pouvoir garantir un accès ininterrompu ou exempt d’erreurs. Nous pouvons temporairement modifier, suspendre ou retirer des fonctionnalités pour l’entretien, les mises à jour ou des raisons opérationnelles."
+      },
+      {
+        "type": "heading",
+        "text": "LIMITATION DE RESPONSABILITÉ"
+      },
+      {
+        "type": "paragraph",
+        "text": "Dans toute la mesure permise par les lois applicables, Vogue Decor n’est pas responsable des dommages indirects, accessoires, particuliers ou consécutifs découlant de l’utilisation du Site, de l’achat de nos produits ou des services connexes, y compris la perte de profits, l’interruption des activités ou la perte d’occasions d’affaires. Nous ne sommes pas non plus responsables des dommages causés par une installation inadéquate, une mauvaise utilisation, des modifications non autorisées, un entretien insuffisant ou l’utilisation des produits à des fins contraires à leur destination. Vous êtes responsable de vous assurer que les produits achetés conviennent à l’usage commercial ou résidentiel prévu et qu’ils sont installés et entretenus conformément aux exigences applicables. Dans la mesure permise par la loi, notre responsabilité totale découlant de l’achat d’un produit ne dépassera pas le montant payé pour le produit à l’origine de la réclamation. Aucune disposition des présentes Conditions n’exclut ni ne limite une responsabilité qui ne peut légalement être exclue ou limitée, notamment la responsabilité pour les blessures corporelles ou, lorsque ces limites sont interdites, les dommages matériels, ainsi que les droits et recours impératifs des consommateurs."
+      },
+      {
+        "type": "heading",
+        "text": "CONFIDENTIALITÉ ET RENSEIGNEMENTS PERSONNELS"
+      },
+      {
+        "type": "paragraph",
+        "text": "La protection de votre vie privée nous tient à cœur. Nous recueillons, utilisons, communiquons et protégeons les renseignements personnels conformément à notre Politique de confidentialité et aux lois applicables sur la protection des renseignements personnels. Les renseignements fournis lors de la création d’un compte, d’une commande ou d’une prise de"
+      },
+      {
+        "type": "paragraph",
+        "text": "contact peuvent servir à traiter les transactions, à exécuter les commandes et à offrir du soutien à la clientèle. Nous transmettons des communications marketing uniquement avec votre consentement, conformément à notre Politique de confidentialité. Pour en savoir plus sur le traitement des renseignements personnels, les témoins de connexion, les fournisseurs tiers et vos droits, consultez notre Politique de confidentialité."
+      },
+      {
+        "type": "heading",
+        "text": "DROIT APPLICABLE ET DIFFÉRENDS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les présentes Conditions sont régies et interprétées conformément aux lois de la province de Québec et aux lois fédérales canadiennes applicables. Sous réserve des lois applicables, les différends découlant des présentes Conditions, de l’utilisation du Site ou de l’achat de nos produits seront soumis aux tribunaux compétents du Québec, Canada. Aucune disposition de cette section ne limite les droits, protections ou recours impératifs que vous confèrent les lois de votre province, État ou pays de résidence."
+      },
+      {
+        "type": "heading",
+        "text": "DISPOSITIONS GÉNÉRALES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Événements indépendants de notre volonté. Nous ne sommes pas responsables des retards ou manquements à nos obligations causés par des événements échappant raisonnablement à notre contrôle, notamment les intempéries, catastrophes naturelles, interruptions chez les transporteurs ou fournisseurs, conflits de travail, mesures gouvernementales ou perturbations des chaînes d’approvisionnement."
+      },
+      {
+        "type": "paragraph",
+        "text": "Divisibilité. Si une disposition des présentes Conditions est jugée invalide ou inapplicable, les autres dispositions demeurent en vigueur."
+      },
+      {
+        "type": "paragraph",
+        "text": "Intégralité de l’entente. Les présentes Conditions, notre Politique d’expédition, notre Politique de retour et de remboursement, notre Politique de confidentialité et toute soumission ou entente d’achat écrite relative à votre commande constituent l’intégralité de l’entente entre vous et Vogue Decor concernant l’utilisation du Site et vos achats. En cas de conflit entre les présentes Conditions et une soumission ou entente d’achat écrite pour une commande précise, cette dernière prévaut pour la commande visée."
+      },
+      {
+        "type": "paragraph",
+        "text": "Absence de renonciation. Le fait de ne pas exercer un droit prévu par les présentes Conditions ne constitue pas une renonciation à ce droit."
+      },
+      {
+        "type": "heading",
+        "text": "MODIFICATIONS DES PRÉSENTES CONDITIONS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les présentes Conditions entrent en vigueur le 1er novembre 2026. Nous pouvons les mettre à jour à l’occasion pour tenir compte des changements touchant notre entreprise, nos services, les exigences légales ou le fonctionnement du Site. Les mises à jour sont publiées sur le Site avec une nouvelle date de « Dernière mise à jour » et prennent effet dès leur publication, sauf indication contraire ou exigence légale différente. Elles ne modifieront pas rétroactivement les conditions des commandes déjà confirmées sans votre accord, sauf lorsque la loi le permet ou l’exige. Nous vous invitons à consulter régulièrement les présentes Conditions."
+      },
+      {
+        "type": "heading",
+        "text": "NOUS JOINDRE"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pour toute question concernant les présentes Conditions, nos produits ou vos commandes, communiquez avec Vogue Decor Inc.:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Adresse postale et salle d’exposition de Montréal: 7550, chemin de la Côte-de-Liesse, Montréal (Québec) H4T 1E7, Canada"
+      },
+      {
+        "type": "paragraph",
+        "text": "Téléphone: +1 514 823-5595 | Sans frais (facultatif): +1 888 880-8232 | Courriel: info@voguedecor.com"
+      },
+      {
+        "type": "paragraph",
+        "text": "Salle d’exposition de Markham (région de Toronto, ramassage seulement): 825 Denison Street, unité 2, Markham (Ontario) L3R 5E4, Canada"
+      }
+    ]
+  },
+  "returns": {
+    "title": "POLITIQUE DE RETOUR ET DE REMBOURSEMENT",
+    "effectiveDate": "Date d’entrée en vigueur: 1er novembre 2026",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "ADMISSIBILITÉ AUX RETOURS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nous souhaitons que vous soyez satisfait de votre achat. Les produits admissibles peuvent être retournés si vous présentez une demande de retour dans les 14 jours suivant la livraison, sauf indication contraire sur la page du produit."
+      },
+      {
+        "type": "paragraph",
+        "text": "Pour être admissible, le produit doit être inutilisé, à l’état neuf et dans son emballage d’origine ou dans un emballage protecteur équivalent qui prévient les dommages pendant le transport. « Inutilisé » signifie que le produit n’a pas été assemblé, installé ni mis en service, et qu’il ne présente aucune marque, tache, égratignure ou odeur."
+      },
+      {
+        "type": "paragraph",
+        "text": "La présente politique s’applique à tous les clients, y compris les entreprises et les acheteurs commerciaux. Aucune disposition de cette politique ne limite les droits ou recours prévus par les lois applicables en matière de protection du consommateur."
+      },
+      {
+        "type": "paragraph",
+        "text": "Toutes les commandes sont expédiées de notre entrepôt de Montréal, au Québec, à destination du Canada et des États-Unis, à l’exception des territoires du Nord canadien (Yukon, Territoires du Nord-Ouest et Nunavut), de l’Alaska, d’Hawaï, de Porto Rico et des autres territoires américains, ainsi que des régions éloignées que nous ne pouvons desservir, comme indiqué à la caisse. La présente politique s’applique à toutes ces commandes."
+      },
+      {
+        "type": "heading",
+        "text": "ARTICLES NON RETOURNABLES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les articles suivants ne sont pas admissibles à un retour ou à un remboursement:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Produits fabriqués sur mesure, fabriqués à la commande et commandes spéciales (vente finale; voir la section 7)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Produits en liquidation ou en solde portant la mention « vente finale »."
+      },
+      {
+        "type": "paragraph",
+        "text": "Produits utilisés, assemblés, installés, modifiés ou endommagés après la livraison."
+      },
+      {
+        "type": "paragraph",
+        "text": "Produits retournés sans emballage protecteur adéquat. Ces exclusions ne s’appliquent pas aux produits livrés défectueux, endommagés ou incorrects (voir la section 4)."
+      },
+      {
+        "type": "heading",
+        "text": "PROCÉDURE DE RETOUR"
+      },
+      {
+        "type": "paragraph",
+        "text": "Communiquez avec nous dans les 14 jours suivant la livraison à info@voguedecor.com en indiquant votre numéro de commande et le motif du retour. Tout retour doit être autorisé au préalable. N’expédiez aucun article avant d’avoir reçu notre approbation."
+      },
+      {
+        "type": "paragraph",
+        "text": "Une fois votre demande approuvée, nous vous transmettrons les instructions de retour. Les retours autorisés doivent être expédiés ou mis à disposition pour ramassage dans les 14 jours suivant l’approbation, sauf entente écrite contraire. Les retours non autorisés peuvent être refusés."
+      },
+      {
+        "type": "paragraph",
+        "text": "Emballez soigneusement le produit afin de le protéger pendant le transport."
+      },
+      {
+        "type": "paragraph",
+        "text": "Expédiez le retour selon les modalités ci-dessous."
+      },
+      {
+        "type": "heading",
+        "text": "COMMANDES EXPÉDIÉES PAR TRANSPORT DE MARCHANDISES (LTL / PALETTES)"
+      },
+      {
+        "type": "paragraph",
+        "text": "La plupart des commandes de meubles sont expédiées par transport de marchandises LTL. Pour ces retours, nous organiserons le ramassage ou fournirons une estimation du coût de transport. Les frais réels de transport de retour sont à la charge du client et seront déduits du remboursement, sauf si le retour découle d’une erreur de notre part ou si la loi exige autrement. Nous vous communiquerons une estimation des frais avant que vous confirmiez le retour."
+      },
+      {
+        "type": "heading",
+        "text": "COMMANDES EXPÉDIÉES PAR COLIS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les petits articles, notamment les bases, les plateaux et les pièces, peuvent être expédiés par service de messagerie. Les frais de retour sont à la charge du client. Nous recommandons un service avec suivi et assurance. Nous ne sommes pas responsables des articles perdus ou endommagés pendant le transport de retour."
+      },
+      {
+        "type": "heading",
+        "text": "ADRESSE DE RETOUR ET RETOURS DEPUIS LES ÉTATS-UNIS ET LE CANADA"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tous les retours doivent être acheminés à notre entrepôt de Montréal, au Québec. Nous confirmerons l’adresse exacte lors de l’autorisation du retour. Les clients américains sont responsables des frais de transport de retour, du dédouanement, des frais de courtage et des droits ou taxes exigés au retour. Nous fournirons les documents nécessaires aux formalités douanières et recommandons de faire appel à un transporteur ou à un transitaire qui prend en charge les formalités transfrontalières."
+      },
+      {
+        "type": "paragraph",
+        "text": "Droits d’importation. Les droits d’importation sont payés par le client à la caisse. Les droits d’importation, frais de douane et frais de courtage payés lors de la commande ne sont pas remboursables, même lorsqu’un produit est retourné ou remboursé."
+      },
+      {
+        "type": "paragraph",
+        "text": "Si une livraison est refusée pour un motif autre qu’un dommage ou une erreur de notre part, les frais réels de transport aller-retour et les frais de remise en stock de 15 % seront déduits du remboursement final."
+      },
+      {
+        "type": "heading",
+        "text": "ARTICLES ENDOMMAGÉS, DÉFECTUEUX OU INCORRECTS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Veuillez inspecter votre commande à la livraison."
+      },
+      {
+        "type": "paragraph",
+        "text": "Livraisons par transport de marchandises: indiquez tout dommage visible ou toute pièce manquante sur le reçu de livraison du transporteur avant de signer et prenez des photos de l’emballage et du produit."
+      },
+      {
+        "type": "paragraph",
+        "text": "Signalez tout problème dans les 48 heures suivant la livraison à info@voguedecor.com en fournissant votre numéro de commande, une description du problème et des photos. Conservez tous les emballages jusqu’au règlement de la réclamation. Nous examinerons celle-ci et proposerons une solution appropriée, soit une réparation, un remplacement ou un remboursement."
+      },
+      {
+        "type": "paragraph",
+        "text": "Si le problème résulte d’une erreur de notre part ou d’un défaut, nous assumons les frais de retour et aucuns frais de remise en stock ne s’appliquent. Les signalements reçus après 48 heures seront tout de même examinés, mais les solutions possibles pourraient être limitées. Les défauts non apparents à la livraison et découverts après ce délai sont traités conformément à la garantie limitée prévue dans nos Conditions générales."
+      },
+      {
+        "type": "heading",
+        "text": "FRAIS DE REMISE EN STOCK"
+      },
+      {
+        "type": "paragraph",
+        "text": "Les retours de produits admissibles et non défectueux (par exemple, un changement d’avis ou une erreur de dimension) sont assujettis à des frais de remise en stock de 15 % du prix du produit. Ces frais couvrent l’inspection, la manutention, le réemballage et la remise en inventaire. Aucuns frais de remise en stock ne s’appliquent aux produits livrés endommagés, défectueux ou incorrects en raison d’une erreur de notre part. Les frais sont calculés uniquement sur le prix du produit, à l’exclusion du transport et des taxes. Si le produit retourné présente des dommages dépassant ceux d’une inspection normale ou s’il manque des pièces, nous pouvons réduire davantage le remboursement. Nous expliquerons toute réduction par écrit, avec photos à l’appui."
+      },
+      {
+        "type": "heading",
+        "text": "REMBOURSEMENTS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Après réception et inspection du retour (dans les 5 jours ouvrables suivant sa réception), nous vous confirmerons par courriel si le remboursement est approuvé. Les remboursements approuvés sont effectués selon le mode de paiement initial dans les 7 jours ouvrables suivant l’approbation. Le montant correspond au prix payé pour le produit, plus les taxes applicables au montant remboursé, moins les frais de remise en stock et de transport de retour déduits conformément à la présente politique. Les frais d’expédition initiaux et les droits d’importation ne sont pas remboursables, sauf obligation légale contraire. Votre banque ou fournisseur de paiement peut prendre plus de temps pour porter le remboursement à votre compte."
+      },
+      {
+        "type": "paragraph",
+        "text": "Un remboursement sous forme de crédit en magasin n’est possible qu’avec votre accord. Les remboursements sont effectués dans la devise du paiement initial. Les taxes de vente (TPS, TVH, TVQ, TVP ou TVD au Canada, et taxes de vente aux États-Unis) sont remboursées proportionnellement au prix du produit remboursé. Les écarts de conversion de devises facturés par votre banque ou l’émetteur de votre carte ne sont pas remboursables."
+      },
+      {
+        "type": "heading",
+        "text": "ANNULATION DES COMMANDES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pour annuler une commande, écrivez dès que possible à info@voguedecor.com en indiquant votre numéro de commande."
+      },
+      {
+        "type": "paragraph",
+        "text": "Commandes standard de produits en stock: elles peuvent être annulées sans frais tant qu’elles n’ont pas été expédiées. Les commandes déjà expédiées ne peuvent pas être annulées et sont assujetties à la procédure de retour ci-dessus."
+      },
+      {
+        "type": "paragraph",
+        "text": "Produits fabriqués sur mesure, fabriqués à la commande et commandes spéciales: ces produits sont des ventes finales et ne sont pas remboursables. Nous pouvons envisager une annulation à notre discrétion uniquement si vous en faites la demande rapidement, avant l’achat des matériaux ou le début de la production."
+      },
+      {
+        "type": "paragraph",
+        "text": "Acomptes pour les commandes sur mesure: un acompte correspondant à 50 % du total de la commande est exigé à la caisse. Si nous approuvons une annulation avant l’achat des matériaux ou le début de la production, l’acompte sera remboursé intégralement. Dès l’achat des matériaux ou le début de la production, la commande et l’acompte deviennent non remboursables."
+      },
+      {
+        "type": "paragraph",
+        "text": "Si nous annulons nous-mêmes une commande (par exemple, parce que nous ne pouvons pas livrer à votre adresse), nous vous rembourserons intégralement toutes les sommes versées."
+      },
+      {
+        "type": "heading",
+        "text": "VOS DROITS LÉGAUX"
+      },
+      {
+        "type": "paragraph",
+        "text": "Aucune disposition de la présente politique ne limite les droits ou recours impératifs que vous confèrent les lois applicables, notamment les lois sur la protection du consommateur de votre province, territoire ou État (y compris la Loi sur la protection du consommateur du Québec, lorsqu’elle s’applique)."
+      },
+      {
+        "type": "heading",
+        "text": "NOUS JOINDRE"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pour toute question concernant les présentes conditions, nos produits ou vos commandes, communiquez avec Vogue Decor Inc.:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Adresse postale et salle d’exposition de Montréal: 7550, chemin de la Côte-de-Liesse, Montréal (Québec) H4T 1E7, Canada"
+      },
+      {
+        "type": "paragraph",
+        "text": "Téléphone: +1 514 823-5595 | Sans frais (facultatif): +1 888 880-8232 | Courriel: info@voguedecor.com"
+      },
+      {
+        "type": "paragraph",
+        "text": "Salle d’exposition de Markham (région de Toronto, ramassage seulement): 825 Denison Street, unité 2, Markham (Ontario) L3R 5E4, Canada"
+      }
+    ]
+  }
+}

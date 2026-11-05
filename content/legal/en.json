@@ -1,0 +1,1130 @@
+{
+  "privacy": {
+    "title": "PRIVACY POLICY",
+    "effectiveDate": "Effective Date: November 1, 2026",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "1. WHO WE ARE AND SCOPE"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor Inc. (“Vogue Decor,” “we,” “us,” “our”) is a company headquartered in Québec, Canada (NEQ 1169120186). We operate the online store at www.voguedecor.com (the “Site”) and showrooms in Montréal, Québec and Markham, Ontario. We sell to individual consumers and commercial/trade customers in Canada and the United States. This Privacy Policy explains how we collect, use, disclose, store and protect personal information when you visit or shop on the Site, request a quote, create an account, contact us, or visit a showroom. It applies to everyone whose personal information we handle in connection with these activities, including visitors, customers and business contacts. By using the Site or giving us your personal information, you acknowledge this Policy. Where the law requires your consent, we will ask for it separately, and you may refuse or withdraw it as described below. Who is responsible. Vogue Decor Inc. is the business responsible for your personal information (the “controller” or “business”). The person in charge of the protection of personal information (the “Person in Charge”) is identified in Section 15."
+      },
+      {
+        "type": "heading",
+        "text": "2. INFORMATION WE COLLECT"
+      },
+      {
+        "type": "heading",
+        "text": "A. INFORMATION YOU GIVE US"
+      },
+      {
+        "type": "paragraph",
+        "text": "Contact and business details: name, company name, job title, email, phone number, billing and shipping addresses, and, for trade customers, resale or tax registration numbers"
+      },
+      {
+        "type": "paragraph",
+        "text": "Account information: username, password (stored in protected form), saved addresses and preferences, trade status verification."
+      },
+      {
+        "type": "paragraph",
+        "text": "Order and transaction information: items purchased, order history, invoices, payment status (we do not receive or store your full card number), delivery appointments, returns, freight claims and warranty records."
+      },
+      {
+        "type": "paragraph",
+        "text": "Quote and project information: RFQ forms, specifications, floor plans, drawings and project details you send to our design or sales team. Please do not include information about other people unless you are authorized to share it."
+      },
+      {
+        "type": "paragraph",
+        "text": "Communications: emails, chat logs, call recordings (we tell you at the start of a call if it is recorded), reviews, survey responses and feedback."
+      },
+      {
+        "type": "heading",
+        "text": "B. INFORMATION COLLECTED AUTOMATICALLY"
+      },
+      {
+        "type": "paragraph",
+        "text": "When you use the Site we and our service providers automatically collect: IP address; device, browser and operating system information; language and time zone; pages viewed, search terms, products browsed, items added to a cart, abandoned carts, referring and exit pages, time on page and click activity; and approximate location (city or country level) derived from your IP address. We do not collect precise geolocation."
+      },
+      {
+        "type": "heading",
+        "text": "C. INFORMATION FROM OTHER SOURCES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Shipping and logistics partners (address validation, delivery confirmation, tracking, proof of delivery)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Payment processors and fraud-prevention tools (payment confirmation, address verification results, risk scores)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Analytics and advertising platforms (aggregated or pseudonymous engagement and audience data)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Shopify and apps installed on our store, which may supply technical, checkout and fraud data. -Publicly available business information about trade customers. If you choose to pay with Shop Pay or use the Shop app, Shopify Inc. may collect and use your information under its own privacy policy as an independent business."
+      },
+      {
+        "type": "heading",
+        "text": "3. WHY WE USE YOUR INFORMATION"
+      },
+      {
+        "type": "paragraph",
+        "text": "We use personal information only for purposes that are identified in this Policy or that you are told about when we collect it:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Orders and delivery: processing payments, issuing invoices, arranging freight and parcel delivery, and handling returns and warranty claims."
+      },
+      {
+        "type": "paragraph",
+        "text": "Quotes and commercial services: preparing estimates, trade pricing, lead times and custom fabrication."
+      },
+      {
+        "type": "paragraph",
+        "text": "Accounts: creating and securing your account, saving carts and verifying trade status. - Customer service: answering questions, resolving delivery problems and providing product support."
+      },
+      {
+        "type": "paragraph",
+        "text": "Site operation and improvement: measuring performance, understanding how the Site is used, fixing errors and improving design and content."
+      },
+      {
+        "type": "paragraph",
+        "text": "Marketing: sending promotional emails, catalogs and offers where you have consented (or consent is otherwise permitted by law), and showing relevant advertising where you have allowed it."
+      },
+      {
+        "type": "paragraph",
+        "text": "Security and fraud prevention: detecting suspicious activity, preventing unauthorized access and chargeback abuse, and protecting our systems."
+      },
+      {
+        "type": "paragraph",
+        "text": "Legal and business purposes: tax and accounting, audits, enforcing our terms, establishing or defending legal claims, and complying with law, court orders and lawful requests. We do not use your personal information for a materially different purpose without telling you and, where required, obtaining your consent. Automated processing. We do not make decisions about you based solely on automated processing, except that our payment and fraud-prevention tools may use automated processing to flag or decline a transaction. If that happens, you can contact the Person in Charge to submit observations and to have the decision reviewed by a person. If we ever use automated processing for other decisions about you, we will inform you and give you the same opportunity."
+      },
+      {
+        "type": "heading",
+        "text": "4. LEGAL BASIS AND CONSENT"
+      },
+      {
+        "type": "paragraph",
+        "text": "We collect, use and disclose personal information with your consent, or where the law permits or requires it without consent, for example to fulfill a contract with you, to meet legal obligations, or for legitimate business purposes that are explained in this Policy. In Québec, consent is requested separately for each purpose, in clear and simple terms, and is valid only for the time needed to achieve the purpose. You may withdraw consent at any time, subject to legal or contractual restrictions and reasonable notice. Withdrawing consent may mean we cannot provide some services (for example, we cannot ship an order without a delivery address)."
+      },
+      {
+        "type": "heading",
+        "text": "5. COOKIES, PIXELS AND SIMILAR TECHNOLOGIES"
+      },
+      {
+        "type": "paragraph",
+        "text": "We and our partners use cookies, pixels, web beacons, local storage and similar tools:"
+      },
+      {
+        "type": "paragraph",
+        "text": "STRICTLY NECESSARY: NEEDED FOR CHECKOUT, CART, SECURITY, SESSION management and load balancing. These cannot be switched off in our systems."
+      },
+      {
+        "type": "paragraph",
+        "text": "ANALYTICS AND PERFORMANCE: SUCH AS GOOGLE ANALYTICS, TO UNDERSTAND traffic and improve the Site."
+      },
+      {
+        "type": "paragraph",
+        "text": "FUNCTIONALITY: REMEMBERING REGION, CURRENCY (CAD OR USD) AND RECENTLY viewed items."
+      },
+      {
+        "type": "paragraph",
+        "text": "ADVERTISING AND MARKETING: SUCH AS THE META PIXEL, GOOGLE ADS TAGS AND TikTok Pixel, which measure ads, track conversions and show interest-based ads on other sites and platforms. Your choices. Non-essential cookies (categories 2 to 4) are off by default and are used only after you accept them through our cookie banner, which lets you accept or refuse each category and change your choice at any time. You can also block or delete cookies in your browser settings, though parts of the Site may not work properly. Where our Site detects a Global Privacy Control (GPC) or similar browser opt-out signal, we treat it as a request to opt out of sale/sharing and targeted advertising for that browser. Technologies that identify, locate or profile. Where technologies on the Site can identify you, locate you or profile you, we tell you about them and how to activate or deactivate those functions. Profiling-related tools are off until you turn them on. Third parties that provide analytics or advertising tools (including Google, Meta and TikTok) have their own privacy practices and may use the data they collect for their own purposes under their own policies. If we upload hashed customer information, such as email addresses, to advertising platforms to measure ads or build audiences, we do so only where you have consented or the law otherwise permits, and you can opt out as described in Section 10. Opt-out tools include https://optout.aboutads.info, https://optout.networkadvertising.org and the ad settings in your Google, Meta and TikTok accounts."
+      },
+      {
+        "type": "heading",
+        "text": "6. HOW WE SHARE PERSONAL INFORMATION"
+      },
+      {
+        "type": "paragraph",
+        "text": "We share personal information only as needed for the purposes in this Policy, and we require service providers to use it only to perform services for us and to protect it."
+      },
+      {
+        "type": "paragraph",
+        "text": "Shopify Inc. and its affiliates: our e-commerce platform. Shopify hosts our store and processes store, customer, order and checkout data on our behalf in Canada, the United States and other countries where it or its sub-processors operate. Shopify’s own practices are described at https://www.shopify.com/legal/privacy."
+      },
+      {
+        "type": "paragraph",
+        "text": "Payment processors: such as Shopify Payments, Stripe and PayPal, which process card and other payments. Full card numbers are handled by the processor, not stored by Vogue Decor. - Delivery partners: freight carriers, couriers (such as FedEx, UPS and Canada Post) and third-party warehouses receive name, delivery address, phone number and delivery notes. - Technology and operations providers: hosting, email, live chat, reviews, customer support, analytics, fraud prevention, accounting and IT service providers."
+      },
+      {
+        "type": "paragraph",
+        "text": "Advertising and analytics partners: such as Google, Meta and TikTok, to the extent you allow advertising and analytics cookies or pixels."
+      },
+      {
+        "type": "paragraph",
+        "text": "Professional advisers and authorities: accountants, auditors, lawyers, insurers, and government or law-enforcement bodies where required by law, court order or to protect rights, safety and property, or to detect and prevent fraud."
+      },
+      {
+        "type": "paragraph",
+        "text": "Business transfers: in a merger, acquisition, financing, reorganization or sale of assets, information may be disclosed to the other parties and their advisers under confidentiality obligations, and then used as described in this Policy."
+      },
+      {
+        "type": "paragraph",
+        "text": "With your direction or consent: for example, when you ask us to share project details with a designer, contractor or manufacturer. No sale for money; advertising “sharing.” We do not sell your personal information for money. However, when you accept advertising cookies, our pixels and tags share identifiers (such as IP address and device or cookie IDs), internet and browsing activity, purchase activity and inferences drawn from them with Google, Meta and TikTok for cross-context behavioral advertising. Under some US state laws this counts as “sharing” (and in some cases a “sale”) of personal information. You can opt out at any time as described in Section 10. We may also share aggregated or anonymized information that cannot reasonably be used to identify you. We will not attempt to re-identify it."
+      },
+      {
+        "type": "heading",
+        "text": "7. STORAGE AND TRANSFERS OUTSIDE YOUR PROVINCE, STATE OR COUNTRY"
+      },
+      {
+        "type": "paragraph",
+        "text": "Your personal information may be stored, processed or accessed in Québec, other Canadian provinces and the United States, and in other countries where our service providers, advertising platforms (such as Meta, Google and TikTok) or their sub-processors operate. When information is held outside your jurisdiction, it is subject to the laws of that place, and courts, law enforcement and national security authorities there may be able to access it. Québec residents: before communicating personal information outside Québec, we assess the privacy factors involved, including sensitivity, purpose, safeguards and the legal framework of the destination, and we use written agreements with service providers that limit use to the contracted services, require protection of the information and require notice of any incident. You may contact the Person in Charge for information about these transfers."
+      },
+      {
+        "type": "heading",
+        "text": "8. RETENTION AND DESTRUCTION"
+      },
+      {
+        "type": "paragraph",
+        "text": "We keep personal information only as long as needed for the purposes for which it was collected, to comply with law, or to establish, exercise or defend legal claims. Typical periods:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Order, invoice and accounting records: up to seven (7) years after the transaction, to meet Canadian and US tax and audit rules."
+      },
+      {
+        "type": "paragraph",
+        "text": "Warranty records: for the warranty period plus a reasonable period afterward for claims. - Customer accounts: while the account is active, and deleted or anonymized after one (1) year of inactivity, subject to legal records we must keep."
+      },
+      {
+        "type": "paragraph",
+        "text": "Quote and project files: one (1) year after the last communication unless an order follows."
+      },
+      {
+        "type": "paragraph",
+        "text": "Marketing contacts: until you unsubscribe or withdraw consent."
+      },
+      {
+        "type": "paragraph",
+        "text": "Call recordings, chat logs and support records: up to twenty-four (24) months."
+      },
+      {
+        "type": "paragraph",
+        "text": "Website and security logs: typically up to 24 months. When no longer needed, we destroy the information or anonymize it (irreversibly, and only for serious and legitimate purposes) according to generally accepted practices."
+      },
+      {
+        "type": "heading",
+        "text": "9. SECURITY"
+      },
+      {
+        "type": "paragraph",
+        "text": "We use reasonable administrative, technical and physical safeguards appropriate to the sensitivity of the information, such as encrypted connections (TLS/SSL), access controls, multi-factor authentication where available, and the use of PCI-DSS compliant payment processors. No website, server or method of transmission is completely secure, so we cannot guarantee absolute security. Please protect your account by choosing a strong, unique password and not sharing it. Incidents. If a confidentiality incident involving your personal information presents a risk of serious injury (the Québec standard) or a real risk of significant harm (the federal PIPEDA standard that applies elsewhere in Canada), we will notify you and the relevant authorities, such as Québec’s Commission d’accès à l’information and the Office of the Privacy Commissioner of Canada, as the law requires. For US residents, we will notify you as required by applicable state law. We keep a register of incidents."
+      },
+      {
+        "type": "heading",
+        "text": "10. YOUR PRIVACY RIGHTS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Your rights depend on where you live. We will honor the rights that the law of your place of residence gives you, and you can ask us about any of them. Rights available to residents of Canada (including Québec and Ontario):"
+      },
+      {
+        "type": "paragraph",
+        "text": "Access: ask whether we hold personal information about you, and obtain a copy. In Québec, you may also ask what personal information we collected from you, the categories of people within Vogue Decor who have access to it, how long we keep it, and for the contact details of the Person in Charge."
+      },
+      {
+        "type": "paragraph",
+        "text": "Correction: have inaccurate, incomplete or equivocal information corrected."
+      },
+      {
+        "type": "paragraph",
+        "text": "Withdraw consent: withdraw consent to use or disclosure at any time, including marketing. - Portability (Québec): receive your computerized personal information in a structured, commonly used technological format, or have it sent to another organization."
+      },
+      {
+        "type": "paragraph",
+        "text": "Cessation of dissemination or de-indexation (Québec): ask us to stop disseminating, or to de-index or re-index, personal information where the law permits."
+      },
+      {
+        "type": "paragraph",
+        "text": "Automated decisions (Québec): be informed of decisions made exclusively by automated processing, and to have them reviewed."
+      },
+      {
+        "type": "paragraph",
+        "text": "Complaints: contact the Person in Charge first. You may also contact the Commission d’accès à l’information du Québec (www.cai.gouv.qc.ca) or the Office of the Privacy Commissioner of Canada (www.priv.gc.ca). Rights available to residents of US states with privacy laws (such as California, Colorado, Connecticut, Texas, Virginia and others), to the extent your state’s law applies to us: - Know/access the categories and specific pieces of personal information we hold and the purposes of use."
+      },
+      {
+        "type": "paragraph",
+        "text": "Correct inaccurate information."
+      },
+      {
+        "type": "paragraph",
+        "text": "Delete personal information, subject to exceptions (such as records we must keep for tax or legal reasons)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Obtain a portable copy of your data."
+      },
+      {
+        "type": "paragraph",
+        "text": "Opt out of (a) the sale or sharing of personal information, (b) targeted or cross-context behavioral advertising, and (c) profiling in furtherance of decisions with legal or similarly significant effects (we do not engage in this)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Limit the use of sensitive personal information (we use it only to provide the services you request and for permitted purposes)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Non-discrimination: we will not deny you goods or services, charge different prices or provide a different quality of service because you exercise your rights, except where the law allows a difference related to the value of your data (for example, a loyalty program)."
+      },
+      {
+        "type": "paragraph",
+        "text": "California residents may also request information about disclosures to third parties for their direct marketing purposes (“Shine the Light”). How to exercise your rights. Email the Person in Charge at the address in Section 15 or call the phone number listed there, with “Privacy Request” and the right you wish to exercise. You can also use the “Do Not Sell or Share My Personal Information” link in our Site footer or send a GPC signal. We may need to verify your identity, and for US requests we may match information you provide to information we hold. You may use an authorized agent, who must provide proof of authority. We will respond within 30 days (for Québec) and within 45 days for US requests, which may be extended once where permitted by law, and we will tell you why. We may refuse requests as permitted by law, for example where disclosure would reveal information about another person, or where an exception applies. If we refuse a US request, you may be able to appeal by replying to our decision and we will respond within the time required by your state’s law; you may also contact your state attorney general. Categories of personal information (for US state-law purposes). In the past 12 months we have collected: identifiers (name, email, address, IP address); customer records and commercial information (purchase history); internet activity (browsing and interactions); approximate geolocation; audio information (recorded calls); professional or business information (company, resale number); and inferences drawn from browsing and purchase activity. We disclose these categories to the recipients listed in Section 6 for business purposes. As described in Section 6, identifiers, internet activity, purchase activity and inferences are also shared with advertising partners for cross-context behavioral advertising. We do not knowingly sell or share the personal information of anyone under 16."
+      },
+      {
+        "type": "heading",
+        "text": "11. MARKETING AND CASL / CAN-SPAM"
+      },
+      {
+        "type": "paragraph",
+        "text": "We send commercial electronic messages only with express consent or where implied consent applies under Canada’s Anti-Spam Legislation, and we comply with the US CAN-SPAM Act. Every promotional email includes our identity, contact details and an unsubscribe link, and we process unsubscribe requests promptly and no later than the legal deadline (10 business days). You can also unsubscribe by contacting info@voguedecor.com. Unsubscribing from marketing does not stop transactional messages such as receipts, shipping updates, freight scheduling and warranty notices. If we send text messages, we will do so only with your consent and with opt-out instructions."
+      },
+      {
+        "type": "heading",
+        "text": "12. CHILDREN"
+      },
+      {
+        "type": "paragraph",
+        "text": "The Site is not intended for children under 16 and we do not knowingly collect their personal information. In Québec, the consent of a parent or guardian is required for children under 14. If you believe a child has given us personal information, contact the Person in Charge and we will delete it."
+      },
+      {
+        "type": "heading",
+        "text": "13. THIRD-PARTY SITES AND SERVICES"
+      },
+      {
+        "type": "paragraph",
+        "text": "The Site may link to carrier tracking portals, social media channels, manufacturer sites and other third-party services. We do not control and are not responsible for their content, security or privacy practices. Please read their privacy policies. Information you give to third parties directly is governed by their policies, not this one."
+      },
+      {
+        "type": "heading",
+        "text": "14. CHANGES TO THIS POLICY"
+      },
+      {
+        "type": "paragraph",
+        "text": "We may update this Policy from time to time to reflect changes in our practices, technology or law. The “Last Updated” date shows the latest version. If a change is material, we will give you notice on the Site or by email, and where the law requires consent for a new use, we will ask for it separately. Where consent is not required, your continued use of the Site after the effective date means you accept the updated Policy, to the extent permitted by law. Version française. A French version of this Policy is available on the Site (see the link in the footer). / Une version française de la présente politique est disponible sur le Site (voir le lien au bas de page)."
+      },
+      {
+        "type": "heading",
+        "text": "15. CONTACT US"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor Inc. Email: info@voguedecor.com"
+      },
+      {
+        "type": "paragraph",
+        "text": "Phone: +1 (514) 823-5595 Toll-free (optional): +1 (888) 880-8232 Headquarters and Montréal showroom: 7550 Chem. de la Côte-de-Liesse, Montréal, QC H4T 1E7, Canada Markham showroom (Toronto area, pickup only): 825 Denison Street, Unit 2, Markham, Ontario L3R 5E4, Canada"
+      },
+      {
+        "type": "heading",
+        "text": "16. GENERAL"
+      },
+      {
+        "type": "paragraph",
+        "text": "This Policy is governed by the laws of the Province of Québec and the federal laws of Canada applicable there, except where the privacy law of your place of residence gives you rights that cannot be waived. This Policy should be read together with our Terms & Conditions. If any part of this Policy is found unenforceable, the rest remains in effect. Nothing in this Policy limits any right you have under applicable law."
+      }
+    ]
+  },
+  "shipping": {
+    "title": "SHIPPING POLICY",
+    "effectiveDate": "Effective Date: November 1, 2026",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor Inc."
+      },
+      {
+        "type": "heading",
+        "text": "OVERVIEW AND SERVICE AREA"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor Inc. ships commercial furniture and furnishings to all Canadian provinces and the contiguous United States, with the exclusions listed below. This policy applies to all orders placed at www.voguedecor.com and takes effect on November 1, 2026."
+      },
+      {
+        "type": "paragraph",
+        "text": "All orders ship from our warehouse in Montréal, Québec. Our Markham, Ontario showroom is for local pickup only and does not ship orders."
+      },
+      {
+        "type": "paragraph",
+        "text": "We ship to:"
+      },
+      {
+        "type": "paragraph",
+        "text": "All Canadian provinces: Québec, Ontario, Manitoba, Alberta, British Columbia, Saskatchewan, New Brunswick, Nova Scotia, Prince Edward Island, and Newfoundland and Labrador The 48 contiguous U.S. states and Washington, D.C. We do not ship to:"
+      },
+      {
+        "type": "paragraph",
+        "text": "The Canadian Northern Territories: Yukon, Northwest Territories, and Nunavut Alaska, Hawaii, Puerto Rico, and all other U.S. territories"
+      },
+      {
+        "type": "paragraph",
+        "text": "Remote, off-grid, or island destinations, including remote locations within provinces and states we otherwise serve Not sure whether your address qualifies? Contact us before you order and we will confirm delivery availability for your location."
+      },
+      {
+        "type": "paragraph",
+        "text": "Right to refuse or cancel an order. In some cities or delivery locations, we may be unable to ship an order, even after it has been placed. If this happens, we will contact you, cancel the order, and refund the full amount you paid."
+      },
+      {
+        "type": "heading",
+        "text": "ORDER PROCESSING"
+      },
+      {
+        "type": "paragraph",
+        "text": "In-stock orders are processed and dispatched within 1–2 business days after we confirm payment. Business days are Monday to Friday, excluding statutory holidays."
+      },
+      {
+        "type": "paragraph",
+        "text": "Custom and made-to-order products have longer production lead times. We give you the lead time when you place your order or approve your quote, and it is in addition to the transit times below."
+      },
+      {
+        "type": "paragraph",
+        "text": "Orders with items in different categories may ship separately or by different methods (for example, parcel items and a freight pallet). Each shipment gets its own tracking information."
+      },
+      {
+        "type": "paragraph",
+        "text": "Once your order ships, you receive a confirmation email with carrier tracking details."
+      },
+      {
+        "type": "heading",
+        "text": "SHIPPING METHODS"
+      },
+      {
+        "type": "paragraph",
+        "text": "We choose the shipping method based on product size, weight, and delivery destination."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "METHOD",
+          "USED FOR",
+          "WHAT TO EXPECT"
+        ],
+        "rows": [
+          [
+            "Standard parcel",
+            "Boxed items, hardware, and smaller decor pieces",
+            "Shipped by courier such as FedEx, UPS, or Canada Post, with tracking"
+          ],
+          [
+            "LTL freight (curbside / loading dock)",
+            "Large, heavy, or bulk commercial furniture",
+            "Delivered on a pallet by Less-Than-Truckload carrier; the driver lowers the pallet from the truck"
+          ],
+          [
+            "White-Glove delivery",
+            "Orders where you need in-room placement, unboxing, or assembly",
+            "Must be arranged in advance; quoted separately"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "We do not offer installation services."
+      },
+      {
+        "type": "heading",
+        "text": "LTL FREIGHT DELIVERY TERMS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Standard LTL delivery is curbside or loading dock only."
+      },
+      {
+        "type": "paragraph",
+        "text": "The driver is not responsible for moving items indoors, unboxing, or assembling them unless White-Glove delivery was arranged before shipping."
+      },
+      {
+        "type": "paragraph",
+        "text": "Please have enough people or equipment ready to move pallets and heavy cartons when the truck arrives."
+      },
+      {
+        "type": "paragraph",
+        "text": "Tell us at checkout or before shipping if your site has a loading dock, limited access, or needs a liftgate. Liftgate service, residential delivery, and limited-access delivery may carry additional charges."
+      },
+      {
+        "type": "heading",
+        "text": "SHIPPING RATES AND FREE SHIPPING"
+      },
+      {
+        "type": "paragraph",
+        "text": "Shipping charges are calculated at checkout from your order size, total weight, and delivery destination. Canadian orders are charged in CAD and U.S. orders in USD."
+      },
+      {
+        "type": "paragraph",
+        "text": "Free shipping applies to qualifying orders within the range for your destination, shown below. Eligibility varies by destination. Oversized items, specialized liftgate requests, and remote locations within the provinces and states we serve may be excluded from free shipping."
+      },
+      {
+        "type": "heading",
+        "text": "CANADA (CAD)"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "DESTINATION",
+          "FREE SHIPPING ORDER RANGE"
+        ],
+        "rows": [
+          [
+            "Québec, Ontario, Manitoba, Alberta, British Columbia, Saskatchewan, New Brunswick, Nova Scotia, Prince Edward Island, Newfoundland and Labrador",
+            "Over $5,000.00 CAD, up to $14,999.99 CAD"
+          ],
+          [
+            "Yukon, Northwest Territories, Nunavut, and remote areas",
+            "Not served"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "UNITED STATES (USD)"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "DESTINATION REGION",
+          "STATES",
+          "FREE SHIPPING ORDER RANGE"
+        ],
+        "rows": [
+          [
+            "Northeast",
+            "CT, ME, MA, NH, NY, NJ, RI, VT",
+            "Over $5,000.00 USD, up to $14,999.99 USD"
+          ],
+          [
+            "Mid-Atlantic and Midwest",
+            "DE, GA, IL, IN, KY, MD, MI, MO, NC, OH, VA, WV",
+            "Over $5,000.00 USD, up to $14,999.99 USD"
+          ],
+          [
+            "Central and South",
+            "AL, AR, CO, DC, IA, KS, LA, MN, MS, NE, OK, PA, SC, TN, WI",
+            "Over $5,000.00 USD, up to $14,999.99 USD"
+          ],
+          [
+            "Florida",
+            "FL",
+            "Over $5,000.00 USD, up to $14,999.99 USD"
+          ],
+          [
+            "California and Texas",
+            "CA, TX",
+            "$10,000.00 USD – $14,999.99 USD"
+          ],
+          [
+            "West and Northwest",
+            "AZ, ID, MT, NV, NM, ND, OR, SD, UT, WA, WY",
+            "Not available"
+          ],
+          [
+            "Alaska, Hawaii, Puerto Rico, and U.S. territories",
+            "—",
+            "Not served"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Orders of $15,000 or more (CAD or USD): high-volume commercial orders may need custom freight arrangements. Contact our team before ordering and we will quote your shipment directly."
+      },
+      {
+        "type": "heading",
+        "text": "ESTIMATED DELIVERY TIMES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Transit times are estimates in business days, counted from the day your order ships, not the day you order. They do not include processing or production time, and they are not guaranteed: weather, carrier delays, and peak seasons can extend them."
+      },
+      {
+        "type": "heading",
+        "text": "CANADA"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "DESTINATION",
+          "ESTIMATED TRANSIT"
+        ],
+        "rows": [
+          [
+            "Québec",
+            "1–3 business days"
+          ],
+          [
+            "Ontario",
+            "1–3 business days"
+          ],
+          [
+            "Manitoba",
+            "2–6 business days"
+          ],
+          [
+            "Alberta",
+            "3–7 business days"
+          ],
+          [
+            "Saskatchewan, New Brunswick, Nova Scotia, Prince Edward Island, Newfoundland and Labrador",
+            "3–8 business days"
+          ],
+          [
+            "British Columbia",
+            "5–9 business days"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "UNITED STATES"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "REGION",
+          "STATES",
+          "ESTIMATED TRANSIT"
+        ],
+        "rows": [
+          [
+            "Northeast",
+            "CT, ME, MA, NH, NY, NJ, RI, VT",
+            "2–4 business days"
+          ],
+          [
+            "Mid-Atlantic and Midwest",
+            "DE, GA, IL, IN, KY, MD, MI, MO, NC, OH, VA, WV",
+            "3–6 business days"
+          ],
+          [
+            "Central and South",
+            "AL, AR, CO, DC, IA, KS, LA, MN, MS, NE, OK, PA, SC, TN, WI",
+            "4–8 business days"
+          ],
+          [
+            "Florida",
+            "FL",
+            "5–8 business days"
+          ],
+          [
+            "California and Texas",
+            "CA, TX",
+            "7–10 business days"
+          ],
+          [
+            "West and Northwest",
+            "AZ, ID, MT, NV, NM, ND, OR, SD, UT, WA, WY",
+            "6–10 business days"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "We do not deliver to Yukon, Northwest Territories, Nunavut, Alaska, Hawaii, Puerto Rico, or U.S. territories."
+      },
+      {
+        "type": "heading",
+        "text": "DUTIES, TAXES, AND CUSTOMS"
+      },
+      {
+        "type": "paragraph",
+        "text": "All U.S. orders are processed in USD. Applicable shipping charges, taxes, and import duties are calculated at checkout by Shopify and paid by the customer at checkout."
+      },
+      {
+        "type": "paragraph",
+        "text": "Import duties and taxes on U.S. orders are the customer’s responsibility. Import duties are not refundable, including when an order is returned or refunded (see our Return & Refund Policy)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Sales taxes for Canadian orders are calculated at checkout based on your delivery province."
+      },
+      {
+        "type": "heading",
+        "text": "RECEIVING YOUR ORDER AND FREIGHT INSPECTION"
+      },
+      {
+        "type": "paragraph",
+        "text": "Delivery scheduling. For LTL freight shipments, the carrier contacts you by phone or email to book a delivery appointment. Please keep your contact details current and respond promptly, since missed calls can delay delivery."
+      },
+      {
+        "type": "paragraph",
+        "text": "Inspect before you sign. Check every pallet and outer box before signing the carrier’s delivery receipt."
+      },
+      {
+        "type": "paragraph",
+        "text": "Count the pallets and boxes and compare them to the Bill of Lading (BOL)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Look for visible exterior damage, crushed corners, torn or wet packaging, and missing pieces."
+      },
+      {
+        "type": "paragraph",
+        "text": "Write every issue directly on the carrier’s BOL before the driver leaves. Be specific, for example “2 of 4 boxes crushed” or “1 pallet missing.”"
+      },
+      {
+        "type": "paragraph",
+        "text": "Take photos of the damage and the notes on the BOL."
+      },
+      {
+        "type": "paragraph",
+        "text": "Keep your copy of the signed BOL."
+      },
+      {
+        "type": "paragraph",
+        "text": "If the driver cannot wait while you inspect, note on the BOL that the freight was received subject to inspection. A clean signature with no notes can limit our ability to file a carrier claim."
+      },
+      {
+        "type": "heading",
+        "text": "DAMAGED, MISSING, OR INCORRECT ORDERS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Report any damaged, missing, or incorrect items to info@voguedecor.com within 48 hours of delivery. Include:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Your order number"
+      },
+      {
+        "type": "paragraph",
+        "text": "Clear photos of the damaged item, its packaging, and the shipping label"
+      },
+      {
+        "type": "paragraph",
+        "text": "A photo of the carrier’s delivery receipt (BOL) showing any damage notes, for freight shipments"
+      },
+      {
+        "type": "paragraph",
+        "text": "A short description of the problem"
+      },
+      {
+        "type": "paragraph",
+        "text": "Once we have your report, we review it and follow up with next steps in line with our Return & Refund Policy. Please keep all packaging and the damaged product until we confirm the claim is resolved, as the carrier may need to inspect them."
+      },
+      {
+        "type": "heading",
+        "text": "DELIVERY EXCEPTIONS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Address accuracy. Enter a complete, correct delivery address at checkout. Contact us as soon as possible if you need to change an address; once an order has shipped, changes depend on the carrier and may incur fees."
+      },
+      {
+        "type": "paragraph",
+        "text": "Missed or failed delivery. If a carrier cannot complete delivery because no one was available, access was blocked, or the receiver could not be reached, the carrier may attempt redelivery or hold the freight. Redelivery, storage, and return-freight charges set by the carrier may be billed to the customer."
+      },
+      {
+        "type": "paragraph",
+        "text": "Refused shipments. Please do not refuse a shipment without contacting us first. Return freight and restocking costs may apply to refused deliveries."
+      },
+      {
+        "type": "paragraph",
+        "text": "Delays. We are not liable for delays caused by events outside our control, such as severe weather, carrier disruptions, customs holds, or labour disruptions. We will help you track and resolve delayed shipments."
+      },
+      {
+        "type": "paragraph",
+        "text": "Lost shipments. If your tracking shows no movement for several business days or your order does not arrive within the estimated window, contact us and we will open a trace with the carrier."
+      },
+      {
+        "type": "heading",
+        "text": "LOCAL PICKUP"
+      },
+      {
+        "type": "paragraph",
+        "text": "Local pickup is free for eligible orders. Select it at checkout and give us at least 2 business days of advance notice."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "LOCATION",
+          "ADDRESS",
+          "NOTICE REQUIRED"
+        ],
+        "rows": [
+          [
+            "Montréal Showroom & Warehouse",
+            "7550 Chem. de la Côte-de-Liesse, Montréal, QC H4T 1E7",
+            "2 business days"
+          ],
+          [
+            "Markham Showroom (Toronto area), pickup only",
+            "825 Denison Street, Unit 2, Markham, Ontario L3R 5E4",
+            "2 business days"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "You will receive an email when your order is ready for collection. Please wait for this confirmation before you travel to either location, and bring your order number and photo ID. Large furniture may need a vehicle and helpers suited to the items you are collecting."
+      },
+      {
+        "type": "heading",
+        "text": "CONTACT US"
+      },
+      {
+        "type": "paragraph",
+        "text": "For shipment tracking, delivery updates, or logistics questions, contact Vogue Decor Inc.:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Email: info@voguedecor.com Phone: +1 (514) 823-5595"
+      },
+      {
+        "type": "paragraph",
+        "text": "Toll-free (optional): +1 (888) 880-8232"
+      },
+      {
+        "type": "paragraph",
+        "text": "Mailing address: 7550 Chem. de la Côte-de-Liesse, Montréal, QC H4T 1E7, Canada"
+      },
+      {
+        "type": "paragraph",
+        "text": "Website: www.voguedecor.com"
+      },
+      {
+        "type": "paragraph",
+        "text": "Please include your order number so we can help you faster."
+      }
+    ]
+  },
+  "terms": {
+    "title": "TERMS & CONDITIONS",
+    "effectiveDate": "Effective Date: November 1, 2026",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor Inc."
+      },
+      {
+        "type": "paragraph",
+        "text": "Welcome to Vogue Decor. These Terms & Conditions (“Terms”) govern your access to and use of www.voguedecor.com (the “Site”) and your purchase of products from Vogue Decor Inc. (“Vogue Decor,” “we,” “us,” or “our”). By accessing the Site, creating an account, or placing an order, you confirm that you have read, understood, and agree to these Terms, subject to applicable law. If you do not agree, please do not use the Site. These Terms work together with our Shipping Policy, Return & Refund Policy, and Privacy Policy, which are part of your agreement with us."
+      },
+      {
+        "type": "heading",
+        "text": "OUR PRODUCTS AND SERVICES"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor specializes in commercial furniture and furnishing solutions for restaurants, hospitality businesses, and other commercial spaces. You can buy through our website or at our showrooms in Canada, and we ship across Canada, including Québec, and the United States, except to the regions listed as excluded in our Shipping Policy. We do not offer installation services. We work to provide accurate product descriptions, specifications, dimensions, finishes, and availability, but product information may occasionally contain errors or change. Colours, materials, and finishes may differ slightly from the images on our Site because of lighting, screen settings, manufacturing variations, or natural material characteristics. We may modify, discontinue, or update products and specifications without prior notice, subject to confirmed orders and applicable law."
+      },
+      {
+        "type": "heading",
+        "text": "ACCOUNTS AND CUSTOMER INFORMATION"
+      },
+      {
+        "type": "paragraph",
+        "text": "You can create an account to simplify purchases, manage order information, and save billing and delivery addresses. When you create an account or place an order, you agree to give us accurate, current, and complete information, including your name, business details (where applicable), billing and delivery addresses, and contact information. You are responsible for keeping your login credentials confidential and for all activity under your account. Please tell us promptly if you suspect unauthorized access or a security breach. We may suspend or restrict accounts connected to fraudulent activity, misuse, inaccurate information, or violations of these Terms, subject to applicable law."
+      },
+      {
+        "type": "heading",
+        "text": "PRODUCT INFORMATION AND AVAILABILITY"
+      },
+      {
+        "type": "paragraph",
+        "text": "All products are subject to availability. We try to keep inventory information accurate, but availability and lead times may change without notice. Some products come in different materials, colours, dimensions, or finishes."
+      },
+      {
+        "type": "paragraph",
+        "text": "You are responsible for reviewing product specifications and making sure the furniture you choose suits its intended space and use. For commercial projects, we recommend confirming dimensions, quantities, materials, and installation requirements before you order. Custom-made, special-order, and made-to-order furniture may have additional conditions and production lead times, which we communicate when you buy."
+      },
+      {
+        "type": "heading",
+        "text": "PRICING AND PAYMENT"
+      },
+      {
+        "type": "paragraph",
+        "text": "Prices on our Site are shown in the currency indicated at the time of purchase. Prices may vary depending on your location, the currency, and available promotions. Unless stated otherwise, prices do not include sales taxes, shipping fees, customs duties, import taxes, or other applicable charges. Taxes, shipping fees, and import duties are calculated at checkout and paid by the customer at checkout. Import duties are not refundable (see our Return & Refund Policy). Any other charge that cannot be determined in advance will be disclosed where the law requires and is further explained in our Shipping Policy. Custom-made, made-to-order, and special-order products require a deposit of 50% of the order total at checkout. These orders are final sale; see Section 7 and our Return & Refund Policy. We accept the payment methods shown at checkout. All payments are subject to verification and authorization by the payment provider. We may correct pricing errors, inaccuracies, or omissions. If an error affects an order you have already placed, we will notify you and offer appropriate options, including cancellation and a refund where the law requires. Promotions, discounts, and special offers may have additional terms, eligibility requirements, and limited availability."
+      },
+      {
+        "type": "heading",
+        "text": "ORDERS AND CONFIRMATION"
+      },
+      {
+        "type": "paragraph",
+        "text": "Placing an order on our Site is an offer to buy the selected products. After you submit an order, you receive an acknowledgment by email. We accept your order when we issue an order confirmation or dispatch notice. We may refuse or cancel an order for legitimate reasons, including product unavailability, payment issues, suspected fraud, material pricing errors, or because we are unable to ship to your city or delivery location, even after the order has been placed. If we cannot fulfill an order for which payment has been collected, we will refund the full amount paid. For large commercial orders, custom-made furniture, and special projects, additional terms may be set out in a written quotation, invoice, or purchase agreement. Where expressly agreed, those project-specific terms apply to the relevant order, subject to applicable law."
+      },
+      {
+        "type": "heading",
+        "text": "SHIPPING AND DELIVERY"
+      },
+      {
+        "type": "paragraph",
+        "text": "We ship across Canada, including Québec, and the United States, except to the regions listed as excluded in our Shipping Policy. All orders ship from our warehouse in Montréal, Québec. Our Markham, Ontario showroom is for local pickup only and does not ship orders. Shipping methods, estimated delivery times, and costs depend on the destination, product size, order volume, and carrier requirements. Large or oversized furniture may need freight transportation or specialized delivery arrangements. Delivery times are estimates, not guarantees. They may be affected by carrier schedules, weather, customs processing, or other circumstances beyond our reasonable control, subject to applicable law. You are responsible for giving us accurate delivery information and for making sure the delivery location is accessible and suitable for receiving the furniture. Duties and taxes. For shipments to the United States, import duties and taxes are calculated at checkout and paid by the customer at checkout. Import duties are not refundable, including when an order is returned or refunded. For full details on shipping rates, free shipping eligibility, delivery conditions, freight services, local pickup, and cross-border shipments, please read our Shipping Policy. Nothing in this section limits your rights or remedies under applicable consumer protection laws."
+      },
+      {
+        "type": "heading",
+        "text": "RETURNS, CANCELLATIONS, AND REFUNDS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Returns, exchanges, cancellations, and refunds are governed by our Return & Refund Policy. Eligible standard products may be returned if you request the return within 14 days of delivery, subject to that policy. Returned products must be unused, in original condition, and in their original or equivalent protective packaging, unless the law requires otherwise. Custom-made, made-to-order, and special-order products are final sale and are not refundable. Cancellation of these orders may be considered at our discretion only before materials are ordered or production begins, as set out in our Return & Refund Policy. Please review product specifications, dimensions, materials, and order details carefully before you complete your purchase. For return eligibility, cancellation procedures, return shipping responsibilities, and refund processing, please read our Return & Refund Policy. Nothing in this section limits any mandatory consumer rights or legal remedies."
+      },
+      {
+        "type": "heading",
+        "text": "PRODUCT WARRANTY"
+      },
+      {
+        "type": "paragraph",
+        "text": "Vogue Decor provides a limited warranty against manufacturing defects in materials and workmanship for the period stated on the product page or in your purchase documents. Unless stated otherwise, the standard warranty is 12 months from the delivery date. The warranty covers only defects that result from the manufacturing process. It does not cover physical damage, scratches, dents, stains, normal wear and tear, accidental damage, misuse, improper installation, unauthorized modifications, or damage from improper care or maintenance. Damage or defects visible on delivery must be reported within 48 hours under our Return & Refund Policy. Defects that were not visible on delivery and are discovered later are handled under this warranty during the warranty period. Eligible claims may be resolved by repair, replacement, or refund, at our discretion and subject to applicable law. To make a claim, email info@voguedecor.com with your order information, a description of the problem, and supporting photos. This limited warranty does not replace or restrict any mandatory legal warranties or statutory rights under applicable Canadian or U.S. law."
+      },
+      {
+        "type": "heading",
+        "text": "INTELLECTUAL PROPERTY"
+      },
+      {
+        "type": "paragraph",
+        "text": "All content on the Vogue Decor Site, including photographs, product images, designs, graphics, logos, trademarks, text, and other materials (the “Site Content”), is owned by or licensed to Vogue Decor and protected by intellectual property laws. You may not copy, reproduce, modify, distribute, publish, or use Site Content for commercial purposes without our prior written authorization or that of the rights holder. You may use the Site and its content only for legitimate browsing, product research, and purchasing. Any other use of our Site Content or intellectual property is prohibited."
+      },
+      {
+        "type": "heading",
+        "text": "WEBSITE USE AND SECURITY"
+      },
+      {
+        "type": "paragraph",
+        "text": "You agree to use the Site only for lawful purposes and in line with these Terms. You may not interfere with the Site’s functionality, security, or accessibility, including through unauthorized access, fraudulent transactions, distribution of malicious software, or attempts to compromise our systems. Using automated tools to extract, reproduce, or collect Site Content or customer information without our prior written authorization is prohibited, except where the law permits it. We may restrict or suspend access to the Site in cases of suspected fraud, security threats, misuse, or violations of these Terms, subject to applicable law. We make reasonable efforts to keep the Site secure and available, but we cannot guarantee uninterrupted or error-free access. We may temporarily change, suspend, or discontinue features for maintenance, updates, or operational reasons."
+      },
+      {
+        "type": "heading",
+        "text": "LIMITATION OF LIABILITY"
+      },
+      {
+        "type": "paragraph",
+        "text": "To the fullest extent permitted by applicable law, Vogue Decor is not liable for indirect, incidental, special, or consequential damages arising from your use of the Site, your purchase of our products, or related services, including loss of profits, business interruption, or loss of business opportunities. We are also not responsible for damage resulting from improper installation, misuse, unauthorized modifications, inadequate maintenance, or use of products contrary to their intended purpose. You are responsible for making sure purchased products suit their intended commercial or residential use and are installed and maintained according to applicable requirements. To the extent permitted by applicable law, our total liability arising from a product purchase will not exceed the amount you paid for the product that gave rise to the claim. Nothing in these Terms excludes or limits liability that cannot legally be excluded or limited, including liability for bodily injury or, where such limits are prohibited, property damage, or any mandatory consumer protection rights and remedies."
+      },
+      {
+        "type": "heading",
+        "text": "PRIVACY AND PERSONAL INFORMATION"
+      },
+      {
+        "type": "paragraph",
+        "text": "Your privacy matters to us. We collect, use, disclose, and protect personal information in line with our Privacy Policy and applicable privacy and data protection laws. Information you give us when you create an account, place an order, or contact us may be used to process transactions, fulfill orders, and provide customer support. We send marketing communications only with your consent, as described in our Privacy Policy. For more about how we handle personal information, including cookies, third-party service providers, and your privacy rights, please read our Privacy Policy."
+      },
+      {
+        "type": "heading",
+        "text": "GOVERNING LAW AND DISPUTES"
+      },
+      {
+        "type": "paragraph",
+        "text": "These Terms are governed by and interpreted under the laws of the Province of Québec and the applicable federal laws of Canada. Subject to applicable law, disputes arising from or relating to these Terms, your use of the Site, or your purchase of our products will be submitted to the competent courts of Québec, Canada. Nothing in this section limits any mandatory rights, protections, or remedies that you have under the laws of your province, state, or country of residence."
+      },
+      {
+        "type": "heading",
+        "text": "GENERAL PROVISIONS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Events beyond our control. We are not responsible for delays or failures in performing our obligations caused by events beyond our reasonable control, such as severe weather, natural disasters, carrier or supplier disruptions, labour disputes, government actions, or supply chain interruptions."
+      },
+      {
+        "type": "paragraph",
+        "text": "Severability. If any part of these Terms is found to be invalid or unenforceable, the rest of the Terms remains in effect."
+      },
+      {
+        "type": "paragraph",
+        "text": "Entire agreement. These Terms, together with our Shipping Policy, Return & Refund Policy, Privacy Policy, and any written quotation or purchase agreement for your order, are the entire agreement between you and Vogue Decor about your use of the Site and your purchases. If a written quotation or purchase agreement conflicts with these Terms for a specific order, the quotation or agreement applies to that order."
+      },
+      {
+        "type": "paragraph",
+        "text": "No waiver. If we do not enforce a right under these Terms, that does not mean we give it up."
+      },
+      {
+        "type": "heading",
+        "text": "CHANGES TO THESE TERMS"
+      },
+      {
+        "type": "paragraph",
+        "text": "These Terms take effect on November 1, 2026. We may update them from time to time to reflect changes in our business, services, legal requirements, or Site functionality. Updates are posted on our Site with a new “Last updated” date and take effect when published, unless we state otherwise or the law requires a different approach. Updates will not retroactively change the conditions of orders we have already confirmed without your agreement, except where the law permits or requires it. Please review these Terms periodically."
+      },
+      {
+        "type": "heading",
+        "text": "CONTACT US"
+      },
+      {
+        "type": "paragraph",
+        "text": "For questions about these Terms, our products, or your orders, contact Vogue Decor Inc.: Mailing address and Montréal showroom: 7550 Chem. de la Côte-de-Liesse, Montréal, QC H4T 1E7, Canada Phone: +1 (514) 823-5595 Toll-free (optional): +1 (888) 880-8232 Email: info@voguedecor.com Markham showroom (Toronto area, pickup only): 825 Denison Street, Unit 2, Markham, Ontario L3R 5E4, Canada"
+      }
+    ]
+  },
+  "returns": {
+    "title": "RETURN & REFUND POLICY",
+    "effectiveDate": "Effective Date: November 1, 2026",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "RETURN ELIGIBILITY"
+      },
+      {
+        "type": "paragraph",
+        "text": "We want you to be happy with your purchase. Eligible products may be returned if you request the return within 14 days of delivery, unless otherwise stated on the product page."
+      },
+      {
+        "type": "paragraph",
+        "text": "To qualify, a product must be unused, in new condition, and in its original packaging or equivalent protective packaging that prevents damage in transit. “Unused” means not assembled, installed, or placed into service, and free of marks, stains, scratches, or odours."
+      },
+      {
+        "type": "paragraph",
+        "text": "This policy applies to all customers, including business and commercial buyers. Nothing in this policy limits any rights or remedies you have under applicable consumer protection law."
+      },
+      {
+        "type": "paragraph",
+        "text": "All orders ship from our warehouse in Montréal, Québec, to customers in Canada and the United States, except the Canadian northern territories (Yukon, Northwest Territories, and Nunavut), Alaska, Hawaii, Puerto Rico and other U.S. territories, and other remote areas we cannot serve, as shown at checkout. This policy applies to all of those orders."
+      },
+      {
+        "type": "heading",
+        "text": "NON-RETURNABLE ITEMS"
+      },
+      {
+        "type": "paragraph",
+        "text": "The following are not eligible for return or refund:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Custom-made, made-to-order, and special-order products (final sale; see Section 7)."
+      },
+      {
+        "type": "paragraph",
+        "text": "Clearance or discounted products marked as final sale."
+      },
+      {
+        "type": "paragraph",
+        "text": "Products that have been used, assembled, installed, altered, or damaged after delivery. Products returned without adequate protective packaging. These exclusions do not apply to products that arrive defective, damaged, or incorrect (see Section 4)."
+      },
+      {
+        "type": "heading",
+        "text": "RETURN PROCESS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Contact us within 14 days of delivery at info@voguedecor.com with your order number and reason for return. All returns require prior authorization. Please do not ship anything back before you receive approval."
+      },
+      {
+        "type": "paragraph",
+        "text": "We will send return instructions once your request is approved. Approved returns must be shipped, or made available for pickup, within 14 days of approval unless we agree otherwise in writing. Unauthorized returns may not be accepted."
+      },
+      {
+        "type": "paragraph",
+        "text": "Pack the product securely so it is protected in transit."
+      },
+      {
+        "type": "paragraph",
+        "text": "Ship the return as described below."
+      },
+      {
+        "type": "heading",
+        "text": "FREIGHT ORDERS (LTL / PALLET SHIPMENTS)"
+      },
+      {
+        "type": "paragraph",
+        "text": "Most furniture orders ship by LTL freight. For these returns, we will arrange the pickup or provide a freight quote, and the actual return freight cost is the customer’s responsibility. Return freight will be deducted from your refund unless the return is due to our error or is otherwise required by law. We will tell you the estimated freight cost before you confirm the return."
+      },
+      {
+        "type": "heading",
+        "text": "SMALL-PACKAGE ORDERS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Smaller items, such as bases, tops, and parts, may ship by small-package carrier. Return shipping is the customer’s responsibility, and we recommend a tracked, insured service. We are not responsible for items lost or damaged in return transit."
+      },
+      {
+        "type": "heading",
+        "text": "RETURN ADDRESS, AND RETURNS FROM THE UNITED STATES AND ACROSS CANADA"
+      },
+      {
+        "type": "paragraph",
+        "text": "All returns must be sent back to our warehouse in Montréal, Québec. We will confirm the exact return address when we approve your return. Customers in the United States are responsible for return freight, customs clearance, brokerage fees, and any duties or taxes charged on the return. We will provide the documents needed for customs, and we recommend using a carrier or freight forwarder that handles cross-border paperwork."
+      },
+      {
+        "type": "paragraph",
+        "text": "Import duties. Import duties are paid by the customer at checkout. Import duties, customs charges, and brokerage fees paid on your order are not refundable, including when a product is returned or refunded."
+      },
+      {
+        "type": "paragraph",
+        "text": "If a shipment is refused at delivery for reasons other than damage or merchant error, actual roundtrip freight charges and the 15% restocking fee will be deducted from the final refund."
+      },
+      {
+        "type": "heading",
+        "text": "DAMAGED, DEFECTIVE, OR INCORRECT ITEMS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Please inspect your order on delivery."
+      },
+      {
+        "type": "paragraph",
+        "text": "Freight deliveries: note any visible damage or missing pieces on the carrier’s delivery receipt before signing, and take photos of the packaging and product."
+      },
+      {
+        "type": "paragraph",
+        "text": "Report the issue within 48 hours of delivery at info@voguedecor.com with your order number, a description of the problem, and photos. Please keep all packaging until the claim is resolved. We will review the claim and offer an appropriate resolution, which may be a replacement, repair, or refund. If the problem is caused by our error or a defect, we cover return shipping and no restocking fee applies. Reports made after 48 hours will still be reviewed, but the resolution may be limited. Defects that were not visible on delivery and are found after the 48-hour period are handled under the limited warranty in our Terms & Conditions."
+      },
+      {
+        "type": "heading",
+        "text": "RESTOCKING FEE"
+      },
+      {
+        "type": "paragraph",
+        "text": "Returns of eligible, non-defective products (for example, change of mind or ordering the wrong size) are subject to a restocking fee of 15% of the product price. The fee covers inspection, handling, repackaging, and the cost of returning the item to inventory. No restocking fee applies to products that arrive damaged, defective, or incorrect due to our error. The fee is calculated on the product price only, not on shipping or taxes. If a returned product arrives with damage beyond normal inspection, or is missing parts, we may reduce the refund further. We will explain any reduction in writing, with photos."
+      },
+      {
+        "type": "heading",
+        "text": "REFUNDS"
+      },
+      {
+        "type": "paragraph",
+        "text": "After we receive and inspect your return (within 5 business days of receipt), we will email you to confirm whether the refund is approved. Approved refunds are issued to the original payment method within 7 business days of approval. The refund equals the product price paid, plus applicable taxes on the refunded amount, minus any restocking fee and return freight deducted under this policy. Original shipping charges and import duties are non-refundable unless required by law. Your bank or payment provider may take additional time to post the refund."
+      },
+      {
+        "type": "paragraph",
+        "text": "Refunds may be issued as store credit only if you agree to it. Refunds are issued in the currency of the original payment. Sales taxes (GST, HST, QST, PST, or RST in Canada, and sales tax in the United States) are refunded in proportion to the refunded product price. Currency conversion differences charged by your bank or card issuer are not refundable."
+      },
+      {
+        "type": "heading",
+        "text": "ORDER CANCELLATIONS"
+      },
+      {
+        "type": "paragraph",
+        "text": "To cancel an order, email info@voguedecor.com as soon as possible with your order number."
+      },
+      {
+        "type": "paragraph",
+        "text": "Standard in-stock orders: can be cancelled at no charge if the order has not yet shipped. Orders that have shipped cannot be cancelled and are handled under the return process above."
+      },
+      {
+        "type": "paragraph",
+        "text": "Custom-made, made-to-order, and special-order products: these are final sale and are not refundable. Cancellation may be considered at our discretion only if you ask promptly, before materials are ordered or production begins."
+      },
+      {
+        "type": "paragraph",
+        "text": "Deposits on custom orders: a deposit of 50% of the order total is required at checkout. If we approve a cancellation before materials are ordered or production begins, your deposit will be refunded in full. Once materials are ordered or production has begun, the order and the deposit are non-refundable."
+      },
+      {
+        "type": "paragraph",
+        "text": "If we cancel an order ourselves (for example, because we are unable to ship to your location), we will refund everything you paid in full."
+      },
+      {
+        "type": "heading",
+        "text": "YOUR LEGAL RIGHTS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nothing in this policy limits any mandatory rights or remedies available to you under applicable law, including consumer protection legislation in your province, territory, or state (including Québec’s Consumer Protection Act, where it applies)."
+      },
+      {
+        "type": "heading",
+        "text": "CONTACT US"
+      },
+      {
+        "type": "paragraph",
+        "text": "For questions about these Terms, our products, or your orders, contact Vogue Decor Inc.: Mailing address and Montréal showroom: 7550 Chem. de la Côte-de-Liesse, Montréal, QC H4T 1E7, Canada Phone: +1 (514) 823-5595 Toll-free (optional): +1 (888) 880-8232 Email: info@voguedecor.com"
+      },
+      {
+        "type": "paragraph",
+        "text": "Markham showroom (Toronto area, pickup only): 825 Denison Street, Unit 2, Markham, Ontario L3R 5E4, Canada"
+      }
+    ]
+  }
+}
